@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .aspect-video-container {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* Custom scrollbar for a cleaner look */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #4B5563; border-radius: 4px; }
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #030712; /* gray-950 */
+}

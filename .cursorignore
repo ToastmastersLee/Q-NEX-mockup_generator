@@ -1,0 +1,29 @@
+# ===== Antigravity Doctor Auto-Generated Cursor Ignore Rules =====
+# Protect Cursor from indexing heavy files & directories
+*.drawio
+*.drawio.svg
+*.xlsx
+*.xls
+*.pdf
+*.docx
+*.doc
+*.pptx
+*.ppt
+*.mp4
+*.avi
+*.mov
+*.zip
+*.rar
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+node_modules/
+dist/
+dist-ssr/
+temp/
+tmp/
+bak/
+backup/
+output/
