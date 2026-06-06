@@ -41,6 +41,12 @@ const EditableText = ({ text, className }) => {
 };
 
 export const Settings = ({ isDark }) => {
+    const clickCountRef = useRef(0);
+    const clickTimerRef = useRef(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [deviceModel, setDeviceModel] = useState('Q-NEX-NMP311-RK');
+    const [tempDeviceModel, setTempDeviceModel] = useState('');
+
     const settingsItems = [
         { label: 'Device Name', value: 'NMP311-Product', type: 'text' },
         { label: 'Device ID', value: '6D171B770608', type: 'qrcode' },
@@ -52,17 +58,41 @@ export const Settings = ({ isDark }) => {
         { label: 'Customize', type: 'chevron' },
         { label: 'Password Unlock', type: 'chevron' },
         { label: 'Date & Time', type: 'chevron' },
-        { label: 'Software Version', value: 'V 1.0.0.8', type: 'text_chevron' },
+        { label: 'Software Version', value: 'V 1.0.1.2', type: 'text_chevron' },
         { label: 'Q-NEX Cloud Server Address', type: 'chevron' },
         { label: 'Disconnection', type: 'text' },
         { label: 'Clear Cache & Restart Touch Panel', type: 'text' }
     ];
 
+    const handleItemClick = (label) => {
+        if (label === 'Software Version') {
+            clickCountRef.current += 1;
+            if (clickCountRef.current === 3) {
+                setTempDeviceModel(deviceModel);
+                setIsModalOpen(true);
+                clickCountRef.current = 0;
+            }
+            if (clickTimerRef.current) clearTimeout(clickTimerRef.current);
+            clickTimerRef.current = setTimeout(() => {
+                clickCountRef.current = 0;
+            }, 600); // Reset count if not clicked fast enough
+        }
+    };
+
+    const handleConfirm = () => {
+        setDeviceModel(tempDeviceModel);
+        setIsModalOpen(false);
+    };
+
     return (
-        <div className="p-8 h-full flex flex-col overflow-y-auto">
+        <div className="p-8 h-full flex flex-col overflow-y-auto relative">
             <div className="max-w-5xl w-full mx-auto pb-10">
                 {settingsItems.map((item, idx) => (
-                    <div key={idx} className={`flex justify-between items-center py-5 ${isDark ? 'border-b border-gray-600/50' : 'border-b border-gray-300'}`}>
+                    <div 
+                        key={idx} 
+                        className={`flex justify-between items-center py-5 ${item.label === 'Software Version' ? 'cursor-pointer active:opacity-70' : ''} ${isDark ? 'border-b border-gray-600/50' : 'border-b border-gray-300'}`}
+                        onClick={() => handleItemClick(item.label)}
+                    >
                         <span className={`text-lg font-bold tracking-wide ${isDark ? 'text-gray-100' : 'text-gray-800'}`}>{item.label}</span>
                         <div className="flex items-center gap-4">
                             {item.type === 'text' && (
@@ -77,8 +107,8 @@ export const Settings = ({ isDark }) => {
                                 </div>
                             )}
                             {(item.type === 'text_chevron' || item.type === 'chevron') && (
-                                <div className="flex items-center gap-4">
-                                    {item.value && <EditableText text={item.value} className={`text-base ${isDark ? 'text-gray-400' : 'text-gray-500'}`} />}
+                                <div className="flex items-center gap-4 pointer-events-none">
+                                    {item.value && <span className={`text-base outline-none cursor-text ${isDark ? 'text-gray-400' : 'text-gray-500'}`}>{item.value}</span>}
                                     <ChevronRight className={`w-6 h-6 ${isDark ? 'text-gray-500' : 'text-gray-400'}`} />
                                 </div>
                             )}
@@ -86,6 +116,40 @@ export const Settings = ({ isDark }) => {
                     </div>
                 ))}
             </div>
+
+            {/* Modal Overlay */}
+            {isModalOpen && (
+                <div className="absolute inset-0 z-50 flex items-center justify-center bg-black/20 rounded-3xl">
+                    <div className={`w-[28rem] p-8 rounded-[2rem] flex flex-col items-center gap-6 ${isDark ? 'bg-gradient-to-br from-[#5f7eb0] to-[#456499] shadow-[0_15px_50px_rgba(0,0,0,0.5)] border border-white/10' : 'bg-white shadow-2xl border border-gray-200'}`}>
+                        <h3 className={`text-lg font-bold tracking-widest ${isDark ? 'text-white' : 'text-gray-800'}`}>{tempDeviceModel}</h3>
+                        
+                        <div className={`w-full px-4 py-3 rounded-md ${isDark ? 'bg-[#7392c6] border border-white/20 shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)]' : 'bg-gray-50 border border-gray-300'}`}>
+                            <input 
+                                type="text"
+                                value={tempDeviceModel}
+                                onChange={(e) => setTempDeviceModel(e.target.value)}
+                                className={`w-full bg-transparent outline-none font-bold text-base tracking-wide ${isDark ? 'text-white placeholder-white/70' : 'text-gray-800'}`}
+                                autoFocus
+                            />
+                        </div>
+
+                        <div className="flex w-full gap-6 mt-2">
+                            <button 
+                                onClick={() => setIsModalOpen(false)}
+                                className={`flex-1 py-3 rounded-full font-bold text-lg transition-all ${isDark ? 'bg-[#5b7db1] text-white hover:bg-[#6c91cd] shadow-[0_4px_10px_rgba(0,0,0,0.2)]' : 'bg-gray-200 text-gray-700 hover:bg-gray-300 shadow-md'}`}
+                            >
+                                Cancel
+                            </button>
+                            <button 
+                                onClick={handleConfirm}
+                                className={`flex-1 py-3 rounded-full font-bold text-lg transition-all shadow-[0_4px_15px_rgba(0,255,204,0.4)] hover:opacity-90 ${isDark ? 'bg-[#00eecd] text-white' : 'bg-[#00eecd] text-white'}`}
+                            >
+                                Confirm
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

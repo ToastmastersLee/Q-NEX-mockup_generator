@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Sun, Snowflake, Wind, Droplet, Flame, Fan, DropletOff } from 'lucide-react';
 import { ToggleSwitch } from '../components/ToggleSwitch';
 
-const CircularSlider = ({ value, onChange, min, max, isDark }) => {
+const CircularSlider = ({ value, onChange, min, max, isDark, isOn }) => {
     const svgRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
 
@@ -112,18 +112,18 @@ const CircularSlider = ({ value, onChange, min, max, isDark }) => {
                 <path
                     d={describeArc(center, center, radius, startAngle, currentAngle)}
                     fill="none"
-                    stroke="#007AFF"
+                    stroke={isOn ? "#007AFF" : (isDark ? "#4b5563" : "#9ca3af")}
                     strokeWidth={strokeWidth}
                     strokeLinecap="round"
-                    className="transition-all duration-75"
+                    className="transition-all duration-300"
                 />
                 {/* Thumb */}
                 <circle
                     cx={thumbPos.x}
                     cy={thumbPos.y}
                     r="8"
-                    fill="#ffffff"
-                    className="shadow-lg transition-all duration-75"
+                    fill={isOn ? "#ffffff" : (isDark ? "#6b7280" : "#d1d5db")}
+                    className="shadow-lg transition-all duration-300"
                     style={{ filter: 'drop-shadow(0px 2px 4px rgba(0,0,0,0.4))' }}
                 />
             </svg>
@@ -148,8 +148,10 @@ export const AirConditioner = ({ isDark }) => {
     const [fanSpeed, setFanSpeed] = useState('auto'); // 'low', 'med', 'high', 'auto'
     const [swing, setSwing] = useState(true);
 
-    const activeColor = isDark ? 'text-white' : 'text-blue-600';
-    const inactiveColor = isDark ? 'text-gray-400' : 'text-gray-400';
+    const activeColor = isOn 
+        ? (isDark ? 'text-white' : 'text-blue-600') 
+        : (isDark ? 'text-gray-500' : 'text-gray-400');
+    const inactiveColor = isDark ? 'text-gray-600' : 'text-gray-300';
 
     return (
         <div className="flex items-center justify-center h-full w-full px-8">
@@ -188,6 +190,7 @@ export const AirConditioner = ({ isDark }) => {
                             min={16} 
                             max={30} 
                             isDark={isDark} 
+                            isOn={isOn}
                         />
 
                         <button 
@@ -242,7 +245,7 @@ export const AirConditioner = ({ isDark }) => {
                         {/* Swing Row */}
                         <div className="flex items-center justify-end gap-4 mt-2 pr-6">
                             <span className={`text-sm font-semibold tracking-wide ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Swing</span>
-                            <ToggleSwitch isOn={swing} onToggle={() => setSwing(!swing)} isDark={isDark} />
+                            <ToggleSwitch isOn={swing} onToggle={() => setSwing(!swing)} isDark={isDark} disabled={!isOn} />
                         </div>
                     </div>
 
