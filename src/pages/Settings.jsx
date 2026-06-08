@@ -40,7 +40,7 @@ const EditableText = ({ text, className }) => {
     );
 };
 
-export const Settings = ({ isDark, onDisconnectionClick, onPanelIpClick, panelIpAddress }) => {
+export const Settings = ({ isDark, onDisconnectionClick, onPanelIpClick, panelIpAddress, onCustomizeClick }) => {
     const clickCountRef = useRef(0);
     const clickTimerRef = useRef(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -101,6 +101,10 @@ export const Settings = ({ isDark, onDisconnectionClick, onPanelIpClick, panelIp
             if (onPanelIpClick) {
                 onPanelIpClick();
             }
+        } else if (label === 'Customize') {
+            if (onCustomizeClick) {
+                onCustomizeClick();
+            }
         }
     };
 
@@ -115,7 +119,7 @@ export const Settings = ({ isDark, onDisconnectionClick, onPanelIpClick, panelIp
                 {settingsItems.map((item, idx) => (
                     <div 
                         key={idx} 
-                        className={`flex justify-between items-center py-5 ${(item.label === 'Software Version' || item.label === 'Disconnection' || item.label === 'Device Name' || item.label === 'Panel IP') ? 'cursor-pointer active:opacity-70' : ''} ${isDark ? 'border-b border-gray-600/50' : 'border-b border-gray-300'}`}
+                        className={`flex justify-between items-center py-5 ${(item.label === 'Software Version' || item.label === 'Disconnection' || item.label === 'Device Name' || item.label === 'Panel IP' || item.label === 'Customize') ? 'cursor-pointer active:opacity-70' : ''} ${isDark ? 'border-b border-gray-600/50' : 'border-b border-gray-300'}`}
                         onClick={() => handleItemClick(item.label)}
                     >
                         <span className={`text-lg font-bold tracking-wide ${isDark ? 'text-gray-100' : 'text-gray-800'}`}>{item.label}</span>

@@ -13,6 +13,8 @@ import { Disconnection } from './pages/Disconnection';
 import { LockCountdownModal } from './components/LockCountdownModal';
 import { LockScreen } from './pages/LockScreen';
 import { AndroidEthernet } from './pages/AndroidEthernet';
+import { Customize } from './pages/Customize';
+import { ScheduledPowerOff } from './pages/ScheduledPowerOff';
 import { Sun, Moon } from 'lucide-react';
 
 function App() {
@@ -30,6 +32,9 @@ function App() {
   
   const [isAndroidEthernetOpen, setIsAndroidEthernetOpen] = useState(false);
   const [panelIpAddress, setPanelIpAddress] = useState('192.168.101.108');
+  const [settingsSubPage, setSettingsSubPage] = useState(null); // null | 'customize' | 'power-off'
+  const [isScheduledPowerOffEnabled, setIsScheduledPowerOffEnabled] = useState(false);
+  const [scheduledPowerOffTime, setScheduledPowerOffTime] = useState(null);
 
   const [navConfig, setNavConfig] = useState({
       powerCtrl: true,
@@ -142,6 +147,29 @@ function App() {
       }
       
       if (activeTab === 'settings') {
+          if (settingsSubPage === 'customize') {
+              return (
+                  <Customize 
+                      isDark={isDark}
+                      onItemClick={(subItem) => {
+                          if (subItem === 'Scheduled Power-Off') {
+                              setSettingsSubPage('power-off');
+                          }
+                      }}
+                  />
+              );
+          }
+          if (settingsSubPage === 'power-off') {
+              return (
+                  <ScheduledPowerOff 
+                      isDark={isDark}
+                      isEnabled={isScheduledPowerOffEnabled}
+                      setIsEnabled={setIsScheduledPowerOffEnabled}
+                      powerOffTime={scheduledPowerOffTime}
+                      setPowerOffTime={setScheduledPowerOffTime}
+                  />
+              );
+          }
           return (
               <Settings 
                   isDark={isDark} 
@@ -149,6 +177,7 @@ function App() {
                   onPanelIpClick={() => setIsAndroidEthernetOpen(true)}
                   panelIpAddress={panelIpAddress}
                   setPanelIpAddress={setPanelIpAddress}
+                  onCustomizeClick={() => setSettingsSubPage('customize')}
               />
           );
       }
@@ -232,9 +261,24 @@ function App() {
                         <TopBar 
                             isDark={isDark} 
                             activeTab={activeTab} 
-                            onSettingsClick={() => setActiveTab('settings')} 
-                            onHomeClick={() => setActiveTab('home')}
+                            onSettingsClick={() => {
+                                setSettingsSubPage(null);
+                                setActiveTab('settings');
+                            }} 
+                            onHomeClick={() => {
+                                setSettingsSubPage(null);
+                                setActiveTab('home');
+                            }}
                             onLockClick={handleLockClick}
+                            title={settingsSubPage ? 'Customize' : (activeTab === 'settings' ? 'Setting' : '')}
+                            showBackButton={activeTab === 'settings' && settingsSubPage !== null}
+                            onBack={() => {
+                                if (settingsSubPage === 'power-off') {
+                                    setSettingsSubPage('customize');
+                                } else if (settingsSubPage === 'customize') {
+                                    setSettingsSubPage(null);
+                                }
+                            }}
                         />
 
                         {/* Main Content Area */}
@@ -253,7 +297,10 @@ function App() {
                         <BottomNav 
                             isDark={isDark} 
                             activeTab={activeTab} 
-                            setActiveTab={setActiveTab} 
+                            setActiveTab={(tab) => {
+                                setSettingsSubPage(null);
+                                setActiveTab(tab);
+                            }} 
                             navConfig={navConfig} 
                             allNavItems={allNavItems} 
                         />

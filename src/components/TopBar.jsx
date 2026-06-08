@@ -1,7 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { Home, RefreshCw, Link as LinkIcon, Settings, Lock } from 'lucide-react';
+import { Home, RefreshCw, Link as LinkIcon, Settings, Lock, ChevronLeft } from 'lucide-react';
 
-export const TopBar = ({ isDark, activeTab, onSettingsClick, onHomeClick, onLockClick }) => {
+export const TopBar = ({ 
+    isDark, 
+    activeTab, 
+    onSettingsClick, 
+    onHomeClick, 
+    onLockClick,
+    title,
+    showBackButton,
+    onBack
+}) => {
     const [currentTime, setCurrentTime] = useState(new Date());
 
     useEffect(() => {
@@ -17,17 +26,28 @@ export const TopBar = ({ isDark, activeTab, onSettingsClick, onHomeClick, onLock
 
     return (
         <div className={`h-24 flex items-center justify-between px-8 relative ${topBarClass}`}>
-            <div className="flex items-center gap-4">
-                <span className={`text-5xl font-light ${isDark ? 'text-gray-100' : 'text-black'}`}>{formatTime(currentTime)}</span>
-                <div className={`flex flex-col text-xs mt-1 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
-                    <span className="font-semibold">{formatDay(currentTime)}</span>
-                    <span className="opacity-70 tracking-widest">{formatDate(currentTime)}</span>
-                </div>
+            <div className="flex items-center gap-4 h-full">
+                {showBackButton ? (
+                    <button 
+                        onClick={onBack} 
+                        className={`p-3 rounded-full border-[1.5px] ${isDark ? 'border-gray-600 hover:bg-gray-800 text-white' : 'border-gray-300 hover:bg-gray-100 text-black'} transition-colors`}
+                    >
+                        <ChevronLeft className="w-5 h-5" />
+                    </button>
+                ) : (
+                    <>
+                        <span className={`text-5xl font-light ${isDark ? 'text-gray-100' : 'text-black'}`}>{formatTime(currentTime)}</span>
+                        <div className={`flex flex-col text-xs mt-1 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+                            <span className="font-semibold">{formatDay(currentTime)}</span>
+                            <span className="opacity-70 tracking-widest">{formatDate(currentTime)}</span>
+                        </div>
+                    </>
+                )}
             </div>
             
-            {activeTab === 'settings' && (
+            {title && (
                 <div className={`absolute left-1/2 -translate-x-1/2 text-2xl font-bold tracking-wide ${isDark ? 'text-white' : 'text-black'}`}>
-                    Setting
+                    {title}
                 </div>
             )}
 
