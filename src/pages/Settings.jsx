@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { ChevronRight } from 'lucide-react';
+import { AndroidEthernet } from './AndroidEthernet';
 
 const EditableText = ({ text, className }) => {
     const [isEditable, setIsEditable] = useState(false);
@@ -53,10 +54,13 @@ export const Settings = ({ isDark, onDisconnectionClick }) => {
     const [deviceName, setDeviceName] = useState('NMP311-Product');
     const [tempDeviceName, setTempDeviceName] = useState('');
 
+    const [currentSubView, setCurrentSubView] = useState('list'); // 'list' | 'ethernet'
+    const [panelIpAddress, setPanelIpAddress] = useState('192.168.101.108');
+
     const settingsItems = [
         { label: 'Device Name', value: deviceName, type: 'text' },
         { label: 'Device ID', value: '6D171B770608', type: 'qrcode' },
-        { label: 'Panel IP', value: '192.168.101.108 (B6:55:A6:96:79:76)', type: 'text_chevron' },
+        { label: 'Panel IP', value: `${panelIpAddress} (30:11:9a:69:2e:d8)`, type: 'text_chevron' },
         { label: 'Divisible Room Mode', type: 'chevron' },
         { label: 'Language', type: 'chevron' },
         { label: 'HDMI OUT Resolution', type: 'chevron' },
@@ -97,6 +101,8 @@ export const Settings = ({ isDark, onDisconnectionClick }) => {
             if (onDisconnectionClick) {
                 onDisconnectionClick();
             }
+        } else if (label === 'Panel IP') {
+            setCurrentSubView('ethernet');
         }
     };
 
@@ -105,13 +111,24 @@ export const Settings = ({ isDark, onDisconnectionClick }) => {
         setIsModalOpen(false);
     };
 
+    if (currentSubView === 'ethernet') {
+        return (
+            <AndroidEthernet 
+                isDark={isDark} 
+                initialIp={panelIpAddress}
+                onSave={(newIp) => setPanelIpAddress(newIp)}
+                onBack={() => setCurrentSubView('list')}
+            />
+        );
+    }
+
     return (
         <div className="p-8 h-full flex flex-col overflow-y-auto relative">
             <div className="max-w-5xl w-full mx-auto pb-10">
                 {settingsItems.map((item, idx) => (
                     <div 
                         key={idx} 
-                        className={`flex justify-between items-center py-5 ${(item.label === 'Software Version' || item.label === 'Disconnection' || item.label === 'Device Name') ? 'cursor-pointer active:opacity-70' : ''} ${isDark ? 'border-b border-gray-600/50' : 'border-b border-gray-300'}`}
+                        className={`flex justify-between items-center py-5 ${(item.label === 'Software Version' || item.label === 'Disconnection' || item.label === 'Device Name' || item.label === 'Panel IP') ? 'cursor-pointer active:opacity-70' : ''} ${isDark ? 'border-b border-gray-600/50' : 'border-b border-gray-300'}`}
                         onClick={() => handleItemClick(item.label)}
                     >
                         <span className={`text-lg font-bold tracking-wide ${isDark ? 'text-gray-100' : 'text-gray-800'}`}>{item.label}</span>
