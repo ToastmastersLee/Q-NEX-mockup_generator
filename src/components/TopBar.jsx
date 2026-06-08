@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Home, RefreshCw, Link as LinkIcon, Settings, Lock } from 'lucide-react';
 
-export const TopBar = ({ isDark, activeTab, onSettingsClick, onHomeClick }) => {
+export const TopBar = ({ isDark, activeTab, onSettingsClick, onHomeClick, onLockClick }) => {
     const [currentTime, setCurrentTime] = useState(new Date());
 
     useEffect(() => {
@@ -46,7 +46,7 @@ export const TopBar = ({ isDark, activeTab, onSettingsClick, onHomeClick }) => {
                 <button onClick={onSettingsClick} className={`p-3 rounded-full border-[1.5px] ${isDark ? 'border-gray-600 hover:bg-gray-800' : 'border-gray-300 hover:bg-gray-100 text-black'} transition-colors`}>
                     <Settings className="w-5 h-5" />
                 </button>
-                <button className={`p-3 rounded-full border-[1.5px] ${isDark ? 'border-gray-600 hover:bg-gray-800' : 'border-gray-300 hover:bg-gray-100 text-black'} transition-colors`}>
+                <button onClick={onLockClick} className={`p-3 rounded-full border-[1.5px] ${isDark ? 'border-gray-600 hover:bg-gray-800' : 'border-gray-300 hover:bg-gray-100 text-black'} transition-colors`} title="Lock Screen">
                     <Lock className="w-5 h-5" />
                 </button>
             </div>

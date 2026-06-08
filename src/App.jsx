@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { TopBar } from './components/TopBar';
 import { BottomNav } from './components/BottomNav';
 import { Home } from './pages/Home';
@@ -10,6 +10,8 @@ import { AirConditioner } from './pages/AirConditioner';
 import { ProjectionScreen } from './pages/ProjectionScreen';
 import { RemoteControl } from './pages/RemoteControl';
 import { Disconnection } from './pages/Disconnection';
+import { LockCountdownModal } from './components/LockCountdownModal';
+import { LockScreen } from './pages/LockScreen';
 import { Sun, Moon } from 'lucide-react';
 
 function App() {
@@ -21,6 +23,9 @@ function App() {
   const [isDuplicateMode, setIsDuplicateMode] = useState(false);
   const [activeDuplicate, setActiveDuplicate] = useState('hdmi1');
   const [isDisconnected, setIsDisconnected] = useState(false);
+  const [isLocked, setIsLocked] = useState(false);
+  const [isLockCountdown, setIsLockCountdown] = useState(false);
+  const [lockCountdownTime, setLockCountdownTime] = useState(10);
   
   const [navConfig, setNavConfig] = useState({
       powerCtrl: true,
@@ -33,6 +38,37 @@ function App() {
   });
 
   const isDark = theme === 'dark';
+
+  // Lock screen countdown effect
+  useEffect(() => {
+    let timer;
+    if (isLockCountdown && lockCountdownTime > 0) {
+      timer = setTimeout(() => {
+        setLockCountdownTime(prev => prev - 1);
+      }, 1000);
+    } else if (isLockCountdown && lockCountdownTime === 0) {
+      setIsLocked(true);
+      setIsLockCountdown(false);
+    }
+    return () => {
+      if (timer) clearTimeout(timer);
+    };
+  }, [isLockCountdown, lockCountdownTime]);
+
+  const handleLockClick = () => {
+    setLockCountdownTime(10);
+    setIsLockCountdown(true);
+  };
+
+  const cancelLockCountdown = () => {
+    setIsLockCountdown(false);
+    setLockCountdownTime(10);
+  };
+
+  const executeLockNow = () => {
+    setIsLocked(true);
+    setIsLockCountdown(false);
+  };
 
   const allNavItems = [
       { id: 'powerCtrl', label: 'Power Control', icon: 'powerControl' },
@@ -167,6 +203,11 @@ function App() {
                         isDark={isDark} 
                         onConnect={() => setIsDisconnected(false)} 
                     />
+                ) : isLocked ? (
+                    <LockScreen 
+                        isDark={isDark} 
+                        onUnlock={() => setIsLocked(false)} 
+                    />
                 ) : (
                     <>
                         <TopBar 
@@ -174,11 +215,20 @@ function App() {
                             activeTab={activeTab} 
                             onSettingsClick={() => setActiveTab('settings')} 
                             onHomeClick={() => setActiveTab('home')}
+                            onLockClick={handleLockClick}
                         />
 
                         {/* Main Content Area */}
                         <div className="flex-1 overflow-auto relative">
                             {renderContent()}
+                            {isLockCountdown && (
+                                <LockCountdownModal 
+                                    isDark={isDark}
+                                    countdown={lockCountdownTime}
+                                    onCancel={cancelLockCountdown}
+                                    onExecute={executeLockNow}
+                                />
+                            )}
                         </div>
 
                         <BottomNav 
