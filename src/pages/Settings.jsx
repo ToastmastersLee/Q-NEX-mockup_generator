@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { ChevronRight } from 'lucide-react';
-import { AndroidEthernet } from './AndroidEthernet';
 
 const EditableText = ({ text, className }) => {
     const [isEditable, setIsEditable] = useState(false);
@@ -41,7 +40,7 @@ const EditableText = ({ text, className }) => {
     );
 };
 
-export const Settings = ({ isDark, onDisconnectionClick }) => {
+export const Settings = ({ isDark, onDisconnectionClick, onPanelIpClick, panelIpAddress }) => {
     const clickCountRef = useRef(0);
     const clickTimerRef = useRef(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -53,9 +52,6 @@ export const Settings = ({ isDark, onDisconnectionClick }) => {
     const [isDeviceNameModalOpen, setIsDeviceNameModalOpen] = useState(false);
     const [deviceName, setDeviceName] = useState('NMP311-Product');
     const [tempDeviceName, setTempDeviceName] = useState('');
-
-    const [currentSubView, setCurrentSubView] = useState('list'); // 'list' | 'ethernet'
-    const [panelIpAddress, setPanelIpAddress] = useState('192.168.101.108');
 
     const settingsItems = [
         { label: 'Device Name', value: deviceName, type: 'text' },
@@ -102,7 +98,9 @@ export const Settings = ({ isDark, onDisconnectionClick }) => {
                 onDisconnectionClick();
             }
         } else if (label === 'Panel IP') {
-            setCurrentSubView('ethernet');
+            if (onPanelIpClick) {
+                onPanelIpClick();
+            }
         }
     };
 
@@ -110,17 +108,6 @@ export const Settings = ({ isDark, onDisconnectionClick }) => {
         setDeviceModel(tempDeviceModel);
         setIsModalOpen(false);
     };
-
-    if (currentSubView === 'ethernet') {
-        return (
-            <AndroidEthernet 
-                isDark={isDark} 
-                initialIp={panelIpAddress}
-                onSave={(newIp) => setPanelIpAddress(newIp)}
-                onBack={() => setCurrentSubView('list')}
-            />
-        );
-    }
 
     return (
         <div className="p-8 h-full flex flex-col overflow-y-auto relative">

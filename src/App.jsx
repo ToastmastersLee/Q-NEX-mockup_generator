@@ -12,6 +12,7 @@ import { RemoteControl } from './pages/RemoteControl';
 import { Disconnection } from './pages/Disconnection';
 import { LockCountdownModal } from './components/LockCountdownModal';
 import { LockScreen } from './pages/LockScreen';
+import { AndroidEthernet } from './pages/AndroidEthernet';
 import { Sun, Moon } from 'lucide-react';
 
 function App() {
@@ -27,6 +28,9 @@ function App() {
   const [isLockCountdown, setIsLockCountdown] = useState(false);
   const [lockCountdownTime, setLockCountdownTime] = useState(10);
   
+  const [isAndroidEthernetOpen, setIsAndroidEthernetOpen] = useState(false);
+  const [panelIpAddress, setPanelIpAddress] = useState('192.168.101.108');
+
   const [navConfig, setNavConfig] = useState({
       powerCtrl: true,
       video: true,
@@ -138,7 +142,15 @@ function App() {
       }
       
       if (activeTab === 'settings') {
-          return <Settings isDark={isDark} onDisconnectionClick={() => setIsDisconnected(true)} />;
+          return (
+              <Settings 
+                  isDark={isDark} 
+                  onDisconnectionClick={() => setIsDisconnected(true)} 
+                  onPanelIpClick={() => setIsAndroidEthernetOpen(true)}
+                  panelIpAddress={panelIpAddress}
+                  setPanelIpAddress={setPanelIpAddress}
+              />
+          );
       }
 
       return (
@@ -207,6 +219,13 @@ function App() {
                     <LockScreen 
                         isDark={isDark} 
                         onUnlock={() => setIsLocked(false)} 
+                    />
+                ) : isAndroidEthernetOpen ? (
+                    <AndroidEthernet 
+                        isDark={isDark} 
+                        initialIp={panelIpAddress}
+                        onSave={(newIp) => setPanelIpAddress(newIp)}
+                        onBack={() => setIsAndroidEthernetOpen(false)}
                     />
                 ) : (
                     <>
