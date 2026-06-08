@@ -47,8 +47,14 @@ export const Settings = ({ isDark, onDisconnectionClick }) => {
     const [deviceModel, setDeviceModel] = useState('Q-NEX-NMP311-RK');
     const [tempDeviceModel, setTempDeviceModel] = useState('');
 
+    const deviceNameClickCountRef = useRef(0);
+    const deviceNameClickTimerRef = useRef(null);
+    const [isDeviceNameModalOpen, setIsDeviceNameModalOpen] = useState(false);
+    const [deviceName, setDeviceName] = useState('NMP311-Product');
+    const [tempDeviceName, setTempDeviceName] = useState('');
+
     const settingsItems = [
-        { label: 'Device Name', value: 'NMP311-Product', type: 'text' },
+        { label: 'Device Name', value: deviceName, type: 'text' },
         { label: 'Device ID', value: '6D171B770608', type: 'qrcode' },
         { label: 'Panel IP', value: '192.168.101.108 (B6:55:A6:96:79:76)', type: 'text_chevron' },
         { label: 'Divisible Room Mode', type: 'chevron' },
@@ -76,6 +82,17 @@ export const Settings = ({ isDark, onDisconnectionClick }) => {
             clickTimerRef.current = setTimeout(() => {
                 clickCountRef.current = 0;
             }, 600); // Reset count if not clicked fast enough
+        } else if (label === 'Device Name') {
+            deviceNameClickCountRef.current += 1;
+            if (deviceNameClickCountRef.current === 4) {
+                setTempDeviceName(deviceName);
+                setIsDeviceNameModalOpen(true);
+                deviceNameClickCountRef.current = 0;
+            }
+            if (deviceNameClickTimerRef.current) clearTimeout(deviceNameClickTimerRef.current);
+            deviceNameClickTimerRef.current = setTimeout(() => {
+                deviceNameClickCountRef.current = 0;
+            }, 800); // Reset count if not clicked fast enough
         } else if (label === 'Disconnection') {
             if (onDisconnectionClick) {
                 onDisconnectionClick();
@@ -94,7 +111,7 @@ export const Settings = ({ isDark, onDisconnectionClick }) => {
                 {settingsItems.map((item, idx) => (
                     <div 
                         key={idx} 
-                        className={`flex justify-between items-center py-5 ${(item.label === 'Software Version' || item.label === 'Disconnection') ? 'cursor-pointer active:opacity-70' : ''} ${isDark ? 'border-b border-gray-600/50' : 'border-b border-gray-300'}`}
+                        className={`flex justify-between items-center py-5 ${(item.label === 'Software Version' || item.label === 'Disconnection' || item.label === 'Device Name') ? 'cursor-pointer active:opacity-70' : ''} ${isDark ? 'border-b border-gray-600/50' : 'border-b border-gray-300'}`}
                         onClick={() => handleItemClick(item.label)}
                     >
                         <span className={`text-lg font-bold tracking-wide ${isDark ? 'text-gray-100' : 'text-gray-800'}`}>{item.label}</span>
@@ -146,6 +163,41 @@ export const Settings = ({ isDark, onDisconnectionClick }) => {
                             </button>
                             <button 
                                 onClick={handleConfirm}
+                                className={`flex-1 py-3 rounded-full font-bold text-lg transition-all shadow-[0_4px_15px_rgba(0,255,204,0.4)] hover:opacity-90 ${isDark ? 'bg-[#00eecd] text-white' : 'bg-[#00eecd] text-white'}`}
+                            >
+                                Confirm
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* Device Name Modal Overlay */}
+            {isDeviceNameModalOpen && (
+                <div className="absolute inset-0 z-50 flex items-center justify-center bg-black/20 rounded-3xl">
+                    <div className={`w-[28rem] p-8 rounded-[2.2rem] flex flex-col items-center gap-6 ${isDark ? 'bg-gradient-to-br from-[#5f7eb0] to-[#456499] shadow-[0_15px_50px_rgba(0,0,0,0.5)] border border-white/10' : 'bg-white shadow-2xl border border-gray-200'}`}>
+                        <div className={`w-full px-4 py-3 rounded-md ${isDark ? 'bg-[#7392c6] border border-white/20 shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)]' : 'bg-gray-50 border border-gray-300'}`}>
+                            <input 
+                                type="text"
+                                value={tempDeviceName}
+                                onChange={(e) => setTempDeviceName(e.target.value)}
+                                className={`w-full bg-transparent outline-none font-bold text-base tracking-wide ${isDark ? 'text-white placeholder-white/70' : 'text-gray-800'}`}
+                                autoFocus
+                            />
+                        </div>
+
+                        <div className="flex w-full gap-6 mt-2">
+                            <button 
+                                onClick={() => setIsDeviceNameModalOpen(false)}
+                                className={`flex-1 py-3 rounded-full font-bold text-lg transition-all ${isDark ? 'bg-[#5b7db1] text-white hover:bg-[#6c91cd] shadow-[0_4px_10px_rgba(0,0,0,0.2)]' : 'bg-gray-200 text-gray-700 hover:bg-gray-300 shadow-md'}`}
+                            >
+                                Cancel
+                            </button>
+                            <button 
+                                onClick={() => {
+                                    setDeviceName(tempDeviceName);
+                                    setIsDeviceNameModalOpen(false);
+                                }}
                                 className={`flex-1 py-3 rounded-full font-bold text-lg transition-all shadow-[0_4px_15px_rgba(0,255,204,0.4)] hover:opacity-90 ${isDark ? 'bg-[#00eecd] text-white' : 'bg-[#00eecd] text-white'}`}
                             >
                                 Confirm
