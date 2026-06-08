@@ -1,9 +1,49 @@
-import React, { useState, useEffect } from 'react';
-import { Settings, CloudLightning, Lock, Loader2, CheckCircle } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Settings, Lock, Loader2, CheckCircle } from 'lucide-react';
+
+const EditableLabel = ({ value, onChange, className }) => {
+    const [isEditing, setIsEditing] = useState(false);
+    const spanRef = useRef(null);
+
+    useEffect(() => {
+        if (isEditing && spanRef.current) {
+            spanRef.current.focus();
+            const selection = window.getSelection();
+            const range = document.createRange();
+            range.selectNodeContents(spanRef.current);
+            selection.removeAllRanges();
+            selection.addRange(range);
+        }
+    }, [isEditing]);
+
+    return (
+        <span
+            ref={spanRef}
+            contentEditable={isEditing}
+            suppressContentEditableWarning
+            onDoubleClick={() => setIsEditing(true)}
+            onBlur={(e) => {
+                setIsEditing(false);
+                if (onChange) onChange(e.target.textContent);
+            }}
+            onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    spanRef.current.blur();
+                }
+            }}
+            className={`outline-none cursor-text select-text ${isEditing ? 'bg-blue-500/30 px-1 rounded' : ''} ${className}`}
+            title="Double-click to edit label"
+        >
+            {value}
+        </span>
+    );
+};
 
 export const Disconnection = ({ isDark, onConnect }) => {
     const [currentTime, setCurrentTime] = useState(new Date());
     const [ipAddress, setIpAddress] = useState('192.168.1.150');
+    const [labelText, setLabelText] = useState('NMP311 IP');
     const [isConnecting, setIsConnecting] = useState(false);
     const [isConnected, setIsConnected] = useState(false);
 
@@ -135,7 +175,10 @@ export const Disconnection = ({ isDark, onConnect }) => {
                     <div className="flex items-center gap-4 w-full">
                         {/* Label Container */}
                         <div className={`px-4 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap ${labelBlockClass}`}>
-                            NMP311 IP
+                            <EditableLabel 
+                                value={labelText} 
+                                onChange={setLabelText} 
+                            />
                         </div>
 
                         {/* Editable IP Address Input */}
@@ -166,7 +209,11 @@ export const Disconnection = ({ isDark, onConnect }) => {
                             title="Cloud Settings"
                             disabled={isConnecting || isConnected}
                         >
-                            <CloudLightning className="w-5 h-5" />
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5.5 h-5.5">
+                                <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242" />
+                                <path d="M12 12v9" />
+                                <path d="m16 16-4-4-4 4" />
+                            </svg>
                         </button>
                     </div>
 
