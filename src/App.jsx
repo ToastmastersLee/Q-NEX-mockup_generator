@@ -9,6 +9,7 @@ import { Volume } from './pages/Volume';
 import { AirConditioner } from './pages/AirConditioner';
 import { ProjectionScreen } from './pages/ProjectionScreen';
 import { RemoteControl } from './pages/RemoteControl';
+import { Disconnection } from './pages/Disconnection';
 import { Sun, Moon } from 'lucide-react';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
   const [activeOutC, setActiveOutC] = useState('hdmi1');
   const [isDuplicateMode, setIsDuplicateMode] = useState(false);
   const [activeDuplicate, setActiveDuplicate] = useState('hdmi1');
+  const [isDisconnected, setIsDisconnected] = useState(false);
   
   const [navConfig, setNavConfig] = useState({
       powerCtrl: true,
@@ -100,7 +102,7 @@ function App() {
       }
       
       if (activeTab === 'settings') {
-          return <Settings isDark={isDark} />;
+          return <Settings isDark={isDark} onDisconnectionClick={() => setIsDisconnected(true)} />;
       }
 
       return (
@@ -117,21 +119,39 @@ function App() {
       <div className="w-full max-w-5xl relative">
         <div className="flex flex-col items-end gap-4 w-full">
             {/* External Controls */}
-            <div className="flex items-center justify-between w-full mb-2">
-                {/* Dynamic Menu Visibility Checkboxes */}
-                <div className={`flex flex-wrap gap-4 p-4 rounded-xl shadow-md ${isDark ? 'bg-gray-800/80 border border-gray-700' : 'bg-white border-2 border-black'}`}>
-                    <span className={`text-sm font-bold mr-2 ${isDark ? 'text-gray-300' : 'text-black'}`}>Menu Config:</span>
-                    {allNavItems.map(item => (
-                        <label key={item.id} className="flex items-center gap-2 cursor-pointer group">
+            <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between w-full gap-4 mb-2">
+                <div className="flex flex-wrap gap-4 items-center">
+                    {/* Connection Status Toggle */}
+                    <div className={`flex items-center gap-3 p-4 rounded-xl shadow-md ${isDark ? 'bg-gray-800/80 border border-gray-700' : 'bg-white border-2 border-black'}`}>
+                        <span className={`text-sm font-bold ${isDark ? 'text-gray-300' : 'text-black'}`}>Status:</span>
+                        <label className="flex items-center gap-2 cursor-pointer group">
                             <input 
                                 type="checkbox" 
-                                className="w-4 h-4 cursor-pointer"
-                                checked={navConfig[item.id]} 
-                                onChange={() => setNavConfig({...navConfig, [item.id]: !navConfig[item.id]})} 
+                                className="w-4 h-4 cursor-pointer accent-red-500"
+                                checked={isDisconnected} 
+                                onChange={() => setIsDisconnected(!isDisconnected)} 
                             />
-                            <span className={`text-xs ${isDark ? 'text-gray-400 group-hover:text-gray-200' : 'text-gray-700 font-semibold group-hover:text-black'}`}>{item.label}</span>
+                            <span className={`text-xs font-bold transition-colors ${isDisconnected ? 'text-red-500' : (isDark ? 'text-emerald-400 group-hover:text-emerald-300' : 'text-emerald-600 group-hover:text-emerald-700')}`}>
+                                {isDisconnected ? 'Disconnected' : 'Connected'}
+                            </span>
                         </label>
-                    ))}
+                    </div>
+
+                    {/* Dynamic Menu Visibility Checkboxes */}
+                    <div className={`flex flex-wrap gap-4 p-4 rounded-xl shadow-md ${isDark ? 'bg-gray-800/80 border border-gray-700' : 'bg-white border-2 border-black'}`}>
+                        <span className={`text-sm font-bold mr-2 ${isDark ? 'text-gray-300' : 'text-black'}`}>Menu Config:</span>
+                        {allNavItems.map(item => (
+                            <label key={item.id} className="flex items-center gap-2 cursor-pointer group">
+                                <input 
+                                    type="checkbox" 
+                                    className="w-4 h-4 cursor-pointer"
+                                    checked={navConfig[item.id]} 
+                                    onChange={() => setNavConfig({...navConfig, [item.id]: !navConfig[item.id]})} 
+                                />
+                                <span className={`text-xs ${isDark ? 'text-gray-400 group-hover:text-gray-200' : 'text-gray-700 font-semibold group-hover:text-black'}`}>{item.label}</span>
+                            </label>
+                        ))}
+                    </div>
                 </div>
 
                 {/* External Theme Toggle */}
@@ -142,25 +162,34 @@ function App() {
             </div>
 
             <div className={`w-full shadow-2xl rounded-2xl overflow-hidden aspect-video-container flex flex-col font-sans ${containerClass}`}>
-                <TopBar 
-                    isDark={isDark} 
-                    activeTab={activeTab} 
-                    onSettingsClick={() => setActiveTab('settings')} 
-                    onHomeClick={() => setActiveTab('home')}
-                />
+                {isDisconnected ? (
+                    <Disconnection 
+                        isDark={isDark} 
+                        onConnect={() => setIsDisconnected(false)} 
+                    />
+                ) : (
+                    <>
+                        <TopBar 
+                            isDark={isDark} 
+                            activeTab={activeTab} 
+                            onSettingsClick={() => setActiveTab('settings')} 
+                            onHomeClick={() => setActiveTab('home')}
+                        />
 
-                {/* Main Content Area */}
-                <div className="flex-1 overflow-auto relative">
-                    {renderContent()}
-                </div>
+                        {/* Main Content Area */}
+                        <div className="flex-1 overflow-auto relative">
+                            {renderContent()}
+                        </div>
 
-                <BottomNav 
-                    isDark={isDark} 
-                    activeTab={activeTab} 
-                    setActiveTab={setActiveTab} 
-                    navConfig={navConfig} 
-                    allNavItems={allNavItems} 
-                />
+                        <BottomNav 
+                            isDark={isDark} 
+                            activeTab={activeTab} 
+                            setActiveTab={setActiveTab} 
+                            navConfig={navConfig} 
+                            allNavItems={allNavItems} 
+                        />
+                    </>
+                )}
             </div>
         </div>
       </div>

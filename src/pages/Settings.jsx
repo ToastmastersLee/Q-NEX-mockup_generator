@@ -40,7 +40,7 @@ const EditableText = ({ text, className }) => {
     );
 };
 
-export const Settings = ({ isDark }) => {
+export const Settings = ({ isDark, onDisconnectionClick }) => {
     const clickCountRef = useRef(0);
     const clickTimerRef = useRef(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -76,6 +76,10 @@ export const Settings = ({ isDark }) => {
             clickTimerRef.current = setTimeout(() => {
                 clickCountRef.current = 0;
             }, 600); // Reset count if not clicked fast enough
+        } else if (label === 'Disconnection') {
+            if (onDisconnectionClick) {
+                onDisconnectionClick();
+            }
         }
     };
 
@@ -90,7 +94,7 @@ export const Settings = ({ isDark }) => {
                 {settingsItems.map((item, idx) => (
                     <div 
                         key={idx} 
-                        className={`flex justify-between items-center py-5 ${item.label === 'Software Version' ? 'cursor-pointer active:opacity-70' : ''} ${isDark ? 'border-b border-gray-600/50' : 'border-b border-gray-300'}`}
+                        className={`flex justify-between items-center py-5 ${(item.label === 'Software Version' || item.label === 'Disconnection') ? 'cursor-pointer active:opacity-70' : ''} ${isDark ? 'border-b border-gray-600/50' : 'border-b border-gray-300'}`}
                         onClick={() => handleItemClick(item.label)}
                     >
                         <span className={`text-lg font-bold tracking-wide ${isDark ? 'text-gray-100' : 'text-gray-800'}`}>{item.label}</span>
