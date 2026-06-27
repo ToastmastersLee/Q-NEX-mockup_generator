@@ -622,8 +622,8 @@
 }
 
 .ndp-remote-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 16px;
   width: 100%;
 }

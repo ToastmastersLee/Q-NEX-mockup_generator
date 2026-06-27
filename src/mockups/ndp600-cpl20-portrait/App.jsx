@@ -820,7 +820,7 @@ function RemotePage() {
   ];
 
   return (
-    <div className="ndp-page">
+    <div className="ndp-page ndp-scroll-page">
       <GlassPanel>
         <div className="ndp-remote-grid">
           {buttons.map((label, idx) => (
