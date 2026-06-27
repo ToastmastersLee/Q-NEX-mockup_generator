@@ -5,7 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:nmp211": "vite",
+    "dev:ndp600": "vite --mode ndp600",
     "build": "vite build",
+    "build:ndp600": "vite build --mode ndp600",
     "lint": "eslint .",
     "preview": "vite preview"
   },
