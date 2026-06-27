@@ -1181,6 +1181,26 @@
   color: #000000;
 }
 
+.ndp-back-title {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  background: transparent;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 800;
+  cursor: pointer;
+  padding: 0;
+}
+
+.ndp-stage.is-light .ndp-back-title {
+  color: #000000;
+}
+
 .ndp-settings-list {
   display: flex;
   flex-direction: column;

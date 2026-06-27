@@ -21,6 +21,7 @@ import {
   Minus,
   Mic,
   Music,
+  ChevronLeft,
   ChevronRight,
   ChevronDown,
   Flame,
@@ -838,7 +839,7 @@ function RemotePage() {
   );
 }
 
-function SettingsPage({ onDisconnectionClick }) {
+function SettingsPage({ onDisconnectionClick, onResolutionClick }) {
   return (
     <div className="ndp-page ndp-scroll-page">
       <div className="ndp-settings-list">
@@ -879,7 +880,7 @@ function SettingsPage({ onDisconnectionClick }) {
         </div>
 
         {/* HDMI OUT Resolution */}
-        <div className="ndp-settings-row is-clickable">
+        <div className="ndp-settings-row is-clickable" onClick={onResolutionClick}>
           <span className="ndp-settings-label">HDMI OUT Resolution</span>
           <span className="ndp-settings-value">
             <ChevronRight size={18} />
@@ -951,19 +952,60 @@ function SettingsPage({ onDisconnectionClick }) {
   );
 }
 
-function Content({ activeTab, navConfig, onDisconnectionClick }) {
+function ResolutionSubpage() {
+  return (
+    <div className="ndp-page ndp-scroll-page">
+      <div className="ndp-settings-list">
+        <div className="ndp-settings-row is-clickable">
+          <span className="ndp-settings-label">HDMI out A</span>
+          <span className="ndp-settings-value">
+            1920 x 1080
+            <ChevronRight size={18} />
+          </span>
+        </div>
+        <div className="ndp-settings-row is-clickable">
+          <span className="ndp-settings-label">HDMI out B</span>
+          <span className="ndp-settings-value">
+            1920 x 1080
+            <ChevronRight size={18} />
+          </span>
+        </div>
+        <div className="ndp-settings-row is-clickable">
+          <span className="ndp-settings-label">HDMI out C</span>
+          <span className="ndp-settings-value">
+            3840 x 2160
+            <ChevronRight size={18} />
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Content({ activeTab, navConfig, onDisconnectionClick, settingsSubpage, setSettingsSubpage }) {
   if (activeTab === 'home') return <HomePage navConfig={navConfig} />;
   if (activeTab === 'video') return <VideoPage />;
   if (activeTab === 'serial') return <SerialPage />;
   if (activeTab === 'volume') return <VolumePage />;
   if (activeTab === 'air') return <div className="ndp-page"><AirPage /></div>;
   if (activeTab === 'remote') return <RemotePage />;
-  if (activeTab === 'settings') return <SettingsPage onDisconnectionClick={onDisconnectionClick} />;
+  if (activeTab === 'settings') {
+    if (settingsSubpage === 'resolution') {
+      return <ResolutionSubpage />;
+    }
+    return (
+      <SettingsPage 
+        onDisconnectionClick={onDisconnectionClick} 
+        onResolutionClick={() => setSettingsSubpage('resolution')}
+      />
+    );
+  }
   return <PowerPage />;
 }
 
 export default function Ndp600PortraitApp() {
   const [activeTab, setActiveTab] = useState(getInitialTab);
+  const [settingsSubpage, setSettingsSubpage] = useState(null);
   const [locked, setLocked] = useState(readQuery('screen') === 'lock');
   const [muted, setMuted] = useState(false);
   const [theme, setTheme] = useState(readQuery('theme') === 'light' ? 'light' : 'dark');
@@ -1019,15 +1061,38 @@ export default function Ndp600PortraitApp() {
                 <LockScreen setLocked={setLocked} />
               ) : (
                 <>
-                  <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} navConfig={navConfig} />
+                  <Sidebar 
+                    activeTab={activeTab} 
+                    setActiveTab={(tabId) => {
+                      setActiveTab(tabId);
+                      setSettingsSubpage(null);
+                    }} 
+                    navConfig={navConfig} 
+                  />
                   <div className="ndp-main">
-                    <TopTools onSettingsClick={() => setActiveTab('settings')} />
-                    {activeTab === 'settings' && <h1 className="ndp-screen-title">Setting</h1>}
+                    <TopTools 
+                      onSettingsClick={() => {
+                        setActiveTab('settings');
+                        setSettingsSubpage(null);
+                      }} 
+                    />
+                    {activeTab === 'settings' && (
+                      settingsSubpage === 'resolution' ? (
+                        <button className="ndp-back-title" type="button" onClick={() => setSettingsSubpage(null)}>
+                          <ChevronLeft size={22} />
+                          <span>HDMI OUT Resolution</span>
+                        </button>
+                      ) : (
+                        <h1 className="ndp-screen-title">Setting</h1>
+                      )
+                    )}
                     <div className="ndp-content">
                       <Content 
                         activeTab={activeTab} 
                         navConfig={navConfig} 
                         onDisconnectionClick={() => setIsDisconnected(true)} 
+                        settingsSubpage={settingsSubpage}
+                        setSettingsSubpage={setSettingsSubpage}
                       />
                     </div>
                     <BottomDock locked={locked} muted={muted} setLocked={setLocked} setMuted={setMuted} />
