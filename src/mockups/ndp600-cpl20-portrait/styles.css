@@ -1276,6 +1276,171 @@
   border-color: #000000;
   box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
 }
+
+.ndp-air-device-select {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid rgba(226, 241, 255, 0.1);
+  border-radius: 8px;
+  color: #ffffff;
+  background: rgba(33, 52, 72, 0.72);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  z-index: 10;
+}
+.ndp-stage.is-light .ndp-air-device-select {
+  color: #000000;
+  background: #ffffff;
+  border: 2px solid #d1d5db;
+}
+
+.ndp-air-power-toggle {
+  display: flex;
+  align-self: flex-end;
+  background: rgba(33, 52, 72, 0.6);
+  border-radius: 999px;
+  padding: 3px;
+  width: 100px;
+  height: 32px;
+  margin-bottom: 24px;
+}
+.ndp-air-power-toggle button {
+  flex: 1;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: #8b9cb0;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.ndp-air-power-toggle button.is-active {
+  background: #3b82f6;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(59, 130, 246, 0.4);
+}
+.ndp-stage.is-light .ndp-air-power-toggle {
+  background: #e5e7eb;
+}
+.ndp-stage.is-light .ndp-air-power-toggle button {
+  color: #6b7280;
+}
+.ndp-stage.is-light .ndp-air-power-toggle button.is-active {
+  background: #3b82f6;
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.ndp-air-temp-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  margin: 16px 0;
+}
+
+.ndp-air-dial-wrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.ndp-air-dial-inner {
+  position: absolute;
+  inset: 25px;
+  border-radius: 999px;
+  background: rgba(33, 52, 72, 0.72);
+  border: 1px solid rgba(226, 241, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3), 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.ndp-stage.is-light .ndp-air-dial-inner {
+  background: #f3f4f6;
+  border: 2px solid #d1d5db;
+  box-shadow: none;
+}
+
+.ndp-air-dial-temp {
+  font-size: 28px;
+  font-weight: 300;
+  color: #ffffff;
+  margin-top: 4px;
+}
+
+.ndp-stage.is-light .ndp-air-dial-temp {
+  color: #000000;
+  font-weight: 400;
+}
+
+.ndp-air-dial-icon {
+  color: #a0aab8;
+}
+
+.ndp-air-dial-icon.is-active {
+  color: #ffaa44;
+}
+
+.ndp-air-modes {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: rgba(33, 52, 72, 0.6);
+  border-radius: 999px;
+  height: 52px;
+  width: 100%;
+  padding: 0 16px;
+  margin-top: 24px;
+}
+.ndp-air-modes button {
+  border: 0;
+  background: transparent;
+  color: #a0aab8;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ndp-air-modes button.is-active {
+  color: #3b82f6;
+}
+.ndp-stage.is-light .ndp-air-modes {
+  background: #e5e7eb;
+}
+.ndp-stage.is-light .ndp-air-modes button {
+  color: #6b7280;
+}
+.ndp-stage.is-light .ndp-air-modes button.is-active {
+  color: #3b82f6;
+}
+
+.ndp-air-swing-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 24px;
+  padding: 0 16px;
+}
+.ndp-air-swing-row span {
+  font-size: 16px;
+  font-weight: 700;
+  color: #dbefff;
+}
+.ndp-stage.is-light .ndp-air-swing-row span {
+  color: #000000;
+}
 @media (max-width: 1100px) {
   .ndp-layout-container {
     flex-direction: column;
