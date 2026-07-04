@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, Fragment } from 'react';
 import { LockCountdownModal } from '../../components/LockCountdownModal';
+import { Modal } from '../../components/Modal';
 import { AndroidEthernet } from '../../pages/AndroidEthernet';
 import {
   Home,
@@ -946,7 +947,7 @@ function RemotePage() {
   );
 }
 
-function SettingsPage({ onDisconnectionClick, onResolutionClick, onLanguageClick, onPanelIpClick, panelIpAddress, deviceName, setDeviceName }) {
+function SettingsPage({ onDisconnectionClick, onResolutionClick, onLanguageClick, onPanelIpClick, panelIpAddress, deviceName, setDeviceName, isDark }) {
   const [tempDeviceName, setTempDeviceName] = useState('');
   const [isDeviceNameModalOpen, setIsDeviceNameModalOpen] = useState(false);
   const clickCountRef = useRef(0);
@@ -1074,38 +1075,23 @@ function SettingsPage({ onDisconnectionClick, onResolutionClick, onLanguageClick
       </div>
     </div>
 
-      {isDeviceNameModalOpen && (
-        <div className="ndp-bottom-sheet-overlay" style={{ zIndex: 9999 }} onClick={() => setIsDeviceNameModalOpen(false)}>
-          <div className="ndp-bottom-sheet" onClick={e => e.stopPropagation()}>
-            <div style={{ padding: '24px 24px 16px', fontSize: '18px', fontWeight: 600 }}>
-              Device Name
-            </div>
-            <div style={{ padding: '0 24px 24px' }}>
-              <input
-                type="text"
-                value={tempDeviceName}
-                onChange={(e) => setTempDeviceName(e.target.value)}
-                autoFocus
-                style={{
-                  width: '100%',
-                  padding: '16px',
-                  borderRadius: '12px',
-                  border: '1px solid rgba(156, 163, 175, 0.4)',
-                  fontSize: '18px',
-                  backgroundColor: 'transparent',
-                  color: 'inherit',
-                  outline: 'none'
-                }}
-              />
-            </div>
-            <div className="ndp-sheet-actions">
-              <button className="ndp-sheet-btn ndp-btn-cancel" onClick={() => setIsDeviceNameModalOpen(false)}>Cancel</button>
-              <button className="ndp-sheet-btn ndp-btn-confirm" onClick={() => { setDeviceName(tempDeviceName); setIsDeviceNameModalOpen(false); }}>Confirm</button>
-            </div>
-          </div>
-        </div>
-      )}
-    </Fragment>
+    <Modal 
+      isOpen={isDeviceNameModalOpen} 
+      isDark={isDark} 
+      onClose={() => setIsDeviceNameModalOpen(false)} 
+      onConfirm={() => { setDeviceName(tempDeviceName); setIsDeviceNameModalOpen(false); }}
+    >
+      <div className={`px-5 py-4 w-full rounded-2xl text-xl ${isDark ? 'bg-[#1a2332]' : 'bg-slate-100'}`}>
+        <input 
+          type="text" 
+          value={tempDeviceName} 
+          onChange={(e) => setTempDeviceName(e.target.value)} 
+          className={`w-full bg-transparent outline-none ${isDark ? 'text-white' : 'text-black'}`} 
+          autoFocus 
+        />
+      </div>
+    </Modal>
+  </Fragment>
   );
 }
 
@@ -1171,7 +1157,7 @@ function LanguageSubpage() {
   );
 }
 
-function Content({ activeTab, navConfig, onDisconnectionClick, settingsSubpage, setSettingsSubpage, onPanelIpClick, panelIpAddress, deviceName, setDeviceName }) {
+function Content({ activeTab, navConfig, onDisconnectionClick, settingsSubpage, setSettingsSubpage, onPanelIpClick, panelIpAddress, deviceName, setDeviceName, isDark }) {
   if (activeTab === 'home') return <HomePage navConfig={navConfig} />;
   if (activeTab === 'video') return <VideoPage />;
   if (activeTab === 'serial') return <SerialPage />;
@@ -1194,6 +1180,7 @@ function Content({ activeTab, navConfig, onDisconnectionClick, settingsSubpage, 
         panelIpAddress={panelIpAddress}
         deviceName={deviceName}
         setDeviceName={setDeviceName}
+        isDark={isDark}
       />
     );
   }
@@ -1345,6 +1332,7 @@ export default function Ndp600PortraitApp() {
                         panelIpAddress={panelIpAddress}
                         deviceName={deviceName}
                         setDeviceName={setDeviceName}
+                        isDark={theme === 'dark'}
                       />
                     </div>
                     <BottomDock locked={locked} muted={muted} setLocked={handleStartLock} setMuted={setMuted} />
