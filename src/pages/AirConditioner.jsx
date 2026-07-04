@@ -154,8 +154,8 @@ export const AirConditioner = ({ isDark }) => {
     const inactiveColor = isDark ? 'text-gray-600' : 'text-gray-300';
 
     return (
-        <div className="flex items-center justify-center h-full w-full px-8">
-            <div className={`w-full max-w-[66rem] h-[26rem] flex flex-col rounded-[2.5rem] relative ${isDark ? 'bg-[#3b4356] shadow-[inset_0_1px_2px_rgba(255,255,255,0.1),0_20px_40px_rgba(0,0,0,0.4)] border border-white/5' : 'bg-gray-100 border border-gray-300 shadow-lg'}`}>
+        <div className="flex items-center justify-center h-full w-full px-8 py-4 overflow-hidden">
+            <div className={`w-full max-w-[66rem] h-full max-h-[26rem] flex flex-col rounded-[2.5rem] relative ${isDark ? 'bg-[#3b4356] shadow-[inset_0_1px_2px_rgba(255,255,255,0.1),0_20px_40px_rgba(0,0,0,0.4)] border border-white/5' : 'bg-gray-100 border border-gray-300 shadow-lg'}`}>
                 
                 {/* Top Left Segment Control for Power */}
                 <div className={`absolute top-8 left-8 w-[8rem] h-[2.75rem] rounded-full p-1 flex items-center ${isDark ? 'bg-[#212634] shadow-[inset_0_2px_6px_rgba(0,0,0,0.5),inset_0_-1px_2px_rgba(255,255,255,0.05)]' : 'bg-gray-300 shadow-inner'}`}>

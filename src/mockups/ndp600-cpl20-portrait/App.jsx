@@ -1,4 +1,5 @@
-import { useState, Fragment } from 'react';
+import { useState, useEffect, Fragment } from 'react';
+import { LockCountdownModal } from '../../components/LockCountdownModal';
 import {
   Home,
   RefreshCcw,
@@ -20,6 +21,7 @@ import {
   Plus,
   Minus,
   Mic,
+  MicOff,
   Music,
   ChevronLeft,
   ChevronRight,
@@ -28,6 +30,7 @@ import {
   Radio,
   CircleStop,
   Disc3,
+  Check,
 } from 'lucide-react';
 import {
   AirConditionerIcon,
@@ -271,16 +274,27 @@ function AirPage({ compact = false }) {
   const [mode, setMode] = useState('heat');
   const [fanSpeed, setFanSpeed] = useState('auto');
   const [swing, setSwing] = useState(true);
+  const [isDeviceModalOpen, setIsDeviceModalOpen] = useState(false);
+  const [selectedDevices, setSelectedDevices] = useState(['All', 'NDP600', 'CBX 2']);
+
+  const toggleDevice = (device) => {
+    setSelectedDevices(prev => 
+      prev.includes(device) ? prev.filter(d => d !== device) : [...prev, device]
+    );
+  };
 
   if (compact) {
     return (
-      <GlassPanel className="ndp-air-compact">
+      <Fragment>
+        <GlassPanel className="ndp-air-compact">
         <div className="ndp-air-head">
           <div className="ndp-section-title">
             <AirConditionerIcon />
             <h2>Air Conditioner</h2>
           </div>
-          <button className="ndp-device-select" type="button">NDP600,CI <ChevronRight size={18} /></button>
+          <button className="ndp-device-select" type="button" onClick={() => setIsDeviceModalOpen(true)}>
+            NDP600 <ChevronDown size={18} />
+          </button>
         </div>
         <div className="ndp-onoff">
           <SegButton active={!enabled} onClick={() => setEnabled(false)}>OFF</SegButton>
@@ -327,6 +341,27 @@ function AirPage({ compact = false }) {
           ))}
         </div>
       </GlassPanel>
+      {isDeviceModalOpen && (
+        <div className="ndp-bottom-sheet-overlay" onClick={() => setIsDeviceModalOpen(false)}>
+          <div className="ndp-bottom-sheet" onClick={e => e.stopPropagation()}>
+            <div className="ndp-sheet-list">
+              {['All', 'NDP600', 'CBX 2'].map(device => (
+                <div key={device} className="ndp-sheet-item" onClick={() => toggleDevice(device)}>
+                  <span style={{ visibility: selectedDevices.includes(device) ? 'visible' : 'hidden', color: '#00c8ff' }}>
+                    <Check size={20} strokeWidth={3} />
+                  </span>
+                  <span>{device}</span>
+                </div>
+              ))}
+            </div>
+            <div className="ndp-sheet-actions">
+              <button className="ndp-sheet-btn ndp-btn-cancel" onClick={() => setIsDeviceModalOpen(false)}>Cancel</button>
+              <button className="ndp-sheet-btn ndp-btn-confirm" onClick={() => setIsDeviceModalOpen(false)}>Confirm</button>
+            </div>
+          </div>
+        </div>
+      )}
+    </Fragment>
     );
   }
 
@@ -433,12 +468,13 @@ function AirPage({ compact = false }) {
   };
 
   return (
-    <div style={{ width: '100%', opacity: enabled ? 1 : 0.65, transition: 'opacity 0.2s' }}>
-      {/* Top Left Dropdown Select */}
-      <button className="ndp-air-device-select" type="button">
-        <span>NDP600,CBX</span>
-        <ChevronDown size={14} />
-      </button>
+    <Fragment>
+      <div style={{ width: '100%', opacity: enabled ? 1 : 0.65, transition: 'opacity 0.2s' }}>
+        {/* Top Left Dropdown Select */}
+        <button className="ndp-air-device-select" type="button" onClick={() => setIsDeviceModalOpen(true)}>
+          <span>NDP600,CBX</span>
+          <ChevronDown size={14} />
+        </button>
 
       <GlassPanel style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minHeight: 460 }}>
         {/* ON / OFF Segmented Switch */}
@@ -576,7 +612,28 @@ function AirPage({ compact = false }) {
           <Toggle checked={swing} onClick={() => enabled && setSwing(!swing)} />
         </div>
       </GlassPanel>
-    </div>
+      </div>
+      {isDeviceModalOpen && (
+        <div className="ndp-bottom-sheet-overlay" onClick={() => setIsDeviceModalOpen(false)}>
+          <div className="ndp-bottom-sheet" onClick={e => e.stopPropagation()}>
+            <div className="ndp-sheet-list">
+              {['All', 'NDP600', 'CBX 2'].map(device => (
+                <div key={device} className="ndp-sheet-item" onClick={() => toggleDevice(device)}>
+                  <span style={{ visibility: selectedDevices.includes(device) ? 'visible' : 'hidden', color: '#00c8ff' }}>
+                    <Check size={20} strokeWidth={3} />
+                  </span>
+                  <span>{device}</span>
+                </div>
+              ))}
+            </div>
+            <div className="ndp-sheet-actions">
+              <button className="ndp-sheet-btn ndp-btn-cancel" onClick={() => setIsDeviceModalOpen(false)}>Cancel</button>
+              <button className="ndp-sheet-btn ndp-btn-confirm" onClick={() => setIsDeviceModalOpen(false)}>Confirm</button>
+            </div>
+          </div>
+        </div>
+      )}
+    </Fragment>
   );
 }
 
@@ -588,9 +645,20 @@ function VideoPage() {
   return (
     <div className="ndp-page">
       <GlassPanel>
-        <div className="ndp-card-heading">
-          <span>Duplicate Mode <small>?</small></span>
-          <Toggle checked={duplicate} onClick={() => setDuplicate((value) => !value)} />
+        <div className="ndp-card-heading ndp-duplicate-header">
+          <label className="ndp-duplicate-label" onClick={() => setDuplicate(!duplicate)}>
+            <div className={`ndp-checkbox ${duplicate ? 'is-checked' : ''}`}>
+              {duplicate && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              )}
+            </div>
+            <span>Duplicate Mode</span>
+          </label>
+          <div className="ndp-help-icon">
+            <span>?</span>
+          </div>
         </div>
         {duplicate ? (
           <div className="ndp-input-grid">
@@ -626,6 +694,7 @@ function VideoPage() {
 }
 
 function SerialPage() {
+  const [activeDetail, setActiveDetail] = useState(null);
   const [rs232Power, setRs232Power] = useState(true);
   const [rs232Input, setRs232Input] = useState('windows');
   
@@ -639,6 +708,34 @@ function SerialPage() {
   
   const [cbx3Power, setCbx3Power] = useState(true);
   const [lectureCapture, setLectureCapture] = useState(true);
+
+  if (activeDetail === 'e-Curtain') {
+    return (
+      <div className="ndp-page ndp-scroll-page">
+        <GlassPanel style={{ flex: 1, padding: '24px 20px', display: 'flex', flexDirection: 'column' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', marginBottom: '30px' }}>
+            <div style={{ position: 'absolute', left: 0 }}>
+              <IconButton onClick={() => setActiveDetail(null)}><ChevronLeft /></IconButton>
+            </div>
+            <h2 style={{ fontSize: '20px', fontWeight: 'bold', margin: 0, color: 'inherit' }}>e-Curtain</h2>
+          </div>
+          {['Up', 'Down', 'Stop', 'Dimming1', 'Dimming2', 'All Window'].map(btn => {
+            const id = btn.toLowerCase().replace(' ', '');
+            return (
+              <button 
+                key={id}
+                className={`ndp-wide-command ${cbx1ActiveBtn === id ? 'is-active' : ''}`} 
+                type="button"
+                onPointerDown={() => handleCbx1Press(id)}
+              >
+                {btn}
+              </button>
+            );
+          })}
+        </GlassPanel>
+      </div>
+    );
+  }
 
   return (
     <div className="ndp-page ndp-scroll-page">
@@ -695,9 +792,9 @@ function SerialPage() {
         <div className="ndp-card-heading">
           <div className="ndp-section-title">
             <PowerControlIcon />
-            <h2>CBX 1</h2>
+            <h2>e-Curtain</h2>
           </div>
-          <IconButton label="Expand"><ChevronRight /></IconButton>
+          <IconButton label="Expand" onClick={() => setActiveDetail('e-Curtain')}><ChevronRight /></IconButton>
         </div>
         <button 
           className={`ndp-wide-command ${cbx1ActiveBtn === 'up' ? 'is-active' : ''}`} 
@@ -739,10 +836,13 @@ function SerialPage() {
   );
 }
 
-function VolumeControl({ icon: Icon, values, onChange }) {
+function VolumeControl({ icon: Icon, activeIcon: ActiveIcon, isMuted, onMuteToggle, values, onChange }) {
+  const CurrentIcon = isMuted ? ActiveIcon : Icon;
   return (
     <GlassPanel className="ndp-volume-panel">
-      <IconButton label="Audio source"><Icon size={34} /></IconButton>
+      <IconButton label="Toggle Mute" active={isMuted} onClick={onMuteToggle}>
+        <CurrentIcon size={34} />
+      </IconButton>
       {values.map((item, index) => (
         <Fragment key={item.label}>
           {index === 1 && <div className="ndp-fader-divider" />}
@@ -761,8 +861,8 @@ function VolumeControl({ icon: Icon, values, onChange }) {
 }
 
 function VolumePage() {
-  const [speaker, setSpeaker] = useState({ Audio: 5, Treble: 3, Bass: 3 });
-  const [mic, setMic] = useState({ Audio: 3, Treble: 3, Bass: 3 });
+  const [speaker, setSpeaker] = useState({ Audio: 5, Treble: 3, Bass: 3, isMuted: true });
+  const [mic, setMic] = useState({ Audio: 3, Treble: 3, Bass: 3, isMuted: true });
 
   const handleSpeakerChange = (label, change) => {
     setSpeaker(prev => ({
@@ -782,6 +882,9 @@ function VolumePage() {
     <div className="ndp-page">
       <VolumeControl 
         icon={Music} 
+        activeIcon={VolumeX}
+        isMuted={speaker.isMuted}
+        onMuteToggle={() => setSpeaker(prev => ({ ...prev, isMuted: !prev.isMuted }))}
         values={[
           { label: 'Audio', value: speaker.Audio },
           { label: 'Treble', value: speaker.Treble },
@@ -791,6 +894,9 @@ function VolumePage() {
       />
       <VolumeControl 
         icon={Mic} 
+        activeIcon={MicOff}
+        isMuted={mic.isMuted}
+        onMuteToggle={() => setMic(prev => ({ ...prev, isMuted: !prev.isMuted }))}
         values={[
           { label: 'Audio', value: mic.Audio },
           { label: 'Treble', value: mic.Treble },
@@ -839,7 +945,7 @@ function RemotePage() {
   );
 }
 
-function SettingsPage({ onDisconnectionClick, onResolutionClick }) {
+function SettingsPage({ onDisconnectionClick, onResolutionClick, onLanguageClick }) {
   return (
     <div className="ndp-page ndp-scroll-page">
       <div className="ndp-settings-list">
@@ -872,7 +978,7 @@ function SettingsPage({ onDisconnectionClick, onResolutionClick }) {
         </div>
 
         {/* Language */}
-        <div className="ndp-settings-row is-clickable">
+        <div className="ndp-settings-row is-clickable" onClick={onLanguageClick}>
           <span className="ndp-settings-label">Language</span>
           <span className="ndp-settings-value">
             <ChevronRight size={18} />
@@ -982,6 +1088,38 @@ function ResolutionSubpage() {
   );
 }
 
+const languages = [
+  'English',
+  '中文(简体)',
+  '中文(繁體)',
+  'Français',
+  'Español',
+  'Português',
+  'Deutsch',
+  'Italiano',
+  'Русский',
+  'Монгол хэл',
+  'العربية',
+  'ภาษาไทย',
+  'Tiếng Việt',
+];
+
+function LanguageSubpage() {
+  const [selectedLang, setSelectedLang] = useState('English');
+  return (
+    <div className="ndp-page ndp-scroll-page">
+      <div className="ndp-settings-list">
+        {languages.map((lang) => (
+          <div key={lang} className="ndp-settings-row is-clickable" onClick={() => setSelectedLang(lang)}>
+            <span className="ndp-settings-label" style={{ flex: 1 }}>{lang}</span>
+            {selectedLang === lang && <span style={{ color: '#00c8ff', display: 'flex' }}><Check size={20} strokeWidth={3} /></span>}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function Content({ activeTab, navConfig, onDisconnectionClick, settingsSubpage, setSettingsSubpage }) {
   if (activeTab === 'home') return <HomePage navConfig={navConfig} />;
   if (activeTab === 'video') return <VideoPage />;
@@ -993,10 +1131,14 @@ function Content({ activeTab, navConfig, onDisconnectionClick, settingsSubpage, 
     if (settingsSubpage === 'resolution') {
       return <ResolutionSubpage />;
     }
+    if (settingsSubpage === 'language') {
+      return <LanguageSubpage />;
+    }
     return (
       <SettingsPage 
         onDisconnectionClick={onDisconnectionClick} 
         onResolutionClick={() => setSettingsSubpage('resolution')}
+        onLanguageClick={() => setSettingsSubpage('language')}
       />
     );
   }
@@ -1011,6 +1153,27 @@ export default function Ndp600PortraitApp() {
   const [theme, setTheme] = useState(readQuery('theme') === 'light' ? 'light' : 'dark');
   const [isDisconnected, setIsDisconnected] = useState(readQuery('status') === 'disconnected');
   const [navConfig, setNavConfig] = useState(defaultNavConfig);
+
+  const [isLocking, setIsLocking] = useState(false);
+  const [lockCountdown, setLockCountdown] = useState(9);
+
+  useEffect(() => {
+    let timer;
+    if (isLocking && lockCountdown > 0) {
+      timer = setInterval(() => {
+        setLockCountdown(prev => prev - 1);
+      }, 1000);
+    } else if (isLocking && lockCountdown === 0) {
+      setLocked(true);
+      setIsLocking(false);
+    }
+    return () => clearInterval(timer);
+  }, [isLocking, lockCountdown]);
+
+  const handleStartLock = () => {
+    setLockCountdown(9);
+    setIsLocking(true);
+  };
 
   const handleNavConfigChange = (id) => {
     const next = { ...navConfig, [id]: !navConfig[id] };
@@ -1061,6 +1224,17 @@ export default function Ndp600PortraitApp() {
                 <LockScreen setLocked={setLocked} />
               ) : (
                 <>
+                  {isLocking && (
+                    <LockCountdownModal 
+                      isDark={theme === 'dark'}
+                      countdown={lockCountdown}
+                      onCancel={() => setIsLocking(false)}
+                      onExecute={() => {
+                        setLocked(true);
+                        setIsLocking(false);
+                      }}
+                    />
+                  )}
                   <Sidebar 
                     activeTab={activeTab} 
                     setActiveTab={(tabId) => {
@@ -1077,10 +1251,13 @@ export default function Ndp600PortraitApp() {
                       }} 
                     />
                     {activeTab === 'settings' && (
-                      settingsSubpage === 'resolution' ? (
+                      settingsSubpage ? (
                         <button className="ndp-back-title" type="button" onClick={() => setSettingsSubpage(null)}>
                           <ChevronLeft size={22} />
-                          <span>HDMI OUT Resolution</span>
+                          <span>
+                            {settingsSubpage === 'resolution' && 'HDMI OUT Resolution'}
+                            {settingsSubpage === 'language' && 'Language'}
+                          </span>
                         </button>
                       ) : (
                         <h1 className="ndp-screen-title">Setting</h1>
@@ -1095,7 +1272,7 @@ export default function Ndp600PortraitApp() {
                         setSettingsSubpage={setSettingsSubpage}
                       />
                     </div>
-                    <BottomDock locked={locked} muted={muted} setLocked={setLocked} setMuted={setMuted} />
+                    <BottomDock locked={locked} muted={muted} setLocked={handleStartLock} setMuted={setMuted} />
                   </div>
                 </>
               )}

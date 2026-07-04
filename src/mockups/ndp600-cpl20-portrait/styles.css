@@ -146,18 +146,11 @@
   display: flex;
   border-radius: 20px;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 0 46px rgba(11, 23, 40, 0.58);
-  background:
-    linear-gradient(180deg, rgba(106, 143, 183, 0.18), rgba(39, 64, 90, 0.36)),
-    linear-gradient(145deg, #516f92 0%, #3e5f86 52%, #344f73 100%);
+  background: #2a3040;
 }
 
 .ndp-screen::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(110deg, transparent 0 62%, rgba(255, 255, 255, 0.08) 70%, transparent 82%);
-  mix-blend-mode: screen;
+  display: none;
 }
 
 .ndp-disconnected-screen {
@@ -203,9 +196,8 @@
   flex-direction: column;
   align-items: center;
   padding: 28px 0 86px;
-  gap: 17px;
-  background: rgba(48, 73, 101, 0.72);
-  box-shadow: 12px 0 30px rgba(14, 31, 50, 0.22);
+  background: #202532;
+  box-shadow: none;
 }
 
 .ndp-nav-item {
@@ -237,8 +229,8 @@
 }
 
 .ndp-nav-item.is-active {
-  color: #00c8ff;
-  filter: drop-shadow(0 0 8px rgba(0, 198, 255, 0.72));
+  color: #1677ff;
+  filter: none;
 }
 
 .ndp-main {
@@ -274,14 +266,11 @@
 }
 
 .ndp-panel {
-  border: 1px solid rgba(208, 231, 255, 0.2);
+  border: none;
   border-radius: 24px;
   padding: 24px;
-  background: rgba(69, 99, 132, 0.46);
-  box-shadow:
-    0 16px 28px rgba(24, 43, 65, 0.28),
-    inset 1px 1px 2px rgba(255, 255, 255, 0.12),
-    inset -3px -5px 10px rgba(20, 38, 58, 0.22);
+  background: #363d50;
+  box-shadow: none;
 }
 
 .ndp-panel h2 {
@@ -304,10 +293,11 @@
   justify-content: space-between;
   gap: 18px;
   padding: 14px 20px;
-  border: 1px solid rgba(206, 230, 255, 0.15);
-  border-radius: 14px;
-  background: rgba(72, 103, 137, 0.56);
-  box-shadow: 0 9px 18px rgba(22, 39, 57, 0.26), inset 1px 1px 0 rgba(255, 255, 255, 0.08);
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: transparent;
+  box-shadow: none;
 }
 
 .ndp-soft-row > span,
@@ -344,8 +334,8 @@
 }
 
 .ndp-toggle.is-on {
-  background: linear-gradient(135deg, #01bfe8, #1677ff);
-  box-shadow: 0 0 16px rgba(0, 206, 255, 0.46), inset 0 2px 5px rgba(255, 255, 255, 0.18);
+  background: #1677ff;
+  box-shadow: none;
 }
 
 .ndp-toggle.is-on span {
@@ -465,6 +455,9 @@
   font-weight: 800;
   cursor: pointer;
   box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.08), 0 8px 14px rgba(20, 38, 58, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ndp-onoff .ndp-seg-button {
@@ -733,8 +726,8 @@
   justify-content: center;
   gap: 14px;
   padding-left: 82px;
-  background: rgba(43, 70, 101, 0.8);
-  box-shadow: 0 -14px 24px rgba(14, 29, 46, 0.2);
+  background: #202532;
+  box-shadow: none;
 }
 
 .ndp-dock-divider {
@@ -1537,4 +1530,169 @@
   .ndp-temp-row strong {
     font-size: 42px;
   }
+}
+
+/* Duplicate Mode Header overrides */
+.ndp-duplicate-header {
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.ndp-duplicate-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.ndp-duplicate-label span {
+  font-size: 15px;
+  letter-spacing: 0.025em;
+  font-weight: 500;
+  color: #e5e7eb;
+}
+
+.is-light .ndp-duplicate-label span {
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.ndp-checkbox {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  transition: background-color 0.2s, border-color 0.2s;
+  background: transparent;
+  border: 1px solid #9ca3af;
+}
+
+.ndp-light-theme .ndp-checkbox {
+  background: white;
+}
+
+.ndp-checkbox:hover {
+  border-color: #e5e7eb;
+}
+.ndp-light-theme .ndp-checkbox:hover {
+  border-color: #6b7280;
+}
+
+.ndp-checkbox.is-checked {
+  background: #007AFF !important;
+  border-color: transparent !important;
+}
+
+.ndp-checkbox.is-checked svg {
+  color: white;
+}
+
+.ndp-help-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #EAB308;
+  color: #EAB308;
+  cursor: help;
+  transition: opacity 0.2s;
+}
+
+.ndp-help-icon:hover {
+  opacity: 0.8;
+}
+
+.ndp-light-theme .ndp-help-icon {
+  border-color: black;
+  color: black;
+}
+
+.ndp-help-icon span {
+  font-size: 11px;
+  font-weight: bold;
+}
+
+/* Bottom Sheet Overlay */
+.ndp-bottom-sheet-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.ndp-bottom-sheet {
+  background: #1e2a3b;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.ndp-sheet-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.ndp-sheet-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.ndp-sheet-actions {
+  display: flex;
+  height: 64px;
+}
+
+.ndp-sheet-btn {
+  flex: 1;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ndp-btn-cancel {
+  background: transparent;
+  color: #fff;
+}
+
+.ndp-btn-confirm {
+  background: linear-gradient(to right, #00c8ff, #007AFF);
+  color: #fff;
+}
+
+/* Light Theme support for bottom sheet */
+.is-light .ndp-bottom-sheet {
+  background: #f3f4f6;
+}
+.is-light .ndp-sheet-item {
+  color: #1f2937;
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+.is-light .ndp-btn-cancel {
+  color: #1f2937;
 }
