@@ -190,5 +190,6 @@ export const SerialControl = ({ isDark }) => {
 
             </div>
         </div>
+        </div>
     );
 };
