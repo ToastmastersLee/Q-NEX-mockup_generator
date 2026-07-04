@@ -1072,6 +1072,7 @@ function SettingsPage({ onDisconnectionClick, onResolutionClick, onLanguageClick
           <span className="ndp-settings-value"></span>
         </div>
       </div>
+    </div>
 
       {isDeviceNameModalOpen && (
         <div className="ndp-bottom-sheet-overlay" style={{ zIndex: 9999 }} onClick={() => setIsDeviceNameModalOpen(false)}>
