@@ -15,6 +15,7 @@ import { LockScreen } from './pages/LockScreen';
 import { AndroidEthernet } from './pages/AndroidEthernet';
 import { Customize } from './pages/Customize';
 import { ScheduledPowerOff } from './pages/ScheduledPowerOff';
+import { SerialControl } from './pages/SerialControl';
 import { Sun, Moon } from 'lucide-react';
 
 function App() {
@@ -126,6 +127,10 @@ function App() {
       
       if (activeTab === 'remote') {
           return <RemoteControl isDark={isDark} />;
+      }
+
+      if (activeTab === 'serial') {
+          return <SerialControl isDark={isDark} />;
       }
 
       if (activeTab === 'video') {
