@@ -1,4 +1,4 @@
-import { useState, useEffect, Fragment } from 'react';
+import { useState, useEffect, useRef, Fragment } from 'react';
 import { LockCountdownModal } from '../../components/LockCountdownModal';
 import { AndroidEthernet } from '../../pages/AndroidEthernet';
 import {
@@ -946,15 +946,32 @@ function RemotePage() {
   );
 }
 
-function SettingsPage({ onDisconnectionClick, onResolutionClick, onLanguageClick, onPanelIpClick, panelIpAddress }) {
+function SettingsPage({ onDisconnectionClick, onResolutionClick, onLanguageClick, onPanelIpClick, panelIpAddress, deviceName, setDeviceName }) {
+  const [tempDeviceName, setTempDeviceName] = useState('');
+  const [isDeviceNameModalOpen, setIsDeviceNameModalOpen] = useState(false);
+  const clickCountRef = useRef(0);
+  const clickTimerRef = useRef(null);
+
+  const handleDeviceNameClick = () => {
+    clickCountRef.current += 1;
+    if (clickCountRef.current === 4) {
+      setTempDeviceName(deviceName);
+      setIsDeviceNameModalOpen(true);
+      clickCountRef.current = 0;
+    }
+    if (clickTimerRef.current) clearTimeout(clickTimerRef.current);
+    clickTimerRef.current = setTimeout(() => { clickCountRef.current = 0; }, 800);
+  };
+
   return (
-    <div className="ndp-page ndp-scroll-page">
-      <div className="ndp-settings-list">
-        {/* Device Name */}
-        <div className="ndp-settings-row">
-          <span className="ndp-settings-label">Device Name</span>
-          <span className="ndp-settings-value">3F NDP600</span>
-        </div>
+    <Fragment>
+      <div className="ndp-page ndp-scroll-page">
+        <div className="ndp-settings-list">
+          {/* Device Name */}
+          <div className="ndp-settings-row is-clickable" onClick={handleDeviceNameClick}>
+            <span className="ndp-settings-label">Device Name</span>
+            <span className="ndp-settings-value">{deviceName}</span>
+          </div>
 
         {/* Device ID with QR code */}
         <div className="ndp-settings-row has-qr">
@@ -1055,7 +1072,39 @@ function SettingsPage({ onDisconnectionClick, onResolutionClick, onLanguageClick
           <span className="ndp-settings-value"></span>
         </div>
       </div>
-    </div>
+
+      {isDeviceNameModalOpen && (
+        <div className="ndp-bottom-sheet-overlay" style={{ zIndex: 9999 }} onClick={() => setIsDeviceNameModalOpen(false)}>
+          <div className="ndp-bottom-sheet" onClick={e => e.stopPropagation()}>
+            <div style={{ padding: '24px 24px 16px', fontSize: '18px', fontWeight: 600 }}>
+              Device Name
+            </div>
+            <div style={{ padding: '0 24px 24px' }}>
+              <input
+                type="text"
+                value={tempDeviceName}
+                onChange={(e) => setTempDeviceName(e.target.value)}
+                autoFocus
+                style={{
+                  width: '100%',
+                  padding: '16px',
+                  borderRadius: '12px',
+                  border: '1px solid rgba(156, 163, 175, 0.4)',
+                  fontSize: '18px',
+                  backgroundColor: 'transparent',
+                  color: 'inherit',
+                  outline: 'none'
+                }}
+              />
+            </div>
+            <div className="ndp-sheet-actions">
+              <button className="ndp-sheet-btn ndp-btn-cancel" onClick={() => setIsDeviceNameModalOpen(false)}>Cancel</button>
+              <button className="ndp-sheet-btn ndp-btn-confirm" onClick={() => { setDeviceName(tempDeviceName); setIsDeviceNameModalOpen(false); }}>Confirm</button>
+            </div>
+          </div>
+        </div>
+      )}
+    </Fragment>
   );
 }
 
@@ -1121,7 +1170,7 @@ function LanguageSubpage() {
   );
 }
 
-function Content({ activeTab, navConfig, onDisconnectionClick, settingsSubpage, setSettingsSubpage, onPanelIpClick, panelIpAddress }) {
+function Content({ activeTab, navConfig, onDisconnectionClick, settingsSubpage, setSettingsSubpage, onPanelIpClick, panelIpAddress, deviceName, setDeviceName }) {
   if (activeTab === 'home') return <HomePage navConfig={navConfig} />;
   if (activeTab === 'video') return <VideoPage />;
   if (activeTab === 'serial') return <SerialPage />;
@@ -1142,6 +1191,8 @@ function Content({ activeTab, navConfig, onDisconnectionClick, settingsSubpage, 
         onLanguageClick={() => setSettingsSubpage('language')}
         onPanelIpClick={onPanelIpClick}
         panelIpAddress={panelIpAddress}
+        deviceName={deviceName}
+        setDeviceName={setDeviceName}
       />
     );
   }
@@ -1158,6 +1209,7 @@ export default function Ndp600PortraitApp() {
   const [navConfig, setNavConfig] = useState(defaultNavConfig);
   const [isAndroidEthernetOpen, setIsAndroidEthernetOpen] = useState(false);
   const [panelIpAddress, setPanelIpAddress] = useState('192.168.110.125');
+  const [deviceName, setDeviceName] = useState('3F NDP600');
 
   const [isLocking, setIsLocking] = useState(false);
   const [lockCountdown, setLockCountdown] = useState(9);
@@ -1290,6 +1342,8 @@ export default function Ndp600PortraitApp() {
                         setSettingsSubpage={setSettingsSubpage}
                         onPanelIpClick={() => setIsAndroidEthernetOpen(true)}
                         panelIpAddress={panelIpAddress}
+                        deviceName={deviceName}
+                        setDeviceName={setDeviceName}
                       />
                     </div>
                     <BottomDock locked={locked} muted={muted} setLocked={handleStartLock} setMuted={setMuted} />
