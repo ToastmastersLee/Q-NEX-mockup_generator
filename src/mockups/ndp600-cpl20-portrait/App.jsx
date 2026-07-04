@@ -1,5 +1,6 @@
 import { useState, useEffect, Fragment } from 'react';
 import { LockCountdownModal } from '../../components/LockCountdownModal';
+import { AndroidEthernet } from '../../pages/AndroidEthernet';
 import {
   Home,
   RefreshCcw,
@@ -945,7 +946,7 @@ function RemotePage() {
   );
 }
 
-function SettingsPage({ onDisconnectionClick, onResolutionClick, onLanguageClick }) {
+function SettingsPage({ onDisconnectionClick, onResolutionClick, onLanguageClick, onPanelIpClick, panelIpAddress }) {
   return (
     <div className="ndp-page ndp-scroll-page">
       <div className="ndp-settings-list">
@@ -969,10 +970,10 @@ function SettingsPage({ onDisconnectionClick, onResolutionClick, onLanguageClick
         </div>
 
         {/* Panel IP */}
-        <div className="ndp-settings-row is-clickable">
+        <div className="ndp-settings-row is-clickable" onClick={onPanelIpClick}>
           <span className="ndp-settings-label">Panel IP</span>
           <span className="ndp-settings-value">
-            192.168.110.125 (1C:54:E6:27:B2:AA)
+            {panelIpAddress} (1C:54:E6:27:B2:AA)
             <ChevronRight size={18} />
           </span>
         </div>
@@ -1120,7 +1121,7 @@ function LanguageSubpage() {
   );
 }
 
-function Content({ activeTab, navConfig, onDisconnectionClick, settingsSubpage, setSettingsSubpage }) {
+function Content({ activeTab, navConfig, onDisconnectionClick, settingsSubpage, setSettingsSubpage, onPanelIpClick, panelIpAddress }) {
   if (activeTab === 'home') return <HomePage navConfig={navConfig} />;
   if (activeTab === 'video') return <VideoPage />;
   if (activeTab === 'serial') return <SerialPage />;
@@ -1139,6 +1140,8 @@ function Content({ activeTab, navConfig, onDisconnectionClick, settingsSubpage, 
         onDisconnectionClick={onDisconnectionClick} 
         onResolutionClick={() => setSettingsSubpage('resolution')}
         onLanguageClick={() => setSettingsSubpage('language')}
+        onPanelIpClick={onPanelIpClick}
+        panelIpAddress={panelIpAddress}
       />
     );
   }
@@ -1153,6 +1156,8 @@ export default function Ndp600PortraitApp() {
   const [theme, setTheme] = useState(readQuery('theme') === 'light' ? 'light' : 'dark');
   const [isDisconnected, setIsDisconnected] = useState(readQuery('status') === 'disconnected');
   const [navConfig, setNavConfig] = useState(defaultNavConfig);
+  const [isAndroidEthernetOpen, setIsAndroidEthernetOpen] = useState(false);
+  const [panelIpAddress, setPanelIpAddress] = useState('192.168.110.125');
 
   const [isLocking, setIsLocking] = useState(false);
   const [lockCountdown, setLockCountdown] = useState(9);
@@ -1217,7 +1222,20 @@ export default function Ndp600PortraitApp() {
         {/* Center Device */}
         <div className="ndp-device-wrapper">
           <div className="ndp-device">
-            <div className="ndp-screen">
+            <div className={`ndp-screen ${isLight ? 'is-light' : ''} relative`}>
+              {isAndroidEthernetOpen && (
+                <div className="absolute inset-0 z-50 overflow-hidden shadow-2xl">
+                  <AndroidEthernet 
+                      isDark={!isLight} 
+                      initialIp={panelIpAddress}
+                      onSave={(newIp) => {
+                          setPanelIpAddress(newIp);
+                          setIsAndroidEthernetOpen(false);
+                      }}
+                      onBack={() => setIsAndroidEthernetOpen(false)} 
+                  />
+                </div>
+              )}
               {isDisconnected ? (
                 <DisconnectedScreen />
               ) : locked ? (
@@ -1270,6 +1288,8 @@ export default function Ndp600PortraitApp() {
                         onDisconnectionClick={() => setIsDisconnected(true)} 
                         settingsSubpage={settingsSubpage}
                         setSettingsSubpage={setSettingsSubpage}
+                        onPanelIpClick={() => setIsAndroidEthernetOpen(true)}
+                        panelIpAddress={panelIpAddress}
                       />
                     </div>
                     <BottomDock locked={locked} muted={muted} setLocked={handleStartLock} setMuted={setMuted} />
