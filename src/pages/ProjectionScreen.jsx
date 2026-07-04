@@ -46,8 +46,8 @@ export const ProjectionScreen = ({ isDark }) => {
     };
 
     return (
-        <div className="flex items-center justify-center h-full w-full px-8">
-            <div className={`w-full max-w-[66rem] h-[26rem] flex items-center justify-center rounded-[2.5rem] relative ${isDark ? 'bg-[#3b4356] shadow-[inset_0_1px_2px_rgba(255,255,255,0.1),0_20px_40px_rgba(0,0,0,0.4)] border border-white/5' : 'bg-gray-100 border border-gray-300 shadow-lg'}`}>
+        <div className="flex items-center justify-center h-full w-full px-8 py-4 overflow-hidden">
+            <div className={`w-full max-w-[66rem] h-full max-h-[26rem] flex items-center justify-center rounded-[2.5rem] relative ${isDark ? 'bg-[#3b4356] shadow-[inset_0_1px_2px_rgba(255,255,255,0.1),0_20px_40px_rgba(0,0,0,0.4)] border border-white/5' : 'bg-gray-100 border border-gray-300 shadow-lg'}`}>
                 
                 <div className="flex items-center justify-center gap-24">
                     
