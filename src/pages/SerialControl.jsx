@@ -41,8 +41,9 @@ export const SerialControl = ({ isDark }) => {
 
     if (activeDetail === 'e-Curtain') {
         return (
-            <div className="flex items-center justify-center h-full w-full px-8 py-4 overflow-hidden">
-                <div className={`w-full max-w-[66rem] h-full max-h-[26rem] flex flex-col p-6 rounded-[2.5rem] relative ${isDark ? 'bg-[#3b4356] shadow-[inset_0_1px_2px_rgba(255,255,255,0.1),0_20px_40px_rgba(0,0,0,0.4)] border border-white/5' : 'bg-gray-100 border border-gray-300 shadow-lg'}`}>
+            <div className="h-full w-full px-8 overflow-y-auto custom-scrollbar">
+                <div className="w-full max-w-[66rem] min-h-[26rem] mx-auto min-h-full flex flex-col justify-center py-4">
+                    <div className={`w-full flex-1 flex flex-col p-6 rounded-[2.5rem] relative ${isDark ? 'bg-[#3b4356] shadow-[inset_0_1px_2px_rgba(255,255,255,0.1),0_20px_40px_rgba(0,0,0,0.4)] border border-white/5' : 'bg-gray-100 border border-gray-300 shadow-lg'}`}>
                     <div className="flex items-center justify-center relative mb-8">
                         <button 
                             className={`absolute left-0 w-10 h-10 rounded-full flex items-center justify-center ${isDark ? 'bg-[#2a303e] text-gray-300 hover:text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
@@ -77,8 +78,9 @@ export const SerialControl = ({ isDark }) => {
     }
 
     return (
-        <div className="flex items-center justify-center h-full w-full px-8 py-4 overflow-hidden">
-            <div className="w-full max-w-[66rem] h-full max-h-[26rem] grid grid-cols-2 grid-rows-2 gap-6">
+        <div className="h-full w-full px-8 overflow-y-auto custom-scrollbar">
+            <div className="w-full max-w-[66rem] min-h-full mx-auto flex flex-col justify-center py-4">
+                <div className="grid grid-cols-2 gap-6" style={{ gridAutoRows: 'minmax(12rem, auto)' }}>
                 
                 {/* RS232 */}
                 <div className={cardClass}>
