@@ -1720,3 +1720,104 @@
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+/* PTZ Camera Styles */
+.ndp-zoom-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+.ndp-zoom-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+.ndp-zoom-btn:active {
+  transform: scale(0.95);
+}
+
+.ndp-ptz-action {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(226, 241, 255, 0.14);
+  background: rgba(60, 88, 120, 0.36);
+  color: #dcefff;
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.15s ease;
+}
+.ndp-ptz-action:hover,
+.ndp-ptz-action:active {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.ptz-wheel {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 10px auto;
+  border-radius: 50%;
+  background: rgba(60, 88, 120, 0.24);
+  border: 1px solid rgba(226, 241, 255, 0.14);
+  box-shadow: inset 2px 2px 5px rgba(0,0,0,0.3), 2px 4px 10px rgba(0,0,0,0.15);
+  display: grid;
+  place-items: center;
+}
+
+.ptz-btn {
+  position: absolute;
+  background: transparent;
+  border: none;
+  color: #dcefff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  transition: background 0.15s, color 0.15s;
+}
+.ptz-btn:hover,
+.ptz-btn:active {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.ptz-btn.is-up { top: 6px; left: 50%; transform: translateX(-50%); }
+.ptz-btn.is-down { bottom: 6px; left: 50%; transform: translateX(-50%); }
+.ptz-btn.is-left { left: 6px; top: 50%; transform: translateY(-50%); }
+.ptz-btn.is-right { right: 6px; top: 50%; transform: translateY(-50%); }
+
+.ptz-center-btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: 1px solid rgba(226, 241, 255, 0.14);
+  background: rgba(60, 88, 120, 0.6);
+  color: #dcefff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2), inset 1px 1px 1px rgba(255,255,255,0.1);
+  transition: background 0.15s, color 0.15s;
+}
+.ptz-center-btn:hover,
+.ptz-center-btn:active {
+  background: linear-gradient(135deg, #05c8ec, #127bff);
+  color: #ffffff;
+}
