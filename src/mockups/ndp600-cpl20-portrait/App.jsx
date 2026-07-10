@@ -2,6 +2,8 @@ import { useState, useEffect, useRef, Fragment } from 'react';
 import { LockCountdownModal } from '../../components/LockCountdownModal';
 import { Modal } from '../../components/Modal';
 import { AndroidEthernet } from '../../pages/AndroidEthernet';
+import { Disconnection } from '../../pages/Disconnection';
+import { ProjectionScreen } from '../../pages/ProjectionScreen';
 import {
   Home,
   RefreshCcw,
@@ -53,6 +55,7 @@ const navItems = [
   { id: 'serial', label: 'Serial Control', icon: SerialIcon },
   { id: 'volume', label: 'Vol.', icon: Volume2 },
   { id: 'air', label: 'Air Conditioner', icon: AirConditionerIcon },
+  { id: 'projector', label: 'Projection Screen', icon: ProjectorScreenIcon },
   { id: 'remote', label: 'Remote Control', icon: RemoteControlIcon },
 ];
 
@@ -205,6 +208,81 @@ function LockScreen({ setLocked }) {
       <button className="ndp-unlock-orb" type="button" onClick={() => setLocked(false)}>
         <Lock size={46} />
       </button>
+    </div>
+  );
+}
+
+function DisconnectConfirmModal({ isDark, onCancel, onExecute }) {
+  const backdropClass = isDark
+    ? 'bg-black/40 backdrop-blur-xs'
+    : 'bg-black/20';
+
+  const cardClass = isDark
+    ? 'bg-[#182740]/90 border border-white/10 shadow-[0_15px_40px_rgba(0,0,0,0.5)] text-white rounded-[2rem] w-[28rem] p-8'
+    : 'bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] text-black rounded-3xl w-[28rem] p-8';
+
+  const cancelBtnClass = isDark
+    ? 'bg-[#3b4c6b] hover:bg-[#485c80] text-white/95 hover:text-white transition-all active:scale-95 shadow-md shadow-black/10'
+    : 'bg-white border-2 border-black hover:bg-gray-100 text-black font-bold active:translate-x-0.5 active:translate-y-0.5';
+
+  const executeBtnClass = isDark
+    ? 'bg-gradient-to-r from-[#00d4ff] to-[#00f2fe] text-white hover:brightness-110 shadow-[0_0_15px_rgba(0,212,255,0.4)] transition-all active:scale-95'
+    : 'bg-blue-600 text-white border-2 border-black font-bold hover:bg-blue-700 active:translate-x-0.5 active:translate-y-0.5';
+
+  return (
+    <div className={`absolute inset-0 z-50 flex items-center justify-center rounded-2xl select-none ${backdropClass}`}>
+      <div className={`flex flex-col items-center gap-8 text-center transition-all duration-300 ${cardClass}`}>
+        <h3 className="text-xl font-semibold leading-relaxed px-4">
+          Please note that Touch Panel will disconnect from the present NDP600!
+        </h3>
+
+        <div className="flex gap-6 w-full px-2">
+          <button 
+            onClick={onCancel}
+            className={`flex-1 py-3 px-6 rounded-full text-base font-semibold transition-all cursor-pointer ${cancelBtnClass}`}
+          >
+            Cancel
+          </button>
+          <button 
+            onClick={onExecute}
+            className={`flex-1 py-3 px-6 rounded-full text-base font-bold transition-all cursor-pointer ${executeBtnClass}`}
+          >
+            Execute Now
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function PowerOnScreen({ onPowerOn, onLock }) {
+  return (
+    <div className="ndp-lock-screen" style={{ justifyContent: 'space-between', paddingBottom: '48px' }}>
+      {/* Top Bar */}
+      <div style={{ display: 'flex', width: '100%', alignItems: 'center', justifyContent: 'space-between' }}>
+        <div className="ndp-lock-brand">
+          <span className="ndp-logo-mark" />
+          <span>nex</span>
+        </div>
+        <button 
+          className="ndp-icon-btn" 
+          type="button" 
+          onClick={onLock}
+          style={{ width: '42px', height: '42px', display: 'grid', placeItems: 'center', borderRadius: '999px', border: '1px solid rgba(255,255,255,0.2)', color: 'white', background: 'rgba(255,255,255,0.05)' }}
+        >
+          <Lock size={18} />
+        </button>
+      </div>
+
+      {/* Center Power Orb */}
+      <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <button className="ndp-unlock-orb" type="button" onClick={onPowerOn} style={{ marginTop: 0 }}>
+          <Power size={46} />
+        </button>
+      </div>
+      
+      {/* Bottom Spacer to balance the top bar height */}
+      <div style={{ height: '42px' }} />
     </div>
   );
 }
@@ -1164,6 +1242,7 @@ function Content({ activeTab, navConfig, onDisconnectionClick, settingsSubpage, 
   if (activeTab === 'volume') return <VolumePage />;
   if (activeTab === 'air') return <div className="ndp-page"><AirPage /></div>;
   if (activeTab === 'remote') return <RemotePage />;
+  if (activeTab === 'projector') return <ProjectionScreen isDark={isDark} vertical={true} />;
   if (activeTab === 'settings') {
     if (settingsSubpage === 'resolution') {
       return <ResolutionSubpage />;
@@ -1198,6 +1277,8 @@ export default function Ndp600PortraitApp() {
   const [isAndroidEthernetOpen, setIsAndroidEthernetOpen] = useState(false);
   const [panelIpAddress, setPanelIpAddress] = useState('192.168.110.125');
   const [deviceName, setDeviceName] = useState('3F NDP600');
+  const [isDisconnectConfirmOpen, setIsDisconnectConfirmOpen] = useState(false);
+  const [showPowerOnScreen, setShowPowerOnScreen] = useState(false);
 
   const [isLocking, setIsLocking] = useState(false);
   const [lockCountdown, setLockCountdown] = useState(9);
@@ -1239,7 +1320,18 @@ export default function Ndp600PortraitApp() {
           <div className="ndp-control-row ndp-status-row">
             <span>Status:</span>
             <label>
-              <input type="checkbox" checked={isDisconnected} onChange={() => setIsDisconnected((value) => !value)} />
+              <input 
+                type="checkbox" 
+                checked={isDisconnected} 
+                onChange={(e) => {
+                  const checked = e.target.checked;
+                  setIsDisconnected(checked);
+                  if (!checked) {
+                    setActiveTab('home');
+                    setSettingsSubpage(null);
+                  }
+                }} 
+              />
               <strong className={isDisconnected ? 'is-disconnected' : ''}>{isDisconnected ? 'Disconnected' : 'Connected'}</strong>
             </label>
           </div>
@@ -1277,7 +1369,27 @@ export default function Ndp600PortraitApp() {
                 </div>
               )}
               {isDisconnected ? (
-                <DisconnectedScreen />
+                <Disconnection 
+                  isDark={!isLight} 
+                  onConnect={() => {
+                    setIsDisconnected(false);
+                    setShowPowerOnScreen(true);
+                  }}
+                  title="Connection Setting"
+                  initialLabelText="NDP600 IP"
+                  initialIpAddress="192.168.5.105"
+                />
+              ) : showPowerOnScreen ? (
+                <PowerOnScreen 
+                  onPowerOn={() => {
+                    setShowPowerOnScreen(false);
+                    setActiveTab('home');
+                    setSettingsSubpage(null);
+                  }}
+                  onLock={() => {
+                    setLocked(true);
+                  }}
+                />
               ) : locked ? (
                 <LockScreen setLocked={setLocked} />
               ) : (
@@ -1290,6 +1402,16 @@ export default function Ndp600PortraitApp() {
                       onExecute={() => {
                         setLocked(true);
                         setIsLocking(false);
+                      }}
+                    />
+                  )}
+                  {isDisconnectConfirmOpen && (
+                    <DisconnectConfirmModal 
+                      isDark={theme === 'dark'}
+                      onCancel={() => setIsDisconnectConfirmOpen(false)}
+                      onExecute={() => {
+                        setIsDisconnectConfirmOpen(false);
+                        setIsDisconnected(true);
                       }}
                     />
                   )}
@@ -1325,7 +1447,7 @@ export default function Ndp600PortraitApp() {
                       <Content 
                         activeTab={activeTab} 
                         navConfig={navConfig} 
-                        onDisconnectionClick={() => setIsDisconnected(true)} 
+                        onDisconnectionClick={() => setIsDisconnectConfirmOpen(true)} 
                         settingsSubpage={settingsSubpage}
                         setSettingsSubpage={setSettingsSubpage}
                         onPanelIpClick={() => setIsAndroidEthernetOpen(true)}

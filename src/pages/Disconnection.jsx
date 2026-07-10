@@ -40,10 +40,16 @@ const EditableLabel = ({ value, onChange, className }) => {
     );
 };
 
-export const Disconnection = ({ isDark, onConnect }) => {
+export const Disconnection = ({ 
+    isDark, 
+    onConnect, 
+    title = 'Fail to connect, please check the network',
+    initialLabelText = 'NMP311 IP',
+    initialIpAddress = '192.168.1.150'
+}) => {
     const [currentTime, setCurrentTime] = useState(new Date());
-    const [ipAddress, setIpAddress] = useState('192.168.1.150');
-    const [labelText, setLabelText] = useState('NMP311 IP');
+    const [ipAddress, setIpAddress] = useState(initialIpAddress);
+    const [labelText, setLabelText] = useState(initialLabelText);
     const [isConnecting, setIsConnecting] = useState(false);
     const [isConnected, setIsConnected] = useState(false);
 
@@ -163,7 +169,7 @@ export const Disconnection = ({ isDark, onConnect }) => {
             {/* Central Error Modal */}
             <div className={`w-full max-w-xl p-8 rounded-3xl z-10 transition-all duration-300 ${modalClass}`}>
                 <h3 className="text-xl font-semibold text-center mb-6 tracking-wide">
-                    Fail to connect, please check the network
+                    {title}
                 </h3>
 
                 {/* Ethernet Settings fieldset */}

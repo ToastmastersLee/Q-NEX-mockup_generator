@@ -273,6 +273,10 @@
   box-shadow: none;
 }
 
+.ndp-page:not(.ndp-scroll-page) .ndp-panel {
+  flex: 1;
+}
+
 .ndp-panel h2 {
   margin: 0;
   font-size: 18px;

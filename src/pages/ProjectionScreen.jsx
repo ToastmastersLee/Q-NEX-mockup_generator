@@ -36,7 +36,7 @@ const ScreenDownIcon = ({ className }) => (
     </svg>
 );
 
-export const ProjectionScreen = ({ isDark }) => {
+export const ProjectionScreen = ({ isDark, vertical = false }) => {
     // Buttons are stateless actions, but we can add a simple active state for click feedback
     const [activeBtn, setActiveBtn] = useState(null);
 
@@ -44,6 +44,61 @@ export const ProjectionScreen = ({ isDark }) => {
         setActiveBtn(btn);
         setTimeout(() => setActiveBtn(null), 200); // Reset after 200ms to simulate click
     };
+
+    if (vertical) {
+        return (
+            <div className="ndp-page">
+                <div className="ndp-panel w-full flex-1 flex flex-col items-center justify-evenly py-10">
+                    
+                    {/* Screen Up */}
+                    <div className="flex flex-col items-center gap-4">
+                        <button 
+                            onPointerDown={() => handlePress('up')}
+                            className={`w-32 h-32 rounded-full flex items-center justify-center transition-all duration-150 ${
+                                isDark 
+                                    ? (activeBtn === 'up' ? 'bg-[#2a303e] shadow-[inset_5px_5px_10px_rgba(0,0,0,0.5),inset_-5px_-5px_10px_rgba(255,255,255,0.02)] text-white' : 'bg-[#363d4f] text-[#f8fafc] shadow-[-5px_-5px_12px_rgba(255,255,255,0.03),5px_5px_15px_rgba(0,0,0,0.4)] border border-white/5 hover:bg-[#3b4356]')
+                                    : (activeBtn === 'up' ? 'bg-gray-200 shadow-inner text-blue-600' : 'bg-gray-100 border-2 border-gray-300 text-gray-700 shadow-xl hover:bg-white')
+                            }`}
+                        >
+                            <ScreenUpIcon className="w-[3rem] h-[3rem]" />
+                        </button>
+                        <span className={`text-[16px] font-bold tracking-wide ${isDark ? 'text-gray-200' : 'text-gray-800'}`}>Screen Up</span>
+                    </div>
+
+                    {/* Stop */}
+                    <div className="flex flex-col items-center gap-4">
+                        <button 
+                            onPointerDown={() => handlePress('stop')}
+                            className={`w-32 h-32 rounded-full flex items-center justify-center transition-all duration-150 ${
+                                isDark 
+                                    ? (activeBtn === 'stop' ? 'bg-[#2a303e] shadow-[inset_5px_5px_10px_rgba(0,0,0,0.5),inset_-5px_-5px_10px_rgba(255,255,255,0.02)] text-white' : 'bg-[#363d4f] text-[#f8fafc] shadow-[-5px_-5px_12px_rgba(255,255,255,0.03),5px_5px_15px_rgba(0,0,0,0.4)] border border-white/5 hover:bg-[#3b4356]')
+                                    : (activeBtn === 'stop' ? 'bg-gray-200 shadow-inner text-blue-600' : 'bg-gray-100 border-2 border-gray-300 text-gray-700 shadow-xl hover:bg-white')
+                            }`}
+                        >
+                            <ScreenStopIcon className="w-[3rem] h-[3rem]" />
+                        </button>
+                        <span className={`text-[16px] font-bold tracking-wide ${isDark ? 'text-gray-200' : 'text-gray-800'}`}>Stop</span>
+                    </div>
+
+                    {/* Screen Down */}
+                    <div className="flex flex-col items-center gap-4">
+                        <button 
+                            onPointerDown={() => handlePress('down')}
+                            className={`w-32 h-32 rounded-full flex items-center justify-center transition-all duration-150 ${
+                                isDark 
+                                    ? (activeBtn === 'down' ? 'bg-[#2a303e] shadow-[inset_5px_5px_10px_rgba(0,0,0,0.5),inset_-5px_-5px_10px_rgba(255,255,255,0.02)] text-white' : 'bg-[#363d4f] text-[#f8fafc] shadow-[-5px_-5px_12px_rgba(255,255,255,0.03),5px_5px_15px_rgba(0,0,0,0.4)] border border-white/5 hover:bg-[#3b4356]')
+                                    : (activeBtn === 'down' ? 'bg-gray-200 shadow-inner text-blue-600' : 'bg-gray-100 border-2 border-gray-300 text-gray-700 shadow-xl hover:bg-white')
+                            }`}
+                        >
+                            <ScreenDownIcon className="w-[3rem] h-[3rem]" />
+                        </button>
+                        <span className={`text-[16px] font-bold tracking-wide ${isDark ? 'text-gray-200' : 'text-gray-800'}`}>Screen Down</span>
+                    </div>
+
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className="flex items-center justify-center h-full w-full px-8 py-4 overflow-hidden">
