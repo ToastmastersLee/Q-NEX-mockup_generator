@@ -3,6 +3,46 @@ import { Monitor, Radio, Disc3, CircleStop, ChevronRight, ChevronLeft, Smartphon
 import { ToggleSwitch } from '../components/ToggleSwitch';
 import { HdmiIcon, PowerControlIcon, VideoSwitchIcon } from '../assets/Icons';
 
+const WindowsIcon = (props) => (
+    <svg 
+        viewBox="0 0 24 24" 
+        fill="none" 
+        stroke="currentColor" 
+        strokeWidth="2" 
+        strokeLinecap="round" 
+        strokeLinejoin="round" 
+        {...props}
+    >
+        <path d="M 3,4.5 L 9.5,3.5 L 9.5,11.5 L 3,11.5 Z" />
+        <path d="M 3,12.5 L 9.5,12.5 L 9.5,20.5 L 3,19.5 Z" />
+        <path d="M 11,3.3 L 21,1.8 L 21,11.5 L 11,11.5 Z" />
+        <path d="M 11,12.5 L 21,12.5 L 21,22.2 L 11,20.7 Z" />
+    </svg>
+);
+
+const AndroidIcon = (props) => (
+    <svg 
+        viewBox="0 0 24 24" 
+        fill="none" 
+        stroke="currentColor" 
+        strokeWidth="2" 
+        strokeLinecap="round" 
+        strokeLinejoin="round" 
+        {...props}
+    >
+        <path d="M 6,10 A 6,6 0 0,1 18,10 Z" />
+        <line x1="9" y1="4.5" x2="7.5" y2="2.5" />
+        <line x1="15" y1="4.5" x2="16.5" y2="2.5" />
+        <circle cx="9.5" cy="7" r="0.75" fill="currentColor" stroke="none" />
+        <circle cx="14.5" cy="7" r="0.75" fill="currentColor" stroke="none" />
+        <path d="M 6,11.5 L 18,11.5 L 18,16.5 A 2,2 0 0,1 16,18.5 L 8,18.5 A 2,2 0 0,1 6,16.5 Z" />
+        <rect x="3" y="11.5" width="2" height="4.5" rx="1" />
+        <rect x="19" y="11.5" width="2" height="4.5" rx="1" />
+        <rect x="8.5" y="18.5" width="2" height="3" rx="1" />
+        <rect x="13.5" y="18.5" width="2" height="3" rx="1" />
+    </svg>
+);
+
 export const SerialControl = ({ isDark }) => {
     const [rs232Power, setRs232Power] = useState(true);
     const [rs232Input, setRs232Input] = useState('windows');
@@ -98,13 +138,13 @@ export const SerialControl = ({ isDark }) => {
                             <span className={`text-[14px] font-bold ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Input Source</span>
                             <div className="flex items-center gap-2">
                                 <IconButton active={rs232Input === 'windows'} onClick={() => setRs232Input('windows')} label="Windows">
-                                    <Monitor className="w-4 h-4" />
+                                    <WindowsIcon className="w-4 h-4" />
                                 </IconButton>
                                 <IconButton active={rs232Input === 'hdmi'} onClick={() => setRs232Input('hdmi')} label="HDMI">
                                     <HdmiIcon className="w-4 h-4" />
                                 </IconButton>
                                 <IconButton active={rs232Input === 'android'} onClick={() => setRs232Input('android')} label="Android">
-                                    <Smartphone className="w-4 h-4" />
+                                    <AndroidIcon className="w-4 h-4" />
                                 </IconButton>
                             </div>
                         </div>
