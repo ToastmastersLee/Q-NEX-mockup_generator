@@ -1711,3 +1711,12 @@
 .is-light .ndp-btn-cancel {
   color: #1f2937;
 }
+
+/* Hide scrollbar utility */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

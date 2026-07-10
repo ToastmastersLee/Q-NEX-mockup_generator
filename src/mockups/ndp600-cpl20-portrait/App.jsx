@@ -833,6 +833,80 @@ function SerialPage() {
   const [cbx3Power, setCbx3Power] = useState(true);
   const [lectureCapture, setLectureCapture] = useState(true);
 
+  const [rs232ActiveBtn, setRs232ActiveBtn] = useState(null);
+  const handleRs232Press = (btn) => {
+    setRs232ActiveBtn(btn);
+    setTimeout(() => setRs232ActiveBtn(null), 200);
+  };
+
+  if (activeDetail === 'RS232') {
+    return (
+      <div className="ndp-page ndp-scroll-page no-scrollbar">
+        {/* Header */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', width: '100%', padding: '10px 4px 20px' }}>
+          <div style={{ position: 'absolute', left: 4 }}>
+            <IconButton onClick={() => setActiveDetail(null)}><ChevronLeft /></IconButton>
+          </div>
+          <h2 style={{ fontSize: '20px', fontWeight: 'bold', margin: 0, color: 'inherit' }}>RS232</h2>
+        </div>
+        
+        {/* Power Card */}
+        <GlassPanel style={{ flex: 'none' }}>
+          <SoftRow label="Power">
+            <SegButton active={rs232Power} onClick={() => setRs232Power(true)}>ON</SegButton>
+            <SegButton active={!rs232Power} onClick={() => setRs232Power(false)}>OFF</SegButton>
+          </SoftRow>
+        </GlassPanel>
+        
+        {/* Input Source Card */}
+        <GlassPanel style={{ flex: 'none' }}>
+          <SoftRow 
+            label="Input Source"
+            style={{ opacity: rs232Power ? 1 : 0.5, transition: 'opacity 0.2s' }}
+          >
+            <IconButton 
+              label="Windows" 
+              active={rs232Power && rs232Input === 'windows'} 
+              onClick={() => rs232Power && setRs232Input('windows')}
+            >
+              <WindowsIcon />
+            </IconButton>
+            <IconButton 
+              label="HDMI" 
+              active={rs232Power && rs232Input === 'hdmi'} 
+              onClick={() => rs232Power && setRs232Input('hdmi')}
+            >
+              <HdmiIcon />
+            </IconButton>
+            <IconButton 
+              label="Android" 
+              active={rs232Power && rs232Input === 'android'} 
+              onClick={() => rs232Power && setRs232Input('android')}
+            >
+              <AndroidIcon />
+            </IconButton>
+          </SoftRow>
+        </GlassPanel>
+
+        {/* Command Buttons */}
+        {['HDMI2', 'HDMI3', 'Mute', 'Unmute', 'VOL+', 'VOL-'].map(cmd => {
+          const id = cmd.toLowerCase().replace('+', 'plus').replace('-', 'minus');
+          return (
+            <button 
+              key={id}
+              className={`ndp-wide-command ${rs232ActiveBtn === id ? 'is-active' : ''}`} 
+              type="button"
+              onPointerDown={() => handleRs232Press(id)}
+              style={{ flex: 'none' }}
+            >
+              {cmd}
+            </button>
+          );
+        })}
+      </div>
+    );
+  }
+
   if (activeDetail === 'e-Curtain') {
     return (
       <div className="ndp-page ndp-scroll-page">
@@ -864,9 +938,12 @@ function SerialPage() {
   return (
     <div className="ndp-page ndp-scroll-page">
       <GlassPanel>
-        <div className="ndp-section-title">
-          <Monitor />
-          <h2>RS232</h2>
+        <div className="ndp-card-heading">
+          <div className="ndp-section-title">
+            <Monitor />
+            <h2>RS232</h2>
+          </div>
+          <IconButton label="Expand" onClick={() => setActiveDetail('RS232')}><ChevronRight /></IconButton>
         </div>
         <SoftRow label="Power">
           <SegButton active={rs232Power} onClick={() => setRs232Power(true)}>ON</SegButton>
