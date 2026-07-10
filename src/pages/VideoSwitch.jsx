@@ -45,7 +45,7 @@ export const VideoSwitch = ({
                     ) : (
                         <div className="flex flex-col w-full">
                             {/* Row A */}
-                            <div className={`flex items-center justify-between py-3 ${isDark ? 'border-b border-black/40 shadow-[0_1px_0_rgba(255,255,255,0.02)]' : 'border-b border-gray-300'}`}>
+                            <div className={`flex items-center justify-between py-5 ${isDark ? 'border-b border-black/40 shadow-[0_1px_0_rgba(255,255,255,0.02)]' : 'border-b border-gray-300'}`}>
                                 <span className={`text-[15px] font-bold tracking-wide ${isDark ? 'text-gray-300' : 'text-black'}`}>HDMI out A</span>
                                 <div className="flex items-center gap-16">
                                     <RowButton label="HDMI in 1" icon="laptop" active={activeOutA === 'hdmi1'} onClick={() => setActiveOutA('hdmi1')} isDark={isDark} />
@@ -55,7 +55,7 @@ export const VideoSwitch = ({
                             </div>
 
                             {/* Row B */}
-                            <div className={`flex items-center justify-between py-3 ${isDark ? 'border-b border-black/40 shadow-[0_1px_0_rgba(255,255,255,0.02)]' : 'border-b border-gray-300'}`}>
+                            <div className={`flex items-center justify-between py-5 ${isDark ? 'border-b border-black/40 shadow-[0_1px_0_rgba(255,255,255,0.02)]' : 'border-b border-gray-300'}`}>
                                 <span className={`text-[15px] font-bold tracking-wide ${isDark ? 'text-gray-300' : 'text-black'}`}>HDMI out B</span>
                                 <div className="flex items-center gap-16">
                                     <RowButton label="HDMI in 1" icon="laptop" active={activeOutB === 'hdmi1'} onClick={() => setActiveOutB('hdmi1')} isDark={isDark} />
@@ -65,7 +65,7 @@ export const VideoSwitch = ({
                             </div>
 
                             {/* Row C */}
-                            <div className={`flex items-center justify-between py-3`}>
+                            <div className={`flex items-center justify-between py-5`}>
                                 <span className={`text-[15px] font-bold tracking-wide ${isDark ? 'text-gray-300' : 'text-black'}`}>HDMI out C</span>
                                 <div className="flex items-center gap-16">
                                     <RowButton label="HDMI in 1" icon="laptop" active={activeOutC === 'hdmi1'} onClick={() => setActiveOutC('hdmi1')} isDark={isDark} />

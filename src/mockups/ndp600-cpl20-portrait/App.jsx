@@ -38,6 +38,8 @@ import {
   Check,
   Scan,
   MapPin,
+  Eye,
+  EyeOff,
 } from 'lucide-react';
 import classroomFeed from '../../assets/classroom_feed.png';
 import {
@@ -187,11 +189,21 @@ function TopTools({ onSettingsClick }) {
   );
 }
 
-function Sidebar({ activeTab, setActiveTab, navConfig }) {
-  const visibleItems = navItems.filter((item) => item.id === 'home' || navConfig[item.id]);
+function Sidebar({ activeTab, setActiveTab, navConfig, itemsOrder }) {
+  const visibleItems = itemsOrder
+    .map((id) => navItems.find((item) => item.id === id))
+    .filter((item) => item && item.id !== 'home' && navConfig[item.id]);
 
   return (
     <aside className="ndp-sidebar">
+      <button 
+        className={`ndp-nav-item ${activeTab === 'home' ? 'is-active' : ''}`} 
+        type="button" 
+        onClick={() => setActiveTab('home')}
+      >
+        <Home className="ndp-nav-icon" strokeWidth={1.9} />
+        <span>Home</span>
+      </button>
       {visibleItems.map((item) => {
         const Icon = item.icon;
         const active = activeTab === item.id;
@@ -241,7 +253,95 @@ function DisconnectedScreen() {
   );
 }
 
-function LockScreen({ setLocked }) {
+function LockScreen({ setLocked, passwordUnlockEnabled, password = '8888', isDark }) {
+  const [enteringPin, setEnteringPin] = useState(false);
+  const [pin, setPin] = useState('');
+  const [error, setError] = useState(false);
+
+  const handleKeyPress = (num) => {
+    if (pin.length >= 4) return;
+    setError(false);
+    const nextPin = pin + num;
+    setPin(nextPin);
+    
+    if (nextPin === password) {
+      setTimeout(() => {
+        setLocked(false);
+        setPin('');
+        setEnteringPin(false);
+      }, 300);
+    } else if (nextPin.length === 4) {
+      setTimeout(() => {
+        setError(true);
+        setPin('');
+      }, 300);
+    }
+  };
+
+  const handleBackspace = () => {
+    setPin(prev => prev.slice(0, -1));
+    setError(false);
+  };
+
+  if (enteringPin) {
+    return (
+      <div className="ndp-lock-screen ndp-pin-screen">
+        <div className="ndp-pin-header">
+          <h2>Enter Password</h2>
+          {error && <span className="ndp-pin-error">Incorrect password</span>}
+        </div>
+        
+        <div className="ndp-pin-dots">
+          {[0, 1, 2, 3].map((idx) => (
+            <div 
+              key={idx} 
+              className={`ndp-pin-dot ${idx < pin.length ? 'is-filled' : ''} ${error ? 'is-error' : ''}`} 
+            />
+          ))}
+        </div>
+
+        <div className="ndp-pin-keypad">
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
+            <button 
+              key={num} 
+              type="button" 
+              className="ndp-key-btn" 
+              onClick={() => handleKeyPress(num.toString())}
+            >
+              {num}
+            </button>
+          ))}
+          <button 
+            type="button" 
+            className="ndp-key-btn text-sm" 
+            onClick={() => { setEnteringPin(false); setPin(''); setError(false); }}
+          >
+            Cancel
+          </button>
+          <button 
+            type="button" 
+            className="ndp-key-btn" 
+            onClick={() => handleKeyPress('0')}
+          >
+            0
+          </button>
+          <button 
+            type="button" 
+            className="ndp-key-btn" 
+            onClick={handleBackspace}
+            style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0 -2-2z" />
+              <line x1="18" y1="9" x2="12" y2="15" />
+              <line x1="12" y1="9" x2="18" y2="15" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="ndp-lock-screen">
       <div className="ndp-lock-brand">
@@ -253,7 +353,17 @@ function LockScreen({ setLocked }) {
         <strong>10:28</strong>
         <span>TUESDAY, 16 JUNE, 2026</span>
       </div>
-      <button className="ndp-unlock-orb" type="button" onClick={() => setLocked(false)}>
+      <button 
+        className="ndp-unlock-orb" 
+        type="button" 
+        onClick={() => {
+          if (passwordUnlockEnabled) {
+            setEnteringPin(true);
+          } else {
+            setLocked(false);
+          }
+        }}
+      >
         <Lock size={46} />
       </button>
     </div>
@@ -296,6 +406,67 @@ function DisconnectConfirmModal({ isDark, onCancel, onExecute }) {
             className={`flex-1 py-3 px-6 rounded-full text-base font-bold transition-all cursor-pointer ${executeBtnClass}`}
           >
             Execute Now
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function CloudServerModal({ isDark, initialValue, onCancel, onSave }) {
+  const [value, setValue] = useState(initialValue);
+
+  const backdropClass = isDark
+    ? 'bg-black/40 backdrop-blur-xs'
+    : 'bg-black/20';
+
+  const cardClass = isDark
+    ? 'bg-[#182740]/95 border border-white/10 shadow-[0_15px_40px_rgba(0,0,0,0.5)] text-white rounded-[2rem] w-[28rem] p-8'
+    : 'bg-white border border-gray-200 shadow-xl text-black rounded-3xl w-[28rem] p-8';
+
+  const inputBgClass = isDark
+    ? 'bg-[#0f1b2c] border border-white/10 text-white'
+    : 'bg-gray-50 border border-gray-300 text-black';
+
+  const cancelBtnClass = isDark
+    ? 'bg-[#3b4c6b] hover:bg-[#485c80] text-white/95 hover:text-white transition-all active:scale-95 shadow-md shadow-black/10'
+    : 'bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold';
+
+  const saveBtnClass = isDark
+    ? 'bg-gradient-to-r from-[#00d4ff] to-[#00f2fe] text-white hover:brightness-110 shadow-[0_0_15px_rgba(0,212,255,0.4)] transition-all active:scale-95'
+    : 'bg-blue-600 text-white hover:bg-blue-700 font-bold';
+
+  return (
+    <div className={`absolute inset-0 z-50 flex items-center justify-center rounded-2xl select-none ${backdropClass}`}>
+      <div className={`flex flex-col items-center gap-6 text-center transition-all duration-300 ${cardClass}`}>
+        <h3 className="text-xl font-semibold leading-relaxed px-4">
+          Q-NEX Cloud Server Address
+        </h3>
+
+        <div className={`w-full px-4 py-3 rounded-xl ${inputBgClass}`}>
+          <input 
+            type="text" 
+            value={value} 
+            onChange={(e) => setValue(e.target.value)} 
+            className="w-full bg-transparent outline-none text-center font-medium text-base"
+            autoFocus 
+          />
+        </div>
+
+        <div className="flex gap-4 w-full px-2">
+          <button 
+            type="button"
+            onClick={onCancel}
+            className={`flex-1 py-3 px-6 rounded-full text-base font-semibold transition-all cursor-pointer ${cancelBtnClass}`}
+          >
+            Cancel
+          </button>
+          <button 
+            type="button"
+            onClick={() => onSave(value)}
+            className={`flex-1 py-3 px-6 rounded-full text-base font-bold transition-all cursor-pointer ${saveBtnClass}`}
+          >
+            Update now
           </button>
         </div>
       </div>
@@ -360,7 +531,7 @@ function PowerPage() {
   );
 }
 
-function HomePage({ navConfig }) {
+function HomePage({ navConfig, homepageWidgets }) {
   const [activeBtn, setActiveBtn] = useState(null);
 
   const handlePress = (btn) => {
@@ -369,25 +540,103 @@ function HomePage({ navConfig }) {
   };
 
   return (
-    <div className="ndp-page">
-      {navConfig.air && <AirPage compact />}
-      {navConfig.projector && (
-        <GlassPanel>
-          <div className="ndp-section-title">
-            <ProjectorScreenIcon />
-            <h2>Projection<br />Screen</h2>
-          </div>
-          <div className="ndp-projector-box">
-            <IconButton label="Up" active={activeBtn === 'up'} onClick={() => handlePress('up')}><ProjectorScreenIcon /></IconButton>
-            <IconButton label="Stop" active={activeBtn === 'stop'} onClick={() => handlePress('stop')}><Monitor size={38} /></IconButton>
-            <IconButton label="Down" active={activeBtn === 'down'} onClick={() => handlePress('down')}><ProjectorScreenIcon /></IconButton>
-            <span>Up</span>
-            <span>Stop</span>
-            <span>Down</span>
-          </div>
-        </GlassPanel>
-      )}
-      {!navConfig.air && !navConfig.projector && (
+    <div className="ndp-page ndp-scroll-page" style={{ gap: '16px', display: 'flex', flexDirection: 'column' }}>
+      {homepageWidgets.map((widgetId) => {
+        if (widgetId === 'air') {
+          return <AirPage key="air" compact />;
+        }
+        if (widgetId === 'projector') {
+          return (
+            <GlassPanel key="projector">
+              <div className="ndp-section-title">
+                <ProjectorScreenIcon />
+                <h2>Projection<br />Screen</h2>
+              </div>
+              <div className="ndp-projector-box">
+                <IconButton label="Up" active={activeBtn === 'up'} onClick={() => handlePress('up')}><ProjectorScreenIcon /></IconButton>
+                <IconButton label="Stop" active={activeBtn === 'stop'} onClick={() => handlePress('stop')}><Monitor size={38} /></IconButton>
+                <IconButton label="Down" active={activeBtn === 'down'} onClick={() => handlePress('down')}><ProjectorScreenIcon /></IconButton>
+                <span>Up</span>
+                <span>Stop</span>
+                <span>Down</span>
+              </div>
+            </GlassPanel>
+          );
+        }
+        if (widgetId === 'power') {
+          return (
+            <GlassPanel key="power">
+              <div className="ndp-section-title">
+                <PowerControlIcon />
+                <h2>Power Control</h2>
+              </div>
+              <div className="ndp-onoff" style={{ marginTop: '12px', display: 'flex', flexDirection: 'column', gap: '8px', width: '100%' }}>
+                <button className="ndp-device-select" style={{ width: '100%', justifyContent: 'center' }}>Display ON</button>
+                <button className="ndp-device-select" style={{ width: '100%', justifyContent: 'center' }}>External ON</button>
+              </div>
+            </GlassPanel>
+          );
+        }
+        if (widgetId === 'video') {
+          return (
+            <GlassPanel key="video">
+              <div className="ndp-section-title">
+                <VideoSwitchIcon />
+                <h2>Video Switch</h2>
+              </div>
+              <div style={{ display: 'flex', gap: '8px', marginTop: '12px', width: '100%', justifyContent: 'space-between' }}>
+                <button className="ndp-device-select" style={{ flex: 1, justifyContent: 'center', padding: '6px' }}>OPS</button>
+                <button className="ndp-device-select" style={{ flex: 1, justifyContent: 'center', padding: '6px' }}>HDMI 1</button>
+              </div>
+            </GlassPanel>
+          );
+        }
+        if (widgetId === 'volume') {
+          return (
+            <GlassPanel key="volume">
+              <div className="ndp-section-title">
+                <Volume2 size={18} />
+                <h2>Volume Control</h2>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', width: '100%', marginTop: '12px' }}>
+                <VolumeX size={16} />
+                <div style={{ flex: 1, height: '4px', background: 'rgba(255,255,255,0.2)', borderRadius: '2px', position: 'relative' }}>
+                  <div style={{ width: '70%', height: '100%', background: '#00c8ff', borderRadius: '2px' }} />
+                  <div style={{ position: 'absolute', left: '70%', top: '50%', transform: 'translate(-50%, -50%)', width: '12px', height: '12px', background: '#fff', borderRadius: '50%' }} />
+                </div>
+                <Volume2 size={16} />
+              </div>
+            </GlassPanel>
+          );
+        }
+        if (widgetId === 'serial') {
+          return (
+            <GlassPanel key="serial">
+              <div className="ndp-section-title">
+                <SerialIcon />
+                <h2>Serial Control</h2>
+              </div>
+              <button className="ndp-device-select" style={{ width: '100%', justifyContent: 'center', marginTop: '12px' }}>Send RS232 Power ON</button>
+            </GlassPanel>
+          );
+        }
+        if (widgetId === 'remote') {
+          return (
+            <GlassPanel key="remote">
+              <div className="ndp-section-title">
+                <RemoteControlIcon />
+                <h2>Remote Control</h2>
+              </div>
+              <div style={{ display: 'flex', gap: '6px', marginTop: '12px', width: '100%' }}>
+                <button className="ndp-device-select" style={{ flex: 1, justifyContent: 'center' }}>Menu</button>
+                <button className="ndp-device-select" style={{ flex: 1, justifyContent: 'center' }}>Back</button>
+              </div>
+            </GlassPanel>
+          );
+        }
+        return null;
+      })}
+      {homepageWidgets.length === 0 && (
         <GlassPanel className="ndp-cbx-panel">
           <div className="ndp-empty-state">No home modules selected</div>
         </GlassPanel>
@@ -1199,7 +1448,21 @@ function RemotePage() {
   );
 }
 
-function SettingsPage({ onDisconnectionClick, onResolutionClick, onLanguageClick, onPanelIpClick, panelIpAddress, deviceName, setDeviceName, isDark }) {
+function SettingsPage({ 
+  onDisconnectionClick, 
+  onResolutionClick, 
+  onLanguageClick, 
+  onDisplayClick, 
+  onCustomizeClick, 
+  onPasswordUnlockClick, 
+  onPanelIpClick, 
+  panelIpAddress, 
+  deviceName, 
+  setDeviceName, 
+  isDark,
+  cloudServerAddress,
+  onCloudServerAddressClick
+}) {
   const [tempDeviceName, setTempDeviceName] = useState('');
   const [isDeviceNameModalOpen, setIsDeviceNameModalOpen] = useState(false);
   const clickCountRef = useRef(0);
@@ -1265,7 +1528,7 @@ function SettingsPage({ onDisconnectionClick, onResolutionClick, onLanguageClick
         </div>
 
         {/* Display */}
-        <div className="ndp-settings-row is-clickable">
+        <div className="ndp-settings-row is-clickable" onClick={onDisplayClick}>
           <span className="ndp-settings-label">Display</span>
           <span className="ndp-settings-value">
             <ChevronRight size={18} />
@@ -1273,7 +1536,7 @@ function SettingsPage({ onDisconnectionClick, onResolutionClick, onLanguageClick
         </div>
 
         {/* Customize */}
-        <div className="ndp-settings-row is-clickable">
+        <div className="ndp-settings-row is-clickable" onClick={onCustomizeClick}>
           <span className="ndp-settings-label">Customize</span>
           <span className="ndp-settings-value">
             <ChevronRight size={18} />
@@ -1281,7 +1544,7 @@ function SettingsPage({ onDisconnectionClick, onResolutionClick, onLanguageClick
         </div>
 
         {/* Password Unlock */}
-        <div className="ndp-settings-row is-clickable">
+        <div className="ndp-settings-row is-clickable" onClick={onPasswordUnlockClick}>
           <span className="ndp-settings-label">Password Unlock</span>
           <span className="ndp-settings-value">
             <ChevronRight size={18} />
@@ -1306,7 +1569,7 @@ function SettingsPage({ onDisconnectionClick, onResolutionClick, onLanguageClick
         </div>
 
         {/* Q-NEX Cloud Server Address */}
-        <div className="ndp-settings-row is-clickable">
+        <div className="ndp-settings-row is-clickable" onClick={onCloudServerAddressClick}>
           <span className="ndp-settings-label">Q-NEX Cloud Server Address</span>
           <span className="ndp-settings-value">
             <ChevronRight size={18} />
@@ -1409,8 +1672,454 @@ function LanguageSubpage() {
   );
 }
 
-function Content({ activeTab, navConfig, onDisconnectionClick, settingsSubpage, setSettingsSubpage, onPanelIpClick, panelIpAddress, deviceName, setDeviceName, isDark }) {
-  if (activeTab === 'home') return <HomePage navConfig={navConfig} />;
+
+
+function DisplaySubpage({ 
+  brightness, 
+  setBrightness, 
+  autoLockTime, 
+  setAutoLockTime, 
+  screenSaver, 
+  setScreenSaver, 
+  screenSleep, 
+  setScreenSleep,
+  isDark 
+}) {
+  const autoLockChoices = ['1 Minute', '2 Minutes', '5 Minutes', '10 Minutes', 'Never'];
+  const screenSaverChoices = ['Never', '1 Minute', '2 Minutes', '5 Minutes', '10 Minutes'];
+  const screenSleepChoices = ['1 Minute', '5 Minutes', '10 Minutes', '30 Minutes', 'Never'];
+
+  const toggleChoice = (current, choices, setter) => {
+    const idx = choices.indexOf(current);
+    const nextIdx = (idx + 1) % choices.length;
+    setter(choices[nextIdx]);
+  };
+
+  return (
+    <div className="ndp-page ndp-scroll-page">
+      <div className="ndp-settings-list">
+        {/* Brightness */}
+        <div className="ndp-settings-row">
+          <span className="ndp-settings-label">Brightness</span>
+          <div className="ndp-slider-container">
+            <input 
+              type="range" 
+              min="0" 
+              max="100" 
+              value={brightness} 
+              onChange={(e) => setBrightness(Number(e.target.value))}
+              className="ndp-slider"
+              style={{
+                background: `linear-gradient(to right, #00c8ff 0%, #00c8ff ${brightness}%, ${isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)'} ${brightness}%, ${isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)'} 100%)`
+              }}
+            />
+          </div>
+        </div>
+
+        {/* Auto-Lock Screen */}
+        <div 
+          className="ndp-settings-row is-clickable" 
+          onClick={() => toggleChoice(autoLockTime, autoLockChoices, setAutoLockTime)}
+        >
+          <span className="ndp-settings-label">Auto-Lock Screen</span>
+          <span className="ndp-settings-value">
+            {autoLockTime}
+            <ChevronRight size={18} />
+          </span>
+        </div>
+
+        {/* Screen Saver */}
+        <div 
+          className="ndp-settings-row is-clickable" 
+          onClick={() => toggleChoice(screenSaver, screenSaverChoices, setScreenSaver)}
+        >
+          <span className="ndp-settings-label">Screen Saver</span>
+          <span className="ndp-settings-value">
+            {screenSaver}
+            <ChevronRight size={18} />
+          </span>
+        </div>
+
+        {/* Screen Sleep */}
+        <div 
+          className="ndp-settings-row is-clickable" 
+          onClick={() => toggleChoice(screenSleep, screenSleepChoices, setScreenSleep)}
+        >
+          <span className="ndp-settings-label">Screen Sleep</span>
+          <span className="ndp-settings-value">
+            {screenSleep}
+            <ChevronRight size={18} />
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function CustomizeSubpage({ onSubpageSelect }) {
+  return (
+    <div className="ndp-page ndp-scroll-page">
+      <div className="ndp-settings-list">
+        <div className="ndp-settings-row is-clickable" onClick={() => onSubpageSelect('customize-nav')}>
+          <span className="ndp-settings-label">Navigation bar</span>
+          <span className="ndp-settings-value">
+            <ChevronRight size={18} />
+          </span>
+        </div>
+        <div className="ndp-settings-row is-clickable" onClick={() => onSubpageSelect('customize-template')}>
+          <span className="ndp-settings-label">Homepage Template</span>
+          <span className="ndp-settings-value">
+            <ChevronRight size={18} />
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function NavigationBarSubpage({ navConfig, onNavConfigChange, itemsOrder, setItemsOrder }) {
+  const [draggedIndex, setDraggedIndex] = useState(null);
+
+  const handleDragStart = (e, index) => {
+    setDraggedIndex(index);
+    e.dataTransfer.effectAllowed = 'move';
+  };
+
+  const handleDragOver = (e, index) => {
+    e.preventDefault();
+    if (draggedIndex === null || draggedIndex === index) return;
+
+    const newOrder = [...itemsOrder];
+    const draggedItem = newOrder[draggedIndex];
+    newOrder.splice(draggedIndex, 1);
+    newOrder.splice(index, 0, draggedItem);
+    
+    setDraggedIndex(index);
+    setItemsOrder(newOrder);
+  };
+
+  const handleDragEnd = () => {
+    setDraggedIndex(null);
+  };
+
+  return (
+    <div className="ndp-page ndp-scroll-page">
+      <div className="ndp-nav-subtitle">
+        Long press and drag to order the list
+      </div>
+      <div className="ndp-nav-list-card">
+        {itemsOrder.map((id, index) => {
+          const item = menuConfigItems.find(n => n.id === id);
+          if (!item) return null;
+          const origItem = navItems.find(n => n.id === id);
+          const Icon = origItem ? origItem.icon : Home;
+          const isVisible = navConfig[id];
+
+          return (
+            <div 
+              key={id} 
+              className={`ndp-nav-sort-row ${draggedIndex === index ? 'is-dragging' : ''} ${!isVisible ? 'is-hidden' : ''}`}
+              draggable
+              onDragStart={(e) => handleDragStart(e, index)}
+              onDragOver={(e) => handleDragOver(e, index)}
+              onDragEnd={handleDragEnd}
+            >
+              {/* Eye Visibility Icon */}
+              <button 
+                type="button" 
+                className="ndp-eye-btn"
+                onClick={() => onNavConfigChange(id)}
+              >
+                {isVisible ? <Eye size={18} /> : <EyeOff size={18} />}
+              </button>
+
+              {/* Menu Icon and Label */}
+              <div className="ndp-nav-item-info">
+                <Icon size={18} className="ndp-nav-row-icon" />
+                <span className="ndp-nav-row-label">{item.label}</span>
+              </div>
+
+              {/* Drag Handle */}
+              <div className="ndp-drag-handle">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="4" y1="6" x2="20" y2="6" />
+                  <line x1="4" y1="12" x2="20" y2="12" />
+                  <line x1="4" y1="18" x2="20" y2="18" />
+                </svg>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function ChooseWidgetSubpage({ homepageWidgets, setHomepageWidgets }) {
+  return (
+    <div className="ndp-page ndp-scroll-page" style={{ display: 'flex', flexDirection: 'column', alignItems: 'stretch' }}>
+      <div className="ndp-widget-section-title">Selected</div>
+      
+      {/* Selected Preview Box */}
+      <div className="ndp-widget-preview-area">
+        {homepageWidgets.length === 0 ? (
+          <span style={{ color: '#a0aab8', fontSize: '14px' }}>No Widgets Selected</span>
+        ) : (
+          homepageWidgets.map((widgetId) => {
+            const item = menuConfigItems.find(n => n.id === widgetId);
+            if (!item) return null;
+            const origItem = navItems.find(n => n.id === widgetId);
+            const Icon = origItem ? origItem.icon : Home;
+
+            return (
+              <div key={widgetId} className="ndp-widget-card-selected">
+                <Icon size={18} />
+                <span style={{ fontSize: '14px', fontWeight: '500', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                  {item.label}
+                </span>
+                <button 
+                  type="button" 
+                  className="ndp-widget-remove-btn"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setHomepageWidgets(homepageWidgets.filter(w => w !== widgetId));
+                  }}
+                >
+                  –
+                </button>
+              </div>
+            );
+          })
+        )}
+      </div>
+
+      <div className="ndp-widget-section-title">Optional</div>
+      
+      {/* Grid of options */}
+      <div className="ndp-widget-grid">
+        {menuConfigItems.map((item) => {
+          const isSelected = homepageWidgets.includes(item.id);
+          const origItem = navItems.find(n => n.id === item.id);
+          const Icon = origItem ? origItem.icon : Home;
+
+          return (
+            <div 
+              key={item.id} 
+              className={`ndp-widget-card-optional ${isSelected ? 'is-selected' : ''}`}
+              onClick={() => {
+                if (isSelected) {
+                  setHomepageWidgets(homepageWidgets.filter(w => w !== item.id));
+                } else {
+                  setHomepageWidgets([...homepageWidgets, item.id]);
+                }
+              }}
+            >
+              <Icon size={18} />
+              <span style={{ fontSize: '14px', fontWeight: '500' }}>
+                {item.label}
+              </span>
+              {!isSelected && (
+                <button type="button" className="ndp-widget-add-btn">
+                  +
+                </button>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function PasswordUnlockSubpage({ 
+  passwordUnlockEnabled, 
+  setPasswordUnlockEnabled, 
+  onPasswordSettingClick,
+  setSettingsSubpage,
+  isDark 
+}) {
+  return (
+    <div className="ndp-page ndp-scroll-page">
+      <div className="ndp-settings-list">
+        {/* Password Unlock Toggle */}
+        <div className="ndp-settings-row">
+          <span className="ndp-settings-label">Password Unlock</span>
+          <span className="ndp-settings-value">
+            <Toggle 
+              checked={passwordUnlockEnabled} 
+              onClick={() => {
+                if (!passwordUnlockEnabled) {
+                  setSettingsSubpage('password-setting');
+                } else {
+                  setPasswordUnlockEnabled(false);
+                }
+              }} 
+            />
+          </span>
+        </div>
+
+        {/* Password setting */}
+        <div className="ndp-settings-row is-clickable" onClick={onPasswordSettingClick}>
+          <span className="ndp-settings-label">Password setting</span>
+          <span className="ndp-settings-value">
+            <ChevronRight size={18} />
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function PasswordSettingSubpage({ password, setPassword, setSettingsSubpage, setPasswordUnlockEnabled }) {
+  const [phase, setPhase] = useState('enter'); // 'enter' or 'confirm'
+  const [firstPin, setFirstPin] = useState('');
+  const [currentPin, setCurrentPin] = useState('');
+  const [toastMessage, setToastMessage] = useState('');
+
+  const toastTimeoutRef = useRef(null);
+
+  const showToast = (msg) => {
+    setToastMessage(msg);
+    if (toastTimeoutRef.current) clearTimeout(toastTimeoutRef.current);
+    toastTimeoutRef.current = setTimeout(() => {
+      setToastMessage('');
+    }, 5000); // 5 seconds
+  };
+
+  useEffect(() => {
+    return () => {
+      if (toastTimeoutRef.current) clearTimeout(toastTimeoutRef.current);
+    };
+  }, []);
+
+  const handleKeyPress = (num) => {
+    if (currentPin.length >= 4) return;
+    const nextPin = currentPin + num;
+    setCurrentPin(nextPin);
+
+    if (nextPin.length === 4) {
+      if (phase === 'enter') {
+        // Go to confirm phase
+        setTimeout(() => {
+          setFirstPin(nextPin);
+          setCurrentPin('');
+          setPhase('confirm');
+        }, 300);
+      } else {
+        // We are in confirm phase: check if they match!
+        if (nextPin === firstPin) {
+          setTimeout(() => {
+            setPassword(nextPin);
+            setPasswordUnlockEnabled(true);
+            setSettingsSubpage('password-unlock');
+          }, 300);
+        } else {
+          setTimeout(() => {
+            showToast('The two passwords you entered did not match!');
+            setCurrentPin('');
+          }, 300);
+        }
+      }
+    }
+  };
+
+  const handleBackspace = () => {
+    setCurrentPin(prev => prev.slice(0, -1));
+  };
+
+  return (
+    <div className="ndp-page ndp-pin-screen" style={{ justifyContent: 'flex-start', paddingTop: '40px' }}>
+      <div className="ndp-pin-header" style={{ marginBottom: '24px' }}>
+        <h2 style={{ fontSize: '20px', fontWeight: '600' }}>
+          {phase === 'enter' ? 'Enter password' : 'Enter password again'}
+        </h2>
+      </div>
+
+      <div className="ndp-pin-dots" style={{ marginBottom: '48px', gap: '20px', display: 'flex' }}>
+        {[0, 1, 2, 3].map((idx) => (
+          <div 
+            key={idx} 
+            className={`ndp-pin-dot-circle ${idx < currentPin.length ? 'is-filled' : ''}`} 
+          />
+        ))}
+      </div>
+
+      <div className="ndp-pin-keypad" style={{ width: '100%', maxWidth: '320px' }}>
+        {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
+          <button 
+            key={num} 
+            type="button" 
+            className="ndp-key-btn" 
+            onClick={() => handleKeyPress(num.toString())}
+          >
+            {num}
+          </button>
+        ))}
+        {/* Empty placeholder to keep layout */}
+        <div style={{ width: '72px', height: '72px' }} />
+        <button 
+          type="button" 
+          className="ndp-key-btn" 
+          onClick={() => handleKeyPress('0')}
+        >
+          0
+        </button>
+        <button 
+          type="button" 
+          className="ndp-key-btn" 
+          onClick={handleBackspace}
+          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0 -2-2z" />
+            <line x1="18" y1="9" x2="12" y2="15" />
+            <line x1="12" y1="9" x2="18" y2="15" />
+          </svg>
+        </button>
+      </div>
+
+      {/* Android-style Toast */}
+      {toastMessage && (
+        <div className="ndp-toast">
+          {toastMessage}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function Content({ 
+  activeTab, 
+  navConfig, 
+  handleNavConfigChange, 
+  onDisconnectionClick, 
+  settingsSubpage, 
+  setSettingsSubpage, 
+  onPanelIpClick, 
+  panelIpAddress, 
+  deviceName, 
+  setDeviceName, 
+  isDark,
+  brightness,
+  setBrightness,
+  autoLockTime,
+  setAutoLockTime,
+  screenSaver,
+  setScreenSaver,
+  screenSleep,
+  setScreenSleep,
+  passwordUnlockEnabled,
+  setPasswordUnlockEnabled,
+  password,
+  setPassword,
+  homepageWidgets,
+  setHomepageWidgets,
+  itemsOrder,
+  setItemsOrder,
+  cloudServerAddress,
+  onCloudServerAddressClick
+}) {
+  if (activeTab === 'home') return <HomePage navConfig={navConfig} homepageWidgets={homepageWidgets} />;
   if (activeTab === 'video') return <VideoPage />;
   if (activeTab === 'serial') return <SerialPage />;
   if (activeTab === 'volume') return <VolumePage />;
@@ -1424,16 +2133,84 @@ function Content({ activeTab, navConfig, onDisconnectionClick, settingsSubpage, 
     if (settingsSubpage === 'language') {
       return <LanguageSubpage />;
     }
+    if (settingsSubpage === 'display') {
+      return (
+        <DisplaySubpage 
+          brightness={brightness}
+          setBrightness={setBrightness}
+          autoLockTime={autoLockTime}
+          setAutoLockTime={setAutoLockTime}
+          screenSaver={screenSaver}
+          setScreenSaver={setScreenSaver}
+          screenSleep={screenSleep}
+          setScreenSleep={setScreenSleep}
+          isDark={isDark}
+        />
+      );
+    }
+    if (settingsSubpage === 'customize') {
+      return (
+        <CustomizeSubpage 
+          onSubpageSelect={(sub) => setSettingsSubpage(sub)}
+        />
+      );
+    }
+    if (settingsSubpage === 'customize-nav') {
+      return (
+        <NavigationBarSubpage 
+          navConfig={navConfig}
+          onNavConfigChange={handleNavConfigChange}
+          itemsOrder={itemsOrder}
+          setItemsOrder={setItemsOrder}
+        />
+      );
+    }
+    if (settingsSubpage === 'customize-template') {
+      return (
+        <ChooseWidgetSubpage 
+          homepageWidgets={homepageWidgets}
+          setHomepageWidgets={setHomepageWidgets}
+        />
+      );
+    }
+    if (settingsSubpage === 'password-unlock') {
+      return (
+        <PasswordUnlockSubpage 
+          passwordUnlockEnabled={passwordUnlockEnabled}
+          setPasswordUnlockEnabled={setPasswordUnlockEnabled}
+          onPasswordSettingClick={() => {
+            setSettingsSubpage('password-setting');
+          }}
+          setSettingsSubpage={setSettingsSubpage}
+          isDark={isDark}
+        />
+      );
+    }
+    if (settingsSubpage === 'password-setting') {
+      return (
+        <PasswordSettingSubpage 
+          password={password}
+          setPassword={setPassword}
+          setSettingsSubpage={setSettingsSubpage}
+          setPasswordUnlockEnabled={setPasswordUnlockEnabled}
+        />
+      );
+    }
     return (
       <SettingsPage 
         onDisconnectionClick={onDisconnectionClick} 
         onResolutionClick={() => setSettingsSubpage('resolution')}
         onLanguageClick={() => setSettingsSubpage('language')}
+        onDisplayClick={() => setSettingsSubpage('display')}
+        onCustomizeClick={() => setSettingsSubpage('customize')}
+        onPasswordUnlockClick={() => setSettingsSubpage('password-unlock')}
         onPanelIpClick={onPanelIpClick}
         panelIpAddress={panelIpAddress}
         deviceName={deviceName}
         setDeviceName={setDeviceName}
         isDark={isDark}
+        cloudServerAddress={cloudServerAddress}
+        onCloudServerAddressClick={onCloudServerAddressClick}
       />
     );
   }
@@ -1453,9 +2230,20 @@ export default function Ndp600PortraitApp() {
   const [deviceName, setDeviceName] = useState('3F NDP600');
   const [isDisconnectConfirmOpen, setIsDisconnectConfirmOpen] = useState(false);
   const [showPowerOnScreen, setShowPowerOnScreen] = useState(false);
+  const [cloudServerAddress, setCloudServerAddress] = useState('https://test.qnextech.com');
+  const [isCloudServerModalOpen, setIsCloudServerModalOpen] = useState(false);
 
   const [isLocking, setIsLocking] = useState(false);
   const [lockCountdown, setLockCountdown] = useState(9);
+
+  const [brightness, setBrightness] = useState(80);
+  const [autoLockTime, setAutoLockTime] = useState('2 Minutes');
+  const [screenSaver, setScreenSaver] = useState('Never');
+  const [screenSleep, setScreenSleep] = useState('10 Minutes');
+  const [passwordUnlockEnabled, setPasswordUnlockEnabled] = useState(true);
+  const [password, setPassword] = useState('8888');
+  const [homepageWidgets, setHomepageWidgets] = useState(['air', 'projector']);
+  const [itemsOrder, setItemsOrder] = useState(['power', 'video', 'volume', 'serial', 'air', 'projector', 'remote']);
 
   useEffect(() => {
     let timer;
@@ -1562,10 +2350,16 @@ export default function Ndp600PortraitApp() {
                   }}
                   onLock={() => {
                     setLocked(true);
+                    setActiveTab('home');
                   }}
                 />
               ) : locked ? (
-                <LockScreen setLocked={setLocked} />
+                <LockScreen 
+                  setLocked={setLocked} 
+                  passwordUnlockEnabled={passwordUnlockEnabled}
+                  password={password}
+                  isDark={theme === 'dark'}
+                />
               ) : (
                 <>
                   {isLocking && (
@@ -1589,6 +2383,17 @@ export default function Ndp600PortraitApp() {
                       }}
                     />
                   )}
+                  {isCloudServerModalOpen && (
+                    <CloudServerModal 
+                      isDark={theme === 'dark'}
+                      initialValue={cloudServerAddress}
+                      onCancel={() => setIsCloudServerModalOpen(false)}
+                      onSave={(val) => {
+                        setCloudServerAddress(val);
+                        setIsCloudServerModalOpen(false);
+                      }}
+                    />
+                  )}
                   <Sidebar 
                     activeTab={activeTab} 
                     setActiveTab={(tabId) => {
@@ -1596,6 +2401,7 @@ export default function Ndp600PortraitApp() {
                       setSettingsSubpage(null);
                     }} 
                     navConfig={navConfig} 
+                    itemsOrder={itemsOrder}
                   />
                   <div className="ndp-main">
                     <TopTools 
@@ -1606,11 +2412,25 @@ export default function Ndp600PortraitApp() {
                     />
                     {activeTab === 'settings' && (
                       settingsSubpage ? (
-                        <button className="ndp-back-title" type="button" onClick={() => setSettingsSubpage(null)}>
+                        <button className="ndp-back-title" type="button" onClick={() => {
+                          if (settingsSubpage === 'customize-nav' || settingsSubpage === 'customize-template') {
+                            setSettingsSubpage('customize');
+                          } else if (settingsSubpage === 'password-setting') {
+                            setSettingsSubpage('password-unlock');
+                          } else {
+                            setSettingsSubpage(null);
+                          }
+                        }}>
                           <ChevronLeft size={22} />
                           <span>
                             {settingsSubpage === 'resolution' && 'HDMI OUT Resolution'}
                             {settingsSubpage === 'language' && 'Language'}
+                            {settingsSubpage === 'display' && 'Display'}
+                            {settingsSubpage === 'customize' && 'Customize'}
+                            {settingsSubpage === 'customize-nav' && 'Navigation bar'}
+                            {settingsSubpage === 'customize-template' && 'Choose Widget'}
+                            {settingsSubpage === 'password-unlock' && 'Password Unlock'}
+                            {settingsSubpage === 'password-setting' && 'Password setting'}
                           </span>
                         </button>
                       ) : (
@@ -1621,6 +2441,7 @@ export default function Ndp600PortraitApp() {
                       <Content 
                         activeTab={activeTab} 
                         navConfig={navConfig} 
+                        handleNavConfigChange={handleNavConfigChange}
                         onDisconnectionClick={() => setIsDisconnectConfirmOpen(true)} 
                         settingsSubpage={settingsSubpage}
                         setSettingsSubpage={setSettingsSubpage}
@@ -1629,6 +2450,24 @@ export default function Ndp600PortraitApp() {
                         deviceName={deviceName}
                         setDeviceName={setDeviceName}
                         isDark={theme === 'dark'}
+                        brightness={brightness}
+                        setBrightness={setBrightness}
+                        autoLockTime={autoLockTime}
+                        setAutoLockTime={setAutoLockTime}
+                        screenSaver={screenSaver}
+                        setScreenSaver={setScreenSaver}
+                        screenSleep={screenSleep}
+                        setScreenSleep={setScreenSleep}
+                        passwordUnlockEnabled={passwordUnlockEnabled}
+                        setPasswordUnlockEnabled={setPasswordUnlockEnabled}
+                        password={password}
+                        setPassword={setPassword}
+                        homepageWidgets={homepageWidgets}
+                        setHomepageWidgets={setHomepageWidgets}
+                        itemsOrder={itemsOrder}
+                        setItemsOrder={setItemsOrder}
+                        cloudServerAddress={cloudServerAddress}
+                        onCloudServerAddressClick={() => setIsCloudServerModalOpen(true)}
                       />
                     </div>
                     <BottomDock locked={locked} muted={muted} setLocked={handleStartLock} setMuted={setMuted} />

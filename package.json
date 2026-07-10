@@ -7,8 +7,10 @@
     "dev": "vite",
     "dev:nmp211": "vite",
     "dev:ndp600": "vite --mode ndp600",
+    "dev:lcs": "vite --mode lcs",
     "build": "vite build",
     "build:ndp600": "vite build --mode ndp600",
+    "build:lcs": "vite build --mode lcs",
     "lint": "eslint .",
     "preview": "vite preview"
   },

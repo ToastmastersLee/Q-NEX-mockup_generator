@@ -913,10 +913,16 @@
   color: #000000;
 }
 
+.ndp-stage.is-light .ndp-output-list {
+  display: grid;
+  gap: 18px;
+}
+
 .ndp-stage.is-light .ndp-soft-row {
   background: #ffffff;
   border: 1px solid #e5e7eb;
-  box-shadow: none;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   color: #000000;
 }
 
@@ -1821,3 +1827,564 @@
   background: linear-gradient(135deg, #05c8ec, #127bff);
   color: #ffffff;
 }
+
+/* Custom slider styling */
+.ndp-slider-container {
+  flex: 1;
+  max-width: 240px;
+  display: flex;
+  align-items: center;
+}
+
+.ndp-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+  transition: background 0.1s ease;
+}
+
+.ndp-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.ndp-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+
+
+/* Pin/Password screen styling */
+.ndp-pin-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.ndp-pin-header {
+  margin-bottom: 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ndp-pin-header h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.ndp-stage.is-light .ndp-pin-header h2 {
+  color: #000000;
+}
+
+.ndp-pin-error {
+  color: #ff3b30;
+  font-size: 14px;
+  font-weight: 500;
+  min-height: 20px;
+}
+
+.ndp-pin-dots {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.ndp-pin-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  transition: all 0.15s ease;
+}
+
+.ndp-stage.is-light .ndp-pin-dot {
+  border: 1.5px solid rgba(0, 0, 0, 0.3);
+}
+
+.ndp-pin-dot.is-filled {
+  background: #ffffff;
+  border-color: #ffffff;
+}
+
+.ndp-stage.is-light .ndp-pin-dot.is-filled {
+  background: #000000;
+  border-color: #000000;
+}
+
+.ndp-pin-dot.is-error {
+  border-color: #ff3b30;
+  background: #ff3b30;
+  animation: ndp-shake 0.3s ease;
+}
+
+@keyframes ndp-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+.ndp-pin-keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px 24px;
+  width: 100%;
+  max-width: 240px;
+}
+
+.ndp-key-btn {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, transform 0.1s ease;
+  outline: none;
+}
+
+.ndp-key-btn:active {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(0.95);
+}
+
+.ndp-stage.is-light .ndp-key-btn {
+  background: rgba(0, 0, 0, 0.05);
+  color: #000000;
+}
+
+.ndp-stage.is-light .ndp-key-btn:active {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.ndp-key-btn.text-sm {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.ndp-stage.is-light .ndp-key-btn.text-sm {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* Custom Navigation Bar and Choose Widget styling */
+.ndp-nav-subtitle {
+  font-size: 14px;
+  color: #a0aab8;
+  margin-bottom: 16px;
+  padding-left: 8px;
+}
+
+.ndp-stage.is-light .ndp-nav-subtitle {
+  color: #4b5563;
+}
+
+.ndp-nav-list-card {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  border: 1px solid rgba(222, 240, 255, 0.08);
+  overflow: hidden;
+  padding: 4px 0;
+}
+
+.ndp-stage.is-light .ndp-nav-list-card {
+  background: rgba(0, 0, 0, 0.01);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.ndp-nav-sort-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(222, 240, 255, 0.05);
+  cursor: grab;
+  transition: background 0.15s ease, opacity 0.15s ease;
+  user-select: none;
+}
+
+.ndp-nav-sort-row:last-child {
+  border-bottom: none;
+}
+
+.ndp-nav-sort-row:active {
+  cursor: grabbing;
+}
+
+.ndp-nav-sort-row.is-dragging {
+  opacity: 0.4;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.ndp-nav-sort-row.is-hidden {
+  opacity: 0.5;
+}
+
+.ndp-stage.is-light .ndp-nav-sort-row {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.ndp-eye-btn {
+  background: transparent;
+  border: none;
+  padding: 8px;
+  margin: -8px;
+  color: #00c8ff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  transition: color 0.15s ease;
+}
+
+.ndp-stage.is-light .ndp-eye-btn {
+  color: #2563eb;
+}
+
+.ndp-nav-sort-row.is-hidden .ndp-eye-btn {
+  color: #a0aab8;
+}
+
+.ndp-stage.is-light .ndp-nav-sort-row.is-hidden .ndp-eye-btn {
+  color: #9ca3af;
+}
+
+.ndp-nav-item-info {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-left: 20px;
+}
+
+.ndp-nav-row-icon {
+  color: #dbefff;
+  display: flex;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+}
+
+.ndp-stage.is-light .ndp-nav-row-icon {
+  color: #111827;
+}
+
+.ndp-nav-row-label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #dbefff;
+}
+
+.ndp-stage.is-light .ndp-nav-row-label {
+  color: #111827;
+}
+
+.ndp-drag-handle {
+  color: rgba(255, 255, 255, 0.3);
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ndp-stage.is-light .ndp-drag-handle {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.ndp-widget-section-title {
+  font-size: 14px;
+  color: #a0aab8;
+  margin: 16px 0 10px 4px;
+  font-weight: 500;
+  align-self: flex-start;
+}
+
+.ndp-stage.is-light .ndp-widget-section-title {
+  color: #4b5563;
+}
+
+.ndp-widget-preview-area {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  border: 1px dashed rgba(222, 240, 255, 0.15);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-height: 180px;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 8px;
+}
+
+.ndp-stage.is-light .ndp-widget-preview-area {
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px dashed rgba(0, 0, 0, 0.15);
+}
+
+.ndp-widget-card-selected {
+  position: relative;
+  background: rgba(59, 82, 116, 0.35);
+  border: 1px solid rgba(222, 240, 255, 0.08);
+  border-radius: 12px;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 180px;
+  box-sizing: border-box;
+}
+
+.ndp-widget-card-selected span {
+  color: #ffffff;
+}
+
+.ndp-widget-card-selected svg {
+  color: #00c8ff;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Selected preview card light mode high contrast overrides */
+.ndp-stage.is-light .ndp-widget-card-selected {
+  background: #ffffff;
+  border: 1.5px solid #2563eb;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
+}
+
+.ndp-stage.is-light .ndp-widget-card-selected span {
+  color: #111827;
+}
+
+.ndp-stage.is-light .ndp-widget-card-selected svg {
+  color: #2563eb;
+}
+
+.ndp-widget-remove-btn {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ff3b30;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0;
+  outline: none;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.ndp-widget-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 24px;
+}
+
+/* Optional cards dark mode default (unselected) */
+.ndp-widget-card-optional {
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(222, 240, 255, 0.06);
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.ndp-widget-card-optional span {
+  color: #dbefff;
+}
+
+.ndp-widget-card-optional svg {
+  color: #dbefff;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.ndp-widget-card-optional:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Optional cards dark mode selected */
+.ndp-widget-card-optional.is-selected {
+  border-color: rgba(0, 200, 255, 0.3);
+  background: rgba(0, 200, 255, 0.03);
+  cursor: default;
+}
+
+.ndp-widget-card-optional.is-selected span {
+  color: #00c8ff;
+}
+
+.ndp-widget-card-optional.is-selected svg {
+  color: #00c8ff;
+}
+
+/* Optional cards light mode unselected high contrast */
+.ndp-stage.is-light .ndp-widget-card-optional {
+  background: #f9fafb;
+  border: 1.5px solid #e5e7eb;
+}
+
+.ndp-stage.is-light .ndp-widget-card-optional:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.ndp-stage.is-light .ndp-widget-card-optional span {
+  color: #374151;
+}
+
+.ndp-stage.is-light .ndp-widget-card-optional svg {
+  color: #4b5563;
+}
+
+/* Optional cards light mode selected high contrast */
+.ndp-stage.is-light .ndp-widget-card-optional.is-selected {
+  background: #eff6ff;
+  border: 1.5px solid #3b82f6;
+}
+
+.ndp-stage.is-light .ndp-widget-card-optional.is-selected span {
+  color: #1d4ed8;
+}
+
+.ndp-stage.is-light .ndp-widget-card-optional.is-selected svg {
+  color: #2563eb;
+}
+
+.ndp-widget-add-btn {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #3b82f6;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 0;
+  outline: none;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.ndp-stage.is-light .ndp-widget-add-btn {
+  background: #2563eb;
+}
+
+/* Custom Password setting page keypads, dots, and toast */
+.ndp-pin-dot-circle {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid #00c8ff;
+  background: transparent;
+  transition: background-color 0.15s ease;
+}
+
+.ndp-pin-dot-circle.is-filled {
+  background: #00c8ff;
+}
+
+.ndp-stage.is-light .ndp-pin-dot-circle {
+  border-color: #2563eb;
+}
+
+.ndp-stage.is-light .ndp-pin-dot-circle.is-filled {
+  background: #2563eb;
+}
+
+.ndp-toast {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(30, 41, 59, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  white-space: nowrap;
+  animation: ndp-toast-fade-in 0.2s ease-out;
+}
+
+.ndp-stage.is-light .ndp-toast {
+  background: rgba(243, 244, 246, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  color: #111827;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes ndp-toast-fade-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+
