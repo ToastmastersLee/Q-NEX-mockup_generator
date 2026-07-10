@@ -3,8 +3,10 @@ import { Monitor, Radio, Disc3, CircleStop, ChevronRight, ChevronLeft, Smartphon
 import { ToggleSwitch } from '../components/ToggleSwitch';
 import { HdmiIcon, PowerControlIcon, VideoSwitchIcon } from '../assets/Icons';
 
-const WindowsIcon = (props) => (
+const WindowsIcon = ({ size = 22, ...props }) => (
     <svg 
+        width={size}
+        height={size}
         viewBox="0 0 24 24" 
         fill="none" 
         stroke="currentColor" 
@@ -20,8 +22,10 @@ const WindowsIcon = (props) => (
     </svg>
 );
 
-const AndroidIcon = (props) => (
+const AndroidIcon = ({ size = 22, ...props }) => (
     <svg 
+        width={size}
+        height={size}
         viewBox="0 0 24 24" 
         fill="none" 
         stroke="currentColor" 
