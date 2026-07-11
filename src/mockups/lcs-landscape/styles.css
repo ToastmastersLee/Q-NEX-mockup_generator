@@ -1734,3 +1734,9 @@
   background-color: #e4e4e7 !important;
   color: #27272a !important;
 }
+
+/* CSS dynamic zoom on the teacher from the original panorama */
+.lcs-zoom-teacher {
+  transform: scale(2.8) !important;
+  transform-origin: 75% 36% !important;
+}
