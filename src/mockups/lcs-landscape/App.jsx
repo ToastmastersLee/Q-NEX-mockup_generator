@@ -125,6 +125,35 @@ export default function App() {
   });
   const [activeSettingsTab, setActiveSettingsTab] = useState('device'); // 'device' | 'storage' | 'network' | 'version' | 'advance'
   const [settingsRecordStrategy, setSettingsRecordStrategy] = useState('delete'); // 'delete' | 'stop'
+  
+  // Network settings states
+  const [settingsNetworkSubTab, setSettingsNetworkSubTab] = useState('config'); // 'config' | 'detect'
+  const [settingsNetworkDhcp, setSettingsNetworkDhcp] = useState(false);
+  const [settingsNetworkIp, setSettingsNetworkIp] = useState('192.168.3.37');
+  const [settingsNetworkMask, setSettingsNetworkMask] = useState('255.255.255.0');
+  const [settingsNetworkGateway, setSettingsNetworkGateway] = useState('192.168.3.1');
+  const [settingsNetworkDns, setSettingsNetworkDns] = useState('');
+
+  // Advance settings states
+  const [settingsAdvanceSubTab, setSettingsAdvanceSubTab] = useState('record'); // 'record' | 'live' | 'channel' | 'server' | 'interactive' | 'sip'
+  const [settingsAdvanceSelect, setSettingsAdvanceSelect] = useState({
+    pgm: true,
+    lecture: true,
+    lecture2: false,
+    teacherC: true,
+    studentC: true,
+    teacherP: false,
+    studentP: false,
+    interactive: false
+  });
+  const [settingsAdvanceName, setSettingsAdvanceName] = useState('PGM');
+  const [settingsAdvanceBitrate, setSettingsAdvanceBitrate] = useState('4096Kbps');
+  const [settingsAdvanceFormat, setSettingsAdvanceFormat] = useState('MP4');
+  const [settingsAdvanceFrameRate, setSettingsAdvanceFrameRate] = useState('30fps');
+  const [settingsAdvanceCodec, setSettingsAdvanceCodec] = useState('H264');
+  const [settingsAdvanceResolution, setSettingsAdvanceResolution] = useState('3840*2160');
+  const [settingsAdvanceSegment, setSettingsAdvanceSegment] = useState('0');
+  const [settingsAdvanceMaxTime, setSettingsAdvanceMaxTime] = useState('4hour');
 
   const timerRef = useRef(null);
 
@@ -1535,6 +1564,307 @@ export default function App() {
                           </div>
                         </div>
                       </div>
+                    </div>
+                  ) : activeSettingsTab === 'network' ? (
+                    <div className="lcs-settings-network-tab">
+                      {/* Sub Navigation Bar */}
+                      <div className="lcs-settings-subnav-row">
+                        <button
+                          type="button"
+                          className={`lcs-subnav-btn ${settingsNetworkSubTab === 'config' ? 'is-active' : ''}`}
+                          onClick={() => setSettingsNetworkSubTab('config')}
+                        >
+                          Config
+                        </button>
+                        <button
+                          type="button"
+                          className={`lcs-subnav-btn ${settingsNetworkSubTab === 'detect' ? 'is-active' : ''}`}
+                          onClick={() => setSettingsNetworkSubTab('detect')}
+                        >
+                          Net Detect
+                        </button>
+                      </div>
+
+                      {settingsNetworkSubTab === 'config' ? (
+                        <div className="lcs-settings-network-config">
+                          {/* Row 1: Select (LAN) */}
+                          <div className="lcs-settings-row">
+                            <span className="lcs-settings-label">Select:</span>
+                            <div className="lcs-radio-item" style={{ cursor: 'default' }}>
+                              <div className="lcs-radio-circle is-checked">
+                                <div className="lcs-radio-dot" />
+                              </div>
+                              <span>LAN</span>
+                            </div>
+                          </div>
+
+                          {/* Row 2: DHCP */}
+                          <div className="lcs-settings-row">
+                            <span className="lcs-settings-label">DHCP:</span>
+                            <div 
+                              className={`lcs-toggle-switch ${settingsNetworkDhcp ? 'is-on' : ''}`}
+                              onClick={() => {
+                                const nextDhcp = !settingsNetworkDhcp;
+                                setSettingsNetworkDhcp(nextDhcp);
+                                if (nextDhcp) {
+                                  setSettingsNetworkIp('192.168.3.155');
+                                  setSettingsNetworkMask('255.255.255.0');
+                                  setSettingsNetworkGateway('192.168.3.1');
+                                  setSettingsNetworkDns('8.8.8.8');
+                                } else {
+                                  setSettingsNetworkIp('192.168.3.37');
+                                  setSettingsNetworkMask('255.255.255.0');
+                                  setSettingsNetworkGateway('192.168.3.1');
+                                  setSettingsNetworkDns('');
+                                }
+                              }}
+                            >
+                              <div className="lcs-toggle-knob" />
+                            </div>
+                          </div>
+
+                          {/* Row 3: IP Address */}
+                          <div className="lcs-settings-row" style={{ justifyContent: 'space-between' }}>
+                            <span className="lcs-settings-label">IP Address:</span>
+                            <input 
+                              type="text" 
+                              className="lcs-settings-input" 
+                              value={settingsNetworkIp}
+                              disabled={settingsNetworkDhcp}
+                              onChange={(e) => setSettingsNetworkIp(e.target.value)}
+                            />
+                          </div>
+
+                          {/* Row 4: Subnet Mask */}
+                          <div className="lcs-settings-row" style={{ justifyContent: 'space-between' }}>
+                            <span className="lcs-settings-label">Subnet Mask:</span>
+                            <input 
+                              type="text" 
+                              className="lcs-settings-input" 
+                              value={settingsNetworkMask}
+                              disabled={settingsNetworkDhcp}
+                              onChange={(e) => setSettingsNetworkMask(e.target.value)}
+                            />
+                          </div>
+
+                          {/* Row 5: Default Gateway */}
+                          <div className="lcs-settings-row" style={{ justifyContent: 'space-between' }}>
+                            <span className="lcs-settings-label">Default Gateway:</span>
+                            <input 
+                              type="text" 
+                              className="lcs-settings-input" 
+                              value={settingsNetworkGateway}
+                              disabled={settingsNetworkDhcp}
+                              onChange={(e) => setSettingsNetworkGateway(e.target.value)}
+                            />
+                          </div>
+
+                          {/* Row 6: DNS Server */}
+                          <div className="lcs-settings-row" style={{ justifyContent: 'space-between' }}>
+                            <span className="lcs-settings-label">DNS Server:</span>
+                            <input 
+                              type="text" 
+                              className="lcs-settings-input" 
+                              value={settingsNetworkDns}
+                              disabled={settingsNetworkDhcp}
+                              placeholder=""
+                              onChange={(e) => setSettingsNetworkDns(e.target.value)}
+                            />
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="lcs-settings-row" style={{ flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '30px 20px', gap: '10px' }}>
+                          <span style={{ fontSize: '13px', color: '#00e676', fontWeight: 'bold' }}>Network connection is normal.</span>
+                          <span style={{ fontSize: '11px', color: '#a0aec0' }}>Ping Gateway (192.168.3.1) ... Success (0.8ms)</span>
+                        </div>
+                      )}
+                    </div>
+                  ) : activeSettingsTab === 'version' ? (
+                    <div className="lcs-settings-version-tab">
+                      {/* Subnav row with 'Check' button */}
+                      <div className="lcs-settings-subnav-row">
+                        <button type="button" className="lcs-subnav-btn is-active">
+                          Check
+                        </button>
+                      </div>
+
+                      {/* Version details card */}
+                      <div className="lcs-settings-version-card">
+                        <div className="lcs-version-row">
+                          <span className="lcs-version-label">Model</span>
+                          <span className="lcs-version-value">LCS810</span>
+                        </div>
+                        <div className="lcs-version-row">
+                          <span className="lcs-version-label">Main IP:</span>
+                          <span className="lcs-version-value">192.168.3.37</span>
+                        </div>
+                        <div className="lcs-version-row">
+                          <span className="lcs-version-label">AEC Version:</span>
+                          <span className="lcs-version-value">5.0.1</span>
+                        </div>
+                        <div className="lcs-version-row">
+                          <span className="lcs-version-label">System Version:</span>
+                          <span className="lcs-version-value">7.0.5S</span>
+                        </div>
+                        <div className="lcs-version-row">
+                          <span className="lcs-version-label">Sevice Version:</span>
+                          <span className="lcs-version-value">v8.1.665-alpha-ss528v100</span>
+                        </div>
+                        <div className="lcs-version-row">
+                          <span className="lcs-version-label">MAC Address:</span>
+                          <span className="lcs-version-value">38-3a-21-00-8e-0c</span>
+                        </div>
+                      </div>
+                    </div>
+                  ) : activeSettingsTab === 'advance' ? (
+                    <div className="lcs-settings-advance-tab">
+                      {/* Sub Navigation Bar */}
+                      <div className="lcs-settings-subnav-row" style={{ justifyContent: 'flex-start', overflowX: 'auto' }}>
+                        {[
+                          { label: 'Record', value: 'record' },
+                          { label: 'Live', value: 'live' },
+                          { label: 'Channel', value: 'channel' },
+                          { label: 'Server', value: 'server' },
+                          { label: 'Interactive', value: 'interactive' },
+                          { label: 'SIP', value: 'sip' }
+                        ].map((subTab) => (
+                          <button
+                            key={subTab.value}
+                            type="button"
+                            className={`lcs-subnav-btn ${settingsAdvanceSubTab === subTab.value ? 'is-active' : ''}`}
+                            onClick={() => setSettingsAdvanceSubTab(subTab.value)}
+                          >
+                            {subTab.label}
+                          </button>
+                        ))}
+                      </div>
+
+                      {settingsAdvanceSubTab === 'record' ? (
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', width: '100%' }}>
+                          {/* Card 1: Record Config */}
+                          <div className="lcs-settings-advance-card">
+                            {/* Row 1: Select checkboxes */}
+                            <div className="lcs-settings-row" style={{ alignItems: 'flex-start' }}>
+                              <span className="lcs-settings-label" style={{ marginTop: '4px' }}>Select:</span>
+                              <div className="lcs-checkbox-grid">
+                                {[
+                                  { label: 'PGM', key: 'pgm' },
+                                  { label: 'Lecture', key: 'lecture' },
+                                  { label: 'Lecture2', key: 'lecture2' },
+                                  { label: 'Teacher_C', key: 'teacherC' },
+                                  { label: 'Student_C', key: 'studentC' },
+                                  { label: 'Teacher_P', key: 'teacherP' },
+                                  { label: 'Student_P', key: 'studentP' },
+                                  { label: 'Interactive', key: 'interactive' }
+                                ].map((chk) => {
+                                  const isChecked = settingsAdvanceSelect[chk.key];
+                                  return (
+                                    <div 
+                                      key={chk.key} 
+                                      className="lcs-checkbox-item"
+                                      onClick={() => setSettingsAdvanceSelect(prev => ({ ...prev, [chk.key]: !prev[chk.key] }))}
+                                    >
+                                      <div className={`lcs-checkbox-box ${isChecked ? 'is-checked' : ''}`}>
+                                        {isChecked && <span className="lcs-checkmark">✓</span>}
+                                      </div>
+                                      <span className={`lcs-checkbox-label-pill ${isChecked ? 'is-checked' : ''}`}>{chk.label}</span>
+                                    </div>
+                                  );
+                                })}
+                              </div>
+                            </div>
+
+                            {/* Row 2: Name */}
+                            <div className="lcs-settings-row">
+                              <span className="lcs-settings-label">Name:</span>
+                              <input 
+                                type="text" 
+                                className="lcs-settings-input" 
+                                value={settingsAdvanceName}
+                                onChange={(e) => setSettingsAdvanceName(e.target.value)}
+                              />
+                            </div>
+
+                            {/* Row 3: Bitrate */}
+                            <div className="lcs-settings-row">
+                              <span className="lcs-settings-label">Bitrate:</span>
+                              <div className="lcs-select-pill" style={{ width: '160px' }}>
+                                <span>{settingsAdvanceBitrate}</span>
+                                <span>▼</span>
+                              </div>
+                            </div>
+
+                            {/* Row 4: Format */}
+                            <div className="lcs-settings-row">
+                              <span className="lcs-settings-label">Format:</span>
+                              <div className="lcs-select-pill" style={{ width: '160px' }}>
+                                <span>{settingsAdvanceFormat}</span>
+                                <span>▼</span>
+                              </div>
+                            </div>
+
+                            {/* Row 5: Frame Rate */}
+                            <div className="lcs-settings-row">
+                              <span className="lcs-settings-label">Frame Rate:</span>
+                              <div className="lcs-select-pill" style={{ width: '160px' }}>
+                                <span>{settingsAdvanceFrameRate}</span>
+                                <span>▼</span>
+                              </div>
+                            </div>
+
+                            {/* Row 6: Codec */}
+                            <div className="lcs-settings-row">
+                              <span className="lcs-settings-label">Codec:</span>
+                              <div className="lcs-select-pill" style={{ width: '160px' }}>
+                                <span>{settingsAdvanceCodec}</span>
+                                <span>▼</span>
+                              </div>
+                            </div>
+
+                            {/* Row 7: Resolution */}
+                            <div className="lcs-settings-row">
+                              <span className="lcs-settings-label">Resolution:</span>
+                              <div className="lcs-select-pill" style={{ width: '160px' }}>
+                                <span>{settingsAdvanceResolution}</span>
+                                <span>▼</span>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Card 2: Other Rec Config */}
+                          <div className="lcs-settings-advance-card">
+                            {/* Row 1: Other Title */}
+                            <div className="lcs-settings-row" style={{ padding: '6px 20px', borderBottom: 'none' }}>
+                              <span className="lcs-settings-label" style={{ fontWeight: 'bold' }}>Other:</span>
+                            </div>
+
+                            {/* Row 2: Segment Rec. */}
+                            <div className="lcs-settings-row" style={{ borderBottom: 'none', alignItems: 'center' }}>
+                              <span className="lcs-settings-label">Segment Rec.:</span>
+                              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                                <div className="lcs-select-pill" style={{ width: '160px' }}>
+                                  <span>{settingsAdvanceSegment}</span>
+                                  <span>▼</span>
+                                </div>
+                                <span style={{ fontSize: '11px', color: '#a0aec0' }}>(0 means no automatic segmentation)</span>
+                              </div>
+                            </div>
+
+                            {/* Row 3: Maximum REC. time */}
+                            <div className="lcs-settings-row" style={{ borderBottom: 'none', alignItems: 'center' }}>
+                              <span className="lcs-settings-label">Maximum REC. time:</span>
+                              <div className="lcs-select-pill" style={{ width: '160px' }}>
+                                <span>{settingsAdvanceMaxTime}</span>
+                                <span>▼</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="lcs-settings-row" style={{ flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '40px 20px', opacity: 0.7 }}>
+                          <span style={{ fontSize: '12px' }}>{settingsAdvanceSubTab.toUpperCase()} Settings Panel (Coming Soon)</span>
+                        </div>
+                      )}
                     </div>
                   ) : (
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', flex: 1, gap: '12px', opacity: 0.7 }}>
