@@ -2350,7 +2350,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 110px;
+  width: 160px;
 }
 
 .is-light .lcs-select-pill {

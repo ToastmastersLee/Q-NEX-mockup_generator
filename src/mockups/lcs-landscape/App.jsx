@@ -1410,9 +1410,9 @@ export default function App() {
                       </div>
 
                       {/* Row 4: Lock Screen */}
-                      <div className="lcs-settings-row">
+                      <div className="lcs-settings-row" style={{ justifyContent: 'space-between' }}>
                         <span className="lcs-settings-label">Lock Screen:</span>
-                        <div className="lcs-select-pill">
+                        <div className="lcs-select-pill" style={{ width: '160px' }}>
                           <span>Never</span>
                           <span>▼</span>
                         </div>
@@ -1464,13 +1464,13 @@ export default function App() {
                           <div className="lcs-others-col-right">
                             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
                               <span style={{ fontSize: '11px' }}>Time Format:</span>
-                              <div className="lcs-select-pill" style={{ width: '110px' }}>
+                              <div className="lcs-select-pill" style={{ width: '160px' }}>
                                 <span>DD-MM-YYYY</span>
                                 <span>▼</span>
                               </div>
                             </div>
                             <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '4px' }}>
-                              <div className="lcs-select-pill" style={{ width: '110px' }}>
+                              <div className="lcs-select-pill" style={{ width: '160px' }}>
                                 <span>24 Hours Format</span>
                                 <span>▼</span>
                               </div>
