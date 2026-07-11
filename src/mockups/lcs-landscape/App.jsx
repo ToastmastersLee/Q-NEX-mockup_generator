@@ -39,6 +39,55 @@ export default function App() {
   const [currentLayout, setCurrentLayout] = useState('l5'); // 'l1' to 'l8'
   const [directorMode, setDirectorMode] = useState('manual'); // 'manual' | 'auto'
 
+  // Double-click Channel Re-selection States
+  const [isChannelSelectOpen, setIsChannelSelectOpen] = useState(false);
+  const [selectedLayoutToEdit, setSelectedLayoutToEdit] = useState('l3');
+  const [activeEditSlot, setActiveEditSlot] = useState('');
+  const [layoutChannels, setLayoutChannels] = useState({
+    l1: { main: 'ch6' },
+    l2: { main: 'ch7', pip: 'ch3' },
+    l3: { left: 'ch4', right: 'ch3' },
+    l4: { main: 'ch2', pip: 'ch1' },
+    l5: { topLeft: 'ch5', bottomLeft: 'ch4', right: 'ch3' },
+    l6: { row1: 'ch2', row2: 'ch1', row3: 'ch4', right: 'ch3' },
+    l7: { tl: 'ch2', tr: 'ch3', bl: 'ch1', br: 'ch4' }
+  });
+
+  const layoutSlotConfigs = {
+    l1: [
+      { key: 'main', label: 'Main' }
+    ],
+    l2: [
+      { key: 'main', label: 'Main' },
+      { key: 'pip', label: 'PiP' }
+    ],
+    l3: [
+      { key: 'left', label: 'Left' },
+      { key: 'right', label: 'Right' }
+    ],
+    l4: [
+      { key: 'main', label: 'Main' },
+      { key: 'pip', label: 'PiP' }
+    ],
+    l5: [
+      { key: 'topLeft', label: 'Top Left' },
+      { key: 'bottomLeft', label: 'Bottom Left' },
+      { key: 'right', label: 'Right' }
+    ],
+    l6: [
+      { key: 'row1', label: 'Row 1' },
+      { key: 'row2', label: 'Row 2' },
+      { key: 'row3', label: 'Row 3' },
+      { key: 'right', label: 'Right' }
+    ],
+    l7: [
+      { key: 'tl', label: 'Top Left' },
+      { key: 'tr', label: 'Top Right' },
+      { key: 'bl', label: 'Bottom Left' },
+      { key: 'br', label: 'Bottom Right' }
+    ]
+  };
+
   // Time clock state
   const [timeString, setTimeString] = useState('10-07-2026 17:24:29');
   
@@ -120,6 +169,16 @@ export default function App() {
     const mins = Math.floor((totalSeconds % 3600) / 60);
     const secs = totalSeconds % 60;
     return `${String(hrs).padStart(2, '0')}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+  };
+
+  const handleLayoutDoubleClick = (layoutId) => {
+    if (layoutId === 'l8') return;
+    setSelectedLayoutToEdit(layoutId);
+    const config = layoutSlotConfigs[layoutId];
+    if (config && config.length > 0) {
+      setActiveEditSlot(config[0].key);
+    }
+    setIsChannelSelectOpen(true);
   };
 
   // Channel details data
@@ -243,145 +302,263 @@ export default function App() {
                 <div className="lcs-video-feed-box">
                   {currentLayout === 'l1' && (
                     <div className="lcs-layout-l1">
-                      {channels.find(c => c.id === selectedChannel)?.type === 'placeholder' ? (
-                        <div className="lcs-placeholder-screen">
-                          <Film size={64} className="opacity-40 animate-pulse" />
-                          <span>No Active Video Input</span>
-                        </div>
-                      ) : (
-                        <div className="lcs-full-video-box">
-                          <img src={classroomFeed} alt="l1" className="lcs-feed-img" style={{ objectPosition: channels.find(c => c.id === selectedChannel)?.pos }} />
-                          <span className="lcs-split-label active">{channels.find(c => c.id === selectedChannel)?.name} ({channels.find(c => c.id === selectedChannel)?.label})</span>
-                        </div>
-                      )}
+                      {(() => {
+                        const ch = channels.find(c => c.id === layoutChannels.l1.main) || { name: 'Empty', label: 'CH', type: 'placeholder' };
+                        return ch.type === 'placeholder' ? (
+                          <div className="lcs-placeholder-screen">
+                            <Film size={64} className="opacity-40 animate-pulse" />
+                            <span>No Active Video Input ({ch.label})</span>
+                          </div>
+                        ) : (
+                          <div className="lcs-full-video-box">
+                            <img src={classroomFeed} alt="l1" className="lcs-feed-img" style={{ objectPosition: ch.pos }} />
+                            <span className="lcs-split-label active">{ch.name} ({ch.label})</span>
+                          </div>
+                        );
+                      })()}
                     </div>
                   )}
 
                   {currentLayout === 'l2' && (
                     <div className="lcs-layout-l2">
-                      {/* Main view (CH7 placeholder) */}
-                      <div className="lcs-placeholder-screen">
-                        <Film size={48} className="opacity-40" />
-                        <span>Interactive (CH7)</span>
-                      </div>
-                      {/* PiP overlay (CH3 live) */}
-                      <div className="lcs-pip-box top-left">
-                        <img src={classroomFeed} alt="l2-pip" className="lcs-feed-img" style={{ objectPosition: 'center top' }} />
-                        <span className="lcs-pip-label">Teacher_C (CH3)</span>
-                      </div>
+                      {(() => {
+                        const mainCh = channels.find(c => c.id === layoutChannels.l2.main) || { name: 'Empty', label: 'CH', type: 'placeholder' };
+                        const pipCh = channels.find(c => c.id === layoutChannels.l2.pip) || { name: 'Empty', label: 'CH', type: 'placeholder' };
+                        return (
+                          <>
+                            {mainCh.type === 'placeholder' ? (
+                              <div className="lcs-placeholder-screen">
+                                <Film size={48} className="opacity-40" />
+                                <span>{mainCh.name} ({mainCh.label})</span>
+                              </div>
+                            ) : (
+                              <div className="lcs-full-video-box">
+                                <img src={classroomFeed} alt="l2-main" className="lcs-feed-img" style={{ objectPosition: mainCh.pos }} />
+                                <span className="lcs-split-label">{mainCh.name} ({mainCh.label})</span>
+                              </div>
+                            )}
+                            
+                            <div className="lcs-pip-box top-left">
+                              {pipCh.type === 'placeholder' ? (
+                                <div className="lcs-ch-thumb-placeholder bg-slate-900 w-full h-full flex items-center justify-center">
+                                  <Film size={20} className="opacity-40" />
+                                </div>
+                              ) : (
+                                <img src={classroomFeed} alt="l2-pip" className="lcs-feed-img" style={{ objectPosition: pipCh.pos }} />
+                              )}
+                              <span className="lcs-pip-label">{pipCh.name} ({pipCh.label})</span>
+                            </div>
+                          </>
+                        );
+                      })()}
                     </div>
                   )}
 
                   {currentLayout === 'l3' && (
                     <div className="lcs-layout-l3">
-                      <div className="lcs-split-half">
-                        <img src={classroomFeed} alt="l3-left" className="lcs-feed-img" style={{ objectPosition: 'left center' }} />
-                        <span className="lcs-split-label">Student_C (CH4)</span>
-                      </div>
-                      <div className="lcs-split-half">
-                        <img src={classroomFeed} alt="l3-right" className="lcs-feed-img" style={{ objectPosition: 'center top' }} />
-                        <span className="lcs-split-label active">Teacher_C (CH3)</span>
-                      </div>
+                      {(() => {
+                        const leftCh = channels.find(c => c.id === layoutChannels.l3.left) || { name: 'Empty', label: 'CH', type: 'placeholder' };
+                        const rightCh = channels.find(c => c.id === layoutChannels.l3.right) || { name: 'Empty', label: 'CH', type: 'placeholder' };
+                        return (
+                          <>
+                            <div className="lcs-split-half">
+                              {leftCh.type === 'placeholder' ? (
+                                <div className="lcs-ch-thumb-placeholder bg-slate-900 w-full h-full flex items-center justify-center">
+                                  <Film size={24} className="opacity-40" />
+                                </div>
+                              ) : (
+                                <img src={classroomFeed} alt="l3-left" className="lcs-feed-img" style={{ objectPosition: leftCh.pos }} />
+                              )}
+                              <span className="lcs-split-label">{leftCh.name} ({leftCh.label})</span>
+                            </div>
+                            <div className="lcs-split-half">
+                              {rightCh.type === 'placeholder' ? (
+                                <div className="lcs-ch-thumb-placeholder bg-slate-900 w-full h-full flex items-center justify-center">
+                                  <Film size={24} className="opacity-40" />
+                                </div>
+                              ) : (
+                                <img src={classroomFeed} alt="l3-right" className="lcs-feed-img" style={{ objectPosition: rightCh.pos }} />
+                              )}
+                              <span className="lcs-split-label active">{rightCh.name} ({rightCh.label})</span>
+                            </div>
+                          </>
+                        );
+                      })()}
                     </div>
                   )}
 
                   {currentLayout === 'l4' && (
                     <div className="lcs-layout-l4">
-                      {/* Main view (CH2 placeholder) */}
-                      <div className="lcs-placeholder-screen">
-                        <Film size={48} className="opacity-40" />
-                        <span>Lecture2 (CH2)</span>
-                      </div>
-                      {/* PiP overlay (CH1 placeholder) */}
-                      <div className="lcs-pip-box bottom-left">
-                        <div className="lcs-ch-thumb-placeholder bg-slate-900 w-full h-full flex items-center justify-center">
-                          <Film size={20} className="opacity-40" />
-                        </div>
-                        <span className="lcs-pip-label">Lecture (CH1)</span>
-                      </div>
+                      {(() => {
+                        const mainCh = channels.find(c => c.id === layoutChannels.l4.main) || { name: 'Empty', label: 'CH', type: 'placeholder' };
+                        const pipCh = channels.find(c => c.id === layoutChannels.l4.pip) || { name: 'Empty', label: 'CH', type: 'placeholder' };
+                        return (
+                          <>
+                            {mainCh.type === 'placeholder' ? (
+                              <div className="lcs-placeholder-screen">
+                                <Film size={48} className="opacity-40" />
+                                <span>{mainCh.name} ({mainCh.label})</span>
+                              </div>
+                            ) : (
+                              <div className="lcs-full-video-box">
+                                <img src={classroomFeed} alt="l4-main" className="lcs-feed-img" style={{ objectPosition: mainCh.pos }} />
+                                <span className="lcs-split-label">{mainCh.name} ({mainCh.label})</span>
+                              </div>
+                            )}
+                            
+                            <div className="lcs-pip-box bottom-left">
+                              {pipCh.type === 'placeholder' ? (
+                                <div className="lcs-ch-thumb-placeholder bg-slate-900 w-full h-full flex items-center justify-center">
+                                  <Film size={20} className="opacity-40" />
+                                </div>
+                              ) : (
+                                <img src={classroomFeed} alt="l4-pip" className="lcs-feed-img" style={{ objectPosition: pipCh.pos }} />
+                              )}
+                              <span className="lcs-pip-label">{pipCh.name} ({pipCh.label})</span>
+                            </div>
+                          </>
+                        );
+                      })()}
                     </div>
                   )}
 
                   {currentLayout === 'l5' && (
-                    // 3-Pane split screen layout: Left column with 2 small rows, Right column with 1 large panel
                     <div className="lcs-split-screen">
-                      <div className="lcs-split-left-col">
-                        {/* Student_C view */}
-                        <div className="lcs-split-small-box">
-                          <img src={classroomFeed} alt="feed1" className="lcs-feed-img pos-student" />
-                          <span className="lcs-split-label">Student_C (CH4)</span>
-                        </div>
-                        {/* Student_P view */}
-                        <div className="lcs-split-small-box">
-                          <img src={classroomFeed} alt="feed2" className="lcs-feed-img pos-classroom" />
-                          <span className="lcs-split-label">Student_P (CH6)</span>
-                        </div>
-                      </div>
-                      
-                      <div className="lcs-split-right-col">
-                        {/* Active channel Large View */}
-                        <div className="lcs-split-large-box">
-                          <img 
-                            src={classroomFeed} 
-                            alt="large-feed" 
-                            className="lcs-feed-img"
-                            style={{ 
-                              objectPosition: channels.find(c => c.id === selectedChannel)?.pos || 'center top' 
-                            }} 
-                          />
-                          <span className="lcs-split-label active">
-                            {channels.find(c => c.id === selectedChannel)?.name || 'Teacher_C'} ({channels.find(c => c.id === selectedChannel)?.label || 'CH3'}) - Main Out
-                          </span>
-                        </div>
-                      </div>
+                      {(() => {
+                        const tlCh = channels.find(c => c.id === layoutChannels.l5.topLeft) || { name: 'Empty', label: 'CH', type: 'placeholder' };
+                        const blCh = channels.find(c => c.id === layoutChannels.l5.bottomLeft) || { name: 'Empty', label: 'CH', type: 'placeholder' };
+                        const rightCh = channels.find(c => c.id === layoutChannels.l5.right) || { name: 'Empty', label: 'CH', type: 'placeholder' };
+                        return (
+                          <>
+                            <div className="lcs-split-left-col">
+                              <div className="lcs-split-small-box">
+                                {tlCh.type === 'placeholder' ? (
+                                  <div className="lcs-ch-thumb-placeholder bg-slate-900 w-full h-full flex items-center justify-center"><Film size={14} className="opacity-30" /></div>
+                                ) : (
+                                  <img src={classroomFeed} alt="l5-tl" className="lcs-feed-img" style={{ objectPosition: tlCh.pos }} />
+                                )}
+                                <span className="lcs-split-label">{tlCh.name} ({tlCh.label})</span>
+                              </div>
+                              <div className="lcs-split-small-box">
+                                {blCh.type === 'placeholder' ? (
+                                  <div className="lcs-ch-thumb-placeholder bg-slate-900 w-full h-full flex items-center justify-center"><Film size={14} className="opacity-30" /></div>
+                                ) : (
+                                  <img src={classroomFeed} alt="l5-bl" className="lcs-feed-img" style={{ objectPosition: blCh.pos }} />
+                                )}
+                                <span className="lcs-split-label">{blCh.name} ({blCh.label})</span>
+                              </div>
+                            </div>
+                            <div className="lcs-split-right-col">
+                              <div className="lcs-split-large-box">
+                                {rightCh.type === 'placeholder' ? (
+                                  <div className="lcs-placeholder-screen"><Film size={48} className="opacity-30" /></div>
+                                ) : (
+                                  <img src={classroomFeed} alt="l5-right" className="lcs-feed-img" style={{ objectPosition: rightCh.pos }} />
+                                )}
+                                <span className="lcs-split-label active">{rightCh.name} ({rightCh.label}) - Main Out</span>
+                              </div>
+                            </div>
+                          </>
+                        );
+                      })()}
                     </div>
                   )}
 
                   {currentLayout === 'l6' && (
                     <div className="lcs-split-screen lcs-layout-l6">
-                      <div className="lcs-split-left-col lcs-three-rows">
-                        <div className="lcs-split-small-box">
-                          <div className="lcs-ch-thumb-placeholder bg-slate-950 w-full h-full flex items-center justify-center"><Film size={14} className="opacity-30" /></div>
-                          <span className="lcs-split-label">Lecture2 (CH2)</span>
-                        </div>
-                        <div className="lcs-split-small-box">
-                          <div className="lcs-ch-thumb-placeholder bg-slate-950 w-full h-full flex items-center justify-center"><Film size={14} className="opacity-30" /></div>
-                          <span className="lcs-split-label">Lecture (CH1)</span>
-                        </div>
-                        <div className="lcs-split-small-box">
-                          <img src={classroomFeed} alt="feed2" className="lcs-feed-img" style={{ objectPosition: 'left center' }} />
-                          <span className="lcs-split-label">Student_C (CH4)</span>
-                        </div>
-                      </div>
-                      <div className="lcs-split-right-col">
-                        <div className="lcs-split-large-box">
-                          <img src={classroomFeed} alt="large-feed" className="lcs-feed-img" style={{ objectPosition: 'center top' }} />
-                          <span className="lcs-split-label active">
-                            Teacher_C (CH3)
-                          </span>
-                        </div>
-                      </div>
+                      {(() => {
+                        const r1Ch = channels.find(c => c.id === layoutChannels.l6.row1) || { name: 'Empty', label: 'CH', type: 'placeholder' };
+                        const r2Ch = channels.find(c => c.id === layoutChannels.l6.row2) || { name: 'Empty', label: 'CH', type: 'placeholder' };
+                        const r3Ch = channels.find(c => c.id === layoutChannels.l6.row3) || { name: 'Empty', label: 'CH', type: 'placeholder' };
+                        const rightCh = channels.find(c => c.id === layoutChannels.l6.right) || { name: 'Empty', label: 'CH', type: 'placeholder' };
+                        return (
+                          <>
+                            <div className="lcs-split-left-col lcs-three-rows">
+                              <div className="lcs-split-small-box">
+                                {r1Ch.type === 'placeholder' ? (
+                                  <div className="lcs-ch-thumb-placeholder bg-slate-950 w-full h-full flex items-center justify-center"><Film size={14} className="opacity-30" /></div>
+                                ) : (
+                                  <img src={classroomFeed} alt="l6-r1" className="lcs-feed-img" style={{ objectPosition: r1Ch.pos }} />
+                                )}
+                                <span className="lcs-split-label">{r1Ch.name} ({r1Ch.label})</span>
+                              </div>
+                              <div className="lcs-split-small-box">
+                                {r2Ch.type === 'placeholder' ? (
+                                  <div className="lcs-ch-thumb-placeholder bg-slate-950 w-full h-full flex items-center justify-center"><Film size={14} className="opacity-30" /></div>
+                                ) : (
+                                  <img src={classroomFeed} alt="l6-r2" className="lcs-feed-img" style={{ objectPosition: r2Ch.pos }} />
+                                )}
+                                <span className="lcs-split-label">{r2Ch.name} ({r2Ch.label})</span>
+                              </div>
+                              <div className="lcs-split-small-box">
+                                {r3Ch.type === 'placeholder' ? (
+                                  <div className="lcs-ch-thumb-placeholder bg-slate-950 w-full h-full flex items-center justify-center"><Film size={14} className="opacity-30" /></div>
+                                ) : (
+                                  <img src={classroomFeed} alt="l6-r3" className="lcs-feed-img" style={{ objectPosition: r3Ch.pos }} />
+                                )}
+                                <span className="lcs-split-label">{r3Ch.name} ({r3Ch.label})</span>
+                              </div>
+                            </div>
+                            <div className="lcs-split-right-col">
+                              <div className="lcs-split-large-box">
+                                {rightCh.type === 'placeholder' ? (
+                                  <div className="lcs-placeholder-screen"><Film size={48} className="opacity-30" /></div>
+                                ) : (
+                                  <img src={classroomFeed} alt="l6-right" className="lcs-feed-img" style={{ objectPosition: rightCh.pos }} />
+                                )}
+                                <span className="lcs-split-label active">{rightCh.name} ({rightCh.label})</span>
+                              </div>
+                            </div>
+                          </>
+                        );
+                      })()}
                     </div>
                   )}
 
                   {currentLayout === 'l7' && (
                     <div className="lcs-layout-l7">
-                      <div className="lcs-grid-cell">
-                        <div className="lcs-ch-thumb-placeholder bg-slate-900 w-full h-full flex items-center justify-center"><Film size={24} className="opacity-30" /></div>
-                        <span className="lcs-split-label">Lecture2 (CH2)</span>
-                      </div>
-                      <div className="lcs-grid-cell">
-                        <img src={classroomFeed} alt="l7-ch3" className="lcs-feed-img" style={{ objectPosition: 'center top' }} />
-                        <span className="lcs-split-label active">Teacher_C (CH3)</span>
-                      </div>
-                      <div className="lcs-grid-cell">
-                        <div className="lcs-ch-thumb-placeholder bg-slate-900 w-full h-full flex items-center justify-center"><Film size={24} className="opacity-30" /></div>
-                        <span className="lcs-split-label">Lecture (CH1)</span>
-                      </div>
-                      <div className="lcs-grid-cell">
-                        <img src={classroomFeed} alt="l7-ch4" className="lcs-feed-img" style={{ objectPosition: 'left center' }} />
-                        <span className="lcs-split-label">Student_C (CH4)</span>
-                      </div>
+                      {(() => {
+                        const tlCh = channels.find(c => c.id === layoutChannels.l7.tl) || { name: 'Empty', label: 'CH', type: 'placeholder' };
+                        const trCh = channels.find(c => c.id === layoutChannels.l7.tr) || { name: 'Empty', label: 'CH', type: 'placeholder' };
+                        const blCh = channels.find(c => c.id === layoutChannels.l7.bl) || { name: 'Empty', label: 'CH', type: 'placeholder' };
+                        const brCh = channels.find(c => c.id === layoutChannels.l7.br) || { name: 'Empty', label: 'CH', type: 'placeholder' };
+                        return (
+                          <>
+                            <div className="lcs-grid-cell">
+                              {tlCh.type === 'placeholder' ? (
+                                <div className="lcs-ch-thumb-placeholder bg-slate-900 w-full h-full flex items-center justify-center"><Film size={24} className="opacity-30" /></div>
+                              ) : (
+                                <img src={classroomFeed} alt="l7-tl" className="lcs-feed-img" style={{ objectPosition: tlCh.pos }} />
+                              )}
+                              <span className="lcs-split-label">{tlCh.name} ({tlCh.label})</span>
+                            </div>
+                            <div className="lcs-grid-cell">
+                              {trCh.type === 'placeholder' ? (
+                                <div className="lcs-ch-thumb-placeholder bg-slate-900 w-full h-full flex items-center justify-center"><Film size={24} className="opacity-30" /></div>
+                              ) : (
+                                <img src={classroomFeed} alt="l7-tr" className="lcs-feed-img" style={{ objectPosition: trCh.pos }} />
+                              )}
+                              <span className="lcs-split-label active">{trCh.name} ({trCh.label})</span>
+                            </div>
+                            <div className="lcs-grid-cell">
+                              {blCh.type === 'placeholder' ? (
+                                <div className="lcs-ch-thumb-placeholder bg-slate-900 w-full h-full flex items-center justify-center"><Film size={24} className="opacity-30" /></div>
+                              ) : (
+                                <img src={classroomFeed} alt="l7-bl" className="lcs-feed-img" style={{ objectPosition: blCh.pos }} />
+                              )}
+                              <span className="lcs-split-label">{blCh.name} ({blCh.label})</span>
+                            </div>
+                            <div className="lcs-grid-cell">
+                              {brCh.type === 'placeholder' ? (
+                                <div className="lcs-ch-thumb-placeholder bg-slate-900 w-full h-full flex items-center justify-center"><Film size={24} className="opacity-30" /></div>
+                              ) : (
+                                <img src={classroomFeed} alt="l7-br" className="lcs-feed-img" style={{ objectPosition: brCh.pos }} />
+                              )}
+                              <span className="lcs-split-label">{brCh.name} ({brCh.label})</span>
+                            </div>
+                          </>
+                        );
+                      })()}
                     </div>
                   )}
 
@@ -454,6 +631,84 @@ export default function App() {
                       <span>LIVE</span>
                     </div>
                   )}
+
+                  {/* Channel Selector Double-click Popup Modal */}
+                  {isChannelSelectOpen && (
+                    <div className="lcs-layout-edit-popup">
+                      
+                      {/* Close button X */}
+                      <button
+                        type="button"
+                        className="lcs-edit-close-x"
+                        onClick={() => setIsChannelSelectOpen(false)}
+                        title="Close popup"
+                      >
+                        ✕
+                      </button>
+
+                      {/* Top Row: Channel selection bar CH1 to CH7 */}
+                      {activeEditSlot && (
+                        <div className="lcs-edit-channels-row">
+                          {channels.map((ch) => {
+                            const isChSelected = layoutChannels[selectedLayoutToEdit]?.[activeEditSlot] === ch.id;
+                            return (
+                              <button
+                                key={ch.id}
+                                type="button"
+                                className={`lcs-edit-ch-btn ${isChSelected ? 'is-selected' : ''}`}
+                                onClick={() => {
+                                  setLayoutChannels(prev => ({
+                                    ...prev,
+                                    [selectedLayoutToEdit]: {
+                                      ...prev[selectedLayoutToEdit],
+                                      [activeEditSlot]: ch.id
+                                    }
+                                  }));
+                                }}
+                              >
+                                {ch.label}
+                              </button>
+                            );
+                          })}
+                        </div>
+                      )}
+
+                      {/* Divider line */}
+                      <div className="lcs-edit-divider" />
+
+                      {/* Bottom Row: Slots list and OK button */}
+                      <div className="lcs-edit-bottom-row">
+                        <div className="lcs-edit-slots-group">
+                          {layoutSlotConfigs[selectedLayoutToEdit]?.map((slot) => {
+                            const currentChId = layoutChannels[selectedLayoutToEdit]?.[slot.key];
+                            const chDetail = channels.find(c => c.id === currentChId) || { label: 'CH' };
+                            const isSlotEditing = activeEditSlot === slot.key;
+                            return (
+                              <div key={slot.key} className="lcs-edit-slot-block">
+                                <button
+                                  type="button"
+                                  className={`lcs-edit-slot-btn ${isSlotEditing ? 'is-active' : ''}`}
+                                  onClick={() => setActiveEditSlot(slot.key)}
+                                >
+                                  {chDetail.label}
+                                </button>
+                                <span className="lcs-edit-slot-label">{slot.label}</span>
+                              </div>
+                            );
+                          })}
+                        </div>
+
+                        <button
+                          type="button"
+                          className="lcs-edit-ok-btn"
+                          onClick={() => setIsChannelSelectOpen(false)}
+                        >
+                          OK
+                        </button>
+                      </div>
+
+                    </div>
+                  )}
                 </div>
 
                 {/* Bottom Control Bar or Layout Selection Bar */}
@@ -486,6 +741,7 @@ export default function App() {
                           type="button" 
                           className={`lcs-layout-thumb-card ${currentLayout === 'l1' ? 'is-active' : ''}`}
                           onClick={() => setCurrentLayout('l1')}
+                          onDoubleClick={() => handleLayoutDoubleClick('l1')}
                         >
                           <div className="lcs-thumb-single font-mono">
                             <span>CH6</span>
@@ -500,6 +756,7 @@ export default function App() {
                           type="button" 
                           className={`lcs-layout-thumb-card ${currentLayout === 'l2' ? 'is-active' : ''}`}
                           onClick={() => setCurrentLayout('l2')}
+                          onDoubleClick={() => handleLayoutDoubleClick('l2')}
                         >
                           <div className="lcs-thumb-pip-1">
                             <div className="lcs-thumb-pip-sub font-mono">CH3</div>
@@ -515,6 +772,7 @@ export default function App() {
                           type="button" 
                           className={`lcs-layout-thumb-card ${currentLayout === 'l3' ? 'is-active' : ''}`}
                           onClick={() => setCurrentLayout('l3')}
+                          onDoubleClick={() => handleLayoutDoubleClick('l3')}
                         >
                           <div className="lcs-thumb-split-v">
                             <div className="lcs-thumb-split-cell font-mono">CH4</div>
@@ -530,6 +788,7 @@ export default function App() {
                           type="button" 
                           className={`lcs-layout-thumb-card ${currentLayout === 'l4' ? 'is-active' : ''}`}
                           onClick={() => setCurrentLayout('l4')}
+                          onDoubleClick={() => handleLayoutDoubleClick('l4')}
                         >
                           <div className="lcs-thumb-pip-2">
                             <div className="lcs-thumb-pip-sub font-mono">CH1</div>
@@ -545,6 +804,7 @@ export default function App() {
                           type="button" 
                           className={`lcs-layout-thumb-card ${currentLayout === 'l5' ? 'is-active' : ''}`}
                           onClick={() => setCurrentLayout('l5')}
+                          onDoubleClick={() => handleLayoutDoubleClick('l5')}
                         >
                           <div className="lcs-thumb-director">
                             <div className="lcs-thumb-dir-left">
@@ -563,6 +823,7 @@ export default function App() {
                           type="button" 
                           className={`lcs-layout-thumb-card ${currentLayout === 'l6' ? 'is-active' : ''}`}
                           onClick={() => setCurrentLayout('l6')}
+                          onDoubleClick={() => handleLayoutDoubleClick('l6')}
                         >
                           <div className="lcs-thumb-director-4">
                             <div className="lcs-thumb-dir4-left">
@@ -582,6 +843,7 @@ export default function App() {
                           type="button" 
                           className={`lcs-layout-thumb-card ${currentLayout === 'l7' ? 'is-active' : ''}`}
                           onClick={() => setCurrentLayout('l7')}
+                          onDoubleClick={() => handleLayoutDoubleClick('l7')}
                         >
                           <div className="lcs-thumb-quad">
                             <div className="font-mono">CH2</div>
