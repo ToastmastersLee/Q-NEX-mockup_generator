@@ -163,6 +163,24 @@ export default function App() {
             <Play size={12} fill={isLive ? '#3b82f6' : 'transparent'} />
             <span>Live Stream</span>
           </button>
+
+          <button 
+            type="button" 
+            className={`lcs-sim-btn ${viewMode === 'director' ? 'is-active' : ''}`}
+            onClick={() => setViewMode('director')}
+          >
+            <Sliders size={12} />
+            <span>Director View (Orig)</span>
+          </button>
+
+          <button 
+            type="button" 
+            className={`lcs-sim-btn ${viewMode === 'single' ? 'is-active' : ''}`}
+            onClick={() => setViewMode('single')}
+          >
+            <Monitor size={12} />
+            <span>Menu View (Orig)</span>
+          </button>
         </div>
       </div>
 
@@ -480,16 +498,9 @@ export default function App() {
 
         {/* Bezel Bottom Brushed Metal Bar with LEDs */}
         <div className="lcs-hardware-bottom-bezel">
-          <span className="lcs-bezel-brand">LCS Recorder Console</span>
           <div className="lcs-bezel-leds">
-            <div className="lcs-bezel-led-group">
-              <div className={`lcs-bezel-led red ${isRecording ? 'is-flashing' : 'is-solid'}`} />
-              <span>REC</span>
-            </div>
-            <div className="lcs-bezel-led-group">
-              <div className={`lcs-bezel-led blue ${isLive ? 'is-flashing' : 'is-solid'}`} />
-              <span>LIVE</span>
-            </div>
+            <div className={`lcs-bezel-led red ${isRecording ? 'is-flashing' : 'is-solid'}`} />
+            <div className={`lcs-bezel-led blue ${isLive ? 'is-flashing' : 'is-solid'}`} />
           </div>
         </div>
 
