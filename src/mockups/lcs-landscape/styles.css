@@ -271,12 +271,18 @@
   box-sizing: border-box;
 }
 
-.lcs-split-left-col {
-  display: grid;
-  grid-auto-rows: 1fr;
-  grid-template-rows: none;
-  gap: 4px;
-  height: 100%;
+.lcs-split-left-col-2rows {
+  display: grid !important;
+  grid-template-rows: 1fr 1fr !important;
+  gap: 4px !important;
+  height: 100% !important;
+}
+
+.lcs-split-left-col-3rows {
+  display: grid !important;
+  grid-template-rows: 1fr 1fr 1fr !important;
+  gap: 4px !important;
+  height: 100% !important;
 }
 
 .lcs-split-small-box,
