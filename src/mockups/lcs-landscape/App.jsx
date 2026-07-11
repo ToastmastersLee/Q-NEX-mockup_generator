@@ -242,6 +242,7 @@ export default function App() {
   ]);
   const [playingFileName, setPlayingFileName] = useState('Teacher_C.mp4');
   const [playingFileStart, setPlayingFileStart] = useState('2026-07-09 10:53:35');
+  const [isFileFullscreen, setIsFileFullscreen] = useState(false);
 
   // Handle playback timer
   useEffect(() => {
@@ -2778,7 +2779,7 @@ export default function App() {
             )}
 
             {activeMenuSection === 'file' && (
-              <div className="lcs-full-file-overlay">
+              <div className={`lcs-full-file-overlay ${isFileFullscreen ? 'is-fullscreen' : ''}`}>
                 {/* Left side: Video Player Column */}
                 <div className="lcs-file-player-col">
                   <div className="lcs-file-player-header">
@@ -2797,14 +2798,42 @@ export default function App() {
                       </div>
                     )}
                     
-                    <button type="button" className="lcs-file-player-expand-btn">
+                    <button 
+                      type="button" 
+                      className="lcs-file-player-expand-btn"
+                      onClick={() => setIsFileFullscreen(!isFileFullscreen)}
+                    >
                       ↖↗ ↙↘
                     </button>
                   </div>
 
                   {/* Scrubber progress bar */}
                   <div className="lcs-file-player-scrubber-bar">
-                    <div className="lcs-file-player-scrubber-line-container">
+                    <div 
+                      className="lcs-file-player-scrubber-line-container"
+                      onMouseDown={(e) => {
+                        const rect = e.currentTarget.getBoundingClientRect();
+                        const updateTime = (clientX) => {
+                          const clickX = Math.max(0, Math.min(clientX - rect.left, rect.width));
+                          const clickPercent = clickX / rect.width;
+                          const targetTime = Math.max(0, Math.min(14397, Math.floor(clickPercent * 14397)));
+                          setFilePlaybackTime(targetTime);
+                        };
+                        updateTime(e.clientX);
+
+                        const handleMouseMove = (moveEvent) => {
+                          updateTime(moveEvent.clientX);
+                        };
+
+                        const handleMouseUp = () => {
+                          document.removeEventListener('mousemove', handleMouseMove);
+                          document.removeEventListener('mouseup', handleMouseUp);
+                        };
+
+                        document.addEventListener('mousemove', handleMouseMove);
+                        document.addEventListener('mouseup', handleMouseUp);
+                      }}
+                    >
                       <div 
                         className="lcs-file-player-scrubber-line-fill" 
                         style={{ width: `${Math.min(100, (filePlaybackTime / 14397) * 100)}%` }} 
@@ -2824,7 +2853,10 @@ export default function App() {
                     <button 
                       type="button" 
                       className="lcs-file-exit-btn"
-                      onClick={() => setActiveMenuSection(null)}
+                      onClick={() => {
+                        setActiveMenuSection(null);
+                        setIsFileFullscreen(false);
+                      }}
                     >
                       Exit
                     </button>

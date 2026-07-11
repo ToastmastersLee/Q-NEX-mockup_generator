@@ -3208,3 +3208,32 @@
 .is-light .lcs-pagination-btn:hover:not(.is-active) {
   background-color: #e5e7eb;
 }
+
+/* Scrubber contrast adjustment in Light Mode */
+.is-light .lcs-file-player-scrubber-line-container {
+  background-color: rgba(0, 0, 0, 0.16) !important;
+}
+
+/* Draggable handle cursor styling */
+.lcs-file-player-scrubber-handle {
+  cursor: grab;
+  transition: transform 0.1s ease;
+}
+
+.lcs-file-player-scrubber-handle:active {
+  cursor: grabbing;
+  transform: translateX(-50%) scale(1.3);
+}
+
+/* Fullscreen Maximize layouts */
+.lcs-full-file-overlay.is-fullscreen {
+  grid-template-columns: 1fr;
+}
+
+.lcs-full-file-overlay.is-fullscreen .lcs-file-list-col {
+  display: none !important;
+}
+
+.lcs-full-file-overlay.is-fullscreen .lcs-file-player-viewport {
+  height: 385px;
+}
