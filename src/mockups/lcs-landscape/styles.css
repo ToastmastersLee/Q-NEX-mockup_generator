@@ -2097,7 +2097,7 @@
   z-index: 2000;
   box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  user-select: none;
+  user-select: text;
 }
 
 .is-light .lcs-full-settings-overlay {
