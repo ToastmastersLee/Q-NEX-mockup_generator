@@ -2658,10 +2658,12 @@
 
 /* Checkboxes style matching the screenshot */
 .lcs-checkbox-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px 16px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 8px;
   flex: 1;
+  align-items: center;
 }
 
 .lcs-checkbox-item {

@@ -1719,7 +1719,7 @@ export default function App() {
                   ) : activeSettingsTab === 'advance' ? (
                     <div className="lcs-settings-advance-tab">
                       {/* Sub Navigation Bar */}
-                      <div className="lcs-settings-subnav-row" style={{ justifyContent: 'flex-start', overflowX: 'auto' }}>
+                      <div className="lcs-settings-subnav-row" style={{ justifyContent: 'center' }}>
                         {[
                           { label: 'Record', value: 'record' },
                           { label: 'Live', value: 'live' },
