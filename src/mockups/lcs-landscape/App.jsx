@@ -1282,7 +1282,7 @@ export default function App() {
                 {/* Main Content Area */}
                 <div className="lcs-settings-main">
                   {activeSettingsTab === 'device' ? (
-                    <div style={{ display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'space-between' }}>
+                    <div className="lcs-settings-device-tab">
                       {/* Row 1: Language */}
                       <div className="lcs-settings-row">
                         <span className="lcs-settings-label">Language</span>
