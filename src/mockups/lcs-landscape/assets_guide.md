@@ -33,21 +33,17 @@ This document maps out the image feeds for the 7 channels, including the exact D
 
 ---
 
-### CH3: Teacher_C (老师特写通道 - 女性老师)
-* **Role**: Closeup view of the female teacher lecturing at the podium, matching classroom_feed.png.
+### CH3: Teacher_C (老师特写通道)
+* **Role**: Closeup view of the teacher. Physically cropped from the top-right quadrant of `classroom_feed.png` to maintain pixel-perfect character alignment.
 * **Asset Path**: `src/assets/ch3_teacher_close.png`
 * **CSS Alignment**: `object-position: center; object-fit: cover;`
-* **Generation Prompt**:
-  > `A flat 2D vector close-up illustration of a female teacher with dark hair tied back, wearing a blue blazer suit, standing at a grey podium in a modern tiered lecture hall. A projector screen is visible behind her. Minimalist line-art cartoon style, light blue and grey tones, matching classroom_feed.png.`
 
 ---
 
-### CH4: Student_C (学生特写通道 - 阶梯教室答题站立姿势)
-* **Role**: Closeup of a student standing at their desk to answer a question in a tiered lecture hall with curved long grey/blue-grey desks.
-* **Asset Path**: `src/assets/ch4_student_close.png`
+### CH4: Student_C (学生特写通道)
+* **Role**: Closeup of a student standing to answer a question.
+* **Asset Path**: `src/assets/ch4_student_close.png` (User-supplied, drawn locally via ChatGPT)
 * **CSS Alignment**: `object-position: center; object-fit: cover;`
-* **Generation Prompt**:
-  > `A flat 2D vector close-up illustration of a modern university tiered lecture hall with long curved grey and blue-grey desks. A young student is standing up at their seat to answer a question, while other students are sitting nearby at their desks. Minimalist line-art cartoon style, light blue-grey tones, matching classroom_feed.png.`
 
 ---
 
@@ -61,9 +57,8 @@ This document maps out the image feeds for the 7 channels, including the exact D
 
 ### CH6: Student_P (学生全景通道)
 * **Role**: Wide-angle view of the students sitting in the classroom.
-* **Asset Path**: `src/assets/classroom_feed.png`
-* **CSS Alignment**: `object-position: left center; object-fit: cover;`
-* **Concept**: Zoomed crop focusing on the left half of the classroom.
+* **Asset Path**: `src/assets/ch4_student_panoprama.png` (User-supplied, drawn locally via ChatGPT)
+* **CSS Alignment**: `object-position: center; object-fit: cover;`
 
 ---
 

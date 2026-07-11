@@ -22,6 +22,7 @@ import ch1Ppt from '../../assets/ch1_ppt.png';
 import ch2DocCam from '../../assets/ch2_doc_cam.png';
 import ch3TeacherClose from '../../assets/ch3_teacher_close.png';
 import ch4StudentClose from '../../assets/ch4_student_close.png';
+import ch6StudentPano from '../../assets/ch4_student_panoprama.png';
 import ch7Remote from '../../assets/ch7_remote_classroom.png';
 import './styles.css';
 
@@ -193,7 +194,7 @@ export default function App() {
     ch3: ch3TeacherClose,
     ch4: ch4StudentClose,
     ch5: classroomFeed,
-    ch6: classroomFeed,
+    ch6: ch6StudentPano,
     ch7: ch7Remote
   };
 
@@ -204,7 +205,7 @@ export default function App() {
     { id: 'ch3', name: 'Teacher_C', label: 'CH3', type: 'live', pos: 'center' },
     { id: 'ch4', name: 'Student_C', label: 'CH4', type: 'live', pos: 'center' },
     { id: 'ch5', name: 'Teacher_P', label: 'CH5', type: 'live', pos: 'right center' },
-    { id: 'ch6', name: 'Student_P', label: 'CH6', type: 'live', pos: 'left center' },
+    { id: 'ch6', name: 'Student_P', label: 'CH6', type: 'live', pos: 'center' },
     { id: 'ch7', name: 'Interactive', label: 'CH7', type: 'live', pos: 'center' }
   ];
 
