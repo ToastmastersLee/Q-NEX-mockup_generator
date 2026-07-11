@@ -708,6 +708,7 @@
   gap: 6px;
   width: 120px;
   justify-content: center;
+  position: relative;
 }
 
 .lcs-pill-btn-sm {
@@ -1746,4 +1747,338 @@
 .lcs-zoom-teacher {
   transform: scale(2.8) !important;
   transform-origin: 75% 36% !important;
+}
+
+/* Menu Popup directly above the Menu button */
+.lcs-menu-popup {
+  position: absolute;
+  bottom: 78px;
+  left: 0;
+  width: 100%;
+  background-color: rgba(23, 25, 35, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-sizing: border-box;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+.is-light .lcs-menu-popup {
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+.lcs-menu-popup-btn {
+  width: 100%;
+  height: 32px;
+  background-color: rgba(74, 85, 104, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  color: #22c55e;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.is-light .lcs-menu-popup-btn {
+  background-color: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  color: #16a34a;
+}
+
+.lcs-menu-popup-btn:hover {
+  background-color: rgba(74, 85, 104, 0.4);
+}
+
+.is-light .lcs-menu-popup-btn:hover {
+  background-color: #e5e7eb;
+}
+
+/* Menu Overlays inside video box */
+.lcs-menu-section-overlay {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background-color: rgba(18, 20, 26, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  z-index: 1000;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+  box-sizing: border-box;
+}
+
+.is-light .lcs-menu-section-overlay {
+  background-color: rgba(255, 255, 255, 0.98);
+  border: 1px solid #e5e7eb;
+  color: #1f2937;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.lcs-overlay-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.is-light .lcs-overlay-header {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.lcs-overlay-title-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lcs-overlay-title-group h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #22c55e;
+}
+
+.is-light .lcs-overlay-title-group h3 {
+  color: #16a34a;
+}
+
+.lcs-overlay-close-btn {
+  background: none;
+  border: none;
+  color: #a0aec0;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.lcs-overlay-close-btn:hover {
+  color: #fff;
+}
+
+.is-light .lcs-overlay-close-btn:hover {
+  color: #1f2937;
+}
+
+.lcs-overlay-body {
+  flex: 1;
+  overflow-y: auto;
+  font-size: 13px;
+}
+
+/* SET content */
+.lcs-overlay-content-set {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lcs-set-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lcs-set-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lcs-badge-active {
+  background-color: rgba(34, 197, 94, 0.15);
+  border: 1px solid #22c55e;
+  color: #22c55e;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 11px;
+}
+
+/* FILE content */
+.lcs-file-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lcs-file-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.03);
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.is-light .lcs-file-row {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+}
+
+.lcs-file-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.lcs-file-info strong {
+  color: #e2e8f0;
+}
+
+.is-light .lcs-file-info strong {
+  color: #1f2937;
+}
+
+.lcs-file-info span {
+  font-size: 11px;
+  color: #a0aec0;
+}
+
+.lcs-file-action-btn {
+  background-color: rgba(34, 197, 94, 0.15);
+  border: 1px solid #22c55e;
+  color: #22c55e;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+/* PTZ content */
+.lcs-overlay-content-ptz {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  height: 100%;
+}
+
+.lcs-ptz-layout {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.lcs-ptz-dpad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.ptz-mid {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ptz-center-dot {
+  width: 12px;
+  height: 12px;
+  background-color: #22c55e;
+  border-radius: 50%;
+}
+
+.lcs-ptz-dpad button {
+  width: 32px;
+  height: 32px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.is-light .lcs-ptz-dpad button {
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+  color: #1f2937;
+}
+
+.lcs-ptz-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ptz-control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ptz-btn-pair {
+  display: flex;
+  gap: 4px;
+}
+
+.ptz-btn-pair button {
+  padding: 4px 12px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.is-light .ptz-btn-pair button {
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+  color: #1f2937;
+}
+
+/* POWER content */
+.lcs-overlay-content-power {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  gap: 16px;
+}
+
+.lcs-power-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.lcs-power-btn-confirm {
+  background-color: #ef4444;
+  border: 1px solid #dc2626;
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.lcs-power-btn-cancel {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.is-light .lcs-power-btn-cancel {
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+  color: #1f2937;
 }

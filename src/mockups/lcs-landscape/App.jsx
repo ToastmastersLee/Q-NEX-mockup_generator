@@ -101,6 +101,10 @@ export default function App() {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [remainingHours, setRemainingHours] = useState(97);
 
+  // Menu Popup & Section states
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeMenuSection, setActiveMenuSection] = useState(null); // 'set' | 'file' | 'ptz' | 'power' | null
+
   const timerRef = useRef(null);
 
   // Update clock every second
@@ -594,6 +598,145 @@ export default function App() {
                     </div>
                   )}
 
+                  {/* Menu Sub-sections Overlay */}
+                  {activeMenuSection && (
+                    <div className="lcs-menu-section-overlay">
+                      <div className="lcs-overlay-header">
+                        <div className="lcs-overlay-title-group">
+                          <Settings size={16} />
+                          <h3>
+                            {activeMenuSection === 'set' && 'LCS System Settings'}
+                            {activeMenuSection === 'file' && 'Recorded Video Library'}
+                            {activeMenuSection === 'ptz' && 'Camera PTZ Joystick'}
+                            {activeMenuSection === 'power' && 'System Power Control'}
+                          </h3>
+                        </div>
+                        <button 
+                          type="button" 
+                          className="lcs-overlay-close-btn"
+                          onClick={() => setActiveMenuSection(null)}
+                        >
+                          ✕
+                        </button>
+                      </div>
+                      
+                      <div className="lcs-overlay-body">
+                        {activeMenuSection === 'set' && (
+                          <div className="lcs-overlay-content-set">
+                            <div className="lcs-set-item">
+                              <span>Tracking Speed:</span>
+                              <div className="lcs-set-control">
+                                <input type="range" min="1" max="10" defaultValue="5" />
+                                <span>Normal</span>
+                              </div>
+                            </div>
+                            <div className="lcs-set-item">
+                              <span>Audio Echo Cancellation:</span>
+                              <button className="lcs-badge-active" type="button">Enabled</button>
+                            </div>
+                            <div className="lcs-set-item">
+                              <span>Main Stream Quality:</span>
+                              <div className="lcs-badge-group">
+                                <span className="lcs-badge is-active">1080P</span>
+                                <span className="lcs-badge">720P</span>
+                                <span className="lcs-badge">360P</span>
+                              </div>
+                            </div>
+                            <div className="lcs-set-item">
+                              <span>Network Protocol:</span>
+                              <span>RTMP / SRT / RTSP</span>
+                            </div>
+                          </div>
+                        )}
+
+                        {activeMenuSection === 'file' && (
+                          <div className="lcs-overlay-content-file">
+                            <div className="lcs-file-list">
+                              <div className="lcs-file-row">
+                                <div className="lcs-file-info">
+                                  <strong>REC_20260711_1330.mp4</strong>
+                                  <span>Duration: 01:24:12 • Size: 1.2 GB</span>
+                                </div>
+                                <button className="lcs-file-action-btn" type="button">Play</button>
+                              </div>
+                              <div className="lcs-file-row">
+                                <div className="lcs-file-info">
+                                  <strong>REC_20260710_0915.mp4</strong>
+                                  <span>Duration: 00:45:30 • Size: 680 MB</span>
+                                </div>
+                                <button className="lcs-file-action-btn" type="button">Play</button>
+                              </div>
+                              <div className="lcs-file-row">
+                                <div className="lcs-file-info">
+                                  <strong>REC_20260709_1400.mp4</strong>
+                                  <span>Duration: 02:00:15 • Size: 2.1 GB</span>
+                                </div>
+                                <button className="lcs-file-action-btn" type="button">Play</button>
+                              </div>
+                            </div>
+                          </div>
+                        )}
+
+                        {activeMenuSection === 'ptz' && (
+                          <div className="lcs-overlay-content-ptz">
+                            <div className="lcs-ptz-layout">
+                              <div className="lcs-ptz-dpad">
+                                <button className="ptz-up" title="Tilt Up" type="button">▲</button>
+                                <div className="ptz-mid">
+                                  <button className="ptz-left" title="Pan Left" type="button">◀</button>
+                                  <span className="ptz-center-dot" />
+                                  <button className="ptz-right" title="Pan Right" type="button">▶</button>
+                                </div>
+                                <button className="ptz-down" title="Tilt Down" type="button">▼</button>
+                              </div>
+                              <div className="lcs-ptz-controls">
+                                <div className="ptz-control-group">
+                                  <span>Zoom:</span>
+                                  <div className="ptz-btn-pair">
+                                    <button type="button">+</button>
+                                    <button type="button">-</button>
+                                  </div>
+                                </div>
+                                <div className="ptz-control-group">
+                                  <span>Focus:</span>
+                                  <div className="ptz-btn-pair">
+                                    <button type="button">Auto</button>
+                                    <button type="button">Manual</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        )}
+
+                        {activeMenuSection === 'power' && (
+                          <div className="lcs-overlay-content-power">
+                            <p>Are you sure you want to shut down the LCS Recording System?</p>
+                            <div className="lcs-power-actions">
+                              <button 
+                                className="lcs-power-btn-confirm"
+                                type="button"
+                                onClick={() => {
+                                  alert("LCS system shutting down...");
+                                  setActiveMenuSection(null);
+                                }}
+                              >
+                                Shut Down
+                              </button>
+                              <button 
+                                className="lcs-power-btn-cancel"
+                                type="button"
+                                onClick={() => setActiveMenuSection(null)}
+                              >
+                                Cancel
+                              </button>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  )}
+
                   {/* Settings sub-modal */}
                   {isSettingsOpen && (
                     <div className="lcs-settings-popup">
@@ -950,10 +1093,55 @@ export default function App() {
 
                     {/* Column 4: Menu & Interactive Stack */}
                     <div className="lcs-right-stack-col">
+                      {isMenuOpen && (
+                        <div className="lcs-menu-popup">
+                          <button 
+                            type="button" 
+                            className="lcs-menu-popup-btn"
+                            onClick={() => {
+                              setActiveMenuSection('set');
+                              setIsMenuOpen(false);
+                            }}
+                          >
+                            Set
+                          </button>
+                          <button 
+                            type="button" 
+                            className="lcs-menu-popup-btn"
+                            onClick={() => {
+                              setActiveMenuSection('file');
+                              setIsMenuOpen(false);
+                            }}
+                          >
+                            File
+                          </button>
+                          <button 
+                            type="button" 
+                            className="lcs-menu-popup-btn"
+                            onClick={() => {
+                              setActiveMenuSection('ptz');
+                              setIsMenuOpen(false);
+                            }}
+                          >
+                            PTZ
+                          </button>
+                          <button 
+                            type="button" 
+                            className="lcs-menu-popup-btn"
+                            onClick={() => {
+                              setActiveMenuSection('power');
+                              setIsMenuOpen(false);
+                            }}
+                          >
+                            Power
+                          </button>
+                        </div>
+                      )}
+
                       <button 
                         type="button" 
-                        className={`lcs-pill-btn-sm ${viewMode === 'single' ? 'is-active' : ''}`}
-                        onClick={() => setViewMode('single')}
+                        className={`lcs-pill-btn-sm ${isMenuOpen ? 'is-active' : ''}`}
+                        onClick={() => setIsMenuOpen(!isMenuOpen)}
                       >
                         <span>Menu</span>
                       </button>
