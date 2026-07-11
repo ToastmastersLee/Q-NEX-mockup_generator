@@ -172,6 +172,16 @@ export default function App() {
   const [settingsLiveResolution, setSettingsLiveResolution] = useState('1920*1080');
   const [settingsLiveServer, setSettingsLiveServer] = useState('rtmp://192.168.3.37:1935/live/xxx');
 
+  // Channel sub-tab settings states
+  const [settingsChannelActive, setSettingsChannelActive] = useState('Teacher_C'); // 'Teacher_C' | 'Student_C' | 'Teacher_P' | 'Student_P'
+  const [settingsChannelRaw, setSettingsChannelRaw] = useState('RTSP'); // 'Close' | 'RTSP' | 'USB Camera'
+  const [settingsChannelRtspUrl, setSettingsChannelRtspUrl] = useState('rtsp://admin:20210421@192.167.32.65/sub');
+  const [settingsChannelPtzEnable, setSettingsChannelPtzEnable] = useState(false);
+  const [settingsChannelPtzIp, setSettingsChannelPtzIp] = useState('127.0.0.2');
+  const [settingsChannelPtzPort, setSettingsChannelPtzPort] = useState('8642');
+  const [settingsChannelPtzProtocol, setSettingsChannelPtzProtocol] = useState('Visca');
+  const [settingsChannelPtzType, setSettingsChannelPtzType] = useState('UDP');
+
   const timerRef = useRef(null);
 
   // Update clock every second
@@ -1964,6 +1974,138 @@ export default function App() {
                               <span style={{ marginLeft: '140px', fontSize: '10px', color: '#a0aec0', lineHeight: '1.4' }}>
                                 (Address format: rtmp://hostip:port/appname/streamname; For example: rtmp://127.0.0.1:1935/live/livestream)
                               </span>
+                            </div>
+                          </div>
+                        </div>
+                      ) : settingsAdvanceSubTab === 'channel' ? (
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', width: '100%' }}>
+                          {/* Card 1: Channel Select and Raw */}
+                          <div className="lcs-settings-advance-card">
+                            {/* Row 1: Select Channel */}
+                            <div className="lcs-settings-row">
+                              <span className="lcs-settings-label" style={{ width: '140px' }}>Select Channel:</span>
+                              <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+                                {['Teacher_C', 'Student_C', 'Teacher_P', 'Student_P'].map((chn) => {
+                                  const isActive = settingsChannelActive === chn;
+                                  return (
+                                    <button
+                                      key={chn}
+                                      type="button"
+                                      className={`lcs-subnav-btn ${isActive ? 'is-active' : ''}`}
+                                      onClick={() => {
+                                        setSettingsChannelActive(chn);
+                                        if (chn === 'Teacher_C') {
+                                          setSettingsChannelRtspUrl('rtsp://admin:20210421@192.167.32.65/sub');
+                                          setSettingsChannelPtzIp('127.0.0.2');
+                                        } else if (chn === 'Student_C') {
+                                          setSettingsChannelRtspUrl('rtsp://admin:20210421@192.167.32.66/sub');
+                                          setSettingsChannelPtzIp('127.0.0.3');
+                                        } else if (chn === 'Teacher_P') {
+                                          setSettingsChannelRtspUrl('rtsp://admin:20210421@192.167.32.67/sub');
+                                          setSettingsChannelPtzIp('127.0.0.4');
+                                        } else if (chn === 'Student_P') {
+                                          setSettingsChannelRtspUrl('rtsp://admin:20210421@192.167.32.68/sub');
+                                          setSettingsChannelPtzIp('127.0.0.5');
+                                        }
+                                      }}
+                                    >
+                                      {chn}
+                                    </button>
+                                  );
+                                })}
+                              </div>
+                            </div>
+
+                            {/* Row 2: Select Raw */}
+                            <div className="lcs-settings-row" style={{ flexDirection: 'column', alignItems: 'stretch', gap: '6px' }}>
+                              <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                                <span className="lcs-settings-label" style={{ width: '140px' }}>Select Raw:</span>
+                                <div className="lcs-settings-options-group">
+                                  {['Close', 'RTSP', 'USB Camera'].map((opt) => {
+                                    const isSelected = settingsChannelRaw === opt;
+                                    return (
+                                      <div 
+                                        key={opt} 
+                                        className="lcs-radio-item"
+                                        onClick={() => setSettingsChannelRaw(opt)}
+                                      >
+                                        <div className={`lcs-radio-circle ${isSelected ? 'is-checked' : ''}`}>
+                                          {isSelected && <div className="lcs-radio-dot" />}
+                                        </div>
+                                        <span>{opt}</span>
+                                      </div>
+                                    );
+                                  })}
+                                </div>
+                              </div>
+                              {settingsChannelRaw === 'RTSP' && (
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                                  <span style={{ width: '140px' }} />
+                                  <input 
+                                    type="text" 
+                                    className="lcs-settings-input" 
+                                    style={{ width: '360px' }}
+                                    value={settingsChannelRtspUrl}
+                                    onChange={(e) => setSettingsChannelRtspUrl(e.target.value)}
+                                  />
+                                </div>
+                              )}
+                            </div>
+
+                            {/* Row 3: PTZ Control Toggle */}
+                            <div className="lcs-settings-row" style={{ borderBottom: 'none' }}>
+                              <span className="lcs-settings-label" style={{ width: '140px' }}>PTZ Control:</span>
+                              <div 
+                                className={`lcs-toggle-switch ${settingsChannelPtzEnable ? 'is-on' : ''}`}
+                                onClick={() => setSettingsChannelPtzEnable(!settingsChannelPtzEnable)}
+                              >
+                                <div className="lcs-toggle-knob" />
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Card 2: PTZ details grid */}
+                          <div className="lcs-settings-advance-card">
+                            {/* Row 1: IP Address and Port */}
+                            <div className="lcs-settings-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+                              <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                                <span className="lcs-settings-label" style={{ width: '120px' }}>IP Address:</span>
+                                <input 
+                                  type="text" 
+                                  className="lcs-settings-input"
+                                  disabled={!settingsChannelPtzEnable}
+                                  value={settingsChannelPtzIp}
+                                  onChange={(e) => setSettingsChannelPtzIp(e.target.value)}
+                                />
+                              </div>
+                              <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                                <span className="lcs-settings-label" style={{ width: '80px' }}>Port:</span>
+                                <input 
+                                  type="text" 
+                                  className="lcs-settings-input"
+                                  disabled={!settingsChannelPtzEnable}
+                                  value={settingsChannelPtzPort}
+                                  onChange={(e) => setSettingsChannelPtzPort(e.target.value)}
+                                />
+                              </div>
+                            </div>
+
+                            {/* Row 2: Protocol and Connection Type */}
+                            <div className="lcs-settings-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', borderBottom: 'none' }}>
+                              <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                                <span className="lcs-settings-label" style={{ width: '120px' }}>Protocol:</span>
+                                <div className="lcs-select-pill" style={{ width: '160px', opacity: settingsChannelPtzEnable ? 1 : 0.4 }}>
+                                  <span>{settingsChannelPtzProtocol}</span>
+                                  <span>▼</span>
+                                </div>
+                              </div>
+                              <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                                <span className="lcs-settings-label" style={{ width: '80px' }}>Type:</span>
+                                <div className="lcs-select-pill" style={{ width: '160px', opacity: settingsChannelPtzEnable ? 1 : 0.4 }}>
+                                  <span>{settingsChannelPtzType}</span>
+                                  <span>▼</span>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
