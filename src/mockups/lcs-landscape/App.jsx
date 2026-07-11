@@ -224,6 +224,50 @@ export default function App() {
   const [settingsSipDualStream, setSettingsSipDualStream] = useState(false);
   const [settingsSipPipLayout, setSettingsSipPipLayout] = useState(4); // 1 | 2 | 3 | 4
 
+  // File overlay states
+  const [fileStorageTab, setFileStorageTab] = useState('local'); // 'local' | 'mobile'
+  const [filePlayerState, setFilePlayerState] = useState('loading'); // 'loading' | 'playing' | 'paused'
+  const [filePlaybackTime, setFilePlaybackTime] = useState(6);
+  const [fileActivePage, setFileActivePage] = useState(1);
+  const [files, setFiles] = useState([
+    { id: 1, name: 'Teacher_C.mp4', size: '422.54K', checked: false },
+    { id: 2, name: 'PGM.mp4', size: '105.58K', checked: false },
+    { id: 3, name: 'Student_C.mp4', size: '1.27M', checked: true },
+    { id: 4, name: 'Lecture.mp4', size: '90.77K', checked: false },
+    { id: 5, name: 'Teacher_C.mp4', size: '4.74G', checked: false, isActive: true, start: '2026-07-09 10:53:35', duration: '3:59:57', classTime: '4:00:02', lecturer: '', theme: '' },
+    { id: 6, name: 'Lecture.mp4', size: '390.83M', checked: false },
+    { id: 7, name: 'PGM.mp4', size: '957.47M', checked: false },
+    { id: 8, name: 'Teacher_C.mp4', size: '4.74G', checked: false },
+    { id: 9, name: 'Student_C.mp4', size: '7.35G', checked: false }
+  ]);
+  const [playingFileName, setPlayingFileName] = useState('Teacher_C.mp4');
+  const [playingFileStart, setPlayingFileStart] = useState('2026-07-09 10:53:35');
+
+  // Handle playback timer
+  useEffect(() => {
+    let interval = null;
+    if (activeMenuSection === 'file' && filePlayerState === 'playing') {
+      interval = setInterval(() => {
+        setFilePlaybackTime(prev => prev + 1);
+      }, 1000);
+    }
+    return () => {
+      if (interval) clearInterval(interval);
+    };
+  }, [activeMenuSection, filePlayerState]);
+
+  // Loading state simulation when opening File Overlay
+  useEffect(() => {
+    if (activeMenuSection === 'file') {
+      setFilePlayerState('loading');
+      setFilePlaybackTime(6);
+      const timer = setTimeout(() => {
+        setFilePlayerState('playing');
+      }, 1500);
+      return () => clearTimeout(timer);
+    }
+  }, [activeMenuSection]);
+
   const timerRef = useRef(null);
 
   // Update clock every second
@@ -298,6 +342,13 @@ export default function App() {
     const mins = Math.floor((totalSeconds % 3600) / 60);
     const secs = totalSeconds % 60;
     return `${String(hrs).padStart(2, '0')}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+  };
+
+  const formatPlaybackTime = (sec) => {
+    const h = Math.floor(sec / 3600);
+    const m = Math.floor((sec % 3600) / 60);
+    const s = sec % 60;
+    return `${h}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
   };
 
   const handleLayoutDoubleClick = (layoutId) => {
@@ -718,14 +769,12 @@ export default function App() {
                   )}
 
                   {/* Menu Sub-sections Overlay */}
-                  {activeMenuSection && (
+                  {activeMenuSection && activeMenuSection !== 'set' && activeMenuSection !== 'file' && (
                     <div className="lcs-menu-section-overlay">
                       <div className="lcs-overlay-header">
                         <div className="lcs-overlay-title-group">
                           <Settings size={16} />
                           <h3>
-                            {activeMenuSection === 'set' && 'LCS System Settings'}
-                            {activeMenuSection === 'file' && 'Recorded Video Library'}
                             {activeMenuSection === 'ptz' && 'Camera PTZ Joystick'}
                             {activeMenuSection === 'power' && 'System Power Control'}
                           </h3>
@@ -740,33 +789,6 @@ export default function App() {
                       </div>
                       
                       <div className="lcs-overlay-body">
-                        {activeMenuSection === 'file' && (
-                          <div className="lcs-overlay-content-file">
-                            <div className="lcs-file-list">
-                              <div className="lcs-file-row">
-                                <div className="lcs-file-info">
-                                  <strong>REC_20260711_1330.mp4</strong>
-                                  <span>Duration: 01:24:12 • Size: 1.2 GB</span>
-                                </div>
-                                <button className="lcs-file-action-btn" type="button">Play</button>
-                              </div>
-                              <div className="lcs-file-row">
-                                <div className="lcs-file-info">
-                                  <strong>REC_20260710_0915.mp4</strong>
-                                  <span>Duration: 00:45:30 • Size: 680 MB</span>
-                                </div>
-                                <button className="lcs-file-action-btn" type="button">Play</button>
-                              </div>
-                              <div className="lcs-file-row">
-                                <div className="lcs-file-info">
-                                  <strong>REC_20260709_1400.mp4</strong>
-                                  <span>Duration: 02:00:15 • Size: 2.1 GB</span>
-                                </div>
-                                <button className="lcs-file-action-btn" type="button">Play</button>
-                              </div>
-                            </div>
-                          </div>
-                        )}
 
                         {activeMenuSection === 'ptz' && (
                           <div className="lcs-overlay-content-ptz">
@@ -2749,6 +2771,230 @@ export default function App() {
                       onClick={() => setActiveMenuSection(null)}
                     >
                       OK
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {activeMenuSection === 'file' && (
+              <div className="lcs-full-file-overlay">
+                {/* Left side: Video Player Column */}
+                <div className="lcs-file-player-col">
+                  <div className="lcs-file-player-header">
+                    {playingFileName} Recording start:{playingFileStart}
+                  </div>
+                  
+                  <div className="lcs-file-player-viewport">
+                    {(filePlayerState === 'playing' || filePlayerState === 'paused') ? (
+                      <img src={ch3TeacherClose} alt="Playback view" className="lcs-file-player-img" />
+                    ) : null}
+                    
+                    {filePlayerState === 'loading' && (
+                      <div className="lcs-file-player-loading">
+                        <div className="lcs-spinner-ring" />
+                        <span>Loading</span>
+                      </div>
+                    )}
+                    
+                    <button type="button" className="lcs-file-player-expand-btn">
+                      ↖↗ ↙↘
+                    </button>
+                  </div>
+
+                  {/* Scrubber progress bar */}
+                  <div className="lcs-file-player-scrubber-bar">
+                    <div className="lcs-file-player-scrubber-line-container">
+                      <div 
+                        className="lcs-file-player-scrubber-line-fill" 
+                        style={{ width: `${Math.min(100, (filePlaybackTime / 14397) * 100)}%` }} 
+                      />
+                      <div 
+                        className="lcs-file-player-scrubber-handle" 
+                        style={{ left: `${Math.min(100, (filePlaybackTime / 14397) * 100)}%` }} 
+                      />
+                    </div>
+                    <div className="lcs-file-player-time-display">
+                      {formatPlaybackTime(filePlaybackTime)}/3:59:57
+                    </div>
+                  </div>
+
+                  {/* Control buttons footer */}
+                  <div className="lcs-file-player-footer">
+                    <button 
+                      type="button" 
+                      className="lcs-file-exit-btn"
+                      onClick={() => setActiveMenuSection(null)}
+                    >
+                      Exit
+                    </button>
+
+                    <div className="lcs-file-controls-capsule">
+                      {filePlayerState === 'playing' ? (
+                        <button 
+                          type="button" 
+                          className="lcs-file-playpause-btn"
+                          onClick={() => setFilePlayerState('paused')}
+                        >
+                          ⏸
+                        </button>
+                      ) : (
+                        <button 
+                          type="button" 
+                          className="lcs-file-playpause-btn"
+                          onClick={() => setFilePlayerState('playing')}
+                        >
+                          ▶
+                        </button>
+                      )}
+                      
+                      <button 
+                        type="button" 
+                        className="lcs-file-stop-btn"
+                        onClick={() => {
+                          setFilePlayerState('paused');
+                          setFilePlaybackTime(0);
+                        }}
+                      >
+                        ⏹
+                      </button>
+                    </div>
+                    
+                    <div style={{ width: '50px' }} />
+                  </div>
+                </div>
+
+                {/* Right side: File List Column */}
+                <div className="lcs-file-list-col">
+                  {/* Top Storage Tabs */}
+                  <div className="lcs-file-list-tabs">
+                    <button 
+                      type="button" 
+                      className={`lcs-subnav-btn ${fileStorageTab === 'local' ? 'is-active' : ''}`}
+                      onClick={() => setFileStorageTab('local')}
+                    >
+                      Local Storage
+                    </button>
+                    <button 
+                      type="button" 
+                      className={`lcs-subnav-btn ${fileStorageTab === 'mobile' ? 'is-active' : ''}`}
+                      onClick={() => setFileStorageTab('mobile')}
+                    >
+                      Mobile Storage
+                    </button>
+                  </div>
+
+                  {/* Operations bar */}
+                  <div className="lcs-file-actions-bar">
+                    <div className="lcs-file-action-btn-group">
+                      <button type="button" className="lcs-subnav-btn" style={{ height: '24px', padding: '0 12px', fontSize: '10px' }}>
+                        ↓ Download
+                      </button>
+                    </div>
+                    <button type="button" className="lcs-subnav-btn" style={{ height: '24px', padding: '0 12px', fontSize: '10px' }}>
+                      🗑 Delete
+                    </button>
+                  </div>
+
+                  {/* Scrollable File List Container */}
+                  <div className="lcs-file-list-container">
+                    {fileStorageTab === 'local' ? (
+                      files.map((item) => {
+                        if (item.isActive) {
+                          return (
+                            <div key={item.id} className="lcs-file-detail-row">
+                              <div className="lcs-file-detail-icon">🎞</div>
+                              <div className="lcs-file-detail-content">
+                                <div style={{ color: '#fff', fontWeight: 'bold', fontSize: '11px', display: 'flex', justifyContent: 'space-between' }}>
+                                  <span>{item.name}</span>
+                                  <span style={{ color: '#00e676' }}>{item.size}</span>
+                                </div>
+                                <div>Recording start:{item.start}</div>
+                                <div>Class time:{item.classTime}</div>
+                                <div>Lectuer:{item.lecturer}</div>
+                                <div>Theme:{item.theme}</div>
+                              </div>
+                            </div>
+                          );
+                        }
+
+                        return (
+                          <div key={item.id} className="lcs-file-table-row">
+                            <div 
+                              className={`lcs-checkbox-box ${item.checked ? 'is-checked' : ''}`}
+                              style={{ cursor: 'pointer', transform: 'scale(0.85)' }}
+                              onClick={() => {
+                                setFiles(prev => prev.map(f => f.id === item.id ? { ...f, checked: !f.checked } : f));
+                              }}
+                            >
+                              {item.checked && <span className="lcs-checkmark">✓</span>}
+                            </div>
+                            <span style={{ fontWeight: 'bold' }}>{item.name}</span>
+                            <span style={{ color: '#a0aec0' }}>{item.size}</span>
+                            <button 
+                              type="button" 
+                              className="lcs-file-play-icon-btn"
+                              onClick={() => {
+                                setPlayingFileName(item.name);
+                                setPlayingFileStart(item.isActive ? item.start : '2026-07-11 10:00:00');
+                                setFilePlayerState('loading');
+                                setFilePlaybackTime(0);
+                                setFiles(prev => prev.map(f => {
+                                  if (f.id === item.id) {
+                                    return { 
+                                      ...f, 
+                                      isActive: true, 
+                                      start: '2026-07-11 10:00:00', 
+                                      duration: '3:59:57', 
+                                      classTime: '4:00:00', 
+                                      lecturer: '', 
+                                      theme: '' 
+                                    };
+                                  }
+                                  return { ...f, isActive: false };
+                                }));
+                                setTimeout(() => {
+                                  setFilePlayerState('playing');
+                                }, 1500);
+                              }}
+                            >
+                              ▶
+                            </button>
+                          </div>
+                        );
+                      })
+                    ) : (
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', color: '#cbd5e0', fontSize: '11px', opacity: 0.6 }}>
+                        No mobile storage device connected.
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Pagination Footer */}
+                  <div className="lcs-file-pagination">
+                    <button 
+                      type="button" 
+                      className="lcs-pagination-btn"
+                      onClick={() => setFileActivePage(Math.max(1, fileActivePage - 1))}
+                    >
+                      &lt;&lt;
+                    </button>
+                    {[1, 2, 3, 4, 5].map((page) => (
+                      <button 
+                        key={page}
+                        type="button" 
+                        className={`lcs-pagination-btn ${fileActivePage === page ? 'is-active' : ''}`}
+                        onClick={() => setFileActivePage(page)}
+                      >
+                        {page}
+                      </button>
+                    ))}
+                    <button 
+                      type="button" 
+                      className="lcs-pagination-btn"
+                      onClick={() => setFileActivePage(Math.min(5, fileActivePage + 1))}
+                    >
+                      &gt;&gt;
                     </button>
                   </div>
                 </div>
