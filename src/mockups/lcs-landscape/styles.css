@@ -2769,8 +2769,7 @@
 .lcs-file-player-viewport {
   position: relative;
   width: 100%;
-  flex: 1;
-  min-height: 280px;
+  height: 330px;
   background-color: #000;
   border-radius: 8px;
   overflow: hidden;
