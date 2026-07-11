@@ -1432,14 +1432,14 @@
 }
 
 /* 4-split three-rows */
-.lcs-three-rows {
-  display: flex;
-  flex-direction: column;
+.lcs-split-left-col.lcs-three-rows {
+  display: grid !important;
+  grid-template-rows: 1fr 1fr 1fr !important;
   gap: 4px !important;
 }
 
 .lcs-three-rows .lcs-split-small-box {
-  height: 33.3% !important;
+  height: 100% !important;
 }
 
 /* Grid layout 2x2 */
