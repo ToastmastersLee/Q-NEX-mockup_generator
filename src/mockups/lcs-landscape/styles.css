@@ -2875,57 +2875,90 @@
 
 /* Control buttons footer block */
 .lcs-file-player-footer {
-  display: flex;
+  display: grid;
+  grid-template-columns: 120px 1fr 120px;
   align-items: center;
-  justify-content: space-between;
+  width: 100%;
+  height: 80px;
+  background-color: #0c0e12;
+  padding: 0 20px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
   margin-top: auto;
-  padding-top: 16px;
 }
 
 .lcs-file-exit-btn {
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  border-radius: 16px;
-  padding: 6px 20px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  height: 38px;
+  width: 90px;
   color: #00e676;
-  font-size: 12px;
+  font-size: 13px;
+  font-weight: bold;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
 }
 
 .lcs-file-exit-btn:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: #00e676;
 }
 
 .lcs-file-controls-capsule {
+  justify-self: center;
   display: flex;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.03);
+  background-color: #161920;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 24px;
-  padding: 4px 16px;
-  gap: 16px;
+  border-radius: 30px;
+  height: 56px;
+  padding: 0 10px;
+  gap: 12px;
 }
 
 .lcs-file-playpause-btn {
-  background: transparent;
-  border: none;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
   color: #fff;
-  font-size: 16px;
+  font-size: 18px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.lcs-file-playpause-btn:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
 }
 
 .lcs-file-stop-btn {
-  background: transparent;
-  border: none;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
   color: #ef4444;
-  font-size: 16px;
+  font-size: 14px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.lcs-file-stop-btn:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
 }
 
 /* Right side: File List Column */
