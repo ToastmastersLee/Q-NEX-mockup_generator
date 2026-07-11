@@ -33,6 +33,11 @@ export default function App() {
   const [viewMode, setViewMode] = useState('director'); // 'director' (split) or 'single' (full screen channel)
   const [micLevel, setMicLevel] = useState(45); // fluctuated dynamically
   const [isMuted, setIsMuted] = useState(false);
+  
+  // Layout Select Overlays
+  const [isLayoutBarOpen, setIsLayoutBarOpen] = useState(false);
+  const [currentLayout, setCurrentLayout] = useState('l5'); // 'l1' to 'l8'
+  const [directorMode, setDirectorMode] = useState('manual'); // 'manual' | 'auto'
 
   // Time clock state
   const [timeString, setTimeString] = useState('10-07-2026 17:24:29');
@@ -166,8 +171,11 @@ export default function App() {
 
           <button 
             type="button" 
-            className={`lcs-sim-btn ${viewMode === 'director' ? 'is-active' : ''}`}
-            onClick={() => setViewMode('director')}
+            className={`lcs-sim-btn ${currentLayout === 'l5' ? 'is-active' : ''}`}
+            onClick={() => {
+              setViewMode('director');
+              setCurrentLayout('l5');
+            }}
           >
             <Sliders size={12} />
             <span>Director View (Orig)</span>
@@ -175,8 +183,11 @@ export default function App() {
 
           <button 
             type="button" 
-            className={`lcs-sim-btn ${viewMode === 'single' ? 'is-active' : ''}`}
-            onClick={() => setViewMode('single')}
+            className={`lcs-sim-btn ${currentLayout === 'l1' ? 'is-active' : ''}`}
+            onClick={() => {
+              setViewMode('single');
+              setCurrentLayout('l1');
+            }}
           >
             <Monitor size={12} />
             <span>Menu View (Orig)</span>
@@ -230,7 +241,68 @@ export default function App() {
                 
                 {/* Director View / Video Feed Display Area */}
                 <div className="lcs-video-feed-box">
-                  {viewMode === 'director' ? (
+                  {currentLayout === 'l1' && (
+                    <div className="lcs-layout-l1">
+                      {channels.find(c => c.id === selectedChannel)?.type === 'placeholder' ? (
+                        <div className="lcs-placeholder-screen">
+                          <Film size={64} className="opacity-40 animate-pulse" />
+                          <span>No Active Video Input</span>
+                        </div>
+                      ) : (
+                        <div className="lcs-full-video-box">
+                          <img src={classroomFeed} alt="l1" className="lcs-feed-img" style={{ objectPosition: channels.find(c => c.id === selectedChannel)?.pos }} />
+                          <span className="lcs-split-label active">{channels.find(c => c.id === selectedChannel)?.name} ({channels.find(c => c.id === selectedChannel)?.label})</span>
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {currentLayout === 'l2' && (
+                    <div className="lcs-layout-l2">
+                      {/* Main view (CH7 placeholder) */}
+                      <div className="lcs-placeholder-screen">
+                        <Film size={48} className="opacity-40" />
+                        <span>Interactive (CH7)</span>
+                      </div>
+                      {/* PiP overlay (CH3 live) */}
+                      <div className="lcs-pip-box top-left">
+                        <img src={classroomFeed} alt="l2-pip" className="lcs-feed-img" style={{ objectPosition: 'center top' }} />
+                        <span className="lcs-pip-label">Teacher_C (CH3)</span>
+                      </div>
+                    </div>
+                  )}
+
+                  {currentLayout === 'l3' && (
+                    <div className="lcs-layout-l3">
+                      <div className="lcs-split-half">
+                        <img src={classroomFeed} alt="l3-left" className="lcs-feed-img" style={{ objectPosition: 'left center' }} />
+                        <span className="lcs-split-label">Student_C (CH4)</span>
+                      </div>
+                      <div className="lcs-split-half">
+                        <img src={classroomFeed} alt="l3-right" className="lcs-feed-img" style={{ objectPosition: 'center top' }} />
+                        <span className="lcs-split-label active">Teacher_C (CH3)</span>
+                      </div>
+                    </div>
+                  )}
+
+                  {currentLayout === 'l4' && (
+                    <div className="lcs-layout-l4">
+                      {/* Main view (CH2 placeholder) */}
+                      <div className="lcs-placeholder-screen">
+                        <Film size={48} className="opacity-40" />
+                        <span>Lecture2 (CH2)</span>
+                      </div>
+                      {/* PiP overlay (CH1 placeholder) */}
+                      <div className="lcs-pip-box bottom-left">
+                        <div className="lcs-ch-thumb-placeholder bg-slate-900 w-full h-full flex items-center justify-center">
+                          <Film size={20} className="opacity-40" />
+                        </div>
+                        <span className="lcs-pip-label">Lecture (CH1)</span>
+                      </div>
+                    </div>
+                  )}
+
+                  {currentLayout === 'l5' && (
                     // 3-Pane split screen layout: Left column with 2 small rows, Right column with 1 large panel
                     <div className="lcs-split-screen">
                       <div className="lcs-split-left-col">
@@ -263,30 +335,68 @@ export default function App() {
                         </div>
                       </div>
                     </div>
-                  ) : (
-                    // Single focal active channel Full View
-                    <div className="lcs-single-screen">
-                      {channels.find(c => c.id === selectedChannel)?.type === 'placeholder' ? (
-                        <div className="lcs-placeholder-screen">
-                          <Film size={64} className="opacity-40 animate-pulse" />
-                          <span>No Active Video Input</span>
-                          <span className="text-xs opacity-60">Please connect a live source device</span>
+                  )}
+
+                  {currentLayout === 'l6' && (
+                    <div className="lcs-split-screen lcs-layout-l6">
+                      <div className="lcs-split-left-col lcs-three-rows">
+                        <div className="lcs-split-small-box">
+                          <div className="lcs-ch-thumb-placeholder bg-slate-950 w-full h-full flex items-center justify-center"><Film size={14} className="opacity-30" /></div>
+                          <span className="lcs-split-label">Lecture2 (CH2)</span>
                         </div>
-                      ) : (
-                        <div className="lcs-split-large-box w-full h-full border-none">
-                          <img 
-                            src={classroomFeed} 
-                            alt="single-feed" 
-                            className="lcs-feed-img"
-                            style={{ 
-                              objectPosition: channels.find(c => c.id === selectedChannel)?.pos || 'center top' 
-                            }} 
-                          />
+                        <div className="lcs-split-small-box">
+                          <div className="lcs-ch-thumb-placeholder bg-slate-950 w-full h-full flex items-center justify-center"><Film size={14} className="opacity-30" /></div>
+                          <span className="lcs-split-label">Lecture (CH1)</span>
+                        </div>
+                        <div className="lcs-split-small-box">
+                          <img src={classroomFeed} alt="feed2" className="lcs-feed-img" style={{ objectPosition: 'left center' }} />
+                          <span className="lcs-split-label">Student_C (CH4)</span>
+                        </div>
+                      </div>
+                      <div className="lcs-split-right-col">
+                        <div className="lcs-split-large-box">
+                          <img src={classroomFeed} alt="large-feed" className="lcs-feed-img" style={{ objectPosition: 'center top' }} />
                           <span className="lcs-split-label active">
-                            {channels.find(c => c.id === selectedChannel)?.name} ({channels.find(c => c.id === selectedChannel)?.label})
+                            Teacher_C (CH3)
                           </span>
                         </div>
-                      )}
+                      </div>
+                    </div>
+                  )}
+
+                  {currentLayout === 'l7' && (
+                    <div className="lcs-layout-l7">
+                      <div className="lcs-grid-cell">
+                        <div className="lcs-ch-thumb-placeholder bg-slate-900 w-full h-full flex items-center justify-center"><Film size={24} className="opacity-30" /></div>
+                        <span className="lcs-split-label">Lecture2 (CH2)</span>
+                      </div>
+                      <div className="lcs-grid-cell">
+                        <img src={classroomFeed} alt="l7-ch3" className="lcs-feed-img" style={{ objectPosition: 'center top' }} />
+                        <span className="lcs-split-label active">Teacher_C (CH3)</span>
+                      </div>
+                      <div className="lcs-grid-cell">
+                        <div className="lcs-ch-thumb-placeholder bg-slate-900 w-full h-full flex items-center justify-center"><Film size={24} className="opacity-30" /></div>
+                        <span className="lcs-split-label">Lecture (CH1)</span>
+                      </div>
+                      <div className="lcs-grid-cell">
+                        <img src={classroomFeed} alt="l7-ch4" className="lcs-feed-img" style={{ objectPosition: 'left center' }} />
+                        <span className="lcs-split-label">Student_C (CH4)</span>
+                      </div>
+                    </div>
+                  )}
+
+                  {currentLayout === 'l8' && (
+                    <div className="lcs-layout-l8">
+                      {channels.map((ch) => (
+                        <div key={ch.id} className="lcs-grid-cell-all">
+                          {ch.type === 'placeholder' ? (
+                            <div className="lcs-ch-thumb-placeholder bg-slate-900 w-full h-full flex items-center justify-center"><Film size={16} className="opacity-35" /></div>
+                          ) : (
+                            <img src={classroomFeed} alt={ch.name} className="lcs-feed-img" style={{ objectPosition: ch.pos }} />
+                          )}
+                          <span className="lcs-split-label">{ch.name}</span>
+                        </div>
+                      ))}
                     </div>
                   )}
 
@@ -346,74 +456,241 @@ export default function App() {
                   )}
                 </div>
 
-                {/* Bottom Control Bar */}
-                <div className="lcs-bottom-bar">
-                  
-                  {/* Column 1: Director button */}
-                  <button 
-                    type="button" 
-                    className={`lcs-pill-btn lcs-director-btn ${viewMode === 'director' ? 'is-active' : ''}`}
-                    onClick={() => setViewMode('director')}
-                  >
-                    <span>Director</span>
-                  </button>
+                {/* Bottom Control Bar or Layout Selection Bar */}
+                {isLayoutBarOpen ? (
+                  <div className="lcs-layout-select-bar">
+                    {/* Left: Manual / Auto toggle */}
+                    <div className="lcs-layout-mode-group">
+                      <button 
+                        type="button" 
+                        className={`lcs-mode-btn ${directorMode === 'manual' ? 'is-active' : ''}`}
+                        onClick={() => setDirectorMode('manual')}
+                      >
+                        Manual
+                      </button>
+                      <button 
+                        type="button" 
+                        className={`lcs-mode-btn ${directorMode === 'auto' ? 'is-active' : ''}`}
+                        onClick={() => setDirectorMode('auto')}
+                      >
+                        Auto
+                      </button>
+                    </div>
 
-                  {/* Column 2: Record Control pill */}
-                  <div className="lcs-control-pill-group lcs-record-group">
-                    <span className="lcs-group-label">Record</span>
+                    {/* Middle: Layout Selection options list */}
+                    <div className="lcs-layout-options-list">
+                      
+                      {/* Layout 1: Single full screen */}
+                      <div className="lcs-layout-option-wrapper">
+                        <button 
+                          type="button" 
+                          className={`lcs-layout-thumb-card ${currentLayout === 'l1' ? 'is-active' : ''}`}
+                          onClick={() => setCurrentLayout('l1')}
+                        >
+                          <div className="lcs-thumb-single font-mono">
+                            <span>CH6</span>
+                          </div>
+                        </button>
+                        {currentLayout === 'l1' && <span className="lcs-active-layout-badge">Layout</span>}
+                      </div>
+
+                      {/* Layout 2: PiP Style 1 */}
+                      <div className="lcs-layout-option-wrapper">
+                        <button 
+                          type="button" 
+                          className={`lcs-layout-thumb-card ${currentLayout === 'l2' ? 'is-active' : ''}`}
+                          onClick={() => setCurrentLayout('l2')}
+                        >
+                          <div className="lcs-thumb-pip-1">
+                            <div className="lcs-thumb-pip-sub font-mono">CH3</div>
+                            <span className="font-mono">CH7</span>
+                          </div>
+                        </button>
+                        {currentLayout === 'l2' && <span className="lcs-active-layout-badge">Layout</span>}
+                      </div>
+
+                      {/* Layout 3: Vertical Split */}
+                      <div className="lcs-layout-option-wrapper">
+                        <button 
+                          type="button" 
+                          className={`lcs-layout-thumb-card ${currentLayout === 'l3' ? 'is-active' : ''}`}
+                          onClick={() => setCurrentLayout('l3')}
+                        >
+                          <div className="lcs-thumb-split-v">
+                            <div className="lcs-thumb-split-cell font-mono">CH4</div>
+                            <div className="lcs-thumb-split-cell font-mono">CH3</div>
+                          </div>
+                        </button>
+                        {currentLayout === 'l3' && <span className="lcs-active-layout-badge">Layout</span>}
+                      </div>
+
+                      {/* Layout 4: PiP Style 2 */}
+                      <div className="lcs-layout-option-wrapper">
+                        <button 
+                          type="button" 
+                          className={`lcs-layout-thumb-card ${currentLayout === 'l4' ? 'is-active' : ''}`}
+                          onClick={() => setCurrentLayout('l4')}
+                        >
+                          <div className="lcs-thumb-pip-2">
+                            <div className="lcs-thumb-pip-sub font-mono">CH1</div>
+                            <span className="font-mono">CH2</span>
+                          </div>
+                        </button>
+                        {currentLayout === 'l4' && <span className="lcs-active-layout-badge">Layout</span>}
+                      </div>
+
+                      {/* Layout 5: Director 3-Split (Default) */}
+                      <div className="lcs-layout-option-wrapper">
+                        <button 
+                          type="button" 
+                          className={`lcs-layout-thumb-card ${currentLayout === 'l5' ? 'is-active' : ''}`}
+                          onClick={() => setCurrentLayout('l5')}
+                        >
+                          <div className="lcs-thumb-director">
+                            <div className="lcs-thumb-dir-left">
+                              <div className="font-mono">CH5</div>
+                              <div className="font-mono">CH4</div>
+                            </div>
+                            <div className="lcs-thumb-dir-right font-mono">CH3</div>
+                          </div>
+                        </button>
+                        {currentLayout === 'l5' && <span className="lcs-active-layout-badge">Layout</span>}
+                      </div>
+
+                      {/* Layout 6: 4-Split */}
+                      <div className="lcs-layout-option-wrapper">
+                        <button 
+                          type="button" 
+                          className={`lcs-layout-thumb-card ${currentLayout === 'l6' ? 'is-active' : ''}`}
+                          onClick={() => setCurrentLayout('l6')}
+                        >
+                          <div className="lcs-thumb-director-4">
+                            <div className="lcs-thumb-dir4-left">
+                              <div className="font-mono">CH2</div>
+                              <div className="font-mono">CH1</div>
+                              <div className="font-mono">CH4</div>
+                            </div>
+                            <div className="lcs-thumb-dir4-right font-mono">CH3</div>
+                          </div>
+                        </button>
+                        {currentLayout === 'l6' && <span className="lcs-active-layout-badge">Layout</span>}
+                      </div>
+
+                      {/* Layout 7: Quad Grid */}
+                      <div className="lcs-layout-option-wrapper">
+                        <button 
+                          type="button" 
+                          className={`lcs-layout-thumb-card ${currentLayout === 'l7' ? 'is-active' : ''}`}
+                          onClick={() => setCurrentLayout('l7')}
+                        >
+                          <div className="lcs-thumb-quad">
+                            <div className="font-mono">CH2</div>
+                            <div className="font-mono">CH3</div>
+                            <div className="font-mono">CH1</div>
+                            <div className="font-mono">CH4</div>
+                          </div>
+                        </button>
+                        {currentLayout === 'l7' && <span className="lcs-active-layout-badge">Layout</span>}
+                      </div>
+
+                      {/* Layout 8: All */}
+                      <div className="lcs-layout-option-wrapper">
+                        <button 
+                          type="button" 
+                          className={`lcs-layout-thumb-card ${currentLayout === 'l8' ? 'is-active' : ''}`}
+                          onClick={() => setCurrentLayout('l8')}
+                        >
+                          <div className="lcs-thumb-all">
+                            <span>All</span>
+                          </div>
+                        </button>
+                        {currentLayout === 'l8' && <span className="lcs-active-layout-badge">Layout</span>}
+                      </div>
+
+                    </div>
+
+                    {/* Right: Close "x" button */}
                     <button 
                       type="button" 
-                      className={`lcs-large-rec-btn ${isRecording ? 'is-recording' : ''}`}
-                      onClick={handleRecordToggle}
-                      title={isRecording ? "Stop Record" : "Start Record"}
+                      className="lcs-layout-close-btn"
+                      onClick={() => setIsLayoutBarOpen(false)}
+                      title="Close Layouts"
                     >
-                      <div className="lcs-rec-inner-circle" />
-                    </button>
-                    <button 
-                      type="button" 
-                      className={`lcs-large-action-btn ${isPaused ? 'is-active' : ''}`}
-                      onClick={handlePauseToggle}
-                      disabled={!isRecording}
-                      title="Pause Record"
-                    >
-                      <Pause size={18} fill="currentColor" />
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                      </svg>
                     </button>
                   </div>
-
-                  {/* Column 3: Live Stream pill */}
-                  <div className="lcs-control-pill-group lcs-live-group">
+                ) : (
+                  <div className="lcs-bottom-bar">
+                    
+                    {/* Column 1: Director button */}
                     <button 
                       type="button" 
-                      className={`lcs-large-action-btn lcs-live-btn ${isLive ? 'is-live-active' : ''}`}
-                      onClick={() => setIsLive(!isLive)}
-                      title="Toggle Live Stream"
+                      className={`lcs-pill-btn lcs-director-btn ${isLayoutBarOpen ? 'is-active' : ''}`}
+                      onClick={() => setIsLayoutBarOpen(true)}
                     >
-                      <Play size={18} fill="currentColor" style={{ marginLeft: '2px' }} />
+                      <span>Director</span>
                     </button>
-                    <span className="lcs-group-label">Live</span>
+
+                    {/* Column 2: Record Control pill */}
+                    <div className="lcs-control-pill-group lcs-record-group">
+                      <span className="lcs-group-label">Record</span>
+                      <button 
+                        type="button" 
+                        className={`lcs-large-rec-btn ${isRecording ? 'is-recording' : ''}`}
+                        onClick={handleRecordToggle}
+                        title={isRecording ? "Stop Record" : "Start Record"}
+                      >
+                        <div className="lcs-rec-inner-circle" />
+                      </button>
+                      <button 
+                        type="button" 
+                        className={`lcs-large-action-btn ${isPaused ? 'is-active' : ''}`}
+                        onClick={handlePauseToggle}
+                        disabled={!isRecording}
+                        title="Pause Record"
+                      >
+                        <Pause size={18} fill="currentColor" />
+                      </button>
+                    </div>
+
+                    {/* Column 3: Live Stream pill */}
+                    <div className="lcs-control-pill-group lcs-live-group">
+                      <button 
+                        type="button" 
+                        className={`lcs-large-action-btn lcs-live-btn ${isLive ? 'is-live-active' : ''}`}
+                        onClick={() => setIsLive(!isLive)}
+                        title="Toggle Live Stream"
+                      >
+                        <Play size={18} fill="currentColor" style={{ marginLeft: '2px' }} />
+                      </button>
+                      <span className="lcs-group-label">Live</span>
+                    </div>
+
+                    {/* Column 4: Menu & Interactive Stack */}
+                    <div className="lcs-right-stack-col">
+                      <button 
+                        type="button" 
+                        className={`lcs-pill-btn-sm ${viewMode === 'single' ? 'is-active' : ''}`}
+                        onClick={() => setViewMode('single')}
+                      >
+                        <span>Menu</span>
+                      </button>
+
+                      <button 
+                        type="button" 
+                        className="lcs-pill-btn-sm"
+                        onClick={() => {
+                          setSelectedChannel(prev => prev === 'ch3' ? 'ch4' : 'ch3');
+                        }}
+                      >
+                        <span>Interactive</span>
+                      </button>
+                    </div>
                   </div>
-
-                  {/* Column 4: Menu & Interactive Stack */}
-                  <div className="lcs-right-stack-col">
-                    <button 
-                      type="button" 
-                      className={`lcs-pill-btn-sm ${viewMode === 'single' ? 'is-active' : ''}`}
-                      onClick={() => setViewMode('single')}
-                    >
-                      <span>Menu</span>
-                    </button>
-
-                    <button 
-                      type="button" 
-                      className="lcs-pill-btn-sm"
-                      onClick={() => {
-                        setSelectedChannel(prev => prev === 'ch3' ? 'ch4' : 'ch3');
-                      }}
-                    >
-                      <span>Interactive</span>
-                    </button>
-                  </div>
-                </div>
+                )}
 
               </div>
 
