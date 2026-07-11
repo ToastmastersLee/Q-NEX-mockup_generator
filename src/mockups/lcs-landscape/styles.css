@@ -2199,6 +2199,8 @@
   padding: 12px 20px;
   background-color: #1c1f26;
   box-sizing: border-box;
+  justify-content: flex-start !important;
+  gap: 16px;
 }
 
 .is-light .lcs-settings-row {

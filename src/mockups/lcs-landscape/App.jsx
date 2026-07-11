@@ -1440,7 +1440,7 @@ export default function App() {
                       </div>
 
                       {/* Row 4: Lock Screen */}
-                      <div className="lcs-settings-row" style={{ justifyContent: 'space-between' }}>
+                      <div className="lcs-settings-row">
                         <span className="lcs-settings-label">Lock Screen:</span>
                         <div className="lcs-select-pill" style={{ width: '160px' }}>
                           <span>Never</span>
@@ -1624,7 +1624,7 @@ export default function App() {
                           </div>
 
                           {/* Row 3: IP Address */}
-                          <div className="lcs-settings-row" style={{ justifyContent: 'space-between' }}>
+                          <div className="lcs-settings-row">
                             <span className="lcs-settings-label">IP Address:</span>
                             <input 
                               type="text" 
@@ -1636,7 +1636,7 @@ export default function App() {
                           </div>
 
                           {/* Row 4: Subnet Mask */}
-                          <div className="lcs-settings-row" style={{ justifyContent: 'space-between' }}>
+                          <div className="lcs-settings-row">
                             <span className="lcs-settings-label">Subnet Mask:</span>
                             <input 
                               type="text" 
@@ -1648,7 +1648,7 @@ export default function App() {
                           </div>
 
                           {/* Row 5: Default Gateway */}
-                          <div className="lcs-settings-row" style={{ justifyContent: 'space-between' }}>
+                          <div className="lcs-settings-row">
                             <span className="lcs-settings-label">Default Gateway:</span>
                             <input 
                               type="text" 
@@ -1660,7 +1660,7 @@ export default function App() {
                           </div>
 
                           {/* Row 6: DNS Server */}
-                          <div className="lcs-settings-row" style={{ justifyContent: 'space-between' }}>
+                          <div className="lcs-settings-row">
                             <span className="lcs-settings-label">DNS Server:</span>
                             <input 
                               type="text" 
