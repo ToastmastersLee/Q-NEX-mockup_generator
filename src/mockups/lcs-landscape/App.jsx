@@ -105,6 +105,26 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeMenuSection, setActiveMenuSection] = useState(null); // 'set' | 'file' | 'ptz' | 'power' | null
 
+  // Detailed settings page states
+  const [settingsLanguage, setSettingsLanguage] = useState('english');
+  const [settingsPowerBoot, setSettingsPowerBoot] = useState('normal');
+  const [settingsAlarms, setSettingsAlarms] = useState({
+    on1: { enabled: false, time: '07:00' },
+    off1: { enabled: false, time: '12:30' },
+    on2: { enabled: false, time: '13:50' },
+    off2: { enabled: false, time: '20:00' }
+  });
+  const [settingsLockScreen, setSettingsLockScreen] = useState('never');
+  const [settingsOthers, setSettingsOthers] = useState({
+    saveFilmLayout: false,
+    powerOnLive: false,
+    powerOnRecord: false,
+    startCountdown: false,
+    timeFormat: 'DD-MM-YYYY',
+    hourFormat: '24 Hours Format'
+  });
+  const [activeSettingsTab, setActiveSettingsTab] = useState('device'); // 'device' | 'storage' | 'network' | 'version' | 'advance'
+
   const timerRef = useRef(null);
 
   // Update clock every second
@@ -621,34 +641,6 @@ export default function App() {
                       </div>
                       
                       <div className="lcs-overlay-body">
-                        {activeMenuSection === 'set' && (
-                          <div className="lcs-overlay-content-set">
-                            <div className="lcs-set-item">
-                              <span>Tracking Speed:</span>
-                              <div className="lcs-set-control">
-                                <input type="range" min="1" max="10" defaultValue="5" />
-                                <span>Normal</span>
-                              </div>
-                            </div>
-                            <div className="lcs-set-item">
-                              <span>Audio Echo Cancellation:</span>
-                              <button className="lcs-badge-active" type="button">Enabled</button>
-                            </div>
-                            <div className="lcs-set-item">
-                              <span>Main Stream Quality:</span>
-                              <div className="lcs-badge-group">
-                                <span className="lcs-badge is-active">1080P</span>
-                                <span className="lcs-badge">720P</span>
-                                <span className="lcs-badge">360P</span>
-                              </div>
-                            </div>
-                            <div className="lcs-set-item">
-                              <span>Network Protocol:</span>
-                              <span>RTMP / SRT / RTSP</span>
-                            </div>
-                          </div>
-                        )}
-
                         {activeMenuSection === 'file' && (
                           <div className="lcs-overlay-content-file">
                             <div className="lcs-file-list">
@@ -1235,6 +1227,278 @@ export default function App() {
               </div>
 
             </div>
+
+            {activeMenuSection === 'set' && (
+              <div className="lcs-full-settings-overlay">
+                {/* Sidebar */}
+                <div className="lcs-settings-sidebar">
+                  <div className="lcs-settings-sidebar-top">
+                    <button 
+                      type="button" 
+                      className={`lcs-sidebar-btn ${activeSettingsTab === 'device' ? 'is-active' : ''}`}
+                      onClick={() => setActiveSettingsTab('device')}
+                    >
+                      Device set
+                    </button>
+                    <button 
+                      type="button" 
+                      className={`lcs-sidebar-btn ${activeSettingsTab === 'storage' ? 'is-active' : ''}`}
+                      onClick={() => setActiveSettingsTab('storage')}
+                    >
+                      Storage set
+                    </button>
+                    <button 
+                      type="button" 
+                      className={`lcs-sidebar-btn ${activeSettingsTab === 'network' ? 'is-active' : ''}`}
+                      onClick={() => setActiveSettingsTab('network')}
+                    >
+                      Network set
+                    </button>
+                    <button 
+                      type="button" 
+                      className={`lcs-sidebar-btn ${activeSettingsTab === 'version' ? 'is-active' : ''}`}
+                      onClick={() => setActiveSettingsTab('version')}
+                    >
+                      Version
+                    </button>
+                    <button 
+                      type="button" 
+                      className={`lcs-sidebar-btn ${activeSettingsTab === 'advance' ? 'is-active' : ''}`}
+                      onClick={() => setActiveSettingsTab('advance')}
+                    >
+                      Advance
+                    </button>
+                  </div>
+                  
+                  <button 
+                    type="button" 
+                    className="lcs-sidebar-btn"
+                    onClick={() => setActiveMenuSection(null)}
+                  >
+                    Exit
+                  </button>
+                </div>
+
+                {/* Main Content Area */}
+                <div className="lcs-settings-main">
+                  {activeSettingsTab === 'device' ? (
+                    <div style={{ display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'space-between' }}>
+                      {/* Row 1: Language */}
+                      <div className="lcs-settings-row">
+                        <span className="lcs-settings-label">Language</span>
+                        <div className="lcs-settings-options-group">
+                          {['简体中文', '繁體中文', 'ENGLISH', 'Русский язык', 'Français'].map((lang) => {
+                            const langKey = lang === '简体中文' ? 'zh-cn' : lang === '繁體中文' ? 'zh-tw' : lang === 'ENGLISH' ? 'english' : lang === 'Русский язык' ? 'russian' : lang.toLowerCase();
+                            const isSelected = settingsLanguage === langKey;
+                            return (
+                              <div 
+                                key={lang} 
+                                className="lcs-radio-item"
+                                onClick={() => setSettingsLanguage(langKey)}
+                              >
+                                <div className={`lcs-radio-circle ${isSelected ? 'is-checked' : ''}`}>
+                                  {isSelected && <div className="lcs-radio-dot" />}
+                                </div>
+                                <span>{lang}</span>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+
+                      {/* Row 2: Power Boot */}
+                      <div className="lcs-settings-row">
+                        <span className="lcs-settings-label">Power Boot</span>
+                        <div className="lcs-settings-options-group">
+                          {[
+                            { label: 'Normal Boot', value: 'normal' },
+                            { label: 'Power on Boot', value: 'poweron' }
+                          ].map((opt) => {
+                            const isSelected = settingsPowerBoot === opt.value;
+                            return (
+                              <div 
+                                key={opt.value} 
+                                className="lcs-radio-item"
+                                onClick={() => setSettingsPowerBoot(opt.value)}
+                              >
+                                <div className={`lcs-radio-circle ${isSelected ? 'is-checked' : ''}`}>
+                                  {isSelected && <div className="lcs-radio-dot" />}
+                                </div>
+                                <span>{opt.label}</span>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+
+                      {/* Row 3: Alarm Power Boot */}
+                      <div className="lcs-settings-row" style={{ alignItems: 'flex-start' }}>
+                        <span className="lcs-settings-label" style={{ marginTop: '2px' }}>Alarm Power Boot:</span>
+                        <div className="lcs-alarm-grid">
+                          {/* Alarm 1: PowerOn1 */}
+                          <div className="lcs-alarm-column">
+                            <div className="lcs-alarm-header">
+                              <span>PowerOn1</span>
+                              <div 
+                                className={`lcs-toggle-switch ${settingsAlarms.on1.enabled ? 'is-on' : ''}`}
+                                onClick={() => setSettingsAlarms(prev => ({ ...prev, on1: { ...prev.on1, enabled: !prev.on1.enabled } }))}
+                              >
+                                <div className="lcs-toggle-knob" />
+                              </div>
+                              <span>Enable</span>
+                            </div>
+                            <div className="lcs-alarm-time-box">
+                              <span>Time</span>
+                              <strong>{settingsAlarms.on1.time}</strong>
+                            </div>
+                          </div>
+
+                          {/* Alarm 2: PowerOff1 */}
+                          <div className="lcs-alarm-column">
+                            <div className="lcs-alarm-header">
+                              <span>PowerOff1</span>
+                              <div 
+                                className={`lcs-toggle-switch ${settingsAlarms.off1.enabled ? 'is-on' : ''}`}
+                                onClick={() => setSettingsAlarms(prev => ({ ...prev, off1: { ...prev.off1, enabled: !prev.off1.enabled } }))}
+                              >
+                                <div className="lcs-toggle-knob" />
+                              </div>
+                              <span>Enable</span>
+                            </div>
+                            <div className="lcs-alarm-time-box">
+                              <span>Time</span>
+                              <strong>{settingsAlarms.off1.time}</strong>
+                            </div>
+                          </div>
+
+                          {/* Alarm 3: PowerOn2 */}
+                          <div className="lcs-alarm-column">
+                            <div className="lcs-alarm-header">
+                              <span>PowerOn2</span>
+                              <div 
+                                className={`lcs-toggle-switch ${settingsAlarms.on2.enabled ? 'is-on' : ''}`}
+                                onClick={() => setSettingsAlarms(prev => ({ ...prev, on2: { ...prev.on2, enabled: !prev.on2.enabled } }))}
+                              >
+                                <div className="lcs-toggle-knob" />
+                              </div>
+                              <span>Enable</span>
+                            </div>
+                            <div className="lcs-alarm-time-box">
+                              <span>Time</span>
+                              <strong>{settingsAlarms.on2.time}</strong>
+                            </div>
+                          </div>
+
+                          {/* Alarm 4: PowerOff2 */}
+                          <div className="lcs-alarm-column">
+                            <div className="lcs-alarm-header">
+                              <span>PowerOff2</span>
+                              <div 
+                                className={`lcs-toggle-switch ${settingsAlarms.off2.enabled ? 'is-on' : ''}`}
+                                onClick={() => setSettingsAlarms(prev => ({ ...prev, off2: { ...prev.off2, enabled: !prev.off2.enabled } }))}
+                              >
+                                <div className="lcs-toggle-knob" />
+                              </div>
+                              <span>Enable</span>
+                            </div>
+                            <div className="lcs-alarm-time-box">
+                              <span>Time</span>
+                              <strong>{settingsAlarms.off2.time}</strong>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Row 4: Lock Screen */}
+                      <div className="lcs-settings-row">
+                        <span className="lcs-settings-label">Lock Screen:</span>
+                        <div className="lcs-select-pill">
+                          <span>Never</span>
+                          <span>▼</span>
+                        </div>
+                      </div>
+
+                      {/* Row 5: Other Set */}
+                      <div className="lcs-settings-row" style={{ borderBottom: 'none', alignItems: 'flex-start' }}>
+                        <span className="lcs-settings-label" style={{ marginTop: '2px' }}>Other Set:</span>
+                        <div className="lcs-others-grid">
+                          <div className="lcs-others-col-left">
+                            <div className="lcs-others-toggle-row">
+                              <span>Save Film Layout</span>
+                              <div 
+                                className={`lcs-toggle-switch ${settingsOthers.saveFilmLayout ? 'is-on' : ''}`}
+                                onClick={() => setSettingsOthers(prev => ({ ...prev, saveFilmLayout: !prev.saveFilmLayout }))}
+                              >
+                                <div className="lcs-toggle-knob" />
+                              </div>
+                            </div>
+                            <div className="lcs-others-toggle-row">
+                              <span>Power on Live Streaming</span>
+                              <div 
+                                className={`lcs-toggle-switch ${settingsOthers.powerOnLive ? 'is-on' : ''}`}
+                                onClick={() => setSettingsOthers(prev => ({ ...prev, powerOnLive: !prev.powerOnLive }))}
+                              >
+                                <div className="lcs-toggle-knob" />
+                              </div>
+                            </div>
+                            <div className="lcs-others-toggle-row">
+                              <span>Power on Recording</span>
+                              <div 
+                                className={`lcs-toggle-switch ${settingsOthers.powerOnRecord ? 'is-on' : ''}`}
+                                onClick={() => setSettingsOthers(prev => ({ ...prev, powerOnRecord: !prev.powerOnRecord }))}
+                              >
+                                <div className="lcs-toggle-knob" />
+                              </div>
+                            </div>
+                            <div className="lcs-others-toggle-row">
+                              <span>Start Recording\Start Living Countdown</span>
+                              <div 
+                                className={`lcs-toggle-switch ${settingsOthers.startCountdown ? 'is-on' : ''}`}
+                                onClick={() => setSettingsOthers(prev => ({ ...prev, startCountdown: !prev.startCountdown }))}
+                              >
+                                <div className="lcs-toggle-knob" />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="lcs-others-col-right">
+                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
+                              <span style={{ fontSize: '11px' }}>Time Format:</span>
+                              <div className="lcs-select-pill" style={{ width: '110px' }}>
+                                <span>DD-MM-YYYY</span>
+                                <span>▼</span>
+                              </div>
+                            </div>
+                            <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '4px' }}>
+                              <div className="lcs-select-pill" style={{ width: '110px' }}>
+                                <span>24 Hours Format</span>
+                                <span>▼</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', flex: 1, gap: '12px', opacity: 0.7 }}>
+                      <Settings size={32} className="animate-spin" style={{ animationDuration: '4s' }} />
+                      <span style={{ fontSize: '13px' }}>{activeSettingsTab.toUpperCase()} Settings Panel (Coming Soon)</span>
+                    </div>
+                  )}
+
+                  {/* OK Button */}
+                  <div className="lcs-settings-ok-container">
+                    <button 
+                      type="button" 
+                      className="lcs-settings-ok-btn"
+                      onClick={() => setActiveMenuSection(null)}
+                    >
+                      OK
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
 
           </div>
 
