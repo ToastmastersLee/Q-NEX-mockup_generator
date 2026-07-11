@@ -18,6 +18,10 @@ import {
   ChevronLeft
 } from 'lucide-react';
 import classroomFeed from '../../assets/classroom_feed.png';
+import ch1Ppt from '../../assets/ch1_ppt.png';
+import ch2DocCam from '../../assets/ch2_doc_cam.png';
+import ch3TeacherClose from '../../assets/ch3_teacher_close.png';
+import ch4StudentClose from '../../assets/ch4_student_close.png';
 import './styles.css';
 
 export default function App() {
@@ -181,15 +185,26 @@ export default function App() {
     setIsChannelSelectOpen(true);
   };
 
+  // Channel images map
+  const channelImages = {
+    ch1: ch1Ppt,
+    ch2: ch2DocCam,
+    ch3: ch3TeacherClose,
+    ch4: ch4StudentClose,
+    ch5: classroomFeed,
+    ch6: classroomFeed,
+    ch7: classroomFeed
+  };
+
   // Channel details data
   const channels = [
-    { id: 'ch1', name: 'Lecture', label: 'CH1', type: 'placeholder' },
-    { id: 'ch2', name: 'Lecture2', label: 'CH2', type: 'placeholder' },
-    { id: 'ch3', name: 'Teacher_C', label: 'CH3', type: 'live', pos: 'center top' },
-    { id: 'ch4', name: 'Student_C', label: 'CH4', type: 'live', pos: 'left center' },
+    { id: 'ch1', name: 'Lecture', label: 'CH1', type: 'live', pos: 'center' },
+    { id: 'ch2', name: 'Lecture2', label: 'CH2', type: 'live', pos: 'center' },
+    { id: 'ch3', name: 'Teacher_C', label: 'CH3', type: 'live', pos: 'center' },
+    { id: 'ch4', name: 'Student_C', label: 'CH4', type: 'live', pos: 'center' },
     { id: 'ch5', name: 'Teacher_P', label: 'CH5', type: 'live', pos: 'right center' },
-    { id: 'ch6', name: 'Student_P', label: 'CH6', type: 'live', pos: 'center bottom' },
-    { id: 'ch7', name: 'Interactive', label: 'CH7', type: 'placeholder' }
+    { id: 'ch6', name: 'Student_P', label: 'CH6', type: 'live', pos: 'left center' },
+    { id: 'ch7', name: 'Interactive', label: 'CH7', type: 'live', pos: 'center' }
   ];
 
   return (
@@ -311,7 +326,7 @@ export default function App() {
                           </div>
                         ) : (
                           <div className="lcs-full-video-box">
-                            <img src={classroomFeed} alt="l1" className="lcs-feed-img" style={{ objectPosition: ch.pos }} />
+                            <img src={channelImages[ch.id]} alt="l1" className="lcs-feed-img" style={{ objectPosition: ch.pos }} />
                             <span className="lcs-split-label active">{ch.name} ({ch.label})</span>
                           </div>
                         );
@@ -333,7 +348,7 @@ export default function App() {
                               </div>
                             ) : (
                               <div className="lcs-full-video-box">
-                                <img src={classroomFeed} alt="l2-main" className="lcs-feed-img" style={{ objectPosition: mainCh.pos }} />
+                                <img src={channelImages[mainCh.id]} alt="l2-main" className="lcs-feed-img" style={{ objectPosition: mainCh.pos }} />
                                 <span className="lcs-split-label">{mainCh.name} ({mainCh.label})</span>
                               </div>
                             )}
@@ -344,7 +359,7 @@ export default function App() {
                                   <Film size={20} className="opacity-40" />
                                 </div>
                               ) : (
-                                <img src={classroomFeed} alt="l2-pip" className="lcs-feed-img" style={{ objectPosition: pipCh.pos }} />
+                                <img src={channelImages[pipCh.id]} alt="l2-pip" className="lcs-feed-img" style={{ objectPosition: pipCh.pos }} />
                               )}
                               <span className="lcs-pip-label">{pipCh.name} ({pipCh.label})</span>
                             </div>
@@ -367,7 +382,7 @@ export default function App() {
                                   <Film size={24} className="opacity-40" />
                                 </div>
                               ) : (
-                                <img src={classroomFeed} alt="l3-left" className="lcs-feed-img" style={{ objectPosition: leftCh.pos }} />
+                                <img src={channelImages[leftCh.id]} alt="l3-left" className="lcs-feed-img" style={{ objectPosition: leftCh.pos }} />
                               )}
                               <span className="lcs-split-label">{leftCh.name} ({leftCh.label})</span>
                             </div>
@@ -377,7 +392,7 @@ export default function App() {
                                   <Film size={24} className="opacity-40" />
                                 </div>
                               ) : (
-                                <img src={classroomFeed} alt="l3-right" className="lcs-feed-img" style={{ objectPosition: rightCh.pos }} />
+                                <img src={channelImages[rightCh.id]} alt="l3-right" className="lcs-feed-img" style={{ objectPosition: rightCh.pos }} />
                               )}
                               <span className="lcs-split-label active">{rightCh.name} ({rightCh.label})</span>
                             </div>
@@ -401,7 +416,7 @@ export default function App() {
                               </div>
                             ) : (
                               <div className="lcs-full-video-box">
-                                <img src={classroomFeed} alt="l4-main" className="lcs-feed-img" style={{ objectPosition: mainCh.pos }} />
+                                <img src={channelImages[mainCh.id]} alt="l4-main" className="lcs-feed-img" style={{ objectPosition: mainCh.pos }} />
                                 <span className="lcs-split-label">{mainCh.name} ({mainCh.label})</span>
                               </div>
                             )}
@@ -412,7 +427,7 @@ export default function App() {
                                   <Film size={20} className="opacity-40" />
                                 </div>
                               ) : (
-                                <img src={classroomFeed} alt="l4-pip" className="lcs-feed-img" style={{ objectPosition: pipCh.pos }} />
+                                <img src={channelImages[pipCh.id]} alt="l4-pip" className="lcs-feed-img" style={{ objectPosition: pipCh.pos }} />
                               )}
                               <span className="lcs-pip-label">{pipCh.name} ({pipCh.label})</span>
                             </div>
@@ -435,7 +450,7 @@ export default function App() {
                                 {tlCh.type === 'placeholder' ? (
                                   <div className="lcs-ch-thumb-placeholder bg-slate-900 w-full h-full flex items-center justify-center"><Film size={14} className="opacity-30" /></div>
                                 ) : (
-                                  <img src={classroomFeed} alt="l5-tl" className="lcs-feed-img" style={{ objectPosition: tlCh.pos }} />
+                                  <img src={channelImages[tlCh.id]} alt="l5-tl" className="lcs-feed-img" style={{ objectPosition: tlCh.pos }} />
                                 )}
                                 <span className="lcs-split-label">{tlCh.name} ({tlCh.label})</span>
                               </div>
@@ -443,7 +458,7 @@ export default function App() {
                                 {blCh.type === 'placeholder' ? (
                                   <div className="lcs-ch-thumb-placeholder bg-slate-900 w-full h-full flex items-center justify-center"><Film size={14} className="opacity-30" /></div>
                                 ) : (
-                                  <img src={classroomFeed} alt="l5-bl" className="lcs-feed-img" style={{ objectPosition: blCh.pos }} />
+                                  <img src={channelImages[blCh.id]} alt="l5-bl" className="lcs-feed-img" style={{ objectPosition: blCh.pos }} />
                                 )}
                                 <span className="lcs-split-label">{blCh.name} ({blCh.label})</span>
                               </div>
@@ -453,7 +468,7 @@ export default function App() {
                                 {rightCh.type === 'placeholder' ? (
                                   <div className="lcs-placeholder-screen"><Film size={48} className="opacity-30" /></div>
                                 ) : (
-                                  <img src={classroomFeed} alt="l5-right" className="lcs-feed-img" style={{ objectPosition: rightCh.pos }} />
+                                  <img src={channelImages[rightCh.id]} alt="l5-right" className="lcs-feed-img" style={{ objectPosition: rightCh.pos }} />
                                 )}
                                 <span className="lcs-split-label active">{rightCh.name} ({rightCh.label}) - Main Out</span>
                               </div>
@@ -478,7 +493,7 @@ export default function App() {
                                 {r1Ch.type === 'placeholder' ? (
                                   <div className="lcs-ch-thumb-placeholder bg-slate-950 w-full h-full flex items-center justify-center"><Film size={14} className="opacity-30" /></div>
                                 ) : (
-                                  <img src={classroomFeed} alt="l6-r1" className="lcs-feed-img" style={{ objectPosition: r1Ch.pos }} />
+                                  <img src={channelImages[r1Ch.id]} alt="l6-r1" className="lcs-feed-img" style={{ objectPosition: r1Ch.pos }} />
                                 )}
                                 <span className="lcs-split-label">{r1Ch.name} ({r1Ch.label})</span>
                               </div>
@@ -486,7 +501,7 @@ export default function App() {
                                 {r2Ch.type === 'placeholder' ? (
                                   <div className="lcs-ch-thumb-placeholder bg-slate-950 w-full h-full flex items-center justify-center"><Film size={14} className="opacity-30" /></div>
                                 ) : (
-                                  <img src={classroomFeed} alt="l6-r2" className="lcs-feed-img" style={{ objectPosition: r2Ch.pos }} />
+                                  <img src={channelImages[r2Ch.id]} alt="l6-r2" className="lcs-feed-img" style={{ objectPosition: r2Ch.pos }} />
                                 )}
                                 <span className="lcs-split-label">{r2Ch.name} ({r2Ch.label})</span>
                               </div>
@@ -494,7 +509,7 @@ export default function App() {
                                 {r3Ch.type === 'placeholder' ? (
                                   <div className="lcs-ch-thumb-placeholder bg-slate-950 w-full h-full flex items-center justify-center"><Film size={14} className="opacity-30" /></div>
                                 ) : (
-                                  <img src={classroomFeed} alt="l6-r3" className="lcs-feed-img" style={{ objectPosition: r3Ch.pos }} />
+                                  <img src={channelImages[r3Ch.id]} alt="l6-r3" className="lcs-feed-img" style={{ objectPosition: r3Ch.pos }} />
                                 )}
                                 <span className="lcs-split-label">{r3Ch.name} ({r3Ch.label})</span>
                               </div>
@@ -504,7 +519,7 @@ export default function App() {
                                 {rightCh.type === 'placeholder' ? (
                                   <div className="lcs-placeholder-screen"><Film size={48} className="opacity-30" /></div>
                                 ) : (
-                                  <img src={classroomFeed} alt="l6-right" className="lcs-feed-img" style={{ objectPosition: rightCh.pos }} />
+                                  <img src={channelImages[rightCh.id]} alt="l6-right" className="lcs-feed-img" style={{ objectPosition: rightCh.pos }} />
                                 )}
                                 <span className="lcs-split-label active">{rightCh.name} ({rightCh.label})</span>
                               </div>
@@ -528,7 +543,7 @@ export default function App() {
                               {tlCh.type === 'placeholder' ? (
                                 <div className="lcs-ch-thumb-placeholder bg-slate-900 w-full h-full flex items-center justify-center"><Film size={24} className="opacity-30" /></div>
                               ) : (
-                                <img src={classroomFeed} alt="l7-tl" className="lcs-feed-img" style={{ objectPosition: tlCh.pos }} />
+                                <img src={channelImages[tlCh.id]} alt="l7-tl" className="lcs-feed-img" style={{ objectPosition: tlCh.pos }} />
                               )}
                               <span className="lcs-split-label">{tlCh.name} ({tlCh.label})</span>
                             </div>
@@ -536,7 +551,7 @@ export default function App() {
                               {trCh.type === 'placeholder' ? (
                                 <div className="lcs-ch-thumb-placeholder bg-slate-900 w-full h-full flex items-center justify-center"><Film size={24} className="opacity-30" /></div>
                               ) : (
-                                <img src={classroomFeed} alt="l7-tr" className="lcs-feed-img" style={{ objectPosition: trCh.pos }} />
+                                <img src={channelImages[trCh.id]} alt="l7-tr" className="lcs-feed-img" style={{ objectPosition: trCh.pos }} />
                               )}
                               <span className="lcs-split-label active">{trCh.name} ({trCh.label})</span>
                             </div>
@@ -544,7 +559,7 @@ export default function App() {
                               {blCh.type === 'placeholder' ? (
                                 <div className="lcs-ch-thumb-placeholder bg-slate-900 w-full h-full flex items-center justify-center"><Film size={24} className="opacity-30" /></div>
                               ) : (
-                                <img src={classroomFeed} alt="l7-bl" className="lcs-feed-img" style={{ objectPosition: blCh.pos }} />
+                                <img src={channelImages[blCh.id]} alt="l7-bl" className="lcs-feed-img" style={{ objectPosition: blCh.pos }} />
                               )}
                               <span className="lcs-split-label">{blCh.name} ({blCh.label})</span>
                             </div>
@@ -552,7 +567,7 @@ export default function App() {
                               {brCh.type === 'placeholder' ? (
                                 <div className="lcs-ch-thumb-placeholder bg-slate-900 w-full h-full flex items-center justify-center"><Film size={24} className="opacity-30" /></div>
                               ) : (
-                                <img src={classroomFeed} alt="l7-br" className="lcs-feed-img" style={{ objectPosition: brCh.pos }} />
+                                <img src={channelImages[brCh.id]} alt="l7-br" className="lcs-feed-img" style={{ objectPosition: brCh.pos }} />
                               )}
                               <span className="lcs-split-label">{brCh.name} ({brCh.label})</span>
                             </div>
@@ -569,7 +584,7 @@ export default function App() {
                           {ch.type === 'placeholder' ? (
                             <div className="lcs-ch-thumb-placeholder bg-slate-900 w-full h-full flex items-center justify-center"><Film size={16} className="opacity-35" /></div>
                           ) : (
-                            <img src={classroomFeed} alt={ch.name} className="lcs-feed-img" style={{ objectPosition: ch.pos }} />
+                            <img src={channelImages[ch.id]} alt={ch.name} className="lcs-feed-img" style={{ objectPosition: ch.pos }} />
                           )}
                           <span className="lcs-split-label">{ch.name}</span>
                         </div>
@@ -1014,7 +1029,7 @@ export default function App() {
                             </div>
                           ) : (
                             <img 
-                              src={classroomFeed} 
+                              src={channelImages[ch.id]} 
                               alt={ch.name} 
                               className="lcs-ch-thumb-img"
                               style={{ objectPosition: ch.pos }} 
