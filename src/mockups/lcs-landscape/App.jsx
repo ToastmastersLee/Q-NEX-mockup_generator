@@ -447,7 +447,7 @@ export default function App() {
                         const rightCh = channels.find(c => c.id === layoutChannels.l5.right) || { name: 'Empty', label: 'CH', type: 'placeholder' };
                         return (
                           <>
-                            <div className="lcs-split-left-col">
+                            <div className="lcs-split-left-col" style={{ display: 'grid', gridTemplateRows: '1fr 1fr', gap: '4px' }}>
                               <div className="lcs-split-small-box">
                                 {tlCh.type === 'placeholder' ? (
                                   <div className="lcs-ch-thumb-placeholder bg-slate-900 w-full h-full flex items-center justify-center"><Film size={14} className="opacity-30" /></div>
@@ -490,7 +490,7 @@ export default function App() {
                         const rightCh = channels.find(c => c.id === layoutChannels.l6.right) || { name: 'Empty', label: 'CH', type: 'placeholder' };
                         return (
                           <>
-                            <div className="lcs-split-left-col lcs-three-rows">
+                            <div className="lcs-split-left-col lcs-three-rows" style={{ display: 'grid', gridTemplateRows: '1fr 1fr 1fr', gap: '4px' }}>
                               <div className="lcs-split-small-box">
                                 {r1Ch.type === 'placeholder' ? (
                                   <div className="lcs-ch-thumb-placeholder bg-slate-950 w-full h-full flex items-center justify-center"><Film size={14} className="opacity-30" /></div>
