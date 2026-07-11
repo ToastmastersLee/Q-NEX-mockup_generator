@@ -22,6 +22,7 @@ import ch1Ppt from '../../assets/ch1_ppt.png';
 import ch2DocCam from '../../assets/ch2_doc_cam.png';
 import ch3TeacherClose from '../../assets/ch3_teacher_close.png';
 import ch4StudentClose from '../../assets/ch4_student_close.png';
+import ch7Remote from '../../assets/ch7_remote_classroom.png';
 import './styles.css';
 
 export default function App() {
@@ -193,7 +194,7 @@ export default function App() {
     ch4: ch4StudentClose,
     ch5: classroomFeed,
     ch6: classroomFeed,
-    ch7: classroomFeed
+    ch7: ch7Remote
   };
 
   // Channel details data

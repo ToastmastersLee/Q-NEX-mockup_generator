@@ -9,6 +9,7 @@ This document maps out the image feeds for the 7 channels, including the exact D
 * **Palette**: Monochromatic light blue-grey tones, charcoal outlines, white backgrounds.
 * **Aspect Ratio**: Landscape format.
 * **Objective**: Technical, clean diagrammatic view suitable for educational product manuals.
+* **Consistency Check**: All classroom cameras must match the tiered lecture hall (阶梯教室) design, featuring curved long desks in grey/blue-grey tones, and featuring the same female teacher in a blue blazer/suit.
 
 ---
 
@@ -32,21 +33,21 @@ This document maps out the image feeds for the 7 channels, including the exact D
 
 ---
 
-### CH3: Teacher_C (老师特写通道)
-* **Role**: Closeup view of the teacher lecturing.
+### CH3: Teacher_C (老师特写通道 - 女性老师)
+* **Role**: Closeup view of the female teacher lecturing at the podium, matching classroom_feed.png.
 * **Asset Path**: `src/assets/ch3_teacher_close.png`
 * **CSS Alignment**: `object-position: center; object-fit: cover;`
 * **Generation Prompt**:
-  > `A flat 2D vector close-up illustration of a male teacher standing next to a whiteboard, holding a digital tablet and pointing at the board. Minimalist line-art cartoon style, light blue and grey tones, matching the illustration style of classroom_feed.png.`
+  > `A flat 2D vector close-up illustration of a female teacher with dark hair tied back, wearing a blue blazer suit, standing at a grey podium in a modern tiered lecture hall. A projector screen is visible behind her. Minimalist line-art cartoon style, light blue and grey tones, matching classroom_feed.png.`
 
 ---
 
-### CH4: Student_C (学生特写通道 - 答题站立姿势)
-* **Role**: Closeup of a student standing at their desk to answer a question.
+### CH4: Student_C (学生特写通道 - 阶梯教室答题站立姿势)
+* **Role**: Closeup of a student standing at their desk to answer a question in a tiered lecture hall with curved long grey/blue-grey desks.
 * **Asset Path**: `src/assets/ch4_student_close.png`
 * **CSS Alignment**: `object-position: center; object-fit: cover;`
 * **Generation Prompt**:
-  > `A flat 2D vector close-up illustration of a young male student in simple clothing standing up at his classroom desk to answer a question. Other students are visible sitting around him. Minimalist line-art cartoon style, light blue-grey tones, matching classroom_feed.png.`
+  > `A flat 2D vector close-up illustration of a modern university tiered lecture hall with long curved grey and blue-grey desks. A young student is standing up at their seat to answer a question, while other students are sitting nearby at their desks. Minimalist line-art cartoon style, light blue-grey tones, matching classroom_feed.png.`
 
 ---
 
@@ -66,8 +67,9 @@ This document maps out the image feeds for the 7 channels, including the exact D
 
 ---
 
-### CH7: Interactive (互动/综合全景通道)
-* **Role**: Full overview of the interactive room layout.
-* **Asset Path**: `src/assets/classroom_feed.png`
+### CH7: Interactive (互动/远程教室通道)
+* **Role**: Another remote interactive classroom connected to the session.
+* **Asset Path**: `src/assets/ch7_remote_classroom.png`
 * **CSS Alignment**: `object-position: center; object-fit: cover;`
-* **Concept**: Full frame overview.
+* **Generation Prompt**:
+  > `A flat 2D vector illustration of a modern remote interactive classroom or lecture hall. Rows of students are sitting at curved long desks looking at a large video wall screen at the front of the room. Minimalist line-art cartoon style, light blue-grey tones, matching classroom_feed.png.`
