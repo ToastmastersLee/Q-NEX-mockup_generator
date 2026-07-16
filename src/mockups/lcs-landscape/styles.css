@@ -2098,6 +2098,7 @@
   box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   user-select: text;
+  overflow: hidden;
 }
 
 .is-light .lcs-full-settings-overlay {
@@ -2179,6 +2180,7 @@
   flex-direction: column;
   box-sizing: border-box;
   overflow-y: auto;
+  overflow-x: hidden;
   height: 100%;
 }
 
@@ -4166,4 +4168,343 @@
 .is-light .lcs-power-hint-btn.yes:hover {
   background-color: #15803d;
 }
+
+/* Advance Settings Auth Popup & Virtual Keyboard */
+.lcs-auth-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 2100;
+}
+
+.lcs-auth-dialog {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  background-color: #2b2e38;
+  border: 1px solid #3f4452;
+  border-radius: 8px;
+  padding: 20px;
+  z-index: 2200;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-sizing: border-box;
+}
+
+.is-light .lcs-auth-dialog {
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.lcs-auth-close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  color: #a0aec0;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.is-light .lcs-auth-close-btn {
+  color: #6b7280;
+}
+
+.lcs-auth-close-btn:hover {
+  color: #ef4444;
+}
+
+.lcs-auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lcs-auth-input-wrapper {
+  border: 1px solid #4a5568;
+  border-radius: 4px;
+  background-color: #1a202c;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+}
+
+.is-light .lcs-auth-input-wrapper {
+  border: 1px solid #d1d5db;
+  background-color: #f3f4f6;
+}
+
+.lcs-auth-input-wrapper.is-focused {
+  border-color: #00e676;
+  box-shadow: 0 0 0 1px #00e676;
+}
+
+.lcs-auth-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 12px;
+  width: 100%;
+}
+
+.is-light .lcs-auth-input {
+  color: #111827;
+}
+
+.lcs-auth-verify-btn {
+  background-color: #00e676;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  transition: opacity 0.2s;
+}
+
+.lcs-auth-verify-btn:hover {
+  opacity: 0.9;
+}
+
+.lcs-auth-error-msg {
+  color: #ef4444;
+  font-size: 10px;
+  text-align: center;
+}
+
+/* Virtual Keyboard Styling */
+.lcs-virtual-keyboard {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #e5e7eb;
+  border-top: 1px solid #d1d5db;
+  padding: 8px 12px;
+  z-index: 2200;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+}
+
+.lcs-kb-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.lcs-kb-nav-btn {
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  width: 32px;
+  height: 24px;
+  font-weight: bold;
+  color: #4b5563;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.lcs-kb-nav-btn.is-green {
+  background-color: #f3f4f6;
+  border-color: #d1d5db;
+  color: #10b981;
+}
+
+.lcs-kb-display {
+  flex: 1;
+  margin: 0 16px;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  font-size: 11px;
+  color: #1f2937;
+  position: relative;
+}
+
+.lcs-kb-cursor {
+  width: 1.5px;
+  height: 12px;
+  background-color: #10b981;
+  margin-left: 2px;
+  animation: lcs-blink 1s step-end infinite;
+}
+
+@keyframes lcs-blink {
+  50% { opacity: 0; }
+}
+
+.lcs-kb-body {
+  display: flex;
+  gap: 12px;
+}
+
+.lcs-kb-alphabet-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.lcs-kb-divider {
+  width: 1px;
+  background-color: #cbd5e0;
+  margin: 2px 0;
+}
+
+.lcs-kb-keypad-section {
+  width: 130px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.lcs-kb-row {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  width: 100%;
+}
+
+.lcs-kb-key {
+  flex: 1;
+  height: 28px;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #1f2937;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  transition: background-color 0.1s;
+}
+
+.lcs-kb-key:active {
+  background-color: #e5e7eb;
+}
+
+.lcs-kb-key.is-wide {
+  flex: 1.5;
+}
+
+.lcs-kb-key.is-space {
+  flex: 5;
+}
+
+.lcs-kb-key.is-caps.is-active {
+  background-color: #3b82f6;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+
+.lcs-kb-key.is-enter {
+  background-color: #10b981;
+  color: #ffffff;
+  border-color: #059669;
+  font-weight: bold;
+}
+
+.lcs-kb-key.is-enter:active {
+  background-color: #059669;
+}
+
+.lcs-kb-key.is-backspace {
+  color: #ef4444;
+}
+
+.lcs-kb-key.is-zero {
+  flex: 2;
+}
+
+/* Floating Simulator Panel on the right side of the screen */
+.lcs-right-simulator-panel {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 110px;
+  background: rgba(30, 41, 59, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 3000;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.is-light .lcs-right-simulator-panel {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.lcs-right-sim-btn {
+  background: #10b981;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 4px;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(16, 185, 129, 0.2);
+  transition: background-color 0.2s, opacity 0.2s;
+}
+
+.lcs-right-sim-btn:hover {
+  background: #059669;
+}
+
+/* Hide scrollbars for all scrollable containers in the mockup while retaining scrolling functionality */
+.lcs-settings-main,
+.lcs-channels-list,
+.lcs-overlay-body,
+.lcs-file-list-container {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.lcs-settings-main::-webkit-scrollbar,
+.lcs-channels-list::-webkit-scrollbar,
+.lcs-overlay-body::-webkit-scrollbar,
+.lcs-file-list-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+
+
 

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Monitor, Radio, Disc3, CircleStop, ChevronRight, ChevronLeft, Smartphone, ChevronUp, ChevronDown, Plus, Minus, Scan, MapPin, RefreshCcw } from 'lucide-react';
+import { useState } from 'react';
+import { Monitor, Radio, Disc3, CircleStop, ChevronRight, ChevronLeft, ChevronUp, ChevronDown, Plus, Minus, Scan, MapPin, RefreshCcw } from 'lucide-react';
 import { ToggleSwitch } from '../components/ToggleSwitch';
 import { HdmiIcon, PowerControlIcon, VideoSwitchIcon } from '../assets/Icons';
 import classroomFeed from '../assets/classroom_feed.png';
@@ -48,6 +48,20 @@ const AndroidIcon = ({ size = 22, ...props }) => (
     </svg>
 );
 
+const IconButton = ({ active, onClick, children, label, isDark }) => (
+    <button 
+        onClick={onClick}
+        className={`flex flex-col items-center justify-center gap-1 w-16 h-12 rounded-xl transition-all ${
+            active 
+            ? (isDark ? 'bg-[#007AFF] text-white shadow-[0_0_12px_rgba(0,122,255,0.4)]' : 'bg-[#007AFF] text-white') 
+            : (isDark ? 'bg-[#2a303e] text-gray-400 hover:text-gray-200' : 'bg-gray-200 text-gray-600 hover:bg-gray-300')
+        }`}
+    >
+        {children}
+        {label && <span className="text-[9px] font-bold">{label}</span>}
+    </button>
+);
+
 export const SerialControl = ({ isDark }) => {
     const [rs232Power, setRs232Power] = useState(true);
     const [rs232Input, setRs232Input] = useState('windows');
@@ -70,20 +84,6 @@ export const SerialControl = ({ isDark }) => {
     const headerClass = `flex items-center gap-3 mb-3 pl-2`;
     const titleClass = `text-[15px] font-bold tracking-wider ${isDark ? 'text-gray-200' : 'text-gray-800'}`;
     
-    const IconButton = ({ active, onClick, children, label }) => (
-        <button 
-            onClick={onClick}
-            className={`flex flex-col items-center justify-center gap-1 w-16 h-12 rounded-xl transition-all ${
-                active 
-                ? (isDark ? 'bg-[#007AFF] text-white shadow-[0_0_12px_rgba(0,122,255,0.4)]' : 'bg-[#007AFF] text-white') 
-                : (isDark ? 'bg-[#2a303e] text-gray-400 hover:text-gray-200' : 'bg-gray-200 text-gray-600 hover:bg-gray-300')
-            }`}
-        >
-            {children}
-            {label && <span className="text-[9px] font-bold">{label}</span>}
-        </button>
-    );
-
     const [rs232ActiveBtn, setRs232ActiveBtn] = useState(null);
     const handleRs232Press = (btn) => {
         setRs232ActiveBtn(btn);
@@ -121,13 +121,13 @@ export const SerialControl = ({ isDark }) => {
                             <div className={`flex items-center justify-between py-2 transition-opacity ${!rs232Power ? 'opacity-50 pointer-events-none' : ''}`}>
                                 <span className={`text-[14px] font-bold ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Input Source</span>
                                 <div className="flex items-center gap-2">
-                                    <IconButton active={rs232Input === 'windows'} onClick={() => setRs232Input('windows')} label="Windows">
+                                    <IconButton active={rs232Input === 'windows'} onClick={() => setRs232Input('windows')} label="Windows" isDark={isDark}>
                                         <WindowsIcon className="w-4 h-4" />
                                     </IconButton>
-                                    <IconButton active={rs232Input === 'hdmi'} onClick={() => setRs232Input('hdmi')} label="HDMI">
+                                    <IconButton active={rs232Input === 'hdmi'} onClick={() => setRs232Input('hdmi')} label="HDMI" isDark={isDark}>
                                         <HdmiIcon className="w-4 h-4" />
                                     </IconButton>
-                                    <IconButton active={rs232Input === 'android'} onClick={() => setRs232Input('android')} label="Android">
+                                    <IconButton active={rs232Input === 'android'} onClick={() => setRs232Input('android')} label="Android" isDark={isDark}>
                                         <AndroidIcon className="w-4 h-4" />
                                     </IconButton>
                                 </div>
@@ -299,13 +299,13 @@ export const SerialControl = ({ isDark }) => {
                         <div className={`flex items-center justify-between pt-3 transition-opacity ${!rs232Power ? 'opacity-50 pointer-events-none' : ''}`}>
                             <span className={`text-[14px] font-bold ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Input Source</span>
                             <div className="flex items-center gap-2">
-                                <IconButton active={rs232Input === 'windows'} onClick={() => setRs232Input('windows')} label="Windows">
+                                <IconButton active={rs232Input === 'windows'} onClick={() => setRs232Input('windows')} label="Windows" isDark={isDark}>
                                     <WindowsIcon className="w-4 h-4" />
                                 </IconButton>
-                                <IconButton active={rs232Input === 'hdmi'} onClick={() => setRs232Input('hdmi')} label="HDMI">
+                                <IconButton active={rs232Input === 'hdmi'} onClick={() => setRs232Input('hdmi')} label="HDMI" isDark={isDark}>
                                     <HdmiIcon className="w-4 h-4" />
                                 </IconButton>
-                                <IconButton active={rs232Input === 'android'} onClick={() => setRs232Input('android')} label="Android">
+                                <IconButton active={rs232Input === 'android'} onClick={() => setRs232Input('android')} label="Android" isDark={isDark}>
                                     <AndroidIcon className="w-4 h-4" />
                                 </IconButton>
                             </div>
@@ -387,10 +387,10 @@ export const SerialControl = ({ isDark }) => {
                         <div className={`flex items-center justify-between pt-3 transition-opacity ${!cbx3Power ? 'opacity-50 pointer-events-none' : ''}`}>
                             <span className={`text-[14px] font-bold ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Lecture Capture</span>
                             <div className="flex items-center gap-2">
-                                <IconButton active={lectureCapture} onClick={() => setLectureCapture(true)}>
+                                <IconButton active={lectureCapture} onClick={() => setLectureCapture(true)} isDark={isDark}>
                                     <Disc3 className="w-5 h-5" />
                                 </IconButton>
-                                <IconButton active={!lectureCapture} onClick={() => setLectureCapture(false)}>
+                                <IconButton active={!lectureCapture} onClick={() => setLectureCapture(false)} isDark={isDark}>
                                     <CircleStop className="w-5 h-5" />
                                 </IconButton>
                             </div>

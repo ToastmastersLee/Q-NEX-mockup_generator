@@ -1,6 +1,4 @@
-import React from 'react';
 import { RowButton, LargeButton } from '../components/Buttons';
-import { RefreshCw } from 'lucide-react';
 
 export const VideoSwitch = ({ 
     isDark, 

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { modalOverlay, modalCard, btnCancel, btnConfirm } from '../styles/theme';
 
 export const Modal = ({ 

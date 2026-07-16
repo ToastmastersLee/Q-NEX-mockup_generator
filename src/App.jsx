@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { TopBar } from './components/TopBar';
 import { BottomNav } from './components/BottomNav';
 import { Home } from './pages/Home';
@@ -16,7 +16,116 @@ import { AndroidEthernet } from './pages/AndroidEthernet';
 import { Customize } from './pages/Customize';
 import { ScheduledPowerOff } from './pages/ScheduledPowerOff';
 import { SerialControl } from './pages/SerialControl';
+import { DivisibleRoom } from './pages/DivisibleRoom';
 import { Sun, Moon } from 'lucide-react';
+
+const FaqModal = ({ isOpen, onClose, isDark }) => {
+  const scrollRef = useRef(null);
+  const isDown = useRef(false);
+  const startY = useRef(0);
+  const scrollTop = useRef(0);
+
+  const onMouseDown = (e) => {
+    isDown.current = true;
+    startY.current = e.pageY - scrollRef.current.offsetTop;
+    scrollTop.current = scrollRef.current.scrollTop;
+    scrollRef.current.style.cursor = 'grabbing';
+    scrollRef.current.style.userSelect = 'none';
+  };
+
+  const onMouseLeave = () => {
+    isDown.current = false;
+    if (scrollRef.current) {
+      scrollRef.current.style.cursor = 'grab';
+    }
+  };
+
+  const onMouseUp = () => {
+    isDown.current = false;
+    if (scrollRef.current) {
+      scrollRef.current.style.cursor = 'grab';
+      scrollRef.current.style.removeProperty('user-select');
+    }
+  };
+
+  const onMouseMove = (e) => {
+    if (!isDown.current) return;
+    e.preventDefault();
+    const y = e.pageY - scrollRef.current.offsetTop;
+    const walk = (y - startY.current) * 1.5; // drag scroll speed factor
+    scrollRef.current.scrollTop = scrollTop.current - walk;
+  };
+
+  if (!isOpen) return null;
+
+  return (
+    <div className="absolute inset-0 bg-black/45 z-[150] flex items-center justify-center p-4">
+      <div 
+        className={`w-full max-w-lg rounded-3xl p-6 shadow-2xl relative flex flex-col justify-between transition-colors duration-300 ${
+          isDark 
+            ? 'bg-[#1b2535] border border-slate-700/50' 
+            : 'bg-white border border-gray-200'
+        }`}
+        style={{ minHeight: '340px' }}
+      >
+        <div>
+          <h3 className={`font-bold text-base mb-4 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>FAQ</h3>
+          
+          <div 
+            ref={scrollRef}
+            onMouseDown={onMouseDown}
+            onMouseLeave={onMouseLeave}
+            onMouseUp={onMouseUp}
+            onMouseMove={onMouseMove}
+            className="max-h-[220px] overflow-y-auto no-scrollbar flex flex-col gap-3 text-left px-1 cursor-grab"
+            style={{ touchAction: 'none' }}
+          >
+            <div>
+              <h4 className={`font-bold text-xs ${isDark ? 'text-white' : 'text-gray-900'}`}>1.What if encounter a power outage?</h4>
+              <p className={`text-[11px] mt-1 leading-relaxed font-medium ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+                Once you've set up the divisible room,NMP will store all the configurations. You don't have to reconfigure anything after power recovery.
+              </p>
+            </div>
+            
+            <div className={`border-b border-dashed w-full my-1 ${isDark ? 'border-gray-600/30' : 'border-gray-200'}`} />
+            
+            <div>
+              <h4 className={`font-bold text-xs ${isDark ? 'text-white' : 'text-gray-900'}`}>2. When turning on the divisible room mode, no devices are available for selection</h4>
+              <p className={`text-[11px] mt-1 leading-relaxed font-medium ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+                Make sure that NMP is connected to the network. If it is not connected, please add the devices manually.
+              </p>
+            </div>
+            
+            <div className={`border-b border-dashed w-full my-1 ${isDark ? 'border-gray-600/30' : 'border-gray-200'}`} />
+            
+            <div>
+              <h4 className={`font-bold text-xs ${isDark ? 'text-white' : 'text-gray-900'}`}>3. I cannot find the divisible room mode on the Touch Panel.</h4>
+              <p className={`text-[11px] mt-1 leading-relaxed font-medium ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+                The room you're controlling might be designated as a secondary room.<br />
+                To access the divisible room function, untie it from the primary room's touch panel.<br />
+                Then, the secondary room's touch panel will display the option.
+              </p>
+            </div>
+            
+            <div className={`mt-2 text-[10px] leading-relaxed border-t pt-2 font-medium ${isDark ? 'text-gray-500 border-slate-700/50' : 'text-gray-400 border-gray-200'}`}>
+              <p>•If the issue remains unresolved, kindly reach out to your local agent, or contact the manufacturer by email for further assistance.</p>
+              <p className="mt-0.5">Email: info@qnextech.com</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex justify-center mt-4">
+          <button 
+            onClick={onClose}
+            className="px-12 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-cyan-500 hover:opacity-95 font-semibold text-xs shadow-md active:scale-95 cursor-pointer"
+          >
+            OK
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 function App() {
   const [theme, setTheme] = useState('dark'); // 'dark' | 'wireframe'
@@ -33,9 +142,62 @@ function App() {
   
   const [isAndroidEthernetOpen, setIsAndroidEthernetOpen] = useState(false);
   const [panelIpAddress, setPanelIpAddress] = useState('192.168.101.108');
-  const [settingsSubPage, setSettingsSubPage] = useState(null); // null | 'customize' | 'power-off'
+  const [settingsSubPage, setSettingsSubPage] = useState(null); // null | 'customize' | 'power-off' | 'divisible-room' | 'device-select' | 'edit-device'
   const [isScheduledPowerOffEnabled, setIsScheduledPowerOffEnabled] = useState(false);
   const [scheduledPowerOffTime, setScheduledPowerOffTime] = useState(null);
+
+  // Divisible Room Mode State
+  const [isDivisibleRoomModeEnabled, setIsDivisibleRoomModeEnabled] = useState(false);
+  const [primaryRoomNmpName, setPrimaryRoomNmpName] = useState('3F-NMP/12345678');
+  const [secondaryDevices, setSecondaryDevices] = useState([
+    { name: '3F-Left Room', id: '0A501D7F0602', ip: '192.168.101.109', checked: false },
+    { name: '3F-Right Room', id: '74151B770608', ip: '192.168.101.110', checked: false },
+    { name: '3F-Rear Classroom', id: '7C171B770608', ip: '192.168.101.111', checked: false },
+    { name: '3F-Sub Meeting Room', id: '924578600107', ip: '192.168.101.112', checked: false }
+  ]);
+  const [editingDeviceId, setEditingDeviceId] = useState(null);
+  const [toastMessage, setToastMessage] = useState(null);
+  const [activeConnectionPage, setActiveConnectionPage] = useState(1);
+
+  // Connection Testing States (Lifting up from DivisibleRoom)
+  const [simulatedBranch, setSimulatedBranch] = useState('success'); // 'success' | 'failed'
+  const [testResult, setTestResult] = useState('loading'); // 'loading' | 'success' | 'failed'
+  const [isTesting, setIsTesting] = useState(false);
+  const [isFaqOpen, setIsFaqOpen] = useState(false);
+
+  const simulatedBranchRef = useRef(simulatedBranch);
+  useEffect(() => {
+    simulatedBranchRef.current = simulatedBranch;
+  }, [simulatedBranch]);
+
+  useEffect(() => {
+    if (settingsSubPage === 'control-binding') {
+      setIsTesting(true);
+      setTestResult('loading');
+      const timer = setTimeout(() => {
+        setTestResult(simulatedBranchRef.current);
+        setIsTesting(false);
+      }, 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [settingsSubPage]);
+
+  const handleSelectBranch = (branch) => {
+    setSimulatedBranch(branch);
+    setTestResult(branch);
+    setIsTesting(false);
+  };
+
+  // Automatically default connection instruction page based on checked device count
+  useEffect(() => {
+    if (settingsSubPage === 'connection-instruction') {
+      const count = secondaryDevices.filter(d => d.checked).length;
+      const timer = setTimeout(() => {
+        setActiveConnectionPage(count > 1 ? 2 : 1);
+      }, 0);
+      return () => clearTimeout(timer);
+    }
+  }, [settingsSubPage, secondaryDevices]);
 
   const [navConfig, setNavConfig] = useState({
       powerCtrl: true,
@@ -57,8 +219,11 @@ function App() {
         setLockCountdownTime(prev => prev - 1);
       }, 1000);
     } else if (isLockCountdown && lockCountdownTime === 0) {
-      setIsLocked(true);
-      setIsLockCountdown(false);
+      const lockTimer = setTimeout(() => {
+        setIsLocked(true);
+        setIsLockCountdown(false);
+      }, 0);
+      return () => clearTimeout(lockTimer);
     }
     return () => {
       if (timer) clearTimeout(timer);
@@ -175,6 +340,31 @@ function App() {
                   />
               );
           }
+          if (['divisible-room', 'device-select', 'edit-device', 'add-device', 'connection-instruction', 'control-binding', 'setup-complete'].includes(settingsSubPage)) {
+              return (
+                  <DivisibleRoom 
+                      isDark={isDark}
+                      subPage={settingsSubPage}
+                      setSubPage={setSettingsSubPage}
+                      isDivisibleRoomModeEnabled={isDivisibleRoomModeEnabled}
+                      setIsDivisibleRoomModeEnabled={setIsDivisibleRoomModeEnabled}
+                      primaryRoomNmpName={primaryRoomNmpName}
+                      setPrimaryRoomNmpName={setPrimaryRoomNmpName}
+                      secondaryDevices={secondaryDevices}
+                      setSecondaryDevices={setSecondaryDevices}
+                      editingDeviceId={editingDeviceId}
+                      setEditingDeviceId={setEditingDeviceId}
+                      activeConnectionPage={activeConnectionPage}
+                      setActiveConnectionPage={setActiveConnectionPage}
+                      onShowToast={(msg) => {
+                          setToastMessage(msg);
+                          setTimeout(() => setToastMessage(null), 3000);
+                      }}
+                      testResult={testResult}
+                      setIsFaqOpen={setIsFaqOpen}
+                  />
+              );
+          }
           return (
               <Settings 
                   isDark={isDark} 
@@ -183,6 +373,7 @@ function App() {
                   panelIpAddress={panelIpAddress}
                   setPanelIpAddress={setPanelIpAddress}
                   onCustomizeClick={() => setSettingsSubPage('customize')}
+                  onDivisibleRoomClick={() => setSettingsSubPage('divisible-room')}
               />
           );
       }
@@ -234,6 +425,35 @@ function App() {
                             </label>
                         ))}
                     </div>
+
+                    {/* Test Simulation Toggle (Only visible during connection testing step 3/4) */}
+                    {settingsSubPage === 'control-binding' && (
+                        <div className={`flex items-center gap-3 p-4 rounded-xl shadow-md ${isDark ? 'bg-gray-800/80 border border-gray-700' : 'bg-white border-2 border-black'}`}>
+                            <span className={`text-sm font-bold ${isDark ? 'text-gray-300' : 'text-black'}`}>Test Simulation:</span>
+                            <div className="flex gap-2">
+                                <button 
+                                    onClick={() => handleSelectBranch('success')}
+                                    className={`px-4 py-1.5 text-xs font-bold rounded-full transition-all cursor-pointer ${
+                                        simulatedBranch === 'success' 
+                                            ? 'bg-blue-600 text-white shadow-sm animate-pulse' 
+                                            : isDark ? 'bg-gray-700 text-gray-300 hover:bg-gray-600' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                                    }`}
+                                >
+                                    Success Branch
+                                </button>
+                                <button 
+                                    onClick={() => handleSelectBranch('failed')}
+                                    className={`px-4 py-1.5 text-xs font-bold rounded-full transition-all cursor-pointer ${
+                                        simulatedBranch === 'failed' 
+                                            ? 'bg-rose-600 text-white shadow-sm animate-pulse' 
+                                            : isDark ? 'bg-gray-700 text-gray-300 hover:bg-gray-600' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                                    }`}
+                                >
+                                    Failure Branch
+                                </button>
+                            </div>
+                        </div>
+                    )}
                 </div>
 
                 {/* External Theme Toggle */}
@@ -243,7 +463,7 @@ function App() {
                 </button>
             </div>
 
-            <div className={`w-full shadow-2xl rounded-2xl overflow-hidden aspect-video-container flex flex-col font-sans ${containerClass}`}>
+            <div className={`w-full shadow-2xl rounded-2xl overflow-hidden aspect-video-container flex flex-col font-sans ${containerClass} relative`}>
                 {isDisconnected ? (
                     <Disconnection 
                         isDark={isDark} 
@@ -275,13 +495,68 @@ function App() {
                                 setActiveTab('home');
                             }}
                             onLockClick={handleLockClick}
-                            title={settingsSubPage ? 'Customize' : (activeTab === 'settings' ? 'Setting' : '')}
+                            title={
+                                activeTab === 'settings'
+                                    ? (() => {
+                                          if (settingsSubPage === 'customize') return 'Customize';
+                                          if (settingsSubPage === 'power-off') return 'Scheduled Power-Off';
+                                          if (settingsSubPage === 'divisible-room') return 'Divisible Room Mode';
+                                          if (settingsSubPage === 'device-select') {
+                                              return (
+                                                  <div className="flex flex-col items-center">
+                                                      <span className="text-xl font-bold">NMP of Secondary Room (1/4)</span>
+                                                  </div>
+                                              );
+                                          }
+                                          if (settingsSubPage === 'edit-device') return 'Edit Device';
+                                          if (settingsSubPage === 'add-device') return 'Add Devices';
+                                          if (settingsSubPage === 'connection-instruction') {
+                                              const subtitle = activeConnectionPage === 2 ? 'Multiple secondary rooms' : 'Single secondary room';
+                                              return (
+                                                  <div className="flex flex-col items-center">
+                                                      <span className="text-xl font-bold">Connection Instruction (2/4)</span>
+                                                      <span className="text-xs text-gray-500 font-semibold mt-0.5">{subtitle}</span>
+                                                  </div>
+                                              );
+                                          }
+                                          if (settingsSubPage === 'control-binding') {
+                                              return (
+                                                  <div className="flex flex-col items-center">
+                                                      <span className="text-xl font-bold">Testing (3/4)</span>
+                                                  </div>
+                                              );
+                                          }
+                                          if (settingsSubPage === 'setup-complete') {
+                                              return (
+                                                  <div className="flex flex-col items-center">
+                                                      <span className="text-xl font-bold">Testing (4/4)</span>
+                                                  </div>
+                                              );
+                                          }
+                                          return 'Setting';
+                                      })()
+                                    : ''
+                            }
                             showBackButton={activeTab === 'settings' && settingsSubPage !== null}
                             onBack={() => {
                                 if (settingsSubPage === 'power-off') {
                                     setSettingsSubPage('customize');
                                 } else if (settingsSubPage === 'customize') {
                                     setSettingsSubPage(null);
+                                } else if (settingsSubPage === 'divisible-room') {
+                                    setSettingsSubPage(null);
+                                } else if (settingsSubPage === 'device-select') {
+                                    setSettingsSubPage('divisible-room');
+                                } else if (settingsSubPage === 'edit-device') {
+                                    setSettingsSubPage('device-select');
+                                } else if (settingsSubPage === 'add-device') {
+                                    setSettingsSubPage('device-select');
+                                } else if (settingsSubPage === 'connection-instruction') {
+                                    setSettingsSubPage('device-select');
+                                } else if (settingsSubPage === 'control-binding') {
+                                    setSettingsSubPage('connection-instruction');
+                                } else if (settingsSubPage === 'setup-complete') {
+                                    setSettingsSubPage('control-binding');
                                 }
                             }}
                         />
@@ -297,6 +572,11 @@ function App() {
                                     onExecute={executeLockNow}
                                 />
                             )}
+                            {toastMessage && (
+                                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-[100] bg-gray-200/90 text-gray-800 shadow-xl border border-gray-300/40 px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 animate-pulse text-center whitespace-nowrap">
+                                    {toastMessage}
+                                </div>
+                            )}
                         </div>
 
                         <BottomNav 
@@ -309,6 +589,7 @@ function App() {
                             navConfig={navConfig} 
                             allNavItems={allNavItems} 
                         />
+                        <FaqModal isOpen={isFaqOpen} onClose={() => setIsFaqOpen(false)} isDark={isDark} />
                     </>
                 )}
             </div>

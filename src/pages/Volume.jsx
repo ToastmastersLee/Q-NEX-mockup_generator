@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { VolumeX, Volume2, Mic, MicOff } from 'lucide-react';
 
 const VerticalStepper = ({ label, value, onChange, isDark }) => {

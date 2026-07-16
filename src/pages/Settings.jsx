@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Modal } from '../components/Modal';
 import { SettingsRow } from '../components/SettingsRow';
 import { inputBox, inputText, textSecondary, textTitle } from '../styles/theme';
@@ -34,7 +34,7 @@ const EditableText = ({ text, className }) => {
     );
 };
 
-export const Settings = ({ isDark, onDisconnectionClick, onPanelIpClick, panelIpAddress, onCustomizeClick }) => {
+export const Settings = ({ isDark, onDisconnectionClick, onPanelIpClick, panelIpAddress, onCustomizeClick, onDivisibleRoomClick }) => {
     const clickCountRef = useRef(0);
     const clickTimerRef = useRef(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -47,7 +47,7 @@ export const Settings = ({ isDark, onDisconnectionClick, onPanelIpClick, panelIp
     const [deviceName, setDeviceName] = useState('NMP311-Product');
     const [tempDeviceName, setTempDeviceName] = useState('');
 
-    const clickableLabels = ['Software Version', 'Disconnection', 'Device Name', 'Panel IP', 'Customize'];
+    const clickableLabels = ['Software Version', 'Disconnection', 'Device Name', 'Panel IP', 'Customize', 'Divisible Room Mode'];
 
     const settingsItems = [
         { label: 'Device Name', value: deviceName, type: 'text' },
@@ -91,6 +91,8 @@ export const Settings = ({ isDark, onDisconnectionClick, onPanelIpClick, panelIp
             onPanelIpClick?.();
         } else if (label === 'Customize') {
             onCustomizeClick?.();
+        } else if (label === 'Divisible Room Mode') {
+            onDivisibleRoomClick?.();
         }
     };
 

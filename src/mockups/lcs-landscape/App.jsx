@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { LockScreen } from '../../pages/LockScreen';
 import { 
   Play, 
   Circle, 
@@ -10,12 +11,9 @@ import {
   Settings, 
   Sun, 
   Moon, 
-  Clock, 
-  Video, 
   Mic, 
-  Info,
   Sliders,
-  ChevronLeft
+  Lock
 } from 'lucide-react';
 import classroomFeed from '../../assets/classroom_feed.png';
 import ch1Ppt from '../../assets/ch1_ppt.png';
@@ -28,6 +26,10 @@ import './styles.css';
 
 export default function App() {
   const [theme, setTheme] = useState('dark'); // 'dark' | 'light'
+  const [isLocked, setIsLocked] = useState(false);
+
+  
+  
   
   // Interactive States
   const [isRecording, setIsRecording] = useState(false);
@@ -36,7 +38,7 @@ export default function App() {
   
   const [isLive, setIsLive] = useState(false);
   const [selectedChannel, setSelectedChannel] = useState('ch3'); // default active channel (Teacher_C)
-  const [viewMode, setViewMode] = useState('director'); // 'director' (split) or 'single' (full screen channel)
+
   const [micLevel, setMicLevel] = useState(45); // fluctuated dynamically
   const [isMuted, setIsMuted] = useState(false);
   
@@ -114,7 +116,6 @@ export default function App() {
     on2: { enabled: false, time: '13:50' },
     off2: { enabled: false, time: '20:00' }
   });
-  const [settingsLockScreen, setSettingsLockScreen] = useState('never');
   const [settingsOthers, setSettingsOthers] = useState({
     saveFilmLayout: false,
     powerOnLive: false,
@@ -147,13 +148,13 @@ export default function App() {
     interactive: false
   });
   const [settingsAdvanceName, setSettingsAdvanceName] = useState('PGM');
-  const [settingsAdvanceBitrate, setSettingsAdvanceBitrate] = useState('4096Kbps');
-  const [settingsAdvanceFormat, setSettingsAdvanceFormat] = useState('MP4');
-  const [settingsAdvanceFrameRate, setSettingsAdvanceFrameRate] = useState('30fps');
-  const [settingsAdvanceCodec, setSettingsAdvanceCodec] = useState('H264');
-  const [settingsAdvanceResolution, setSettingsAdvanceResolution] = useState('3840*2160');
-  const [settingsAdvanceSegment, setSettingsAdvanceSegment] = useState('0');
-  const [settingsAdvanceMaxTime, setSettingsAdvanceMaxTime] = useState('4hour');
+  const [settingsAdvanceBitrate] = useState('4096Kbps');
+  const [settingsAdvanceFormat] = useState('MP4');
+  const [settingsAdvanceFrameRate] = useState('30fps');
+  const [settingsAdvanceCodec] = useState('H264');
+  const [settingsAdvanceResolution] = useState('3840*2160');
+  const [settingsAdvanceSegment] = useState('0');
+  const [settingsAdvanceMaxTime] = useState('4hour');
 
   // Live sub-tab settings states
   const [settingsLiveSelect, setSettingsLiveSelect] = useState({
@@ -166,10 +167,10 @@ export default function App() {
     studentP: false,
     interactive: false
   });
-  const [settingsLiveFormat, setSettingsLiveFormat] = useState('RTMP');
-  const [settingsLiveBitrate, setSettingsLiveBitrate] = useState('2048Kbps');
-  const [settingsLiveFrameRate, setSettingsLiveFrameRate] = useState('25fps');
-  const [settingsLiveResolution, setSettingsLiveResolution] = useState('1920*1080');
+  const [settingsLiveFormat] = useState('RTMP');
+  const [settingsLiveBitrate] = useState('2048Kbps');
+  const [settingsLiveFrameRate] = useState('25fps');
+  const [settingsLiveResolution] = useState('1920*1080');
   const [settingsLiveServer, setSettingsLiveServer] = useState('rtmp://192.168.3.37:1935/live/xxx');
 
   // Channel sub-tab settings states
@@ -179,8 +180,8 @@ export default function App() {
   const [settingsChannelPtzEnable, setSettingsChannelPtzEnable] = useState(false);
   const [settingsChannelPtzIp, setSettingsChannelPtzIp] = useState('127.0.0.2');
   const [settingsChannelPtzPort, setSettingsChannelPtzPort] = useState('8642');
-  const [settingsChannelPtzProtocol, setSettingsChannelPtzProtocol] = useState('Visca');
-  const [settingsChannelPtzType, setSettingsChannelPtzType] = useState('UDP');
+  const [settingsChannelPtzProtocol] = useState('Visca');
+  const [settingsChannelPtzType] = useState('UDP');
 
   // Server sub-tab settings states
   const [settingsServerIp, setSettingsServerIp] = useState('192.168.3.37');
@@ -191,21 +192,21 @@ export default function App() {
   const [settingsServerCreateLoc, setSettingsServerCreateLoc] = useState(true);
 
   // Interactive sub-tab settings states
-  const [settingsInteractiveOutput1, setSettingsInteractiveOutput1] = useState('PGM');
-  const [settingsInteractiveQuality1, setSettingsInteractiveQuality1] = useState('FHD');
-  const [settingsInteractiveOutput2, setSettingsInteractiveOutput2] = useState('Teacher_C');
-  const [settingsInteractiveQuality2, setSettingsInteractiveQuality2] = useState('FHD');
+  const [settingsInteractiveOutput1] = useState('PGM');
+  const [settingsInteractiveQuality1] = useState('FHD');
+  const [settingsInteractiveOutput2] = useState('Teacher_C');
+  const [settingsInteractiveQuality2] = useState('FHD');
   const [settingsInteractiveMaxScreens, setSettingsInteractiveMaxScreens] = useState('9'); // '4' | '9'
-  const [settingsInteractivePgScroll, setSettingsInteractivePgScroll] = useState('10');
+  const [settingsInteractivePgScroll] = useState('10');
   const [settingsInteractivePgScrollEnable, setSettingsInteractivePgScrollEnable] = useState(false);
-  const [settingsInteractiveMicNum, setSettingsInteractiveMicNum] = useState('0');
+  const [settingsInteractiveMicNum] = useState('0');
   const [settingsInteractiveSpeakerFull, setSettingsInteractiveSpeakerFull] = useState(true);
   const [settingsInteractiveShowLocalCreator, setSettingsInteractiveShowLocalCreator] = useState(false);
   
   const [settingsInteractiveLocalDisplays, setSettingsInteractiveLocalDisplays] = useState('1'); // '2' | '1'
   const [settingsInteractiveDisplayLayout, setSettingsInteractiveDisplayLayout] = useState('V1'); // 'V1' | 'V2' | 'V2_V1'
-  const [settingsInteractiveSendCreator, setSettingsInteractiveSendCreator] = useState('Student_C');
-  const [settingsInteractiveQualityJoiner, setSettingsInteractiveQualityJoiner] = useState('FHD');
+  const [settingsInteractiveSendCreator] = useState('Student_C');
+  const [settingsInteractiveQualityJoiner] = useState('FHD');
   const [settingsInteractiveShowLocalJoiner, setSettingsInteractiveShowLocalJoiner] = useState(false);
   const [settingsInteractiveAutoJoin, setSettingsInteractiveAutoJoin] = useState(false);
 
@@ -219,8 +220,8 @@ export default function App() {
   const [settingsSipPassword, setSettingsSipPassword] = useState('123456');
   const [settingsSipNatRoute, setSettingsSipNatRoute] = useState(false);
   const [settingsSipTransmission, setSettingsSipTransmission] = useState('TCP'); // 'TCP' | 'UDP'
-  const [settingsSipVideoOutput, setSettingsSipVideoOutput] = useState('PGM');
-  const [settingsSipVideoQuality, setSettingsSipVideoQuality] = useState('FHD');
+  const [settingsSipVideoOutput] = useState('PGM');
+  const [settingsSipVideoQuality] = useState('FHD');
   const [settingsSipDualStream, setSettingsSipDualStream] = useState(false);
   const [settingsSipPipLayout, setSettingsSipPipLayout] = useState(4); // 1 | 2 | 3 | 4
 
@@ -265,6 +266,73 @@ export default function App() {
     return () => clearTimeout(timer);
   };
 
+  // Move auth states and helper constants here (after activeSettingsTab is initialized)
+  const sublabelColor = theme === 'light' ? '#1f2937' : '#cbd5e0';
+  const pipBorderColor = theme === 'light' ? '#94a3b8' : 'rgba(255,255,255,0.4)';
+  const pipInnerBgColor = theme === 'light' ? '#64748b' : '#cbd5e0';
+  const pipSplitBgColor = theme === 'light' ? '#94a3b8' : 'rgba(255,255,255,0.2)';
+  const groupHeaderColor = theme === 'light' ? '#1f2937' : '#fff';
+  const groupHeaderBorder = theme === 'light' ? '1px solid #e2e8f0' : '1px solid rgba(255,255,255,0.05)';
+  
+  // Advance settings verification states
+  const [isAdvanceVerified, setIsAdvanceVerified] = useState(false);
+  const [showAdvanceAuth, setShowAdvanceAuth] = useState(false);
+  const [previousSettingsTab, setPreviousSettingsTab] = useState('device');
+  const [authAccount, setAuthAccount] = useState('');
+  const [authPassword, setAuthPassword] = useState('');
+  const [authFocusedInput, setAuthFocusedInput] = useState('account'); // 'account' | 'password'
+  const [authError, setAuthError] = useState('');
+  const [isCaps, setIsCaps] = useState(false);
+
+  const handleSettingsTabChange = (tab) => {
+    if (tab === 'advance') {
+      if (!isAdvanceVerified) {
+        setShowAdvanceAuth(true);
+        setAuthFocusedInput('account');
+        setAuthAccount('');
+        setAuthPassword('');
+        setAuthError('');
+        setActiveSettingsTab('advance');
+      } else {
+        setActiveSettingsTab('advance');
+      }
+    } else {
+      setShowAdvanceAuth(false);
+      setPreviousSettingsTab(tab);
+      setActiveSettingsTab(tab);
+    }
+  };
+
+  const handleKeyPress = (char) => {
+    if (authFocusedInput === 'account') {
+      setAuthAccount(prev => prev + char);
+    } else {
+      setAuthPassword(prev => prev + char);
+    }
+  };
+  
+  const handleBackspace = () => {
+    if (authFocusedInput === 'account') {
+      setAuthAccount(prev => prev.slice(0, -1));
+    } else {
+      setAuthPassword(prev => prev.slice(0, -1));
+    }
+  };
+  
+  const handleAuthVerify = () => {
+    if (authAccount.toLowerCase() === 'admin' && authPassword === 'admin') {
+      setIsAdvanceVerified(true);
+      setShowAdvanceAuth(false);
+      showToast("Advance verification successful!");
+    } else {
+      setAuthError("Incorrect Account or Password!");
+      setAuthPassword('');
+      setTimeout(() => setAuthError(''), 3000);
+    }
+  };
+
+  const displayTab = (activeSettingsTab === 'advance' && showAdvanceAuth) ? previousSettingsTab : activeSettingsTab;
+
   // Handle playback timer
   useEffect(() => {
     let interval = null;
@@ -281,12 +349,17 @@ export default function App() {
   // Loading state simulation when opening File Overlay
   useEffect(() => {
     if (activeMenuSection === 'file') {
-      setFilePlayerState('loading');
-      setFilePlaybackTime(6);
+      const initTimer = setTimeout(() => {
+        setFilePlayerState('loading');
+        setFilePlaybackTime(6);
+      }, 0);
       const timer = setTimeout(() => {
         setFilePlayerState('playing');
       }, 1500);
-      return () => clearTimeout(timer);
+      return () => {
+        clearTimeout(initTimer);
+        clearTimeout(timer);
+      };
     }
   }, [activeMenuSection]);
 
@@ -405,8 +478,38 @@ export default function App() {
     { id: 'ch7', name: 'Interactive', label: 'CH7', type: 'live', pos: 'center' }
   ];
 
+  if (isLocked) {
+    return <LockScreen isDark={theme === 'dark'} onUnlock={() => setIsLocked(false)} />;
+  }
+
   return (
     <div className={`lcs-stage-container ${theme === 'light' ? 'is-light' : 'is-dark'}`}>
+      
+      {/* Right Side floating simulation panel */}
+      <div className="lcs-right-simulator-panel">
+        <div style={{ fontSize: '10px', fontWeight: 'bold', color: theme === 'light' ? '#4b5563' : '#cbd5e0', textTransform: 'uppercase', textAlign: 'center', marginBottom: '4px', opacity: 0.8 }}>
+          Simulation
+        </div>
+        <button 
+          type="button" 
+          className="lcs-right-sim-btn" 
+          onClick={() => {
+            setIsAdvanceVerified(false);
+            setShowAdvanceAuth(false);
+            if (activeSettingsTab === 'advance') {
+              setActiveSettingsTab('device');
+            }
+            showToast("Advance Login Reset!");
+          }}
+        >
+          <Lock size={14} />
+          <span>Reset Login</span>
+        </button>
+        <div style={{ fontSize: '9px', color: theme === 'light' ? '#4b5563' : '#cbd5e0', opacity: 0.8, textAlign: 'center', marginTop: '6px', lineHeight: '1.2', borderTop: theme === 'light' ? '1px solid #e5e7eb' : '1px solid rgba(255,255,255,0.08)', paddingTop: '6px' }}>
+          <div style={{ opacity: 0.6 }}>Default Auth:</div>
+          <div style={{ fontWeight: 'bold', marginTop: '2px' }}>admin / admin</div>
+        </div>
+      </div>
       
       {/* Simulation Controls Panel (floating outside device) */}
       <div className="lcs-simulation-toolbar">
@@ -445,7 +548,6 @@ export default function App() {
             type="button" 
             className={`lcs-sim-btn ${currentLayout === 'l5' ? 'is-active' : ''}`}
             onClick={() => {
-              setViewMode('director');
               setCurrentLayout('l5');
             }}
           >
@@ -457,13 +559,14 @@ export default function App() {
             type="button" 
             className={`lcs-sim-btn ${currentLayout === 'l1' ? 'is-active' : ''}`}
             onClick={() => {
-              setViewMode('single');
               setCurrentLayout('l1');
             }}
           >
             <Monitor size={12} />
             <span>Menu View (Orig)</span>
           </button>
+
+
         </div>
       </div>
 
@@ -1724,35 +1827,35 @@ export default function App() {
                     <button 
                       type="button" 
                       className={`lcs-sidebar-btn ${activeSettingsTab === 'device' ? 'is-active' : ''}`}
-                      onClick={() => setActiveSettingsTab('device')}
+                      onClick={() => handleSettingsTabChange('device')}
                     >
                       Device set
                     </button>
                     <button 
                       type="button" 
                       className={`lcs-sidebar-btn ${activeSettingsTab === 'storage' ? 'is-active' : ''}`}
-                      onClick={() => setActiveSettingsTab('storage')}
+                      onClick={() => handleSettingsTabChange('storage')}
                     >
                       Storage set
                     </button>
                     <button 
                       type="button" 
                       className={`lcs-sidebar-btn ${activeSettingsTab === 'network' ? 'is-active' : ''}`}
-                      onClick={() => setActiveSettingsTab('network')}
+                      onClick={() => handleSettingsTabChange('network')}
                     >
                       Network set
                     </button>
                     <button 
                       type="button" 
                       className={`lcs-sidebar-btn ${activeSettingsTab === 'version' ? 'is-active' : ''}`}
-                      onClick={() => setActiveSettingsTab('version')}
+                      onClick={() => handleSettingsTabChange('version')}
                     >
                       Version
                     </button>
                     <button 
                       type="button" 
                       className={`lcs-sidebar-btn ${activeSettingsTab === 'advance' ? 'is-active' : ''}`}
-                      onClick={() => setActiveSettingsTab('advance')}
+                      onClick={() => handleSettingsTabChange('advance')}
                     >
                       Advance
                     </button>
@@ -1769,7 +1872,7 @@ export default function App() {
 
                 {/* Main Content Area */}
                 <div className="lcs-settings-main">
-                  {activeSettingsTab === 'device' ? (
+                  {displayTab === 'device' ? (
                     <div className="lcs-settings-device-tab">
                       {/* Row 1: Language */}
                       <div className="lcs-settings-row">
@@ -1967,7 +2070,7 @@ export default function App() {
                         </div>
                       </div>
                     </div>
-                  ) : activeSettingsTab === 'storage' ? (
+                  ) : displayTab === 'storage' ? (
                     <div className="lcs-settings-storage-tab">
                       {/* Row 1: Record Strategy */}
                       <div className="lcs-settings-row" style={{ flexDirection: 'column', alignItems: 'stretch', gap: '8px' }}>
@@ -2023,7 +2126,7 @@ export default function App() {
                         </div>
                       </div>
                     </div>
-                  ) : activeSettingsTab === 'network' ? (
+                  ) : displayTab === 'network' ? (
                     <div className="lcs-settings-network-tab">
                       {/* Sub Navigation Bar */}
                       <div className="lcs-settings-subnav-row">
@@ -2137,7 +2240,7 @@ export default function App() {
                         </div>
                       )}
                     </div>
-                  ) : activeSettingsTab === 'version' ? (
+                  ) : displayTab === 'version' ? (
                     <div className="lcs-settings-version-tab">
                       {/* Subnav row with 'Check' button */}
                       <div className="lcs-settings-subnav-row">
@@ -2174,7 +2277,7 @@ export default function App() {
                         </div>
                       </div>
                     </div>
-                  ) : activeSettingsTab === 'advance' ? (
+                  ) : displayTab === 'advance' ? (
                     <div className="lcs-settings-advance-tab">
                       {/* Sub Navigation Bar */}
                       <div className="lcs-settings-subnav-row" style={{ justifyContent: 'center' }}>
@@ -2648,21 +2751,21 @@ export default function App() {
                             <span className="lcs-settings-label" style={{ fontWeight: 'bold', width: '120px', marginTop: '6px' }}>Creator:</span>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                               {/* Sub Row 1: Send to Joiner */}
-                              <div style={{ fontSize: '11px', fontWeight: 'bold', color: '#fff', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '6px' }}>
+                              <div style={{ fontSize: '11px', fontWeight: 'bold', color: groupHeaderColor, borderBottom: groupHeaderBorder, paddingBottom: '6px' }}>
                                 Send to Joiner:
                               </div>
 
                               {/* Sub Row 2: Default Output 1 */}
                               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', alignItems: 'center' }}>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                  <span style={{ fontSize: '11px', color: '#cbd5e0', width: '100px' }}>Default Output1:</span>
+                                  <span style={{ fontSize: '11px', color: sublabelColor, width: '100px' }}>Default Output1:</span>
                                   <div className="lcs-select-pill" style={{ width: '140px' }}>
                                     <span>{settingsInteractiveOutput1}</span>
                                     <span>▼</span>
                                   </div>
                                 </div>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                  <span style={{ fontSize: '11px', color: '#cbd5e0', width: '60px' }}>Quality:</span>
+                                  <span style={{ fontSize: '11px', color: sublabelColor, width: '60px' }}>Quality:</span>
                                   <div className="lcs-select-pill" style={{ width: '120px' }}>
                                     <span>{settingsInteractiveQuality1}</span>
                                     <span>▼</span>
@@ -2673,14 +2776,14 @@ export default function App() {
                               {/* Sub Row 3: Default Output 2 */}
                               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', alignItems: 'center' }}>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                  <span style={{ fontSize: '11px', color: '#cbd5e0', width: '100px' }}>Default Output2:</span>
+                                  <span style={{ fontSize: '11px', color: sublabelColor, width: '100px' }}>Default Output2:</span>
                                   <div className="lcs-select-pill" style={{ width: '140px' }}>
                                     <span>{settingsInteractiveOutput2}</span>
                                     <span>▼</span>
                                   </div>
                                 </div>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                  <span style={{ fontSize: '11px', color: '#cbd5e0', width: '60px' }}>Quality:</span>
+                                  <span style={{ fontSize: '11px', color: sublabelColor, width: '60px' }}>Quality:</span>
                                   <div className="lcs-select-pill" style={{ width: '120px' }}>
                                     <span>{settingsInteractiveQuality2}</span>
                                     <span>▼</span>
@@ -2689,14 +2792,14 @@ export default function App() {
                               </div>
 
                               {/* Sub Row 4: Interactive with Joiners */}
-                              <div style={{ fontSize: '11px', fontWeight: 'bold', color: '#fff', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '6px', marginTop: '6px' }}>
+                              <div style={{ fontSize: '11px', fontWeight: 'bold', color: groupHeaderColor, borderBottom: groupHeaderBorder, paddingBottom: '6px', marginTop: '6px' }}>
                                 Interactive with Joiners:
                               </div>
 
                               {/* Sub Row 5: Max Screens & AUTO PG Scroll */}
                               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '16px', alignItems: 'center' }}>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                  <span style={{ fontSize: '11px', color: '#cbd5e0', width: '80px' }}>Max Screens:</span>
+                                  <span style={{ fontSize: '11px', color: sublabelColor, width: '80px' }}>Max Screens:</span>
                                   {[
                                     { label: '4 views', value: '4' },
                                     { label: '9 views', value: '9' }
@@ -2717,7 +2820,7 @@ export default function App() {
                                   })}
                                 </div>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                  <span style={{ fontSize: '11px', color: '#cbd5e0', width: '90px' }}>AUTO PG Scroll:</span>
+                                  <span style={{ fontSize: '11px', color: sublabelColor, width: '90px' }}>AUTO PG Scroll:</span>
                                   <div className="lcs-select-pill" style={{ width: '80px' }}>
                                     <span>{settingsInteractivePgScroll}</span>
                                     <span>▼</span>
@@ -2730,21 +2833,21 @@ export default function App() {
                                   >
                                     <div className="lcs-toggle-knob" />
                                   </div>
-                                  <span style={{ fontSize: '11px', color: '#cbd5e0' }}>Enable</span>
+                                  <span style={{ fontSize: '11px', color: sublabelColor }}>Enable</span>
                                 </div>
                               </div>
 
                               {/* Sub Row 6: Joiners Mic Num & Speaker Fullscreen */}
                               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', alignItems: 'center' }}>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                  <span style={{ fontSize: '11px', color: '#cbd5e0', width: '100px' }}>Joiners Mic Num:</span>
+                                  <span style={{ fontSize: '11px', color: sublabelColor, width: '100px' }}>Joiners Mic Num:</span>
                                   <div className="lcs-select-pill" style={{ width: '80px' }}>
                                     <span>{settingsInteractiveMicNum}</span>
                                     <span>▼</span>
                                   </div>
                                 </div>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                  <span style={{ fontSize: '11px', color: '#cbd5e0', width: '110px' }}>Speaker Fullscreen:</span>
+                                  <span style={{ fontSize: '11px', color: sublabelColor, width: '110px' }}>Speaker Fullscreen:</span>
                                   <div 
                                     className={`lcs-toggle-switch ${settingsInteractiveSpeakerFull ? 'is-on' : ''}`}
                                     onClick={() => setSettingsInteractiveSpeakerFull(!settingsInteractiveSpeakerFull)}
@@ -2752,13 +2855,13 @@ export default function App() {
                                   >
                                     <div className="lcs-toggle-knob" />
                                   </div>
-                                  <span style={{ fontSize: '11px', color: '#cbd5e0' }}>Enable</span>
+                                  <span style={{ fontSize: '11px', color: sublabelColor }}>Enable</span>
                                 </div>
                               </div>
 
                               {/* Sub Row 7: Show Local */}
                               <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                <span style={{ fontSize: '11px', color: '#cbd5e0', width: '80px' }}>Show Local:</span>
+                                <span style={{ fontSize: '11px', color: sublabelColor, width: '80px' }}>Show Local:</span>
                                 <div 
                                   className={`lcs-toggle-switch ${settingsInteractiveShowLocalCreator ? 'is-on' : ''}`}
                                   onClick={() => setSettingsInteractiveShowLocalCreator(!settingsInteractiveShowLocalCreator)}
@@ -2766,7 +2869,7 @@ export default function App() {
                                 >
                                   <div className="lcs-toggle-knob" />
                                 </div>
-                                <span style={{ fontSize: '11px', color: '#cbd5e0' }}>Enable</span>
+                                <span style={{ fontSize: '11px', color: sublabelColor }}>Enable</span>
                               </div>
                             </div>
                           </div>
@@ -2777,7 +2880,7 @@ export default function App() {
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                               {/* Sub Row 1: Local Displays */}
                               <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
-                                <span style={{ fontSize: '11px', color: '#cbd5e0', width: '100px' }}>Local Displays:</span>
+                                <span style={{ fontSize: '11px', color: sublabelColor, width: '100px' }}>Local Displays:</span>
                                 {[
                                   { label: '2 Screens', value: '2' },
                                   { label: '1 Screen', value: '1' }
@@ -2819,14 +2922,14 @@ export default function App() {
                               {/* Sub Row 2: Send to Creator & Quality */}
                               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', alignItems: 'center' }}>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                  <span style={{ fontSize: '11px', color: '#cbd5e0', width: '100px' }}>Send to Creator:</span>
+                                  <span style={{ fontSize: '11px', color: sublabelColor, width: '100px' }}>Send to Creator:</span>
                                   <div className="lcs-select-pill" style={{ width: '140px' }}>
                                     <span>{settingsInteractiveSendCreator}</span>
                                     <span>▼</span>
                                   </div>
                                 </div>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                  <span style={{ fontSize: '11px', color: '#cbd5e0', width: '60px' }}>Quality:</span>
+                                  <span style={{ fontSize: '11px', color: sublabelColor, width: '60px' }}>Quality:</span>
                                   <div className="lcs-select-pill" style={{ width: '120px' }}>
                                     <span>{settingsInteractiveQualityJoiner}</span>
                                     <span>▼</span>
@@ -2837,7 +2940,7 @@ export default function App() {
                               {/* Sub Row 3: Show Local & Auto Join */}
                               <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                  <span style={{ fontSize: '11px', color: '#cbd5e0', width: '80px' }}>Show Local:</span>
+                                  <span style={{ fontSize: '11px', color: sublabelColor, width: '80px' }}>Show Local:</span>
                                   <div 
                                     className={`lcs-toggle-switch ${settingsInteractiveShowLocalJoiner ? 'is-on' : ''}`}
                                     onClick={() => setSettingsInteractiveShowLocalJoiner(!settingsInteractiveShowLocalJoiner)}
@@ -2845,11 +2948,11 @@ export default function App() {
                                   >
                                     <div className="lcs-toggle-knob" />
                                   </div>
-                                  <span style={{ fontSize: '11px', color: '#cbd5e0' }}>Enable</span>
+                                  <span style={{ fontSize: '11px', color: sublabelColor }}>Enable</span>
                                 </div>
 
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                  <span style={{ fontSize: '11px', color: '#cbd5e0', width: '80px' }}>Auto Join:</span>
+                                  <span style={{ fontSize: '11px', color: sublabelColor, width: '80px' }}>Auto Join:</span>
                                   <div 
                                     className={`lcs-toggle-switch ${settingsInteractiveAutoJoin ? 'is-on' : ''}`}
                                     onClick={() => setSettingsInteractiveAutoJoin(!settingsInteractiveAutoJoin)}
@@ -2857,7 +2960,7 @@ export default function App() {
                                   >
                                     <div className="lcs-toggle-knob" />
                                   </div>
-                                  <span style={{ fontSize: '11px', color: '#cbd5e0' }}>Enable</span>
+                                  <span style={{ fontSize: '11px', color: sublabelColor }}>Enable</span>
                                 </div>
                               </div>
                             </div>
@@ -2882,7 +2985,7 @@ export default function App() {
                               {/* Row 1: SIP Calls toggle & Register toggle */}
                               <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                  <span style={{ fontSize: '11px', color: '#cbd5e0', width: '70px' }}>SIP Calls:</span>
+                                  <span style={{ fontSize: '11px', color: sublabelColor, width: '70px' }}>SIP Calls:</span>
                                   <div 
                                     className={`lcs-toggle-switch ${settingsSipCalls ? 'is-on' : ''}`}
                                     onClick={() => setSettingsSipCalls(!settingsSipCalls)}
@@ -2890,11 +2993,11 @@ export default function App() {
                                   >
                                     <div className="lcs-toggle-knob" />
                                   </div>
-                                  <span style={{ fontSize: '11px', color: '#cbd5e0' }}>Enable</span>
+                                  <span style={{ fontSize: '11px', color: sublabelColor }}>Enable</span>
                                 </div>
 
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                  <span style={{ fontSize: '11px', color: '#cbd5e0', width: '70px' }}>Register:</span>
+                                  <span style={{ fontSize: '11px', color: sublabelColor, width: '70px' }}>Register:</span>
                                   <div 
                                     className={`lcs-toggle-switch ${settingsSipRegister ? 'is-on' : ''}`}
                                     onClick={() => setSettingsSipRegister(!settingsSipRegister)}
@@ -2902,14 +3005,14 @@ export default function App() {
                                   >
                                     <div className="lcs-toggle-knob" />
                                   </div>
-                                  <span style={{ fontSize: '11px', color: '#cbd5e0' }}>Enable</span>
+                                  <span style={{ fontSize: '11px', color: sublabelColor }}>Enable</span>
                                 </div>
                               </div>
 
                               {/* Row 2: SIP Domain, SIP Server, SIP Port */}
                               <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                  <span style={{ fontSize: '11px', color: '#cbd5e0', width: '80px' }}>SIP Domain:</span>
+                                  <span style={{ fontSize: '11px', color: sublabelColor, width: '80px' }}>SIP Domain:</span>
                                   <input 
                                     type="text" 
                                     className="lcs-settings-input" 
@@ -2920,7 +3023,7 @@ export default function App() {
                                 </div>
 
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                  <span style={{ fontSize: '11px', color: '#cbd5e0', width: '70px' }}>SIP Server:</span>
+                                  <span style={{ fontSize: '11px', color: sublabelColor, width: '70px' }}>SIP Server:</span>
                                   <input 
                                     type="text" 
                                     className="lcs-settings-input" 
@@ -2931,7 +3034,7 @@ export default function App() {
                                 </div>
 
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                  <span style={{ fontSize: '11px', color: '#cbd5e0', width: '60px' }}>SIP Port:</span>
+                                  <span style={{ fontSize: '11px', color: sublabelColor, width: '60px' }}>SIP Port:</span>
                                   <input 
                                     type="text" 
                                     className="lcs-settings-input" 
@@ -2945,7 +3048,7 @@ export default function App() {
                               {/* Row 3: UserName, Password */}
                               <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                  <span style={{ fontSize: '11px', color: '#cbd5e0', width: '80px' }}>UserName:</span>
+                                  <span style={{ fontSize: '11px', color: sublabelColor, width: '80px' }}>UserName:</span>
                                   <input 
                                     type="text" 
                                     className="lcs-settings-input" 
@@ -2956,7 +3059,7 @@ export default function App() {
                                 </div>
 
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                  <span style={{ fontSize: '11px', color: '#cbd5e0', width: '70px' }}>Password:</span>
+                                  <span style={{ fontSize: '11px', color: sublabelColor, width: '70px' }}>Password:</span>
                                   <input 
                                     type="password" 
                                     className="lcs-settings-input" 
@@ -2980,7 +3083,7 @@ export default function App() {
                               >
                                 <div className="lcs-toggle-knob" />
                               </div>
-                              <span style={{ fontSize: '11px', color: '#cbd5e0' }}>Enable</span>
+                              <span style={{ fontSize: '11px', color: sublabelColor }}>Enable</span>
                             </div>
                           </div>
 
@@ -3013,14 +3116,14 @@ export default function App() {
                             <div className="lcs-settings-row" style={{ borderBottom: 'none', display: 'flex', gap: '32px' }}>
                               <span className="lcs-settings-label" style={{ width: '120px' }}>Video Output:</span>
                               <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                <span style={{ fontSize: '11px', color: '#cbd5e0', width: '50px' }}>Default:</span>
+                                <span style={{ fontSize: '11px', color: sublabelColor, width: '50px' }}>Default:</span>
                                 <div className="lcs-select-pill" style={{ width: '140px' }}>
                                   <span>{settingsSipVideoOutput}</span>
                                   <span>▼</span>
                                 </div>
                               </div>
                               <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                <span style={{ fontSize: '11px', color: '#cbd5e0', width: '50px' }}>Quality:</span>
+                                <span style={{ fontSize: '11px', color: sublabelColor, width: '50px' }}>Quality:</span>
                                 <div className="lcs-select-pill" style={{ width: '120px' }}>
                                   <span>{settingsSipVideoQuality}</span>
                                   <span>▼</span>
@@ -3040,7 +3143,7 @@ export default function App() {
                               >
                                 <div className="lcs-toggle-knob" />
                               </div>
-                              <span style={{ fontSize: '11px', color: '#cbd5e0' }}>Enable</span>
+                              <span style={{ fontSize: '11px', color: sublabelColor }}>Enable</span>
                             </div>
                           </div>
 
@@ -3055,14 +3158,14 @@ export default function App() {
                                   style={{ 
                                     width: '32px', 
                                     height: '20px', 
-                                    border: `1px solid ${settingsSipPipLayout === 1 ? '#00e676' : 'rgba(255,255,255,0.4)'}`, 
+                                    border: `1px solid ${settingsSipPipLayout === 1 ? '#00e676' : pipBorderColor}`, 
                                     borderRadius: '2px', 
                                     position: 'relative', 
                                     cursor: 'pointer',
                                     backgroundColor: settingsSipPipLayout === 1 ? 'rgba(0, 230, 118, 0.1)' : 'transparent'
                                   }}
                                 >
-                                  <div style={{ width: '10px', height: '6px', backgroundColor: settingsSipPipLayout === 1 ? '#00e676' : '#cbd5e0', position: 'absolute', top: '2px', right: '2px' }} />
+                                  <div style={{ width: '10px', height: '6px', backgroundColor: settingsSipPipLayout === 1 ? '#00e676' : pipInnerBgColor, position: 'absolute', top: '2px', right: '2px' }} />
                                 </div>
 
                                 {/* Icon 2: Bottom-Right mini box */}
@@ -3071,14 +3174,14 @@ export default function App() {
                                   style={{ 
                                     width: '32px', 
                                     height: '20px', 
-                                    border: `1px solid ${settingsSipPipLayout === 2 ? '#00e676' : 'rgba(255,255,255,0.4)'}`, 
+                                    border: `1px solid ${settingsSipPipLayout === 2 ? '#00e676' : pipBorderColor}`, 
                                     borderRadius: '2px', 
                                     position: 'relative', 
                                     cursor: 'pointer',
                                     backgroundColor: settingsSipPipLayout === 2 ? 'rgba(0, 230, 118, 0.1)' : 'transparent'
                                   }}
                                 >
-                                  <div style={{ width: '10px', height: '6px', backgroundColor: settingsSipPipLayout === 2 ? '#00e676' : '#cbd5e0', position: 'absolute', bottom: '2px', right: '2px' }} />
+                                  <div style={{ width: '10px', height: '6px', backgroundColor: settingsSipPipLayout === 2 ? '#00e676' : pipInnerBgColor, position: 'absolute', bottom: '2px', right: '2px' }} />
                                 </div>
 
                                 {/* Icon 3: Top-Left mini box */}
@@ -3087,14 +3190,14 @@ export default function App() {
                                   style={{ 
                                     width: '32px', 
                                     height: '20px', 
-                                    border: `1px solid ${settingsSipPipLayout === 3 ? '#00e676' : 'rgba(255,255,255,0.4)'}`, 
+                                    border: `1px solid ${settingsSipPipLayout === 3 ? '#00e676' : pipBorderColor}`, 
                                     borderRadius: '2px', 
                                     position: 'relative', 
                                     cursor: 'pointer',
                                     backgroundColor: settingsSipPipLayout === 3 ? 'rgba(0, 230, 118, 0.1)' : 'transparent'
                                   }}
                                 >
-                                  <div style={{ width: '10px', height: '6px', backgroundColor: settingsSipPipLayout === 3 ? '#00e676' : '#cbd5e0', position: 'absolute', top: '2px', left: '2px' }} />
+                                  <div style={{ width: '10px', height: '6px', backgroundColor: settingsSipPipLayout === 3 ? '#00e676' : pipInnerBgColor, position: 'absolute', top: '2px', left: '2px' }} />
                                 </div>
 
                                 {/* Icon 4: Side by Side (Split with right colored green) */}
@@ -3103,7 +3206,7 @@ export default function App() {
                                   style={{ 
                                     width: '32px', 
                                     height: '20px', 
-                                    border: `1px solid ${settingsSipPipLayout === 4 ? '#00e676' : 'rgba(255,255,255,0.4)'}`, 
+                                    border: `1px solid ${settingsSipPipLayout === 4 ? '#00e676' : pipBorderColor}`, 
                                     borderRadius: '2px', 
                                     position: 'relative', 
                                     cursor: 'pointer',
@@ -3111,7 +3214,7 @@ export default function App() {
                                     overflow: 'hidden'
                                   }}
                                 >
-                                  <div style={{ width: '50%', height: '100%', backgroundColor: settingsSipPipLayout === 4 ? '#00e676' : 'rgba(255,255,255,0.2)', position: 'absolute', right: 0, borderLeft: '1px solid rgba(255,255,255,0.2)' }} />
+                                  <div style={{ width: '50%', height: '100%', backgroundColor: settingsSipPipLayout === 4 ? '#00e676' : pipSplitBgColor, position: 'absolute', right: 0, borderLeft: `1px solid ${pipSplitBgColor}` }} />
                                 </div>
                               </div>
                             </div>
@@ -3141,6 +3244,235 @@ export default function App() {
                     </button>
                   </div>
                 </div>
+
+                {/* Advance settings authentication modal & virtual keyboard */}
+                {showAdvanceAuth && (
+                    <>
+                      <div 
+                        className="lcs-auth-backdrop" 
+                        onClick={() => {
+                          setShowAdvanceAuth(false);
+                          setActiveSettingsTab(previousSettingsTab);
+                        }} 
+                      />
+                      
+                      <div className="lcs-auth-dialog">
+                        <button 
+                          type="button" 
+                          className="lcs-auth-close-btn"
+                          onClick={() => {
+                            setShowAdvanceAuth(false);
+                            setActiveSettingsTab(previousSettingsTab);
+                          }}
+                        >
+                          ✕
+                        </button>
+                        
+                        <div className="lcs-auth-form">
+                          <div 
+                            className={`lcs-auth-input-wrapper ${authFocusedInput === 'account' ? 'is-focused' : ''}`}
+                            onClick={() => setAuthFocusedInput('account')}
+                          >
+                            <input 
+                              type="text" 
+                              placeholder="Account" 
+                              value={authAccount}
+                              readOnly
+                              className="lcs-auth-input"
+                            />
+                          </div>
+                          
+                          <div 
+                            className={`lcs-auth-input-wrapper ${authFocusedInput === 'password' ? 'is-focused' : ''}`}
+                            onClick={() => setAuthFocusedInput('password')}
+                          >
+                            <input 
+                              type="password" 
+                              placeholder="Password" 
+                              value={authPassword ? '•'.repeat(authPassword.length) : ''}
+                              readOnly
+                              className="lcs-auth-input"
+                            />
+                          </div>
+                          
+                          {authError && (
+                            <div className="lcs-auth-error-msg">
+                              {authError}
+                            </div>
+                          )}
+                          
+                          <button 
+                            type="button" 
+                            className="lcs-auth-verify-btn"
+                            onClick={handleAuthVerify}
+                          >
+                            Verify
+                          </button>
+                          
+
+                        </div>
+                      </div>
+                      
+                      <div className="lcs-virtual-keyboard">
+                        <div className="lcs-kb-nav">
+                          <button type="button" className="lcs-kb-nav-btn is-green">&lt;</button>
+                          <div className="lcs-kb-display">
+                            {authFocusedInput === 'account' ? (authAccount || 'Account') : (authPassword ? '•'.repeat(authPassword.length) : 'Password')}
+                            <span className="lcs-kb-cursor" />
+                          </div>
+                          <button type="button" className="lcs-kb-nav-btn is-green">&gt;</button>
+                        </div>
+                        
+                        <div className="lcs-kb-body">
+                          <div className="lcs-kb-alphabet-section">
+                            <div className="lcs-kb-row">
+                              {['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'].map(k => (
+                                <button 
+                                  key={k} 
+                                  type="button" 
+                                  className="lcs-kb-key"
+                                  onClick={() => handleKeyPress(isCaps ? k.toUpperCase() : k)}
+                                >
+                                  {isCaps ? k.toUpperCase() : k}
+                                </button>
+                              ))}
+                            </div>
+                            <div className="lcs-kb-row">
+                              <div style={{ flex: 0.5 }} />
+                              {['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'].map(k => (
+                                <button 
+                                  key={k} 
+                                  type="button" 
+                                  className="lcs-kb-key"
+                                  onClick={() => handleKeyPress(isCaps ? k.toUpperCase() : k)}
+                                >
+                                  {isCaps ? k.toUpperCase() : k}
+                                </button>
+                              ))}
+                              <div style={{ flex: 0.5 }} />
+                            </div>
+                            <div className="lcs-kb-row">
+                              <button 
+                                type="button" 
+                                className={`lcs-kb-key is-wide is-caps ${isCaps ? 'is-active' : ''}`}
+                                onClick={() => setIsCaps(!isCaps)}
+                              >
+                                CapsLock
+                              </button>
+                              {['z', 'x', 'c', 'v', 'b', 'n', 'm'].map(k => (
+                                <button 
+                                  key={k} 
+                                  type="button" 
+                                  className="lcs-kb-key"
+                                  onClick={() => handleKeyPress(isCaps ? k.toUpperCase() : k)}
+                                >
+                                  {isCaps ? k.toUpperCase() : k}
+                                </button>
+                              ))}
+                              <button 
+                                type="button" 
+                                className="lcs-kb-key is-wide is-enter"
+                                onClick={handleAuthVerify}
+                              >
+                                Enter
+                              </button>
+                            </div>
+                            <div className="lcs-kb-row">
+                              {['.', '@', ','].map(k => (
+                                <button 
+                                  key={k} 
+                                  type="button" 
+                                  className="lcs-kb-key"
+                                  onClick={() => handleKeyPress(k)}
+                                >
+                                  {k}
+                                </button>
+                              ))}
+                              <button 
+                                type="button" 
+                                className="lcs-kb-key is-space"
+                                onClick={() => handleKeyPress(' ')}
+                              >
+                                Space
+                              </button>
+                              <button 
+                                type="button" 
+                                className="lcs-kb-key"
+                                onClick={() => handleKeyPress('-')}
+                              >
+                                -
+                              </button>
+                              <button type="button" className="lcs-kb-key">EN/中</button>
+                              <button 
+                                type="button" 
+                                className="lcs-kb-key is-backspace"
+                                onClick={handleBackspace}
+                              >
+                                ⌫
+                              </button>
+                            </div>
+                          </div>
+                          
+                          <div className="lcs-kb-divider" />
+                          
+                          <div className="lcs-kb-keypad-section">
+                            <div className="lcs-kb-row">
+                              {['1', '2', '3'].map(k => (
+                                <button 
+                                  key={k} 
+                                  type="button" 
+                                  className="lcs-kb-key"
+                                  onClick={() => handleKeyPress(k)}
+                                >
+                                  {k}
+                                </button>
+                              ))}
+                            </div>
+                            <div className="lcs-kb-row">
+                              {['4', '5', '6'].map(k => (
+                                <button 
+                                  key={k} 
+                                  type="button" 
+                                  className="lcs-kb-key"
+                                  onClick={() => handleKeyPress(k)}
+                                >
+                                  {k}
+                                </button>
+                              ))}
+                            </div>
+                            <div className="lcs-kb-row">
+                              {['7', '8', '9'].map(k => (
+                                <button 
+                                  key={k} 
+                                  type="button" 
+                                  className="lcs-kb-key"
+                                  onClick={() => handleKeyPress(k)}
+                                >
+                                  {k}
+                                </button>
+                              ))}
+                            </div>
+                            <div className="lcs-kb-row">
+                              <button 
+                                type="button" 
+                                className="lcs-kb-key is-zero"
+                                onClick={() => handleKeyPress('0')}
+                              >
+                                0
+                              </button>
+                              <button 
+                                type="button" 
+                                className="lcs-kb-key"
+                                onClick={() => handleKeyPress('.')}
+                              >
+                                .
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </>
+                  )}
               </div>
             )}
 
@@ -3362,7 +3694,7 @@ export default function App() {
                         );
                       })
                     ) : (
-                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', color: '#cbd5e0', fontSize: '11px', opacity: 0.6 }}>
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', color: sublabelColor, fontSize: '11px', opacity: 0.6 }}>
                         No mobile storage device connected.
                       </div>
                     )}

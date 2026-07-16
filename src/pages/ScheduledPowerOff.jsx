@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ToggleSwitch } from '../components/ToggleSwitch';
 import { SettingsRow } from '../components/SettingsRow';
 import { textTertiary } from '../styles/theme';
@@ -49,15 +49,9 @@ const WheelColumn = ({ range, value, onChange }) => {
     );
 };
 
-const TimePickerModal = ({ isOpen, onClose, onConfirm, initialHour, initialMinute, isDark }) => {
+const TimePickerModal = ({ onClose, onConfirm, initialHour, initialMinute, isDark }) => {
     const [tempHour, setTempHour] = useState(initialHour);
     const [tempMinute, setTempMinute] = useState(initialMinute);
-
-    useEffect(() => {
-        if (isOpen) { setTempHour(initialHour); setTempMinute(initialMinute); }
-    }, [isOpen, initialHour, initialMinute]);
-
-    if (!isOpen) return null;
 
     const hours = Array.from({ length: 24 }, (_, i) => i);
     const minutes = Array.from({ length: 60 }, (_, i) => i);
@@ -133,9 +127,11 @@ export const ScheduledPowerOff = ({ isDark, isEnabled, setIsEnabled, powerOffTim
                 )}
             </div>
 
-            <TimePickerModal isOpen={isPickerOpen} onClose={handlePickerClose} onConfirm={handlePickerConfirm}
-                initialHour={hour} initialMinute={minute} isDark={isDark}
-            />
+            {isPickerOpen && (
+                <TimePickerModal onClose={handlePickerClose} onConfirm={handlePickerConfirm}
+                    initialHour={hour} initialMinute={minute} isDark={isDark}
+                />
+            )}
         </div>
     );
 };

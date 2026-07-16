@@ -16,7 +16,6 @@ import {
   VolumeX,
   Monitor,
   Laptop,
-  Smartphone,
   Snowflake,
   Sun,
   Moon,
@@ -241,19 +240,7 @@ function BottomDock({ locked, muted, setLocked, setMuted }) {
   );
 }
 
-function DisconnectedScreen() {
-  return (
-    <div className="ndp-disconnected-screen">
-      <div className="ndp-disconnected-mark">
-        <Link size={52} />
-      </div>
-      <strong>Disconnected</strong>
-      <span>Please check the network connection and bind status</span>
-    </div>
-  );
-}
-
-function LockScreen({ setLocked, passwordUnlockEnabled, password = '8888', isDark }) {
+function LockScreen({ setLocked, passwordUnlockEnabled, password = '8888' }) {
   const [enteringPin, setEnteringPin] = useState(false);
   const [pin, setPin] = useState('');
   const [error, setError] = useState(false);
@@ -531,7 +518,7 @@ function PowerPage() {
   );
 }
 
-function HomePage({ navConfig, homepageWidgets }) {
+function HomePage({ homepageWidgets }) {
   const [activeBtn, setActiveBtn] = useState(null);
 
   const handlePress = (btn) => {
@@ -1460,7 +1447,6 @@ function SettingsPage({
   deviceName, 
   setDeviceName, 
   isDark,
-  cloudServerAddress,
   onCloudServerAddressClick
 }) {
   const [tempDeviceName, setTempDeviceName] = useState('');
@@ -1935,8 +1921,7 @@ function PasswordUnlockSubpage({
   passwordUnlockEnabled, 
   setPasswordUnlockEnabled, 
   onPasswordSettingClick,
-  setSettingsSubpage,
-  isDark 
+  setSettingsSubpage
 }) {
   return (
     <div className="ndp-page ndp-scroll-page">
@@ -1970,7 +1955,7 @@ function PasswordUnlockSubpage({
   );
 }
 
-function PasswordSettingSubpage({ password, setPassword, setSettingsSubpage, setPasswordUnlockEnabled }) {
+function PasswordSettingSubpage({ setPassword, setSettingsSubpage, setPasswordUnlockEnabled }) {
   const [phase, setPhase] = useState('enter'); // 'enter' or 'confirm'
   const [firstPin, setFirstPin] = useState('');
   const [currentPin, setCurrentPin] = useState('');
@@ -2119,7 +2104,7 @@ function Content({
   cloudServerAddress,
   onCloudServerAddressClick
 }) {
-  if (activeTab === 'home') return <HomePage navConfig={navConfig} homepageWidgets={homepageWidgets} />;
+  if (activeTab === 'home') return <HomePage homepageWidgets={homepageWidgets} />;
   if (activeTab === 'video') return <VideoPage />;
   if (activeTab === 'serial') return <SerialPage />;
   if (activeTab === 'volume') return <VolumePage />;
@@ -2252,8 +2237,11 @@ export default function Ndp600PortraitApp() {
         setLockCountdown(prev => prev - 1);
       }, 1000);
     } else if (isLocking && lockCountdown === 0) {
-      setLocked(true);
-      setIsLocking(false);
+      const lockTimer = setTimeout(() => {
+        setLocked(true);
+        setIsLocking(false);
+      }, 0);
+      return () => clearTimeout(lockTimer);
     }
     return () => clearInterval(timer);
   }, [isLocking, lockCountdown]);

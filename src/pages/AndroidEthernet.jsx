@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 // Simple helper to check if a string is a valid IPv4 address
 const isValidIp = (ip) => {

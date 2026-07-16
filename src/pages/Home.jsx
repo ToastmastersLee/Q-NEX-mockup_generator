@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ToggleSwitch } from '../components/ToggleSwitch';
 import { LargeButton, RowButton } from '../components/Buttons';
 import { PowerControlIcon, VideoSwitchIcon } from '../assets/Icons';

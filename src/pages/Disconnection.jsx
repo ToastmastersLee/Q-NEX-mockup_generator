@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Settings, Lock, Loader2, CheckCircle } from 'lucide-react';
 
 const EditableLabel = ({ value, onChange, className }) => {

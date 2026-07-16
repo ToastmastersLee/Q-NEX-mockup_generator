@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { 
     SerialIcon, PowerControlIcon, VideoSwitchIcon, 
     AirConditionerIcon, ProjectorScreenIcon, RemoteControlIcon 

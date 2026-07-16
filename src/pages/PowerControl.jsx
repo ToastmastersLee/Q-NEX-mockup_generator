@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ToggleSwitch } from '../components/ToggleSwitch';
 
 export const PowerControl = ({ isDark }) => {

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { ChevronRight } from 'lucide-react';
 import { settingsRow, settingsLabel, textSecondary, chevronColor } from '../styles/theme';
 

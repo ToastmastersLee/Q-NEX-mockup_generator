@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { HdmiIcon, DocCamIcon } from '../assets/Icons';
 import * as LucideIcons from 'lucide-react';
 

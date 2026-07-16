@@ -1,4 +1,3 @@
-import React from 'react';
 import { SettingsRow } from '../components/SettingsRow';
 
 export const Customize = ({ isDark, onItemClick }) => {

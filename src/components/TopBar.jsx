@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Home, RefreshCw, Link as LinkIcon, Settings, Lock, ChevronLeft } from 'lucide-react';
 
 export const TopBar = ({ 
@@ -46,8 +46,18 @@ export const TopBar = ({
             </div>
             
             {title && (
-                <div className={`absolute left-1/2 -translate-x-1/2 text-2xl font-bold tracking-wide ${isDark ? 'text-white' : 'text-black'}`}>
-                    {title}
+                <div className={`absolute left-1/2 -translate-x-1/2 w-[360px] flex justify-center items-center h-full ${isDark ? 'text-white' : 'text-black'}`}>
+                    <div className="w-full text-center flex flex-col justify-center items-center">
+                        {typeof title === 'string' ? (
+                            <span className="text-xl font-bold">
+                                {title}
+                            </span>
+                        ) : (
+                            <div className="w-full font-bold">
+                                {title}
+                            </div>
+                        )}
+                    </div>
                 </div>
             )}
 

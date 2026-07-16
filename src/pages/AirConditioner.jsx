@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Sun, Snowflake, Wind, Droplet, Flame, Fan, DropletOff } from 'lucide-react';
+import { useState, useRef, useEffect, useCallback } from 'react';
+import { Sun, Snowflake, Wind, Flame, Fan, DropletOff } from 'lucide-react';
 import { ToggleSwitch } from '../components/ToggleSwitch';
 
 const CircularSlider = ({ value, onChange, min, max, isDark, isOn }) => {
@@ -32,35 +32,7 @@ const CircularSlider = ({ value, onChange, min, max, isDark, isOn }) => {
         ].join(" ");
     };
 
-    const handlePointerDown = (e) => {
-        setIsDragging(true);
-        updateValueFromEvent(e);
-    };
-
-    const handlePointerMove = (e) => {
-        if (!isDragging) return;
-        updateValueFromEvent(e);
-    };
-
-    const handlePointerUp = () => {
-        setIsDragging(false);
-    };
-
-    useEffect(() => {
-        if (isDragging) {
-            window.addEventListener('pointermove', handlePointerMove);
-            window.addEventListener('pointerup', handlePointerUp);
-        } else {
-            window.removeEventListener('pointermove', handlePointerMove);
-            window.removeEventListener('pointerup', handlePointerUp);
-        }
-        return () => {
-            window.removeEventListener('pointermove', handlePointerMove);
-            window.removeEventListener('pointerup', handlePointerUp);
-        };
-    }, [isDragging]);
-
-    const updateValueFromEvent = (e) => {
+    const updateValueFromEvent = useCallback((e) => {
         if (!svgRef.current) return;
         const rect = svgRef.current.getBoundingClientRect();
         const x = e.clientX - rect.left - center;
@@ -78,14 +50,34 @@ const CircularSlider = ({ value, onChange, min, max, isDark, isOn }) => {
         } else if (angle < startAngle) {
             angle += 360;
         }
-        
-        angle = Math.max(startAngle, Math.min(endAngle, angle));
-        
+
         const percentage = (angle - startAngle) / angleRange;
-        let newValue = min + percentage * (max - min);
-        newValue = Math.round(newValue);
+        const newValue = Math.round(min + percentage * (max - min));
         onChange(Math.max(min, Math.min(max, newValue)));
+    }, [min, max, onChange, startAngle, angleRange]);
+
+    const handlePointerDown = (e) => {
+        setIsDragging(true);
+        updateValueFromEvent(e);
     };
+
+    useEffect(() => {
+        const handleMove = (e) => {
+            updateValueFromEvent(e);
+        };
+        const handleUp = () => {
+            setIsDragging(false);
+        };
+
+        if (isDragging) {
+            window.addEventListener('pointermove', handleMove);
+            window.addEventListener('pointerup', handleUp);
+        }
+        return () => {
+            window.removeEventListener('pointermove', handleMove);
+            window.removeEventListener('pointerup', handleUp);
+        };
+    }, [isDragging, updateValueFromEvent]);
 
     const currentAngle = startAngle + ((value - min) / (max - min)) * angleRange;
     const thumbPos = polarToCartesian(center, center, radius, currentAngle);
