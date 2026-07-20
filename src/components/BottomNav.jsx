@@ -3,7 +3,7 @@ import {
     SerialIcon, PowerControlIcon, VideoSwitchIcon, 
     AirConditionerIcon, ProjectorScreenIcon, RemoteControlIcon 
 } from '../assets/Icons';
-import { Power, Volume2 } from 'lucide-react';
+import { Power, Volume2, Music } from 'lucide-react';
 
 export const BottomNav = ({ isDark, activeTab, setActiveTab, navConfig, allNavItems }) => {
     const bottomBarClass = isDark ? 'bg-transparent border-none' : 'bg-white border-t-2 border-black';
@@ -37,6 +37,7 @@ export const BottomNav = ({ isDark, activeTab, setActiveTab, navConfig, allNavIt
                          item.icon === 'projectorScreen' ? <ProjectorScreenIcon className="w-7 h-7" /> : 
                          item.icon === 'remoteControl' ? <RemoteControlIcon className="w-7 h-7" /> : 
                          item.icon === 'volume-2' ? <Volume2 className="w-7 h-7" /> : 
+                         item.icon === 'audioSwitch' ? <Music className="w-7 h-7" /> :
                          null}
                         <span className={`text-[11px] tracking-wider whitespace-nowrap ${activeTab === item.id ? 'font-bold' : 'font-normal'}`}>{item.label}</span>
                     </button>

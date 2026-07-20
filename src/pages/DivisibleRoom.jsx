@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
-import { ChevronRight, Plus, Check, ChevronLeft, Wifi, Loader2 } from 'lucide-react';
+import { ChevronRight, Plus, Check, ChevronLeft, Loader2 } from 'lucide-react';
 import { ToggleSwitch } from '../components/ToggleSwitch';
 import nmpWireframe from '../assets/NMP211-Wireframe-Orange.png';
 
@@ -117,9 +117,7 @@ export const DivisibleRoom = ({
     // Local states
     const [isEditingPrimary, setIsEditingPrimary] = useState(false);
     const [tempPrimaryName, setTempPrimaryName] = useState(primaryRoomNmpName);
-    
-    // Testing state for Step 2
-    const [testStatus, setTestStatus] = useState('idle'); // 'idle' | 'testing' | 'success'
+    const [testStatus] = useState('idle'); // 'idle' | 'testing' | 'success'
     
 
     

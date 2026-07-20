@@ -17,6 +17,8 @@ import { Customize } from './pages/Customize';
 import { ScheduledPowerOff } from './pages/ScheduledPowerOff';
 import { SerialControl } from './pages/SerialControl';
 import { DivisibleRoom } from './pages/DivisibleRoom';
+import { AudioSwitch } from './pages/AudioSwitch';
+import { NavigationBarConfig } from './pages/NavigationBarConfig';
 import { Sun, Moon } from 'lucide-react';
 
 const FaqModal = ({ isOpen, onClose, isDark }) => {
@@ -162,7 +164,6 @@ function App() {
   // Connection Testing States (Lifting up from DivisibleRoom)
   const [simulatedBranch, setSimulatedBranch] = useState('success'); // 'success' | 'failed'
   const [testResult, setTestResult] = useState('loading'); // 'loading' | 'success' | 'failed'
-  const [isTesting, setIsTesting] = useState(false);
   const [isFaqOpen, setIsFaqOpen] = useState(false);
 
   const simulatedBranchRef = useRef(simulatedBranch);
@@ -172,11 +173,8 @@ function App() {
 
   useEffect(() => {
     if (settingsSubPage === 'control-binding') {
-      setIsTesting(true);
-      setTestResult('loading');
       const timer = setTimeout(() => {
         setTestResult(simulatedBranchRef.current);
-        setIsTesting(false);
       }, 2000);
       return () => clearTimeout(timer);
     }
@@ -185,7 +183,6 @@ function App() {
   const handleSelectBranch = (branch) => {
     setSimulatedBranch(branch);
     setTestResult(branch);
-    setIsTesting(false);
   };
 
   // Automatically default connection instruction page based on checked device count
@@ -206,7 +203,8 @@ function App() {
       serial: true,
       air: true,
       projector: true,
-      remote: true
+      remote: true,
+      audioSwitch: false // Obsolete NMP211 feature, default hidden
   });
 
   const isDark = theme === 'dark';
@@ -252,7 +250,8 @@ function App() {
       { id: 'serial', label: 'Serial Control', icon: 'serial' },
       { id: 'air', label: 'Air Conditioner', icon: 'airConditioner' },
       { id: 'projector', label: 'Projection Screen', icon: 'projectorScreen' },
-      { id: 'remote', label: 'Remote Control', icon: 'remoteControl' }
+      { id: 'remote', label: 'Remote Control', icon: 'remoteControl' },
+      { id: 'audioSwitch', label: 'Audio Switch', icon: 'audioSwitch', isObsolete: true }
   ];
 
   const renderContent = () => {
@@ -316,6 +315,10 @@ function App() {
           );
       }
       
+      if (activeTab === 'audioSwitch') {
+          return <AudioSwitch isDark={isDark} />;
+      }
+
       if (activeTab === 'settings') {
           if (settingsSubPage === 'customize') {
               return (
@@ -324,8 +327,20 @@ function App() {
                       onItemClick={(subItem) => {
                           if (subItem === 'Scheduled Power-Off') {
                               setSettingsSubPage('power-off');
+                          } else if (subItem === 'Navigation bar') {
+                              setSettingsSubPage('navigation-bar');
                           }
                       }}
+                  />
+              );
+          }
+          if (settingsSubPage === 'navigation-bar') {
+              return (
+                  <NavigationBarConfig 
+                      isDark={isDark}
+                      navConfig={navConfig}
+                      setNavConfig={setNavConfig}
+                      allNavItems={allNavItems}
                   />
               );
           }
@@ -499,6 +514,7 @@ function App() {
                                 activeTab === 'settings'
                                     ? (() => {
                                           if (settingsSubPage === 'customize') return 'Customize';
+                                          if (settingsSubPage === 'navigation-bar') return 'Navigation bar';
                                           if (settingsSubPage === 'power-off') return 'Scheduled Power-Off';
                                           if (settingsSubPage === 'divisible-room') return 'Divisible Room Mode';
                                           if (settingsSubPage === 'device-select') {
@@ -535,11 +551,13 @@ function App() {
                                           }
                                           return 'Setting';
                                       })()
-                                    : ''
+                                    : activeTab === 'audioSwitch'
+                                        ? 'Audio Switch'
+                                        : ''
                             }
                             showBackButton={activeTab === 'settings' && settingsSubPage !== null}
                             onBack={() => {
-                                if (settingsSubPage === 'power-off') {
+                                if (settingsSubPage === 'power-off' || settingsSubPage === 'navigation-bar') {
                                     setSettingsSubPage('customize');
                                 } else if (settingsSubPage === 'customize') {
                                     setSettingsSubPage(null);

@@ -13,7 +13,12 @@ import {
   Moon, 
   Mic, 
   Sliders,
-  Lock
+  Lock,
+  User,
+  RotateCw,
+  Video,
+  Phone,
+  Plus
 } from 'lucide-react';
 import classroomFeed from '../../assets/classroom_feed.png';
 import ch1Ppt from '../../assets/ch1_ppt.png';
@@ -35,6 +40,79 @@ export default function App() {
   const [isRecording, setIsRecording] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const [recordSeconds, setRecordSeconds] = useState(0);
+  
+  // Interactive UI overlay states
+  const [interactiveSubPage, setInteractiveSubPage] = useState('home'); // 'home' | 'start' | 'join'
+  const [showSipCallModal, setShowSipCallModal] = useState(false);
+  const [sipUserName, setSipUserName] = useState('');
+  const [joinClassId, setJoinClassId] = useState('');
+  const [joinClassPassword, setJoinClassPassword] = useState('');
+  const [isInteractiveSessionActive, setIsInteractiveSessionActive] = useState(false);
+  const [addressBook, setAddressBook] = useState([
+    { id: 'addr1', name: 'Room 101', status: 'online', checked: false },
+    { id: 'addr2', name: 'Room 102', status: 'offline', checked: false },
+    { id: 'addr3', name: 'Room 201', status: 'online', checked: false },
+    { id: 'addr4', name: 'Room 202', status: 'offline', checked: false },
+    { id: 'addr5', name: 'Room 301', status: 'online', checked: false },
+    { id: 'addr6', name: 'Room 302', status: 'online', checked: false },
+    { id: 'addr7', name: 'Room 401', status: 'offline', checked: false },
+  ]);
+
+  // Dropdown menus states
+  const [lockScreenTime, setLockScreenTime] = useState('2minute');
+  const [isLockScreenDropdownOpen, setIsLockScreenDropdownOpen] = useState(false);
+  const [timeFormat, setTimeFormat] = useState('DD-MM-YYYY');
+  const [isTimeFormatDropdownOpen, setIsTimeFormatDropdownOpen] = useState(false);
+  const [hourFormat, setHourFormat] = useState('24 Hours Format');
+  const [isHourFormatDropdownOpen, setIsHourFormatDropdownOpen] = useState(false);
+
+  // Net Detect states
+  const [pingAddress, setPingAddress] = useState('www.bing.com');
+  const [pingConsoleLines, setPingConsoleLines] = useState([]);
+  const [isPinging, setIsPinging] = useState(false);
+
+  // Version Detect states
+  const [versionDetectState, setVersionDetectState] = useState('idle'); // 'idle' | 'detecting' | 'latest'
+
+  // Per-channel configurations for RTSP & PTZ
+  const [settingsChannelConfigs, setSettingsChannelConfigs] = useState({
+    Teacher_C: {
+      raw: 'RTSP',
+      url: 'rtsp://admin:20210421@192.167.32.65/sub',
+      ptzEnabled: false,
+      ptzIp: '127.0.0.2',
+      ptzPort: '8642',
+      ptzProtocol: 'Visca',
+      ptzType: 'UDP'
+    },
+    Student_C: {
+      raw: 'RTSP',
+      url: 'rtsp://admin:20210421@192.167.32.66/sub',
+      ptzEnabled: false,
+      ptzIp: '127.0.0.2',
+      ptzPort: '8643',
+      ptzProtocol: 'Visca',
+      ptzType: 'UDP'
+    },
+    Teacher_P: {
+      raw: 'RTSP',
+      url: 'rtsp://admin:20210421@192.167.32.65/main',
+      ptzEnabled: false,
+      ptzIp: '127.0.0.2',
+      ptzPort: '5858',
+      ptzProtocol: 'Visca',
+      ptzType: 'UDP'
+    },
+    Student_P: {
+      raw: 'RTSP',
+      url: 'rtsp://admin:20210421@192.167.32.68/sub',
+      ptzEnabled: false,
+      ptzIp: '127.0.0.2',
+      ptzPort: '8644',
+      ptzProtocol: 'Visca',
+      ptzType: 'UDP'
+    }
+  });
   
   const [isLive, setIsLive] = useState(false);
   const [selectedChannel, setSelectedChannel] = useState('ch3'); // default active channel (Teacher_C)
@@ -175,13 +253,6 @@ export default function App() {
 
   // Channel sub-tab settings states
   const [settingsChannelActive, setSettingsChannelActive] = useState('Teacher_C'); // 'Teacher_C' | 'Student_C' | 'Teacher_P' | 'Student_P'
-  const [settingsChannelRaw, setSettingsChannelRaw] = useState('RTSP'); // 'Close' | 'RTSP' | 'USB Camera'
-  const [settingsChannelRtspUrl, setSettingsChannelRtspUrl] = useState('rtsp://admin:20210421@192.167.32.65/sub');
-  const [settingsChannelPtzEnable, setSettingsChannelPtzEnable] = useState(false);
-  const [settingsChannelPtzIp, setSettingsChannelPtzIp] = useState('127.0.0.2');
-  const [settingsChannelPtzPort, setSettingsChannelPtzPort] = useState('8642');
-  const [settingsChannelPtzProtocol] = useState('Visca');
-  const [settingsChannelPtzType] = useState('UDP');
 
   // Server sub-tab settings states
   const [settingsServerIp, setSettingsServerIp] = useState('192.168.3.37');
@@ -220,8 +291,10 @@ export default function App() {
   const [settingsSipPassword, setSettingsSipPassword] = useState('123456');
   const [settingsSipNatRoute, setSettingsSipNatRoute] = useState(false);
   const [settingsSipTransmission, setSettingsSipTransmission] = useState('TCP'); // 'TCP' | 'UDP'
-  const [settingsSipVideoOutput] = useState('PGM');
-  const [settingsSipVideoQuality] = useState('FHD');
+  const [settingsSipVideoOutput, setSettingsSipVideoOutput] = useState('PGM');
+  const [isSipVideoOutputDropdownOpen, setIsSipVideoOutputDropdownOpen] = useState(false);
+  const [settingsSipVideoQuality, setSettingsSipVideoQuality] = useState('FHD');
+  const [isSipVideoQualityDropdownOpen, setIsSipVideoQualityDropdownOpen] = useState(false);
   const [settingsSipDualStream, setSettingsSipDualStream] = useState(false);
   const [settingsSipPipLayout, setSettingsSipPipLayout] = useState(4); // 1 | 2 | 3 | 4
 
@@ -331,6 +404,62 @@ export default function App() {
     }
   };
 
+  const handleStartPing = () => {
+    if (isPinging) return;
+    setIsPinging(true);
+    setPingConsoleLines([]);
+    
+    const address = pingAddress || 'www.bing.com';
+    const lines = [
+      `PING ${address} (202.89.233.100): 56 data bytes`
+    ];
+    setPingConsoleLines([...lines]);
+    
+    let count = 0;
+    const interval = setInterval(() => {
+      if (count < 3) {
+        const time = (41 + Math.random() * 2).toFixed(3);
+        const newLine = `64 bytes from 202.89.233.100: seq=${count} ttl=115 time=${time} ms`;
+        setPingConsoleLines(prev => [...prev, newLine]);
+        count++;
+      } else {
+        clearInterval(interval);
+        
+        const finalLines = [
+          '',
+          `--- ${address} ping statistics ---`,
+          '3 packets transmitted, 3 packets received, 0% packet loss',
+          'round-trip min/avg/max = 41.906/42.086/42.328 ms'
+        ];
+        setPingConsoleLines(prev => [...prev, ...finalLines]);
+        setIsPinging(false);
+      }
+    }, 800);
+  };
+
+  const handleClearPing = () => {
+    setPingConsoleLines([]);
+    setIsPinging(false);
+  };
+
+  const handleVersionCheck = () => {
+    if (versionDetectState === 'detecting') return;
+    setVersionDetectState('detecting');
+    setTimeout(() => {
+      setVersionDetectState('latest');
+    }, 1500);
+  };
+
+  const updateChannelConfig = (key, value) => {
+    setSettingsChannelConfigs(prev => ({
+      ...prev,
+      [settingsChannelActive]: {
+        ...prev[settingsChannelActive],
+        [key]: value
+      }
+    }));
+  };
+
   const displayTab = (activeSettingsTab === 'advance' && showAdvanceAuth) ? previousSettingsTab : activeSettingsTab;
 
   // Handle playback timer
@@ -372,15 +501,31 @@ export default function App() {
       const dd = String(now.getDate()).padStart(2, '0');
       const mm = String(now.getMonth() + 1).padStart(2, '0');
       const yyyy = now.getFullYear();
-      const hh = String(now.getHours()).padStart(2, '0');
+      const datePart = timeFormat === 'DD-MM-YYYY' 
+        ? `${dd}-${mm}-${yyyy}` 
+        : `${yyyy}-${mm}-${dd}`;
+      
+      let hours = now.getHours();
       const min = String(now.getMinutes()).padStart(2, '0');
       const ss = String(now.getSeconds()).padStart(2, '0');
-      setTimeString(`${dd}-${mm}-${yyyy} ${hh}:${min}:${ss}`);
+      
+      let timePart;
+      if (hourFormat === '24 Hours Format') {
+        const hh = String(hours).padStart(2, '0');
+        timePart = `${hh}:${min}:${ss}`;
+      } else {
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12;
+        hours = hours ? hours : 12;
+        const hh = String(hours).padStart(2, '0');
+        timePart = `${hh}:${min}:${ss} ${ampm}`;
+      }
+      setTimeString(`${datePart} ${timePart}`);
     };
     updateClock();
     const interval = setInterval(updateClock, 1000);
     return () => clearInterval(interval);
-  }, []);
+  }, [timeFormat, hourFormat]);
 
   // Fluctuating Mic Level simulation
   useEffect(() => {
@@ -477,6 +622,19 @@ export default function App() {
     { id: 'ch6', name: 'Student_P', label: 'CH6', type: 'live', pos: 'center' },
     { id: 'ch7', name: 'Interactive', label: 'CH7', type: 'live', pos: 'center' }
   ];
+
+  const getInteractiveTimeParts = () => {
+    const now = new Date();
+    const timeVal = now.toTimeString().split(' ')[0]; // HH:MM:SS
+    const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const dayVal = dayNames[now.getDay()];
+    const dd = String(now.getDate()).padStart(2, '0');
+    const mm = String(now.getMonth() + 1).padStart(2, '0');
+    const yyyy = now.getFullYear();
+    const dateVal = `${dd}-${mm}-${yyyy}`;
+    return { timeVal, dateVal, dayVal };
+  };
+  const { timeVal: interactiveTime, dateVal: interactiveDate, dayVal: interactiveDay } = getInteractiveTimeParts();
 
   if (isLocked) {
     return <LockScreen isDark={theme === 'dark'} onUnlock={() => setIsLocked(false)} />;
@@ -1731,9 +1889,15 @@ export default function App() {
 
                       <button 
                         type="button" 
-                        className="lcs-pill-btn-sm"
+                        className={`lcs-pill-btn-sm ${activeMenuSection === 'interactive' ? 'is-active' : ''}`}
                         onClick={() => {
-                          setSelectedChannel(prev => prev === 'ch3' ? 'ch4' : 'ch3');
+                          if (activeMenuSection === 'interactive') {
+                            setActiveMenuSection(null);
+                          } else {
+                            setActiveMenuSection('interactive');
+                            setInteractiveSubPage('home');
+                            setIsMenuOpen(false);
+                          }
                         }}
                       >
                         <span>Interactive</span>
@@ -2001,12 +2165,38 @@ export default function App() {
                       </div>
 
                       {/* Row 4: Lock Screen */}
-                      <div className="lcs-settings-row">
+                      <div className="lcs-settings-row" style={{ position: 'relative', zIndex: 120 }}>
                         <span className="lcs-settings-label">Lock Screen:</span>
-                        <div className="lcs-select-pill" style={{ width: '160px' }}>
-                          <span>Never</span>
+                        <div 
+                          className="lcs-select-pill" 
+                          style={{ width: '160px', cursor: 'pointer', position: 'relative' }}
+                          onClick={() => {
+                            setIsLockScreenDropdownOpen(!isLockScreenDropdownOpen);
+                            setIsTimeFormatDropdownOpen(false);
+                            setIsHourFormatDropdownOpen(false);
+                          }}
+                        >
+                          <span>{lockScreenTime}</span>
                           <span>▼</span>
                         </div>
+                        {isLockScreenDropdownOpen && (
+                          <div className="lcs-settings-dropdown-menu">
+                            {['2minute', '5minute', '10minute', '15minute', 'Never'].map(opt => (
+                              <div 
+                                key={opt}
+                                className={`lcs-settings-dropdown-item ${lockScreenTime === opt ? 'is-selected' : ''}`}
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setLockScreenTime(opt);
+                                  setIsLockScreenDropdownOpen(false);
+                                  showToast(`Lock Screen set to ${opt}`);
+                                }}
+                              >
+                                {opt}
+                              </div>
+                            ))}
+                          </div>
+                        )}
                       </div>
 
                       {/* Row 5: Other Set */}
@@ -2052,19 +2242,72 @@ export default function App() {
                             </div>
                           </div>
 
-                          <div className="lcs-others-col-right">
-                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
+                          <div className="lcs-others-col-right" style={{ display: 'flex', flexDirection: 'column', gap: '8px', position: 'relative', zIndex: 110 }}>
+                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px', position: 'relative' }}>
                               <span style={{ fontSize: '11px' }}>Time Format:</span>
-                              <div className="lcs-select-pill" style={{ width: '160px' }}>
-                                <span>DD-MM-YYYY</span>
+                              <div 
+                                className="lcs-select-pill" 
+                                style={{ width: '160px', cursor: 'pointer' }}
+                                onClick={() => {
+                                  setIsTimeFormatDropdownOpen(!isTimeFormatDropdownOpen);
+                                  setIsLockScreenDropdownOpen(false);
+                                  setIsHourFormatDropdownOpen(false);
+                                }}
+                              >
+                                <span>{timeFormat}</span>
                                 <span>▼</span>
                               </div>
+                              {isTimeFormatDropdownOpen && (
+                                <div className="lcs-settings-dropdown-menu format-dropdown" style={{ top: '30px' }}>
+                                  {['DD-MM-YYYY', 'YYYY-MM-DD'].map(opt => (
+                                    <div 
+                                      key={opt}
+                                      className={`lcs-settings-dropdown-item ${timeFormat === opt ? 'is-selected' : ''}`}
+                                      onClick={(e) => {
+                                        e.stopPropagation();
+                                        setTimeFormat(opt);
+                                        setIsTimeFormatDropdownOpen(false);
+                                        showToast(`Time Format set to ${opt}`);
+                                      }}
+                                    >
+                                      {opt}
+                                    </div>
+                                  ))}
+                                </div>
+                              )}
                             </div>
-                            <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '4px' }}>
-                              <div className="lcs-select-pill" style={{ width: '160px' }}>
-                                <span>24 Hours Format</span>
+                            
+                            <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '4px', position: 'relative' }}>
+                              <div 
+                                className="lcs-select-pill" 
+                                style={{ width: '160px', cursor: 'pointer' }}
+                                onClick={() => {
+                                  setIsHourFormatDropdownOpen(!isHourFormatDropdownOpen);
+                                  setIsLockScreenDropdownOpen(false);
+                                  setIsTimeFormatDropdownOpen(false);
+                                }}
+                              >
+                                <span>{hourFormat}</span>
                                 <span>▼</span>
                               </div>
+                              {isHourFormatDropdownOpen && (
+                                <div className="lcs-settings-dropdown-menu hour-dropdown" style={{ top: '34px' }}>
+                                  {['12 Hours Format', '24 Hours Format'].map(opt => (
+                                    <div 
+                                      key={opt}
+                                      className={`lcs-settings-dropdown-item ${hourFormat === opt ? 'is-selected' : ''}`}
+                                      onClick={(e) => {
+                                        e.stopPropagation();
+                                        setHourFormat(opt);
+                                        setIsHourFormatDropdownOpen(false);
+                                        showToast(`Hour Format set to ${opt}`);
+                                      }}
+                                    >
+                                      {opt}
+                                    </div>
+                                  ))}
+                                </div>
+                              )}
                             </div>
                           </div>
                         </div>
@@ -2234,17 +2477,103 @@ export default function App() {
                           </div>
                         </div>
                       ) : (
-                        <div className="lcs-settings-row" style={{ flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '30px 20px', gap: '10px' }}>
-                          <span style={{ fontSize: '13px', color: '#00e676', fontWeight: 'bold' }}>Network connection is normal.</span>
-                          <span style={{ fontSize: '11px', color: '#a0aec0' }}>Ping Gateway (192.168.3.1) ... Success (0.8ms)</span>
+                        <div className="lcs-settings-net-detect-panel" style={{ display: 'flex', flexDirection: 'column', gap: '12px', flex: 1, padding: '8px 0', boxSizing: 'border-box' }}>
+                          {/* Controls bar */}
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                            <span style={{ fontSize: '12px', color: sublabelColor }}>Address:</span>
+                            <input 
+                              type="text" 
+                              className="lcs-net-detect-input"
+                              value={pingAddress}
+                              onChange={(e) => setPingAddress(e.target.value)}
+                              placeholder="www.bing.com"
+                              disabled={isPinging}
+                              style={{ 
+                                background: 'rgba(0,0,0,0.2)', 
+                                border: '1px solid rgba(255,255,255,0.1)', 
+                                color: '#fff', 
+                                padding: '4px 12px', 
+                                borderRadius: '999px',
+                                outline: 'none',
+                                fontSize: '12px',
+                                width: '200px'
+                              }}
+                            />
+                            
+                            <button 
+                              type="button" 
+                              className="lcs-net-detect-btn"
+                              onClick={handleStartPing}
+                              disabled={isPinging}
+                              style={{
+                                background: theme === 'light' ? '#e5e7eb' : 'rgba(255,255,255,0.06)',
+                                border: theme === 'light' ? '1px solid #d1d5db' : '1px solid rgba(255,255,255,0.1)',
+                                color: theme === 'light' ? '#1f2937' : '#fff',
+                                padding: '4px 16px',
+                                borderRadius: '999px',
+                                fontSize: '11px',
+                                fontWeight: '600',
+                                cursor: 'pointer'
+                              }}
+                            >
+                              {isPinging ? 'Detecting...' : 'Start Detect'}
+                            </button>
+                            
+                            <button 
+                              type="button" 
+                              className="lcs-net-detect-btn"
+                              onClick={handleClearPing}
+                              style={{
+                                background: theme === 'light' ? '#e5e7eb' : 'rgba(255,255,255,0.06)',
+                                border: theme === 'light' ? '1px solid #d1d5db' : '1px solid rgba(255,255,255,0.1)',
+                                color: theme === 'light' ? '#1f2937' : '#fff',
+                                padding: '4px 16px',
+                                borderRadius: '999px',
+                                fontSize: '11px',
+                                fontWeight: '600',
+                                cursor: 'pointer'
+                              }}
+                            >
+                              Clear
+                            </button>
+                          </div>
+
+                          {/* Monospaced Output terminal console */}
+                          <div className="lcs-net-detect-console" style={{ 
+                            flex: 1, 
+                            background: '#090a0f', 
+                            border: '1px solid rgba(255,255,255,0.05)', 
+                            borderRadius: '6px', 
+                            padding: '12px', 
+                            fontFamily: 'monospace', 
+                            fontSize: '11px', 
+                            color: '#e2e8f0', 
+                            overflowY: 'auto',
+                            minHeight: '140px',
+                            lineHeight: '1.5',
+                            whiteSpace: 'pre-wrap'
+                          }}>
+                            {pingConsoleLines.length > 0 ? (
+                              pingConsoleLines.map((line, index) => (
+                                <div key={index}>{line}</div>
+                              ))
+                            ) : (
+                              <div style={{ color: '#64748b', fontStyle: 'italic' }}>Console idle. Enter address and click 'Start Detect'.</div>
+                            )}
+                          </div>
                         </div>
                       )}
                     </div>
                   ) : displayTab === 'version' ? (
-                    <div className="lcs-settings-version-tab">
+                    <div className="lcs-settings-version-tab" style={{ position: 'relative', width: '100%', height: '100%', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                       {/* Subnav row with 'Check' button */}
                       <div className="lcs-settings-subnav-row">
-                        <button type="button" className="lcs-subnav-btn is-active">
+                        <button 
+                          type="button" 
+                          className="lcs-subnav-btn is-active"
+                          onClick={handleVersionCheck}
+                          disabled={versionDetectState === 'detecting'}
+                        >
                           Check
                         </button>
                       </div>
@@ -2253,11 +2582,11 @@ export default function App() {
                       <div className="lcs-settings-version-card">
                         <div className="lcs-version-row">
                           <span className="lcs-version-label">Model</span>
-                          <span className="lcs-version-value">LCS810</span>
+                          <span className="lcs-version-value">LCS810(i)</span>
                         </div>
                         <div className="lcs-version-row">
                           <span className="lcs-version-label">Main IP:</span>
-                          <span className="lcs-version-value">192.168.3.37</span>
+                          <span className="lcs-version-value">192.168.3.50</span>
                         </div>
                         <div className="lcs-version-row">
                           <span className="lcs-version-label">AEC Version:</span>
@@ -2269,13 +2598,40 @@ export default function App() {
                         </div>
                         <div className="lcs-version-row">
                           <span className="lcs-version-label">Sevice Version:</span>
-                          <span className="lcs-version-value">v8.1.665-alpha-ss528v100</span>
+                          <span className="lcs-version-value">v8.1.702-release-ss528v100</span>
                         </div>
                         <div className="lcs-version-row">
                           <span className="lcs-version-label">MAC Address:</span>
                           <span className="lcs-version-value">38-3a-21-00-8e-0c</span>
                         </div>
                       </div>
+
+                      {/* Detecting Loading Modal */}
+                      {versionDetectState === 'detecting' && (
+                        <div className="lcs-version-modal-overlay">
+                          <div className="lcs-version-modal-spinner-box">
+                            <div className="lcs-version-spinner" />
+                            <span style={{ fontSize: '13px', color: '#ffffff', marginTop: '16px', fontWeight: '500' }}>Detecting</span>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Latest Version Alert Pill Bar */}
+                      {versionDetectState === 'latest' && (
+                        <div className="lcs-version-modal-overlay">
+                          <div className="lcs-version-alert-bar">
+                            <div className="lcs-version-alert-check-icon">✓</div>
+                            <span style={{ fontSize: '12px', color: '#ffffff', fontWeight: '500', flex: 1 }}>It's the latest version</span>
+                            <button 
+                              type="button" 
+                              className="lcs-version-alert-close-btn"
+                              onClick={() => setVersionDetectState('idle')}
+                            >
+                              ✕
+                            </button>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   ) : displayTab === 'advance' ? (
                     <div className="lcs-settings-advance-tab">
@@ -2526,22 +2882,7 @@ export default function App() {
                                       key={chn}
                                       type="button"
                                       className={`lcs-subnav-btn ${isActive ? 'is-active' : ''}`}
-                                      onClick={() => {
-                                        setSettingsChannelActive(chn);
-                                        if (chn === 'Teacher_C') {
-                                          setSettingsChannelRtspUrl('rtsp://admin:20210421@192.167.32.65/sub');
-                                          setSettingsChannelPtzIp('127.0.0.2');
-                                        } else if (chn === 'Student_C') {
-                                          setSettingsChannelRtspUrl('rtsp://admin:20210421@192.167.32.66/sub');
-                                          setSettingsChannelPtzIp('127.0.0.3');
-                                        } else if (chn === 'Teacher_P') {
-                                          setSettingsChannelRtspUrl('rtsp://admin:20210421@192.167.32.67/sub');
-                                          setSettingsChannelPtzIp('127.0.0.4');
-                                        } else if (chn === 'Student_P') {
-                                          setSettingsChannelRtspUrl('rtsp://admin:20210421@192.167.32.68/sub');
-                                          setSettingsChannelPtzIp('127.0.0.5');
-                                        }
-                                      }}
+                                      onClick={() => setSettingsChannelActive(chn)}
                                     >
                                       {chn}
                                     </button>
@@ -2556,12 +2897,12 @@ export default function App() {
                                 <span className="lcs-settings-label" style={{ width: '140px' }}>Select Raw:</span>
                                 <div className="lcs-settings-options-group">
                                   {['Close', 'RTSP', 'USB Camera'].map((opt) => {
-                                    const isSelected = settingsChannelRaw === opt;
+                                    const isSelected = settingsChannelConfigs[settingsChannelActive].raw === opt;
                                     return (
                                       <div 
                                         key={opt} 
                                         className="lcs-radio-item"
-                                        onClick={() => setSettingsChannelRaw(opt)}
+                                        onClick={() => updateChannelConfig('raw', opt)}
                                       >
                                         <div className={`lcs-radio-circle ${isSelected ? 'is-checked' : ''}`}>
                                           {isSelected && <div className="lcs-radio-dot" />}
@@ -2572,15 +2913,15 @@ export default function App() {
                                   })}
                                 </div>
                               </div>
-                              {settingsChannelRaw === 'RTSP' && (
+                              {settingsChannelConfigs[settingsChannelActive].raw === 'RTSP' && (
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
                                   <span style={{ width: '140px' }} />
                                   <input 
                                     type="text" 
                                     className="lcs-settings-input" 
                                     style={{ width: '360px' }}
-                                    value={settingsChannelRtspUrl}
-                                    onChange={(e) => setSettingsChannelRtspUrl(e.target.value)}
+                                    value={settingsChannelConfigs[settingsChannelActive].url}
+                                    onChange={(e) => updateChannelConfig('url', e.target.value)}
                                   />
                                 </div>
                               )}
@@ -2590,8 +2931,8 @@ export default function App() {
                             <div className="lcs-settings-row" style={{ borderBottom: 'none' }}>
                               <span className="lcs-settings-label" style={{ width: '140px' }}>PTZ Control:</span>
                               <div 
-                                className={`lcs-toggle-switch ${settingsChannelPtzEnable ? 'is-on' : ''}`}
-                                onClick={() => setSettingsChannelPtzEnable(!settingsChannelPtzEnable)}
+                                className={`lcs-toggle-switch ${settingsChannelConfigs[settingsChannelActive].ptzEnabled ? 'is-on' : ''}`}
+                                onClick={() => updateChannelConfig('ptzEnabled', !settingsChannelConfigs[settingsChannelActive].ptzEnabled)}
                               >
                                 <div className="lcs-toggle-knob" />
                               </div>
@@ -2607,9 +2948,9 @@ export default function App() {
                                 <input 
                                   type="text" 
                                   className="lcs-settings-input"
-                                  disabled={!settingsChannelPtzEnable}
-                                  value={settingsChannelPtzIp}
-                                  onChange={(e) => setSettingsChannelPtzIp(e.target.value)}
+                                  disabled={!settingsChannelConfigs[settingsChannelActive].ptzEnabled}
+                                  value={settingsChannelConfigs[settingsChannelActive].ptzIp}
+                                  onChange={(e) => updateChannelConfig('ptzIp', e.target.value)}
                                 />
                               </div>
                               <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
@@ -2617,9 +2958,9 @@ export default function App() {
                                 <input 
                                   type="text" 
                                   className="lcs-settings-input"
-                                  disabled={!settingsChannelPtzEnable}
-                                  value={settingsChannelPtzPort}
-                                  onChange={(e) => setSettingsChannelPtzPort(e.target.value)}
+                                  disabled={!settingsChannelConfigs[settingsChannelActive].ptzEnabled}
+                                  value={settingsChannelConfigs[settingsChannelActive].ptzPort}
+                                  onChange={(e) => updateChannelConfig('ptzPort', e.target.value)}
                                 />
                               </div>
                             </div>
@@ -2628,15 +2969,31 @@ export default function App() {
                             <div className="lcs-settings-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', borderBottom: 'none' }}>
                               <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
                                 <span className="lcs-settings-label" style={{ width: '120px' }}>Protocol:</span>
-                                <div className="lcs-select-pill" style={{ width: '160px', opacity: settingsChannelPtzEnable ? 1 : 0.4 }}>
-                                  <span>{settingsChannelPtzProtocol}</span>
+                                <div 
+                                  className="lcs-select-pill" 
+                                  style={{ width: '160px', opacity: settingsChannelConfigs[settingsChannelActive].ptzEnabled ? 1 : 0.4, cursor: settingsChannelConfigs[settingsChannelActive].ptzEnabled ? 'pointer' : 'default' }}
+                                  onClick={() => {
+                                    if (settingsChannelConfigs[settingsChannelActive].ptzEnabled) {
+                                      updateChannelConfig('ptzProtocol', settingsChannelConfigs[settingsChannelActive].ptzProtocol === 'Visca' ? 'Pelco-D' : 'Visca');
+                                    }
+                                  }}
+                                >
+                                  <span>{settingsChannelConfigs[settingsChannelActive].ptzProtocol}</span>
                                   <span>▼</span>
                                 </div>
                               </div>
                               <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
                                 <span className="lcs-settings-label" style={{ width: '80px' }}>Type:</span>
-                                <div className="lcs-select-pill" style={{ width: '160px', opacity: settingsChannelPtzEnable ? 1 : 0.4 }}>
-                                  <span>{settingsChannelPtzType}</span>
+                                <div 
+                                  className="lcs-select-pill" 
+                                  style={{ width: '160px', opacity: settingsChannelConfigs[settingsChannelActive].ptzEnabled ? 1 : 0.4, cursor: settingsChannelConfigs[settingsChannelActive].ptzEnabled ? 'pointer' : 'default' }}
+                                  onClick={() => {
+                                    if (settingsChannelConfigs[settingsChannelActive].ptzEnabled) {
+                                      updateChannelConfig('ptzType', settingsChannelConfigs[settingsChannelActive].ptzType === 'UDP' ? 'TCP' : 'UDP');
+                                    }
+                                  }}
+                                >
+                                  <span>{settingsChannelConfigs[settingsChannelActive].ptzType}</span>
                                   <span>▼</span>
                                 </div>
                               </div>
@@ -3112,22 +3469,76 @@ export default function App() {
                           </div>
 
                           {/* Card 4: Video Output */}
-                          <div className="lcs-settings-advance-card">
-                            <div className="lcs-settings-row" style={{ borderBottom: 'none', display: 'flex', gap: '32px' }}>
+                          <div className="lcs-settings-advance-card" style={{ overflow: 'visible' }}>
+                            <div className="lcs-settings-row" style={{ borderBottom: 'none', display: 'flex', gap: '32px', overflow: 'visible' }}>
                               <span className="lcs-settings-label" style={{ width: '120px' }}>Video Output:</span>
-                              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                              
+                              {/* Default Video Output Dropdown */}
+                              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', position: 'relative' }}>
                                 <span style={{ fontSize: '11px', color: sublabelColor, width: '50px' }}>Default:</span>
-                                <div className="lcs-select-pill" style={{ width: '140px' }}>
+                                <div 
+                                  className="lcs-select-pill" 
+                                  style={{ width: '140px', cursor: 'pointer' }}
+                                  onClick={() => {
+                                    setIsSipVideoOutputDropdownOpen(!isSipVideoOutputDropdownOpen);
+                                    setIsSipVideoQualityDropdownOpen(false);
+                                  }}
+                                >
                                   <span>{settingsSipVideoOutput}</span>
                                   <span>▼</span>
                                 </div>
+                                {isSipVideoOutputDropdownOpen && (
+                                  <div className="lcs-settings-dropdown-menu" style={{ top: '30px', left: '62px', width: '140px' }}>
+                                    {['PGM', 'Lecture', 'Lecture2', 'Teacher_C', 'Student_C', 'Teacher_P', 'Student_P'].map(opt => (
+                                      <div 
+                                        key={opt}
+                                        className={`lcs-settings-dropdown-item ${settingsSipVideoOutput === opt ? 'is-selected' : ''}`}
+                                        onClick={(e) => {
+                                          e.stopPropagation();
+                                          setSettingsSipVideoOutput(opt);
+                                          setIsSipVideoOutputDropdownOpen(false);
+                                          showToast(`Video Output Default set to ${opt}`);
+                                        }}
+                                      >
+                                        {opt}
+                                      </div>
+                                    ))}
+                                  </div>
+                                )}
                               </div>
-                              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+
+                              {/* Quality Output Dropdown */}
+                              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', position: 'relative' }}>
                                 <span style={{ fontSize: '11px', color: sublabelColor, width: '50px' }}>Quality:</span>
-                                <div className="lcs-select-pill" style={{ width: '120px' }}>
+                                <div 
+                                  className="lcs-select-pill" 
+                                  style={{ width: '120px', cursor: 'pointer' }}
+                                  onClick={() => {
+                                    setIsSipVideoQualityDropdownOpen(!isSipVideoQualityDropdownOpen);
+                                    setIsSipVideoOutputDropdownOpen(false);
+                                  }}
+                                >
                                   <span>{settingsSipVideoQuality}</span>
                                   <span>▼</span>
                                 </div>
+                                {isSipVideoQualityDropdownOpen && (
+                                  <div className="lcs-settings-dropdown-menu" style={{ top: '30px', left: '62px', width: '120px' }}>
+                                    {['FHD', 'HD', 'SD'].map(opt => (
+                                      <div 
+                                        key={opt}
+                                        className={`lcs-settings-dropdown-item ${settingsSipVideoQuality === opt ? 'is-selected' : ''}`}
+                                        onClick={(e) => {
+                                          e.stopPropagation();
+                                          setSettingsSipVideoQuality(opt);
+                                          setIsSipVideoQualityDropdownOpen(false);
+                                          showToast(`Video Quality set to ${opt}`);
+                                        }}
+                                      >
+                                        {opt}
+                                      </div>
+                                    ))}
+                                  </div>
+                                )}
                               </div>
                             </div>
                           </div>
@@ -3728,6 +4139,366 @@ export default function App() {
                     </button>
                   </div>
                 </div>
+              </div>
+            )}
+
+            {activeMenuSection === 'interactive' && (
+              <div className="lcs-full-interactive-overlay">
+                
+                {/* Header bar */}
+                <div className="lcs-interactive-header">
+                  <div className="lcs-interactive-header-left">
+                    <div className="lcs-user-avatar">
+                      <User size={14} />
+                    </div>
+                    <span className="lcs-user-id">900011001</span>
+                  </div>
+                  
+                  <div className="lcs-interactive-header-right">
+                    <button 
+                      type="button" 
+                      className="lcs-interactive-header-icon" 
+                      onClick={() => showToast("Syncing data...")}
+                      title="Sync"
+                    >
+                      <RotateCw size={15} />
+                    </button>
+                    <button 
+                      type="button" 
+                      className="lcs-interactive-header-icon"
+                      onClick={() => showToast("Camera settings")}
+                      title="Camera"
+                    >
+                      <Video size={15} />
+                    </button>
+                    <button 
+                      type="button" 
+                      className="lcs-interactive-header-icon"
+                      onClick={() => showToast("Transmission settings")}
+                      title="Transmission"
+                    >
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: '15px', height: '15px' }}>
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                        <line x1="8" y1="21" x2="16" y2="21" />
+                        <line x1="12" y1="17" x2="12" y2="21" />
+                        <polygon points="10 8 15 10 10 12 10 8" fill="currentColor" />
+                      </svg>
+                    </button>
+                    <button 
+                      type="button" 
+                      className="lcs-interactive-header-icon close-btn"
+                      onClick={() => {
+                        setActiveMenuSection(null);
+                        setShowSipCallModal(false);
+                      }}
+                      title="Close"
+                    >
+                      ✕
+                    </button>
+                  </div>
+                </div>
+
+                {/* Sub-view Area */}
+                {interactiveSubPage === 'home' && (
+                  <div className="lcs-interactive-home">
+                    {/* Top Action Buttons row */}
+                    <div className="lcs-interactive-action-row">
+                      <button 
+                        type="button" 
+                        className="lcs-interactive-action-btn"
+                        onClick={() => setInteractiveSubPage('start')}
+                      >
+                        <div className="lcs-interactive-icon-box">
+                          <Play size={16} fill="currentColor" />
+                        </div>
+                        <span className="lcs-interactive-btn-text">Start</span>
+                      </button>
+
+                      <button 
+                        type="button" 
+                        className="lcs-interactive-action-btn"
+                        onClick={() => setInteractiveSubPage('join')}
+                      >
+                        <div className="lcs-interactive-icon-box">
+                          <Plus size={16} />
+                        </div>
+                        <span className="lcs-interactive-btn-text">Join Class</span>
+                      </button>
+
+                      <button 
+                        type="button" 
+                        className="lcs-interactive-action-btn"
+                        onClick={() => setShowSipCallModal(true)}
+                      >
+                        <div className="lcs-interactive-icon-box">
+                          <Phone size={14} fill="currentColor" />
+                        </div>
+                        <span className="lcs-interactive-btn-text">Call</span>
+                      </button>
+
+                      <button 
+                        type="button" 
+                        className="lcs-interactive-action-btn"
+                        onClick={() => showToast("Transmission mode activated")}
+                      >
+                        <div className="lcs-interactive-icon-box">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ width: '16px', height: '16px' }}>
+                            <polygon points="5 3 19 12 5 21 5 3" fill="currentColor" />
+                          </svg>
+                        </div>
+                        <span className="lcs-interactive-btn-text">Transmission mode</span>
+                      </button>
+                    </div>
+
+                    {/* Left and Right Split Panels */}
+                    <div className="lcs-interactive-panels">
+                      {/* Left: Clock Card */}
+                      <div className="lcs-interactive-card left-card">
+                        <div className="lcs-interactive-clock">{interactiveTime}</div>
+                        <div className="lcs-interactive-date">{interactiveDate}</div>
+                        <div className="lcs-interactive-day">{interactiveDay}</div>
+                      </div>
+
+                      {/* Right: Illustration Card */}
+                      <div className="lcs-interactive-card right-card">
+                        <div className="lcs-interactive-classroom-container">
+                          {/* SVG cartoon classroom illustration */}
+                          <svg viewBox="0 0 320 180" className="w-full h-full">
+                            {/* Wall background */}
+                            <rect width="320" height="180" fill="#2d3748" opacity="0.3" />
+                            
+                            {/* Blackboard */}
+                            <rect x="60" y="20" width="200" height="100" fill="#1b4d3e" rx="4" stroke="#4a5568" strokeWidth="3" />
+                            
+                            {/* Clock on left wall */}
+                            <circle cx="35" cy="40" r="12" fill="#edf2f7" stroke="#4a5568" strokeWidth="1.5" />
+                            <circle cx="35" cy="40" r="10" fill="none" stroke="#2d3748" strokeWidth="0.5" />
+                            <line x1="35" y1="40" x2="35" y2="33" stroke="#2d3748" strokeWidth="1.2" strokeLinecap="round" />
+                            <line x1="35" y1="40" x2="41" y2="40" stroke="#2d3748" strokeWidth="1" strokeLinecap="round" />
+                            
+                            {/* Teacher character drawing */}
+                            <g transform="translate(160, 110)">
+                              {/* Teacher Body / Dress (turquoise blue) */}
+                              <path d="M-12,30 C-12,5 -6,2 0,2 C6,2 12,5 12,30 Z" fill="#319795" />
+                              
+                              {/* Neck */}
+                              <rect x="-3" y="-5" width="6" height="8" fill="#fbd38d" />
+                              
+                              {/* Head / Face */}
+                              <circle cx="0" cy="-12" r="10" fill="#fbd38d" />
+                              
+                              {/* Orange hair */}
+                              <path d="M-11,-15 C-11,-25 11,-25 11,-15 C11,-8 8,-8 8,-12 C8,-15 -8,-15 -8,-12 C-8,-8 -11,-8 -11,-15 Z" fill="#dd6b20" />
+                              {/* Hair back bob */}
+                              <path d="M-10,-5 C-13,-5 -12,-15 -9,-15 C-9,-15 9,-15 9,-15 C12,-15 13,-5 10,-5 Z" fill="#dd6b20" />
+                              
+                              {/* Glasses */}
+                              <rect x="-6" y="-14" width="5" height="4" fill="none" stroke="#e53e3e" strokeWidth="1" rx="1" />
+                              <rect x="1" y="-14" width="5" height="4" fill="none" stroke="#e53e3e" strokeWidth="1" rx="1" />
+                              <line x1="-1" y1="-12" x2="1" y2="-12" stroke="#e53e3e" strokeWidth="1" />
+                              
+                              {/* Smile */}
+                              <path d="M-3,-7 Q0,-5 3,-7" fill="none" stroke="#2d3748" strokeWidth="1" strokeLinecap="round" />
+                              
+                              {/* Eyes */}
+                              <circle cx="-3.5" cy="-12" r="1" fill="#2d3748" />
+                              <circle cx="3.5" cy="-12" r="1" fill="#2d3748" />
+                            </g>
+
+                            {/* Podium (light grey) */}
+                            <path d="M135,120 L185,120 L180,165 L140,165 Z" fill="#cbd5e0" stroke="#718096" strokeWidth="1.5" />
+                            <rect x="133" y="115" width="54" height="6" fill="#e2e8f0" rx="1" stroke="#718096" strokeWidth="1" />
+
+                            {/* Floor line */}
+                            <line x1="10" y1="165" x2="310" y2="165" stroke="#cbd5e0" strokeWidth="2" strokeLinecap="round" />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Start sub-page */}
+                {interactiveSubPage === 'start' && (
+                  <div className="lcs-interactive-subpage-layout">
+                    {/* Left: Start control panel */}
+                    <div className="lcs-interactive-subpage-left">
+                      <div className="lcs-interactive-subpage-title">Start</div>
+                      
+                      <div className="lcs-interactive-circle-container">
+                        <button 
+                          type="button" 
+                          className={`lcs-interactive-big-circle-btn ${isInteractiveSessionActive ? 'is-active animate-pulse' : ''}`}
+                          onClick={() => {
+                            const nextState = !isInteractiveSessionActive;
+                            setIsInteractiveSessionActive(nextState);
+                            showToast(nextState ? "Interactive session started" : "Interactive session stopped");
+                          }}
+                        >
+                          <span className="lcs-circle-btn-text">Start</span>
+                        </button>
+                      </div>
+
+                      <button 
+                        type="button" 
+                        className="lcs-interactive-back-btn"
+                        onClick={() => setInteractiveSubPage('home')}
+                      >
+                        Back
+                      </button>
+                    </div>
+
+                    {/* Right: Address Book list */}
+                    <div className="lcs-interactive-subpage-right">
+                      <div className="lcs-interactive-subpage-right-title">Address Book</div>
+                      
+                      <div className="lcs-interactive-address-list">
+                        {addressBook.map((item, idx) => (
+                          <div 
+                            key={item.id || idx} 
+                            className="lcs-interactive-address-row"
+                            onClick={() => {
+                              setAddressBook(prev => prev.map(addr => addr.id === item.id ? { ...addr, checked: !addr.checked } : addr));
+                            }}
+                          >
+                            <div className={`lcs-interactive-checkbox ${item.checked ? 'is-checked' : ''}`}>
+                              {item.checked && <span className="lcs-checkmark">✓</span>}
+                            </div>
+                            <div className="flex items-center gap-2" style={{ display: 'flex', alignItems: 'center', gap: '8px', flex: 1 }}>
+                              <span className={`lcs-status-dot ${item.status === 'online' ? 'is-online' : 'is-offline'}`} />
+                              <span className={`lcs-address-name ${item.status === 'online' ? 'is-online-text' : 'is-offline-text'}`}>
+                                {item.name}
+                              </span>
+                            </div>
+                            <span className={`lcs-address-status ${item.status === 'online' ? 'is-online' : 'is-offline'}`}>
+                              {item.status === 'online' ? 'Online' : 'Offline'}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Join Class sub-page */}
+                {interactiveSubPage === 'join' && (
+                  <div className="lcs-interactive-subpage-layout">
+                    {/* Left: Join Class Form */}
+                    <div className="lcs-interactive-subpage-left">
+                      <div className="lcs-interactive-subpage-title">Join Class</div>
+                      
+                      <div className="lcs-interactive-form">
+                        <div className="lcs-interactive-form-field">
+                          <label>ID:</label>
+                          <input 
+                            type="text" 
+                            className="lcs-interactive-input"
+                            value={joinClassId}
+                            onChange={(e) => setJoinClassId(e.target.value)}
+                            placeholder="Enter Class ID"
+                          />
+                        </div>
+
+                        <div className="lcs-interactive-form-field">
+                          <label>Password:</label>
+                          <input 
+                            type="password" 
+                            className="lcs-interactive-input"
+                            value={joinClassPassword}
+                            onChange={(e) => setJoinClassPassword(e.target.value)}
+                            placeholder="Enter Password"
+                          />
+                        </div>
+
+                        <button 
+                          type="button" 
+                          className="lcs-interactive-submit-btn"
+                          onClick={() => {
+                            if (!joinClassId) {
+                              showToast("Please enter a Class ID");
+                            } else {
+                              showToast(`Joining Class ${joinClassId}...`);
+                            }
+                          }}
+                        >
+                          Join Class
+                        </button>
+                      </div>
+
+                      <button 
+                        type="button" 
+                        className="lcs-interactive-back-btn"
+                        onClick={() => setInteractiveSubPage('home')}
+                      >
+                        Back
+                      </button>
+                    </div>
+
+                    {/* Right: Schedule page */}
+                    <div className="lcs-interactive-subpage-right">
+                      <div className="lcs-interactive-subpage-right-title">Schedule</div>
+                      
+                      <div className="lcs-interactive-schedule-panel">
+                        {/* Empty/Black panel with pagination dots */}
+                        <div className="flex-1" />
+                        
+                        <div className="lcs-interactive-schedule-dots">
+                          {Array.from({ length: 10 }).map((_, i) => (
+                            <span key={i} className={`lcs-schedule-dot ${i === 0 ? 'is-active' : ''}`} />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* SIP Call modal overlay */}
+                {showSipCallModal && (
+                  <div className="lcs-interactive-modal-backdrop">
+                    <div className="lcs-interactive-modal-box">
+                      <div className="lcs-interactive-modal-header">
+                        <span className="lcs-modal-title">SIP Call</span>
+                        <button 
+                          type="button" 
+                          className="lcs-modal-close-x"
+                          onClick={() => setShowSipCallModal(false)}
+                        >
+                          ✕
+                        </button>
+                      </div>
+
+                      <div className="lcs-interactive-modal-body">
+                        <div className="lcs-interactive-modal-field">
+                          <label>UserName:</label>
+                          <input 
+                            type="text" 
+                            className="lcs-interactive-input"
+                            value={sipUserName}
+                            onChange={(e) => setSipUserName(e.target.value)}
+                            placeholder="Enter Username"
+                            autoFocus
+                          />
+                        </div>
+
+                        <button 
+                          type="button" 
+                          className="lcs-interactive-submit-btn"
+                          onClick={() => {
+                            if (!sipUserName) {
+                              showToast("Please enter a username");
+                            } else {
+                              showToast(`Calling ${sipUserName}...`);
+                              setShowSipCallModal(false);
+                            }
+                          }}
+                        >
+                          Call
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
               </div>
             )}
 
