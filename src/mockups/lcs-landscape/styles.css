@@ -5455,6 +5455,374 @@
   transform: scale(0.98);
 }
 
+/* ==========================================================================
+   LCS Interactive Call Flow (Entering Modal & Room View)
+   ========================================================================== */
+
+/* Entering Modal */
+.lcs-entering-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.lcs-entering-modal-card {
+  width: 220px;
+  height: 220px;
+  background: rgba(255, 255, 255, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(16px);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.is-dark .lcs-entering-modal-card {
+  background: rgba(45, 55, 72, 0.75);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.lcs-entering-spinner-box {
+  width: 36px;
+  height: 36px;
+  position: relative;
+}
+
+.lcs-entering-spinner {
+  width: 36px;
+  height: 36px;
+  border: 3.5px solid rgba(255, 255, 255, 0.25);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: lcsSpin 0.9s linear infinite;
+}
+
+@keyframes lcsSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.lcs-entering-text {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* Fullscreen Interactive Room View */
+.lcs-interactive-room-fullscreen {
+  position: absolute;
+  inset: 0;
+  background: #0f172a;
+  display: flex;
+  flex-direction: column;
+  z-index: 80;
+  overflow: hidden;
+}
+
+/* Top Mic Toast Banner */
+.lcs-room-mic-toast {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.92);
+  color: #1e293b;
+  padding: 6px 14px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  z-index: 120;
+  animation: lcsFadeInDown 0.3s ease-out;
+}
+
+@keyframes lcsFadeInDown {
+  from { opacity: 0; transform: translate(-50%, -10px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+.lcs-mic-toast-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #22c55e;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.lcs-mic-toast-text {
+  font-size: 12px;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.lcs-mic-toast-close {
+  background: none;
+  border: none;
+  color: #64748b;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 0 2px;
+}
+
+.lcs-mic-toast-close:hover {
+  color: #0f172a;
+}
+
+/* Top Left Tag */
+.lcs-room-top-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  padding: 4px 10px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 500;
+  z-index: 110;
+}
+
+/* Center Loading Animation */
+.lcs-room-loading-center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.lcs-room-loading-circle-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0ea5e9, #0284c7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 25px rgba(14, 165, 233, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.lcs-room-loading-inner-wave {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px stroke #ffffff;
+  background: radial-gradient(circle, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.1) 70%);
+  animation: lcsPulsePulse 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes lcsPulsePulse {
+  0% { transform: scale(0.85); opacity: 0.6; }
+  100% { transform: scale(1.15); opacity: 1; }
+}
+
+.lcs-room-loading-label {
+  color: #e2e8f0;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+}
+
+/* Classroom Video Frame */
+.lcs-room-video-container {
+  flex: 1;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.lcs-room-video-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lcs-room-speaker-caption {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  padding: 4px 16px;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(4px);
+  pointer-events: none;
+  text-transform: lowercase;
+}
+
+/* Bottom Control Bar */
+.lcs-room-bottom-bar {
+  height: 42px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px;
+  z-index: 110;
+}
+
+.lcs-room-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lcs-room-director-badge {
+  background: #22c55e;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.lcs-room-bar-text {
+  color: #cbd5e1;
+  font-size: 11px;
+  font-weight: 500;
+  font-family: monospace;
+}
+
+.lcs-room-bar-center {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lcs-room-page-arrow {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 2px 6px;
+}
+
+.lcs-room-page-arrow:hover {
+  color: #ffffff;
+}
+
+.lcs-room-page-num {
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.lcs-room-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lcs-room-pgm-dropdown {
+  color: #cbd5e1;
+  font-size: 11px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.lcs-room-mic-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lcs-room-mic-btn.is-on {
+  background: #22c55e;
+  color: #ffffff;
+}
+
+.lcs-room-invite-btn {
+  padding: 4px 14px;
+  border-radius: 4px;
+  border: 1px solid #22c55e;
+  background: transparent;
+  color: #22c55e;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.lcs-room-invite-btn:hover {
+  background: rgba(34, 197, 94, 0.15);
+}
+
+.lcs-room-exit-btn {
+  padding: 4px 16px;
+  border-radius: 12px;
+  border: none;
+  background: #ef4444;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.lcs-room-exit-btn:hover {
+  background: #dc2626;
+}
+
+/* Back Interaction Button (Director View) */
+.lcs-back-interaction-btn {
+  background: transparent !important;
+  border: 1.5px solid #22c55e !important;
+  color: #22c55e !important;
+  font-weight: 700 !important;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.lcs-back-interaction-btn:hover {
+  background: rgba(34, 197, 94, 0.2) !important;
+  color: #ffffff !important;
+  transform: scale(1.03);
+}
+
+
+
 
 
 

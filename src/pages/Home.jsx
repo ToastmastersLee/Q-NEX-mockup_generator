@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ToggleSwitch } from '../components/ToggleSwitch';
+import { OnOffButtons } from '../components/OnOffButtons';
 import { LargeButton, RowButton } from '../components/Buttons';
 import { PowerControlIcon, VideoSwitchIcon } from '../assets/Icons';
 
@@ -26,11 +26,11 @@ export const Home = ({
                 <div className={`flex-1 flex flex-col justify-center rounded-[1.5rem] px-8 py-4 ${isDark ? 'bg-[#353c4d] shadow-[0_15px_30px_rgba(0,0,0,0.3),inset_0_1px_2px_rgba(255,255,255,0.05)] border border-white/5' : 'bg-white border border-gray-200'}`}>
                     <div className={`flex items-center justify-between py-6 ${isDark ? 'border-b border-black/40 shadow-[0_1px_0_rgba(255,255,255,0.02)]' : 'border-b border-gray-300'}`}>
                         <span className={`text-[15px] font-bold tracking-wide ${isDark ? 'text-gray-300' : 'text-black'}`}>Display Power</span>
-                        <ToggleSwitch isOn={displayPower} onToggle={() => setDisplayPower(!displayPower)} isDark={isDark} />
+                        <OnOffButtons isOn={displayPower} onToggle={setDisplayPower} isDark={isDark} />
                     </div>
                     <div className="flex items-center justify-between py-6">
                         <span className={`text-[15px] font-bold tracking-wide ${isDark ? 'text-gray-300' : 'text-black'}`}>External Power</span>
-                        <ToggleSwitch isOn={externalPower} onToggle={() => setExternalPower(!externalPower)} isDark={isDark} />
+                        <OnOffButtons isOn={externalPower} onToggle={setExternalPower} isDark={isDark} />
                     </div>
                 </div>
             </div>

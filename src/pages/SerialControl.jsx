@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Monitor, Radio, Disc3, CircleStop, ChevronRight, ChevronLeft, ChevronUp, ChevronDown, Plus, Minus, Scan, MapPin, RefreshCcw } from 'lucide-react';
-import { ToggleSwitch } from '../components/ToggleSwitch';
+import { OnOffButtons } from '../components/OnOffButtons';
 import { HdmiIcon, PowerControlIcon, VideoSwitchIcon } from '../assets/Icons';
 import classroomFeed from '../assets/classroom_feed.png';
 
@@ -110,7 +110,7 @@ export const SerialControl = ({ isDark }) => {
                         <div className={innerCardClass}>
                             <div className="flex items-center justify-between py-2">
                                 <span className={`text-[14px] font-bold ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Power</span>
-                                <ToggleSwitch isOn={rs232Power} onToggle={() => setRs232Power(!rs232Power)} isDark={isDark} />
+                                <OnOffButtons isOn={rs232Power} onToggle={setRs232Power} isDark={isDark} />
                             </div>
                         </div>
                     </div>
@@ -294,7 +294,7 @@ export const SerialControl = ({ isDark }) => {
                     <div className={innerCardClass}>
                         <div className={`flex items-center justify-between pb-3 ${isDark ? 'border-b border-white/10' : 'border-b border-gray-200'}`}>
                             <span className={`text-[14px] font-bold ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Power</span>
-                            <ToggleSwitch isOn={rs232Power} onToggle={() => setRs232Power(!rs232Power)} isDark={isDark} />
+                            <OnOffButtons isOn={rs232Power} onToggle={setRs232Power} isDark={isDark} />
                         </div>
                         <div className={`flex items-center justify-between pt-3 transition-opacity ${!rs232Power ? 'opacity-50 pointer-events-none' : ''}`}>
                             <span className={`text-[14px] font-bold ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Input Source</span>
@@ -330,7 +330,7 @@ export const SerialControl = ({ isDark }) => {
                     <div className={innerCardClass}>
                         <div className={`flex items-center justify-between pb-3 ${isDark ? 'border-b border-white/10' : 'border-b border-gray-200'}`}>
                             <span className={`text-[14px] font-bold ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Power</span>
-                            <ToggleSwitch isOn={rs485Power} onToggle={() => setRs485Power(!rs485Power)} isDark={isDark} />
+                            <OnOffButtons isOn={rs485Power} onToggle={setRs485Power} isDark={isDark} />
                         </div>
                     </div>
                 </div>
@@ -382,7 +382,7 @@ export const SerialControl = ({ isDark }) => {
                     <div className={innerCardClass}>
                         <div className={`flex items-center justify-between pb-3 ${isDark ? 'border-b border-white/10' : 'border-b border-gray-200'}`}>
                             <span className={`text-[14px] font-bold ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Power</span>
-                            <ToggleSwitch isOn={cbx3Power} onToggle={() => setCbx3Power(!cbx3Power)} isDark={isDark} />
+                            <OnOffButtons isOn={cbx3Power} onToggle={setCbx3Power} isDark={isDark} />
                         </div>
                         <div className={`flex items-center justify-between pt-3 transition-opacity ${!cbx3Power ? 'opacity-50 pointer-events-none' : ''}`}>
                             <span className={`text-[14px] font-bold ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Lecture Capture</span>

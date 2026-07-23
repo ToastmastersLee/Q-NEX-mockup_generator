@@ -30,6 +30,7 @@ import ch7Remote from '../../assets/ch7_remote_classroom.png';
 import './styles.css';
 
 export default function App() {
+  const isRemoteClassroomView = typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('mode') === 'remote_classroom';
   const [theme, setTheme] = useState('dark'); // 'dark' | 'light'
   const [isLocked, setIsLocked] = useState(false);
 
@@ -49,14 +50,34 @@ export default function App() {
   const [joinClassPassword, setJoinClassPassword] = useState('');
   const [isInteractiveSessionActive, setIsInteractiveSessionActive] = useState(false);
   const [addressBook, setAddressBook] = useState([
-    { id: 'addr1', name: 'Room 101', status: 'online', checked: false },
-    { id: 'addr2', name: 'Room 102', status: 'offline', checked: false },
-    { id: 'addr3', name: 'Room 201', status: 'online', checked: false },
-    { id: 'addr4', name: 'Room 202', status: 'offline', checked: false },
-    { id: 'addr5', name: 'Room 301', status: 'online', checked: false },
-    { id: 'addr6', name: 'Room 302', status: 'online', checked: false },
-    { id: 'addr7', name: 'Room 401', status: 'offline', checked: false },
+    { id: 'addr1', name: 'Shanghai Campus - Room 101', status: 'online', checked: true },
+    { id: 'addr2', name: 'Beijing Campus - Room 201', status: 'online', checked: false },
+    { id: 'addr3', name: 'Guangzhou Campus - Class A', status: 'online', checked: false },
+    { id: 'addr4', name: 'Shenzhen Branch - Room 302', status: 'online', checked: false },
+    { id: 'addr5', name: 'Singapore Campus - Remote Room', status: 'offline', checked: false },
+    { id: 'addr6', name: 'London Branch - Int\'l Room', status: 'offline', checked: false },
   ]);
+  const [interactiveCallState, setInteractiveCallState] = useState('idle'); // 'idle' | 'entering' | 'room_loading' | 'room_active'
+  const [selectedRemoteHost, setSelectedRemoteHost] = useState('Shanghai Campus - Room 101');
+  const [showMicToast, setShowMicToast] = useState(true);
+  const [isDirectorMinimized, setIsDirectorMinimized] = useState(false);
+
+  // Handle interactive call state timer transitions
+  useEffect(() => {
+    let timer;
+    if (interactiveCallState === 'entering') {
+      timer = setTimeout(() => {
+        setInteractiveCallState('room_loading');
+        setShowMicToast(true);
+      }, 1400);
+    } else if (interactiveCallState === 'room_loading') {
+      timer = setTimeout(() => {
+        setInteractiveCallState('room_active');
+      }, 1600);
+    }
+    return () => clearTimeout(timer);
+  }, [interactiveCallState]);
+
 
   // Dropdown menus states
   const [lockScreenTime, setLockScreenTime] = useState('2minute');
@@ -122,7 +143,7 @@ export default function App() {
   
   // Layout Select Overlays
   const [isLayoutBarOpen, setIsLayoutBarOpen] = useState(false);
-  const [currentLayout, setCurrentLayout] = useState('l5'); // 'l1' to 'l8'
+  const [currentLayout, setCurrentLayout] = useState(isRemoteClassroomView ? 'l1' : 'l5'); // 'l1' to 'l8'
   const [directorMode, setDirectorMode] = useState('manual'); // 'manual' | 'auto'
 
   // Double-click Channel Re-selection States
@@ -257,7 +278,7 @@ export default function App() {
   // Server sub-tab settings states
   const [settingsServerIp, setSettingsServerIp] = useState('192.168.3.37');
   const [settingsServerPlatform, setSettingsServerPlatform] = useState('192.168.3.37:8081');
-  const [settingsServerDeviceName, setSettingsServerDeviceName] = useState('三楼');
+  const [settingsServerDeviceName, setSettingsServerDeviceName] = useState('Shanghai Campus');
   const [settingsServerAuthCode, setSettingsServerAuthCode] = useState('123456');
   const [settingsServerOrgId, setSettingsServerOrgId] = useState('10000000');
   const [settingsServerCreateLoc, setSettingsServerCreateLoc] = useState(true);
@@ -671,8 +692,13 @@ export default function App() {
       
       {/* Simulation Controls Panel (floating outside device) */}
       <div className="lcs-simulation-toolbar">
-        <div className="lcs-sim-title">
+        <div className="lcs-sim-title" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           <span>LCS Simulation Controls</span>
+          {isRemoteClassroomView && (
+            <span className="lcs-remote-mode-badge" style={{ background: '#0284c7', color: '#ffffff', fontSize: '11px', padding: '2px 8px', borderRadius: '4px', fontWeight: 'bold' }}>
+              [Remote Host: 900011001 Shanghai Campus - Room 101]
+            </span>
+          )}
         </div>
         <div className="lcs-sim-buttons">
           <button 
@@ -715,13 +741,16 @@ export default function App() {
 
           <button 
             type="button" 
-            className={`lcs-sim-btn ${currentLayout === 'l1' ? 'is-active' : ''}`}
+            className={`lcs-sim-btn ${isRemoteClassroomView ? 'is-active' : ''}`}
             onClick={() => {
-              setCurrentLayout('l1');
+              const url = new URL(window.location.href);
+              url.searchParams.set('mode', 'remote_classroom');
+              window.open(url.toString(), '_blank');
             }}
+            title="Open Remote Classroom View in a new tab"
           >
             <Monitor size={12} />
-            <span>Menu View (Orig)</span>
+            <span>Remote Classroom View</span>
           </button>
 
 
@@ -1887,21 +1916,35 @@ export default function App() {
                         <span>Menu</span>
                       </button>
 
-                      <button 
-                        type="button" 
-                        className={`lcs-pill-btn-sm ${activeMenuSection === 'interactive' ? 'is-active' : ''}`}
-                        onClick={() => {
-                          if (activeMenuSection === 'interactive') {
-                            setActiveMenuSection(null);
-                          } else {
+                      {interactiveCallState !== 'idle' ? (
+                        <button 
+                          type="button" 
+                          className="lcs-pill-btn-sm lcs-back-interaction-btn"
+                          onClick={() => {
                             setActiveMenuSection('interactive');
-                            setInteractiveSubPage('home');
+                            setIsDirectorMinimized(false);
                             setIsMenuOpen(false);
-                          }
-                        }}
-                      >
-                        <span>Interactive</span>
-                      </button>
+                          }}
+                        >
+                          <span>Back Interaction</span>
+                        </button>
+                      ) : (
+                        <button 
+                          type="button" 
+                          className={`lcs-pill-btn-sm ${activeMenuSection === 'interactive' ? 'is-active' : ''}`}
+                          onClick={() => {
+                            if (activeMenuSection === 'interactive') {
+                              setActiveMenuSection(null);
+                            } else {
+                              setActiveMenuSection('interactive');
+                              setInteractiveSubPage('home');
+                              setIsMenuOpen(false);
+                            }
+                          }}
+                        >
+                          <span>Interactive</span>
+                        </button>
+                      )}
                     </div>
                   </div>
                 )}
@@ -4319,7 +4362,7 @@ export default function App() {
                 )}
 
                 {/* Start sub-page */}
-                {interactiveSubPage === 'start' && (
+                {interactiveSubPage === 'start' && interactiveCallState === 'idle' && (
                   <div className="lcs-interactive-subpage-layout">
                     {/* Left: Start control panel */}
                     <div className="lcs-interactive-subpage-left">
@@ -4328,11 +4371,14 @@ export default function App() {
                       <div className="lcs-interactive-circle-container">
                         <button 
                           type="button" 
-                          className={`lcs-interactive-big-circle-btn ${isInteractiveSessionActive ? 'is-active animate-pulse' : ''}`}
+                          className={`lcs-interactive-big-circle-btn ${isInteractiveSessionActive ? 'is-active' : ''}`}
                           onClick={() => {
-                            const nextState = !isInteractiveSessionActive;
-                            setIsInteractiveSessionActive(nextState);
-                            showToast(nextState ? "Interactive session started" : "Interactive session stopped");
+                            const selected = addressBook.find(addr => addr.checked);
+                            const hostName = selected ? selected.name : 'Shanghai Campus - Room 101';
+                            setSelectedRemoteHost(hostName);
+                            setInteractiveCallState('entering');
+                            setIsInteractiveSessionActive(true);
+                            setIsDirectorMinimized(false);
                           }}
                         >
                           <span className="lcs-circle-btn-text">Start</span>
@@ -4379,6 +4425,155 @@ export default function App() {
                     </div>
                   </div>
                 )}
+
+                {/* Entering modal over start subpage */}
+                {interactiveSubPage === 'start' && interactiveCallState === 'entering' && (
+                  <div className="lcs-interactive-subpage-layout relative" style={{ position: 'relative' }}>
+                    {/* Background layout visible under modal */}
+                    <div className="lcs-interactive-subpage-left" style={{ opacity: 0.4 }}>
+                      <div className="lcs-interactive-subpage-title">Start</div>
+                      <div className="lcs-interactive-circle-container">
+                        <button type="button" className="lcs-interactive-big-circle-btn">
+                          <span className="lcs-circle-btn-text">Start</span>
+                        </button>
+                      </div>
+                      <button type="button" className="lcs-interactive-back-btn">Back</button>
+                    </div>
+                    <div className="lcs-interactive-subpage-right" style={{ opacity: 0.4 }}>
+                      <div className="lcs-interactive-subpage-right-title">Address Book</div>
+                      <div className="lcs-interactive-address-list">
+                        {addressBook.map((item, idx) => (
+                          <div key={item.id || idx} className="lcs-interactive-address-row">
+                            <div className={`lcs-interactive-checkbox ${item.checked ? 'is-checked' : ''}`}>
+                              {item.checked && <span className="lcs-checkmark">✓</span>}
+                            </div>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flex: 1 }}>
+                              <span className={`lcs-status-dot ${item.status === 'online' ? 'is-online' : 'is-offline'}`} />
+                              <span className="lcs-address-name">{item.name}</span>
+                            </div>
+                            <span className="lcs-address-status">Online</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Entering Modal Overlay */}
+                    <div className="lcs-entering-modal-backdrop">
+                      <div className="lcs-entering-modal-card">
+                        <div className="lcs-entering-spinner-box">
+                          <div className="lcs-entering-spinner" />
+                        </div>
+                        <div className="lcs-entering-text">Entering</div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Active Interactive Room View (Loading & Connected Classroom) */}
+                {(interactiveCallState === 'room_loading' || interactiveCallState === 'room_active') && !isDirectorMinimized && (
+                  <div className="lcs-interactive-room-fullscreen">
+                    {/* Top Toast notification */}
+                    {showMicToast && (
+                      <div className="lcs-room-mic-toast">
+                        <div className="lcs-mic-toast-icon">✓</div>
+                        <span className="lcs-mic-toast-text">Microphone turned on</span>
+                        <button type="button" className="lcs-mic-toast-close" onClick={() => setShowMicToast(false)}>✕</button>
+                      </div>
+                    )}
+
+                    {/* Top Left Host Tag */}
+                    <div className="lcs-room-top-tag">
+                      <Mic size={13} style={{ color: '#fff' }} />
+                      <span>900011001 {selectedRemoteHost}</span>
+                    </div>
+
+                    {/* Center Area: Loading wave vs Classroom Video Feed */}
+                    {interactiveCallState === 'room_loading' ? (
+                      <div className="lcs-room-loading-center">
+                        <div className="lcs-room-loading-circle-icon">
+                          <div className="lcs-room-loading-inner-wave" />
+                        </div>
+                        <div className="lcs-room-loading-label">Loading</div>
+                      </div>
+                    ) : (
+                      <div className="lcs-room-video-container">
+                        <img src={ch7Remote} alt="Teacher classroom" className="lcs-room-video-img" />
+                        
+                        {/* Bottom Text Overlay */}
+                        <div className="lcs-room-speaker-caption">
+                          <span>let's wait for the speaker</span>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Bottom Control Bar */}
+                    <div className="lcs-room-bottom-bar">
+                      <div className="lcs-room-bar-left">
+                        <button 
+                          type="button" 
+                          className="lcs-room-director-badge"
+                          onClick={() => {
+                            setIsDirectorMinimized(true);
+                            setActiveMenuSection(null);
+                            showToast("Returned to Director View");
+                          }}
+                          style={{ cursor: 'pointer', border: 'none', outline: 'none' }}
+                          title="Switch back to Director View"
+                        >
+                          Director
+                        </button>
+                        <span className="lcs-room-bar-text">ID:9000111698</span>
+                        <span className="lcs-room-bar-text">Password:605364</span>
+                        <span className="lcs-room-bar-text">Teacher:900011004</span>
+                      </div>
+
+                      <div className="lcs-room-bar-center">
+                        <button type="button" className="lcs-room-page-arrow">&lt;</button>
+                        <span className="lcs-room-page-num">1/1</span>
+                        <button type="button" className="lcs-room-page-arrow">&gt;</button>
+                      </div>
+
+                      <div className="lcs-room-bar-right">
+                        <div className="lcs-room-pgm-dropdown">
+                          <span>PGM</span>
+                          <span style={{ fontSize: '10px', marginLeft: '4px' }}>▲</span>
+                        </div>
+
+                        <button 
+                          type="button" 
+                          className={`lcs-room-mic-btn ${showMicToast ? 'is-on' : ''}`}
+                          onClick={() => {
+                            setShowMicToast(!showMicToast);
+                            showToast(showMicToast ? "Microphone turned off" : "Microphone turned on");
+                          }}
+                        >
+                          <Mic size={15} />
+                        </button>
+
+                        <button 
+                          type="button" 
+                          className="lcs-room-invite-btn"
+                          onClick={() => showToast("Invite sent")}
+                        >
+                          Invite
+                        </button>
+
+                        <button 
+                          type="button" 
+                          className="lcs-room-exit-btn"
+                          onClick={() => {
+                            setInteractiveCallState('idle');
+                            setIsInteractiveSessionActive(false);
+                            showToast("Exited interactive room");
+                          }}
+                        >
+                          Exit
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
 
                 {/* Join Class sub-page */}
                 {interactiveSubPage === 'join' && (
