@@ -157,8 +157,36 @@ export default function App() {
     l4: { main: 'ch2', pip: 'ch1' },
     l5: { topLeft: 'ch5', bottomLeft: 'ch4', right: 'ch3' },
     l6: { row1: 'ch2', row2: 'ch1', row3: 'ch4', right: 'ch3' },
-    l7: { tl: 'ch2', tr: 'ch3', bl: 'ch1', br: 'ch4' }
+    l7: { tl: 'ch2', tr: 'ch3', bl: 'ch1', br: 'ch4' },
+    l8: { main: 'ch3' }
   });
+
+  // Handle right-side channel click to update Main Channel slot in active layout
+  const handleSelectRightChannel = (channelId) => {
+    setSelectedChannel(channelId);
+    
+    // Map each layout to its primary/main channel slot key (matching user diagram arrows)
+    const mainSlotMap = {
+      l1: 'main',
+      l2: 'main',
+      l3: 'right',
+      l4: 'main',
+      l5: 'right',
+      l6: 'right',
+      l7: 'tl',
+      l8: 'main'
+    };
+
+    const mainSlotKey = mainSlotMap[currentLayout] || 'main';
+
+    setLayoutChannels(prev => ({
+      ...prev,
+      [currentLayout]: {
+        ...prev[currentLayout],
+        [mainSlotKey]: channelId
+      }
+    }));
+  };
 
   const layoutSlotConfigs = {
     l1: [
@@ -1434,17 +1462,52 @@ export default function App() {
                   )}
 
                   {currentLayout === 'l8' && (
-                    <div className="lcs-layout-l8">
-                      {channels.map((ch) => (
-                        <div key={ch.id} className="lcs-grid-cell-all">
-                          {ch.type === 'placeholder' ? (
-                            <div className="lcs-ch-thumb-placeholder bg-slate-900 w-full h-full flex items-center justify-center"><Film size={16} className="opacity-35" /></div>
-                          ) : (
-                            <img src={channelImages[ch.id]} alt={ch.name} className="lcs-feed-img" style={{ objectPosition: ch.pos }} />
-                          )}
-                          <span className="lcs-split-label">{ch.name}</span>
-                        </div>
-                      ))}
+                    <div className="lcs-all-layout-featured">
+                      {/* Left: Preview Grid of all channels */}
+                      <div className="lcs-all-preview-grid">
+                        {channels.map((ch) => {
+                          const activeMainId = layoutChannels.l8?.main || selectedChannel;
+                          const isMain = ch.id === activeMainId;
+                          return (
+                            <div 
+                              key={ch.id} 
+                              className={`lcs-all-grid-cell ${isMain ? 'is-main-selected' : ''}`}
+                              onClick={() => handleSelectRightChannel(ch.id)}
+                            >
+                              {ch.type === 'placeholder' ? (
+                                <div className="lcs-ch-thumb-placeholder bg-slate-900 w-full h-full flex items-center justify-center">
+                                  <Film size={14} className="opacity-35" />
+                                </div>
+                              ) : (
+                                <img src={channelImages[ch.id]} alt={ch.name} className="lcs-feed-img" style={{ objectPosition: ch.pos }} />
+                              )}
+                              <span className="lcs-split-label">{ch.name}</span>
+                              {isMain && <span className="lcs-all-main-badge">MAIN</span>}
+                            </div>
+                          );
+                        })}
+                      </div>
+
+                      {/* Right Stage: Prominent Main Channel Screen */}
+                      <div className="lcs-all-main-stage">
+                        {(() => {
+                          const mainChId = layoutChannels.l8?.main || selectedChannel;
+                          const mainCh = channels.find(c => c.id === mainChId) || channels[0];
+                          return (
+                            <div className="lcs-all-stage-card">
+                              {mainCh.type === 'placeholder' ? (
+                                <div className="lcs-placeholder-screen"><Film size={54} className="opacity-30" /></div>
+                              ) : (
+                                <img src={channelImages[mainCh.id]} alt={mainCh.name} className="lcs-feed-img" style={{ objectPosition: mainCh.pos }} />
+                              )}
+                              <div className="lcs-all-stage-overlay">
+                                <span className="lcs-stage-main-badge">MAIN CHANNEL OUT</span>
+                                <span className="lcs-stage-channel-name">{mainCh.name} ({mainCh.label})</span>
+                              </div>
+                            </div>
+                          );
+                        })()}
+                      </div>
                     </div>
                   )}
                 </>
@@ -1996,7 +2059,7 @@ export default function App() {
                       <div 
                         key={ch.id} 
                         className={`lcs-channel-card ${isActive ? 'is-active' : ''}`}
-                        onClick={() => setSelectedChannel(ch.id)}
+                        onClick={() => handleSelectRightChannel(ch.id)}
                       >
                         <div className="lcs-channel-card-header">
                           <span className="lcs-ch-name">{ch.name}</span>
