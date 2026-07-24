@@ -378,7 +378,7 @@ export default function App() {
   // Network settings states
   const [settingsNetworkSubTab, setSettingsNetworkSubTab] = useState('config'); // 'config' | 'detect'
   const [settingsNetworkDhcp, setSettingsNetworkDhcp] = useState(false);
-  const [settingsNetworkIp, setSettingsNetworkIp] = useState('192.168.3.37');
+  const [settingsNetworkIp, setSettingsNetworkIp] = useState('192.168.3.50');
   const [settingsNetworkMask, setSettingsNetworkMask] = useState('255.255.255.0');
   const [settingsNetworkGateway, setSettingsNetworkGateway] = useState('192.168.3.1');
   const [settingsNetworkDns, setSettingsNetworkDns] = useState('');
@@ -419,15 +419,15 @@ export default function App() {
   const [settingsLiveBitrate] = useState('2048Kbps');
   const [settingsLiveFrameRate] = useState('25fps');
   const [settingsLiveResolution] = useState('1920*1080');
-  const [settingsLiveServer, setSettingsLiveServer] = useState('rtmp://192.168.3.37:1935/live/xxx');
+  const [settingsLiveServer, setSettingsLiveServer] = useState('rtmp://192.168.3.50:1935/live/xxx');
 
   // Channel sub-tab settings states
   const [settingsChannelActive, setSettingsChannelActive] = useState('Teacher_C'); // 'Teacher_C' | 'Student_C' | 'Teacher_P' | 'Student_P'
 
   // Server sub-tab settings states
-  const [settingsServerIp, setSettingsServerIp] = useState('192.168.3.37');
-  const [settingsServerPlatform, setSettingsServerPlatform] = useState('192.168.3.37:8081');
-  const [settingsServerDeviceName, setSettingsServerDeviceName] = useState('Shanghai Campus');
+  const [settingsServerIp, setSettingsServerIp] = useState('192.168.3.50');
+  const [settingsServerPlatform, setSettingsServerPlatform] = useState('192.168.3.50:8081');
+  const [settingsServerDeviceName, setSettingsServerDeviceName] = useState('Fuzhou HQ - Main Hall');
   const [settingsServerAuthCode, setSettingsServerAuthCode] = useState('123456');
   const [settingsServerOrgId, setSettingsServerOrgId] = useState('10000000');
   const [settingsServerCreateLoc, setSettingsServerCreateLoc] = useState(true);
