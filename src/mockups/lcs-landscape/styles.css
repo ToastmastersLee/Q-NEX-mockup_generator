@@ -6132,6 +6132,11 @@
   color: #9ca3af;
 }
 
+.lcs-level1-slot-unit.ok-unit {
+  margin-left: auto;
+  padding-left: 8px;
+}
+
 .lcs-level1-ok-btn {
   width: 68px;
   height: 42px;

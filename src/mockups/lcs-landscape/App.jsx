@@ -1909,9 +1909,9 @@ export default function App() {
                             ]) ||
                             (level1TargetLayout === 'l3' && [{ id: 'left', label: 'Left' }, { id: 'right', label: 'Right' }]) ||
                             (level1TargetLayout === 'l4' && [{ id: 'main', label: 'Left' }, { id: 'pip', label: 'Right' }]) ||
-                            (level1TargetLayout === 'l5' && [{ id: 'topLeft', label: 'Left 1' }, { id: 'bottomLeft', label: 'Left 2' }, { id: 'right', label: 'Right' }]) ||
-                            (level1TargetLayout === 'l6' && [{ id: 'row1', label: 'Left 1' }, { id: 'row2', label: 'Left 2' }, { id: 'row3', label: 'Left 3' }, { id: 'right', label: 'Right' }]) ||
-                            (level1TargetLayout === 'l7' && [{ id: 'tl', label: 'TL' }, { id: 'tr', label: 'TR' }, { id: 'bl', label: 'BL' }, { id: 'br', label: 'BR' }]) ||
+                            (level1TargetLayout === 'l5' && [{ id: 'topLeft', label: 'Top-Left' }, { id: 'bottomLeft', label: 'Low-Left' }, { id: 'right', label: 'Right' }]) ||
+                            (level1TargetLayout === 'l6' && [{ id: 'row1', label: 'Top-Left' }, { id: 'row2', label: 'Middle-Left' }, { id: 'row3', label: 'Low-Left' }, { id: 'right', label: 'Right' }]) ||
+                            (level1TargetLayout === 'l7' && [{ id: 'tl', label: 'Top-Left' }, { id: 'tr', label: 'Top-Right' }, { id: 'bl', label: 'Low-Left' }, { id: 'br', label: 'Low-Right' }]) ||
                             [{ id: 'main', label: 'Main' }]).map((slot) => {
 
                             if (slot.isControl) {
