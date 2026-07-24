@@ -378,8 +378,8 @@ export default function App() {
   // Network settings states
   const [settingsNetworkSubTab, setSettingsNetworkSubTab] = useState('config'); // 'config' | 'detect'
   const [settingsNetworkDhcp, setSettingsNetworkDhcp] = useState(false);
-  const [settingsNetworkIp, setSettingsNetworkIp] = useState('192.168.3.50');
-  const [settingsNetworkMask, setSettingsNetworkMask] = useState('255.255.255.0');
+  const [settingsNetworkIp, setSettingsNetworkIp] = useState(isRemoteClassroomView ? '192.168.3.37' : '192.168.3.50');
+  const [settingsNetworkMask, setSettingsNetworkMask] = useState(isRemoteClassroomView ? '255.255.255.0' : '113.31.119.88');
   const [settingsNetworkGateway, setSettingsNetworkGateway] = useState('192.168.3.1');
   const [settingsNetworkDns, setSettingsNetworkDns] = useState('');
 
@@ -2660,8 +2660,8 @@ export default function App() {
                                   setSettingsNetworkGateway('192.168.3.1');
                                   setSettingsNetworkDns('8.8.8.8');
                                 } else {
-                                  setSettingsNetworkIp('192.168.3.37');
-                                  setSettingsNetworkMask('255.255.255.0');
+                                  setSettingsNetworkIp(isRemoteClassroomView ? '192.168.3.37' : '192.168.3.50');
+                                  setSettingsNetworkMask(isRemoteClassroomView ? '255.255.255.0' : '113.31.119.88');
                                   setSettingsNetworkGateway('192.168.3.1');
                                   setSettingsNetworkDns('');
                                 }
