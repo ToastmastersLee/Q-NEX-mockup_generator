@@ -71,6 +71,27 @@ export default function App() {
   const [level1ModalOpen, setLevel1ModalOpen] = useState(false);
   const [level1TargetLayout, setLevel1TargetLayout] = useState('l2');
   const [level2TargetSlot, setLevel2TargetSlot] = useState(null);
+  const levelInteractionRef = useRef(null);
+
+  // Click-Outside Dismissal for Level 1 & Level 2 Popups
+  useEffect(() => {
+    if (!level1ModalOpen) return;
+
+    const handleClickOutside = (event) => {
+      if (levelInteractionRef.current && !levelInteractionRef.current.contains(event.target)) {
+        const isDrawerClick = event.target.closest('.lcs-layout-thumb-card') || event.target.closest('.lcs-active-layout-badge');
+        if (!isDrawerClick) {
+          setLevel1ModalOpen(false);
+          setLevel2TargetSlot(null);
+        }
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [level1ModalOpen]);
 
   const handleOpenLevel1 = (layoutId) => {
     setCurrentLayout(layoutId);
@@ -1849,7 +1870,7 @@ export default function App() {
 
                 {/* 2-Level Layout Configuration Modal Overlays */}
                 {level1ModalOpen && (
-                  <div className="lcs-level-interaction-container">
+                  <div ref={levelInteractionRef} className="lcs-level-interaction-container">
                     
                     {/* Level 2 Channel Picker Overlay (Pops up directly above Level 1) */}
                     {level2TargetSlot && (
