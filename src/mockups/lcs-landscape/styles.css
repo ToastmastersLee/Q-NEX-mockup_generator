@@ -5917,6 +5917,42 @@
   border-radius: 4px;
 }
 
+/* Interactive PGM Dropdown Menu */
+.lcs-room-pgm-menu {
+  position: absolute;
+  bottom: 115%;
+  right: 0;
+  min-width: 120px;
+  background: #2b2c30;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  padding: 4px 0;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.lcs-room-pgm-item {
+  padding: 6px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #d1d5db;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.15s ease;
+}
+
+.lcs-room-pgm-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+.lcs-room-pgm-item.is-selected {
+  color: #22c55e;
+  font-weight: 700;
+}
+
+
 
 
 

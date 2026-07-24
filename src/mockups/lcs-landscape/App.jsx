@@ -62,6 +62,10 @@ export default function App() {
   const [showMicToast, setShowMicToast] = useState(true);
   const [isDirectorMinimized, setIsDirectorMinimized] = useState(false);
 
+  // Interactive Room PGM Dropdown states
+  const [isPgmDropdownOpen, setIsPgmDropdownOpen] = useState(false);
+  const [selectedPgmSource, setSelectedPgmSource] = useState('PGM'); // 'PGM' | 'Lecture' | 'Lecture2' | 'Teacher_C' | 'Student_C' | 'Teacher_P' | 'Student_P'
+
   // Handle interactive call state timer transitions
   useEffect(() => {
     let timer;
@@ -77,6 +81,7 @@ export default function App() {
     }
     return () => clearTimeout(timer);
   }, [interactiveCallState]);
+
 
 
   // Dropdown menus states
@@ -187,6 +192,112 @@ export default function App() {
       }
     }));
   };
+
+  // Cross-tab Real-time BroadcastChannel Synchronization
+  useEffect(() => {
+    let bc;
+    try {
+      bc = new BroadcastChannel('lcs_main_remote_sync');
+    } catch {
+      return;
+    }
+
+    if (isRemoteClassroomView) {
+      // Remote Classroom View Tab (Listener / Follower)
+      bc.onmessage = (event) => {
+        const { type, payload } = event.data || {};
+        if (type === 'STATE_SYNC' && payload) {
+          if (payload.currentLayout !== undefined) setCurrentLayout(payload.currentLayout);
+          if (payload.selectedChannel !== undefined) setSelectedChannel(payload.selectedChannel);
+          if (payload.layoutChannels !== undefined) setLayoutChannels(payload.layoutChannels);
+          if (payload.interactiveCallState !== undefined) setInteractiveCallState(payload.interactiveCallState);
+          if (payload.selectedRemoteHost !== undefined) setSelectedRemoteHost(payload.selectedRemoteHost);
+          if (payload.isLive !== undefined) setIsLive(payload.isLive);
+          if (payload.isRecording !== undefined) setIsRecording(payload.isRecording);
+          if (payload.showMicToast !== undefined) setShowMicToast(payload.showMicToast);
+          if (payload.selectedPgmSource !== undefined) setSelectedPgmSource(payload.selectedPgmSource);
+        }
+      };
+
+      // Request initial state snapshot from Main Classroom tab
+      bc.postMessage({ type: 'REQUEST_SYNC' });
+    } else {
+      // Main Classroom Tab (Broadcaster / Leader)
+      bc.onmessage = (event) => {
+        const { type } = event.data || {};
+        if (type === 'REQUEST_SYNC') {
+          bc.postMessage({
+            type: 'STATE_SYNC',
+            payload: {
+              currentLayout,
+              selectedChannel,
+              layoutChannels,
+              interactiveCallState,
+              selectedRemoteHost,
+              isLive,
+              isRecording,
+              showMicToast,
+              selectedPgmSource
+            }
+          });
+        }
+      };
+    }
+
+    return () => {
+      bc.close();
+    };
+  }, [
+    isRemoteClassroomView,
+    currentLayout,
+    selectedChannel,
+    layoutChannels,
+    interactiveCallState,
+    selectedRemoteHost,
+    isLive,
+    isRecording,
+    showMicToast,
+    selectedPgmSource
+  ]);
+
+  // Broadcast state changes whenever Main Classroom tab state updates
+  useEffect(() => {
+    if (isRemoteClassroomView) return;
+    let bc;
+    try {
+      bc = new BroadcastChannel('lcs_main_remote_sync');
+      bc.postMessage({
+        type: 'STATE_SYNC',
+        payload: {
+          currentLayout,
+          selectedChannel,
+          layoutChannels,
+          interactiveCallState,
+          selectedRemoteHost,
+          isLive,
+          isRecording,
+          showMicToast,
+          selectedPgmSource
+        }
+      });
+    } catch {
+      // ignore
+    }
+    return () => {
+      if (bc) bc.close();
+    };
+  }, [
+    isRemoteClassroomView,
+    currentLayout,
+    selectedChannel,
+    layoutChannels,
+    interactiveCallState,
+    selectedRemoteHost,
+    isLive,
+    isRecording,
+    showMicToast,
+    selectedPgmSource
+  ]);
 
   const layoutSlotConfigs = {
     l1: [
@@ -693,97 +804,94 @@ export default function App() {
     <div className={`lcs-stage-container ${theme === 'light' ? 'is-light' : 'is-dark'}`}>
       
       {/* Right Side floating simulation panel */}
-      <div className="lcs-right-simulator-panel">
-        <div style={{ fontSize: '10px', fontWeight: 'bold', color: theme === 'light' ? '#4b5563' : '#cbd5e0', textTransform: 'uppercase', textAlign: 'center', marginBottom: '4px', opacity: 0.8 }}>
-          Simulation
+      {!isRemoteClassroomView && (
+        <div className="lcs-right-simulator-panel">
+          <div style={{ fontSize: '10px', fontWeight: 'bold', color: theme === 'light' ? '#4b5563' : '#cbd5e0', textTransform: 'uppercase', textAlign: 'center', marginBottom: '4px', opacity: 0.8 }}>
+            Simulation
+          </div>
+          <button 
+            type="button" 
+            className="lcs-right-sim-btn" 
+            onClick={() => {
+              setIsAdvanceVerified(false);
+              setShowAdvanceAuth(false);
+              if (activeSettingsTab === 'advance') {
+                setActiveSettingsTab('device');
+              }
+              showToast("Advance Login Reset!");
+            }}
+          >
+            <Lock size={14} />
+            <span>Reset Login</span>
+          </button>
+          <div style={{ fontSize: '9px', color: theme === 'light' ? '#4b5563' : '#cbd5e0', opacity: 0.8, textAlign: 'center', marginTop: '6px', lineHeight: '1.2', borderTop: theme === 'light' ? '1px solid #e5e7eb' : '1px solid rgba(255,255,255,0.08)', paddingTop: '6px' }}>
+            <div style={{ opacity: 0.6 }}>Default Auth:</div>
+            <div style={{ fontWeight: 'bold', marginTop: '2px' }}>admin / admin</div>
+          </div>
         </div>
-        <button 
-          type="button" 
-          className="lcs-right-sim-btn" 
-          onClick={() => {
-            setIsAdvanceVerified(false);
-            setShowAdvanceAuth(false);
-            if (activeSettingsTab === 'advance') {
-              setActiveSettingsTab('device');
-            }
-            showToast("Advance Login Reset!");
-          }}
-        >
-          <Lock size={14} />
-          <span>Reset Login</span>
-        </button>
-        <div style={{ fontSize: '9px', color: theme === 'light' ? '#4b5563' : '#cbd5e0', opacity: 0.8, textAlign: 'center', marginTop: '6px', lineHeight: '1.2', borderTop: theme === 'light' ? '1px solid #e5e7eb' : '1px solid rgba(255,255,255,0.08)', paddingTop: '6px' }}>
-          <div style={{ opacity: 0.6 }}>Default Auth:</div>
-          <div style={{ fontWeight: 'bold', marginTop: '2px' }}>admin / admin</div>
-        </div>
-      </div>
+      )}
       
       {/* Simulation Controls Panel (floating outside device) */}
-      <div className="lcs-simulation-toolbar">
-        <div className="lcs-sim-title" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <span>LCS Simulation Controls</span>
-          {isRemoteClassroomView && (
-            <span className="lcs-remote-mode-badge" style={{ background: '#0284c7', color: '#ffffff', fontSize: '11px', padding: '2px 8px', borderRadius: '4px', fontWeight: 'bold' }}>
-              [Remote Host: 900011001 Shanghai Campus - Room 101]
-            </span>
-          )}
+      {!isRemoteClassroomView && (
+        <div className="lcs-simulation-toolbar">
+          <div className="lcs-sim-title" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <span>LCS Simulation Controls</span>
+          </div>
+          <div className="lcs-sim-buttons">
+            <button 
+              type="button" 
+              className="lcs-sim-btn" 
+              onClick={() => setTheme(prev => prev === 'dark' ? 'light' : 'dark')}
+            >
+              {theme === 'dark' ? <Sun size={15} /> : <Moon size={15} />}
+              <span>{theme === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
+            </button>
+            
+            <button 
+              type="button" 
+              className={`lcs-sim-btn ${isRecording ? 'is-active' : ''}`}
+              onClick={handleRecordToggle}
+            >
+              <Circle size={12} fill={isRecording ? '#ef4444' : 'transparent'} className={isRecording ? 'animate-pulse' : ''} />
+              <span>Record</span>
+            </button>
+
+            <button 
+              type="button" 
+              className={`lcs-sim-btn ${isLive ? 'is-active' : ''}`}
+              onClick={() => setIsLive(!isLive)}
+            >
+              <Play size={12} fill={isLive ? '#3b82f6' : 'transparent'} />
+              <span>Live Stream</span>
+            </button>
+
+            <button 
+              type="button" 
+              className={`lcs-sim-btn ${currentLayout === 'l5' ? 'is-active' : ''}`}
+              onClick={() => {
+                setCurrentLayout('l5');
+              }}
+            >
+              <Sliders size={12} />
+              <span>Director View (Orig)</span>
+            </button>
+
+            <button 
+              type="button" 
+              className={`lcs-sim-btn ${isRemoteClassroomView ? 'is-active' : ''}`}
+              onClick={() => {
+                const url = new URL(window.location.href);
+                url.searchParams.set('mode', 'remote_classroom');
+                window.open(url.toString(), '_blank');
+              }}
+              title="Open Remote Classroom View in a new tab"
+            >
+              <Monitor size={12} />
+              <span>Remote Classroom View</span>
+            </button>
+          </div>
         </div>
-        <div className="lcs-sim-buttons">
-          <button 
-            type="button" 
-            className="lcs-sim-btn" 
-            onClick={() => setTheme(prev => prev === 'dark' ? 'light' : 'dark')}
-          >
-            {theme === 'dark' ? <Sun size={15} /> : <Moon size={15} />}
-            <span>{theme === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
-          </button>
-          
-          <button 
-            type="button" 
-            className={`lcs-sim-btn ${isRecording ? 'is-active' : ''}`}
-            onClick={handleRecordToggle}
-          >
-            <Circle size={12} fill={isRecording ? '#ef4444' : 'transparent'} className={isRecording ? 'animate-pulse' : ''} />
-            <span>Record</span>
-          </button>
-
-          <button 
-            type="button" 
-            className={`lcs-sim-btn ${isLive ? 'is-active' : ''}`}
-            onClick={() => setIsLive(!isLive)}
-          >
-            <Play size={12} fill={isLive ? '#3b82f6' : 'transparent'} />
-            <span>Live Stream</span>
-          </button>
-
-          <button 
-            type="button" 
-            className={`lcs-sim-btn ${currentLayout === 'l5' ? 'is-active' : ''}`}
-            onClick={() => {
-              setCurrentLayout('l5');
-            }}
-          >
-            <Sliders size={12} />
-            <span>Director View (Orig)</span>
-          </button>
-
-          <button 
-            type="button" 
-            className={`lcs-sim-btn ${isRemoteClassroomView ? 'is-active' : ''}`}
-            onClick={() => {
-              const url = new URL(window.location.href);
-              url.searchParams.set('mode', 'remote_classroom');
-              window.open(url.toString(), '_blank');
-            }}
-            title="Open Remote Classroom View in a new tab"
-          >
-            <Monitor size={12} />
-            <span>Remote Classroom View</span>
-          </button>
-
-
-        </div>
-      </div>
+      )}
 
       {/* Hardware Device Shell */}
       <div className="lcs-hardware-shell">
@@ -4560,7 +4668,18 @@ export default function App() {
                       </div>
                     ) : (
                       <div className="lcs-room-video-container">
-                        <img src={ch7Remote} alt="Teacher classroom" className="lcs-room-video-img" />
+                        <img 
+                          src={
+                            selectedPgmSource === 'Lecture' ? ch1Ppt :
+                            selectedPgmSource === 'Lecture2' ? ch2DocCam :
+                            selectedPgmSource === 'Teacher_C' ? ch3TeacherClose :
+                            selectedPgmSource === 'Student_C' ? ch4StudentClose :
+                            selectedPgmSource === 'Student_P' ? ch6StudentPano :
+                            ch7Remote
+                          } 
+                          alt="Classroom feed" 
+                          className="lcs-room-video-img" 
+                        />
                         
                         {/* Bottom Text Overlay */}
                         <div className="lcs-room-speaker-caption">
@@ -4597,9 +4716,43 @@ export default function App() {
                       </div>
 
                       <div className="lcs-room-bar-right">
-                        <div className="lcs-room-pgm-dropdown">
-                          <span>PGM</span>
-                          <span style={{ fontSize: '10px', marginLeft: '4px' }}>▲</span>
+                        <div className="lcs-room-pgm-wrapper" style={{ position: 'relative' }}>
+                          {isPgmDropdownOpen && (
+                            <div className="lcs-room-pgm-menu">
+                              {[
+                                { id: 'PGM', label: 'PGM' },
+                                { id: 'Lecture', label: 'Lecture' },
+                                { id: 'Lecture2', label: 'Lecture2' },
+                                { id: 'Teacher_C', label: 'Teacher_C' },
+                                { id: 'Student_C', label: 'Student_C' },
+                                { id: 'Teacher_P', label: 'Teacher_P' },
+                                { id: 'Student_P', label: 'Student_P' },
+                              ].map(opt => (
+                                <div 
+                                  key={opt.id}
+                                  className={`lcs-room-pgm-item ${selectedPgmSource === opt.id ? 'is-selected' : ''}`}
+                                  onClick={() => {
+                                    setSelectedPgmSource(opt.id);
+                                    setIsPgmDropdownOpen(false);
+                                  }}
+                                >
+                                  {opt.label}
+                                </div>
+                              ))}
+                            </div>
+                          )}
+
+                          <button 
+                            type="button"
+                            className="lcs-room-pgm-dropdown"
+                            onClick={() => setIsPgmDropdownOpen(!isPgmDropdownOpen)}
+                            style={{ cursor: 'pointer', background: 'transparent', border: 'none', color: 'inherit' }}
+                          >
+                            <span style={{ color: selectedPgmSource !== 'PGM' ? '#22c55e' : '#ffffff', fontWeight: 'bold' }}>
+                              {selectedPgmSource}
+                            </span>
+                            <span style={{ fontSize: '10px', marginLeft: '4px' }}>▲</span>
+                          </button>
                         </div>
 
                         <button 
