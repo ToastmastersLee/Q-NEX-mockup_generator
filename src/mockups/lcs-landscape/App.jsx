@@ -71,6 +71,7 @@ export default function App() {
   const [level1ModalOpen, setLevel1ModalOpen] = useState(false);
   const [level1TargetLayout, setLevel1TargetLayout] = useState('l2');
   const [level2TargetSlot, setLevel2TargetSlot] = useState(null);
+  const [pipPosition, setPipPosition] = useState('top-right'); // 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'
   const levelInteractionRef = useRef(null);
 
   // Click-Outside Dismissal for Level 1 & Level 2 Popups
@@ -1401,7 +1402,7 @@ export default function App() {
                               </div>
                             )}
                             
-                            <div className="lcs-pip-box top-left">
+                            <div className={`lcs-pip-box ${pipPosition}`}>
                               {pipCh.type === 'placeholder' ? (
                                 <div className="lcs-ch-thumb-placeholder bg-slate-900 w-full h-full flex items-center justify-center">
                                   <Film size={20} className="opacity-40" />
@@ -1872,35 +1873,59 @@ export default function App() {
                 {level1ModalOpen && (
                   <div ref={levelInteractionRef} className="lcs-level-interaction-container">
                     
-                    {/* Level 2 Channel Picker Overlay (Pops up directly above Level 1) */}
+                    {/* Level 2 Channel / Option Picker Overlay (Pops up directly above Level 1) */}
                     {level2TargetSlot && (
                       <div className="lcs-level2-popup animate-fadeIn">
                         <div className="lcs-level2-ch-row">
-                          {channels.map((ch) => {
-                            const currentSlotCh = layoutChannels[level1TargetLayout]?.[level2TargetSlot];
-                            const isSelected = currentSlotCh === ch.id;
-                            return (
-                              <button
-                                key={ch.id}
-                                type="button"
-                                className={`lcs-level2-ch-btn ${isSelected ? 'is-active' : ''}`}
-                                onClick={() => {
-                                  setLayoutChannels((prev) => ({
-                                    ...prev,
-                                    [level1TargetLayout]: {
-                                      ...prev[level1TargetLayout],
-                                      [level2TargetSlot]: ch.id
+                          {level2TargetSlot === 'position' ? (
+                            [
+                              { id: 'top-left', label: 'Top-Left' },
+                              { id: 'top-right', label: 'Top-Right' },
+                              { id: 'bottom-left', label: 'Bottom-Left' },
+                              { id: 'bottom-right', label: 'Bottom-Right' }
+                            ].map((pos) => {
+                              const isSelected = pipPosition === pos.id;
+                              return (
+                                <button
+                                  key={pos.id}
+                                  type="button"
+                                  className={`lcs-level2-pos-btn ${isSelected ? 'is-active' : ''}`}
+                                  onClick={() => setPipPosition(pos.id)}
+                                  title={pos.label}
+                                >
+                                  <div className="lcs-pos-box-preview">
+                                    <div className={`lcs-pos-mini-square ${pos.id}`} />
+                                  </div>
+                                </button>
+                              );
+                            })
+                          ) : (
+                            channels.map((ch) => {
+                              const currentSlotCh = layoutChannels[level1TargetLayout]?.[level2TargetSlot];
+                              const isSelected = currentSlotCh === ch.id;
+                              return (
+                                <button
+                                  key={ch.id}
+                                  type="button"
+                                  className={`lcs-level2-ch-btn ${isSelected ? 'is-active' : ''}`}
+                                  onClick={() => {
+                                    setLayoutChannels((prev) => ({
+                                      ...prev,
+                                      [level1TargetLayout]: {
+                                        ...prev[level1TargetLayout],
+                                        [level2TargetSlot]: ch.id
+                                      }
+                                    }));
+                                    if (level2TargetSlot === 'main') {
+                                      setSelectedChannel(ch.id);
                                     }
-                                  }));
-                                  if (level2TargetSlot === 'main') {
-                                    setSelectedChannel(ch.id);
-                                  }
-                                }}
-                              >
-                                {ch.label}
-                              </button>
-                            );
-                          })}
+                                  }}
+                                >
+                                  {ch.label}
+                                </button>
+                              );
+                            })
+                          )}
                         </div>
                       </div>
                     )}
@@ -1936,16 +1961,23 @@ export default function App() {
                             [{ id: 'main', label: 'Main' }]).map((slot) => {
 
                             if (slot.isControl) {
+                              const isSlotActive = level2TargetSlot === slot.id;
                               return (
                                 <div key={slot.id} className="lcs-level1-slot-unit">
                                   <button 
                                     type="button" 
-                                    className="lcs-level1-control-btn"
-                                    onClick={() => showToast(`${slot.label} mode updated`)}
+                                    className={`lcs-level1-control-btn ${isSlotActive ? 'is-active' : ''}`}
+                                    onClick={() => {
+                                      if (level2TargetSlot === slot.id) {
+                                        setLevel2TargetSlot(null);
+                                      } else {
+                                        setLevel2TargetSlot(slot.id);
+                                      }
+                                    }}
                                   >
                                     {slot.icon === 'pip-pos' ? (
                                       <div className="lcs-icon-pip-pos">
-                                        <div className="lcs-pip-mini-box top-right" />
+                                        <div className={`lcs-pip-mini-box ${pipPosition}`} />
                                       </div>
                                     ) : (
                                       <div className="lcs-icon-pip-size">
