@@ -1408,12 +1408,29 @@
 /* PiP layouts */
 .lcs-pip-box {
   position: absolute;
-  width: 160px;
-  height: 105px;
+  width: 36%;
+  aspect-ratio: 16 / 9;
   border-radius: 6px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: width 0.2s ease, top 0.2s ease, left 0.2s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.lcs-pip-box.size-xlarge {
+  width: 45%;
+}
+
+.lcs-pip-box.size-large {
+  width: 35%;
+}
+
+.lcs-pip-box.size-medium {
+  width: 26%;
+}
+
+.lcs-pip-box.size-small {
+  width: 18%;
 }
 
 .lcs-pip-box.top-left {
@@ -6221,6 +6238,41 @@
   right: 2px;
 }
 
+/* Level 2 Size Option Buttons Preview Squares */
+.lcs-size-mini-square {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #9ca3af;
+  border-radius: 1px;
+  transition: all 0.15s ease;
+}
+
+.lcs-size-mini-square.xlarge {
+  width: 16px;
+  height: 11px;
+}
+
+.lcs-size-mini-square.large {
+  width: 13px;
+  height: 9px;
+}
+
+.lcs-size-mini-square.medium {
+  width: 10px;
+  height: 7px;
+}
+
+.lcs-size-mini-square.small {
+  width: 7px;
+  height: 5px;
+}
+
+.lcs-level2-pos-btn.is-active .lcs-size-mini-square {
+  background: #22c55e;
+}
+
 .lcs-icon-pip-size {
   width: 24px;
   height: 18px;
@@ -6233,9 +6285,30 @@
   justify-content: center;
 }
 
-.lcs-pip-mini-box.size-med {
+.lcs-pip-mini-box.size-xlarge {
+  width: 13px;
+  height: 9px;
+  background: #ffffff;
+  border-radius: 1px;
+}
+
+.lcs-pip-mini-box.size-large {
+  width: 10px;
+  height: 7.5px;
+  background: #ffffff;
+  border-radius: 1px;
+}
+
+.lcs-pip-mini-box.size-medium {
   width: 8px;
   height: 6px;
+  background: #ffffff;
+  border-radius: 1px;
+}
+
+.lcs-pip-mini-box.size-small {
+  width: 6px;
+  height: 4.5px;
   background: #ffffff;
   border-radius: 1px;
 }

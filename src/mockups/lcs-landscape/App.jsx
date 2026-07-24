@@ -72,6 +72,7 @@ export default function App() {
   const [level1TargetLayout, setLevel1TargetLayout] = useState('l2');
   const [level2TargetSlot, setLevel2TargetSlot] = useState(null);
   const [pipPosition, setPipPosition] = useState('top-right'); // 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'
+  const [pipSize, setPipSize] = useState('xlarge'); // 'xlarge' (超大) | 'large' (大) | 'medium' (中) | 'small' (小)
   const levelInteractionRef = useRef(null);
 
   // Click-Outside Dismissal for Level 1 & Level 2 Popups
@@ -260,6 +261,8 @@ export default function App() {
           if (payload.isRecording !== undefined) setIsRecording(payload.isRecording);
           if (payload.showMicToast !== undefined) setShowMicToast(payload.showMicToast);
           if (payload.selectedPgmSource !== undefined) setSelectedPgmSource(payload.selectedPgmSource);
+          if (payload.pipPosition !== undefined) setPipPosition(payload.pipPosition);
+          if (payload.pipSize !== undefined) setPipSize(payload.pipSize);
         }
       };
 
@@ -281,7 +284,9 @@ export default function App() {
               isLive,
               isRecording,
               showMicToast,
-              selectedPgmSource
+              selectedPgmSource,
+              pipPosition,
+              pipSize
             }
           });
         }
@@ -301,7 +306,9 @@ export default function App() {
     isLive,
     isRecording,
     showMicToast,
-    selectedPgmSource
+    selectedPgmSource,
+    pipPosition,
+    pipSize
   ]);
 
   // Broadcast state changes whenever Main Classroom tab state updates
@@ -321,7 +328,9 @@ export default function App() {
           isLive,
           isRecording,
           showMicToast,
-          selectedPgmSource
+          selectedPgmSource,
+          pipPosition,
+          pipSize
         }
       });
     } catch {
@@ -340,7 +349,9 @@ export default function App() {
     isLive,
     isRecording,
     showMicToast,
-    selectedPgmSource
+    selectedPgmSource,
+    pipPosition,
+    pipSize
   ]);
 
   const layoutSlotConfigs = {
@@ -1402,7 +1413,7 @@ export default function App() {
                               </div>
                             )}
                             
-                            <div className={`lcs-pip-box ${pipPosition}`}>
+                            <div className={`lcs-pip-box ${pipPosition} size-${pipSize}`}>
                               {pipCh.type === 'placeholder' ? (
                                 <div className="lcs-ch-thumb-placeholder bg-slate-900 w-full h-full flex items-center justify-center">
                                   <Film size={20} className="opacity-40" />
@@ -1899,6 +1910,28 @@ export default function App() {
                                 </button>
                               );
                             })
+                          ) : level2TargetSlot === 'size' ? (
+                            [
+                              { id: 'xlarge', label: 'Extra Large' },
+                              { id: 'large', label: 'Large' },
+                              { id: 'medium', label: 'Medium' },
+                              { id: 'small', label: 'Small' }
+                            ].map((sz) => {
+                              const isSelected = pipSize === sz.id;
+                              return (
+                                <button
+                                  key={sz.id}
+                                  type="button"
+                                  className={`lcs-level2-pos-btn ${isSelected ? 'is-active' : ''}`}
+                                  onClick={() => setPipSize(sz.id)}
+                                  title={sz.label}
+                                >
+                                  <div className="lcs-pos-box-preview">
+                                    <div className={`lcs-size-mini-square ${sz.id}`} />
+                                  </div>
+                                </button>
+                              );
+                            })
                           ) : (
                             channels.map((ch) => {
                               const currentSlotCh = layoutChannels[level1TargetLayout]?.[level2TargetSlot];
@@ -1981,7 +2014,7 @@ export default function App() {
                                       </div>
                                     ) : (
                                       <div className="lcs-icon-pip-size">
-                                        <div className="lcs-pip-mini-box size-med" />
+                                        <div className={`lcs-pip-mini-box size-${pipSize}`} />
                                       </div>
                                     )}
                                   </button>
