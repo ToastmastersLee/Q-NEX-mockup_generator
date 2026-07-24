@@ -67,6 +67,18 @@ export default function App() {
   const [isPgmDropdownOpen, setIsPgmDropdownOpen] = useState(false);
   const [selectedPgmSource, setSelectedPgmSource] = useState('PGM'); // 'PGM' | 'Lecture' | 'Lecture2' | 'Teacher_C' | 'Student_C' | 'Teacher_P' | 'Student_P'
 
+  // 2-Level Layout Configuration Interaction States
+  const [level1ModalOpen, setLevel1ModalOpen] = useState(false);
+  const [level1TargetLayout, setLevel1TargetLayout] = useState('l2');
+  const [level2TargetSlot, setLevel2TargetSlot] = useState(null);
+
+  const handleOpenLevel1 = (layoutId) => {
+    setCurrentLayout(layoutId);
+    setLevel1TargetLayout(layoutId);
+    setLevel1ModalOpen(true);
+    setLevel2TargetSlot(null);
+  };
+
   // Set English document title based on mode
   useEffect(() => {
     if (isRemoteClassroomView) {
@@ -762,13 +774,8 @@ export default function App() {
   };
 
   const handleLayoutDoubleClick = (layoutId) => {
-    if (layoutId === 'l8') return;
     setSelectedLayoutToEdit(layoutId);
-    const config = layoutSlotConfigs[layoutId];
-    if (config && config.length > 0) {
-      setActiveEditSlot(config[0].key);
-    }
-    setIsChannelSelectOpen(true);
+    handleOpenLevel1(layoutId);
   };
 
   // Channel images map
@@ -1837,10 +1844,143 @@ export default function App() {
                           OK
                         </button>
                       </div>
-
                     </div>
                   )}
-                </div>
+
+                {/* 2-Level Layout Configuration Modal Overlays */}
+                {level1ModalOpen && (
+                  <div className="lcs-level-interaction-container">
+                    
+                    {/* Level 2 Channel Picker Overlay (Pops up directly above Level 1) */}
+                    {level2TargetSlot && (
+                      <div className="lcs-level2-popup animate-fadeIn">
+                        <div className="lcs-level2-ch-row">
+                          {channels.map((ch) => {
+                            const currentSlotCh = layoutChannels[level1TargetLayout]?.[level2TargetSlot];
+                            const isSelected = currentSlotCh === ch.id;
+                            return (
+                              <button
+                                key={ch.id}
+                                type="button"
+                                className={`lcs-level2-ch-btn ${isSelected ? 'is-active' : ''}`}
+                                onClick={() => {
+                                  setLayoutChannels((prev) => ({
+                                    ...prev,
+                                    [level1TargetLayout]: {
+                                      ...prev[level1TargetLayout],
+                                      [level2TargetSlot]: ch.id
+                                    }
+                                  }));
+                                  if (level2TargetSlot === 'main') {
+                                    setSelectedChannel(ch.id);
+                                  }
+                                }}
+                              >
+                                {ch.label}
+                              </button>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Level 1 Popup Card */}
+                    <div className="lcs-level1-popup">
+                      {/* Close button */}
+                      <button 
+                        type="button" 
+                        className="lcs-level1-close-btn"
+                        onClick={() => {
+                          setLevel1ModalOpen(false);
+                          setLevel2TargetSlot(null);
+                        }}
+                      >
+                        ✕
+                      </button>
+
+                      <div className="lcs-level1-body">
+                        <div className="lcs-level1-slots-row">
+                          {((level1TargetLayout === 'l1' && [{ id: 'main', label: 'Main' }]) ||
+                            (level1TargetLayout === 'l2' && [
+                              { id: 'main', label: 'Main' },
+                              { id: 'pip', label: 'Sub' },
+                              { id: 'position', label: 'Position', isControl: true, icon: 'pip-pos' },
+                              { id: 'size', label: 'Size', isControl: true, icon: 'pip-size' }
+                            ]) ||
+                            (level1TargetLayout === 'l3' && [{ id: 'left', label: 'Left' }, { id: 'right', label: 'Right' }]) ||
+                            (level1TargetLayout === 'l4' && [{ id: 'main', label: 'Left' }, { id: 'pip', label: 'Right' }]) ||
+                            (level1TargetLayout === 'l5' && [{ id: 'topLeft', label: 'Left 1' }, { id: 'bottomLeft', label: 'Left 2' }, { id: 'right', label: 'Right' }]) ||
+                            (level1TargetLayout === 'l6' && [{ id: 'row1', label: 'Left 1' }, { id: 'row2', label: 'Left 2' }, { id: 'row3', label: 'Left 3' }, { id: 'right', label: 'Right' }]) ||
+                            (level1TargetLayout === 'l7' && [{ id: 'tl', label: 'TL' }, { id: 'tr', label: 'TR' }, { id: 'bl', label: 'BL' }, { id: 'br', label: 'BR' }]) ||
+                            [{ id: 'main', label: 'Main' }]).map((slot) => {
+
+                            if (slot.isControl) {
+                              return (
+                                <div key={slot.id} className="lcs-level1-slot-unit">
+                                  <button 
+                                    type="button" 
+                                    className="lcs-level1-control-btn"
+                                    onClick={() => showToast(`${slot.label} mode updated`)}
+                                  >
+                                    {slot.icon === 'pip-pos' ? (
+                                      <div className="lcs-icon-pip-pos">
+                                        <div className="lcs-pip-mini-box top-right" />
+                                      </div>
+                                    ) : (
+                                      <div className="lcs-icon-pip-size">
+                                        <div className="lcs-pip-mini-box size-med" />
+                                      </div>
+                                    )}
+                                  </button>
+                                  <span className="lcs-level1-slot-label">{slot.label}</span>
+                                </div>
+                              );
+                            }
+
+                            const assignedChId = layoutChannels[level1TargetLayout]?.[slot.id];
+                            const assignedCh = channels.find(c => c.id === assignedChId) || { label: 'CH1' };
+                            const isSlotActive = level2TargetSlot === slot.id;
+
+                            return (
+                              <div key={slot.id} className="lcs-level1-slot-unit">
+                                <button
+                                  type="button"
+                                  className={`lcs-level1-slot-btn ${isSlotActive ? 'is-active' : ''}`}
+                                  onClick={() => {
+                                    if (level2TargetSlot === slot.id) {
+                                      setLevel2TargetSlot(null);
+                                    } else {
+                                      setLevel2TargetSlot(slot.id);
+                                    }
+                                  }}
+                                >
+                                  {assignedCh.label}
+                                </button>
+                                <span className="lcs-level1-slot-label">{slot.label}</span>
+                              </div>
+                            );
+                          })}
+
+                          {/* OK Button */}
+                          <div className="lcs-level1-slot-unit ok-unit">
+                            <button
+                              type="button"
+                              className="lcs-level1-ok-btn"
+                              onClick={() => {
+                                setLevel1ModalOpen(false);
+                                setLevel2TargetSlot(null);
+                              }}
+                            >
+                              OK
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                )}
+              </div>
 
                 {/* Bottom Control Bar or Layout Selection Bar */}
                 {isLayoutBarOpen ? (
@@ -1878,7 +2018,7 @@ export default function App() {
                             <span>CH6</span>
                           </div>
                         </button>
-                        {currentLayout === 'l1' && <span className="lcs-active-layout-badge">Layout</span>}
+                        {currentLayout === 'l1' && <span className="lcs-active-layout-badge" style={{ cursor: 'pointer' }} onClick={(e) => { e.stopPropagation(); handleLayoutDoubleClick('l1'); }}>Layout</span>}
                       </div>
 
                       {/* Layout 2: PiP Style 1 */}
@@ -1894,7 +2034,7 @@ export default function App() {
                             <span className="font-mono">CH7</span>
                           </div>
                         </button>
-                        {currentLayout === 'l2' && <span className="lcs-active-layout-badge">Layout</span>}
+                        {currentLayout === 'l2' && <span className="lcs-active-layout-badge" style={{ cursor: 'pointer' }} onClick={(e) => { e.stopPropagation(); handleLayoutDoubleClick('l2'); }}>Layout</span>}
                       </div>
 
                       {/* Layout 3: Vertical Split */}
@@ -1903,14 +2043,14 @@ export default function App() {
                           type="button" 
                           className={`lcs-layout-thumb-card ${currentLayout === 'l3' ? 'is-active' : ''}`}
                           onClick={() => setCurrentLayout('l3')}
-                          onDoubleClick={() => handleLayoutDoubleClick('l3')}
+                          onDoubleClick={() => handleOpenLevel1('l3')}
                         >
                           <div className="lcs-thumb-split-v">
                             <div className="lcs-thumb-split-cell font-mono">CH4</div>
                             <div className="lcs-thumb-split-cell font-mono">CH3</div>
                           </div>
                         </button>
-                        {currentLayout === 'l3' && <span className="lcs-active-layout-badge">Layout</span>}
+                        {currentLayout === 'l3' && <span className="lcs-active-layout-badge" style={{ cursor: 'pointer' }} onClick={(e) => { e.stopPropagation(); handleOpenLevel1('l3'); }}>Layout</span>}
                       </div>
 
                       {/* Layout 4: PiP Style 2 */}
@@ -1919,14 +2059,14 @@ export default function App() {
                           type="button" 
                           className={`lcs-layout-thumb-card ${currentLayout === 'l4' ? 'is-active' : ''}`}
                           onClick={() => setCurrentLayout('l4')}
-                          onDoubleClick={() => handleLayoutDoubleClick('l4')}
+                          onDoubleClick={() => handleOpenLevel1('l4')}
                         >
                           <div className="lcs-thumb-pip-2">
                             <div className="lcs-thumb-pip-sub font-mono">CH1</div>
                             <span className="font-mono">CH2</span>
                           </div>
                         </button>
-                        {currentLayout === 'l4' && <span className="lcs-active-layout-badge">Layout</span>}
+                        {currentLayout === 'l4' && <span className="lcs-active-layout-badge" style={{ cursor: 'pointer' }} onClick={(e) => { e.stopPropagation(); handleOpenLevel1('l4'); }}>Layout</span>}
                       </div>
 
                       {/* Layout 5: Director 3-Split (Default) */}
@@ -1935,7 +2075,7 @@ export default function App() {
                           type="button" 
                           className={`lcs-layout-thumb-card ${currentLayout === 'l5' ? 'is-active' : ''}`}
                           onClick={() => setCurrentLayout('l5')}
-                          onDoubleClick={() => handleLayoutDoubleClick('l5')}
+                          onDoubleClick={() => handleOpenLevel1('l5')}
                         >
                           <div className="lcs-thumb-director">
                             <div className="lcs-thumb-dir-left">
@@ -1945,7 +2085,7 @@ export default function App() {
                             <div className="lcs-thumb-dir-right font-mono">CH3</div>
                           </div>
                         </button>
-                        {currentLayout === 'l5' && <span className="lcs-active-layout-badge">Layout</span>}
+                        {currentLayout === 'l5' && <span className="lcs-active-layout-badge" style={{ cursor: 'pointer' }} onClick={(e) => { e.stopPropagation(); handleOpenLevel1('l5'); }}>Layout</span>}
                       </div>
 
                       {/* Layout 6: 4-Split */}
@@ -1954,7 +2094,7 @@ export default function App() {
                           type="button" 
                           className={`lcs-layout-thumb-card ${currentLayout === 'l6' ? 'is-active' : ''}`}
                           onClick={() => setCurrentLayout('l6')}
-                          onDoubleClick={() => handleLayoutDoubleClick('l6')}
+                          onDoubleClick={() => handleOpenLevel1('l6')}
                         >
                           <div className="lcs-thumb-director-4">
                             <div className="lcs-thumb-dir4-left">
@@ -1965,7 +2105,7 @@ export default function App() {
                             <div className="lcs-thumb-dir4-right font-mono">CH3</div>
                           </div>
                         </button>
-                        {currentLayout === 'l6' && <span className="lcs-active-layout-badge">Layout</span>}
+                        {currentLayout === 'l6' && <span className="lcs-active-layout-badge" style={{ cursor: 'pointer' }} onClick={(e) => { e.stopPropagation(); handleOpenLevel1('l6'); }}>Layout</span>}
                       </div>
 
                       {/* Layout 7: Quad Grid */}
@@ -1974,7 +2114,7 @@ export default function App() {
                           type="button" 
                           className={`lcs-layout-thumb-card ${currentLayout === 'l7' ? 'is-active' : ''}`}
                           onClick={() => setCurrentLayout('l7')}
-                          onDoubleClick={() => handleLayoutDoubleClick('l7')}
+                          onDoubleClick={() => handleOpenLevel1('l7')}
                         >
                           <div className="lcs-thumb-quad">
                             <div className="font-mono">CH2</div>
@@ -1983,7 +2123,7 @@ export default function App() {
                             <div className="font-mono">CH4</div>
                           </div>
                         </button>
-                        {currentLayout === 'l7' && <span className="lcs-active-layout-badge">Layout</span>}
+                        {currentLayout === 'l7' && <span className="lcs-active-layout-badge" style={{ cursor: 'pointer' }} onClick={(e) => { e.stopPropagation(); handleOpenLevel1('l7'); }}>Layout</span>}
                       </div>
 
                       {/* Layout 8: All */}
@@ -1992,12 +2132,13 @@ export default function App() {
                           type="button" 
                           className={`lcs-layout-thumb-card ${currentLayout === 'l8' ? 'is-active' : ''}`}
                           onClick={() => setCurrentLayout('l8')}
+                          onDoubleClick={() => handleOpenLevel1('l8')}
                         >
                           <div className="lcs-thumb-all">
                             <span>All</span>
                           </div>
                         </button>
-                        {currentLayout === 'l8' && <span className="lcs-active-layout-badge">Layout</span>}
+                        {currentLayout === 'l8' && <span className="lcs-active-layout-badge" style={{ cursor: 'pointer' }} onClick={(e) => { e.stopPropagation(); handleOpenLevel1('l8'); }}>Layout</span>}
                       </div>
 
                     </div>
