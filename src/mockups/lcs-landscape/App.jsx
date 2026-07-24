@@ -59,6 +59,7 @@ export default function App() {
   ]);
   const [interactiveCallState, setInteractiveCallState] = useState('idle'); // 'idle' | 'entering' | 'room_loading' | 'room_active'
   const [selectedRemoteHost, setSelectedRemoteHost] = useState('Shanghai Campus - Room 101');
+  const [mainClassroomHost] = useState('Fuzhou HQ - Main Hall');
   const [showMicToast, setShowMicToast] = useState(true);
   const [isDirectorMinimized, setIsDirectorMinimized] = useState(false);
 
@@ -4684,7 +4685,7 @@ export default function App() {
                     {/* Top Left Host Tag */}
                     <div className="lcs-room-top-tag">
                       <Mic size={13} style={{ color: '#fff' }} />
-                      <span>900011001 {selectedRemoteHost}</span>
+                      <span>900011001 {isRemoteClassroomView ? mainClassroomHost : selectedRemoteHost}</span>
                     </div>
 
                     {/* Center Area: Loading wave vs Classroom Video Feed */}
