@@ -4699,12 +4699,14 @@ export default function App() {
                       <div className="lcs-room-video-container">
                         <img 
                           src={
-                            selectedPgmSource === 'Lecture' ? ch1Ppt :
-                            selectedPgmSource === 'Lecture2' ? ch2DocCam :
-                            selectedPgmSource === 'Teacher_C' ? ch3TeacherClose :
-                            selectedPgmSource === 'Student_C' ? ch4StudentClose :
-                            selectedPgmSource === 'Student_P' ? ch6StudentPano :
-                            ch7Remote
+                            isRemoteClassroomView ? (
+                              selectedPgmSource === 'Lecture' ? ch1Ppt :
+                              selectedPgmSource === 'Lecture2' ? ch2DocCam :
+                              selectedPgmSource === 'Teacher_C' ? ch3TeacherClose :
+                              selectedPgmSource === 'Student_C' ? ch4StudentClose :
+                              selectedPgmSource === 'Student_P' ? ch6StudentPano :
+                              ch7Remote
+                            ) : ch7Remote
                           } 
                           alt="Classroom feed" 
                           className="lcs-room-video-img" 
