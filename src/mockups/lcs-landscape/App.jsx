@@ -66,6 +66,15 @@ export default function App() {
   const [isPgmDropdownOpen, setIsPgmDropdownOpen] = useState(false);
   const [selectedPgmSource, setSelectedPgmSource] = useState('PGM'); // 'PGM' | 'Lecture' | 'Lecture2' | 'Teacher_C' | 'Student_C' | 'Teacher_P' | 'Student_P'
 
+  // Set English document title based on mode
+  useEffect(() => {
+    if (isRemoteClassroomView) {
+      document.title = "Remote Classroom View - LCS Host";
+    } else {
+      document.title = "LCS Station - Main Classroom Host";
+    }
+  }, [isRemoteClassroomView]);
+
   // Handle interactive call state timer transitions
   useEffect(() => {
     let timer;
@@ -1307,7 +1316,25 @@ export default function App() {
                     </div>
                   ) : (
                     <>
-                      {currentLayout === 'l1' && (
+                      {isRemoteClassroomView && selectedPgmSource !== 'PGM' ? (
+                        <div className="lcs-full-video-box">
+                          <img 
+                            src={
+                              selectedPgmSource === 'Lecture' ? ch1Ppt :
+                              selectedPgmSource === 'Lecture2' ? ch2DocCam :
+                              selectedPgmSource === 'Teacher_C' ? ch3TeacherClose :
+                              selectedPgmSource === 'Student_C' ? ch4StudentClose :
+                              selectedPgmSource === 'Student_P' ? ch6StudentPano :
+                              ch7Remote
+                            } 
+                            alt={selectedPgmSource} 
+                            className="lcs-feed-img" 
+                          />
+                          <span className="lcs-split-label active">{selectedPgmSource}</span>
+                        </div>
+                      ) : (
+                        <>
+                          {currentLayout === 'l1' && (
                     <div className="lcs-layout-l1">
                       {(() => {
                         const ch = channels.find(c => c.id === layoutChannels.l1.main) || { name: 'Empty', label: 'CH', type: 'placeholder' };
@@ -1618,8 +1645,10 @@ export default function App() {
                       </div>
                     </div>
                   )}
-                </>
-              )}
+                        </>
+                      )}
+                    </>
+                  )}
 
               {/* Menu Sub-sections Overlay */}
               {activeMenuSection && activeMenuSection !== 'set' && activeMenuSection !== 'file' && activeMenuSection !== 'ptz' && activeMenuSection !== 'power' && (
