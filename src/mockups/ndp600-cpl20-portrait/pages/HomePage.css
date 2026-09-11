@@ -1,0 +1,27 @@
+.ndp-power-list {
+  display: grid;
+  gap: 20px;
+  margin-top: 26px;
+}
+
+.ndp-cbx-panel {
+  flex: 1;
+  min-height: 310px;
+}
+
+.ndp-empty-state {
+  height: calc(100% - 34px);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: #c9e7ff;
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 500;
+  opacity: 0.82;
+}
+
+/* Light Theme Overrides */
+.ndp-stage.is-light .ndp-empty-state {
+  color: #4b5563;
+}

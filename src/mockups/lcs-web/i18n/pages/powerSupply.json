@@ -1,0 +1,18 @@
+{
+  "en": {
+    "pageTitle": "Power Setting",
+    "powerSupplyMode": "PowerSupplyMode",
+    "timingSwitch": "Timing switch",
+    "startTime": "Start time",
+    "stopTime": "Stop time",
+    "note": "Note: When the device is turned off, the timing switch function will still take effect according to the configured schedule."
+  },
+  "zh": {
+    "pageTitle": "电源设置",
+    "powerSupplyMode": "供电模式",
+    "timingSwitch": "定时开关",
+    "startTime": "开启时间",
+    "stopTime": "关闭时间",
+    "note": "注意：设备关机后，定时开关功能仍将根据设定的时间计划继续生效。"
+  }
+}

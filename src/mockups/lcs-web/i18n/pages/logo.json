@@ -1,0 +1,26 @@
+{
+  "en": {
+    "pageTitle": "Logo",
+    "logoPreset": "Logo Preset",
+    "chooseFile": "Choose File",
+    "logoPosition": "Logo Position",
+    "tipTitle": "TIP:",
+    "tip1": "1.Only support 24bit and 32bit png images;",
+    "tip2": "2.Image resolution cannot exceed 1920*1080;",
+    "tip3": "3.Move the preview box to change logo position;",
+    "tip4": "4.Do not exceed the video display area.",
+    "ok": "OK"
+  },
+  "zh": {
+    "pageTitle": "台标",
+    "logoPreset": "台标预设",
+    "chooseFile": "选择文件",
+    "logoPosition": "台标位置",
+    "tipTitle": "操作提示:",
+    "tip1": "1.只支持24bit和32bit png格式的图片;",
+    "tip2": "2.图片分辨率不能大于1920*1080;",
+    "tip3": "3.移动预览区选框可改变台标位置;",
+    "tip4": "4.图片不要超出视频显示范围。",
+    "ok": "确定"
+  }
+}

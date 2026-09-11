@@ -6,11 +6,13 @@
   "scripts": {
     "dev": "vite",
     "dev:nmp211": "vite",
-    "dev:ndp600": "vite --mode ndp600",
-    "dev:lcs": "vite --mode lcs",
+    "dev:ndp600": "vite --mode ndp600 --host 0.0.0.0 --port 5174",
+    "dev:lcs": "vite --mode lcs --host 0.0.0.0 --port 5175",
+    "dev:lcs-web": "vite --mode lcs-web --host 0.0.0.0 --port 5176",
     "build": "vite build",
     "build:ndp600": "vite build --mode ndp600",
     "build:lcs": "vite build --mode lcs",
+    "build:lcs-web": "vite build --mode lcs-web",
     "lint": "eslint .",
     "preview": "vite preview"
   },

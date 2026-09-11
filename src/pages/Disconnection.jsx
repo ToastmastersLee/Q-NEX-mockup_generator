@@ -43,6 +43,7 @@ const EditableLabel = ({ value, onChange, className }) => {
 export const Disconnection = ({ 
     isDark, 
     onConnect, 
+    onSettingsClick,
     title = 'Fail to connect, please check the network',
     initialLabelText = 'NMP311 IP',
     initialIpAddress = '192.168.1.150'
@@ -204,7 +205,8 @@ export const Disconnection = ({
                     {/* Settings and Cloud buttons */}
                     <div className="flex gap-4">
                         <button 
-                            className={`w-12 h-12 rounded-full flex items-center justify-center transition-all ${iconBtnClass}`}
+                            onClick={onSettingsClick}
+                            className={`w-12 h-12 rounded-full flex items-center justify-center transition-all cursor-pointer ${iconBtnClass}`}
                             title="Ethernet Settings"
                             disabled={isConnecting || isConnected}
                         >

@@ -1,0 +1,32 @@
+{
+  "en": {
+    "pageTitle": "OSD Setting",
+    "color": "Color",
+    "colorBlack": "Black",
+    "colorWhite": "White",
+    "displayContent": "Display Content",
+    "contentDateTime": "Date + Time",
+    "contentDate": "Date",
+    "contentTime": "Time",
+    "displayPosition": "Display Position",
+    "tipTitle": "TIP:",
+    "tip1": "1.Click the position button below to change OSD position.",
+    "osdSaved": "OSD configuration saved successfully!",
+    "ok": "OK"
+  },
+  "zh": {
+    "pageTitle": "OSD设置",
+    "color": "颜色",
+    "colorBlack": "黑色",
+    "colorWhite": "白色",
+    "displayContent": "显示内容",
+    "contentDateTime": "日期+时间",
+    "contentDate": "日期",
+    "contentTime": "时间",
+    "displayPosition": "显示位置",
+    "tipTitle": "操作提示:",
+    "tip1": "1.单击显示位置下方按钮可改变OSD的位置。",
+    "osdSaved": "OSD设置已保存",
+    "ok": "确定"
+  }
+}

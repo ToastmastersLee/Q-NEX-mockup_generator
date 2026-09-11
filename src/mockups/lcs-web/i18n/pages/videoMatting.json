@@ -1,0 +1,28 @@
+{
+  "en": {
+    "pageTitle": "Video Matting Setting",
+    "cardTitleScene": "Scene Setting",
+    "addScene": "Add Scene",
+    "matting": "Matting",
+    "delete": "Delete",
+    "scene1": "Scene 1",
+    "scene2": "Scene 2",
+    "scene": "Scene",
+    "newSceneAdded": "New scene added",
+    "sceneDeleted": "Scene deleted",
+    "enterMatting": "Enter {name} matting"
+  },
+  "zh": {
+    "pageTitle": "抠像设置",
+    "cardTitleScene": "场景设置",
+    "addScene": "添加场景",
+    "matting": "抠像",
+    "delete": "删除",
+    "scene1": "场景一",
+    "scene2": "场景二",
+    "scene": "场景",
+    "newSceneAdded": "已添加新场景",
+    "sceneDeleted": "已删除场景",
+    "enterMatting": "进入{name}抠像"
+  }
+}

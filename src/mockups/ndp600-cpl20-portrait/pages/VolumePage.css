@@ -1,0 +1,94 @@
+/* Volume Panel */
+.ndp-volume-panel {
+  min-height: 305px;
+  display: grid;
+  grid-template-columns: 106px 1fr auto 1fr 1fr;
+  align-items: center;
+  gap: 24px;
+}
+
+.ndp-volume-panel > .ndp-icon-btn {
+  width: 68px;
+  height: 68px;
+  justify-self: center;
+}
+
+/* Volume Faders */
+.ndp-fader-divider {
+  width: 1px;
+  height: 140px;
+  background: rgba(255, 255, 255, 0.15);
+  margin: 0 -12px;
+}
+
+.ndp-fader-tick {
+  position: absolute;
+  width: 28px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.ndp-fader-tick.is-top {
+  top: 50px;
+}
+
+.ndp-fader-tick.is-bottom {
+  bottom: 97px;
+}
+
+.ndp-fader {
+  height: 226px;
+  display: grid;
+  grid-template-rows: 50px 1fr 50px 36px;
+  align-items: center;
+  justify-items: center;
+  position: relative;
+  font-weight: 800;
+}
+
+.ndp-fader::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  bottom: 47px;
+  width: 44px;
+  border: 1px solid rgba(214, 236, 255, 0.13);
+  border-radius: 999px;
+  background: rgba(55, 83, 115, 0.34);
+}
+
+.ndp-fader button,
+.ndp-fader strong {
+  position: relative;
+  z-index: 1;
+}
+
+.ndp-fader button {
+  border: 0;
+  color: #e7f7ff;
+  background: transparent;
+}
+
+/* Light Theme Overrides */
+.ndp-stage.is-light .ndp-fader::before {
+  background: #e5e7eb;
+  border: 1px solid #d1d5db;
+}
+
+.ndp-stage.is-light .ndp-fader button {
+  color: #4b5563;
+}
+
+.ndp-stage.is-light .ndp-fader strong {
+  color: #374151;
+}
+
+.ndp-stage.is-light .ndp-fader-divider {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.ndp-stage.is-light .ndp-fader-tick {
+  background: rgba(0, 0, 0, 0.1);
+}

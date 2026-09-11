@@ -1,0 +1,266 @@
+/* LCS Landscape - settings/frame.css */
+
+/* Settings Overlay panel */
+.lcs-settings-popup {
+  position: absolute;
+  inset: 12px;
+  border-radius: 12px;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+  animation: ndp-toast-fade-in 0.2s ease;
+}
+
+.is-dark .lcs-settings-popup {
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.is-light .lcs-settings-popup {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #d1d5db;
+  color: #111827;
+}
+
+.lcs-settings-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 8px;
+}
+
+.is-light .lcs-settings-header {
+  border-bottom-color: #e5e7eb;
+}
+
+.lcs-settings-header h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.lcs-settings-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.lcs-settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.lcs-settings-row input[type="range"] {
+  flex: 1;
+  margin: 0 16px;
+  cursor: pointer;
+}
+
+.lcs-badge {
+  background: #3b82f6;
+  color: white;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.lcs-settings-close-btn {
+  align-self: flex-end;
+  padding: 6px 20px;
+  border-radius: 6px;
+  border: none;
+  background: #ef4444;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.lcs-settings-close-btn:hover {
+  opacity: 0.9;
+}
+
+
+/* SET content */
+.lcs-overlay-content-set {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lcs-set-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lcs-set-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lcs-badge-active {
+  background-color: rgba(34, 197, 94, 0.15);
+  border: 1px solid #22c55e;
+  color: #22c55e;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 11px;
+}
+
+
+/* Full Settings Overlay */
+.lcs-full-settings-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0b0c10;
+  display: flex;
+  gap: 8px;
+  color: #fff;
+  z-index: 2000;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  user-select: text;
+  overflow: hidden;
+}
+
+.is-light .lcs-full-settings-overlay {
+  background-color: #d1d5db;
+  color: #1f2937;
+}
+
+/* Sidebar */
+.lcs-settings-sidebar {
+  width: 130px;
+  background-color: #1c1f26;
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.is-light .lcs-settings-sidebar {
+  background-color: #e5e7eb;
+}
+
+.lcs-settings-sidebar-top {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lcs-sidebar-btn {
+  width: 100%;
+  height: 32px;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  color: #a0aec0;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.is-light .lcs-sidebar-btn {
+  background-color: #fff;
+  border: 1px solid #d1d5db;
+  color: #4b5563;
+}
+
+.lcs-sidebar-btn:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.is-light .lcs-sidebar-btn:hover {
+  background-color: #f9fafb;
+}
+
+.lcs-sidebar-btn.is-active {
+  background-color: rgba(0, 230, 118, 0.1) !important;
+  border: 1.5px solid #00e676 !important;
+  color: #00e676 !important;
+}
+
+.is-light .lcs-sidebar-btn.is-active {
+  background-color: #f0fdf4 !important;
+  border: 1.5px solid #16a34a !important;
+  color: #16a34a !important;
+}
+
+/* Settings Main Panel */
+.lcs-settings-main {
+  flex: 1;
+  padding: 0;
+  background-color: #0b0c10;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+.is-light .lcs-settings-main {
+  background-color: #d1d5db;
+}
+
+.lcs-settings-device-tab {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.lcs-settings-row {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  background-color: #1c1f26;
+  box-sizing: border-box;
+  justify-content: flex-start !important;
+  gap: 16px;
+}
+
+.is-light .lcs-settings-row {
+  background-color: #ffffff;
+}
+
+.lcs-settings-label {
+  width: 120px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #cbd5e0;
+}
+
+.is-light .lcs-settings-label {
+  color: #4b5563;
+}
+
+.lcs-settings-options-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+}
+

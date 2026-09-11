@@ -1,0 +1,38 @@
+{
+  "en": {
+    "pageTitle": "Network Setting",
+    "cardTitleNetwork": "Network Setting",
+    "dhcp": "DHCP",
+    "ipAddress": "IP Address",
+    "subnetMask": "Subnet Mask",
+    "gateway": "Default Gateway",
+    "dnsServer": "DNS Server",
+    "url": "URL",
+    "test": "Test",
+    "clear": "Clear",
+    "cardTitleSelect": "Network Selection",
+    "netType": "Type",
+    "wiredNet": "Wired Network",
+    "pleaseEnterUrl": "Please enter URL or IP address to test",
+    "pingResult": "Pinging {url} ...\nReply from {url}: bytes=32 time=12ms TTL=54\nReply from {url}: bytes=32 time=11ms TTL=54\nPackets: Sent = 2, Received = 2, Lost = 0 (0% loss)",
+    "ok": "OK"
+  },
+  "zh": {
+    "pageTitle": "网络设置",
+    "cardTitleNetwork": "网络设置",
+    "dhcp": "DHCP",
+    "ipAddress": "IP地址",
+    "subnetMask": "子网掩码",
+    "gateway": "默认网关",
+    "dnsServer": "DNS服务器",
+    "url": "网址",
+    "test": "检测",
+    "clear": "清空",
+    "cardTitleSelect": "网络选择",
+    "netType": "类型",
+    "wiredNet": "有线网络",
+    "pleaseEnterUrl": "请输入要检测的网址或IP地址",
+    "pingResult": "正在 Ping {url} ...\n来自 {url} 的回复: 字节=32 时间=12ms TTL=54\n来自 {url} 的回复: 字节=32 时间=11ms TTL=54\n数据包: 已发送 = 2, 已接收 = 2, 丢失 = 0 (0% 丢失)",
+    "ok": "确定"
+  }
+}

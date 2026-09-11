@@ -1,0 +1,235 @@
+/* LCS Landscape - base.css */
+
+/* Basic reset & page layout */
+.lcs-stage-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.lcs-stage-container.is-dark {
+  background-color: #0b0f17;
+  color: #f3f4f6;
+}
+
+.lcs-stage-container.is-light {
+  background-color: #f3f4f6;
+  color: #111827;
+}
+
+
+/* Hardware Bezel Outer Shell */
+.lcs-hardware-shell {
+  width: 100%;
+  max-width: 980px;
+  background: #12141a;
+  border: 18px solid #232730;
+  border-bottom: 0;
+  border-radius: 28px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(0, 0, 0, 0.9);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.lcs-screen-container {
+  width: 100%;
+  aspect-ratio: 16 / 9.5;
+  background: #000;
+  position: relative;
+  overflow: hidden;
+}
+
+/* SCREEN LAYOUT */
+.lcs-screen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.is-dark .lcs-screen {
+  background-color: #171b26;
+}
+
+.is-light .lcs-screen {
+  background-color: #e5e7eb;
+}
+
+
+/* UTILITIES */
+.rotate-45 {
+  transform: rotate(45deg);
+}
+
+.lcs-sim-buttons .lcs-sim-btn svg {
+  flex-shrink: 0;
+}
+
+
+/* Fullscreen Maximize layouts */
+.lcs-full-file-overlay.is-fullscreen {
+  grid-template-columns: 1fr;
+}
+
+.lcs-full-file-overlay.is-fullscreen .lcs-file-list-col {
+  display: none !important;
+}
+
+.lcs-full-file-overlay.is-fullscreen .lcs-file-player-viewport {
+  height: 385px;
+}
+
+/* Toast Floating Notification */
+.lcs-toast-notification {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(22, 27, 38, 0.92);
+  border: 1px solid rgba(0, 230, 118, 0.35);
+  color: #00e676;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 10px 24px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+  z-index: 5000;
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  animation: lcs-toast-fade-in 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes lcs-toast-fade-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.is-light .lcs-toast-notification {
+  background-color: rgba(255, 255, 255, 0.96);
+  border-color: rgba(22, 163, 74, 0.3);
+  color: #16a34a;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Hide scrollbars for all scrollable containers in the mockup while retaining scrolling functionality */
+.lcs-settings-main,
+.lcs-channels-list,
+.lcs-overlay-body,
+.lcs-file-list-container {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.lcs-settings-main::-webkit-scrollbar,
+.lcs-channels-list::-webkit-scrollbar,
+.lcs-overlay-body::-webkit-scrollbar,
+.lcs-file-list-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+
+
+/* Spinner Rotate Animation */
+.lcs-version-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  border-top-color: #00e676;
+  animation: lcs-spin 0.8s linear infinite;
+}
+
+.is-light .lcs-version-spinner {
+  border: 3px solid rgba(0, 0, 0, 0.08);
+  border-top-color: #16a34a;
+}
+
+@keyframes lcs-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Alert Pill Bar */
+.lcs-version-alert-bar {
+  padding: 8px 16px;
+  min-width: 280px;
+  background: rgba(30, 41, 59, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.is-light .lcs-version-alert-bar {
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.is-light .lcs-version-alert-bar span {
+  color: #1f2937 !important;
+}
+
+.lcs-version-alert-check-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #22c55e;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.lcs-version-alert-close-btn {
+  background: transparent;
+  border: none;
+  color: #a0aec0;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 2px 6px;
+  transition: color 0.15s ease;
+}
+
+.lcs-version-alert-close-btn:hover {
+  color: #ffffff;
+}
+
+.is-light .lcs-version-alert-close-btn {
+  color: #6b7280;
+}
+
+.is-light .lcs-version-alert-close-btn:hover {
+  color: #1f2937;
+}
+
+.lcs-net-detect-btn:hover {
+  opacity: 0.85;
+}
+
+.lcs-net-detect-btn:active {
+  transform: scale(0.98);
+}
+

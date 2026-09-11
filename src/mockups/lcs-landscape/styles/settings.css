@@ -1,0 +1,5 @@
+/* LCS Landscape - settings.css (Aggregator) */
+@import './settings/frame.css';
+@import './settings/tabs.css';
+@import './settings/auth.css';
+@import './settings/dialogs.css';

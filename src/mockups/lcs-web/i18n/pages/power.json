@@ -1,0 +1,26 @@
+{
+  "en": {
+    "pageTitle": "Power Setting",
+    "powerOnMode": "Power-on Mode",
+    "normalBoot": "Normal Power-on",
+    "autoBoot": "Auto Power-on",
+    "keepOff": "Stay Off on Power",
+    "timer1": "Scheduled Power Setting 1",
+    "timer2": "Scheduled Power Setting 2",
+    "bootTime": "Power-on Time",
+    "shutdownTime": "Shutdown Time",
+    "ok": "OK"
+  },
+  "zh": {
+    "pageTitle": "电源设置",
+    "powerOnMode": "上电模式",
+    "normalBoot": "常规开机",
+    "autoBoot": "通电开机",
+    "keepOff": "来电保持断电",
+    "timer1": "定时开关机设置一",
+    "timer2": "定时开关机设置二",
+    "bootTime": "开机时间",
+    "shutdownTime": "关机时间",
+    "ok": "确定"
+  }
+}

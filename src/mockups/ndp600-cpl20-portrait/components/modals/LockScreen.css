@@ -1,0 +1,227 @@
+/* Lock Screen */
+.ndp-lock-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px;
+  background: linear-gradient(150deg, #5f83ae, #456f9f 55%, #436b99);
+}
+
+.ndp-lock-brand {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 35px;
+  font-weight: 800;
+}
+
+.ndp-logo-mark {
+  width: 39px;
+  height: 39px;
+  border: 6px solid #e7fbff;
+  border-radius: 999px;
+  position: relative;
+}
+
+.ndp-logo-mark::after {
+  content: "";
+  position: absolute;
+  right: -8px;
+  bottom: 1px;
+  width: 17px;
+  height: 7px;
+  border-radius: 999px;
+  background: #e7fbff;
+  transform: rotate(45deg);
+}
+
+.ndp-lock-time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 92px;
+}
+
+.ndp-lock-time strong {
+  margin-top: 16px;
+  font-size: 74px;
+  line-height: 0.9;
+  font-weight: 300;
+}
+
+.ndp-lock-time span {
+  margin-top: 12px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.ndp-unlock-orb {
+  width: 158px;
+  height: 158px;
+  display: grid;
+  place-items: center;
+  margin-top: 90px;
+  border: 2px solid rgba(0, 222, 255, 0.8);
+  border-radius: 999px;
+  color: #00d7ff;
+  background:
+    radial-gradient(circle at 40% 28%, rgba(255, 255, 255, 0.35), transparent 30%),
+    linear-gradient(145deg, #8fb1d4, #4d76a5);
+  box-shadow: 0 0 0 44px rgba(138, 179, 223, 0.18), 0 0 0 88px rgba(138, 179, 223, 0.12), 0 0 22px rgba(0, 224, 255, 0.72);
+}
+
+/* PIN Entry Screen */
+.ndp-pin-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.ndp-pin-header {
+  margin-bottom: 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ndp-pin-header h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.ndp-pin-error {
+  color: #ff3b30;
+  font-size: 14px;
+  font-weight: 500;
+  min-height: 20px;
+}
+
+.ndp-pin-dots {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.ndp-pin-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  transition: all 0.15s ease;
+}
+
+.ndp-pin-dot.is-filled {
+  background: #ffffff;
+  border-color: #ffffff;
+}
+
+.ndp-pin-dot.is-error {
+  border-color: #ff3b30;
+  background: #ff3b30;
+  animation: ndp-shake 0.3s ease;
+}
+
+@keyframes ndp-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+.ndp-pin-keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px 24px;
+  width: 100%;
+  max-width: 240px;
+}
+
+.ndp-key-btn {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, transform 0.1s ease;
+  outline: none;
+}
+
+.ndp-key-btn:active {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(0.95);
+}
+
+.ndp-key-btn.text-sm {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Light Theme Overrides */
+.ndp-stage.is-light .ndp-lock-screen {
+  background: #ffffff;
+  color: #000000;
+}
+
+.ndp-stage.is-light .ndp-lock-brand,
+.ndp-stage.is-light .ndp-lock-time {
+  color: #000000;
+}
+
+.ndp-stage.is-light .ndp-logo-mark {
+  border-color: #000000;
+}
+
+.ndp-stage.is-light .ndp-logo-mark::after {
+  background: #000000;
+}
+
+.ndp-stage.is-light .ndp-unlock-orb {
+  color: #000000;
+  border: 4px solid #000000;
+  background: #ffffff;
+  box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.05), 0 0 0 40px rgba(0, 0, 0, 0.02);
+}
+
+.ndp-stage.is-light .ndp-pin-header h2 {
+  color: #000000;
+}
+
+.ndp-stage.is-light .ndp-pin-dot {
+  border: 1.5px solid rgba(0, 0, 0, 0.3);
+}
+
+.ndp-stage.is-light .ndp-pin-dot.is-filled {
+  background: #000000;
+  border-color: #000000;
+}
+
+.ndp-stage.is-light .ndp-key-btn {
+  background: rgba(0, 0, 0, 0.05);
+  color: #000000;
+}
+
+.ndp-stage.is-light .ndp-key-btn:active {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.ndp-stage.is-light .ndp-key-btn.text-sm {
+  color: rgba(0, 0, 0, 0.6);
+}

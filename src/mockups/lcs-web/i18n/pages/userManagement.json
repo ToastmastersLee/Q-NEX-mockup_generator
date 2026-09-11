@@ -1,0 +1,40 @@
+{
+  "en": {
+    "pageTitle": "User Management",
+    "addUser": "Add User",
+    "phDefaultUser": "Enter default user",
+    "setDefaultUser": "Set Default User",
+    "colSeq": "Seq",
+    "colUsername": "Username",
+    "colUserType": "User Type",
+    "colOnlineStatus": "Online Status",
+    "colOnlineDetail": "Online Detail",
+    "colAction": "Operation",
+    "admin": "Administrator",
+    "normalUser": "Normal User",
+    "online": "Online",
+    "offline": "Offline",
+    "view": "View",
+    "changePassword": "Change Password",
+    "deleteUser": "Delete User"
+  },
+  "zh": {
+    "pageTitle": "用户管理",
+    "addUser": "添加用户",
+    "phDefaultUser": "输入默认用户",
+    "setDefaultUser": "设置默认用户",
+    "colSeq": "序号",
+    "colUsername": "用户名",
+    "colUserType": "用户类型",
+    "colOnlineStatus": "在线状态",
+    "colOnlineDetail": "在线详情",
+    "colAction": "操作",
+    "admin": "管理员",
+    "normalUser": "普通用户",
+    "online": "在线",
+    "offline": "离线",
+    "view": "查看",
+    "changePassword": "修改密码",
+    "deleteUser": "删除用户"
+  }
+}

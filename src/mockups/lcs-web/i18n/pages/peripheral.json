@@ -1,0 +1,30 @@
+{
+  "en": {
+    "pageTitle": "Peripheral Settings",
+    "keyboard": "Keyboard",
+    "panel": "Panel",
+    "clock": "Clock",
+    "powerSequencer": "Power Sequencer",
+    "kbModel": "Keyboard Model",
+    "clockModel": "Clock Model",
+    "powerModel": "Power Model",
+    "connPort": "Port",
+    "baudRate": "Baud Rate",
+    "available": "(Available)",
+    "ok": "OK"
+  },
+  "zh": {
+    "pageTitle": "外设设置",
+    "keyboard": "键盘",
+    "panel": "面板",
+    "clock": "时钟",
+    "powerSequencer": "时序电源",
+    "kbModel": "键盘型号",
+    "clockModel": "时钟型号",
+    "powerModel": "电源型号",
+    "connPort": "连接端口",
+    "baudRate": "波特率",
+    "available": "(可用)",
+    "ok": "确定"
+  }
+}

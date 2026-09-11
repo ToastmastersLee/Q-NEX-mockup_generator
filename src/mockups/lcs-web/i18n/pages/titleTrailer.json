@@ -1,0 +1,36 @@
+{
+  "en": {
+    "titleSection": "Title",
+    "titlePreset": "Title Preset",
+    "trailerSection": "Trailer",
+    "trailerPreset": "Trailer Preset",
+    "chooseFile": "Choose File",
+    "noFileSelected": "No files selected",
+    "delete": "Delete",
+    "duration": "Duration",
+    "unitSecond": "S",
+    "tipTitle": "TIP:",
+    "tip1": "1.Support bmp/jpg/png images;",
+    "tip2": "2.Image resolution cannot exceed 1920*1080;",
+    "tip3": "3.Image aspect ratio must be 16:9;",
+    "tip4": "4.Duration unit is second.",
+    "ok": "OK"
+  },
+  "zh": {
+    "titleSection": "片头",
+    "titlePreset": "片头预设",
+    "trailerSection": "片尾",
+    "trailerPreset": "片尾预设",
+    "chooseFile": "选择文件",
+    "noFileSelected": "未选择任何文件",
+    "delete": "删除",
+    "duration": "持续时间",
+    "unitSecond": "S",
+    "tipTitle": "操作提示:",
+    "tip1": "1.支持bmp/jpg/png格式的图片;",
+    "tip2": "2.图片分辨率不能大于1920*1080;",
+    "tip3": "3.图片宽高比必须为16:9;",
+    "tip4": "4.持续时间单位为秒。",
+    "ok": "确定"
+  }
+}

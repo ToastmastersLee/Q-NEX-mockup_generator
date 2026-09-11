@@ -1,0 +1,18 @@
+{
+  "en": {
+    "pageTitle": "PTZ Setting",
+    "protocol": "Protocol",
+    "commMode": "Comm Mode",
+    "commIp": "Comm IP",
+    "commPort": "Comm Port",
+    "ok": "OK"
+  },
+  "zh": {
+    "pageTitle": "云台设置",
+    "protocol": "通讯协议",
+    "commMode": "通讯方式",
+    "commIp": "通讯IP",
+    "commPort": "通讯端口",
+    "ok": "确定"
+  }
+}

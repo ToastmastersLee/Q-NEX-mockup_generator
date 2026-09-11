@@ -1,0 +1,26 @@
+{
+  "en": {
+    "pageTitle": "System Info",
+    "model": "Model",
+    "aecVersion": "AEC Version",
+    "sysVersion": "System Version",
+    "firmwareVersion": "Firmware Version",
+    "ipAddress": "IP Address",
+    "ipv6Address": "IPv6 Address",
+    "uuid": "UUID",
+    "macAddress": "MAC Address",
+    "checkVersion": "Version Check"
+  },
+  "zh": {
+    "pageTitle": "系统信息",
+    "model": "型号",
+    "aecVersion": "AEC版本",
+    "sysVersion": "系统版本",
+    "firmwareVersion": "固件版本",
+    "ipAddress": "IP地址",
+    "ipv6Address": "IPv6地址",
+    "uuid": "UUID",
+    "macAddress": "MAC地址",
+    "checkVersion": "版本检测"
+  }
+}

@@ -7,6 +7,8 @@ const { default: ActiveApp } = mockup === 'ndp600-cpl20-portrait'
   ? await import('./mockups/ndp600-cpl20-portrait/App.jsx')
   : mockup === 'lcs-landscape'
     ? await import('./mockups/lcs-landscape/App.jsx')
+    : mockup === 'lcs-web'
+      ? await import('./mockups/lcs-web/App.jsx')
     : await import('./App.jsx')
 
 createRoot(document.getElementById('root')).render(

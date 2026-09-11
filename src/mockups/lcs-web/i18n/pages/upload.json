@@ -1,0 +1,38 @@
+{
+  "en": {
+    "pageTitle": "Upload Setting",
+    "fileUpload": "File Upload",
+    "uploadPath": "Upload Path",
+    "tipUploadPath": "Operation Tip: Upload path format is \"Address/Path\", e.g. \"ftp://192.168.1.10/record\"",
+    "uploadMode": "Upload Mode",
+    "tipUploadMode": "Operation Tip: 1. Idle Upload means syncing record files when the recorder has no other tasks. 2. Real-time Upload means syncing as long as there are unsynced files. 3. Scheduled Upload means syncing files within specified time windows.",
+    "username": "Username",
+    "password": "Password",
+    "uploadType": "Upload Protocol",
+    "realtime": "Real-time Upload",
+    "idle": "Idle Upload",
+    "scheduled": "Scheduled Upload",
+    "standardFtp": "Standard FTP Upload",
+    "uploadByUsername": "Upload to different directories by username",
+    "filmOnly": "Only upload recordings in film mode",
+    "ok": "OK"
+  },
+  "zh": {
+    "pageTitle": "上传设置",
+    "fileUpload": "文件上传",
+    "uploadPath": "上传路径",
+    "tipUploadPath": "操作提示: 上传路径格式为\"地址/路径\", 如\"ftp://192.168.1.10/record\"",
+    "uploadMode": "上传方式",
+    "tipUploadMode": "操作提示: 1、闲时上传, 是指录播主机在无其他任务执行时, 进行录像文件同步。2、实时上传, 是指只要有文件未同步完成, 就会进行文件同步。3、定时上传, 是指在指定时间内进行文件同步。",
+    "username": "用户名",
+    "password": "密码",
+    "uploadType": "上传模式",
+    "realtime": "实时上传",
+    "idle": "闲时上传",
+    "scheduled": "定时上传",
+    "standardFtp": "标准ftp上传",
+    "uploadByUsername": "根据用户名上传不同目录",
+    "filmOnly": "只上传电影模式的录像",
+    "ok": "确定"
+  }
+}

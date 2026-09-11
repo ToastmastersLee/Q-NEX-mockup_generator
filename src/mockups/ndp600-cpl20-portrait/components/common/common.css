@@ -1,0 +1,359 @@
+/* Panels & Page Container */
+.ndp-panel {
+  border: none;
+  border-radius: 24px;
+  padding: 24px;
+  background: #363d50;
+  box-shadow: none;
+}
+
+.ndp-page,
+.ndp-scroll-page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  overflow: auto;
+  padding: 1px 4px 8px;
+}
+
+.ndp-page:not(.ndp-scroll-page) .ndp-panel {
+  flex: 1;
+}
+
+.ndp-panel h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+/* Row & Actions */
+.ndp-soft-row {
+  min-height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: transparent;
+  box-shadow: none;
+}
+
+.ndp-soft-row > span,
+.ndp-card-heading > span {
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.ndp-soft-row-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Toggle Switch */
+.ndp-toggle {
+  width: 67px;
+  height: 34px;
+  padding: 4px;
+  border: 0;
+  border-radius: 999px;
+  background: #26384d;
+  cursor: pointer;
+  box-shadow: inset 3px 3px 7px rgba(5, 13, 24, 0.58), inset -2px -2px 4px rgba(255, 255, 255, 0.08);
+}
+
+.ndp-toggle span {
+  display: block;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: #d7f8ff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.36);
+  transition: transform 160ms ease;
+}
+
+.ndp-toggle.is-on {
+  background: #1677ff;
+  box-shadow: none;
+}
+
+.ndp-toggle.is-on span {
+  transform: translateX(33px);
+}
+
+/* Icon Buttons */
+.ndp-icon-btn {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border: 1px solid rgba(226, 241, 255, 0.14);
+  border-radius: 999px;
+  color: #dcefff;
+  background: rgba(60, 88, 120, 0.48);
+  cursor: pointer;
+  box-shadow: 4px 6px 12px rgba(19, 35, 54, 0.3), inset 1px 1px 1px rgba(255, 255, 255, 0.12);
+  transition: transform 160ms ease, color 160ms ease, background 160ms ease;
+}
+
+.ndp-icon-btn:hover,
+.ndp-icon-btn.is-active {
+  color: #ffffff;
+  background: linear-gradient(135deg, #05c8ec, #127bff);
+  box-shadow: 0 0 18px rgba(0, 202, 255, 0.48), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+
+/* Segmented Buttons */
+.ndp-seg-button {
+  min-width: 78px;
+  height: 42px;
+  border: 0;
+  border-radius: 999px;
+  color: #ffffff;
+  background: rgba(101, 136, 173, 0.5);
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.08), 0 8px 14px rgba(20, 38, 58, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ndp-seg-button.is-active {
+  color: #ffffff;
+  background: linear-gradient(135deg, #04cff2, #126ef4);
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.42);
+}
+
+/* Titles & Headings */
+.ndp-section-title,
+.ndp-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ndp-section-title > svg {
+  width: 32px;
+  height: 32px;
+  color: #00c8ff;
+}
+
+.ndp-card-heading {
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.ndp-card-heading small {
+  display: inline-grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+  border: 2px solid #dfe58d;
+  border-radius: 999px;
+  color: #dfe58d;
+  font-size: 14px;
+}
+
+.ndp-screen-title {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0;
+  color: #ffffff;
+}
+
+.ndp-back-title {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  background: transparent;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 800;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Checkbox */
+.ndp-checkbox {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  transition: background-color 0.2s, border-color 0.2s;
+  background: transparent;
+  border: 1px solid #9ca3af;
+}
+
+.ndp-checkbox:hover {
+  border-color: #e5e7eb;
+}
+
+.ndp-checkbox.is-checked {
+  background: #007AFF !important;
+  border-color: transparent !important;
+}
+
+.ndp-checkbox.is-checked svg {
+  color: white;
+}
+
+/* Help Icon */
+.ndp-help-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #EAB308;
+  color: #EAB308;
+  cursor: help;
+  transition: opacity 0.2s;
+}
+
+.ndp-help-icon:hover {
+  opacity: 0.8;
+}
+
+.ndp-help-icon span {
+  font-size: 11px;
+  font-weight: bold;
+}
+
+/* Utilities */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Light Theme overrides for common elements */
+.ndp-stage.is-light .ndp-panel {
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  box-shadow: none;
+  color: #000000;
+}
+
+.ndp-stage.is-light .ndp-panel h2 {
+  color: #000000;
+}
+
+.ndp-stage.is-light .ndp-soft-row {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  color: #000000;
+}
+
+.ndp-stage.is-light .ndp-soft-row > span {
+  color: #000000;
+}
+
+.ndp-stage.is-light .ndp-toggle {
+  background: #d1d5db;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.ndp-stage.is-light .ndp-toggle.is-on {
+  background: #3b82f6;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.ndp-stage.is-light .ndp-toggle span {
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.ndp-stage.is-light .ndp-icon-btn {
+  color: #4b5563;
+  background: #ffffff;
+  border: 2px solid #d1d5db;
+  box-shadow: none;
+}
+
+.ndp-stage.is-light .ndp-icon-btn:hover {
+  background: #f9fafb;
+  color: #111827;
+  border-color: #9ca3af;
+  box-shadow: none;
+}
+
+.ndp-stage.is-light .ndp-icon-btn.is-active {
+  background: #3b82f6;
+  color: #ffffff;
+  border-color: #000000;
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+}
+
+.ndp-stage.is-light .ndp-power-btn {
+  background: #3b82f6;
+  color: #ffffff;
+  border-color: #3b82f6;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+.ndp-stage.is-light .ndp-power-btn:hover {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+
+.ndp-stage.is-light .ndp-seg-button {
+  background: #ffffff;
+  color: #4b5563;
+  border: 2px solid #d1d5db;
+  box-shadow: none;
+}
+
+.ndp-stage.is-light .ndp-seg-button.is-active {
+  background: #3b82f6;
+  color: #ffffff;
+  border-color: #3b82f6;
+}
+
+.ndp-stage.is-light .ndp-section-title > svg {
+  color: #2563eb;
+}
+
+.ndp-stage.is-light .ndp-screen-title {
+  color: #000000;
+}
+
+.ndp-stage.is-light .ndp-back-title {
+  color: #000000;
+}
+
+.ndp-light-theme .ndp-checkbox {
+  background: white;
+}
+
+.ndp-light-theme .ndp-checkbox:hover {
+  border-color: #6b7280;
+}
+
+.ndp-light-theme .ndp-help-icon {
+  border-color: black;
+  color: black;
+}
