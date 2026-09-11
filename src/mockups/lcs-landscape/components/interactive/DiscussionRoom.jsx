@@ -3,6 +3,7 @@ import { Mic, MicOff } from 'lucide-react';
 import { useLcs } from '../../context/LcsContext';
 import { MembersModal } from './MembersModal';
 import { InviteModal } from './InviteModal';
+import { PgmDirectorLayout } from '../director/PgmDirectorLayout';
 import discussionFeedLeft from '../../../../assets/discussion_feed_left.png';
 import discussionFeedRight from '../../../../assets/discussion_feed_right.png';
 
@@ -30,7 +31,8 @@ export function DiscussionRoom() {
     setInteractiveSubPage,
     setActiveMenuSection,
     showToast,
-    channelImages
+    channelImages,
+    setIsLayoutBarOpen
   } = useLcs();
 
   const pgmDropdownRef = useRef(null);
@@ -121,12 +123,16 @@ export function DiscussionRoom() {
         {/* Top Row: Shared Presentation Screen */}
         <div className="lcs-discussion-top-video-wrapper">
           <div className="lcs-discussion-top-video">
-            <img 
-              src={topFeed.src} 
-              alt={topFeed.alt} 
-              className="w-full h-full object-cover" 
-              style={{ objectPosition: topFeed.objectPosition }}
-            />
+            {discussionPgmSource === 'PGM' ? (
+              <PgmDirectorLayout isDiscussionFeed={true} />
+            ) : (
+              <img 
+                src={topFeed.src} 
+                alt={topFeed.alt} 
+                className="w-full h-full object-cover" 
+                style={{ objectPosition: topFeed.objectPosition }}
+              />
+            )}
           </div>
         </div>
 
@@ -169,9 +175,10 @@ export function DiscussionRoom() {
             onClick={() => {
               setIsDirectorMinimized(true);
               setActiveMenuSection(null);
-              showToast("Returned to Director View");
+              setIsLayoutBarOpen(true);
+              showToast("Switched to Director View");
             }}
-            title="Switch back to Director View"
+            title="Switch to Director View"
           >
             Director
           </button>
