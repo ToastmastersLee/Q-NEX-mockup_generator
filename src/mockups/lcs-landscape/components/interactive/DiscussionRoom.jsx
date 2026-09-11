@@ -1,10 +1,10 @@
+import { useRef, useEffect } from 'react';
 import { Mic, MicOff } from 'lucide-react';
 import { useLcs } from '../../context/LcsContext';
 import { MembersModal } from './MembersModal';
 import { InviteModal } from './InviteModal';
 import discussionFeedLeft from '../../../../assets/discussion_feed_left.png';
 import discussionFeedRight from '../../../../assets/discussion_feed_right.png';
-import ch3TeacherClose from '../../../../assets/ch3_teacher_close.png';
 
 export function DiscussionRoom() {
   const {
@@ -29,8 +29,23 @@ export function DiscussionRoom() {
     setIsInteractiveSessionActive,
     setInteractiveSubPage,
     setActiveMenuSection,
-    showToast
+    showToast,
+    channelImages
   } = useLcs();
+
+  const pgmDropdownRef = useRef(null);
+
+  // Close dropdown menu when clicking outside
+  useEffect(() => {
+    if (!isDiscussionPgmDropdownOpen) return;
+    const handleClickOutside = (e) => {
+      if (pgmDropdownRef.current && !pgmDropdownRef.current.contains(e.target)) {
+        setIsDiscussionPgmDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isDiscussionPgmDropdownOpen, setIsDiscussionPgmDropdownOpen]);
 
   if (interactiveCallState !== 'discussion_active' || isDirectorMinimized) {
     return null;
@@ -39,6 +54,56 @@ export function DiscussionRoom() {
   const activeMembers = addressBook.filter(m => m.checked);
   const leftFeedName = activeMembers[0]?.name || "Shanghai Campus - Room 101";
   const rightFeedName = activeMembers[1]?.name || "Guangzhou Campus - Class A";
+
+  const getDiscussionTopFeed = () => {
+    switch (discussionPgmSource) {
+      case 'Student_C':
+        return {
+          src: channelImages.ch4,
+          alt: 'Student Close-up',
+          objectPosition: 'center'
+        };
+      case 'Teacher_P':
+        return {
+          src: channelImages.ch5,
+          alt: 'Teacher Panorama',
+          objectPosition: 'right center'
+        };
+      case 'Teacher_C':
+        return {
+          src: channelImages.ch3,
+          alt: 'Teacher Close-up',
+          objectPosition: 'center 20%'
+        };
+      case 'Student_P':
+        return {
+          src: channelImages.ch6,
+          alt: 'Student Panorama',
+          objectPosition: 'center'
+        };
+      case 'Lecture':
+        return {
+          src: channelImages.ch1,
+          alt: 'Lecture Slides (PPT)',
+          objectPosition: 'center'
+        };
+      case 'Lecture2':
+        return {
+          src: channelImages.ch2,
+          alt: 'Document Camera',
+          objectPosition: 'center'
+        };
+      case 'PGM':
+      default:
+        return {
+          src: channelImages.ch3,
+          alt: 'PGM Program Output',
+          objectPosition: 'center 20%'
+        };
+    }
+  };
+
+  const topFeed = getDiscussionTopFeed();
 
   return (
     <div className="lcs-discussion-room-fullscreen">
@@ -57,10 +122,10 @@ export function DiscussionRoom() {
         <div className="lcs-discussion-top-video-wrapper">
           <div className="lcs-discussion-top-video">
             <img 
-              src={ch3TeacherClose} 
-              alt="Teacher Close-up" 
+              src={topFeed.src} 
+              alt={topFeed.alt} 
               className="w-full h-full object-cover" 
-              style={{ objectPosition: 'center 20%' }}
+              style={{ objectPosition: topFeed.objectPosition }}
             />
           </div>
         </div>
@@ -135,7 +200,7 @@ export function DiscussionRoom() {
           </button>
 
           {/* Dropdown source selection */}
-          <div className="lcs-room-pgm-wrapper" style={{ position: 'relative' }}>
+          <div ref={pgmDropdownRef} className="lcs-room-pgm-wrapper" style={{ position: 'relative' }}>
             {isDiscussionPgmDropdownOpen && (
               <div className="lcs-room-pgm-menu">
                 {[
@@ -167,7 +232,7 @@ export function DiscussionRoom() {
               onClick={() => setIsDiscussionPgmDropdownOpen(!isDiscussionPgmDropdownOpen)}
               style={{ cursor: 'pointer', background: 'transparent', border: 'none', color: 'inherit' }}
             >
-              <span style={{ color: '#ffffff', fontWeight: 'bold' }}>
+              <span style={{ color: discussionPgmSource !== 'PGM' ? '#22c55e' : '#ffffff', fontWeight: 'bold' }}>
                 {discussionPgmSource}
               </span>
               <span style={{ fontSize: '10px', marginLeft: '4px' }}>▾</span>

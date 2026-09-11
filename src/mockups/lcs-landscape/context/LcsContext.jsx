@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { createContext, useContext, useState, useEffect, useRef } from 'react';
 import classroomFeed from '../../../assets/classroom_feed.png';
 import ch1Ppt from '../../../assets/ch1_ppt.png';
@@ -54,7 +55,7 @@ export function LcsProvider({ children }) {
   const [showInviteModal, setShowInviteModal] = useState(false);
   const [inviteSelectedIds, setInviteSelectedIds] = useState([]);
   const [isSharingActive, setIsSharingActive] = useState(false);
-  const [discussionPgmSource, setDiscussionPgmSource] = useState('Student_C');
+  const [discussionPgmSource, setDiscussionPgmSource] = useState('PGM');
   const [isDiscussionPgmDropdownOpen, setIsDiscussionPgmDropdownOpen] = useState(false);
   const [isDiscussionMicOn, setIsDiscussionMicOn] = useState(true);
 
@@ -262,6 +263,7 @@ export function LcsProvider({ children }) {
           if (payload.isRecording !== undefined) setIsRecording(payload.isRecording);
           if (payload.showMicToast !== undefined) setShowMicToast(payload.showMicToast);
           if (payload.selectedPgmSource !== undefined) setSelectedPgmSource(payload.selectedPgmSource);
+          if (payload.discussionPgmSource !== undefined) setDiscussionPgmSource(payload.discussionPgmSource);
           if (payload.pipPosition !== undefined) setPipPosition(payload.pipPosition);
           if (payload.pipSize !== undefined) setPipSize(payload.pipSize);
         }
@@ -284,6 +286,7 @@ export function LcsProvider({ children }) {
               isRecording,
               showMicToast,
               selectedPgmSource,
+              discussionPgmSource,
               pipPosition,
               pipSize
             }
@@ -306,6 +309,7 @@ export function LcsProvider({ children }) {
     isRecording,
     showMicToast,
     selectedPgmSource,
+    discussionPgmSource,
     pipPosition,
     pipSize
   ]);
@@ -328,6 +332,7 @@ export function LcsProvider({ children }) {
           isRecording,
           showMicToast,
           selectedPgmSource,
+          discussionPgmSource,
           pipPosition,
           pipSize
         }
@@ -349,6 +354,7 @@ export function LcsProvider({ children }) {
     isRecording,
     showMicToast,
     selectedPgmSource,
+    discussionPgmSource,
     pipPosition,
     pipSize
   ]);
