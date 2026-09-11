@@ -1,0 +1,497 @@
+/* ==========================================================================
+   Record Setting Page Styling
+   ========================================================================== */
+.lcs-web-record-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.lcs-web-record-table th {
+  background: #f8fafc;
+  color: #334155;
+  font-weight: 700;
+  padding: 10px;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: center;
+}
+
+.lcs-web-record-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #f1f5f9;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.lcs-web-rec-auto-bar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 14px 20px;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 12px;
+  flex-wrap: wrap;
+}
+
+.lcs-web-auto-rec-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: #1e293b;
+  cursor: pointer;
+}
+
+.lcs-web-rec-dur-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #475569;
+}
+
+.lcs-web-rec-duration-tip {
+  color: #94a3b8;
+  font-size: 11px;
+  margin-left: auto;
+}
+
+.lcs-web-timed-rec-wrapper {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.lcs-web-timed-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  text-align: center;
+}
+
+.lcs-web-timed-table th {
+  background: #f1f5f9;
+  color: #334155;
+  font-weight: 700;
+  padding: 8px 10px;
+  border: 1px solid #cbd5e1;
+}
+
+.lcs-web-timed-table td {
+  padding: 6px 8px;
+  border: 1px solid #e2e8f0;
+  vertical-align: middle;
+}
+
+.lcs-web-timed-label-col {
+  font-weight: 700;
+  color: #1e293b;
+  background: #f8fafc;
+  width: 100px;
+  vertical-align: middle !important;
+  text-align: center;
+}
+
+.lcs-web-time-input-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 2px 6px;
+  background: #ffffff;
+}
+
+.lcs-web-time-input-wrap input {
+  width: 64px;
+  border: 0;
+  outline: none;
+  font-size: 11px;
+  text-align: center;
+  color: #1e293b;
+}
+
+.lcs-web-duration-input {
+  width: 70px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 2px 6px;
+  text-align: center;
+  font-size: 11px;
+  background: #f8fafc;
+  outline: none;
+  color: #475569;
+}
+
+.lcs-web-btn-op-del {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ef4444;
+}
+
+.lcs-web-timed-tips {
+  font-size: 11px;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+.lcs-web-timed-tips ol {
+  margin: 4px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lcs-web-subcard-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e293b;
+  padding: 12px 20px;
+  border-bottom: 1px solid #e2e8f0;
+  background: #f8fafc;
+}
+
+.lcs-web-audio-mix-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.lcs-web-audio-mix-table th {
+  background: #ffffff;
+  color: #475569;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: left;
+}
+
+.lcs-web-audio-mix-table td {
+  padding: 12px 20px;
+  border-bottom: 1px solid #f1f5f9;
+  text-align: left;
+}
+
+.lcs-web-mix-checkboxes {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.lcs-web-mix-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  color: #334155;
+  font-size: 12px;
+}
+
+.lcs-web-audio-mix-tip {
+  padding: 10px 20px 0;
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.lcs-web-btn-ok {
+  background: #1e88ff;
+  color: #ffffff;
+  border: 0;
+  border-radius: 4px;
+  padding: 6px 24px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  align-self: flex-start;
+  margin: 16px 20px 20px;
+  box-shadow: 0 2px 6px rgba(30, 136, 255, 0.25);
+  transition: background 0.2s ease;
+}
+
+.lcs-web-btn-ok:hover {
+  background: #0b74ff;
+}
+
+/* ==========================================================================
+   RECORD & LIVE SETTINGS (1:1 PIXEL-PERFECT REPLICA)
+   ========================================================================== */
+.lcs-web-card-inner-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #334155;
+  margin: 0 0 10px 0;
+}
+
+.lcs-web-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+
+.lcs-web-data-table th {
+  padding: 8px 6px;
+  background: #fafbfc;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: left;
+  color: #334155;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.lcs-web-data-table td {
+  padding: 6px 6px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #475569;
+  vertical-align: middle;
+}
+
+.lcs-web-compact-input {
+  border: 1px solid #cbd5e1;
+  border-radius: 3px;
+  padding: 3px 6px;
+  font-size: 11px;
+  color: #334155;
+  outline: none;
+  background: #ffffff;
+}
+
+.lcs-web-compact-input:focus {
+  border-color: #1e88e5;
+}
+
+.lcs-web-schedule-top-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 11px;
+}
+
+.lcs-web-schedule-control-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lcs-web-schedule-top-tip {
+  color: #94a3b8;
+  font-size: 10px;
+  margin-left: auto;
+}
+
+.lcs-web-schedule-table th,
+.lcs-web-schedule-table td {
+  text-align: center;
+}
+
+.lcs-web-schedule-table th:nth-child(3),
+.lcs-web-schedule-table th:nth-child(4),
+.lcs-web-schedule-table td:nth-child(3),
+.lcs-web-schedule-table td:nth-child(4) {
+  text-align: left;
+}
+
+.lcs-web-btn-minus-circle {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lcs-web-time-input-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid #cbd5e1;
+  border-radius: 3px;
+  padding: 2px 6px;
+  background: #ffffff;
+}
+
+.lcs-web-time-input-box input {
+  border: 0;
+  outline: none;
+  font-size: 11px;
+  width: 58px;
+  color: #334155;
+  font-family: monospace;
+}
+
+.lcs-web-popover-tooltip {
+  position: absolute;
+  top: -34px;
+  left: 100%;
+  margin-left: 8px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 4px 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  font-size: 10px;
+  z-index: 10;
+  color: #334155;
+}
+
+.lcs-web-btn-copy {
+  background: #eaf4ff;
+  border: 1px solid #90caf9;
+  color: #1e88e5;
+  border-radius: 2px;
+  padding: 1px 6px;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+
+/* Switch Component */
+.lcs-web-switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 18px;
+}
+
+.lcs-web-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.lcs-web-switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #cbd5e1;
+  transition: .3s;
+  border-radius: 18px;
+}
+
+.lcs-web-switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: .3s;
+  border-radius: 50%;
+}
+
+.lcs-web-switch input:checked + .slider {
+  background-color: #1e88e5;
+}
+
+.lcs-web-switch input:checked + .slider:before {
+  transform: translateX(16px);
+}
+
+
+/* ==========================================================================
+   VIDEO MATTING / SCENE SETTINGS (1:1 PIXEL-PERFECT)
+   ========================================================================== */
+.lcs-web-matting-grid {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 10px 0;
+}
+
+.lcs-web-matting-add-box {
+  width: 140px;
+  height: 84px;
+  background-color: #555555;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.lcs-web-matting-add-box:hover {
+  background-color: #444444;
+}
+
+.lcs-web-scene-card {
+  width: 140px;
+  height: 84px;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.lcs-web-scene-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+  font-size: 10px;
+  padding: 2px 6px;
+  z-index: 2;
+}
+
+.lcs-web-scene-preview {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.lcs-web-scene-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lcs-web-scene-actions {
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  z-index: 2;
+}
+
+.lcs-web-scene-btn-matting {
+  background: #1e88e5;
+  color: #ffffff;
+  border: 0;
+  border-radius: 2px;
+  padding: 1px 8px;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.lcs-web-scene-btn-delete {
+  background: #ef4444;
+  color: #ffffff;
+  border: 0;
+  border-radius: 2px;
+  padding: 1px 8px;
+  font-size: 10px;
+  cursor: pointer;
+}
+
