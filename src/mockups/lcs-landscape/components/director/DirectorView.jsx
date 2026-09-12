@@ -1,4 +1,4 @@
-import { Film, Pause, Play, Sliders, Settings, Mic, ArrowLeft } from 'lucide-react';
+import { Film, Pause, Play, Sliders, Settings, Mic } from 'lucide-react';
 import { useLcs } from '../../context/LcsContext';
 import { PowerDrawer } from '../drawers/PowerDrawer';
 import { PtzDrawer } from '../drawers/PtzDrawer';
@@ -318,36 +318,18 @@ export function DirectorView() {
               </div>
             </div>
 
-            {/* Right: Actions (Back button if interactive session, and Close "x" button) */}
-            <div className="lcs-layout-bar-actions">
-              {interactiveCallState !== 'idle' && (
-                <button 
-                  type="button" 
-                  className="lcs-layout-back-btn"
-                  onClick={() => {
-                    setActiveMenuSection('interactive');
-                    setIsDirectorMinimized(false);
-                    setIsMenuOpen(false);
-                    setIsLayoutBarOpen(false);
-                  }}
-                  title="Back to Interactive Session"
-                >
-                  <ArrowLeft size={13} />
-                  <span>Back</span>
-                </button>
-              )}
-              <button 
-                type="button" 
-                className="lcs-layout-close-btn"
-                onClick={() => setIsLayoutBarOpen(false)}
-                title="Close Layouts"
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="18" y1="6" x2="6" y2="18"></line>
-                  <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-              </button>
-            </div>
+            {/* Right: Close "x" button */}
+            <button 
+              type="button" 
+              className="lcs-layout-close-btn"
+              onClick={() => setIsLayoutBarOpen(false)}
+              title="Close Layouts"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
           </div>
         ) : (
           <div className="lcs-bottom-bar">
@@ -459,10 +441,9 @@ export function DirectorView() {
                     setIsDirectorMinimized(false);
                     setIsMenuOpen(false);
                   }}
-                  title="Back to Interactive Session"
+                  title="Back Interaction"
                 >
-                  <ArrowLeft size={12} style={{ display: 'inline', marginRight: '3px' }} />
-                  <span>Back</span>
+                  <span>Back Interaction</span>
                 </button>
               ) : (
                 <button 
