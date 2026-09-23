@@ -329,32 +329,62 @@
 
 .lcs-web-popover-tooltip {
   position: absolute;
-  top: -34px;
-  left: 100%;
-  margin-left: 8px;
+  top: calc(100% + 8px);
+  right: 0;
   background: #ffffff;
   border: 1px solid #cbd5e1;
   border-radius: 4px;
-  padding: 4px 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  padding: 8px 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 14px;
   white-space: nowrap;
-  font-size: 10px;
-  z-index: 10;
+  font-size: 11px;
+  z-index: 50;
   color: #334155;
 }
 
-.lcs-web-btn-copy {
-  background: #eaf4ff;
-  border: 1px solid #90caf9;
-  color: #1e88e5;
-  border-radius: 2px;
-  padding: 1px 6px;
-  font-size: 10px;
-  cursor: pointer;
+.lcs-web-popover-tooltip::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  right: 30px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #cbd5e1;
 }
+
+.lcs-web-popover-tooltip::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  right: 31px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #ffffff;
+}
+
+.lcs-web-btn-copy {
+  background: transparent;
+  border: 0;
+  color: #1e88e5;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.15s;
+}
+
+.lcs-web-btn-copy:hover {
+  color: #0d47a1;
+  text-decoration: underline;
+}
+
 
 
 /* Switch Component */

@@ -6,8 +6,9 @@ import './VideoPage.css';
 
 export function VideoPage() {
   const [duplicate, setDuplicate] = useState(readQuery('duplicate') === '1');
-  const [singleInput, setSingleInput] = useState('hdmi1');
-  const [outputs, setOutputs] = useState({ a: 'hdmi1', b: 'hdmi2', c: 'hdmi1' });
+  const [singleInput, setSingleInput] = useState('ops');
+  const [outputs, setOutputs] = useState({ a: 'ops', b: 'hdmi1', c: 'hdmi2' });
+
 
   return (
     <div className="ndp-page">

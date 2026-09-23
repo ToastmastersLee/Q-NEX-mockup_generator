@@ -1,12 +1,25 @@
 import { useState } from 'react';
 import {
   CircleMinus,
-  Clock,
 } from 'lucide-react';
-import { NativeSelect } from '../common';
+import { NativeSelect, TimePicker } from '../common';
 import { useTranslation } from '../../i18n';
 
+function calculateDuration(start, end) {
+  if (!start || !end) return '00:45:00';
+  const [sh, sm, ss] = start.split(':').map(Number);
+  const [eh, em, es] = end.split(':').map(Number);
+  if (isNaN(sh) || isNaN(sm) || isNaN(ss) || isNaN(eh) || isNaN(em) || isNaN(es)) return '00:45:00';
+  let diffSec = (eh * 3600 + em * 60 + es) - (sh * 3600 + sm * 60 + ss);
+  if (diffSec < 0) diffSec += 24 * 3600;
+  const dh = String(Math.floor(diffSec / 3600)).padStart(2, '0');
+  const dm = String(Math.floor((diffSec % 3600) / 60)).padStart(2, '0');
+  const ds = String(diffSec % 60).padStart(2, '0');
+  return `${dh}:${dm}:${ds}`;
+}
+
 export function RecordSettingPage() {
+
   const { t } = useTranslation('record');
   const { t: tCommon } = useTranslation('common');
   const [autoRecord, setAutoRecord] = useState(false);
@@ -225,30 +238,28 @@ export function RecordSettingPage() {
                     />
                   </td>
                   <td>
-                    <div className="lcs-web-time-input-box">
-                      <Clock size={13} className="text-slate-400" />
-                      <input
-                        type="text"
-                        value={s.start}
-                        onChange={e => {
-                          const val = e.target.value;
-                          setScheduleRows(curr => curr.map((r, i) => i === idx ? { ...r, start: val } : r));
-                        }}
-                      />
-                    </div>
+                    <TimePicker
+                      value={s.start}
+                      onChange={val => {
+                        setScheduleRows(curr => curr.map((r, i) => {
+                          if (i !== idx) return r;
+                          const nextDuration = calculateDuration(val, r.end);
+                          return { ...r, start: val, duration: nextDuration };
+                        }));
+                      }}
+                    />
                   </td>
                   <td>
-                    <div className="lcs-web-time-input-box">
-                      <Clock size={13} className="text-slate-400" />
-                      <input
-                        type="text"
-                        value={s.end}
-                        onChange={e => {
-                          const val = e.target.value;
-                          setScheduleRows(curr => curr.map((r, i) => i === idx ? { ...r, end: val } : r));
-                        }}
-                      />
-                    </div>
+                    <TimePicker
+                      value={s.end}
+                      onChange={val => {
+                        setScheduleRows(curr => curr.map((r, i) => {
+                          if (i !== idx) return r;
+                          const nextDuration = calculateDuration(r.start, val);
+                          return { ...r, end: val, duration: nextDuration };
+                        }));
+                      }}
+                    />
                   </td>
                   <td>
                     <input
