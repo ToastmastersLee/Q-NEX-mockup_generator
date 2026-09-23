@@ -1,19 +1,43 @@
-import { useState } from 'react';
+﻿import { useState, useRef, useEffect } from 'react';
 import {
   CircleMinus,
-  Clock,
-  Share2,
+  Link,
 } from 'lucide-react';
-import { NativeSelect } from '../common';
+import { NativeSelect, TimePicker } from '../common';
 import { useTranslation } from '../../i18n';
+
+function calculateDuration(start, end) {
+  if (!start || !end) return '00:45:00';
+  const [sh, sm, ss] = start.split(':').map(Number);
+  const [eh, em, es] = end.split(':').map(Number);
+  if (isNaN(sh) || isNaN(sm) || isNaN(ss) || isNaN(eh) || isNaN(em) || isNaN(es)) return '00:45:00';
+  let diffSec = (eh * 3600 + em * 60 + es) - (sh * 3600 + sm * 60 + ss);
+  if (diffSec < 0) diffSec += 24 * 3600;
+  const dh = String(Math.floor(diffSec / 3600)).padStart(2, '0');
+  const dm = String(Math.floor((diffSec % 3600) / 60)).padStart(2, '0');
+  const ds = String(diffSec % 60).padStart(2, '0');
+  return `${dh}:${dm}:${ds}`;
+}
 
 export function LiveSettingPage() {
   const { t } = useTranslation('live');
   const { t: tCommon } = useTranslation('common');
   const [autoLive, setAutoLive] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
-  void setToastMessage;
   const [activeTooltipChannel, setActiveTooltipChannel] = useState(null);
+  const popoverRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (popoverRef.current && !popoverRef.current.contains(e.target)) {
+        setActiveTooltipChannel(null);
+      }
+    }
+    if (activeTooltipChannel) {
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => document.removeEventListener('mousedown', handleClickOutside);
+    }
+  }, [activeTooltipChannel]);
 
   const [liveRows, setLiveRows] = useState([
     { id: 'film1', channel: '电影 1', mode: 'RTMP', res: '1920*1080', bitrate: '2048Kbps', fps: '25fps', pushUrl: '192.168.3.50', playUrl: 'rtmp://192.168.3.50:1935/live/film', isLive: true, rtspLive: true, rtspUrl: 'rtsp://192.168.3.50/live_film' },
@@ -23,7 +47,7 @@ export function LiveSettingPage() {
     { id: 'tch', channel: '教师', mode: 'RTMP', res: '640*360', bitrate: '512Kbps', fps: '25fps', pushUrl: '192.168.3.50', playUrl: 'rtmp://192.168.3.50:1935/live/teacher', isLive: false, rtspLive: false, rtspUrl: 'rtsp://192.168.3.50/live_teacher' },
     { id: 'stu', channel: '学生', mode: 'RTMP', res: '640*360', bitrate: '512Kbps', fps: '25fps', pushUrl: '192.168.3.50', playUrl: 'rtmp://192.168.3.50:1935/live/student', isLive: false, rtspLive: false, rtspUrl: 'rtsp://192.168.3.50/live_student' },
     { id: 'tch_p', channel: '教师全景', mode: 'RTMP', res: '640*360', bitrate: '512Kbps', fps: '25fps', pushUrl: '192.168.3.50', playUrl: 'rtmp://192.168.3.50:1935/live/teacher_full', isLive: false, rtspLive: false, rtspUrl: 'rtsp://192.168.3.50/live_teacher_full' },
-    { id: 'stu_p', channel: '学生全景', mode: 'RTMP', res: '640*360', bitrate: '512Kbps', fps: '25fps', pushUrl: '192.168.3.50', playUrl: 'rtmp://192.168.3.50:1935/live/student_full', isLive: false, rtspLive: false, rtspUrl: 'rtsp://192.168.3.50/live_student_full' },
+    { id: 'stu_p', channel: '学生全景', mode: 'RTMP', res: '640*360', bitrate: '512Kbps', fps: '25fps', pushUrl: '192.168.3.50', playUrl: 'rtmp://192.168.3.50/live_student_full', isLive: false, rtspLive: false, rtspUrl: 'rtsp://192.168.3.50/live_student_full' },
     { id: 'inter', channel: '互动', mode: 'RTMP', res: '640*360', bitrate: '512Kbps', fps: '25fps', pushUrl: '192.168.3.50', playUrl: 'rtmp://192.168.3.50:1935/live/interactive', isLive: false, rtspLive: false, rtspUrl: 'rtsp://192.168.3.50/live_interactive' },
   ]);
 
@@ -153,22 +177,22 @@ export function LiveSettingPage() {
                       {row.rtspLive && (
                         <button
                           type="button"
-                          className="text-blue-500 hover:text-blue-700 text-xs flex items-center gap-0.5"
+                          className="text-blue-500 hover:text-blue-700 text-xs flex items-center gap-1 cursor-pointer"
                           onClick={() => setActiveTooltipChannel(activeTooltipChannel === row.id ? null : row.id)}
                         >
-                          <Share2 size={12} />
-                          <span>{t('liveUrlLink', '直播地址')}</span>
+                          <Link size={12} />
+                          <span>{t('liveUrlLink', 'Live URL')}</span>
                         </button>
                       )}
                       {activeTooltipChannel === row.id && (
-                        <div className="lcs-web-popover-tooltip">
+                        <div className="lcs-web-popover-tooltip" ref={popoverRef}>
                           <span>{row.rtspUrl}</span>
                           <button
                             type="button"
                             className="lcs-web-btn-copy"
                             onClick={() => copyToClipboard(row.rtspUrl)}
                           >
-                            {t('copy', '复制')}
+                            {t('copy', 'Copy')}
                           </button>
                         </div>
                       )}
@@ -236,30 +260,28 @@ export function LiveSettingPage() {
                     />
                   </td>
                   <td>
-                    <div className="lcs-web-time-input-box">
-                      <Clock size={13} className="text-slate-400" />
-                      <input
-                        type="text"
-                        value={s.start}
-                        onChange={e => {
-                          const val = e.target.value;
-                          setScheduleRows(curr => curr.map((r, i) => i === idx ? { ...r, start: val } : r));
-                        }}
-                      />
-                    </div>
+                    <TimePicker
+                      value={s.start}
+                      onChange={val => {
+                        setScheduleRows(curr => curr.map((r, i) => {
+                          if (i !== idx) return r;
+                          const nextDuration = calculateDuration(val, r.end);
+                          return { ...r, start: val, duration: nextDuration };
+                        }));
+                      }}
+                    />
                   </td>
                   <td>
-                    <div className="lcs-web-time-input-box">
-                      <Clock size={13} className="text-slate-400" />
-                      <input
-                        type="text"
-                        value={s.end}
-                        onChange={e => {
-                          const val = e.target.value;
-                          setScheduleRows(curr => curr.map((r, i) => i === idx ? { ...r, end: val } : r));
-                        }}
-                      />
-                    </div>
+                    <TimePicker
+                      value={s.end}
+                      onChange={val => {
+                        setScheduleRows(curr => curr.map((r, i) => {
+                          if (i !== idx) return r;
+                          const nextDuration = calculateDuration(r.start, val);
+                          return { ...r, end: val, duration: nextDuration };
+                        }));
+                      }}
+                    />
                   </td>
                   <td>
                     <input
@@ -321,5 +343,3 @@ export function LiveSettingPage() {
     </section>
   );
 }
-
-

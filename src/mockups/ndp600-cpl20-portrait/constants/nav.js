@@ -42,10 +42,11 @@ export const menuConfigItems = [
 ];
 
 export const inputOptions = [
+  { id: 'ops', label: 'OPS', icon: DocCamIcon },
   { id: 'hdmi1', label: 'HDMI in 1', icon: Laptop },
   { id: 'hdmi2', label: 'HDMI in 2', icon: HdmiIcon },
-  { id: 'ops', label: 'OPS', icon: DocCamIcon },
 ];
+
 
 export const readQuery = (name) => new URLSearchParams(window.location.search).get(name);
 
