@@ -28,7 +28,7 @@ export function SettingsHub() {
       id: 'serial-settings',
       label: 'Serial Port Settings',
       icon: SerialPortSettingsIcon,
-      targetScreen: null,
+      targetScreen: 'settings-serial',
     },
     {
       id: 'hdmi-res',

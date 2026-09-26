@@ -59,6 +59,13 @@ export const SCREEN_REGISTRY = [
     batch: 4,
     desc: '语言设置页 · 3列单选布局 (支持19种国际语言与 1/2、2/2 分页)',
   },
+  {
+    id: 'settings-serial',
+    name: '串口设置 (Serial Port Settings)',
+    type: 'page',
+    batch: 5,
+    desc: '串口设置页 · RS232-01/02 与 RS485-01/02 端口配置/波特率/校验位/控制码编辑',
+  },
 ];
 
 export function getScreenFromUrl() {

@@ -5,6 +5,7 @@
 @import './home.css';
 @import './serial.css';
 @import './settings.css';
+@import './serial-settings.css';
 
 /* Global Hidden Scrollbars per lessons_learnt.md */
 .cpd10-screen-viewport,

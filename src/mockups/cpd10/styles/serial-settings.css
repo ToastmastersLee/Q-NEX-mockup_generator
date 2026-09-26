@@ -1,0 +1,308 @@
+/* ==========================================================================
+   CPD10 Serial Port Settings Page & Control Code Editor Styles
+   Photos: media_1790428406805.jpg ~ media_1790428419263.jpg
+   ========================================================================== */
+
+/* 1. Main Page Grid */
+.cpd10-serial-settings-page {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  grid-template-rows: repeat(7, 1fr);
+  column-gap: 8px;
+  row-gap: 5px;
+  height: 100%;
+  position: relative;
+}
+
+/* 2. Top Segmented Port Tabs Strip */
+.cpd10-serial-tabs-strip {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 2px 3px;
+  background: rgba(14, 23, 38, 0.4);
+  box-sizing: border-box;
+}
+
+.cpd10-serial-tab-pill {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1.5px solid transparent;
+  border-radius: 15px;
+  color: #cbd5e1;
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  position: relative;
+}
+
+.cpd10-serial-tab-pill:hover {
+  color: #ffffff;
+}
+
+.cpd10-serial-tab-pill.is-active {
+  border-color: #00a0ff;
+  background: rgba(0, 160, 255, 0.14);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Subtle separator between inactive tabs */
+.cpd10-serial-tab-pill:not(.is-active):not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.cpd10-serial-tab-pill.is-active::after,
+.cpd10-serial-tab-pill.is-active + .cpd10-serial-tab-pill::before {
+  display: none;
+}
+
+/* 3. Grid Rows 1 to 6 */
+.cpd10-serial-row-1 { grid-column: 2; grid-row: 2; }
+.cpd10-serial-row-2 { grid-column: 2; grid-row: 3; }
+.cpd10-serial-row-3 { grid-column: 2; grid-row: 4; }
+.cpd10-serial-row-4 { grid-column: 2; grid-row: 5; }
+.cpd10-serial-row-5 { grid-column: 2; grid-row: 6; }
+.cpd10-serial-row-6 { grid-column: 2; grid-row: 7; }
+
+/* 4. Name Input Box with Character Counter */
+.cpd10-serial-name-input-box {
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 2px 10px;
+  height: 30px;
+  box-sizing: border-box;
+}
+
+.cpd10-serial-name-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  width: 140px;
+  padding: 0;
+}
+
+.cpd10-serial-name-counter {
+  color: #64748b;
+  font-size: 11.5px;
+  margin-left: 8px;
+  user-select: none;
+}
+
+/* 5. Control Code Editor Fullscreen Modal (Photo 5) */
+.cpd10-control-code-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 60;
+  background: #0c1422;
+  display: flex;
+  overflow: hidden;
+  animation: cpd10-fade-in 0.15s ease-out;
+}
+
+@keyframes cpd10-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.cpd10-control-code-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 20px 10px 24px;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.cpd10-control-code-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.cpd10-control-code-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 32px;
+}
+
+.cpd10-code-lbl {
+  color: #cbd5e1;
+  font-size: 12px;
+  font-weight: 500;
+  min-width: 48px;
+  user-select: none;
+}
+
+.cpd10-code-func-box {
+  background: #182537;
+  border-radius: 6px;
+  height: 32px;
+  min-width: 125px;
+  max-width: 135px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  color: #ffffff;
+  font-size: 12.5px;
+  font-weight: 500;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  user-select: none;
+}
+
+.cpd10-code-hex-input {
+  background: #182537;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  height: 32px;
+  flex: 1;
+  max-width: 290px;
+  padding: 0 10px;
+  color: #ffffff;
+  font-size: 12px;
+  font-family: monospace;
+  font-weight: 500;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease;
+}
+
+.cpd10-code-hex-input:focus {
+  border-color: #0084ff;
+  background: #1d2d42;
+}
+
+.cpd10-code-checkbox {
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  background: #182537;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: transparent;
+  transition: all 0.15s ease;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cpd10-code-checkbox.is-checked {
+  border-color: #00b0ff;
+  background: rgba(0, 168, 255, 0.15);
+  color: #00d0ff;
+}
+
+.cpd10-control-code-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  height: 28px;
+}
+
+.cpd10-code-page-btn {
+  background: transparent;
+  border: none;
+  color: #cbd5e1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 4px;
+  transition: color 0.15s ease;
+}
+
+.cpd10-code-page-btn:hover:not(:disabled) {
+  color: #ffffff;
+}
+
+.cpd10-code-page-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.cpd10-code-page-text {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  user-select: none;
+}
+
+/* Right Column (Cancel & Confirm) */
+.cpd10-control-code-actions {
+  width: 140px;
+  background: rgba(13, 22, 35, 0.7);
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  box-sizing: border-box;
+}
+
+.cpd10-code-action-pill {
+  width: 96px;
+  height: 36px;
+  border-radius: 18px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.cpd10-code-action-cancel {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1.5px solid rgba(140, 180, 220, 0.35);
+  color: #ffffff;
+}
+
+.cpd10-code-action-cancel:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(160, 200, 240, 0.6);
+}
+
+.cpd10-code-action-confirm {
+  background: #0084ff;
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 0 14px rgba(0, 132, 255, 0.4);
+}
+
+.cpd10-code-action-confirm:hover {
+  background: #0070e0;
+  box-shadow: 0 0 18px rgba(0, 132, 255, 0.6);
+}

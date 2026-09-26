@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { getScreenFromUrl, updateUrlScreen, getThemeFromUrl, updateUrlTheme } from '../constants/screens';
+import { DEFAULT_SERIAL_PORT_CONFIGS } from '../constants/serialConfigs';
 
 const Cpd10Context = createContext(null);
 
@@ -89,6 +90,30 @@ export function Cpd10Provider({ children }) {
   const [screenOrientation, setScreenOrientationState] = useState('Wall Mount');
   const [serialImportPromptOpen, setSerialImportPromptOpen] = useState(false);
   const [currentLanguage, setCurrentLanguage] = useState('English');
+
+  // Serial Port Settings (Batch 5 - Photos 1~5)
+  const [serialConfigs, setSerialConfigs] = useState(DEFAULT_SERIAL_PORT_CONFIGS);
+  const [activeSerialTab, setActiveSerialTab] = useState('RS232-01');
+
+  const updateSerialPortConfig = useCallback((portKey, updates) => {
+    setSerialConfigs((prev) => ({
+      ...prev,
+      [portKey]: {
+        ...prev[portKey],
+        ...updates,
+      },
+    }));
+  }, []);
+
+  const updateSerialPortCodes = useCallback((portKey, newCodes) => {
+    setSerialConfigs((prev) => ({
+      ...prev,
+      [portKey]: {
+        ...prev[portKey],
+        codes: newCodes,
+      },
+    }));
+  }, []);
 
   const setScreenOrientation = useCallback((orientation) => {
     setScreenOrientationState(orientation);
@@ -230,6 +255,12 @@ export function Cpd10Provider({ children }) {
     setSerialImportPromptOpen,
     currentLanguage,
     setCurrentLanguage,
+    serialConfigs,
+    setSerialConfigs,
+    activeSerialTab,
+    setActiveSerialTab,
+    updateSerialPortConfig,
+    updateSerialPortCodes,
   };
 
   return (

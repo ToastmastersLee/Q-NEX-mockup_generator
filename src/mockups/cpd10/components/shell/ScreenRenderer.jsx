@@ -6,6 +6,7 @@ import { DeviceInfoPage } from '../settings/DeviceInfoPage';
 import { PanelSettingsPage } from '../settings/PanelSettingsPage';
 import { PasswordUnlockPage } from '../settings/PasswordUnlockPage';
 import { LanguageSettingsPage } from '../settings/LanguageSettingsPage';
+import { SerialSettingsPage } from '../settings/SerialSettingsPage';
 
 export function ScreenRenderer() {
   const { screen } = useCpd10();
@@ -28,6 +29,10 @@ export function ScreenRenderer() {
 
   if (screen === 'settings-language') {
     return <LanguageSettingsPage key="language-settings" />;
+  }
+
+  if (screen === 'settings-serial') {
+    return <SerialSettingsPage key="serial-settings" />;
   }
 
   if (screen.startsWith('settings')) {

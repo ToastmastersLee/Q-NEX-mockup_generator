@@ -1,0 +1,171 @@
+/**
+ * Serial Port Settings Configuration Constants & Options
+ * Extracted from real device photos (media_1790428406805.jpg ~ media_1790428419263.jpg)
+ */
+
+export const SERIAL_PORT_TABS = ['RS232-01', 'RS232-02', 'RS485-01', 'RS485-02'];
+
+export const SERIAL_DEVICE_TYPE_OPTIONS = [
+  'Interactive LCD Display',
+  'Projector',
+  'Recording System',
+  'Power Controller',
+  'Audio Processor',
+  'Custom Device',
+];
+
+// Photo 2: Code list drawer options
+export const SERIAL_CODE_LIST_OPTIONS = [
+  'Customize',
+  'TR1310C Pro',
+  'QA1300 Pro',
+  'QA1400 Pro',
+  'TE1410D Pro',
+];
+
+// Photo 3: Baud rate drawer options
+export const SERIAL_BAUD_RATE_OPTIONS = [
+  '1200',
+  '2400',
+  '4800',
+  '9600',
+  '19200',
+  '38400',
+  '57600',
+  '115200',
+];
+
+// Photo 4: Parity check drawer options
+export const SERIAL_PARITY_CHECK_OPTIONS = [
+  'None',
+  'Odd Parity',
+  'Even Parity',
+];
+
+// Default configurations per port matching photos
+export const DEFAULT_SERIAL_PORT_CONFIGS = {
+  'RS232-01': {
+    port: 'RS232-01',
+    deviceType: 'Interactive LCD Display',
+    name: 'QA1400 PRO',
+    codeList: 'Customize',
+    baudRate: '9600',
+    parityCheck: 'None',
+    codes: [
+      { id: 1, name: 'Power On', code: 'AA BB CC 01 00 00 01 DD EE FF', enabled: true },
+      { id: 2, name: 'Power Off', code: 'AA BB CC 01 01 00 02 DD EE FF', enabled: true },
+      { id: 3, name: 'Lock On', code: '', enabled: false },
+      { id: 4, name: 'Lock Off', code: '', enabled: true },
+      { id: 5, name: 'Child lock ON', code: '', enabled: true },
+      { id: 6, name: 'Child lock OFF', code: '', enabled: true },
+      { id: 7, name: 'Energy saving ON', code: '', enabled: false },
+      { id: 8, name: 'Energy saving OFF', code: '', enabled: false },
+      { id: 9, name: 'Volume +', code: 'AA BB CC 02 01 00 00 DD EE FF', enabled: true },
+      { id: 10, name: 'Volume -', code: 'AA BB CC 02 02 00 00 DD EE FF', enabled: true },
+      { id: 11, name: 'Mute ON', code: 'AA BB CC 02 03 00 00 DD EE FF', enabled: true },
+      { id: 12, name: 'Mute OFF', code: 'AA BB CC 02 04 00 00 DD EE FF', enabled: true },
+      { id: 13, name: 'Brightness +', code: 'AA BB CC 03 01 00 00 DD EE FF', enabled: true },
+      { id: 14, name: 'Brightness -', code: 'AA BB CC 03 02 00 00 DD EE FF', enabled: true },
+      { id: 15, name: 'Input OPS', code: 'AA BB CC 04 01 00 00 DD EE FF', enabled: true },
+      { id: 16, name: 'Input HDMI 1', code: 'AA BB CC 04 02 00 00 DD EE FF', enabled: true },
+      { id: 17, name: 'Input HDMI 2', code: 'AA BB CC 04 03 00 00 DD EE FF', enabled: true },
+      { id: 18, name: 'Input Type-C', code: 'AA BB CC 04 04 00 00 DD EE FF', enabled: true },
+      { id: 19, name: 'Touch ON', code: '', enabled: false },
+      { id: 20, name: 'Touch OFF', code: '', enabled: false },
+      { id: 21, name: 'OSD Menu', code: 'AA BB CC 05 01 00 00 DD EE FF', enabled: true },
+    ],
+  },
+  'RS232-02': {
+    port: 'RS232-02',
+    deviceType: 'Recording System',
+    name: 'TA4532',
+    codeList: 'Customize',
+    baudRate: '9600',
+    parityCheck: 'None',
+    codes: [
+      { id: 1, name: 'Power On', code: 'EE 11 00 01 FF', enabled: true },
+      { id: 2, name: 'Power Off', code: 'EE 11 00 02 FF', enabled: true },
+      { id: 3, name: 'Record Start', code: 'EE 22 00 01 FF', enabled: true },
+      { id: 4, name: 'Record Pause', code: 'EE 22 00 02 FF', enabled: true },
+      { id: 5, name: 'Record Stop', code: 'EE 22 00 03 FF', enabled: true },
+      { id: 6, name: 'Remote Ready', code: 'EE 33 00 01 FF', enabled: true },
+      { id: 7, name: 'Stream Start', code: '', enabled: false },
+      { id: 8, name: 'Stream Stop', code: '', enabled: false },
+      { id: 9, name: 'Scene 1', code: 'EE 44 00 01 FF', enabled: true },
+      { id: 10, name: 'Scene 2', code: 'EE 44 00 02 FF', enabled: true },
+      { id: 11, name: 'Scene 3', code: 'EE 44 00 03 FF', enabled: true },
+      { id: 12, name: 'Scene 4', code: 'EE 44 00 04 FF', enabled: true },
+      { id: 13, name: 'Audio Main', code: '', enabled: false },
+      { id: 14, name: 'Audio Aux', code: '', enabled: false },
+      { id: 15, name: 'PIP Mode', code: '', enabled: false },
+      { id: 16, name: 'POP Mode', code: '', enabled: false },
+      { id: 17, name: 'Full Screen', code: '', enabled: false },
+      { id: 18, name: 'Snapshot', code: '', enabled: false },
+      { id: 19, name: 'Lock Key', code: '', enabled: false },
+      { id: 20, name: 'Unlock Key', code: '', enabled: false },
+      { id: 21, name: 'Reboot', code: '', enabled: false },
+    ],
+  },
+  'RS485-01': {
+    port: 'RS485-01',
+    deviceType: 'Projector',
+    name: '3M Projector',
+    codeList: 'Customize',
+    baudRate: '9600',
+    parityCheck: 'None',
+    codes: [
+      { id: 1, name: 'Power On', code: '02 00 00 00 00 02', enabled: true },
+      { id: 2, name: 'Power Off', code: '02 01 00 00 00 03', enabled: true },
+      { id: 3, name: 'Freeze On', code: '', enabled: false },
+      { id: 4, name: 'Freeze Off', code: '', enabled: false },
+      { id: 5, name: 'Blank On', code: '', enabled: false },
+      { id: 6, name: 'Blank Off', code: '', enabled: false },
+      { id: 7, name: 'Eco Mode ON', code: '', enabled: false },
+      { id: 8, name: 'Eco Mode OFF', code: '', enabled: false },
+      { id: 9, name: 'Input HDMI 1', code: '02 03 00 00 02 01', enabled: true },
+      { id: 10, name: 'Input HDMI 2', code: '02 03 00 00 02 02', enabled: true },
+      { id: 11, name: 'Input VGA', code: '02 03 00 00 01 01', enabled: true },
+      { id: 12, name: 'Aspect 16:9', code: '', enabled: false },
+      { id: 13, name: 'Aspect 4:3', code: '', enabled: false },
+      { id: 14, name: 'Keystone +', code: '', enabled: false },
+      { id: 15, name: 'Keystone -', code: '', enabled: false },
+      { id: 16, name: 'Volume +', code: '', enabled: false },
+      { id: 17, name: 'Volume -', code: '', enabled: false },
+      { id: 18, name: 'Mute', code: '', enabled: false },
+      { id: 19, name: 'Menu', code: '', enabled: false },
+      { id: 20, name: 'Enter', code: '', enabled: false },
+      { id: 21, name: 'Exit', code: '', enabled: false },
+    ],
+  },
+  'RS485-02': {
+    port: 'RS485-02',
+    deviceType: 'Interactive LCD Display',
+    name: 'RS485-02',
+    codeList: 'Customize',
+    baudRate: '9600',
+    parityCheck: 'None',
+    codes: [
+      { id: 1, name: 'Power On', code: 'AA BB CC 01 00 00 01 DD EE FF', enabled: true },
+      { id: 2, name: 'Power Off', code: 'AA BB CC 01 01 00 02 DD EE FF', enabled: true },
+      { id: 3, name: 'Lock On', code: '', enabled: false },
+      { id: 4, name: 'Lock Off', code: '', enabled: true },
+      { id: 5, name: 'Child lock ON', code: '', enabled: true },
+      { id: 6, name: 'Child lock OFF', code: '', enabled: true },
+      { id: 7, name: 'Energy saving ON', code: '', enabled: false },
+      { id: 8, name: 'Energy saving OFF', code: '', enabled: false },
+      { id: 9, name: 'Volume +', code: '', enabled: false },
+      { id: 10, name: 'Volume -', code: '', enabled: false },
+      { id: 11, name: 'Mute ON', code: '', enabled: false },
+      { id: 12, name: 'Mute OFF', code: '', enabled: false },
+      { id: 13, name: 'Brightness +', code: '', enabled: false },
+      { id: 14, name: 'Brightness -', code: '', enabled: false },
+      { id: 15, name: 'Input OPS', code: '', enabled: false },
+      { id: 16, name: 'Input HDMI 1', code: '', enabled: false },
+      { id: 17, name: 'Input HDMI 2', code: '', enabled: false },
+      { id: 18, name: 'Input Type-C', code: '', enabled: false },
+      { id: 19, name: 'Touch ON', code: '', enabled: false },
+      { id: 20, name: 'Touch OFF', code: '', enabled: false },
+      { id: 21, name: 'OSD Menu', code: '', enabled: false },
+    ],
+  },
+};
