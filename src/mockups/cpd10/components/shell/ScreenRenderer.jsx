@@ -7,6 +7,8 @@ import { PanelSettingsPage } from '../settings/PanelSettingsPage';
 import { PasswordUnlockPage } from '../settings/PasswordUnlockPage';
 import { LanguageSettingsPage } from '../settings/LanguageSettingsPage';
 import { SerialSettingsPage } from '../settings/SerialSettingsPage';
+import { HdmiResolutionPage } from '../settings/HdmiResolutionPage';
+import { OtherSettingsPage } from '../settings/OtherSettingsPage';
 
 export function ScreenRenderer() {
   const { screen } = useCpd10();
@@ -33,6 +35,14 @@ export function ScreenRenderer() {
 
   if (screen === 'settings-serial') {
     return <SerialSettingsPage key="serial-settings" />;
+  }
+
+  if (screen === 'settings-hdmi-res') {
+    return <HdmiResolutionPage key="hdmi-res" />;
+  }
+
+  if (screen === 'settings-other') {
+    return <OtherSettingsPage key="other-settings" />;
   }
 
   if (screen.startsWith('settings')) {

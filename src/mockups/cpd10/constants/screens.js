@@ -66,6 +66,20 @@ export const SCREEN_REGISTRY = [
     batch: 5,
     desc: '串口设置页 · RS232-01/02 与 RS485-01/02 端口配置/波特率/校验位/控制码编辑',
   },
+  {
+    id: 'settings-hdmi-res',
+    name: 'HDMI 输出分辨率设置 (HDMI OUT Resolution)',
+    type: 'page',
+    batch: 6,
+    desc: 'HDMI 输出分辨率页 · HDMI OUT A/B/C 三路独立分辨率配置 (1080P / 4K)',
+  },
+  {
+    id: 'settings-other',
+    name: '其他设置 (Other Settings)',
+    type: 'page',
+    batch: 6,
+    desc: '其他设置页 · 开关机联动控制 (Power on / Shutdown linkage 开关)',
+  },
 ];
 
 export function getScreenFromUrl() {

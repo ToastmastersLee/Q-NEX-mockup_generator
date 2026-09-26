@@ -115,6 +115,21 @@ export function Cpd10Provider({ children }) {
     }));
   }, []);
 
+  // HDMI OUT Resolutions (Photos 1~2: HDMI OUT A/B/C)
+  const [hdmiResolutions, setHdmiResolutions] = useState({
+    outA: '3840x2160',
+    outB: '1920x1080',
+    outC: '3840x2160',
+  });
+
+  const updateHdmiResolution = useCallback((outKey, res) => {
+    setHdmiResolutions((prev) => ({ ...prev, [outKey]: res }));
+  }, []);
+
+  // Other Settings (Photo 3: Power linkage)
+  const [powerOnLinkage, setPowerOnLinkage] = useState(false);
+  const [shutdownLinkage, setShutdownLinkage] = useState(false);
+
   const setScreenOrientation = useCallback((orientation) => {
     setScreenOrientationState(orientation);
     const isFlipped = orientation === 'Desktop' || orientation === 'Inverted';
@@ -261,6 +276,13 @@ export function Cpd10Provider({ children }) {
     setActiveSerialTab,
     updateSerialPortConfig,
     updateSerialPortCodes,
+    hdmiResolutions,
+    setHdmiResolutions,
+    updateHdmiResolution,
+    powerOnLinkage,
+    setPowerOnLinkage,
+    shutdownLinkage,
+    setShutdownLinkage,
   };
 
   return (

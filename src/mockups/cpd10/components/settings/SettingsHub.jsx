@@ -34,13 +34,13 @@ export function SettingsHub() {
       id: 'hdmi-res',
       label: 'HDMI OUT Resolution',
       icon: HdmiPortSettingsIcon,
-      targetScreen: null,
+      targetScreen: 'settings-hdmi-res',
     },
     {
       id: 'other-settings',
       label: 'Other Settings',
       icon: SlidersHorizontal,
-      targetScreen: null,
+      targetScreen: 'settings-other',
     },
   ];
 
