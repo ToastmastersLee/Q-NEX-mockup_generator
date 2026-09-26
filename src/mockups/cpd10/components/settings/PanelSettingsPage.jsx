@@ -5,7 +5,7 @@ import { ToggleSwitch } from '../common/ToggleSwitch';
 import { WheelPickerDrawer } from './WheelPickerDrawer';
 
 const TIME_OPTIONS = ['Never', '1 min', '2 min', '5 min', '10 min', '30 min'];
-const ORIENTATION_OPTIONS = ['Wall Mount', 'Desktop'];
+const ORIENTATION_OPTIONS = ['Desktop', 'Wall Mount'];
 
 /**
  * PanelSettingsPage
@@ -26,7 +26,6 @@ export function PanelSettingsPage() {
     passwordUnlockEnabled,
     screenOrientation,
     setScreenOrientation,
-    toggleScreenOrientation,
   } = useCpd10();
 
   // Active drawer picker state
@@ -132,8 +131,7 @@ export function PanelSettingsPage() {
       {/* Row 6: Screen orientation */}
       <div
         className="cpd10-info-row cpd10-panel-row-clickable cpd10-panel-row-6"
-        onClick={() => toggleScreenOrientation()}
-        title="点击倒转屏幕方向 (180°)"
+        onClick={() => setActivePicker('orientation')}
       >
         <span className="cpd10-info-label">Screen orientation</span>
         <div className="cpd10-info-chevron-val">

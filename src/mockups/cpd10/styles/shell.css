@@ -166,11 +166,11 @@
   justify-content: center;
 }
 
-/* Serial Configuration File Detected Modal (media_1790419850109.jpg) */
+/* Serial Configuration File Detected Modal (media_1790419850109.jpg / media_1790422485180.png) */
 .cpd10-serial-import-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(10, 16, 26, 0.85);
+  background: rgba(8, 14, 24, 0.88);
   backdrop-filter: blur(2px);
   z-index: 100;
   display: flex;
@@ -184,55 +184,60 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  max-width: 420px;
+  max-width: 360px;
 }
 
 .cpd10-serial-import-msg {
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 500;
-  color: #f1f5f9;
+  color: #ffffff;
   line-height: 1.5;
-  margin: 0 0 22px 0;
-  letter-spacing: 0.2px;
+  margin: 0 0 24px 0;
+  letter-spacing: 0.1px;
 }
 
 .cpd10-serial-import-btns {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 22px;
 }
 
 .cpd10-import-pill-btn {
-  width: 106px;
-  height: 38px;
-  border-radius: 19px;
+  width: 104px;
+  height: 36px;
+  border-radius: 18px;
   font-size: 13px;
-  font-weight: 600;
-  border: none;
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 .cpd10-import-btn-cancel {
-  background: #475569;
+  background: rgba(22, 46, 76, 0.7);
+  border: 1.5px solid rgba(110, 185, 245, 0.55);
   color: #ffffff;
 }
 
 .cpd10-import-btn-cancel:hover {
-  background: #64748b;
+  background: rgba(30, 62, 102, 0.85);
+  border-color: rgba(140, 205, 255, 0.8);
 }
 
 .cpd10-import-btn-confirm {
-  background: #0084ff;
+  background: #0096fa;
+  border: none;
   color: #ffffff;
-  box-shadow: 0 0 14px rgba(0, 132, 255, 0.45);
+  font-weight: 600;
+  box-shadow: 0 0 14px rgba(0, 150, 250, 0.45);
 }
 
 .cpd10-import-btn-confirm:hover {
-  background: #0070d8;
+  background: #0084e0;
+  box-shadow: 0 0 18px rgba(0, 150, 250, 0.6);
 }
 
