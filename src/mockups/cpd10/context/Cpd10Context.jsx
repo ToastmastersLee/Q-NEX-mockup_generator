@@ -77,7 +77,7 @@ export function Cpd10Provider({ children }) {
 
   // Global / Hardware Mockup State
   const [powerState, setPowerState] = useState('on');
-  const [isLocked, setIsLocked] = useState(false);
+  const [isLocked, setIsLocked] = useState(() => getScreenFromUrl() === 'lock');
   const [orientationFlipped, setOrientationFlipped] = useState(false);
 
   // Panel Settings States (Batch 3)

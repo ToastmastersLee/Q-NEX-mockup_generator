@@ -80,6 +80,13 @@ export const SCREEN_REGISTRY = [
     batch: 6,
     desc: '其他设置页 · 开关机联动控制 (Power on / Shutdown linkage 开关)',
   },
+  {
+    id: 'lock',
+    name: '锁屏界面 (Lock Screen)',
+    type: 'screen',
+    batch: 7,
+    desc: '物理锁屏页 · 极简中心发光解锁光环与精准键孔矢量图标 (支持免密/4位PIN密码解锁)',
+  },
 ];
 
 export function getScreenFromUrl() {

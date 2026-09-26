@@ -1,8 +1,9 @@
-import { Sun, Moon, RotateCw, FileSpreadsheet } from 'lucide-react';
+import { Sun, Moon, RotateCw, FileSpreadsheet, Lock, Unlock } from 'lucide-react';
 import { useCpd10 } from '../../context/Cpd10Context';
 import { Sidebar } from './Sidebar';
 import { ScreenRenderer } from './ScreenRenderer';
 import { SerialImportModal } from '../common/SerialImportModal';
+import { LockScreen } from '../common/LockScreen';
 
 export function Cpd10Shell() {
   const {
@@ -12,6 +13,8 @@ export function Cpd10Shell() {
     toggleScreenOrientation,
     serialImportPromptOpen,
     setSerialImportPromptOpen,
+    isLocked,
+    setIsLocked,
   } = useCpd10();
 
   const isLight = theme === 'light';
@@ -48,6 +51,17 @@ export function Cpd10Shell() {
             <span>模拟检测到配置文件</span>
           </button>
 
+          {/* Lock Screen Toggle Button */}
+          <button
+            type="button"
+            className="cpd10-theme-toggle-btn"
+            onClick={() => setIsLocked(!isLocked)}
+            title="锁定/解锁屏幕"
+          >
+            {isLocked ? <Unlock size={13} /> : <Lock size={13} />}
+            <span>{isLocked ? '当前: 锁屏状态 (点击解锁)' : '锁定屏幕'}</span>
+          </button>
+
           {/* Theme Toggle Button */}
           <button
             type="button"
@@ -77,6 +91,9 @@ export function Cpd10Shell() {
           <div className="cpd10-main-canvas">
             <ScreenRenderer />
           </div>
+
+          {/* Physical Lock Screen (media_1790431162130.jpg) */}
+          <LockScreen />
 
           {/* Serial Configuration File Detected Modal (media_1790419850109.jpg) */}
           <SerialImportModal
