@@ -88,6 +88,7 @@ export function Cpd10Provider({ children }) {
   const [panelPassword, setPanelPassword] = useState('1234');
   const [screenOrientation, setScreenOrientationState] = useState('Wall Mount');
   const [serialImportPromptOpen, setSerialImportPromptOpen] = useState(false);
+  const [currentLanguage, setCurrentLanguage] = useState('English');
 
   const setScreenOrientation = useCallback((orientation) => {
     setScreenOrientationState(orientation);
@@ -227,6 +228,8 @@ export function Cpd10Provider({ children }) {
     toggleScreenOrientation,
     serialImportPromptOpen,
     setSerialImportPromptOpen,
+    currentLanguage,
+    setCurrentLanguage,
   };
 
   return (

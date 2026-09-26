@@ -22,7 +22,7 @@ export function SettingsHub() {
       id: 'language-settings',
       label: 'Language Settings',
       icon: Languages,
-      targetScreen: null,
+      targetScreen: 'settings-language',
     },
     {
       id: 'serial-settings',

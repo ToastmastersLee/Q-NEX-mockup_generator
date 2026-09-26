@@ -5,6 +5,7 @@ import { SettingsHub } from '../settings/SettingsHub';
 import { DeviceInfoPage } from '../settings/DeviceInfoPage';
 import { PanelSettingsPage } from '../settings/PanelSettingsPage';
 import { PasswordUnlockPage } from '../settings/PasswordUnlockPage';
+import { LanguageSettingsPage } from '../settings/LanguageSettingsPage';
 
 export function ScreenRenderer() {
   const { screen } = useCpd10();
@@ -23,6 +24,10 @@ export function ScreenRenderer() {
 
   if (screen === 'settings-password-unlock') {
     return <PasswordUnlockPage key="password-unlock" />;
+  }
+
+  if (screen === 'settings-language') {
+    return <LanguageSettingsPage key="language-settings" />;
   }
 
   if (screen.startsWith('settings')) {

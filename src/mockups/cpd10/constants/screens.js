@@ -52,6 +52,13 @@ export const SCREEN_REGISTRY = [
     batch: 3,
     desc: '密码解锁页 · 开关与4位密码设置弹窗 (取消/确认)',
   },
+  {
+    id: 'settings-language',
+    name: '语言设置 (Language Settings)',
+    type: 'page',
+    batch: 4,
+    desc: '语言设置页 · 3列单选布局 (支持19种国际语言与 1/2、2/2 分页)',
+  },
 ];
 
 export function getScreenFromUrl() {
