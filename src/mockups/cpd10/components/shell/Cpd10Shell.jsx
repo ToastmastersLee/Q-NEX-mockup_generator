@@ -1,10 +1,18 @@
-import { Sun, Moon } from 'lucide-react';
+import { Sun, Moon, RotateCw, FileSpreadsheet } from 'lucide-react';
 import { useCpd10 } from '../../context/Cpd10Context';
 import { Sidebar } from './Sidebar';
 import { ScreenRenderer } from './ScreenRenderer';
+import { SerialImportModal } from '../common/SerialImportModal';
 
 export function Cpd10Shell() {
-  const { theme, setTheme, orientationFlipped } = useCpd10();
+  const {
+    theme,
+    setTheme,
+    orientationFlipped,
+    toggleScreenOrientation,
+    serialImportPromptOpen,
+    setSerialImportPromptOpen,
+  } = useCpd10();
 
   const isLight = theme === 'light';
 
@@ -17,25 +25,49 @@ export function Cpd10Shell() {
           <span style={{ fontSize: '11px', opacity: 0.7 }}>端口: 5177</span>
         </div>
 
-        {/* Theme Toggle Button */}
-        <button
-          type="button"
-          className="cpd10-theme-toggle-btn"
-          onClick={() => setTheme(isLight ? 'dark' : 'light')}
-          title="切换 Light / Dark 主题模式"
-        >
-          {isLight ? (
-            <>
-              <Moon size={14} />
-              <span>切为 Dark 模式</span>
-            </>
-          ) : (
-            <>
-              <Sun size={14} />
-              <span>切为 Light 模式</span>
-            </>
-          )}
-        </button>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          {/* Orientation Toggle Button */}
+          <button
+            type="button"
+            className="cpd10-theme-toggle-btn"
+            onClick={toggleScreenOrientation}
+            title="倒转屏幕方向 (180°)"
+          >
+            <RotateCw size={13} />
+            <span>{orientationFlipped ? '方向: 倒转 (180°)' : '方向: 正常 (0°)'}</span>
+          </button>
+
+          {/* Simulate USB Serial Config File Detection */}
+          <button
+            type="button"
+            className="cpd10-theme-toggle-btn"
+            onClick={() => setSerialImportPromptOpen(true)}
+            title="模拟插入包含串口配置的U盘"
+          >
+            <FileSpreadsheet size={13} />
+            <span>模拟检测到配置文件</span>
+          </button>
+
+          {/* Theme Toggle Button */}
+          <button
+            type="button"
+            className="cpd10-theme-toggle-btn"
+            onClick={() => setTheme(isLight ? 'dark' : 'light')}
+            title="切换 Light / Dark 主题模式"
+          >
+            {isLight ? (
+              <>
+                <Moon size={14} />
+                <span>切为 Dark 模式</span>
+              </>
+            ) : (
+              <>
+                <Sun size={14} />
+                <span>切为 Light 模式</span>
+              </>
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Simulated Hardware Enclosure (183 × 116 mm ratio) */}
@@ -45,6 +77,15 @@ export function Cpd10Shell() {
           <div className="cpd10-main-canvas">
             <ScreenRenderer />
           </div>
+
+          {/* Serial Configuration File Detected Modal (media_1790419850109.jpg) */}
+          <SerialImportModal
+            isOpen={serialImportPromptOpen}
+            onImport={() => {
+              setSerialImportPromptOpen(false);
+            }}
+            onCancel={() => setSerialImportPromptOpen(false)}
+          />
         </div>
       </div>
     </div>

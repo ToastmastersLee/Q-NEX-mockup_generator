@@ -86,7 +86,22 @@ export function Cpd10Provider({ children }) {
   const [autoLockScreen, setAutoLockScreen] = useState('2 min');
   const [passwordUnlockEnabled, setPasswordUnlockEnabled] = useState(false);
   const [panelPassword, setPanelPassword] = useState('1234');
-  const [screenOrientation, setScreenOrientation] = useState('Wall Mount');
+  const [screenOrientation, setScreenOrientationState] = useState('Wall Mount');
+  const [serialImportPromptOpen, setSerialImportPromptOpen] = useState(false);
+
+  const setScreenOrientation = useCallback((orientation) => {
+    setScreenOrientationState(orientation);
+    const isFlipped = orientation === 'Desktop' || orientation === 'Inverted';
+    setOrientationFlipped(isFlipped);
+  }, []);
+
+  const toggleScreenOrientation = useCallback(() => {
+    setScreenOrientationState((prev) => {
+      const next = prev === 'Wall Mount' ? 'Desktop' : 'Wall Mount';
+      setOrientationFlipped(next === 'Desktop');
+      return next;
+    });
+  }, []);
 
   // Set single matrix output
   const setMatrixOutput = useCallback((outId, inId) => {
@@ -209,6 +224,9 @@ export function Cpd10Provider({ children }) {
     setPanelPassword,
     screenOrientation,
     setScreenOrientation,
+    toggleScreenOrientation,
+    serialImportPromptOpen,
+    setSerialImportPromptOpen,
   };
 
   return (

@@ -165,3 +165,74 @@
   align-items: center;
   justify-content: center;
 }
+
+/* Serial Configuration File Detected Modal (media_1790419850109.jpg) */
+.cpd10-serial-import-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 16, 26, 0.85);
+  backdrop-filter: blur(2px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.cpd10-serial-import-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 420px;
+}
+
+.cpd10-serial-import-msg {
+  font-size: 14px;
+  font-weight: 500;
+  color: #f1f5f9;
+  line-height: 1.5;
+  margin: 0 0 22px 0;
+  letter-spacing: 0.2px;
+}
+
+.cpd10-serial-import-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cpd10-import-pill-btn {
+  width: 106px;
+  height: 38px;
+  border-radius: 19px;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cpd10-import-btn-cancel {
+  background: #475569;
+  color: #ffffff;
+}
+
+.cpd10-import-btn-cancel:hover {
+  background: #64748b;
+}
+
+.cpd10-import-btn-confirm {
+  background: #0084ff;
+  color: #ffffff;
+  box-shadow: 0 0 14px rgba(0, 132, 255, 0.45);
+}
+
+.cpd10-import-btn-confirm:hover {
+  background: #0070d8;
+}
+
