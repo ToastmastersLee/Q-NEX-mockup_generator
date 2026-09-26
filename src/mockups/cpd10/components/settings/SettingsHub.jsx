@@ -16,7 +16,7 @@ export function SettingsHub() {
       id: 'panel-settings',
       label: 'Panel Settings',
       icon: MonitorCog,
-      targetScreen: null,
+      targetScreen: 'settings-panel',
     },
     {
       id: 'language-settings',

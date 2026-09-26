@@ -3,6 +3,8 @@ import { HomePage } from '../home/HomePage';
 import { SerialPage } from '../serial/SerialPage';
 import { SettingsHub } from '../settings/SettingsHub';
 import { DeviceInfoPage } from '../settings/DeviceInfoPage';
+import { PanelSettingsPage } from '../settings/PanelSettingsPage';
+import { PasswordUnlockPage } from '../settings/PasswordUnlockPage';
 
 export function ScreenRenderer() {
   const { screen } = useCpd10();
@@ -13,6 +15,14 @@ export function ScreenRenderer() {
 
   if (screen === 'settings-device-info') {
     return <DeviceInfoPage key="device-info" />;
+  }
+
+  if (screen === 'settings-panel') {
+    return <PanelSettingsPage key="panel-settings" />;
+  }
+
+  if (screen === 'settings-password-unlock') {
+    return <PasswordUnlockPage key="password-unlock" />;
   }
 
   if (screen.startsWith('settings')) {

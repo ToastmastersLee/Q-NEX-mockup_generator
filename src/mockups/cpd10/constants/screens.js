@@ -38,6 +38,20 @@ export const SCREEN_REGISTRY = [
     batch: 1,
     desc: '串口控制页 · RS232-2 TA4532 设备 · 电源/录播/Remote Ready',
   },
+  {
+    id: 'settings-panel',
+    name: '面板设置 (Panel Settings)',
+    type: 'page',
+    batch: 3,
+    desc: '面板设置页 · 屏幕亮度胶囊滑块/按键音效/屏幕休眠/自动锁屏/密码解锁/屏幕方向',
+  },
+  {
+    id: 'settings-password-unlock',
+    name: '密码解锁设置 (Password Unlock)',
+    type: 'page',
+    batch: 3,
+    desc: '密码解锁页 · 开关与4位密码设置弹窗 (取消/确认)',
+  },
 ];
 
 export function getScreenFromUrl() {

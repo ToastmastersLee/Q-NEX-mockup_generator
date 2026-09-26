@@ -79,6 +79,15 @@ export function Cpd10Provider({ children }) {
   const [isLocked, setIsLocked] = useState(false);
   const [orientationFlipped, setOrientationFlipped] = useState(false);
 
+  // Panel Settings States (Batch 3)
+  const [panelBrightness, setPanelBrightness] = useState(80);
+  const [buttonSoundEffects, setButtonSoundEffects] = useState(false);
+  const [screenSleep, setScreenSleep] = useState('5 min');
+  const [autoLockScreen, setAutoLockScreen] = useState('2 min');
+  const [passwordUnlockEnabled, setPasswordUnlockEnabled] = useState(false);
+  const [panelPassword, setPanelPassword] = useState('1234');
+  const [screenOrientation, setScreenOrientation] = useState('Wall Mount');
+
   // Set single matrix output
   const setMatrixOutput = useCallback((outId, inId) => {
     setMatrixOutputs((prev) => ({ ...prev, [outId]: inId }));
@@ -186,6 +195,20 @@ export function Cpd10Provider({ children }) {
     setIsLocked,
     orientationFlipped,
     setOrientationFlipped,
+    panelBrightness,
+    setPanelBrightness,
+    buttonSoundEffects,
+    setButtonSoundEffects,
+    screenSleep,
+    setScreenSleep,
+    autoLockScreen,
+    setAutoLockScreen,
+    passwordUnlockEnabled,
+    setPasswordUnlockEnabled,
+    panelPassword,
+    setPanelPassword,
+    screenOrientation,
+    setScreenOrientation,
   };
 
   return (
