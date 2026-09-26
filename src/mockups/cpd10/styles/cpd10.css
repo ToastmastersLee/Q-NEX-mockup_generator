@@ -1,0 +1,23 @@
+/* CPD10 Serial Control Panel Root Styles */
+
+@import './tokens.css';
+@import './shell.css';
+@import './home.css';
+@import './serial.css';
+@import './settings.css';
+
+/* Global Hidden Scrollbars per lessons_learnt.md */
+.cpd10-screen-viewport,
+.cpd10-page-content,
+.cpd10-serial-tabs-nav,
+.cpd10-hdmi-cards-grid {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.cpd10-screen-viewport::-webkit-scrollbar,
+.cpd10-page-content::-webkit-scrollbar,
+.cpd10-serial-tabs-nav::-webkit-scrollbar,
+.cpd10-hdmi-cards-grid::-webkit-scrollbar {
+  display: none;
+}

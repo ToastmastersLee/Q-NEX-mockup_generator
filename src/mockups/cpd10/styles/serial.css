@@ -1,0 +1,357 @@
+/* CPD10 Serial Port Page Styles */
+
+.cpd10-serial-page {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Top Navigation Tabs */
+.cpd10-serial-tabs-nav {
+  display: flex;
+  background: var(--cpd10-tab-nav-bg);
+  border: 1px solid var(--cpd10-tab-nav-border);
+  border-radius: 20px;
+  padding: 3px 6px;
+  gap: 6px;
+  align-items: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.cpd10-serial-tab-pill {
+  flex: 1;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--cpd10-text-secondary);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 8px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.cpd10-serial-tab-pill:hover {
+  color: var(--cpd10-text-primary);
+}
+
+.cpd10-serial-tab-pill.is-active {
+  background: var(--cpd10-tab-pill-active-bg);
+  border-color: var(--cpd10-tab-pill-active-border);
+  color: var(--cpd10-tab-pill-active-text);
+  box-shadow: 0 0 10px rgba(0, 180, 216, 0.35);
+}
+
+/* Content Body */
+.cpd10-serial-content-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.cpd10-serial-device-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 0;
+}
+
+/* Base Serial Card */
+.cpd10-serial-card {
+  background: var(--cpd10-panel-bg);
+  border: 1px solid var(--cpd10-panel-border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  box-shadow: var(--cpd10-panel-shadow);
+  transition: all 0.3s ease;
+}
+
+.cpd10-serial-card-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--cpd10-text-primary);
+}
+
+.cpd10-serial-card-title.center {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+/* Circular ON / OFF Buttons */
+.cpd10-circular-btn-group {
+  display: flex;
+  gap: 8px;
+}
+
+.cpd10-circle-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--cpd10-interactive-bg);
+  border: 1px solid var(--cpd10-interactive-border);
+  color: var(--cpd10-circle-btn-text);
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cpd10-circle-btn:hover {
+  background: var(--cpd10-interactive-hover);
+  color: var(--cpd10-text-primary);
+}
+
+.cpd10-circle-btn.is-active {
+  background: var(--cpd10-accent);
+  border-color: var(--cpd10-accent);
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 180, 216, 0.45);
+}
+
+.cpd10-circle-btn.record-play.is-active {
+  background: #10b981;
+  border-color: #34d399;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.45);
+}
+
+.cpd10-circle-btn.record-stop.is-active {
+  background: #ef4444;
+  border-color: #f87171;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.45);
+}
+
+/* QA1400 PRO Layout: Matches Real Hardware */
+.cpd10-qa1400-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  min-height: 0;
+  justify-content: space-between;
+}
+
+/* Top Section: 2x2 Toggles Grid + Input Source Card */
+.cpd10-qa1400-top-section {
+  display: flex;
+  gap: 8px;
+  flex: 1.7;
+  min-height: 0;
+}
+
+.cpd10-qa1400-toggles-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 8px;
+  min-height: 0;
+}
+
+.cpd10-input-source-card {
+  width: 135px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px 10px;
+}
+
+.cpd10-source-btn-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  flex: 1;
+  justify-content: space-around;
+}
+
+.cpd10-source-btn {
+  background: var(--cpd10-interactive-bg);
+  border: 1px solid var(--cpd10-interactive-border);
+  border-radius: 6px;
+  color: var(--cpd10-text-secondary);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: 1;
+  max-height: 34px;
+}
+
+.cpd10-source-btn:hover {
+  background: var(--cpd10-interactive-hover);
+  color: var(--cpd10-text-primary);
+}
+
+.cpd10-source-btn.is-active {
+  background: var(--cpd10-accent);
+  border-color: var(--cpd10-accent);
+  color: #ffffff;
+  box-shadow: 0 0 8px rgba(0, 180, 216, 0.4);
+}
+
+/* Bottom Section: Vol. and Brightness spanning the FULL width */
+.cpd10-qa1400-sliders-row {
+  display: flex;
+  gap: 8px;
+  flex: 0.85;
+  min-height: 0;
+  width: 100%;
+}
+
+.cpd10-slider-card {
+  flex: 1;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Horizontal Capsule Level Gauges for Vol & Brightness */
+.cpd10-capsule-gauge-track {
+  height: 28px;
+  flex: 1;
+  border-radius: 14px;
+  background: var(--cpd10-interactive-bg);
+  border: 1px solid var(--cpd10-interactive-border);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.cpd10-capsule-gauge-fill {
+  height: 100%;
+  border-radius: 14px;
+  background: var(--cpd10-accent-gradient);
+  box-shadow: 0 0 10px rgba(0, 180, 216, 0.4);
+  transition: width 0.15s ease;
+}
+
+/* Pagination: Centered across bottom */
+.cpd10-pagination-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 4px 0 0;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.cpd10-page-arrow-btn {
+  background: transparent;
+  border: none;
+  color: var(--cpd10-text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.cpd10-page-arrow-btn:hover:not(:disabled) {
+  background: var(--cpd10-interactive-hover);
+}
+
+.cpd10-page-arrow-btn:disabled {
+  color: var(--cpd10-text-muted);
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.cpd10-page-indicator {
+  font-size: 13px;
+  color: var(--cpd10-text-secondary);
+  font-weight: 600;
+}
+
+/* TA4532 Layout */
+.cpd10-ta4532-grid-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.cpd10-ta4532-top-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.cpd10-ta4532-bottom-row {
+  display: flex;
+  flex: 1;
+}
+
+.cpd10-remote-ready-card {
+  width: 100%;
+  height: 56px;
+  justify-content: center;
+  background: var(--cpd10-card-subtle-bg);
+  border: 1px solid var(--cpd10-panel-border);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.cpd10-remote-ready-card:hover {
+  background: var(--cpd10-interactive-hover);
+  border-color: var(--cpd10-interactive-border);
+}
+
+.cpd10-remote-ready-card.is-active {
+  background: rgba(0, 180, 216, 0.16);
+  border: 1.5px solid var(--cpd10-accent);
+  box-shadow: 0 0 16px rgba(0, 180, 216, 0.45);
+  transform: scale(0.99);
+}
+
+.cpd10-remote-ready-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--cpd10-text-secondary);
+  letter-spacing: 0.5px;
+  transition: color 0.2s ease;
+}
+
+.cpd10-remote-ready-card.is-active .cpd10-remote-ready-text {
+  color: var(--cpd10-accent);
+  text-shadow: 0 0 8px rgba(0, 180, 216, 0.5);
+}
+
+/* Pending Tab Container */
+.cpd10-serial-pending-tab,
+.cpd10-page2-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 8px;
+  color: var(--cpd10-text-secondary);
+  background: var(--cpd10-panel-bg);
+  border: 1px dashed var(--cpd10-panel-border);
+  border-radius: 8px;
+}

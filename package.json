@@ -9,10 +9,12 @@
     "dev:ndp600": "vite --mode ndp600 --host 0.0.0.0 --port 5174",
     "dev:lcs": "vite --mode lcs --host 0.0.0.0 --port 5175",
     "dev:lcs-web": "vite --mode lcs-web --host 0.0.0.0 --port 5176",
+    "dev:cpd10": "vite --mode cpd10 --host 0.0.0.0 --port 5177",
     "build": "vite build",
     "build:ndp600": "vite build --mode ndp600",
     "build:lcs": "vite build --mode lcs",
     "build:lcs-web": "vite build --mode lcs-web",
+    "build:cpd10": "vite build --mode cpd10",
     "lint": "eslint .",
     "preview": "vite preview"
   },

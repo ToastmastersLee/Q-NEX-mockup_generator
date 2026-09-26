@@ -6,8 +6,9 @@ This repository contains React/Vite mockups for CPL20 control-panel screens.
 
 - `NMP211 CPL20 landscape`: the original horizontal mockup, loaded by default.
 - `NDP600 CPL20 portrait`: the vertical mockup, isolated under `src/mockups/ndp600-cpl20-portrait`.
+- `CPD10 serial control panel`: the lightweight serial touch panel mockup, isolated under `src/mockups/cpd10`.
 
-The two mockups share the same Vite project and dependency setup, but the NDP600 portrait UI is kept in its own folder so layout work can stay independent from the NMP211 landscape UI.
+The mockups share the same Vite project and dependency setup, but each mockup UI is kept in its own folder so layout and state stay independent.
 
 ## Run
 
@@ -24,11 +25,18 @@ npm run dev:ndp600
 Runs the NDP600 portrait mockup.
 
 ```bash
-npm run build
-npm run build:ndp600
+npm run dev:cpd10
 ```
 
-Builds the default mockup or the NDP600 portrait mockup.
+Runs the CPD10 serial control panel mockup (Port 5177).
+
+```bash
+npm run build
+npm run build:ndp600
+npm run build:cpd10
+```
+
+Builds the default mockup, NDP600 portrait mockup, or CPD10 mockup.
 
 ## NDP600 Direct Links
 
@@ -45,6 +53,18 @@ When the NDP600 server is running, the mockup can be opened directly on specific
 - `/?screen=lock`
 - `/?theme=light`
 - `/?status=disconnected`
+
+## CPD10 Direct Links
+
+When the CPD10 server is running (Port 5177), screens and themes can be opened directly:
+
+- `/?screen=home-dup-hdmi3` (Duplicate mode, HDMI in 3 active)
+- `/?screen=home-dup-hdmi1` (Duplicate mode, HDMI in 1 active, muted)
+- `/?screen=home-matrix` (3x3 Video Switch Matrix)
+- `/?screen=serial-qa1400` (Serial Port QA1400 PRO page 1/2)
+- `/?screen=serial-ta4532` (Serial Port RS232-2 TA4532)
+- `/?theme=light` (Light / Wireframe theme)
+- `/?screen=home-dup-hdmi3&theme=light` (Direct combination of screen and theme)
 
 ## Code Structure & Module Directory
 
