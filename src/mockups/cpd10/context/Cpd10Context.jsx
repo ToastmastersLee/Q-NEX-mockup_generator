@@ -76,9 +76,26 @@ export function Cpd10Provider({ children }) {
   });
 
   // Global / Hardware Mockup State
-  const [powerState, setPowerState] = useState('on');
+  const [powerState, setPowerState] = useState('on'); // 'on' | 'closing' | 'off'
+  const [shutdownPromptOpen, setShutdownPromptOpen] = useState(false);
   const [isLocked, setIsLocked] = useState(() => getScreenFromUrl() === 'lock');
   const [orientationFlipped, setOrientationFlipped] = useState(false);
+
+  const requestShutdown = useCallback(() => {
+    setShutdownPromptOpen(true);
+  }, []);
+
+  const confirmShutdown = useCallback(() => {
+    setShutdownPromptOpen(false);
+    setPowerState('closing');
+    setTimeout(() => {
+      setPowerState('off');
+    }, 2400);
+  }, []);
+
+  const powerOn = useCallback(() => {
+    setPowerState('on');
+  }, []);
 
   // Panel Settings States (Batch 3)
   const [panelBrightness, setPanelBrightness] = useState(80);
@@ -247,6 +264,11 @@ export function Cpd10Provider({ children }) {
     setRs485State,
     powerState,
     setPowerState,
+    shutdownPromptOpen,
+    setShutdownPromptOpen,
+    requestShutdown,
+    confirmShutdown,
+    powerOn,
     isLocked,
     setIsLocked,
     orientationFlipped,

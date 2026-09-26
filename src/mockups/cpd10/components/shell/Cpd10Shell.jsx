@@ -4,6 +4,8 @@ import { Sidebar } from './Sidebar';
 import { ScreenRenderer } from './ScreenRenderer';
 import { SerialImportModal } from '../common/SerialImportModal';
 import { LockScreen } from '../common/LockScreen';
+import { ShutdownConfirmModal } from '../common/ShutdownConfirmModal';
+import { ClosingScreen } from '../common/ClosingScreen';
 
 export function Cpd10Shell() {
   const {
@@ -15,6 +17,11 @@ export function Cpd10Shell() {
     setSerialImportPromptOpen,
     isLocked,
     setIsLocked,
+    shutdownPromptOpen,
+    setShutdownPromptOpen,
+    confirmShutdown,
+    powerState,
+    powerOn,
   } = useCpd10();
 
   const isLight = theme === 'light';
@@ -94,6 +101,19 @@ export function Cpd10Shell() {
 
           {/* Physical Lock Screen (media_1790431162130.jpg) */}
           <LockScreen />
+
+          {/* Shutdown Confirmation Dialog (media_1790431177703.jpg) */}
+          <ShutdownConfirmModal
+            isOpen={shutdownPromptOpen}
+            onConfirm={confirmShutdown}
+            onCancel={() => setShutdownPromptOpen(false)}
+          />
+
+          {/* Closing & Power-off State (media_1790431181918.jpg) */}
+          <ClosingScreen
+            state={powerState}
+            onPowerOn={powerOn}
+          />
 
           {/* Serial Configuration File Detected Modal (media_1790419850109.jpg) */}
           <SerialImportModal
