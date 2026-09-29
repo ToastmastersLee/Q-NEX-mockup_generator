@@ -1,0 +1,106 @@
+﻿/* CPD10 Panel Settings Subpage */
+
+.cpd10-panel-settings-page {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  column-gap: 8px;
+  row-gap: 6px;
+  height: 100%;
+}
+
+.cpd10-panel-row {
+  grid-column: 2;
+  background: var(--cpd10-panel-bg);
+  border: 1px solid var(--cpd10-panel-border);
+  border-radius: 8px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--cpd10-panel-shadow);
+}
+
+.cpd10-panel-row-1 { grid-row: 1; }
+.cpd10-panel-row-2 { grid-row: 2; }
+.cpd10-panel-row-3 { grid-row: 3; }
+.cpd10-panel-row-4 { grid-row: 4; }
+.cpd10-panel-row-5 { grid-row: 5; }
+.cpd10-panel-row-6 { grid-row: 6; }
+
+.cpd10-panel-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--cpd10-text-primary);
+  letter-spacing: 0.1px;
+}
+
+/* Brightness Capsule Gauge */
+.cpd10-capsule-gauge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 220px;
+}
+
+.cpd10-capsule-track {
+  flex: 1;
+  height: 14px;
+  border-radius: 7px;
+  background: var(--cpd10-capsule-bg);
+  border: 1px solid var(--cpd10-capsule-border);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.cpd10-capsule-fill {
+  height: 100%;
+  border-radius: 7px;
+  background: var(--cpd10-accent-gradient);
+  transition: width 0.15s ease;
+}
+
+.cpd10-capsule-val {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--cpd10-text-primary);
+  min-width: 38px;
+  text-align: right;
+}
+
+.cpd10-select-val-btn {
+  background: transparent;
+  border: none;
+  color: var(--cpd10-text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.cpd10-select-val-btn:hover {
+  background: var(--cpd10-interactive-hover);
+  color: var(--cpd10-text-primary);
+}
+
+.cpd10-link-btn {
+  background: transparent;
+  border: none;
+  color: var(--cpd10-text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  transition: all 0.2s ease;
+}
+
+.cpd10-link-btn:hover {
+  color: var(--cpd10-accent);
+}

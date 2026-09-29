@@ -1,0 +1,116 @@
+﻿/* CPD10 Language Settings Subpage */
+
+.cpd10-language-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+.cpd10-lang-top-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+  flex-shrink: 0;
+}
+
+.cpd10-lang-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  column-gap: 20px;
+  row-gap: 8px;
+  flex: 1;
+  min-height: 0;
+  padding: 0 4px;
+}
+
+.cpd10-lang-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 6px;
+  text-align: left;
+  transition: all 0.15s ease;
+}
+
+.cpd10-lang-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.cpd10-lang-radio {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #475569;
+  border: 1.5px solid #64748b;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.cpd10-lang-radio.is-selected {
+  background: #0084ff;
+  border-color: #38bdf8;
+  box-shadow: 0 0 10px rgba(0, 132, 255, 0.65);
+}
+
+.cpd10-lang-radio-inner {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.cpd10-lang-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--cpd10-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: 0.2px;
+}
+
+.cpd10-lang-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 6px;
+  flex-shrink: 0;
+}
+
+.cpd10-lang-pagination .cpd10-page-arrow {
+  background: transparent;
+  border: none;
+  color: var(--cpd10-text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  transition: all 0.15s ease;
+}
+
+.cpd10-lang-pagination .cpd10-page-arrow:hover:not(.is-disabled) {
+  color: var(--cpd10-accent);
+  transform: scale(1.15);
+}
+
+.cpd10-lang-pagination .cpd10-page-arrow.is-disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.cpd10-lang-pagination .cpd10-page-indicator {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--cpd10-text-muted);
+}

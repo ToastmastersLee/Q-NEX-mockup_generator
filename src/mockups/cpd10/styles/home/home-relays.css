@@ -1,0 +1,136 @@
+﻿/* CPD10 Home Page Relays & Serial Port Entry */
+
+/* Bottom Row: Dual Power */
+.cpd10-dual-power-panel {
+  flex: 1.15;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 14px 12px;
+}
+
+.cpd10-bottom-card-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--cpd10-text-primary);
+  margin-top: 2px;
+  margin-bottom: 0;
+}
+
+.cpd10-dual-power-labels {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.cpd10-dual-power-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  flex: 1;
+  margin-top: 4px;
+}
+
+.cpd10-power-switch-item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cpd10-divider-vertical {
+  width: 1px;
+  height: 28px;
+  background: var(--cpd10-divider);
+}
+
+/* Bottom Row: Projector Screen */
+.cpd10-projector-panel {
+  flex: 1.35;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px 12px;
+}
+
+.cpd10-projector-title {
+  text-align: center;
+  width: 100%;
+}
+
+.cpd10-projector-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex: 1;
+  margin-top: 6px;
+}
+
+.cpd10-projector-action-btn {
+  flex: 1;
+  height: 48px;
+  background: var(--cpd10-interactive-bg);
+  border: 1px solid var(--cpd10-interactive-border);
+  border-radius: 6px;
+  color: var(--cpd10-text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cpd10-projector-action-btn:hover {
+  background: var(--cpd10-interactive-hover);
+}
+
+.cpd10-projector-action-btn.is-active,
+.cpd10-projector-action-btn:active {
+  background: var(--cpd10-accent);
+  border-color: var(--cpd10-accent);
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 180, 216, 0.45);
+}
+
+/* Bottom Row: Serial Port Entry Card */
+.cpd10-serial-entry-card {
+  flex: 0.85;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  background: var(--cpd10-panel-bg);
+  border: 1px solid var(--cpd10-panel-border);
+}
+
+.cpd10-serial-entry-card:hover {
+  background: var(--cpd10-interactive-hover);
+  border-color: var(--cpd10-accent);
+}
+
+.cpd10-serial-entry-graphic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -2px;
+}
+
+.cpd10-serial-entry-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--cpd10-text-secondary);
+  margin-top: 4px;
+}
+
+.cpd10-corner-triangle {
+  position: absolute;
+  bottom: 3px;
+  right: 3px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-bottom: 6px solid var(--cpd10-text-secondary);
+}

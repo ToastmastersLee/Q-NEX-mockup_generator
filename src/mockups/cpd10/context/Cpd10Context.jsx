@@ -1,6 +1,10 @@
 import { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { getScreenFromUrl, updateUrlScreen, getThemeFromUrl, updateUrlTheme } from '../constants/screens';
-import { DEFAULT_SERIAL_PORT_CONFIGS } from '../constants/serialConfigs';
+import { useAudioState } from './hooks/useAudioState';
+import { useVideoSwitchState } from './hooks/useVideoSwitchState';
+import { usePowerHardwareState } from './hooks/usePowerHardwareState';
+import { useSerialDeviceState } from './hooks/useSerialDeviceState';
+import { usePanelConfigState } from './hooks/usePanelConfigState';
 
 const Cpd10Context = createContext(null);
 
@@ -8,196 +12,44 @@ export function Cpd10Provider({ children }) {
   const [screen, setScreenState] = useState(() => getScreenFromUrl());
   const [theme, setThemeState] = useState(() => getThemeFromUrl());
 
-  // Home Dashboard States
-  const [duplicateMode, setDuplicateMode] = useState(() => {
-    const s = getScreenFromUrl();
-    return s !== 'home-matrix';
-  });
-
-  const [duplicateInput, setDuplicateInput] = useState(() => {
-    const s = getScreenFromUrl();
-    if (s === 'home-dup-hdmi1') return 'hdmi1';
-    return 'hdmi3';
-  });
-
-  const [matrixOutputs, setMatrixOutputs] = useState({
-    outA: 'hdmi1',
-    outB: 'hdmi1',
-    outC: 'hdmi1',
-  });
-
-  // Audio (Speaker & Mic)
-  const [speakerVolume, setSpeakerVolume] = useState(40);
-  const [speakerMuted, setSpeakerMuted] = useState(() => getScreenFromUrl() === 'home-dup-hdmi1');
-  const [micVolume, setMicVolume] = useState(50);
-  const [micMuted, setMicMuted] = useState(() => getScreenFromUrl() === 'home-dup-hdmi1');
-
-  // Bottom Row Powers
-  const [displayPower, setDisplayPower] = useState(true);
-  const [externalPower, setExternalPower] = useState(() => getScreenFromUrl() !== 'home-dup-hdmi1');
-  const [projectorScreenState, setProjectorScreenState] = useState(null); // 'up' | 'pause' | 'down'
-
-  // Serial Port Page States
-  const [serialTab, setSerialTab] = useState(() => {
-    const s = getScreenFromUrl();
-    if (s === 'serial-ta4532') return 'ta4532';
-    if (s === 'serial-3m') return '3m';
-    if (s === 'serial-rs485') return 'rs485';
-    return 'qa1400';
-  });
-
-  const [qa1400State, setQa1400State] = useState({
-    power: true,
-    energySaving: false,
-    screenLock: false,
-    childLock: false,
-    volume: 50,
-    brightness: 50,
-    inputSource: 'Ops',
-  });
-
-  const [ta4532State, setTa4532State] = useState({
-    power: true,
-    recording: false,
-  });
-
-  const [threeMState, setThreeMState] = useState({
-    power: null, // neutral per Image 1
-  });
-
-  const [rs485State, setRs485State] = useState({
-    power: true,
-    energySaving: false,
-    screenLock: false,
-    childLock: false,
-    volume: 50,
-    brightness: 50,
-    inputSource: 'Ops',
-  });
-
-  // Global / Hardware Mockup State
-  const [powerState, setPowerState] = useState('on'); // 'on' | 'closing' | 'off'
-  const [shutdownPromptOpen, setShutdownPromptOpen] = useState(false);
-  const [isLocked, setIsLocked] = useState(() => getScreenFromUrl() === 'lock');
-  const [orientationFlipped, setOrientationFlipped] = useState(false);
-
-  const requestShutdown = useCallback(() => {
-    setShutdownPromptOpen(true);
-  }, []);
-
-  const confirmShutdown = useCallback(() => {
-    setShutdownPromptOpen(false);
-    setPowerState('closing');
-    setTimeout(() => {
-      setPowerState('off');
-    }, 2400);
-  }, []);
-
-  const powerOn = useCallback(() => {
-    setPowerState('on');
-  }, []);
-
-  // Panel Settings States (Batch 3)
-  const [panelBrightness, setPanelBrightness] = useState(80);
-  const [buttonSoundEffects, setButtonSoundEffects] = useState(false);
-  const [screenSleep, setScreenSleep] = useState('5 min');
-  const [autoLockScreen, setAutoLockScreen] = useState('2 min');
-  const [passwordUnlockEnabled, setPasswordUnlockEnabled] = useState(false);
-  const [panelPassword, setPanelPassword] = useState('1234');
-  const [screenOrientation, setScreenOrientationState] = useState('Wall Mount');
-  const [serialImportPromptOpen, setSerialImportPromptOpen] = useState(false);
-  const [currentLanguage, setCurrentLanguage] = useState('English');
-
-  // Serial Port Settings (Batch 5 - Photos 1~5)
-  const [serialConfigs, setSerialConfigs] = useState(DEFAULT_SERIAL_PORT_CONFIGS);
-  const [activeSerialTab, setActiveSerialTab] = useState('RS232-01');
-
-  const updateSerialPortConfig = useCallback((portKey, updates) => {
-    setSerialConfigs((prev) => ({
-      ...prev,
-      [portKey]: {
-        ...prev[portKey],
-        ...updates,
-      },
-    }));
-  }, []);
-
-  const updateSerialPortCodes = useCallback((portKey, newCodes) => {
-    setSerialConfigs((prev) => ({
-      ...prev,
-      [portKey]: {
-        ...prev[portKey],
-        codes: newCodes,
-      },
-    }));
-  }, []);
-
-  // HDMI OUT Resolutions (Photos 1~2: HDMI OUT A/B/C)
-  const [hdmiResolutions, setHdmiResolutions] = useState({
-    outA: '3840x2160',
-    outB: '1920x1080',
-    outC: '3840x2160',
-  });
-
-  const updateHdmiResolution = useCallback((outKey, res) => {
-    setHdmiResolutions((prev) => ({ ...prev, [outKey]: res }));
-  }, []);
-
-  // Other Settings (Photo 3: Power linkage)
-  const [powerOnLinkage, setPowerOnLinkage] = useState(false);
-  const [shutdownLinkage, setShutdownLinkage] = useState(false);
-
-  const setScreenOrientation = useCallback((orientation) => {
-    setScreenOrientationState(orientation);
-    const isFlipped = orientation === 'Desktop' || orientation === 'Inverted';
-    setOrientationFlipped(isFlipped);
-  }, []);
-
-  const toggleScreenOrientation = useCallback(() => {
-    setScreenOrientationState((prev) => {
-      const next = prev === 'Wall Mount' ? 'Desktop' : 'Wall Mount';
-      setOrientationFlipped(next === 'Desktop');
-      return next;
-    });
-  }, []);
-
-  // Set single matrix output
-  const setMatrixOutput = useCallback((outId, inId) => {
-    setMatrixOutputs((prev) => ({ ...prev, [outId]: inId }));
-  }, []);
+  const audio = useAudioState();
+  const video = useVideoSwitchState();
+  const power = usePowerHardwareState();
+  const serial = useSerialDeviceState();
+  const panel = usePanelConfigState();
 
   // Sync state when navigating between predefined presets
   const applyPresetState = useCallback((targetScreen) => {
     if (targetScreen === 'home-dup-hdmi3') {
-      setDuplicateMode(true);
-      setDuplicateInput('hdmi3');
-      setSpeakerMuted(false);
-      setMicMuted(false);
-      setDisplayPower(true);
-      setExternalPower(true);
+      video.setDuplicateMode(true);
+      video.setDuplicateInput('hdmi3');
+      audio.setSpeakerMuted(false);
+      audio.setMicMuted(false);
+      video.setDisplayPower(true);
+      video.setExternalPower(true);
     } else if (targetScreen === 'home-dup-hdmi1') {
-      setDuplicateMode(true);
-      setDuplicateInput('hdmi1');
-      setSpeakerMuted(true);
-      setMicMuted(true);
-      setDisplayPower(true);
-      setExternalPower(false);
+      video.setDuplicateMode(true);
+      video.setDuplicateInput('hdmi1');
+      audio.setSpeakerMuted(true);
+      audio.setMicMuted(true);
+      video.setDisplayPower(true);
+      video.setExternalPower(false);
     } else if (targetScreen === 'home-matrix') {
-      setDuplicateMode(false);
-      setSpeakerMuted(false);
-      setMicMuted(false);
-      setDisplayPower(true);
-      setExternalPower(true);
+      video.setDuplicateMode(false);
+      audio.setSpeakerMuted(false);
+      audio.setMicMuted(false);
+      video.setDisplayPower(true);
+      video.setExternalPower(true);
     } else if (targetScreen === 'serial-qa1400') {
-      setSerialTab('qa1400');
+      serial.setSerialTab('qa1400');
     } else if (targetScreen === 'serial-ta4532') {
-      setSerialTab('ta4532');
+      serial.setSerialTab('ta4532');
     } else if (targetScreen === 'serial-3m') {
-      setSerialTab('3m');
+      serial.setSerialTab('3m');
     } else if (targetScreen === 'serial-rs485') {
-      setSerialTab('rs485');
+      serial.setSerialTab('rs485');
     }
-  }, []);
+  }, [audio, video, serial]);
 
   const setScreen = useCallback((newScreenId, syncUrl = true) => {
     setScreenState(newScreenId);
@@ -232,79 +84,11 @@ export function Cpd10Provider({ children }) {
     setScreen,
     theme,
     setTheme,
-    duplicateMode,
-    setDuplicateMode,
-    duplicateInput,
-    setDuplicateInput,
-    matrixOutputs,
-    setMatrixOutput,
-    speakerVolume,
-    setSpeakerVolume,
-    speakerMuted,
-    setSpeakerMuted,
-    micVolume,
-    setMicVolume,
-    micMuted,
-    setMicMuted,
-    displayPower,
-    setDisplayPower,
-    externalPower,
-    setExternalPower,
-    projectorScreenState,
-    setProjectorScreenState,
-    serialTab,
-    setSerialTab,
-    qa1400State,
-    setQa1400State,
-    ta4532State,
-    setTa4532State,
-    threeMState,
-    setThreeMState,
-    rs485State,
-    setRs485State,
-    powerState,
-    setPowerState,
-    shutdownPromptOpen,
-    setShutdownPromptOpen,
-    requestShutdown,
-    confirmShutdown,
-    powerOn,
-    isLocked,
-    setIsLocked,
-    orientationFlipped,
-    setOrientationFlipped,
-    panelBrightness,
-    setPanelBrightness,
-    buttonSoundEffects,
-    setButtonSoundEffects,
-    screenSleep,
-    setScreenSleep,
-    autoLockScreen,
-    setAutoLockScreen,
-    passwordUnlockEnabled,
-    setPasswordUnlockEnabled,
-    panelPassword,
-    setPanelPassword,
-    screenOrientation,
-    setScreenOrientation,
-    toggleScreenOrientation,
-    serialImportPromptOpen,
-    setSerialImportPromptOpen,
-    currentLanguage,
-    setCurrentLanguage,
-    serialConfigs,
-    setSerialConfigs,
-    activeSerialTab,
-    setActiveSerialTab,
-    updateSerialPortConfig,
-    updateSerialPortCodes,
-    hdmiResolutions,
-    setHdmiResolutions,
-    updateHdmiResolution,
-    powerOnLinkage,
-    setPowerOnLinkage,
-    shutdownLinkage,
-    setShutdownLinkage,
+    ...video,
+    ...audio,
+    ...serial,
+    ...power,
+    ...panel,
   };
 
   return (

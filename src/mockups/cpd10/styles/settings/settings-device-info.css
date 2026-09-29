@@ -1,0 +1,76 @@
+﻿/* CPD10 Device Info Subpage & QR Code */
+
+.cpd10-device-info-page {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  grid-template-rows: 1fr 1.6fr 1fr 1fr 1fr;
+  column-gap: 8px;
+  row-gap: 6px;
+  height: 100%;
+}
+
+.cpd10-info-row {
+  grid-column: 2;
+  background: var(--cpd10-panel-bg);
+  border: 1px solid var(--cpd10-panel-border);
+  border-radius: 8px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--cpd10-panel-shadow);
+}
+
+.cpd10-info-row-1 { grid-row: 1; }
+.cpd10-info-row-2 { grid-row: 2; }
+.cpd10-info-row-3 { grid-row: 3; }
+.cpd10-info-row-4 { grid-row: 4; }
+.cpd10-info-row-5 { grid-row: 5; }
+
+.cpd10-info-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--cpd10-text-primary);
+  letter-spacing: 0.1px;
+}
+
+.cpd10-info-val {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--cpd10-text-secondary);
+}
+
+.cpd10-qr-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cpd10-qr-box {
+  width: 44px;
+  height: 44px;
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 3px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cpd10-qr-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cpd10-qr-info-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--cpd10-text-primary);
+}
+
+.cpd10-qr-info-sub {
+  font-size: 10.5px;
+  color: var(--cpd10-text-muted);
+}

@@ -1,0 +1,56 @@
+﻿/* CPD10 Sidebar Navigation */
+
+.cpd10-sidebar {
+  width: 58px;
+  background: var(--cpd10-sidebar-bg);
+  border-right: 1px solid var(--cpd10-sidebar-border);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.cpd10-sidebar-top,
+.cpd10-sidebar-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.cpd10-nav-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: transparent;
+  border: none;
+  color: var(--cpd10-nav-btn-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cpd10-nav-btn:hover {
+  color: var(--cpd10-text-primary);
+  background: var(--cpd10-interactive-bg);
+}
+
+.cpd10-nav-btn.is-active {
+  background: var(--cpd10-accent-gradient);
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(0, 180, 216, 0.45);
+}
+
+.cpd10-nav-btn.power {
+  color: var(--cpd10-text-muted);
+}
+
+.cpd10-nav-btn.power.power-on {
+  color: var(--cpd10-accent);
+}

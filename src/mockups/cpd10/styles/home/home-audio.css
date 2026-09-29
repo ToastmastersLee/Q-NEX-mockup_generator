@@ -1,0 +1,84 @@
+﻿/* CPD10 Home Page Audio Panel (Speaker & Mic) */
+
+.cpd10-audio-panel {
+  flex: 1;
+}
+
+.cpd10-audio-columns {
+  display: flex;
+  justify-content: space-around;
+  flex: 1;
+  gap: 12px;
+}
+
+.cpd10-audio-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.cpd10-audio-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--cpd10-text-secondary);
+  margin-bottom: 4px;
+}
+
+.cpd10-vertical-fader-track {
+  width: 34px;
+  flex: 1;
+  background: var(--cpd10-interactive-bg);
+  border: 1px solid var(--cpd10-interactive-border);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  margin-bottom: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.cpd10-vertical-fader-fill {
+  width: 100%;
+  transition: height 0.15s ease;
+  border-radius: 0 0 3px 3px;
+}
+
+.cpd10-vertical-fader-fill.speaker {
+  background: linear-gradient(180deg, #facc15 0%, #eab308 100%);
+}
+
+.cpd10-vertical-fader-fill.mic {
+  background: linear-gradient(180deg, #38bdf8 0%, #00b4d8 100%);
+}
+
+.cpd10-vertical-fader-fill.is-muted {
+  opacity: 0.2;
+}
+
+.cpd10-audio-mute-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  background: var(--cpd10-interactive-bg);
+  border: 1px solid var(--cpd10-interactive-border);
+  color: var(--cpd10-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cpd10-audio-mute-btn:hover {
+  background: var(--cpd10-interactive-hover);
+  color: var(--cpd10-text-primary);
+}
+
+.cpd10-audio-mute-btn.is-muted {
+  background: var(--cpd10-toggle-off-bg);
+  color: var(--cpd10-text-muted);
+}
