@@ -144,5 +144,5 @@ export function useTranslation(namespace = 'common') {
     return result;
   };
 
-  return { t, language, setLanguage, changeLanguage: changeLanguage || setLanguage, isZh: language === 'zh' };
+  return { t, language, setLanguage, changeLanguage: changeLanguage || setLanguage, isZh: language === 'zh', i18n: { language } };
 }

@@ -1,10 +1,9 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { NativeSelect } from '../common';
 import { useTranslation } from '../../i18n';
 
 export function BroadcastSettingPage() {
-  const { t, i18n } = useTranslation('broadcast');
-  const isZh = i18n.language?.startsWith('zh');
+  const { t, isZh } = useTranslation('broadcast');
   const defaultGroupName = isZh ? '默认分组' : 'Default Group';
 
   const [newGroupName, setNewGroupName] = useState('');
@@ -16,7 +15,6 @@ export function BroadcastSettingPage() {
   const [members, setMembers] = useState([]);
   const [selectedMembers, setSelectedMembers] = useState([]);
   const [toastMessage, setToastMessage] = useState('');
-  void setToastMessage;
 
   const showToast = (msg) => {
     setToastMessage(msg);
@@ -177,10 +175,10 @@ export function BroadcastSettingPage() {
             </div>
             <div className="flex items-center gap-3 mt-3">
               <span className="text-xs text-slate-600">{t('startBroadcast', '开始广播')}</span>
-              <button type="button" className="lcs-web-btn-blue-sm" onClick={() => showToast('广播已开始')}>
+              <button type="button" className="lcs-web-btn-blue-sm" onClick={() => showToast(t('broadcastStarted', '广播已开始'))}>
                 {t('start', '开始')}
               </button>
-              <button type="button" className="lcs-web-btn-pink-disabled-sm" onClick={() => showToast('广播已停止')}>
+              <button type="button" className="lcs-web-btn-pink-disabled-sm" onClick={() => showToast(t('broadcastStopped', '广播已停止'))}>
                 {t('stop', '停止')}
               </button>
             </div>
@@ -197,4 +195,3 @@ export function BroadcastSettingPage() {
     </section>
   );
 }
-
