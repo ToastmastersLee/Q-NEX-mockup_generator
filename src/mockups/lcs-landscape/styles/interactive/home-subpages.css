@@ -1,0 +1,333 @@
+/* LCS Landscape - interactive/home-subpages.css */
+
+/* Interactive Subpages Layout */
+.lcs-interactive-subpage-layout {
+  display: flex;
+  gap: 16px;
+  flex: 1;
+  padding: 14px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.lcs-interactive-subpage-left {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.lcs-interactive-subpage-right {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.lcs-interactive-subpage-title {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.is-dark .lcs-interactive-subpage-title {
+  color: #ffffff;
+}
+
+.is-light .lcs-interactive-subpage-title {
+  color: #111827;
+}
+
+.lcs-interactive-subpage-right-title {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  opacity: 0.9;
+}
+
+/* Address book */
+.lcs-interactive-address-list {
+  flex: 1;
+  overflow-y: auto;
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.is-dark .lcs-interactive-address-list {
+  background-color: rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.is-light .lcs-interactive-address-list {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+}
+
+.lcs-interactive-address-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.is-dark .lcs-interactive-address-row {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.is-dark .lcs-interactive-address-row:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.is-light .lcs-interactive-address-row {
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.is-light .lcs-interactive-address-row:hover {
+  background-color: #f9fafb;
+}
+
+.lcs-interactive-address-row:last-child {
+  border-bottom: none;
+}
+
+.lcs-interactive-checkbox {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+  box-sizing: border-box;
+}
+
+.is-dark .lcs-interactive-checkbox {
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+}
+
+.is-light .lcs-interactive-checkbox {
+  border: 1.5px solid #9ca3af;
+}
+
+.lcs-interactive-checkbox.is-checked {
+  background-color: #22c55e !important;
+  border-color: #22c55e !important;
+}
+
+.lcs-checkmark {
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.lcs-address-name {
+  font-size: 12px;
+}
+
+/* Big Start Button */
+.lcs-interactive-circle-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lcs-interactive-big-circle-btn {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  outline: none;
+}
+
+.is-dark .lcs-interactive-big-circle-btn {
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.is-dark .lcs-interactive-big-circle-btn:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  transform: scale(1.04);
+}
+
+.is-light .lcs-interactive-big-circle-btn {
+  background-color: #e5e7eb;
+  border: 1px solid #d1d5db;
+  color: #4b5563;
+}
+
+.is-light .lcs-interactive-big-circle-btn:hover {
+  background-color: #d1d5db;
+  transform: scale(1.04);
+}
+
+.lcs-interactive-big-circle-btn.is-active {
+  background-color: #22c55e !important;
+  border-color: #16a34a !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.35);
+}
+
+/* Back button */
+.lcs-interactive-back-btn {
+  width: fit-content;
+  padding: 5px 16px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 600;
+  outline: none;
+}
+
+.is-dark .lcs-interactive-back-btn {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #a0aec0;
+}
+
+.is-dark .lcs-interactive-back-btn:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.is-light .lcs-interactive-back-btn {
+  background-color: #e5e7eb;
+  color: #4b5563;
+}
+
+.is-light .lcs-interactive-back-btn:hover {
+  background-color: #d1d5db;
+  color: #1f2937;
+}
+
+/* Submit button */
+.lcs-interactive-submit-btn {
+  height: 32px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  background-color: #22c55e;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  transition: background-color 0.15s;
+  outline: none;
+}
+
+.lcs-interactive-submit-btn:hover {
+  background-color: #16a34a;
+}
+
+/* Join class form */
+.lcs-interactive-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+}
+
+.lcs-interactive-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.lcs-interactive-form-field label {
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.lcs-interactive-input {
+  height: 28px;
+  padding: 0 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.is-dark .lcs-interactive-input {
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.is-dark .lcs-interactive-input:focus {
+  border-color: #22c55e;
+}
+
+.is-light .lcs-interactive-input {
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  color: #1f2937;
+}
+
+.is-light .lcs-interactive-input:focus {
+  border-color: #16a34a;
+}
+
+/* Schedule panel */
+.lcs-interactive-schedule-panel {
+  flex: 1;
+  border-radius: 6px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-sizing: border-box;
+}
+
+.is-dark .lcs-interactive-schedule-panel {
+  background-color: rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.is-light .lcs-interactive-schedule-panel {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+}
+
+.lcs-interactive-schedule-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.lcs-schedule-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.is-dark .lcs-schedule-dot {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.is-dark .lcs-schedule-dot.is-active {
+  background-color: #ffffff;
+}
+
+.is-light .lcs-schedule-dot {
+  background-color: #d1d5db;
+}
+
+.is-light .lcs-schedule-dot.is-active {
+  background-color: #4b5563;
+}

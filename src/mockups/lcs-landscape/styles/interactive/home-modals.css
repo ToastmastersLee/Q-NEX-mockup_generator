@@ -1,0 +1,158 @@
+/* LCS Landscape - interactive/home-modals.css */
+
+/* SIP Call Modal Popup */
+.lcs-interactive-modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(1px);
+}
+
+.lcs-interactive-modal-box {
+  width: 240px;
+  border-radius: 6px;
+  padding: 14px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.is-dark .lcs-interactive-modal-box {
+  background-color: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.is-light .lcs-interactive-modal-box {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.lcs-interactive-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lcs-modal-title {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.lcs-modal-close-x {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+}
+
+.is-dark .lcs-modal-close-x {
+  color: #cbd5e0;
+}
+
+.is-dark .lcs-modal-close-x:hover {
+  color: #ffffff;
+}
+
+.is-light .lcs-modal-close-x {
+  color: #718096;
+}
+
+.is-light .lcs-modal-close-x:hover {
+  color: #1f2937;
+}
+
+.lcs-interactive-modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lcs-interactive-modal-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.lcs-interactive-modal-field label {
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+/* Status Indicator Dot and Label Color Differentiation */
+.lcs-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.lcs-status-dot.is-online {
+  background-color: #22c55e;
+  box-shadow: 0 0 6px rgba(34, 197, 94, 0.6);
+}
+
+.lcs-status-dot.is-offline {
+  background-color: #9ca3af;
+}
+
+.is-dark .lcs-address-name.is-online-text {
+  color: #ffffff;
+}
+
+.is-dark .lcs-address-name.is-offline-text {
+  color: #64748b;
+}
+
+.is-light .lcs-address-name.is-online-text {
+  color: #1f2937;
+}
+
+.is-light .lcs-address-name.is-offline-text {
+  color: #9ca3af;
+}
+
+/* Status Labels on the right side of the list row */
+.lcs-address-status {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+}
+
+.is-dark .lcs-address-status.is-online {
+  background-color: rgba(34, 197, 94, 0.12);
+  color: #22c55e;
+}
+
+.is-dark .lcs-address-status.is-offline {
+  background-color: rgba(255, 255, 255, 0.03);
+  color: #64748b;
+}
+
+.is-light .lcs-address-status.is-online {
+  background-color: #f0fdf4;
+  color: #16a34a;
+}
+
+.is-light .lcs-address-status.is-offline {
+  background-color: #f3f4f6;
+  color: #9ca3af;
+}

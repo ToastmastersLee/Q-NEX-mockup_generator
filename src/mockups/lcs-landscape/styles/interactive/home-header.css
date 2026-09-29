@@ -1,0 +1,116 @@
+/* LCS Landscape - interactive/home-header.css */
+
+/* Interactive overlay styling */
+.lcs-full-interactive-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1010;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.is-dark .lcs-full-interactive-overlay {
+  background-color: #12141a;
+  color: #ffffff;
+}
+
+.is-light .lcs-full-interactive-overlay {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+/* Interactive Header */
+.lcs-interactive-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.is-dark .lcs-interactive-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: #12141a;
+}
+
+.is-light .lcs-interactive-header {
+  border-bottom: 1px solid #e5e7eb;
+  background-color: #ffffff;
+}
+
+.lcs-interactive-header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lcs-user-avatar {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.is-dark .lcs-user-avatar {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #cbd5e0;
+}
+
+.is-light .lcs-user-avatar {
+  background-color: #e5e7eb;
+  color: #4b5563;
+}
+
+.lcs-user-id {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.lcs-interactive-header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lcs-interactive-header-icon {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s;
+}
+
+.is-dark .lcs-interactive-header-icon {
+  color: #a0aec0;
+}
+
+.is-dark .lcs-interactive-header-icon:hover {
+  color: #ffffff;
+}
+
+.is-light .lcs-interactive-header-icon {
+  color: #4b5563;
+}
+
+.is-light .lcs-interactive-header-icon:hover {
+  color: #1f2937;
+}
+
+.lcs-interactive-header-icon.close-btn {
+  font-weight: bold;
+}
+
+.lcs-interactive-header-icon.close-btn:hover {
+  color: #ef4444 !important;
+}
