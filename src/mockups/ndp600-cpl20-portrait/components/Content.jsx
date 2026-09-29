@@ -1,5 +1,4 @@
 import { HomePage } from '../pages/HomePage';
-import { PowerPage } from '../pages/PowerPage';
 import { VideoPage } from '../pages/VideoPage';
 import { SerialPage } from '../pages/SerialPage';
 import { VolumePage } from '../pages/VolumePage';
@@ -15,38 +14,43 @@ import { NavigationBarSubpage } from '../pages/settings/NavigationBarSubpage';
 import { ChooseWidgetSubpage } from '../pages/settings/ChooseWidgetSubpage';
 import { PasswordUnlockSubpage } from '../pages/settings/PasswordUnlockSubpage';
 import { PasswordSettingSubpage } from '../pages/settings/PasswordSettingSubpage';
+import { useNdp600 } from '../context/useNdp600';
 
-export function Content({ 
-  activeTab, 
-  navConfig, 
-  handleNavConfigChange, 
-  onDisconnectionClick, 
-  settingsSubpage, 
-  setSettingsSubpage, 
-  onPanelIpClick, 
-  panelIpAddress, 
-  deviceName, 
-  setDeviceName, 
-  isDark,
-  brightness,
-  setBrightness,
-  autoLockTime,
-  setAutoLockTime,
-  screenSaver,
-  setScreenSaver,
-  screenSleep,
-  setScreenSleep,
-  passwordUnlockEnabled,
-  setPasswordUnlockEnabled,
-  password,
-  setPassword,
-  homepageWidgets,
-  setHomepageWidgets,
-  itemsOrder,
-  setItemsOrder,
-  cloudServerAddress,
-  onCloudServerAddressClick
-}) {
+export function Content() {
+  const {
+    activeTab,
+    navConfig,
+    handleNavConfigChange,
+    settingsSubpage,
+    setSettingsSubpage,
+    panelIpAddress,
+    deviceName,
+    setDeviceName,
+    theme,
+    brightness,
+    setBrightness,
+    autoLockTime,
+    setAutoLockTime,
+    screenSaver,
+    setScreenSaver,
+    screenSleep,
+    setScreenSleep,
+    passwordUnlockEnabled,
+    setPasswordUnlockEnabled,
+    password,
+    setPassword,
+    homepageWidgets,
+    setHomepageWidgets,
+    itemsOrder,
+    setItemsOrder,
+    cloudServerAddress,
+    setIsDisconnectConfirmOpen,
+    setIsAndroidEthernetOpen,
+    setIsCloudServerModalOpen
+  } = useNdp600();
+
+  const isDark = theme === 'dark';
+
   if (activeTab === 'home') return <HomePage homepageWidgets={homepageWidgets} />;
   if (activeTab === 'video') return <VideoPage />;
   if (activeTab === 'serial') return <SerialPage />;
@@ -54,6 +58,7 @@ export function Content({
   if (activeTab === 'air') return <div className="ndp-page"><AirPage /></div>;
   if (activeTab === 'remote') return <RemotePage />;
   if (activeTab === 'projector') return <ProjectionScreen isDark={isDark} vertical={true} />;
+  
   if (activeTab === 'settings') {
     if (settingsSubpage === 'resolution') {
       return <ResolutionSubpage />;
@@ -106,41 +111,34 @@ export function Content({
         <PasswordUnlockSubpage 
           passwordUnlockEnabled={passwordUnlockEnabled}
           setPasswordUnlockEnabled={setPasswordUnlockEnabled}
-          onPasswordSettingClick={() => {
-            setSettingsSubpage('password-setting');
-          }}
-          setSettingsSubpage={setSettingsSubpage}
-          isDark={isDark}
+          onSetPasswordClick={() => setSettingsSubpage('password-setting')}
         />
       );
     }
     if (settingsSubpage === 'password-setting') {
       return (
         <PasswordSettingSubpage 
-          password={password}
-          setPassword={setPassword}
-          setSettingsSubpage={setSettingsSubpage}
-          setPasswordUnlockEnabled={setPasswordUnlockEnabled}
+          currentPassword={password}
+          onSave={(newPass) => {
+            setPassword(newPass);
+            setSettingsSubpage('password-unlock');
+          }}
+          onCancel={() => setSettingsSubpage('password-unlock')}
         />
       );
     }
     return (
       <SettingsPage 
-        onDisconnectionClick={onDisconnectionClick} 
-        onResolutionClick={() => setSettingsSubpage('resolution')}
-        onLanguageClick={() => setSettingsSubpage('language')}
-        onDisplayClick={() => setSettingsSubpage('display')}
-        onCustomizeClick={() => setSettingsSubpage('customize')}
-        onPasswordUnlockClick={() => setSettingsSubpage('password-unlock')}
-        onPanelIpClick={onPanelIpClick}
+        onDisconnectionClick={() => setIsDisconnectConfirmOpen(true)}
+        onSubpageSelect={(sub) => setSettingsSubpage(sub)}
+        onPanelIpClick={() => setIsAndroidEthernetOpen(true)}
         panelIpAddress={panelIpAddress}
         deviceName={deviceName}
         setDeviceName={setDeviceName}
-        isDark={isDark}
         cloudServerAddress={cloudServerAddress}
-        onCloudServerAddressClick={onCloudServerAddressClick}
+        onCloudServerAddressClick={() => setIsCloudServerModalOpen(true)}
       />
     );
   }
-  return <PowerPage />;
+  return null;
 }

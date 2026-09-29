@@ -1,0 +1,143 @@
+/* Mode Bar */
+.ndp-mode-bar {
+  min-height: 72px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 22px;
+  border-radius: 999px;
+  background: rgba(80, 113, 150, 0.6);
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.08), 0 10px 18px rgba(19, 34, 52, 0.26);
+}
+
+.ndp-mode-bar button {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 999px;
+  color: #e8f7ff;
+  background: transparent;
+  cursor: pointer;
+}
+
+.ndp-mode-bar button.is-active {
+  color: #ffffff;
+  background: rgba(3, 188, 239, 0.32);
+  box-shadow: 0 0 13px rgba(0, 206, 255, 0.38);
+}
+
+.ndp-air-compact .ndp-mode-bar {
+  min-height: 64px;
+}
+
+.ndp-air-modes {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: rgba(33, 52, 72, 0.6);
+  border-radius: 999px;
+  height: 52px;
+  width: 100%;
+  padding: 0 16px;
+  margin-top: 24px;
+}
+
+.ndp-air-modes button {
+  border: 0;
+  background: transparent;
+  color: #a0aab8;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ndp-air-modes button.is-active {
+  color: #3b82f6;
+}
+
+/* Swing Row */
+.ndp-air-swing-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 24px;
+  padding: 0 16px;
+}
+
+.ndp-air-swing-row span {
+  font-size: 16px;
+  font-weight: 700;
+  color: #dbefff;
+}
+
+/* Bottom Sheet Overlay & Modal */
+.ndp-bottom-sheet-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.ndp-bottom-sheet {
+  background: #1e2a3b;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.ndp-sheet-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.ndp-sheet-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.ndp-sheet-actions {
+  display: flex;
+  height: 64px;
+}
+
+.ndp-sheet-btn {
+  flex: 1;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ndp-btn-cancel {
+  background: transparent;
+  color: #fff;
+}
+
+.ndp-btn-confirm {
+  background: linear-gradient(to right, #00c8ff, #007AFF);
+  color: #fff;
+}

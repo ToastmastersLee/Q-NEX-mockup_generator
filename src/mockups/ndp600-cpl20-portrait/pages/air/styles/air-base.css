@@ -1,0 +1,159 @@
+/* Air Conditioner Header & Device Select */
+.ndp-air-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.ndp-device-select {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 95px;
+  height: 37px;
+  padding: 0 8px;
+  border: 0;
+  border-radius: 4px;
+  color: #ffffff;
+  background: rgba(34, 48, 66, 0.76);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.ndp-air-device-select {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid rgba(226, 241, 255, 0.1);
+  border-radius: 8px;
+  color: #ffffff;
+  background: rgba(33, 52, 72, 0.72);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Power & On/Off */
+.ndp-onoff {
+  width: 118px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  margin: 22px auto 18px;
+  padding: 4px;
+  border-radius: 999px;
+  background: rgba(38, 54, 74, 0.68);
+  box-shadow: inset 3px 4px 7px rgba(12, 23, 36, 0.42);
+}
+
+.ndp-onoff .ndp-seg-button {
+  min-width: 54px;
+  height: 34px;
+  font-size: 12px;
+  color: #aac8e5;
+  background: transparent;
+  box-shadow: none;
+}
+
+.ndp-onoff .ndp-seg-button.is-active {
+  color: #ffffff;
+  background: linear-gradient(135deg, #04cff2, #126ef4);
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.42);
+}
+
+.ndp-air-power-toggle {
+  display: flex;
+  align-self: flex-end;
+  background: rgba(33, 52, 72, 0.6);
+  border-radius: 999px;
+  padding: 3px;
+  width: 100px;
+  height: 32px;
+  margin-bottom: 24px;
+}
+
+.ndp-air-power-toggle button {
+  flex: 1;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: #8b9cb0;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.ndp-air-power-toggle button.is-active {
+  background: #3b82f6;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(59, 130, 246, 0.4);
+}
+
+/* Temperature Controls & Dial */
+.ndp-temp-row {
+  display: grid;
+  grid-template-columns: 74px 1fr 74px;
+  align-items: center;
+  gap: 18px;
+  margin: 8px 0 25px;
+}
+
+.ndp-temp-row strong {
+  text-align: center;
+  font-size: 52px;
+  font-weight: 500;
+}
+
+.ndp-air-compact .ndp-temp-row strong {
+  font-size: 46px;
+}
+
+.ndp-air-temp-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  margin: 16px 0;
+}
+
+.ndp-air-dial-wrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.ndp-air-dial-inner {
+  position: absolute;
+  inset: 25px;
+  border-radius: 999px;
+  background: rgba(33, 52, 72, 0.72);
+  border: 1px solid rgba(226, 241, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3), 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.ndp-air-dial-temp {
+  font-size: 28px;
+  font-weight: 300;
+  color: #ffffff;
+  margin-top: 4px;
+}
+
+.ndp-air-dial-icon {
+  color: #a0aab8;
+}
+
+.ndp-air-dial-icon.is-active {
+  color: #ffaa44;
+}

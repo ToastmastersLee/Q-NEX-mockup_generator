@@ -1,0 +1,139 @@
+.ndp-stage {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 28px;
+  color: #eef7ff;
+  background:
+    radial-gradient(circle at 72% 14%, rgba(68, 120, 170, 0.28), transparent 34%),
+    linear-gradient(135deg, #060a12 0%, #111724 48%, #05070c 100%);
+  font-family: "Segoe UI", "Aptos", sans-serif;
+}
+
+.ndp-layout-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.ndp-left-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 240px;
+  flex-shrink: 0;
+}
+
+.ndp-left-controls .ndp-menu-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+}
+
+.ndp-left-controls .ndp-menu-row label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.ndp-device-wrapper {
+  flex-shrink: 0;
+}
+
+.ndp-right-controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 180px;
+  flex-shrink: 0;
+}
+
+.ndp-control-row,
+.ndp-theme-button {
+  border: 1px solid rgba(168, 193, 222, 0.22);
+  border-radius: 12px;
+  color: #ecf5ff;
+  background: rgba(26, 38, 54, 0.92);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.ndp-control-row {
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 14px 18px;
+}
+
+.ndp-status-row {
+  min-width: 220px;
+}
+
+.ndp-menu-row {
+  width: 100%;
+}
+
+.ndp-control-row span {
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.ndp-control-row label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #b9cce1;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ndp-control-row input {
+  width: 18px;
+  height: 18px;
+  accent-color: #168bff;
+}
+
+.ndp-control-row strong {
+  color: #00eba8;
+  font-size: 14px;
+}
+
+.ndp-control-row strong.is-disconnected {
+  color: #ff756d;
+}
+
+.ndp-theme-button {
+  min-width: 176px;
+  height: 58px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 22px;
+  font-size: 20px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.ndp-device {
+  width: min(92vw, 595px);
+  aspect-ratio: 9 / 14.4;
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}

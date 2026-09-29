@@ -1,0 +1,126 @@
+/* Light Theme Overrides for Settings */
+.ndp-stage.is-light .ndp-settings-row {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.ndp-stage.is-light .ndp-settings-label {
+  color: #000000;
+}
+
+.ndp-stage.is-light .ndp-settings-value {
+  color: #4b5563;
+}
+
+.ndp-stage.is-light .ndp-settings-value svg {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.ndp-stage.is-light .ndp-settings-row.is-clickable:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.ndp-stage.is-light .ndp-nav-subtitle {
+  color: #4b5563;
+}
+
+.ndp-stage.is-light .ndp-nav-list-card {
+  background: rgba(0, 0, 0, 0.01);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.ndp-stage.is-light .ndp-nav-sort-row {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.ndp-stage.is-light .ndp-eye-btn {
+  color: #2563eb;
+}
+
+.ndp-stage.is-light .ndp-nav-sort-row.is-hidden .ndp-eye-btn {
+  color: #9ca3af;
+}
+
+.ndp-stage.is-light .ndp-nav-row-icon {
+  color: #111827;
+}
+
+.ndp-stage.is-light .ndp-nav-row-label {
+  color: #111827;
+}
+
+.ndp-stage.is-light .ndp-drag-handle {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.ndp-stage.is-light .ndp-widget-section-title {
+  color: #4b5563;
+}
+
+.ndp-stage.is-light .ndp-widget-preview-area {
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px dashed rgba(0, 0, 0, 0.15);
+}
+
+.ndp-stage.is-light .ndp-widget-card-selected {
+  background: #ffffff;
+  border: 1.5px solid #2563eb;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
+}
+
+.ndp-stage.is-light .ndp-widget-card-selected span {
+  color: #111827;
+}
+
+.ndp-stage.is-light .ndp-widget-card-selected svg {
+  color: #2563eb;
+}
+
+.ndp-stage.is-light .ndp-widget-card-optional {
+  background: #f9fafb;
+  border: 1.5px solid #e5e7eb;
+}
+
+.ndp-stage.is-light .ndp-widget-card-optional:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.ndp-stage.is-light .ndp-widget-card-optional span {
+  color: #374151;
+}
+
+.ndp-stage.is-light .ndp-widget-card-optional svg {
+  color: #4b5563;
+}
+
+.ndp-stage.is-light .ndp-widget-card-optional.is-selected {
+  background: #eff6ff;
+  border: 1.5px solid #3b82f6;
+}
+
+.ndp-stage.is-light .ndp-widget-card-optional.is-selected span {
+  color: #1d4ed8;
+}
+
+.ndp-stage.is-light .ndp-widget-card-optional.is-selected svg {
+  color: #2563eb;
+}
+
+.ndp-stage.is-light .ndp-widget-add-btn {
+  background: #2563eb;
+}
+
+.ndp-stage.is-light .ndp-pin-dot-circle {
+  border-color: #2563eb;
+}
+
+.ndp-stage.is-light .ndp-pin-dot-circle.is-filled {
+  background: #2563eb;
+}
+
+.ndp-stage.is-light .ndp-toast {
+  background: rgba(243, 244, 246, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  color: #111827;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
