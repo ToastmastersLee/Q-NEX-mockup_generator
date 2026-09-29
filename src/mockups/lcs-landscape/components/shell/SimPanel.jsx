@@ -1,4 +1,4 @@
-import { Lock, Sun, Moon, Circle, Play, Sliders, Monitor } from 'lucide-react';
+import { Lock, Sun, Moon, Circle, Play, Sliders, Monitor, Camera } from 'lucide-react';
 import { useLcs } from '../../context/LcsContext';
 
 export function SimPanel() {
@@ -105,6 +105,20 @@ export function SimPanel() {
           >
             <Monitor size={12} />
             <span>Remote Classroom View</span>
+          </button>
+
+          <button 
+            type="button" 
+            className="lcs-sim-btn cv870-btn"
+            onClick={() => {
+              const url = new URL(window.location.href);
+              url.searchParams.set('view', 'cv870');
+              window.open(url.toString(), '_blank');
+            }}
+            title="Open CV870 Camera Tracking Setup Guide in a new tab"
+          >
+            <Camera size={13} />
+            <span>CV870 Setup</span>
           </button>
         </div>
       </div>

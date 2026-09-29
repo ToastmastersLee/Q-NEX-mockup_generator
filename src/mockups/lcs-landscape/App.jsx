@@ -6,6 +6,7 @@ import { DirectorView } from './components/director/DirectorView';
 import { SettingsModal } from './components/settings/SettingsModal';
 import { FileOverlay } from './components/file-manager/FileOverlay';
 import { InteractiveOverlay } from './components/interactive/InteractiveOverlay';
+import Cv870TrackingApp from '../cv870-tracking';
 import './styles.css';
 
 function LcsAppContent() {
@@ -116,6 +117,11 @@ function LcsAppContent() {
 }
 
 export default function App() {
+  const isCv870View = typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('view') === 'cv870';
+  if (isCv870View) {
+    return <Cv870TrackingApp />;
+  }
+
   return (
     <LcsProvider>
       <LcsAppContent />

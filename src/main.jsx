@@ -3,14 +3,19 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 
 const mockup = import.meta.env.VITE_MOCKUP
-const { default: ActiveApp } = mockup === 'ndp600-cpl20-portrait'
+const searchMockup = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('mockup') : null
+const activeTarget = searchMockup || mockup
+
+const { default: ActiveApp } = activeTarget === 'ndp600-cpl20-portrait'
   ? await import('./mockups/ndp600-cpl20-portrait/App.jsx')
-  : mockup === 'lcs-landscape'
+  : activeTarget === 'lcs-landscape'
     ? await import('./mockups/lcs-landscape/App.jsx')
-    : mockup === 'lcs-web'
+    : activeTarget === 'lcs-web'
       ? await import('./mockups/lcs-web/App.jsx')
-      : mockup === 'cpd10'
+      : activeTarget === 'cpd10'
         ? await import('./mockups/cpd10/App.jsx')
+        : activeTarget === 'cv870'
+          ? await import('./mockups/cv870-tracking/App.jsx')
     : await import('./App.jsx')
 
 createRoot(document.getElementById('root')).render(
