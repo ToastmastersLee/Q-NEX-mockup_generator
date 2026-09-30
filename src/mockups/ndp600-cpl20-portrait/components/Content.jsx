@@ -1,4 +1,5 @@
 import { HomePage } from '../pages/HomePage';
+import { PowerPage } from '../pages/PowerPage';
 import { VideoPage } from '../pages/VideoPage';
 import { SerialPage } from '../pages/SerialPage';
 import { VolumePage } from '../pages/VolumePage';
@@ -52,6 +53,7 @@ export function Content() {
   const isDark = theme === 'dark';
 
   if (activeTab === 'home') return <HomePage homepageWidgets={homepageWidgets} />;
+  if (activeTab === 'power') return <PowerPage />;
   if (activeTab === 'video') return <VideoPage />;
   if (activeTab === 'serial') return <SerialPage />;
   if (activeTab === 'volume') return <VolumePage />;
@@ -140,5 +142,5 @@ export function Content() {
       />
     );
   }
-  return null;
+  return <PowerPage />;
 }
