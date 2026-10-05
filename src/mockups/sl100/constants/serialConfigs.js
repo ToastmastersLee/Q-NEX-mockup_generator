@@ -21,12 +21,11 @@ export const SERIAL_DEVICE_TYPE_OPTIONS = [
 ];
 
 export const SERIAL_CODE_LIST_OPTIONS = [
-  'TR1310C Pro',
   'Customize',
-  'Q-NEX PTZ Standard',
-  'VISCA Protocol',
-  'PELCO-D',
+  'TR1310C Pro',
+  'QA1300 Pro',
   'QA1400 Pro',
+  'TE1410D Pro',
 ];
 
 export const SERIAL_BAUD_RATE_OPTIONS = [

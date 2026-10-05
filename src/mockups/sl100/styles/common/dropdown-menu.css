@@ -18,7 +18,7 @@
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.75), 0 4px 10px rgba(0, 0, 0, 0.5);
   padding: 4px 0;
   box-sizing: border-box;
-  max-height: 220px;
+  max-height: 290px;
   overflow-y: auto;
   animation: sl100-dropdown-pop 0.14s ease-out;
 }

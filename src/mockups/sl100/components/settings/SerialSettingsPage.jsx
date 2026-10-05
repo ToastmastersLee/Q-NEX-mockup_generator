@@ -2,11 +2,11 @@ import { useState } from 'react';
 import { ChevronLeft, ChevronDown } from 'lucide-react';
 import { useSl100 } from '../../context/useSl100';
 import { DropdownMenu } from '../common/DropdownMenu';
+import { CodeListModal } from './CodeListModal';
 import { ControlCodeEditorModal } from './ControlCodeEditorModal';
 import {
   SERIAL_PORT_TABS,
   SERIAL_DEVICE_TYPE_OPTIONS,
-  SERIAL_CODE_LIST_OPTIONS,
   SERIAL_BAUD_RATE_OPTIONS,
   SERIAL_PARITY_CHECK_OPTIONS,
 } from '../../constants/serialConfigs';
@@ -14,7 +14,8 @@ import {
 export function SerialSettingsPage() {
   const { setScreen, serialPortConfigs, setSerialPortConfigs } = useSl100();
   const [activePortTab, setActivePortTab] = useState(SERIAL_PORT_TABS[0]);
-  const [activePicker, setActivePicker] = useState(null); // 'deviceType' | 'codeList' | 'baudRate' | 'parityCheck' | null
+  const [activePicker, setActivePicker] = useState(null); // 'deviceType' | 'baudRate' | 'parityCheck' | null
+  const [isCodeListOpen, setIsCodeListOpen] = useState(false);
   const [isControlCodeOpen, setIsControlCodeOpen] = useState(false);
 
   const currentConfig = serialPortConfigs[activePortTab] || {
@@ -57,7 +58,7 @@ export function SerialSettingsPage() {
         </button>
 
         <div className="sl100-serial-settings-main-wrap">
-          {/* Top Segmented Tab Strip */}
+          {/* Top Segmented Tab Strip (100% full-width header) */}
           <div className="sl100-serial-tab-capsule-bar">
             {SERIAL_PORT_TABS.map((tabKey) => {
               const isActive = tabKey === activePortTab;
@@ -81,7 +82,7 @@ export function SerialSettingsPage() {
           <div className="sl100-serial-fields-grid">
             {/* Left Column */}
             <div className="sl100-serial-col">
-              {/* Row 1: Device Type with Inline Dropdown (Matches Real Machine Photo) */}
+              {/* Row 1: Device Type with Inline Dropdown Menu (Matches Real Machine Photo) */}
               <div
                 className="sl100-serial-card-row clickable"
                 style={{ position: 'relative' }}
@@ -111,34 +112,18 @@ export function SerialSettingsPage() {
                   <span className="sl100-serial-plain-val">{currentConfig.protocol || 'VISCA'}</span>
                 </div>
               ) : (
-                <div
-                  className="sl100-serial-card-row"
-                  style={{ position: 'relative' }}
-                >
+                <div className="sl100-serial-card-row">
                   <span className="sl100-serial-card-label">Code list</span>
                   <div className="sl100-serial-btn-val">
                     <span className="sl100-serial-val-text">{currentConfig.codeList}</span>
                     <button
                       type="button"
                       className="sl100-capsule-pill-btn"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setActivePicker(activePicker === 'codeList' ? null : 'codeList');
-                      }}
+                      onClick={() => setIsCodeListOpen(true)}
                     >
                       Select
                     </button>
                   </div>
-
-                  <DropdownMenu
-                    isOpen={activePicker === 'codeList'}
-                    options={SERIAL_CODE_LIST_OPTIONS}
-                    value={currentConfig.codeList}
-                    onSelect={(val) => updateCurrentConfig('codeList', val)}
-                    onClose={() => setActivePicker(null)}
-                    align="right"
-                    minWidth="160px"
-                  />
                 </div>
               )}
 
@@ -188,7 +173,7 @@ export function SerialSettingsPage() {
                 </div>
               </div>
 
-              {/* Row 2 (Interactive LCD only) */}
+              {/* Row 2: Baud rate with Dropdown Menu (Matches Real Machine Photo 3) */}
               {!isPtz && (
                 <div
                   className="sl100-serial-card-row clickable"
@@ -208,7 +193,7 @@ export function SerialSettingsPage() {
                     onSelect={(val) => updateCurrentConfig('baudRate', val)}
                     onClose={() => setActivePicker(null)}
                     align="right"
-                    minWidth="130px"
+                    minWidth="120px"
                   />
                 </div>
               )}
@@ -231,6 +216,18 @@ export function SerialSettingsPage() {
         </div>
       </div>
 
+      {/* Code List Full Screen Modal (Matches Real Machine Photo 2) */}
+      <CodeListModal
+        isOpen={isCodeListOpen}
+        value={currentConfig.codeList}
+        onConfirm={(val) => {
+          updateCurrentConfig('codeList', val);
+          setIsCodeListOpen(false);
+        }}
+        onCancel={() => setIsCodeListOpen(false)}
+      />
+
+      {/* Control Code Hex Editor Modal */}
       <ControlCodeEditorModal
         isOpen={isControlCodeOpen}
         codes={currentConfig.codes}
