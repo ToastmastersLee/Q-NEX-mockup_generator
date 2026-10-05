@@ -1,0 +1,71 @@
+/* SL100 5-Button Sidebar Styles */
+
+.sl100-sidebar {
+  width: 48px;
+  height: 100%;
+  background: var(--sl100-sidebar-bg);
+  border-right: 1px solid var(--sl100-sidebar-border);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.sl100-sidebar-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.sl100-sidebar-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.sl100-nav-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--sl100-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.sl100-nav-btn:hover {
+  background: var(--sl100-interactive-bg);
+  color: var(--sl100-text-primary);
+}
+
+.sl100-nav-btn.is-active {
+  background: rgba(2, 132, 199, 0.2);
+  border-color: var(--sl100-accent-cyan);
+  color: var(--sl100-accent-cyan);
+  box-shadow: 0 0 10px var(--sl100-accent-glow);
+}
+
+.sl100-nav-btn.power {
+  color: #ef4444;
+}
+
+.sl100-nav-btn.power:hover {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+}
+
+.sl100-nav-btn.power.power-off {
+  color: #64748b;
+}

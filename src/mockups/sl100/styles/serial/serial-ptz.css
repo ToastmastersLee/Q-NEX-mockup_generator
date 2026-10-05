@@ -1,0 +1,214 @@
+/* SL100 PTZ Camera Panel Styles (Photo 3) */
+
+.sl100-ptz-container {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  height: 100%;
+}
+
+/* Left Column: Power Card & Focus Card */
+.sl100-ptz-left-col {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sl100-ptz-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px 12px;
+}
+
+.sl100-round-btn-group {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 4px;
+}
+
+.sl100-round-btn-group.single {
+  justify-content: flex-end;
+}
+
+.sl100-round-btn {
+  width: 44px;
+  height: 30px;
+  border-radius: 15px;
+  background: var(--sl100-interactive-bg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--sl100-text-secondary);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sl100-round-btn:hover {
+  background: var(--sl100-interactive-hover);
+}
+
+.sl100-round-btn.is-active {
+  background: #0284c7;
+  border-color: #38bdf8;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(2, 132, 199, 0.6);
+}
+
+.sl100-af-btn {
+  width: 60px;
+  height: 30px;
+  border-radius: 15px;
+  background: var(--sl100-interactive-bg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--sl100-text-secondary);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sl100-af-btn:hover {
+  background: var(--sl100-interactive-hover);
+}
+
+.sl100-af-btn.is-active {
+  background: #0284c7;
+  border-color: #38bdf8;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(2, 132, 199, 0.6);
+}
+
+/* Right Column: PTZ Control (D-Pad + Zoom) */
+.sl100-ptz-control-panel {
+  flex: 1;
+  padding: 8px 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sl100-ptz-controls-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+}
+
+/* Circular D-Pad Controller */
+.sl100-dpad-circle {
+  width: 114px;
+  height: 114px;
+  border-radius: 50%;
+  background: #1e293b;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5), inset 0 2px 4px rgba(255, 255, 255, 0.05);
+}
+
+.sl100-dpad-arrow {
+  position: absolute;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.sl100-dpad-arrow:hover {
+  color: #38bdf8;
+}
+
+.sl100-dpad-arrow:active {
+  color: #00e5ff;
+}
+
+.sl100-dpad-arrow.up {
+  top: 4px;
+}
+
+.sl100-dpad-arrow.down {
+  bottom: 4px;
+}
+
+.sl100-dpad-arrow.left {
+  left: 4px;
+}
+
+.sl100-dpad-arrow.right {
+  right: 4px;
+}
+
+.sl100-dpad-center {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #94a3b8;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.sl100-dpad-center:hover {
+  color: #38bdf8;
+  border-color: #38bdf8;
+}
+
+/* Zoom Vertical Pill Track */
+.sl100-zoom-pill {
+  width: 38px;
+  height: 104px;
+  border-radius: 19px;
+  background: #1e293b;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+.sl100-zoom-btn {
+  width: 30px;
+  height: 38px;
+  border-radius: 15px;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.sl100-zoom-btn:hover {
+  color: #38bdf8;
+}
+
+.sl100-zoom-divider {
+  width: 20px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}

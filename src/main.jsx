@@ -16,6 +16,8 @@ const { default: ActiveApp } = activeTarget === 'ndp600-cpl20-portrait'
         ? await import('./mockups/cpd10/App.jsx')
         : activeTarget === 'cv870'
           ? await import('./mockups/cv870-tracking/App.jsx')
+          : activeTarget === 'sl100'
+            ? await import('./mockups/sl100/App.jsx')
     : await import('./App.jsx')
 
 createRoot(document.getElementById('root')).render(

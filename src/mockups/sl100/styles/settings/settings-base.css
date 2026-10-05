@@ -1,0 +1,299 @@
+/* SL100 Settings Subpages Base Styles (Photos 3, 4, 5) */
+
+.sl100-subpage-layout-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Left Square Back Button matching Card Height */
+.sl100-subpage-square-back-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: var(--sl100-panel-bg);
+  border: 1px solid var(--sl100-panel-border);
+  color: var(--sl100-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  box-shadow: var(--sl100-panel-shadow);
+}
+
+.sl100-subpage-square-back-btn:hover {
+  background: var(--sl100-interactive-hover);
+  color: var(--sl100-text-primary);
+  border-color: #38bdf8;
+}
+
+/* Common Info Row Card */
+.sl100-info-row-card {
+  background: var(--sl100-panel-bg);
+  border: 1px solid var(--sl100-panel-border);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  height: 48px;
+  box-sizing: border-box;
+  box-shadow: var(--sl100-panel-shadow);
+}
+
+.sl100-info-card-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--sl100-text-primary);
+}
+
+.sl100-info-card-val {
+  font-size: 11px;
+  color: var(--sl100-text-secondary);
+}
+
+.sl100-info-card-val.online {
+  color: #22c55e;
+  font-weight: 600;
+}
+
+/* Photo 3: Device Information 2-Column Grid */
+.sl100-device-info-main-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 14px;
+  height: 100%;
+}
+
+.sl100-device-info-col1 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sl100-info-device-id-card {
+  flex: 1;
+  background: var(--sl100-panel-bg);
+  border: 1px solid var(--sl100-panel-border);
+  border-radius: 8px;
+  padding: 10px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--sl100-panel-shadow);
+  box-sizing: border-box;
+}
+
+.sl100-device-id-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sl100-device-id-qr-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: #f8fafc;
+}
+
+.sl100-device-info-col2 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Photo 4: Screen Settings 2-Column Grid */
+.sl100-screen-settings-main-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 14px;
+  height: 100%;
+}
+
+.sl100-screen-settings-col1 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sl100-screen-settings-col2 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sl100-row-controls-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sl100-no-action-label {
+  font-size: 11px;
+  color: var(--sl100-text-secondary);
+}
+
+.sl100-time-badge-btn {
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  color: var(--sl100-text-primary);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sl100-time-badge-btn:hover {
+  border-color: #38bdf8;
+}
+
+.sl100-pill-action-btn {
+  background: rgba(30, 41, 59, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  color: var(--sl100-text-primary);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sl100-pill-action-btn:hover {
+  background: #0284c7;
+  color: #ffffff;
+  border-color: #38bdf8;
+}
+
+/* Cyan Brightness Slider */
+.sl100-brightness-capsule-bar {
+  width: 140px;
+  height: 20px;
+  border-radius: 10px;
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.sl100-brightness-capsule-level {
+  height: 100%;
+  background: linear-gradient(90deg, #0284c7 0%, #00e5ff 100%);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+/* Photo 5: Password Modal Full Viewport Overlay */
+.sl100-password-screen-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
+  z-index: 100;
+  display: flex;
+}
+
+.sl100-password-screen-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.sl100-password-form-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+}
+
+.sl100-pwd-input-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 420px;
+  justify-content: space-between;
+}
+
+.sl100-pwd-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #cbd5e1;
+  min-width: 120px;
+  text-align: right;
+}
+
+.sl100-pwd-input-box {
+  flex: 1;
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  color: #f8fafc;
+  padding: 6px 12px;
+  font-size: 12px;
+  outline: none;
+}
+
+.sl100-pwd-input-box:focus {
+  border-color: #00e5ff;
+}
+
+.sl100-pwd-error-text {
+  font-size: 11px;
+  color: #ef4444;
+}
+
+.sl100-password-actions-pane {
+  width: 140px;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(15, 23, 42, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px;
+}
+
+.sl100-pwd-action-pill {
+  width: 90px;
+  height: 32px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.sl100-pwd-action-pill.cancel {
+  background: #334155;
+  color: #e2e8f0;
+}
+
+.sl100-pwd-action-pill.cancel:hover {
+  background: #475569;
+}
+
+.sl100-pwd-action-pill.confirm {
+  background: #00e5ff;
+  color: #0f172a;
+  box-shadow: 0 0 14px rgba(0, 229, 255, 0.5);
+}
+
+.sl100-pwd-action-pill.confirm:hover {
+  background: #38bdf8;
+}

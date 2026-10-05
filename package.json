@@ -18,7 +18,9 @@
     "build:cpd10": "vite build --mode cpd10",
     "build:cv870": "vite build --mode cv870",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "dev:sl100": "vite --mode sl100 --host 0.0.0.0 --port 5179",
+    "build:sl100": "vite build --mode sl100"
   },
   "dependencies": {
     "lucide-react": "^1.11.0",

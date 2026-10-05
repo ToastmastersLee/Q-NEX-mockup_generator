@@ -1,0 +1,154 @@
+/* SL100 Physical Lock Screen & PIN Keypad Styles */
+
+.sl100-lock-screen {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, #0f1c3f 0%, #060a14 100%);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sl100-lock-center-wrapper {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.sl100-lock-halo {
+  position: absolute;
+  inset: -10px;
+  border-radius: 50%;
+  border: 1px dashed rgba(0, 229, 255, 0.4);
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.35);
+  animation: sl100-halo-pulse 3s infinite ease-in-out;
+}
+
+@keyframes sl100-halo-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+.sl100-lock-circle-btn {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 30%, #1e3a8a 0%, #0f172a 100%);
+  border: 2px solid #00e5ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.sl100-lock-circle-btn:hover {
+  transform: scale(1.05);
+}
+
+/* PIN Modal */
+.sl100-pin-unlock-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 60;
+}
+
+.sl100-pin-unlock-card {
+  background: #111827;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 12px;
+  padding: 12px 18px;
+  width: 260px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sl100-pin-unlock-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 600;
+  color: #94a3b8;
+}
+
+.sl100-pin-close-btn {
+  background: transparent;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  padding: 2px;
+}
+
+.sl100-pin-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 4px 0;
+}
+
+.sl100-pin-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid #38bdf8;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.sl100-pin-dot.filled {
+  background: #38bdf8;
+  box-shadow: 0 0 6px #38bdf8;
+}
+
+.sl100-pin-dots.is-error .sl100-pin-dot {
+  border-color: #ef4444;
+  background: #ef4444;
+}
+
+.sl100-pin-keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.sl100-pin-num-key {
+  height: 28px;
+  border-radius: 6px;
+  background: #1e293b;
+  border: 1px solid #334155;
+  color: #f8fafc;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sl100-pin-num-key:hover {
+  background: #334155;
+}
+
+.sl100-pin-del-key {
+  color: #ef4444;
+}

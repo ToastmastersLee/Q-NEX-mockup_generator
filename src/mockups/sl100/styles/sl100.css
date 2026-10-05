@@ -1,0 +1,23 @@
+/**
+ * SL100 Podium Local Control Screen - Master CSS Aggregator
+ * Strictly follows GEMINI.md modularization guidelines
+ */
+
+@import './tokens.css';
+@import './shell/shell-bezel.css';
+@import './shell/sidebar.css';
+@import './shell/lock-screen.css';
+@import './shell/power-modals.css';
+@import './home/home-layout.css';
+@import './home/home-video.css';
+@import './home/home-audio.css';
+@import './home/home-lectern.css';
+@import './serial/serial-layout.css';
+@import './serial/serial-ptz.css';
+@import './serial/serial-lcd.css';
+@import './timer/timer.css';
+@import './settings/settings-hub.css';
+@import './settings/settings-base.css';
+@import './settings/serial-settings.css';
+@import './settings/language-settings.css';
+@import './common/dropdown-menu.css';

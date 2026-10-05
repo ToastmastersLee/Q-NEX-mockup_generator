@@ -1,0 +1,85 @@
+/* SL100 Language Settings Page Styles - Matches Photo 1 & User Top Alignment */
+
+.sl100-language-page {
+  height: 100%;
+}
+
+.sl100-subpage-layout-wrap.sl100-language-layout {
+  align-items: flex-start;
+}
+
+.sl100-language-main-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-left: 8px;
+}
+
+.sl100-language-options-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 64px;
+  min-height: 38px; /* Aligns with 38px height of back button */
+  box-sizing: border-box;
+}
+
+.sl100-lang-radio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px 10px;
+  outline: none;
+  border-radius: 8px;
+  transition: background 0.15s ease;
+  height: 38px;
+  box-sizing: border-box;
+}
+
+.sl100-lang-radio-btn:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.sl100-lang-radio-circle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+.sl100-lang-radio-circle.is-selected {
+  border-color: #0284c7;
+  background: #0f172a;
+  box-shadow: 0 0 8px rgba(2, 132, 199, 0.4);
+}
+
+.sl100-lang-radio-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #38bdf8;
+  box-shadow: 0 0 6px rgba(56, 189, 248, 0.7);
+}
+
+.sl100-lang-radio-text {
+  font-size: 13px;
+  font-weight: 500;
+  color: #cbd5e1;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+.sl100-lang-radio-btn.is-selected .sl100-lang-radio-text {
+  color: #ffffff;
+  font-weight: 600;
+}

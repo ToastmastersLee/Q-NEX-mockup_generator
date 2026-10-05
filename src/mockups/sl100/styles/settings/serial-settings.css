@@ -1,0 +1,288 @@
+/* SL100 Serial Settings Subpage - Matches Photos 2-5 */
+
+.sl100-serial-settings-page {
+  height: 100%;
+}
+
+.sl100-serial-settings-main-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+}
+
+/* Photo 2-5: Top Pill Segmented Tabs Bar - Spans 100% of header width */
+.sl100-serial-tab-capsule-bar {
+  display: flex;
+  width: 100%;
+  height: 38px;
+  align-items: center;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 19px;
+  padding: 2px 3px;
+  box-sizing: border-box;
+}
+
+.sl100-serial-tab-item {
+  flex: 1;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1.5px solid transparent;
+  border-radius: 16px;
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.sl100-serial-tab-item:hover {
+  color: #f8fafc;
+}
+
+.sl100-serial-tab-item.is-active {
+  border-color: #38bdf8;
+  background: linear-gradient(180deg, rgba(30, 64, 175, 0.6) 0%, rgba(14, 116, 144, 0.4) 100%);
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.35);
+  font-weight: 600;
+}
+
+/* Photo 2-5: 2-Column Fields Grid */
+.sl100-serial-fields-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 14px;
+}
+
+.sl100-serial-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sl100-serial-card-row {
+  height: 40px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.sl100-serial-card-row.clickable {
+  cursor: pointer;
+}
+
+.sl100-serial-card-row.clickable:hover {
+  border-color: rgba(56, 189, 248, 0.4);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.sl100-serial-card-label {
+  font-size: 12px;
+  color: #cbd5e1;
+  font-weight: 400;
+}
+
+.sl100-serial-dropdown-val {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #f8fafc;
+  font-weight: 500;
+}
+
+.sl100-dropdown-arrow {
+  color: #94a3b8;
+}
+
+.sl100-serial-plain-val {
+  font-size: 12px;
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+.sl100-serial-btn-val {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sl100-serial-val-text {
+  font-size: 12px;
+  color: #f8fafc;
+  font-weight: 500;
+}
+
+.sl100-capsule-pill-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  color: #f8fafc;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sl100-capsule-pill-btn:hover {
+  background: #0284c7;
+  border-color: #38bdf8;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
+}
+
+.sl100-serial-name-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sl100-serial-name-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #f8fafc;
+  font-size: 12px;
+  text-align: right;
+  width: 160px;
+  font-weight: 500;
+}
+
+.sl100-serial-name-input:focus {
+  color: #38bdf8;
+}
+
+.sl100-serial-counter {
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 400;
+}
+
+/* Control Code Editor Modal */
+.sl100-control-code-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  display: flex;
+  padding: 12px;
+  gap: 12px;
+  box-sizing: border-box;
+}
+
+.sl100-control-code-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #0f172a;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+.sl100-control-code-rows {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow-y: auto;
+}
+
+.sl100-control-code-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.sl100-code-lbl {
+  font-size: 10px;
+  color: #64748b;
+  min-width: 44px;
+}
+
+.sl100-code-func-box {
+  flex: 1;
+  font-size: 11px;
+  color: #e2e8f0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sl100-code-hex-input {
+  flex: 2;
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 4px;
+  color: #38bdf8;
+  font-family: monospace;
+  font-size: 11px;
+  padding: 3px 6px;
+  outline: none;
+}
+
+.sl100-code-checkbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background: #1e293b;
+  border: 1px solid #475569;
+  color: #38bdf8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+.sl100-code-checkbox.is-checked {
+  background: #0284c7;
+  border-color: #38bdf8;
+  color: #ffffff;
+}
+
+.sl100-control-code-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding-top: 6px;
+}
+
+.sl100-code-page-btn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+}
+
+.sl100-code-page-text {
+  font-size: 11px;
+  color: #cbd5e1;
+}
+
+.sl100-control-code-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 8px;
+  width: 90px;
+}

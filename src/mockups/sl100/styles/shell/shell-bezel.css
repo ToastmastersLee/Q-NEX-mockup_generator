@@ -1,0 +1,176 @@
+/* SL100 Shell Bezel & 4:1 Viewport Styles */
+
+.sl100-app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--sl100-body-bg);
+  color: var(--sl100-text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+  user-select: none;
+  padding: 16px;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Top Quick Debug / Preset Switch Bar */
+.sl100-debug-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 980px;
+  margin-bottom: 12px;
+  padding: 8px 16px;
+  background: var(--sl100-debug-bg);
+  border: 1px solid var(--sl100-debug-border);
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--sl100-debug-text);
+  box-sizing: border-box;
+  backdrop-filter: blur(8px);
+  box-shadow: var(--sl100-panel-shadow);
+}
+
+.sl100-port-badge {
+  font-size: 11px;
+  opacity: 0.75;
+  background: rgba(2, 132, 199, 0.2);
+  color: var(--sl100-accent-cyan);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.sl100-screen-select {
+  background: var(--sl100-interactive-bg);
+  border: 1px solid var(--sl100-interactive-hover);
+  color: var(--sl100-text-primary);
+  border-radius: 6px;
+  padding: 3px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  outline: none;
+}
+
+.sl100-debug-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--sl100-interactive-bg);
+  border: 1px solid var(--sl100-interactive-hover);
+  color: var(--sl100-text-primary);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sl100-debug-btn:hover {
+  background: var(--sl100-interactive-hover);
+  border-color: var(--sl100-accent-blue);
+}
+
+/* Simulated Hardware Lectern/Podium Enclosure Housing */
+.sl100-podium-housing {
+  position: relative;
+  background: var(--sl100-podium-housing);
+  border: 1px solid var(--sl100-podium-border);
+  border-radius: 14px;
+  box-shadow: var(--sl100-podium-shadow);
+  padding: 24px 28px 24px 28px;
+  width: 1000px;
+  max-width: 96vw;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Podium Center Ambient Light Sensor / Camera Pinhole */
+.sl100-podium-pinhole {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #38bdf8 15%, #0f172a 70%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 12px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.8), 0 0 6px rgba(56, 189, 248, 0.3);
+}
+
+/* Screen Metal Bezel Frame */
+.sl100-screen-bezel {
+  width: 100%;
+  border-radius: 10px;
+  background: var(--sl100-bezel-outer);
+  border: 3px solid var(--sl100-bezel-border);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+/* Ultra-Wide 4:1 Screen Viewport */
+.sl100-screen-viewport {
+  width: 100%;
+  aspect-ratio: 4 / 1;
+  min-height: 230px;
+  max-height: 250px;
+  background: var(--sl100-viewport-bg);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  box-sizing: border-box;
+}
+
+/* Main Viewport Content Canvas */
+.sl100-main-canvas {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+  padding: 8px 12px;
+}
+
+.sl100-page-content {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Base Panel Styles */
+.sl100-panel {
+  background: var(--sl100-panel-bg);
+  border: 1px solid var(--sl100-panel-border);
+  border-radius: 8px;
+  box-shadow: var(--sl100-panel-shadow);
+  box-sizing: border-box;
+  backdrop-filter: blur(12px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.sl100-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+}
+
+.sl100-panel-header.center {
+  justify-content: center;
+}
+
+.sl100-panel-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--sl100-text-primary);
+  letter-spacing: 0.2px;
+}

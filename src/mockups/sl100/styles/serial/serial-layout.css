@@ -1,0 +1,55 @@
+/* SL100 Serial Top Navigation Tabs & Layout */
+
+.sl100-serial-page-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  gap: 8px;
+  box-sizing: border-box;
+}
+
+/* 4 Navigation Tabs at Top (Images 3, 4, 5) */
+.sl100-serial-tabs-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding-bottom: 2px;
+}
+
+.sl100-serial-tab-pill {
+  flex: 1;
+  height: 28px;
+  border-radius: 14px;
+  background: var(--sl100-interactive-bg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--sl100-text-secondary);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  padding: 0 10px;
+}
+
+.sl100-serial-tab-pill:hover {
+  background: var(--sl100-interactive-hover);
+  color: var(--sl100-text-primary);
+}
+
+.sl100-serial-tab-pill.is-active {
+  background: rgba(2, 132, 199, 0.2);
+  border-color: #00e5ff;
+  color: #00e5ff;
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.35);
+}
+
+.sl100-serial-body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+}

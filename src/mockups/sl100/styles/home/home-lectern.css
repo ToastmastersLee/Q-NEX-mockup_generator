@@ -1,0 +1,131 @@
+/* SL100 Lectern Controls (Lift Table, Electric Lock, Serial Port Card) */
+
+/* 1. Lift Table Panel */
+.sl100-lift-table-panel {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sl100-lift-buttons-stack {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 4px 10px 10px 10px;
+  gap: 6px;
+  box-sizing: border-box;
+}
+
+.sl100-lift-btn {
+  flex: 1;
+  border-radius: 8px;
+  background: var(--sl100-interactive-bg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--sl100-text-primary);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.sl100-lift-btn:hover {
+  background: var(--sl100-interactive-hover);
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+.sl100-lift-btn.is-active {
+  background: rgba(2, 132, 199, 0.25);
+  border-color: #0284c7;
+  color: #38bdf8;
+  box-shadow: 0 0 10px var(--sl100-accent-glow);
+}
+
+/* 2. Electric Lock Panel */
+.sl100-electric-lock-panel {
+  height: 48%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sl100-lock-segmented-control {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin: 0 8px 6px 8px;
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 2px;
+  box-sizing: border-box;
+}
+
+.sl100-seg-btn {
+  flex: 1;
+  height: 100%;
+  border-radius: 4px;
+  background: transparent;
+  border: none;
+  color: var(--sl100-text-secondary);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sl100-seg-btn.is-active {
+  background: #0284c7;
+  color: #ffffff;
+  box-shadow: 0 0 8px rgba(2, 132, 199, 0.6);
+}
+
+/* 3. Serial Port Entry Card */
+.sl100-serial-port-card {
+  height: 52%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sl100-serial-port-card:hover {
+  border-color: #38bdf8;
+  background: var(--sl100-interactive-hover);
+}
+
+.sl100-serial-card-icon-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sl100-serial-card-footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.sl100-serial-card-title {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--sl100-text-primary);
+}
+
+.sl100-serial-card-caret {
+  position: absolute;
+  right: 2px;
+  font-size: 10px;
+  color: var(--sl100-text-muted);
+}
