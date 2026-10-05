@@ -26,9 +26,11 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  padding: 16px 0;
   gap: 14px;
   height: 100%;
+  box-sizing: border-box;
 }
 
 .sl100-control-code-row {
