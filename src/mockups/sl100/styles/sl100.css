@@ -19,5 +19,6 @@
 @import './settings/settings-hub.css';
 @import './settings/settings-base.css';
 @import './settings/serial-settings.css';
+@import './settings/control-code-modal.css';
 @import './settings/language-settings.css';
 @import './common/dropdown-menu.css';

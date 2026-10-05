@@ -17,9 +17,9 @@ export function useSlPanelConfigState() {
   const [language, setLanguage] = useState('en');
 
   const [hdmiResolution, setHdmiResolution] = useState({
-    outA: '4K',
-    outB: '1080P',
-    outC: '1080P',
+    outA: '1920*1080',
+    outB: '1920*1080',
+    outC: '1920*1080',
   });
 
   const [powerLinkage, setPowerLinkage] = useState({

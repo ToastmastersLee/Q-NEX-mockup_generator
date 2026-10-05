@@ -25,10 +25,13 @@ export function OtherSettingsPage() {
           <ChevronLeft size={20} strokeWidth={2.4} />
         </button>
 
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '8px' }}>
-          <div className="sl100-other-header-area" style={{ padding: '0 4px' }}>
-            <p className="sl100-other-header-desc" style={{ margin: 0, fontSize: '11px', color: '#94a3b8' }}>
-              When the podium is turned on/off, it will automatically send the power on/off command to all serial displays and devices.
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '12px' }}>
+          <div className="sl100-other-header-area" style={{ padding: '2px 4px' }}>
+            <h2 style={{ margin: '0 0 4px 0', fontSize: '15px', fontWeight: 600, color: '#f8fafc' }}>
+              Power on/off settings
+            </h2>
+            <p className="sl100-other-header-desc" style={{ margin: 0, fontSize: '12px', color: '#94a3b8', lineHeight: 1.4 }}>
+              When the devices is turned on/off, it will automatically send the power on/off command to all serial devices.
             </p>
           </div>
 

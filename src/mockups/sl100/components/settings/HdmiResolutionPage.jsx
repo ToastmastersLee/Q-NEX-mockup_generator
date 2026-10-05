@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronDown } from 'lucide-react';
 import { useSl100 } from '../../context/useSl100';
 import { DropdownMenu } from '../common/DropdownMenu';
 
-const RESOLUTION_OPTIONS = ['1920x1080', '3840x2160'];
+const RESOLUTION_OPTIONS = ['1920*1080', '3840*2160'];
 
 export function HdmiResolutionPage() {
   const { setScreen, hdmiResolution, setHdmiResolution } = useSl100();

@@ -46,23 +46,34 @@ export const SERIAL_PARITY_CHECK_OPTIONS = [
 ];
 
 const DEFAULT_LCD_CODES = [
-  { id: 1, name: 'Power On', code: 'AA BB CC 01 00 00 01 DD EE FF', enabled: true },
-  { id: 2, name: 'Power Off', code: 'AA BB CC 01 01 00 02 DD EE FF', enabled: true },
-  { id: 3, name: 'Lock On', code: '', enabled: false },
-  { id: 4, name: 'Lock Off', code: '', enabled: true },
-  { id: 5, name: 'Child lock ON', code: '', enabled: true },
-  { id: 6, name: 'Child lock OFF', code: '', enabled: true },
+  // Page 1/6
+  { id: 1, name: 'Power ON', code: 'AA BB CC 01 00 00 01 DD EE FF', enabled: true },
+  { id: 2, name: 'Power OFF', code: 'AA BB CC 01 01 00 02 DD EE FF', enabled: true },
+  { id: 3, name: 'Lock ON', code: '', enabled: false },
+  { id: 4, name: 'Lock OFF', code: '', enabled: false },
+  // Page 2/6
+  { id: 5, name: 'Child lock ON', code: '', enabled: false },
+  { id: 6, name: 'Child lock OFF', code: '', enabled: false },
   { id: 7, name: 'Energy saving ON', code: '', enabled: false },
   { id: 8, name: 'Energy saving OFF', code: '', enabled: false },
-  { id: 9, name: 'Volume +', code: 'AA BB CC 02 01 00 00 DD EE FF', enabled: true },
-  { id: 10, name: 'Volume -', code: 'AA BB CC 02 02 00 00 DD EE FF', enabled: true },
-  { id: 11, name: 'Mute ON', code: 'AA BB CC 02 03 00 00 DD EE FF', enabled: true },
-  { id: 12, name: 'Mute OFF', code: 'AA BB CC 02 04 00 00 DD EE FF', enabled: true },
-  { id: 13, name: 'Brightness +', code: 'AA BB CC 03 01 00 00 DD EE FF', enabled: true },
-  { id: 14, name: 'Brightness -', code: 'AA BB CC 03 02 00 00 DD EE FF', enabled: true },
-  { id: 15, name: 'Input OPS', code: 'AA BB CC 04 01 00 00 DD EE FF', enabled: true },
-  { id: 16, name: 'Input HDMI', code: 'AA BB CC 04 02 00 00 DD EE FF', enabled: true },
-  { id: 17, name: 'Input Android', code: 'AA BB CC 04 03 00 00 DD EE FF', enabled: true },
+  // Page 3/6
+  { id: 9, name: 'OPS', code: 'AA BB CC 02 08 00 0A DD EE FF', enabled: true },
+  { id: 10, name: 'Android', code: 'AA BB CC 02 0A 00 0C DD EE FF', enabled: true },
+  { id: 11, name: 'HDMI 1', code: 'AA BB CC 02 06 00 08 DD EE FF', enabled: true },
+  { id: 12, name: 'Speaker', code: 'AA BB CC 03 00 xx ** DD EE FF', enabled: true, hasHelp: true, helpText: 'Volume variable: xx (00-64 hex), ** (checksum)' },
+  // Page 4/6
+  { id: 13, name: 'Brightness', code: '', enabled: false, hasHelp: true, helpText: 'Brightness variable: xx (00-64 hex), ** (checksum)' },
+  { id: 14, name: '', code: '', enabled: false },
+  { id: 15, name: '', code: '', enabled: false },
+  { id: 16, name: '', code: '', enabled: false },
+  // Page 5/6
+  { id: 17, name: '', code: '', enabled: false },
+  { id: 18, name: '', code: '', enabled: false },
+  { id: 19, name: '', code: '', enabled: false },
+  { id: 20, name: '', code: '', enabled: false },
+  // Page 6/6
+  { id: 21, name: '', code: '', enabled: false },
+  { id: 22, name: '', code: '', enabled: false },
 ];
 
 export const DEFAULT_SERIAL_PORT_CONFIGS = {
