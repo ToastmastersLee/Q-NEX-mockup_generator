@@ -16,6 +16,7 @@
 @import './serial/serial-ptz.css';
 @import './serial/serial-lcd.css';
 @import './timer/timer.css';
+@import './timer/timer-live.css';
 @import './settings/settings-hub.css';
 @import './settings/settings-base.css';
 @import './settings/serial-settings.css';

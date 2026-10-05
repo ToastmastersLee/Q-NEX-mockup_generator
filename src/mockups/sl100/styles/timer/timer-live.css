@@ -1,0 +1,213 @@
+/* SL100 Lecture Timer - Live Running View & Modals (Photos 1-4) */
+
+.sl100-timer-screen-wrap.is-live {
+  background: radial-gradient(ellipse at 50% 40%, #16a34a 0%, #15803d 45%, #14532d 100%);
+  padding: 16px 32px;
+}
+
+.sl100-timer-live-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.sl100-timer-live-badge {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sl100-timer-live-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #a3e635;
+  box-shadow: 0 0 10px #a3e635;
+}
+
+.sl100-timer-live-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.sl100-timer-live-center-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sl100-timer-live-digits-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  user-select: none;
+}
+
+.sl100-timer-live-digits {
+  font-size: 80px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.sl100-timer-live-target {
+  font-size: 34px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 1px;
+  margin-left: 8px;
+}
+
+.sl100-timer-live-quick-add-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.sl100-timer-live-add-pill {
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 9999px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 18px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.sl100-timer-live-add-pill:hover {
+  background: rgba(30, 41, 59, 0.9);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+.sl100-timer-live-actions-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 60px;
+  flex-shrink: 0;
+}
+
+.sl100-timer-live-circle-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.sl100-timer-live-circle-btn:hover {
+  transform: scale(1.08);
+}
+
+.sl100-timer-live-circle-btn.is-stop {
+  background: #ef4444;
+  box-shadow: 0 0 16px rgba(239, 68, 68, 0.5);
+}
+
+.sl100-timer-live-circle-btn.is-pause {
+  background: #0284c7;
+  box-shadow: 0 0 16px rgba(2, 132, 199, 0.5);
+  color: #ffffff;
+}
+
+.sl100-timer-live-circle-btn.is-reset {
+  background: #334155;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #f1f5f9;
+}
+
+/* Modals inside Timer Live */
+.sl100-timer-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.sl100-timer-dialog-card {
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 24px 32px;
+  width: 360px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+}
+
+.sl100-timer-dialog-msg {
+  font-size: 14px;
+  font-weight: 500;
+  color: #f8fafc;
+  line-height: 1.5;
+  margin: 0 0 18px 0;
+}
+
+.sl100-timer-dialog-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.sl100-btn-timer-modal-cancel {
+  width: 100px;
+  height: 36px;
+  border-radius: 9999px;
+  background: #334155;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.sl100-btn-timer-modal-cancel:hover {
+  background: #475569;
+}
+
+.sl100-btn-timer-modal-confirm {
+  width: 100px;
+  height: 36px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #0284c7 0%, #00b4d8 100%);
+  border: none;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0 14px rgba(0, 180, 216, 0.4);
+  transition: opacity 0.2s ease;
+}
+
+.sl100-btn-timer-modal-confirm:hover {
+  opacity: 0.95;
+}

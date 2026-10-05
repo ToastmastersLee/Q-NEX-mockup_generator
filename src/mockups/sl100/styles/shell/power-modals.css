@@ -24,6 +24,80 @@
   gap: 12px;
 }
 
+/* Photo 5: Real Machine Shutdown Confirmation Dialog */
+.sl100-shutdown-modal-card {
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 24px 32px;
+  width: 380px;
+  max-width: 90%;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.sl100-shutdown-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #f8fafc;
+  margin-bottom: 6px;
+}
+
+.sl100-shutdown-countdown {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ef4444;
+  margin-bottom: 18px;
+}
+
+.sl100-shutdown-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.sl100-btn-shutdown-cancel {
+  flex: 1;
+  height: 38px;
+  border-radius: 9999px;
+  background: #334155;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sl100-btn-shutdown-cancel:hover {
+  background: #475569;
+}
+
+.sl100-btn-shutdown-confirm {
+  flex: 1;
+  height: 38px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #0284c7 0%, #00b4d8 100%);
+  border: none;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0 14px rgba(0, 180, 216, 0.4);
+  transition: all 0.2s ease;
+}
+
+.sl100-btn-shutdown-confirm:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+
 .sl100-modal-header {
   display: flex;
   align-items: center;
