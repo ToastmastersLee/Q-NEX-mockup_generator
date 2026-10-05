@@ -83,9 +83,6 @@ export function Sl100Shell() {
 
       {/* Simulated Hardware Podium Bezel (Ultra-Wide ~4:1 Bar Screen) */}
       <div className="sl100-podium-housing">
-        {/* Podium Top Ambient Sensor / Camera Pinhole */}
-        <div className="sl100-podium-pinhole" />
-
         {/* 4:1 Aspect Ratio Screen Bezel */}
         <div className="sl100-screen-bezel">
           <div className="sl100-screen-viewport">

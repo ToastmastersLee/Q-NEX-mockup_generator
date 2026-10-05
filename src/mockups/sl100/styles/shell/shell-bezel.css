@@ -80,24 +80,13 @@
   border: 1px solid var(--sl100-podium-border);
   border-radius: 14px;
   box-shadow: var(--sl100-podium-shadow);
-  padding: 24px 28px 24px 28px;
-  width: 1000px;
+  padding: 16px 20px;
+  width: 1060px;
   max-width: 96vw;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-/* Podium Center Ambient Light Sensor / Camera Pinhole */
-.sl100-podium-pinhole {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #38bdf8 15%, #0f172a 70%);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  margin-bottom: 12px;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.8), 0 0 6px rgba(56, 189, 248, 0.3);
 }
 
 /* Screen Metal Bezel Frame */
@@ -110,12 +99,12 @@
   overflow: hidden;
 }
 
-/* Ultra-Wide 4:1 Screen Viewport */
+/* Expanded Ultra-Wide Screen Viewport (User request: enlarge inner div) */
 .sl100-screen-viewport {
   width: 100%;
-  aspect-ratio: 4 / 1;
-  min-height: 230px;
-  max-height: 250px;
+  aspect-ratio: 1920 / 510;
+  min-height: 265px;
+  max-height: 290px;
   background: var(--sl100-viewport-bg);
   position: relative;
   overflow: hidden;
