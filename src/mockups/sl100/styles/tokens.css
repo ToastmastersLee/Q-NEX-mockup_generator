@@ -36,6 +36,9 @@
   --sl100-fader-yellow: #f59e0b;
   --sl100-fader-cyan: #06b6d4;
 
+  --sl100-track-bg: #0f172a;
+  --sl100-track-border: rgba(255, 255, 255, 0.1);
+
   --sl100-debug-bg: rgba(15, 23, 42, 0.85);
   --sl100-debug-border: rgba(51, 65, 85, 0.6);
   --sl100-debug-text: #cbd5e1;
@@ -74,6 +77,9 @@
   --sl100-fader-track: #e2e8f0;
   --sl100-fader-yellow: #f59e0b;
   --sl100-fader-cyan: #06b6d4;
+
+  --sl100-track-bg: #e2e8f0;
+  --sl100-track-border: #cbd5e1;
 
   --sl100-debug-bg: rgba(255, 255, 255, 0.95);
   --sl100-debug-border: rgba(203, 213, 225, 0.8);

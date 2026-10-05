@@ -90,3 +90,19 @@
   border-color: #ef4444;
   color: #ef4444;
 }
+
+/* Light Theme Adaptations */
+.sl100-app-container.is-light .sl100-vertical-fader-track {
+  border-color: #cbd5e1;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.sl100-app-container.is-light .sl100-audio-mute-btn:not(.is-muted) {
+  background: #ffffff;
+  border-color: #cbd5e1;
+}
+
+.sl100-app-container.is-light .sl100-audio-mute-btn:hover:not(.is-muted) {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+}

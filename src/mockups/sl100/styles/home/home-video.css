@@ -158,3 +158,39 @@
   color: #ffffff;
   box-shadow: 0 0 10px rgba(2, 132, 199, 0.5);
 }
+
+/* Light Theme Adaptations */
+.sl100-app-container.is-light .sl100-toggle-switch:not(.is-checked) {
+  background: #cbd5e1;
+}
+
+.sl100-app-container.is-light .sl100-video-card {
+  border-color: #e2e8f0;
+}
+
+.sl100-app-container.is-light .sl100-video-card:hover {
+  border-color: #38bdf8;
+  background: #f1f5f9;
+}
+
+.sl100-app-container.is-light .sl100-video-card.is-selected {
+  background: #e0f2fe;
+  border-color: #0284c7;
+  box-shadow: 0 0 10px rgba(2, 132, 199, 0.2), inset 0 0 6px rgba(2, 132, 199, 0.1);
+}
+
+.sl100-app-container.is-light .sl100-matrix-row {
+  background: #f1f5f9;
+  border-color: #e2e8f0;
+}
+
+.sl100-app-container.is-light .sl100-matrix-btn:not(.is-selected) {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  color: #64748b;
+}
+
+.sl100-app-container.is-light .sl100-matrix-btn:hover:not(.is-selected) {
+  background: #f8fafc;
+  color: #0f172a;
+}
