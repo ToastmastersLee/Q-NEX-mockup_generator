@@ -1,0 +1,281 @@
+{
+  "timetable.timetable": {
+    "row": 269,
+    "group": "08    课表信息    ·    timetable      -----",
+    "zh": "课表信息",
+    "en": "Timetable Information",
+    "original": "Timetable Information",
+    "note": "",
+    "status": "retained"
+  },
+  "timetable.showButton": {
+    "row": 270,
+    "group": "08    课表信息    ·    timetable      -----",
+    "zh": "显示操作按钮",
+    "en": "Show Action Buttons",
+    "original": "Show Action Buttons",
+    "note": "",
+    "status": "retained"
+  },
+  "timetable.importExcel": {
+    "row": 271,
+    "group": "08    课表信息    ·    timetable      -----",
+    "zh": "导入Excel",
+    "en": "Import Excel",
+    "original": "Import Excel",
+    "note": "",
+    "status": "retained"
+  },
+  "timetable.exportExcel": {
+    "row": 272,
+    "group": "08    课表信息    ·    timetable      -----",
+    "zh": "导出Excel",
+    "en": "Export Excel",
+    "original": "Export Excel",
+    "note": "",
+    "status": "retained"
+  },
+  "timetable.serialNumber": {
+    "row": 273,
+    "group": "08    课表信息    ·    timetable      -----",
+    "zh": "序号",
+    "en": "Number",
+    "original": "Number",
+    "note": "",
+    "status": "retained"
+  },
+  "timetable.time": {
+    "row": 274,
+    "group": "08    课表信息    ·    timetable      -----",
+    "zh": "时间",
+    "en": "Time",
+    "original": "Time",
+    "note": "",
+    "status": "retained"
+  },
+  "timetable.clearCell": {
+    "row": 275,
+    "group": "08    课表信息    ·    timetable      -----",
+    "zh": "清空单元格",
+    "en": "Clear Cell",
+    "original": "Clear Cell",
+    "note": "",
+    "status": "retained"
+  },
+  "timetable.subject": {
+    "row": 276,
+    "group": "08    课表信息    ·    timetable      -----",
+    "zh": "科目",
+    "en": "Subject",
+    "original": "Subject",
+    "note": "",
+    "status": "retained"
+  },
+  "timetable.teacher": {
+    "row": 277,
+    "group": "08    课表信息    ·    timetable      -----",
+    "zh": "授课老师",
+    "en": "Instructor",
+    "original": "Instructor",
+    "note": "",
+    "status": "retained"
+  },
+  "timetable.operation": {
+    "row": 278,
+    "group": "08    课表信息    ·    timetable      -----",
+    "zh": "操作",
+    "en": "Operations",
+    "original": "Operations",
+    "note": "",
+    "status": "retained"
+  },
+  "timetable.insertAbove": {
+    "row": 279,
+    "group": "08    课表信息    ·    timetable      -----",
+    "zh": "在上方插入行",
+    "en": "Insert Row Above",
+    "original": "Insert Row Above",
+    "note": "",
+    "status": "retained"
+  },
+  "timetable.insertBelow": {
+    "row": 280,
+    "group": "08    课表信息    ·    timetable      -----",
+    "zh": "在下方插入行",
+    "en": "Insert Row Below",
+    "original": "Insert Row Below",
+    "note": "",
+    "status": "retained"
+  },
+  "timetable.insert": {
+    "row": 281,
+    "group": "08    课表信息    ·    timetable      -----",
+    "zh": "插入",
+    "en": "Insert",
+    "original": "Insert",
+    "note": "",
+    "status": "retained"
+  },
+  "timetable.sureToDel": {
+    "row": 282,
+    "group": "08    课表信息    ·    timetable      -----",
+    "zh": "确定删除本行吗？",
+    "en": "Delete this row?",
+    "original": "Confirm delete this row?",
+    "note": "简短确认问句。",
+    "status": "changed"
+  },
+  "timetable.filename": {
+    "row": 283,
+    "group": "08    课表信息    ·    timetable      -----",
+    "zh": "文件名称",
+    "en": "File Name",
+    "original": "File Name",
+    "note": "",
+    "status": "retained"
+  },
+  "timetable.fileType": {
+    "row": 284,
+    "group": "08    课表信息    ·    timetable      -----",
+    "zh": "文件类型",
+    "en": "File Type",
+    "original": "File Type",
+    "note": "",
+    "status": "retained"
+  },
+  "timetable.monday": {
+    "row": 285,
+    "group": "08    课表信息    ·    timetable      -----",
+    "zh": "周一",
+    "en": "Monday",
+    "original": "Monday",
+    "note": "",
+    "status": "retained"
+  },
+  "timetable.tuesday": {
+    "row": 286,
+    "group": "08    课表信息    ·    timetable      -----",
+    "zh": "周二",
+    "en": "Tuesday",
+    "original": "Tuesday",
+    "note": "",
+    "status": "retained"
+  },
+  "timetable.wednesday": {
+    "row": 287,
+    "group": "08    课表信息    ·    timetable      -----",
+    "zh": "周三",
+    "en": "Wednesday",
+    "original": "Wednesday",
+    "note": "",
+    "status": "retained"
+  },
+  "timetable.thursday": {
+    "row": 288,
+    "group": "08    课表信息    ·    timetable      -----",
+    "zh": "周四",
+    "en": "Thursday",
+    "original": "Thursday",
+    "note": "",
+    "status": "retained"
+  },
+  "timetable.friday": {
+    "row": 289,
+    "group": "08    课表信息    ·    timetable      -----",
+    "zh": "周五",
+    "en": "Friday",
+    "original": "Friday",
+    "note": "",
+    "status": "retained"
+  },
+  "timetable.saturday": {
+    "row": 290,
+    "group": "08    课表信息    ·    timetable      -----",
+    "zh": "周六",
+    "en": "Saturday",
+    "original": "Saturday",
+    "note": "",
+    "status": "retained"
+  },
+  "timetable.sunday": {
+    "row": 291,
+    "group": "08    课表信息    ·    timetable      -----",
+    "zh": "周日",
+    "en": "Sunday",
+    "original": "Sunday",
+    "note": "",
+    "status": "retained"
+  },
+  "timetable.headerError": {
+    "row": 292,
+    "group": "08    课表信息    ·    timetable      -----",
+    "zh": "表头信息不匹配，请检查",
+    "en": "The header information does not match, please check",
+    "original": "The header information does not match, please check",
+    "note": "",
+    "status": "retained"
+  },
+  "timetable.rowTimeError": {
+    "row": 293,
+    "group": "08    课表信息    ·    timetable      -----",
+    "zh": "第{row}行时间错误",
+    "en": "Invalid time in row {row}.",
+    "original": "Row {row} time error",
+    "note": "保留行号占位符。",
+    "status": "changed"
+  },
+  "timetable.timeOverlap": {
+    "row": 294,
+    "group": "08    课表信息    ·    timetable      -----",
+    "zh": "时间有重叠，请检查",
+    "en": "Time overlap detected (please check)",
+    "original": "Time overlap detected (please check)",
+    "note": "",
+    "status": "retained"
+  },
+  "timetable.storageLimit": {
+    "row": 295,
+    "group": "08    课表信息    ·    timetable      -----",
+    "zh": "已经达到课表存储上限",
+    "en": "Timetable storage limit reached",
+    "original": "Timetable storage limit reached",
+    "note": "",
+    "status": "retained"
+  },
+  "timetable.storageLowerLimit": {
+    "row": 296,
+    "group": "08    课表信息    ·    timetable      -----",
+    "zh": "最少存在一条数据",
+    "en": "Minimum one entry required",
+    "original": "Minimum one entry required",
+    "note": "",
+    "status": "retained"
+  },
+  "timetable.excelLimit": {
+    "row": 297,
+    "group": "08    课表信息    ·    timetable      -----",
+    "zh": "导入的Excel文件不能超过1MB",
+    "en": "Excel files cannot exceed 1MB",
+    "original": "Excel files cannot exceed 1MB",
+    "note": "",
+    "status": "retained"
+  },
+  "timetable.checkColumns": {
+    "row": 298,
+    "group": "08    课表信息    ·    timetable      -----",
+    "zh": "请检查表单列数",
+    "en": "Check column count",
+    "original": "Check column count",
+    "note": "",
+    "status": "retained"
+  },
+  "timetable.rowTimeFormatError": {
+    "row": 299,
+    "group": "08    课表信息    ·    timetable      -----",
+    "zh": "第{row}行时间格式错误",
+    "en": "Invalid time format in row {row}.",
+    "original": "Row {row} time format error",
+    "note": "保留行号占位符。",
+    "status": "changed"
+  }
+}

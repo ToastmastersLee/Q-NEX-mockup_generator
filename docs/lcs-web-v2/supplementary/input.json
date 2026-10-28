@@ -1,0 +1,12 @@
+{
+  "noData": {
+    "zh": "暂无数据",
+    "en": "No Data",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "select": {
+    "zh": "请选择",
+    "en": "Please select",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  }
+}

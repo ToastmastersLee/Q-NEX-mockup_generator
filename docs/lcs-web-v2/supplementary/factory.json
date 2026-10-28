@@ -1,0 +1,27 @@
+{
+  "tipConfigFile": {
+    "zh": "1. 上传文件名必须为 conf.tar.gz。\n2. 导入后需要重启。",
+    "en": "1. The file name must be conf.tar.gz.\n2. Restart after importing.",
+    "reason": "组合 project.factory.tip1 与 tip2，保持原界面合并展示。"
+  },
+  "cardTitleUi": {
+    "zh": "界面设置",
+    "en": "Interface Settings",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  },
+  "uiStyle": {
+    "zh": "界面风格",
+    "en": "Interface Style",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  },
+  "styleDefault": {
+    "zh": "默认风格",
+    "en": "Default Style",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "styleClassic": {
+    "zh": "经典风格",
+    "en": "Classic Style",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  }
+}

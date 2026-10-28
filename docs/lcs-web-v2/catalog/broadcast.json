@@ -1,0 +1,389 @@
+{
+  "broadcast.broadcastSetting": {
+    "row": 549,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "广播设置",
+    "en": "Broadcast Settings",
+    "original": "Broadcast Setting",
+    "note": "设置页使用复数，与 Streaming 区分。",
+    "status": "changed"
+  },
+  "broadcast.add": {
+    "row": 550,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "添加",
+    "en": "Add",
+    "original": "Add",
+    "note": "",
+    "status": "retained"
+  },
+  "broadcast.addGroup": {
+    "row": 551,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "添加分组",
+    "en": "Add Group",
+    "original": "Add Group",
+    "note": "",
+    "status": "retained"
+  },
+  "broadcast.groupName": {
+    "row": 552,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "组名",
+    "en": "Name",
+    "original": "Name",
+    "note": "",
+    "status": "retained"
+  },
+  "broadcast.addMember": {
+    "row": 553,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "添加组员",
+    "en": "Add Member",
+    "original": "Add Member",
+    "note": "",
+    "status": "retained"
+  },
+  "broadcast.groupManagement": {
+    "row": 554,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "分组管理",
+    "en": "Group Management",
+    "original": "Group Management",
+    "note": "",
+    "status": "retained"
+  },
+  "broadcast.delGroup": {
+    "row": 555,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "删除分组",
+    "en": "Delete Group",
+    "original": "Delete Group",
+    "note": "",
+    "status": "retained"
+  },
+  "broadcast.chooseGroupFirst": {
+    "row": 556,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "请先选择要删除的分组",
+    "en": "Please select the group to delete first.",
+    "original": "Please select the group to delete first.",
+    "note": "",
+    "status": "retained"
+  },
+  "broadcast.name": {
+    "row": 557,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "名称",
+    "en": "Name",
+    "original": "Name",
+    "note": "",
+    "status": "retained"
+  },
+  "broadcast.IP": {
+    "row": 558,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "IP地址",
+    "en": "IP",
+    "original": "IP",
+    "note": "",
+    "status": "retained"
+  },
+  "broadcast.group": {
+    "row": 559,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "分组",
+    "en": "Group",
+    "original": "Group",
+    "note": "",
+    "status": "retained"
+  },
+  "broadcast.pleaseSelectGroup": {
+    "row": 560,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "请选择分组",
+    "en": "please select group",
+    "original": "please select group",
+    "note": "",
+    "status": "retained"
+  },
+  "broadcast.list": {
+    "row": 561,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "列表",
+    "en": "List",
+    "original": "List",
+    "note": "",
+    "status": "retained"
+  },
+  "broadcast.selected": {
+    "row": 562,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "已选",
+    "en": "Selected",
+    "original": "Selected",
+    "note": "",
+    "status": "retained"
+  },
+  "broadcast.startBroadcast": {
+    "row": 563,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "开始广播",
+    "en": "Start Broadcast",
+    "original": "Broadcast",
+    "note": "与停止按钮明确区分。",
+    "status": "changed"
+  },
+  "broadcast.stopBroadcast": {
+    "row": 564,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "停止广播",
+    "en": "Stop Broadcast",
+    "original": "Broadcast",
+    "note": "原译与开始按钮完全相同。",
+    "status": "changed"
+  },
+  "broadcast.start": {
+    "row": 565,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "开始",
+    "en": "Start",
+    "original": "Start",
+    "note": "",
+    "status": "retained"
+  },
+  "broadcast.stop": {
+    "row": 566,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "停止",
+    "en": "Stop",
+    "original": "Stop",
+    "note": "",
+    "status": "retained"
+  },
+  "broadcast.receivingPlugin": {
+    "row": 567,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "广播接收插件",
+    "en": "Broadcast Receiver",
+    "original": "Broadcast receving Plug-in",
+    "note": "接收端软件，不是浏览器插件。",
+    "status": "changed"
+  },
+  "broadcast.sureToDelete": {
+    "row": 568,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "确认删除吗？",
+    "en": "Delete this item?",
+    "original": "Are you sure to delete?",
+    "note": "自然的确认问句。",
+    "status": "changed"
+  },
+  "broadcast.group1": {
+    "row": 569,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "分组1",
+    "en": "Group1",
+    "original": "Group1",
+    "note": "",
+    "status": "retained"
+  },
+  "broadcast.group2": {
+    "row": 570,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "分组2",
+    "en": "Group2",
+    "original": "Group2",
+    "note": "",
+    "status": "retained"
+  },
+  "broadcast.group3": {
+    "row": 571,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "分组3",
+    "en": "Group3",
+    "original": "Group3",
+    "note": "",
+    "status": "retained"
+  },
+  "broadcast.firstGrade": {
+    "row": 572,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "一年级",
+    "en": "Grade 1",
+    "original": "FirstGrade",
+    "note": "年级标签，修正连写。",
+    "status": "changed"
+  },
+  "broadcast.secondGrade": {
+    "row": 573,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "二年级",
+    "en": "Grade 2",
+    "original": "SecondGrade",
+    "note": "年级标签，修正连写。",
+    "status": "changed"
+  },
+  "broadcast.thirdGrade": {
+    "row": 574,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "三年级",
+    "en": "Grade 3",
+    "original": "ThirdGrade",
+    "note": "年级标签，修正连写。",
+    "status": "changed"
+  },
+  "broadcast.changeSelectedFail": {
+    "row": 575,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "修改选中状态失败",
+    "en": "Failed to modify the selected status.",
+    "original": "Failed to modify the selected status.",
+    "note": "",
+    "status": "retained"
+  },
+  "broadcast.broadcasting": {
+    "row": 576,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "正在广播，无法添加删除班级",
+    "en": "Broadcasting, unable to add or delete classes.",
+    "original": "Broadcasting, unable to add or delete classes.",
+    "note": "",
+    "status": "retained"
+  },
+  "broadcast.nothingSelected": {
+    "row": 577,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "未选中任何选项",
+    "en": "No options are selected",
+    "original": "No options are selected",
+    "note": "",
+    "status": "retained"
+  },
+  "broadcast.inputGroupName": {
+    "row": 578,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "请输入分组名字",
+    "en": "Please enter group name",
+    "original": "Please enter group name",
+    "note": "",
+    "status": "retained"
+  },
+  "broadcast.groupNameAlreadyExists": {
+    "row": 579,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "分组名字已经存在",
+    "en": "Group name already exists",
+    "original": "Group name already exists",
+    "note": "",
+    "status": "retained"
+  },
+  "broadcast.addGroupSuccess": {
+    "row": 580,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "分组添加成功",
+    "en": "Group added successfully",
+    "original": "Group added successfully",
+    "note": "",
+    "status": "retained"
+  },
+  "broadcast.addGroupFail": {
+    "row": 581,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "分组添加失败",
+    "en": "Group addition failed",
+    "original": "Group addition failed",
+    "note": "",
+    "status": "retained"
+  },
+  "broadcast.memberParamsError": {
+    "row": 582,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "组员参数有误",
+    "en": "Incorrect group member parameters",
+    "original": "Incorrect group member parameters",
+    "note": "",
+    "status": "retained"
+  },
+  "broadcast.memberNameRepeat": {
+    "row": 583,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "组员名称重复",
+    "en": "Duplicate group member name.",
+    "original": "Duplicate team member name",
+    "note": "分组成员不是 team member。",
+    "status": "changed"
+  },
+  "broadcast.memberIPrepeat": {
+    "row": 584,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "组员IP地址重复",
+    "en": "Duplicate group member IP address.",
+    "original": "Duplicate IP address of team member",
+    "note": "分组成员不是 team member。",
+    "status": "changed"
+  },
+  "broadcast.addMemberSuccess": {
+    "row": 585,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "组员添加成功",
+    "en": "Group member added successfully.",
+    "original": "Team member added successfully",
+    "note": "统一分组成员术语。",
+    "status": "changed"
+  },
+  "broadcast.addMemberFail": {
+    "row": 586,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "组员添加失败",
+    "en": "Failed to add group member",
+    "original": "Failed to add group member",
+    "note": "",
+    "status": "retained"
+  },
+  "broadcast.startLiveFirst": {
+    "row": 587,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "请先开启直播",
+    "en": "Start streaming first.",
+    "original": "Please start the live broadcast first",
+    "note": "前置直播与教室广播区分。",
+    "status": "changed"
+  },
+  "broadcast.startBroadcastSuccess": {
+    "row": 588,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "广播开启成功",
+    "en": "Broadcast enabled successfully",
+    "original": "Broadcast enabled successfully",
+    "note": "",
+    "status": "retained"
+  },
+  "broadcast.startBroadcastFail": {
+    "row": 589,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "广播开启失败",
+    "en": "Failed to start broadcast",
+    "original": "Failed to start broadcast",
+    "note": "",
+    "status": "retained"
+  },
+  "broadcast.stopBroadcastSuccess": {
+    "row": 590,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "广播关闭成功",
+    "en": "Broadcast stopped.",
+    "original": "The broadcast was turned off successfully",
+    "note": "停止广播不是关闭设备。",
+    "status": "changed"
+  },
+  "broadcast.stopBroadcastFail": {
+    "row": 591,
+    "group": "17    广播设置    ·    broadcast    ",
+    "zh": "广播关闭失败",
+    "en": "Failed to stop the broadcast.",
+    "original": "Broadcast shutdown failed",
+    "note": "停止广播不是关闭设备。",
+    "status": "changed"
+  }
+}

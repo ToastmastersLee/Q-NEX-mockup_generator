@@ -1,0 +1,14 @@
+{
+  "pageTitle": "project.peripheral.peripheralSetting",
+  "keyboard": "project.peripheral.keyboard",
+  "panel": "project.peripheral.panel",
+  "clock": "project.peripheral.clock",
+  "powerSequencer": "project.peripheral.powerSupply",
+  "kbModel": "project.peripheral.keyboardType",
+  "clockModel": "project.peripheral.clockType",
+  "powerModel": "project.peripheral.powerSupplyType",
+  "connPort": "project.peripheral.port",
+  "baudRate": "project.peripheral.baudRate",
+  "available": "project.peripheral.avaliable",
+  "ok": "parameter.ok"
+}

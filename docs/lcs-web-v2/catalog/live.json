@@ -1,0 +1,299 @@
+{
+  "live.liveSetting": {
+    "row": 452,
+    "group": "14    直播设置    ·    live    ",
+    "zh": "直播设置",
+    "en": "Streaming Settings",
+    "original": "Live Setting",
+    "note": "统一推流设置标题。",
+    "status": "changed"
+  },
+  "live.channel": {
+    "row": 453,
+    "group": "14    直播设置    ·    live    ",
+    "zh": "直播通道",
+    "en": "Channel",
+    "original": "Channel",
+    "note": "",
+    "status": "retained"
+  },
+  "live.format": {
+    "row": 454,
+    "group": "14    直播设置    ·    live    ",
+    "zh": "直播模式",
+    "en": "Mode",
+    "original": "Format",
+    "note": "中文指直播模式。",
+    "status": "changed"
+  },
+  "live.resolution": {
+    "row": 455,
+    "group": "14    直播设置    ·    live    ",
+    "zh": "直播分辨率",
+    "en": "Resolution",
+    "original": "Resolution",
+    "note": "",
+    "status": "retained"
+  },
+  "live.bitRate": {
+    "row": 456,
+    "group": "14    直播设置    ·    live    ",
+    "zh": "直播码率",
+    "en": "Bitrate",
+    "original": "Bitrate",
+    "note": "",
+    "status": "retained"
+  },
+  "live.frameRate": {
+    "row": 457,
+    "group": "14    直播设置    ·    live    ",
+    "zh": "直播帧率",
+    "en": "Frame Rate",
+    "original": "Framerate",
+    "note": "标准字段写法。",
+    "status": "changed"
+  },
+  "live.server": {
+    "row": 458,
+    "group": "14    直播设置    ·    live    ",
+    "zh": "直播推流地址",
+    "en": "Stream URL",
+    "original": "Server Address",
+    "note": "与观看地址区分。",
+    "status": "changed"
+  },
+  "live.watch": {
+    "row": 459,
+    "group": "14    直播设置    ·    live    ",
+    "zh": "直播观看地址",
+    "en": "Playback URL",
+    "original": "View Address",
+    "note": "供观众观看的地址。",
+    "status": "changed"
+  },
+  "live.liveEnable": {
+    "row": 460,
+    "group": "14    直播设置    ·    live    ",
+    "zh": "是否直播",
+    "en": "Stream",
+    "original": "Live Enable",
+    "note": "直播开关列使用简短标签。",
+    "status": "changed"
+  },
+  "live.rtspEnable": {
+    "row": 461,
+    "group": "14    直播设置    ·    live    ",
+    "zh": "RTSP直播",
+    "en": "RTSP Streaming",
+    "original": "RTSP Live",
+    "note": "明确 RTSP 推流／观看服务功能。",
+    "status": "changed"
+  },
+  "live.autoLive": {
+    "row": 462,
+    "group": "14    直播设置    ·    live    ",
+    "zh": "开机自动直播",
+    "en": "Stream on Startup",
+    "original": "Automatic live broadcast after startup",
+    "note": "简短表达开机自动直播。",
+    "status": "changed"
+  },
+  "live.autoReconnect": {
+    "row": 463,
+    "group": "14    直播设置    ·    live    ",
+    "zh": "直播断线重连",
+    "en": "Auto Reconnect",
+    "original": "Live streaming disconnection and reconnection",
+    "note": "简短表达断线自动重连。",
+    "status": "changed"
+  },
+  "live.serverError": {
+    "row": 464,
+    "group": "14    直播设置    ·    live    ",
+    "zh": "直播推流地址格式错误",
+    "en": "Invalid stream URL format.",
+    "original": "address format error of live broadcast server",
+    "note": "与推流地址字段一致。",
+    "status": "changed"
+  },
+  "live.timedLiving": {
+    "row": 465,
+    "group": "14    直播设置    ·    live    ",
+    "zh": "定时直播",
+    "en": "Scheduled Streaming",
+    "original": "Timed Living",
+    "note": "Living 不是直播。",
+    "status": "changed"
+  },
+  "live.operation": {
+    "row": 466,
+    "group": "14    直播设置    ·    live    ",
+    "zh": "操作",
+    "en": "Actions",
+    "original": "OP",
+    "note": "操作列不使用难懂缩写 OP。",
+    "status": "changed"
+  },
+  "live.enable": {
+    "row": 467,
+    "group": "14    直播设置    ·    live    ",
+    "zh": "开启",
+    "en": "Enable",
+    "original": "Open",
+    "note": "启用任务，不是打开窗口。",
+    "status": "changed"
+  },
+  "live.startTime": {
+    "row": 468,
+    "group": "14    直播设置    ·    live    ",
+    "zh": "开始时间",
+    "en": "Start Time",
+    "original": "Start Time",
+    "note": "",
+    "status": "retained"
+  },
+  "live.stopTime": {
+    "row": 469,
+    "group": "14    直播设置    ·    live    ",
+    "zh": "结束时间",
+    "en": "Stop Time",
+    "original": "Stop Time",
+    "note": "",
+    "status": "retained"
+  },
+  "live.duration": {
+    "row": 470,
+    "group": "14    直播设置    ·    live    ",
+    "zh": "时长",
+    "en": "Duration",
+    "original": "Duration",
+    "note": "",
+    "status": "retained"
+  },
+  "live.once": {
+    "row": 471,
+    "group": "14    直播设置    ·    live    ",
+    "zh": "仅一次",
+    "en": "Once",
+    "original": "Once",
+    "note": "",
+    "status": "retained"
+  },
+  "live.everyday": {
+    "row": 472,
+    "group": "14    直播设置    ·    live    ",
+    "zh": "每日",
+    "en": "Daily",
+    "original": "Evyday",
+    "note": "修正 Evyday 拼写。",
+    "status": "changed"
+  },
+  "live.monday": {
+    "row": 473,
+    "group": "14    直播设置    ·    live    ",
+    "zh": "周一",
+    "en": "Mon",
+    "original": "Mon",
+    "note": "",
+    "status": "retained"
+  },
+  "live.tuesday": {
+    "row": 474,
+    "group": "14    直播设置    ·    live    ",
+    "zh": "周二",
+    "en": "Tues",
+    "original": "Tues",
+    "note": "",
+    "status": "retained"
+  },
+  "live.wednesday": {
+    "row": 475,
+    "group": "14    直播设置    ·    live    ",
+    "zh": "周三",
+    "en": "Wed",
+    "original": "Wed",
+    "note": "",
+    "status": "retained"
+  },
+  "live.thursday": {
+    "row": 476,
+    "group": "14    直播设置    ·    live    ",
+    "zh": "周四",
+    "en": "Thur",
+    "original": "Thur",
+    "note": "",
+    "status": "retained"
+  },
+  "live.friday": {
+    "row": 477,
+    "group": "14    直播设置    ·    live    ",
+    "zh": "周五",
+    "en": "Fri",
+    "original": "Fri",
+    "note": "",
+    "status": "retained"
+  },
+  "live.saturday": {
+    "row": 478,
+    "group": "14    直播设置    ·    live    ",
+    "zh": "周六",
+    "en": "Sat",
+    "original": "Sat",
+    "note": "",
+    "status": "retained"
+  },
+  "live.sunday": {
+    "row": 479,
+    "group": "14    直播设置    ·    live    ",
+    "zh": "周日",
+    "en": "Sun",
+    "original": "Sun",
+    "note": "",
+    "status": "retained"
+  },
+  "live.maxChannel": {
+    "row": 480,
+    "group": "14    直播设置    ·    live    ",
+    "zh": "主机仅支持同时开启",
+    "en": "The host only supports simultaneous ",
+    "original": "The host only supports simultaneous ",
+    "note": "待确认：此词条为数量提示前半句，请提供数字和后续词条的拼接方式。",
+    "status": "pending"
+  },
+  "live.noLessThanTwo": {
+    "row": 481,
+    "group": "14    直播设置    ·    live    ",
+    "zh": "定时直播任务不能少于2条",
+    "en": "At least 2 scheduled streaming tasks are required.",
+    "original": "The number of scheduled live broadcast tasks cannot be less than 2.",
+    "note": "统一定时直播术语，保留数量限制。",
+    "status": "changed"
+  },
+  "live.noMoreThanEight": {
+    "row": 482,
+    "group": "14    直播设置    ·    live    ",
+    "zh": "定时直播任务不能多于8条",
+    "en": "No more than 8 scheduled streaming tasks are allowed.",
+    "original": "The number of scheduled live broadcast tasks cannot be more than 8.",
+    "note": "统一定时直播术语，保留数量限制。",
+    "status": "changed"
+  },
+  "live.startTimeOrStopTimeNull": {
+    "row": 483,
+    "group": "14    直播设置    ·    live    ",
+    "zh": "开始时间或结束时间为空",
+    "en": "Start time or end time is empty.",
+    "original": "Start time or end time is empty.",
+    "note": "",
+    "status": "retained"
+  },
+  "live.timeError": {
+    "row": 484,
+    "group": "14    直播设置    ·    live    ",
+    "zh": "时间填写有误，直播时间不得小于10秒，请重新填写时间",
+    "en": "Invalid time. Streaming duration must be at least 10 seconds. Enter the time again.",
+    "original": "The time is incorrectly filled in. The live broadcast time shall not be less than 10 seconds. Please fill in the time again.",
+    "note": "修正语法，保留10秒限制。",
+    "status": "changed"
+  }
+}

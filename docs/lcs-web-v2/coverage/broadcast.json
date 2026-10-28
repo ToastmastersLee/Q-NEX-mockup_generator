@@ -1,0 +1,205 @@
+{
+  "broadcast.broadcastSetting": {
+    "status": "changed",
+    "controls": [
+      "broadcast.pageTitle",
+      "common.sidebar.broadcast"
+    ]
+  },
+  "broadcast.add": {
+    "status": "retained",
+    "controls": [
+      "broadcast.add"
+    ]
+  },
+  "broadcast.addGroup": {
+    "status": "retained",
+    "controls": [
+      "broadcast.addGroup"
+    ]
+  },
+  "broadcast.groupName": {
+    "status": "retained",
+    "controls": [
+      "broadcast.groupName"
+    ]
+  },
+  "broadcast.addMember": {
+    "status": "retained",
+    "controls": []
+  },
+  "broadcast.groupManagement": {
+    "status": "retained",
+    "controls": [
+      "broadcast.cardTitleGroup"
+    ]
+  },
+  "broadcast.delGroup": {
+    "status": "retained",
+    "controls": [
+      "broadcast.deleteGroup"
+    ]
+  },
+  "broadcast.chooseGroupFirst": {
+    "status": "retained",
+    "controls": []
+  },
+  "broadcast.name": {
+    "status": "retained",
+    "controls": [
+      "broadcast.memberName"
+    ]
+  },
+  "broadcast.IP": {
+    "status": "retained",
+    "controls": [
+      "broadcast.ipAddress"
+    ]
+  },
+  "broadcast.group": {
+    "status": "retained",
+    "controls": [
+      "broadcast.groupLabel"
+    ]
+  },
+  "broadcast.pleaseSelectGroup": {
+    "status": "retained",
+    "controls": [
+      "broadcast.selectGroup"
+    ]
+  },
+  "broadcast.list": {
+    "status": "retained",
+    "controls": [
+      "broadcast.listHeader"
+    ]
+  },
+  "broadcast.selected": {
+    "status": "retained",
+    "controls": [
+      "broadcast.selectedHeader"
+    ]
+  },
+  "broadcast.startBroadcast": {
+    "status": "changed",
+    "controls": [
+      "broadcast.startBroadcast"
+    ]
+  },
+  "broadcast.stopBroadcast": {
+    "status": "changed",
+    "controls": []
+  },
+  "broadcast.start": {
+    "status": "retained",
+    "controls": [
+      "broadcast.start"
+    ]
+  },
+  "broadcast.stop": {
+    "status": "retained",
+    "controls": [
+      "broadcast.stop"
+    ]
+  },
+  "broadcast.receivingPlugin": {
+    "status": "changed",
+    "controls": []
+  },
+  "broadcast.sureToDelete": {
+    "status": "changed",
+    "controls": []
+  },
+  "broadcast.group1": {
+    "status": "retained",
+    "controls": []
+  },
+  "broadcast.group2": {
+    "status": "retained",
+    "controls": []
+  },
+  "broadcast.group3": {
+    "status": "retained",
+    "controls": []
+  },
+  "broadcast.firstGrade": {
+    "status": "changed",
+    "controls": []
+  },
+  "broadcast.secondGrade": {
+    "status": "changed",
+    "controls": []
+  },
+  "broadcast.thirdGrade": {
+    "status": "changed",
+    "controls": []
+  },
+  "broadcast.changeSelectedFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "broadcast.broadcasting": {
+    "status": "retained",
+    "controls": []
+  },
+  "broadcast.nothingSelected": {
+    "status": "retained",
+    "controls": []
+  },
+  "broadcast.inputGroupName": {
+    "status": "retained",
+    "controls": []
+  },
+  "broadcast.groupNameAlreadyExists": {
+    "status": "retained",
+    "controls": []
+  },
+  "broadcast.addGroupSuccess": {
+    "status": "retained",
+    "controls": []
+  },
+  "broadcast.addGroupFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "broadcast.memberParamsError": {
+    "status": "retained",
+    "controls": []
+  },
+  "broadcast.memberNameRepeat": {
+    "status": "changed",
+    "controls": []
+  },
+  "broadcast.memberIPrepeat": {
+    "status": "changed",
+    "controls": []
+  },
+  "broadcast.addMemberSuccess": {
+    "status": "changed",
+    "controls": []
+  },
+  "broadcast.addMemberFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "broadcast.startLiveFirst": {
+    "status": "changed",
+    "controls": []
+  },
+  "broadcast.startBroadcastSuccess": {
+    "status": "retained",
+    "controls": []
+  },
+  "broadcast.startBroadcastFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "broadcast.stopBroadcastSuccess": {
+    "status": "changed",
+    "controls": []
+  },
+  "broadcast.stopBroadcastFail": {
+    "status": "changed",
+    "controls": []
+  }
+}

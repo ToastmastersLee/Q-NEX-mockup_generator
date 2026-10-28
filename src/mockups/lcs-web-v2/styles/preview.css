@@ -1,0 +1,43 @@
+/* English text needs room at desktop and laptop sizes. Keep the original visual language. */
+.lcs-web-shell { grid-template-columns: 220px minmax(0, 1fr); }
+.lcs-web-side-list button { padding-top: 9px; padding-bottom: 9px; line-height: 1.35; }
+.lcs-web-side-list button svg { flex-shrink: 0; }
+.lcs-web-side-list button span { min-width: 0; overflow-wrap: anywhere; }
+.lcs-web-topbar { gap: 12px; flex-shrink: 0; }
+.lcs-web-topbar-left { min-width: 70px; }
+.lcs-web-preview-label { font-size: 11px; color: #64748b; white-space: nowrap; margin-left: 12px; }
+.lcs-web-language-select { border: 1px solid #cbd5e1; border-radius: 5px; padding: 6px; font-size: 12px; color: #475569; background: white; }
+.lcs-web-actions { gap: 14px; flex-shrink: 0; }
+.lcs-web-actions button { white-space: nowrap; }
+.lcs-web-native-select { min-width: 0; max-width: 100%; padding-right: 28px; text-overflow: ellipsis; }
+.lcs-web-output-row { flex-wrap: wrap; gap: 18px; }
+.lcs-web-output-row .lcs-web-native-select { min-width: 165px; }
+.lcs-web-output-page .lcs-web-native-select { width: 185px; }
+.lcs-web-modal { max-width: calc(100vw - 40px); max-height: calc(100vh - 40px); overflow-y: auto; }
+.lcs-web-modal-body { overflow-wrap: anywhere; }
+.lcs-web-data-table th { white-space: normal; line-height: 1.4; }
+.lcs-web-card p, .lcs-web-card .text-slate-400 { white-space: pre-line; }
+.lcs-web-btn-blue-sm, .lcs-web-btn-blue-outline-sm, .lcs-web-btn-red-sm,
+.lcs-web-btn-green-sm, .lcs-web-ok { height: auto; min-height: 28px; line-height: 1.3; padding-top: 6px; padding-bottom: 6px; white-space: normal; }
+.lcs-web-field { display: grid; grid-template-columns: minmax(140px, 1fr) minmax(170px, 2fr); gap: 12px; align-items: center; margin: 14px 0; }
+.lcs-web-field label { font-size: 13px; color: #475569; }
+.lcs-web-field input:not([type=checkbox]):not([type=range]), .lcs-web-field select { width: 100%; }
+.lcs-web-form-actions { display: flex; justify-content: flex-end; gap: 12px; margin-top: 22px; }
+.lcs-web-form-error { color: #b91c1c; font-size: 13px; }
+.lcs-web-scene-placeholder { width: 100%; height: 100%; min-height: 135px; background: linear-gradient(135deg, #294562, #85adbc); display: grid; place-items: center; color: white; }
+.lcs-web-keying-preview { height: 180px; background: linear-gradient(135deg, #294562, #85adbc); display: grid; place-items: center; color: white; border-radius: 6px; }
+.lcs-web-mode-pill, .lcs-web-mode-circle { white-space: nowrap; padding-left: 5px; padding-right: 5px; }
+.lcs-web-scene-card { width: 210px; }
+.lcs-web-scene-preview { height: 135px; }
+.lcs-web-scene-actions button { white-space: nowrap; min-height: 24px; }
+.lcs-web-custom-select-trigger { height: auto; min-height: 34px; }
+.lcs-web-custom-select-item { display: block; width: 100%; text-align: left; white-space: normal; }
+@media (max-width: 1450px) {
+  .lcs-web-shell { grid-template-columns: 205px minmax(0, 1fr); }
+  .lcs-web-topbar-nav button { min-width: 90px; padding: 0 15px; }
+  .lcs-web-actions { gap: 10px; }
+  .lcs-web-actions button { font-size: 12px; }
+  .lcs-web-page { padding-left: 20px; padding-right: 20px; }
+  .lcs-web-modal.is-audio-modal { width: 800px; }
+  .lcs-web-modal.is-audio-modal .flex-nowrap { flex-wrap: wrap; gap: 12px; }
+}

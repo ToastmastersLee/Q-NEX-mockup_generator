@@ -1,0 +1,198 @@
+{
+  "ymAecSettings.ymAecSettings": {
+    "status": "retained",
+    "controls": []
+  },
+  "ymAecSettings.inputSetting": {
+    "status": "changed",
+    "controls": []
+  },
+  "ymAecSettings.mute": {
+    "status": "retained",
+    "controls": []
+  },
+  "ymAecSettings.outputSetting": {
+    "status": "changed",
+    "controls": []
+  },
+  "ymAecSettings.dodge": {
+    "status": "changed",
+    "controls": []
+  },
+  "ymAecSettings.startTime": {
+    "status": "changed",
+    "controls": []
+  },
+  "ymAecSettings.keepTime": {
+    "status": "changed",
+    "controls": []
+  },
+  "ymAecSettings.restoreTime": {
+    "status": "changed",
+    "controls": []
+  },
+  "ymAecSettings.dodgeThreshold": {
+    "status": "changed",
+    "controls": []
+  },
+  "ymAecSettings.dodgeValue": {
+    "status": "pending",
+    "controls": []
+  },
+  "ymAecSettings.noiseSuppression": {
+    "status": "retained",
+    "controls": []
+  },
+  "ymAecSettings.level": {
+    "status": "retained",
+    "controls": []
+  },
+  "ymAecSettings.audioData": {
+    "status": "retained",
+    "controls": []
+  },
+  "ymAecSettings.input": {
+    "status": "retained",
+    "controls": []
+  },
+  "ymAecSettings.output": {
+    "status": "retained",
+    "controls": []
+  },
+  "ymAecSettings.factoryReset": {
+    "status": "retained",
+    "controls": []
+  },
+  "ymAecSettings.factoryResetSuccess": {
+    "status": "retained",
+    "controls": []
+  },
+  "ymAecSettings.factoryResetFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "ymAecSettings.tuning": {
+    "status": "retained",
+    "controls": []
+  },
+  "ymAecSettings.tuningSuccess": {
+    "status": "retained",
+    "controls": []
+  },
+  "ymAecSettings.tuning2": {
+    "status": "retained",
+    "controls": []
+  },
+  "ymAecSettings.tuningError": {
+    "status": "retained",
+    "controls": []
+  },
+  "ymAecSettings.tuningFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "ymAecSettings.none": {
+    "status": "retained",
+    "controls": []
+  },
+  "ymAecSettings.dodgeReference": {
+    "status": "changed",
+    "controls": []
+  },
+  "ymAecSettings.dodged": {
+    "status": "changed",
+    "controls": []
+  },
+  "ymAecSettings.omni_in1": {
+    "status": "retained",
+    "controls": []
+  },
+  "ymAecSettings.omni_in2": {
+    "status": "retained",
+    "controls": []
+  },
+  "ymAecSettings.omni_in3": {
+    "status": "retained",
+    "controls": []
+  },
+  "ymAecSettings.omni_in4": {
+    "status": "retained",
+    "controls": []
+  },
+  "ymAecSettings.omni_in5": {
+    "status": "retained",
+    "controls": []
+  },
+  "ymAecSettings.omni_in6": {
+    "status": "retained",
+    "controls": []
+  },
+  "ymAecSettings.omni_in7": {
+    "status": "retained",
+    "controls": []
+  },
+  "ymAecSettings.omni_in8": {
+    "status": "retained",
+    "controls": []
+  },
+  "ymAecSettings.wireless_in1": {
+    "status": "retained",
+    "controls": []
+  },
+  "ymAecSettings.wireless_in2": {
+    "status": "retained",
+    "controls": []
+  },
+  "ymAecSettings.pc_in1": {
+    "status": "retained",
+    "controls": []
+  },
+  "ymAecSettings.pc_in2": {
+    "status": "retained",
+    "controls": []
+  },
+  "ymAecSettings.remote_in1": {
+    "status": "retained",
+    "controls": []
+  },
+  "ymAecSettings.remote_in2": {
+    "status": "retained",
+    "controls": []
+  },
+  "ymAecSettings.versatile_out1": {
+    "status": "retained",
+    "controls": []
+  },
+  "ymAecSettings.versatile_out2": {
+    "status": "retained",
+    "controls": []
+  },
+  "ymAecSettings.versatile_out3": {
+    "status": "retained",
+    "controls": []
+  },
+  "ymAecSettings.versatile_out4": {
+    "status": "retained",
+    "controls": []
+  },
+  "ymAecSettings.versatile_out5": {
+    "status": "retained",
+    "controls": []
+  },
+  "ymAecSettings.versatile_out6": {
+    "status": "retained",
+    "controls": []
+  },
+  "ymAecSettings.mic1": {
+    "status": "changed",
+    "controls": []
+  },
+  "ymAecSettings.mic2": {
+    "status": "changed",
+    "controls": []
+  },
+  "ymAecSettings.remote": {
+    "status": "retained",
+    "controls": []
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "osd.osdSetting": {
+    "status": "changed",
+    "controls": [
+      "common.sidebar.osd",
+      "osd.pageTitle"
+    ]
+  },
+  "osd.color": {
+    "status": "retained",
+    "controls": [
+      "osd.color"
+    ]
+  },
+  "osd.type": {
+    "status": "retained",
+    "controls": [
+      "osd.displayContent"
+    ]
+  },
+  "osd.osdPosition": {
+    "status": "retained",
+    "controls": [
+      "osd.displayPosition"
+    ]
+  },
+  "osd.tip1": {
+    "status": "changed",
+    "controls": [
+      "osd.tip1"
+    ]
+  },
+  "osd.tip2": {
+    "status": "changed",
+    "controls": []
+  },
+  "osd.dateTime": {
+    "status": "retained",
+    "controls": [
+      "osd.contentDateTime"
+    ]
+  },
+  "osd.date": {
+    "status": "retained",
+    "controls": [
+      "osd.contentDate"
+    ]
+  },
+  "osd.time": {
+    "status": "retained",
+    "controls": [
+      "osd.contentTime"
+    ]
+  }
+}

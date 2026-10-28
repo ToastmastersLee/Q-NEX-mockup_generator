@@ -1,0 +1,28 @@
+{
+  "en": {
+    "pageTitle": "Power Settings",
+    "powerOnMode": "Power Mode",
+    "normalBoot": "Normal Boot",
+    "timer1": "Power Schedule 1",
+    "timer2": "Power Schedule 2",
+    "bootTime": "Power-On Time",
+    "shutdownTime": "Power-Off Time",
+    "ok": "OK",
+    "autoBoot": "Start When Power Is Applied",
+    "hdmiPowerOn": "Start on HDMI Signal",
+    "keepOff": "Stay Off After Power Recovery"
+  },
+  "zh": {
+    "pageTitle": "电源设置",
+    "powerOnMode": "上电模式",
+    "normalBoot": "常规开机",
+    "timer1": "定时开关机设置一",
+    "timer2": "定时开关机设置二",
+    "bootTime": "开机时间",
+    "shutdownTime": "关机时间",
+    "ok": "确定",
+    "autoBoot": "上电开机",
+    "hdmiPowerOn": "HDMI输入信号开机",
+    "keepOff": "来电保持断电"
+  }
+}

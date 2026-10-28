@@ -1,0 +1,42 @@
+{
+  "project.mic.micSetting": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.mic.micNotExist": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.mic.refreshMicInfo": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.mic.channelA": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.mic.notConnected": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.mic.connected": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.mic.batteryLevel": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.mic.signalStrength": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.mic.channelNumber": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.mic.channelB": {
+    "status": "retained",
+    "controls": []
+  }
+}

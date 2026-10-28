@@ -1,0 +1,15 @@
+{
+  "site": "https://toastmasterslee.github.io/q/lcs/",
+  "commit": "eccd4744cb913328ebd5f14ba8045555ac9b126e",
+  "viewport": "1366x768",
+  "browser": "Chrome, anonymous independent profile",
+  "cases": [
+    "Public output page, locale stability, both HDMI display/audio dialogs",
+    "Public navigation, refresh, six fonts and Scroll Right",
+    "Public tracking Protocol 4 and Home preview images",
+    "Existing architecture root still renders"
+  ],
+  "errors": [],
+  "requestFailures": [],
+  "result": "passed"
+}

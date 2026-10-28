@@ -1,0 +1,40 @@
+{
+  "en": {
+    "pageTitle": "Network Settings",
+    "cardTitleNetwork": "Network Settings",
+    "ipAddress": "IP",
+    "subnetMask": "Subnet Mask",
+    "gateway": "Gateway",
+    "dnsServer": "DNS",
+    "url": "Website",
+    "test": "Check",
+    "clear": "Clear",
+    "cardTitleSelect": "Network selection",
+    "netType": "Type",
+    "wiredNet": "Wired Network",
+    "ok": "OK",
+    "wirelessNet": "Wi-Fi",
+    "pleaseEnterUrl": "Enter a website address.",
+    "dhcp": "DHCP",
+    "pingResult": "Simulated check: {url}\nThis preview does not contact the target."
+  },
+  "zh": {
+    "pageTitle": "网络设置",
+    "cardTitleNetwork": "网络设置",
+    "ipAddress": "IP地址",
+    "subnetMask": "子网掩码",
+    "gateway": "默认网关",
+    "dnsServer": "DNS服务器",
+    "url": "网址",
+    "test": "检测",
+    "clear": "清空",
+    "cardTitleSelect": "网络选择",
+    "netType": "类型",
+    "wiredNet": "有线网络",
+    "ok": "确定",
+    "wirelessNet": "Wi-Fi",
+    "pleaseEnterUrl": "网址不能为空",
+    "dhcp": "DHCP",
+    "pingResult": "模拟检测：{url}\n本预览不会访问目标地址。"
+  }
+}

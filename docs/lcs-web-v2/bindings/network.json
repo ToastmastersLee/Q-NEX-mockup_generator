@@ -1,0 +1,17 @@
+{
+  "pageTitle": "IP.networkSetting",
+  "cardTitleNetwork": "IP.networkSetting",
+  "ipAddress": "IP.IP",
+  "subnetMask": "IP.subnetMask",
+  "gateway": "IP.gateway",
+  "dnsServer": "IP.DNS",
+  "url": "IP.website",
+  "test": "IP.check",
+  "clear": "IP.clear",
+  "cardTitleSelect": "IP.networkChoose",
+  "netType": "IP.type",
+  "wiredNet": "IP.wiredNetwork",
+  "ok": "parameter.ok",
+  "wirelessNet": "IP.wifi",
+  "pleaseEnterUrl": "IP.websiteEmpty"
+}

@@ -1,0 +1,11 @@
+{
+  "teacher": "autoTrackerSet.teacher",
+  "student": "autoTrackerSet.student",
+  "blackboard": "autoTrackerSet.board",
+  "close": "parameter.close",
+  "save": "parameter.save",
+  "ok": "parameter.ok",
+  "boardSaved": "parameter.setSuccess",
+  "stuSaved": "parameter.setSuccess",
+  "tchSaved": "parameter.setSuccess"
+}

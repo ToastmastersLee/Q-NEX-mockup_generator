@@ -1,0 +1,443 @@
+{
+  "ymAecSettings.ymAecSettings": {
+    "row": 907,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "回声抑制",
+    "en": "Echo Suppression",
+    "original": "Echo Suppression",
+    "note": "",
+    "status": "retained"
+  },
+  "ymAecSettings.inputSetting": {
+    "row": 908,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "输入设置",
+    "en": "Input Settings",
+    "original": "Input Setting",
+    "note": "设置分组使用复数。",
+    "status": "changed"
+  },
+  "ymAecSettings.mute": {
+    "row": 909,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "静音",
+    "en": "Mute",
+    "original": "Mute",
+    "note": "",
+    "status": "retained"
+  },
+  "ymAecSettings.outputSetting": {
+    "row": 910,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "输出设置",
+    "en": "Output Settings",
+    "original": "Output Setting",
+    "note": "设置分组使用复数。",
+    "status": "changed"
+  },
+  "ymAecSettings.dodge": {
+    "row": 911,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "闪避设置",
+    "en": "Ducking Settings",
+    "original": "Dodge Setting",
+    "note": "音频闪避使用 Ducking，不是 Dodge。",
+    "status": "changed"
+  },
+  "ymAecSettings.startTime": {
+    "row": 912,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "启动时间",
+    "en": "Attack Time",
+    "original": "Start Time",
+    "note": "音频动态处理的启动时间。",
+    "status": "changed"
+  },
+  "ymAecSettings.keepTime": {
+    "row": 913,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "保持时间",
+    "en": "Hold Time",
+    "original": "Keep Time",
+    "note": "音频动态处理的保持时间。",
+    "status": "changed"
+  },
+  "ymAecSettings.restoreTime": {
+    "row": 914,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "恢复时间",
+    "en": "Release Time",
+    "original": "Restore Time",
+    "note": "音频动态处理的恢复时间。",
+    "status": "changed"
+  },
+  "ymAecSettings.dodgeThreshold": {
+    "row": 915,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "闪避阈值",
+    "en": "Ducking Threshold",
+    "original": "Dodge Threshold",
+    "note": "统一音频闪避术语。",
+    "status": "changed"
+  },
+  "ymAecSettings.dodgeValue": {
+    "row": 916,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "闪避实值",
+    "en": "Dodge Value",
+    "original": "Dodge Value",
+    "note": "待确认：“闪避实值”是衰减量还是实时测量值？若为衰减量，建议 Ducking Level。",
+    "status": "pending"
+  },
+  "ymAecSettings.noiseSuppression": {
+    "row": 917,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "噪声抑制",
+    "en": "Noise Suppression",
+    "original": "Noise Suppression",
+    "note": "",
+    "status": "retained"
+  },
+  "ymAecSettings.level": {
+    "row": 918,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "等级",
+    "en": "Level",
+    "original": "Level",
+    "note": "",
+    "status": "retained"
+  },
+  "ymAecSettings.audioData": {
+    "row": 919,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "音频数据",
+    "en": "Audio Data",
+    "original": "Audio Data",
+    "note": "",
+    "status": "retained"
+  },
+  "ymAecSettings.input": {
+    "row": 920,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "输入",
+    "en": "Input",
+    "original": "Input",
+    "note": "",
+    "status": "retained"
+  },
+  "ymAecSettings.output": {
+    "row": 921,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "输出",
+    "en": "Output",
+    "original": "Output",
+    "note": "",
+    "status": "retained"
+  },
+  "ymAecSettings.factoryReset": {
+    "row": 922,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "恢复出厂设置",
+    "en": "Factory Reset",
+    "original": "Factory Reset",
+    "note": "",
+    "status": "retained"
+  },
+  "ymAecSettings.factoryResetSuccess": {
+    "row": 923,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "恢复出厂设置成功",
+    "en": "Factory settings restored successfully.",
+    "original": "Factory settings restored successfully.",
+    "note": "",
+    "status": "retained"
+  },
+  "ymAecSettings.factoryResetFail": {
+    "row": 924,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "恢复出厂设置失败",
+    "en": "Failed to restore factory settings.",
+    "original": "Failed to restore factory settings.",
+    "note": "",
+    "status": "retained"
+  },
+  "ymAecSettings.tuning": {
+    "row": 925,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "调音",
+    "en": "Tuning",
+    "original": "Tuning",
+    "note": "",
+    "status": "retained"
+  },
+  "ymAecSettings.tuningSuccess": {
+    "row": 926,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "调音成功",
+    "en": "Tuning Success",
+    "original": "Tuning Success",
+    "note": "",
+    "status": "retained"
+  },
+  "ymAecSettings.tuning2": {
+    "row": 927,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "调音中...",
+    "en": "Tuning...",
+    "original": "Tuning...",
+    "note": "",
+    "status": "retained"
+  },
+  "ymAecSettings.tuningError": {
+    "row": 928,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "调音错误: ",
+    "en": "Tuning Error: ",
+    "original": "Tuning Error: ",
+    "note": "",
+    "status": "retained"
+  },
+  "ymAecSettings.tuningFail": {
+    "row": 929,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "调音失败",
+    "en": "Tuning Failed",
+    "original": "Tuning Failed",
+    "note": "",
+    "status": "retained"
+  },
+  "ymAecSettings.none": {
+    "row": 930,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "无",
+    "en": "None",
+    "original": "None",
+    "note": "",
+    "status": "retained"
+  },
+  "ymAecSettings.dodgeReference": {
+    "row": 931,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "闪避参考",
+    "en": "Ducking Reference",
+    "original": "Dodge Reference",
+    "note": "统一音频闪避术语。",
+    "status": "changed"
+  },
+  "ymAecSettings.dodged": {
+    "row": 932,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "被闪避",
+    "en": "Ducked Signal",
+    "original": "Dodged",
+    "note": "表示被压低的音频信号。",
+    "status": "changed"
+  },
+  "ymAecSettings.omni_in1": {
+    "row": 933,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "全向1",
+    "en": "omni1",
+    "original": "omni1",
+    "note": "",
+    "status": "retained"
+  },
+  "ymAecSettings.omni_in2": {
+    "row": 934,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "全向2",
+    "en": "omni2",
+    "original": "omni2",
+    "note": "",
+    "status": "retained"
+  },
+  "ymAecSettings.omni_in3": {
+    "row": 935,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "全向3",
+    "en": "omni3",
+    "original": "omni3",
+    "note": "",
+    "status": "retained"
+  },
+  "ymAecSettings.omni_in4": {
+    "row": 936,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "全向4",
+    "en": "omni4",
+    "original": "omni4",
+    "note": "",
+    "status": "retained"
+  },
+  "ymAecSettings.omni_in5": {
+    "row": 937,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "全向5",
+    "en": "omni5",
+    "original": "omni5",
+    "note": "",
+    "status": "retained"
+  },
+  "ymAecSettings.omni_in6": {
+    "row": 938,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "全向6",
+    "en": "omni6",
+    "original": "omni6",
+    "note": "",
+    "status": "retained"
+  },
+  "ymAecSettings.omni_in7": {
+    "row": 939,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "全向7",
+    "en": "omni7",
+    "original": "omni7",
+    "note": "",
+    "status": "retained"
+  },
+  "ymAecSettings.omni_in8": {
+    "row": 940,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "全向8",
+    "en": "omni8",
+    "original": "omni8",
+    "note": "",
+    "status": "retained"
+  },
+  "ymAecSettings.wireless_in1": {
+    "row": 941,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "无线1",
+    "en": "wireless1",
+    "original": "wireless1",
+    "note": "",
+    "status": "retained"
+  },
+  "ymAecSettings.wireless_in2": {
+    "row": 942,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "无线2",
+    "en": "wireless2",
+    "original": "wireless2",
+    "note": "",
+    "status": "retained"
+  },
+  "ymAecSettings.pc_in1": {
+    "row": 943,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "电脑1",
+    "en": "pc1",
+    "original": "pc1",
+    "note": "",
+    "status": "retained"
+  },
+  "ymAecSettings.pc_in2": {
+    "row": 944,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "电脑2",
+    "en": "pc2",
+    "original": "pc2",
+    "note": "",
+    "status": "retained"
+  },
+  "ymAecSettings.remote_in1": {
+    "row": 945,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "远端1",
+    "en": "remote1",
+    "original": "remote1",
+    "note": "",
+    "status": "retained"
+  },
+  "ymAecSettings.remote_in2": {
+    "row": 946,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "远端2",
+    "en": "remote2",
+    "original": "remote2",
+    "note": "",
+    "status": "retained"
+  },
+  "ymAecSettings.versatile_out1": {
+    "row": 947,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "多功能1",
+    "en": "versatile1",
+    "original": "versatile1",
+    "note": "",
+    "status": "retained"
+  },
+  "ymAecSettings.versatile_out2": {
+    "row": 948,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "多功能2",
+    "en": "versatile2",
+    "original": "versatile2",
+    "note": "",
+    "status": "retained"
+  },
+  "ymAecSettings.versatile_out3": {
+    "row": 949,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "多功能3",
+    "en": "versatile3",
+    "original": "versatile3",
+    "note": "",
+    "status": "retained"
+  },
+  "ymAecSettings.versatile_out4": {
+    "row": 950,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "多功能4",
+    "en": "versatile4",
+    "original": "versatile4",
+    "note": "",
+    "status": "retained"
+  },
+  "ymAecSettings.versatile_out5": {
+    "row": 951,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "多功能5",
+    "en": "versatile5",
+    "original": "versatile5",
+    "note": "",
+    "status": "retained"
+  },
+  "ymAecSettings.versatile_out6": {
+    "row": 952,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "多功能6",
+    "en": "versatile6",
+    "original": "versatile6",
+    "note": "",
+    "status": "retained"
+  },
+  "ymAecSettings.mic1": {
+    "row": 953,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "本地1",
+    "en": "Local 1",
+    "original": "mic1",
+    "note": "中文为本地输入，不能擅自限定麦克风。",
+    "status": "changed"
+  },
+  "ymAecSettings.mic2": {
+    "row": 954,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "本地2",
+    "en": "Local 2",
+    "original": "mic2",
+    "note": "中文为本地输入，不能擅自限定麦克风。",
+    "status": "changed"
+  },
+  "ymAecSettings.remote": {
+    "row": 955,
+    "group": "22    回声抑制（YM）· ymAecSettings    页面停用",
+    "zh": "远端",
+    "en": "remote",
+    "original": "remote",
+    "note": "",
+    "status": "retained"
+  }
+}

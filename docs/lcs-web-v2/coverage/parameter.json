@@ -1,0 +1,467 @@
+{
+  "parameter.film": {
+    "status": "changed",
+    "controls": [
+      "common.channels.film",
+      "output.filmVideo"
+    ]
+  },
+  "parameter.computer": {
+    "status": "changed",
+    "controls": [
+      "common.channels.pc1",
+      "guidingStrategy.computer",
+      "main.feeds.content1"
+    ]
+  },
+  "parameter.computer2": {
+    "status": "changed",
+    "controls": [
+      "common.channels.pc2",
+      "guidingStrategy.computer2",
+      "main.feeds.content2"
+    ]
+  },
+  "parameter.teacher": {
+    "status": "retained",
+    "controls": [
+      "common.channels.tch",
+      "guidingStrategy.teacher",
+      "main.feeds.teacherClose"
+    ]
+  },
+  "parameter.student": {
+    "status": "retained",
+    "controls": [
+      "common.channels.stu",
+      "guidingStrategy.student",
+      "main.feeds.studentClose"
+    ]
+  },
+  "parameter.teacher_full": {
+    "status": "changed",
+    "controls": [
+      "common.channels.tch_p",
+      "guidingStrategy.teacherWide",
+      "main.feeds.teacherWide"
+    ]
+  },
+  "parameter.student_full": {
+    "status": "changed",
+    "controls": [
+      "common.channels.stu_p",
+      "guidingStrategy.studentWide",
+      "main.feeds.studentWide"
+    ]
+  },
+  "parameter.board": {
+    "status": "retained",
+    "controls": [
+      "common.channels.board",
+      "guidingStrategy.board"
+    ]
+  },
+  "parameter.board2": {
+    "status": "retained",
+    "controls": [
+      "guidingStrategy.board2"
+    ]
+  },
+  "parameter.board3": {
+    "status": "retained",
+    "controls": []
+  },
+  "parameter.interactive": {
+    "status": "retained",
+    "controls": [
+      "common.channels.inter",
+      "main.feeds.interactive"
+    ]
+  },
+  "parameter.confirm": {
+    "status": "retained",
+    "controls": []
+  },
+  "parameter.cancel": {
+    "status": "retained",
+    "controls": [
+      "common.actions.cancel"
+    ]
+  },
+  "parameter.administrator": {
+    "status": "retained",
+    "controls": [
+      "userManagement.admin"
+    ]
+  },
+  "parameter.ordinaryUser": {
+    "status": "retained",
+    "controls": [
+      "userManagement.normalUser"
+    ]
+  },
+  "parameter.visitor": {
+    "status": "retained",
+    "controls": [
+      "userManagement.guest"
+    ]
+  },
+  "parameter.setting": {
+    "status": "retained",
+    "controls": [
+      "common.topbar.settings"
+    ]
+  },
+  "parameter.reboot": {
+    "status": "retained",
+    "controls": [
+      "common.topbar.reboot"
+    ]
+  },
+  "parameter.poweroff": {
+    "status": "changed",
+    "controls": [
+      "common.topbar.shutdown"
+    ]
+  },
+  "parameter.logout": {
+    "status": "changed",
+    "controls": [
+      "common.topbar.logout"
+    ]
+  },
+  "parameter.record": {
+    "status": "retained",
+    "controls": []
+  },
+  "parameter.name": {
+    "status": "retained",
+    "controls": []
+  },
+  "parameter.bitRate": {
+    "status": "retained",
+    "controls": []
+  },
+  "parameter.format": {
+    "status": "retained",
+    "controls": []
+  },
+  "parameter.frameRate": {
+    "status": "retained",
+    "controls": []
+  },
+  "parameter.code": {
+    "status": "changed",
+    "controls": []
+  },
+  "parameter.resolution": {
+    "status": "retained",
+    "controls": []
+  },
+  "parameter.save": {
+    "status": "retained",
+    "controls": [
+      "common.actions.save",
+      "trackerDebug.save"
+    ]
+  },
+  "parameter.ok": {
+    "status": "retained",
+    "controls": [
+      "audio.ok",
+      "common.actions.ok",
+      "guidingStrategy.ok",
+      "input.ok",
+      "interaction.ok",
+      "ip.ok",
+      "live.ok",
+      "logo.ok",
+      "network.ok",
+      "osd.ok",
+      "peripheral.ok",
+      "power.ok",
+      "ptz.ok",
+      "record.ok",
+      "storage.ok",
+      "subtitle.ok",
+      "system.ok",
+      "titleTrailer.ok",
+      "tracker.ok",
+      "trackerDebug.ok",
+      "upload.ok"
+    ]
+  },
+  "parameter.edit": {
+    "status": "retained",
+    "controls": []
+  },
+  "parameter.sync": {
+    "status": "retained",
+    "controls": [
+      "common.actions.sync",
+      "system.sync"
+    ]
+  },
+  "parameter.versionDetection": {
+    "status": "changed",
+    "controls": [
+      "version.checkVersion"
+    ]
+  },
+  "parameter.live": {
+    "status": "retained",
+    "controls": []
+  },
+  "parameter.audioFrequency": {
+    "status": "changed",
+    "controls": []
+  },
+  "parameter.RTSPLive": {
+    "status": "changed",
+    "controls": []
+  },
+  "parameter.server": {
+    "status": "retained",
+    "controls": []
+  },
+  "parameter.port": {
+    "status": "retained",
+    "controls": []
+  },
+  "parameter.delete": {
+    "status": "retained",
+    "controls": [
+      "broadcast.delete",
+      "common.actions.delete",
+      "titleTrailer.delete",
+      "videoMatting.delete"
+    ]
+  },
+  "parameter.download": {
+    "status": "retained",
+    "controls": [
+      "broadcast.download",
+      "common.actions.download",
+      "system.download"
+    ]
+  },
+  "parameter.selectAll": {
+    "status": "retained",
+    "controls": [
+      "broadcast.selectAll"
+    ]
+  },
+  "parameter.warning": {
+    "status": "retained",
+    "controls": []
+  },
+  "parameter.refresh": {
+    "status": "retained",
+    "controls": [
+      "common.actions.refresh",
+      "input.refresh"
+    ]
+  },
+  "parameter.ipError": {
+    "status": "retained",
+    "controls": []
+  },
+  "parameter.noPermission": {
+    "status": "changed",
+    "controls": []
+  },
+  "parameter.licenseExpired": {
+    "status": "changed",
+    "controls": []
+  },
+  "parameter.licenseResErr": {
+    "status": "retained",
+    "controls": []
+  },
+  "parameter.dnsError": {
+    "status": "retained",
+    "controls": []
+  },
+  "parameter.netError": {
+    "status": "retained",
+    "controls": []
+  },
+  "parameter.setSuccess": {
+    "status": "changed",
+    "controls": [
+      "audio.saved",
+      "guidingStrategy.strategySaved",
+      "interaction.interSaved",
+      "interaction.sipSaved",
+      "osd.osdSaved",
+      "record.scheduleSaved",
+      "record.rtspAudioSaved",
+      "record.digitalAudioSaved",
+      "trackerDebug.boardSaved",
+      "trackerDebug.stuSaved",
+      "trackerDebug.tchSaved",
+      "videoMatting.newSceneAdded"
+    ]
+  },
+  "parameter.setFail": {
+    "status": "changed",
+    "controls": []
+  },
+  "parameter.setSuccessRestart": {
+    "status": "changed",
+    "controls": []
+  },
+  "parameter.upgradeSuccessRestart": {
+    "status": "changed",
+    "controls": []
+  },
+  "parameter.setSuccessRestart2": {
+    "status": "changed",
+    "controls": []
+  },
+  "parameter.deleteSuccess": {
+    "status": "changed",
+    "controls": [
+      "videoMatting.sceneDeleted"
+    ]
+  },
+  "parameter.deleteFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "parameter.noFilesSelected": {
+    "status": "retained",
+    "controls": [
+      "common.actions.noFilesSelected",
+      "factory.noFileSelected",
+      "system.noFileSelected",
+      "titleTrailer.noFileSelected"
+    ]
+  },
+  "parameter.switchLanguageSuccess": {
+    "status": "changed",
+    "controls": []
+  },
+  "parameter.timeOut": {
+    "status": "changed",
+    "controls": []
+  },
+  "parameter.preset1": {
+    "status": "retained",
+    "controls": []
+  },
+  "parameter.preset2": {
+    "status": "retained",
+    "controls": []
+  },
+  "parameter.preset3": {
+    "status": "retained",
+    "controls": []
+  },
+  "parameter.preset4": {
+    "status": "retained",
+    "controls": []
+  },
+  "parameter.preset5": {
+    "status": "retained",
+    "controls": []
+  },
+  "parameter.tips": {
+    "status": "retained",
+    "controls": []
+  },
+  "parameter.tip": {
+    "status": "retained",
+    "controls": [
+      "logo.tipTitle",
+      "osd.tipTitle",
+      "record.tipTitle",
+      "subtitle.tipTitle",
+      "titleTrailer.tipTitle"
+    ]
+  },
+  "parameter.inputPassword": {
+    "status": "changed",
+    "controls": []
+  },
+  "parameter.passwordError": {
+    "status": "changed",
+    "controls": []
+  },
+  "parameter.topic": {
+    "status": "retained",
+    "controls": []
+  },
+  "parameter.null": {
+    "status": "retained",
+    "controls": [
+      "main.status.notSet"
+    ]
+  },
+  "parameter.second": {
+    "status": "changed",
+    "controls": []
+  },
+  "parameter.close": {
+    "status": "pending",
+    "controls": [
+      "trackerDebug.close"
+    ]
+  },
+  "parameter.open": {
+    "status": "pending",
+    "controls": []
+  },
+  "parameter.networkReconnection": {
+    "status": "changed",
+    "controls": []
+  },
+  "parameter.selectOrInput": {
+    "status": "retained",
+    "controls": [
+      "input.selectOrInput"
+    ]
+  },
+  "parameter.uploading": {
+    "status": "retained",
+    "controls": []
+  },
+  "parameter.uploadCompleted": {
+    "status": "retained",
+    "controls": []
+  },
+  "parameter.copy": {
+    "status": "retained",
+    "controls": [
+      "live.copy"
+    ]
+  },
+  "parameter.copySuccess": {
+    "status": "retained",
+    "controls": []
+  },
+  "parameter.copyFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "parameter.liveUrl": {
+    "status": "retained",
+    "controls": [
+      "live.liveUrlLink"
+    ]
+  },
+  "parameter.noImage": {
+    "status": "retained",
+    "controls": [
+      "system.noImage"
+    ]
+  },
+  "parameter.enterPage": {
+    "status": "retained",
+    "controls": []
+  },
+  "parameter.space": {
+    "status": "retained",
+    "controls": []
+  }
+}

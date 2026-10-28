@@ -1,0 +1,19 @@
+{
+  "pageTitle": "project.tracker.trackerSetting",
+  "pcScreenDetect": "project.tracker.computerTest",
+  "pc2ScreenDetect": "project.tracker.computer2Test",
+  "teacherTrack": "project.tracker.teacherTracker",
+  "studentTrack": "project.tracker.studentTracker",
+  "protocolType": "project.tracker.protocol",
+  "defaultProtocol": "project.tracker.defaultProtocol",
+  "protocol1": "project.tracker.protocol1",
+  "protocol2": "project.tracker.protocol2",
+  "protocol3": "project.tracker.protocol3",
+  "netMode": "project.tracker.type",
+  "recvPort": "project.tracker.recPort",
+  "sendAddr": "project.tracker.sendIp",
+  "addrCode": "project.tracker.camAddrCode",
+  "sendPort": "project.tracker.sendPort",
+  "ok": "parameter.ok",
+  "protocol4": "project.tracker.protocol4"
+}

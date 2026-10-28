@@ -1,0 +1,218 @@
+{
+  "project.input.inputSetting": {
+    "row": 980,
+    "group": "24    工程设置 › 输入设置    ·    project.input ",
+    "zh": "输入设置",
+    "en": "Input Settings",
+    "original": "Input Setting",
+    "note": "设置页使用复数。",
+    "status": "changed"
+  },
+  "project.input.channel": {
+    "row": 981,
+    "group": "24    工程设置 › 输入设置    ·    project.input ",
+    "zh": "通道名称",
+    "en": "Channel",
+    "original": "Channel",
+    "note": "",
+    "status": "retained"
+  },
+  "project.input.signalSource": {
+    "row": 982,
+    "group": "24    工程设置 › 输入设置    ·    project.input ",
+    "zh": "信号源接入方式",
+    "en": "Input Source",
+    "original": "SignalSource",
+    "note": "表示输入源接入方式。",
+    "status": "changed"
+  },
+  "project.input.signalState": {
+    "row": 983,
+    "group": "24    工程设置 › 输入设置    ·    project.input ",
+    "zh": "信号源状态",
+    "en": "Signal Status",
+    "original": "SignalState",
+    "note": "修正代码式连写。",
+    "status": "changed"
+  },
+  "project.input.signalResolution": {
+    "row": 984,
+    "group": "24    工程设置 › 输入设置    ·    project.input ",
+    "zh": "信号分辨率",
+    "en": "Resolution",
+    "original": "SignalResolution",
+    "note": "同一输入页中可用短标签。",
+    "status": "changed"
+  },
+  "project.input.signalType": {
+    "row": 985,
+    "group": "24    工程设置 › 输入设置    ·    project.input ",
+    "zh": "信号形式",
+    "en": "Signal Type",
+    "original": "SignalType",
+    "note": "修正代码式连写。",
+    "status": "changed"
+  },
+  "project.input.usbCamera": {
+    "row": 986,
+    "group": "24    工程设置 › 输入设置    ·    project.input ",
+    "zh": "USB摄像机",
+    "en": "USB Camera",
+    "original": "USB Camera",
+    "note": "",
+    "status": "retained"
+  },
+  "project.input.rtspAudioMix": {
+    "row": 987,
+    "group": "24    工程设置 › 输入设置    ·    project.input ",
+    "zh": "RTSP音频输入",
+    "en": "RTSP audio input",
+    "original": "RTSP audio input",
+    "note": "",
+    "status": "retained"
+  },
+  "project.input.rtspOnlyAudioMix": {
+    "row": 988,
+    "group": "24    工程设置 › 输入设置    ·    project.input ",
+    "zh": "数字音频输入",
+    "en": "Digital audio input",
+    "original": "Digital audio input",
+    "note": "",
+    "status": "retained"
+  },
+  "project.input.IPCsetting": {
+    "row": 989,
+    "group": "24    工程设置 › 输入设置    ·    project.input ",
+    "zh": "IPC搜索",
+    "en": "IP Camera Search",
+    "original": "IPC Search",
+    "note": "IPC 对非技术用户不够直观。",
+    "status": "changed"
+  },
+  "project.input.serialNumber": {
+    "row": 990,
+    "group": "24    工程设置 › 输入设置    ·    project.input ",
+    "zh": "序号",
+    "en": "Number",
+    "original": "Number",
+    "note": "",
+    "status": "retained"
+  },
+  "project.input.userName": {
+    "row": 991,
+    "group": "24    工程设置 › 输入设置    ·    project.input ",
+    "zh": "名称",
+    "en": "UserName",
+    "original": "UserName",
+    "note": "待确认：此项是摄像机名称还是认证用户名？对应 Name 或 Username。",
+    "status": "pending"
+  },
+  "project.input.password": {
+    "row": 992,
+    "group": "24    工程设置 › 输入设置    ·    project.input ",
+    "zh": "密码",
+    "en": "Password",
+    "original": "Password",
+    "note": "",
+    "status": "retained"
+  },
+  "project.input.identify": {
+    "row": 993,
+    "group": "24    工程设置 › 输入设置    ·    project.input ",
+    "zh": "认证",
+    "en": "Authenticate",
+    "original": "Identify",
+    "note": "认证动作，不是识别。",
+    "status": "changed"
+  },
+  "project.input.status": {
+    "row": 994,
+    "group": "24    工程设置 › 输入设置    ·    project.input ",
+    "zh": "状态",
+    "en": "Status",
+    "original": "Status",
+    "note": "",
+    "status": "retained"
+  },
+  "project.input.certified": {
+    "row": 995,
+    "group": "24    工程设置 › 输入设置    ·    project.input ",
+    "zh": "已认证",
+    "en": "Authenticated",
+    "original": "Certified",
+    "note": "认证通过，不是产品获证。",
+    "status": "changed"
+  },
+  "project.input.notCertified": {
+    "row": 996,
+    "group": "24    工程设置 › 输入设置    ·    project.input ",
+    "zh": "未认证",
+    "en": "Not Authenticated",
+    "original": "Not Certified",
+    "note": "认证状态，与认证动作统一。",
+    "status": "changed"
+  },
+  "project.input.dollarSymbol": {
+    "row": 997,
+    "group": "24    工程设置 › 输入设置    ·    project.input ",
+    "zh": "用户名或密码中不能含有$符号",
+    "en": "The user name or password cannot contain the `$` symbol.",
+    "original": "The user name or password cannot contain the `$` symbol.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.input.authFail": {
+    "row": 998,
+    "group": "24    工程设置 › 输入设置    ·    project.input ",
+    "zh": "认证失败",
+    "en": "Authentication Failed",
+    "original": "Authentication Failed",
+    "note": "",
+    "status": "retained"
+  },
+  "project.input.authSuccess": {
+    "row": 999,
+    "group": "24    工程设置 › 输入设置    ·    project.input ",
+    "zh": "认证成功",
+    "en": "Authentication Successful",
+    "original": "Authentication Successful",
+    "note": "",
+    "status": "retained"
+  },
+  "project.input.rtspAddressError": {
+    "row": 1000,
+    "group": "24    工程设置 › 输入设置    ·    project.input ",
+    "zh": "当前设置的RTSP地址格式存在错误，请检查后重试",
+    "en": "There is an error in the currently set RTSP address format. Please check and try again.",
+    "original": "There is an error in the currently set RTSP address format. Please check and try again.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.input.rtspOnlyAddressError": {
+    "row": 1001,
+    "group": "24    工程设置 › 输入设置    ·    project.input ",
+    "zh": "当前设置的数字音频地址格式存在错误，请检查后重试",
+    "en": "The format of the currently set digital audio address is incorrect. Please check and try again",
+    "original": "The format of the currently set digital audio address is incorrect. Please check and try again",
+    "note": "",
+    "status": "retained"
+  },
+  "project.input.rtspAddressIllegal": {
+    "row": 1002,
+    "group": "24    工程设置 › 输入设置    ·    project.input ",
+    "zh": "当前设置的RTSP地址格式含有非法字符，请检查后重试",
+    "en": "There are illegal characters in the currently set RTSP address format. Please check and try again.",
+    "original": "There are illegal characters in the currently set RTSP address format. Please check and try again.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.input.hdmiin3Error": {
+    "row": 1003,
+    "group": "24    工程设置 › 输入设置    ·    project.input ",
+    "zh": "HDMIIN3只能设置到一个通道上",
+    "en": "HDMI IN3 can be assigned to only one channel.",
+    "original": "HDMIIN3 can only be set to one channel.",
+    "note": "明确输入分配限制。",
+    "status": "changed"
+  }
+}

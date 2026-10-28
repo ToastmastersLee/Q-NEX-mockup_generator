@@ -1,0 +1,659 @@
+{
+  "record.recordSetting": {
+    "row": 378,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "录制设置",
+    "en": "Recording Settings",
+    "original": "Record Setting",
+    "note": "使用录制功能名词。",
+    "status": "changed"
+  },
+  "record.channel": {
+    "row": 379,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "录制通道",
+    "en": "Channel",
+    "original": "Channel",
+    "note": "",
+    "status": "retained"
+  },
+  "record.name": {
+    "row": 380,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "录制名称",
+    "en": "Name",
+    "original": "Name",
+    "note": "",
+    "status": "retained"
+  },
+  "record.format": {
+    "row": 381,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "录制格式",
+    "en": "Format",
+    "original": "Format",
+    "note": "",
+    "status": "retained"
+  },
+  "record.resolution": {
+    "row": 382,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "录制分辨率",
+    "en": "Resolution",
+    "original": "Resolution",
+    "note": "",
+    "status": "retained"
+  },
+  "record.bitRate": {
+    "row": 383,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "录制码率",
+    "en": "Bitrate",
+    "original": "Bitrate",
+    "note": "",
+    "status": "retained"
+  },
+  "record.frameRate": {
+    "row": 384,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "录制帧率",
+    "en": "Frame Rate",
+    "original": "Framerate",
+    "note": "标准字段写法。",
+    "status": "changed"
+  },
+  "record.code": {
+    "row": 385,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "录制编码",
+    "en": "Codec",
+    "original": "Code",
+    "note": "编码格式，不是代码。",
+    "status": "changed"
+  },
+  "record.recordEnable": {
+    "row": 386,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "是否录制",
+    "en": "Record",
+    "original": "Record Enable",
+    "note": "录制开关列使用简短标签。",
+    "status": "changed"
+  },
+  "record.autoRecord": {
+    "row": 387,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "开机自动开启录制",
+    "en": "Record on Startup",
+    "original": "Auto Recording after startup",
+    "note": "明确开机自动录制。",
+    "status": "changed"
+  },
+  "record.fileFragmentTime": {
+    "row": 388,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "录制分段时长",
+    "en": "Segment duration",
+    "original": "Segment duration",
+    "note": "",
+    "status": "retained"
+  },
+  "record.maxRecordDuration": {
+    "row": 389,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "单次录制最大时长",
+    "en": "Max duration",
+    "original": "Max duration",
+    "note": "",
+    "status": "retained"
+  },
+  "record.recordDurationTip": {
+    "row": 390,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "操作提示: 单次录制最大时长超过6个小时，所录制文件会变更为TS格式",
+    "en": "TIP: If the maximum duration of a single recording exceeds 6 hours, the TS file format will be enforced.",
+    "original": "TIP: If the maximum duration of a single recording exceeds 6 hours, the TS file format will be enforced.",
+    "note": "",
+    "status": "retained"
+  },
+  "record.recordFormatTip": {
+    "row": 391,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "操作提示: 选择FLV或MKV格式时，强制使用H264编码",
+    "en": "Tip: FLV and MKV recordings require H.264 encoding.",
+    "original": "TIP: When selecting FLV or MKV format, force the use of H264 encoding.",
+    "note": "保留格式与编码限制。",
+    "status": "changed"
+  },
+  "record.timedRecording": {
+    "row": 392,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "定时录制",
+    "en": "Scheduled Recording",
+    "original": "Timed Recording",
+    "note": "定时任务使用 Scheduled。",
+    "status": "changed"
+  },
+  "record.operation": {
+    "row": 393,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "操作",
+    "en": "Actions",
+    "original": "OP",
+    "note": "操作列不使用难懂缩写 OP。",
+    "status": "changed"
+  },
+  "record.enable": {
+    "row": 394,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "开启",
+    "en": "Enable",
+    "original": "Open",
+    "note": "启用任务，不是打开窗口。",
+    "status": "changed"
+  },
+  "record.startTime": {
+    "row": 395,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "开始时间",
+    "en": "Start Time",
+    "original": "Start Time",
+    "note": "",
+    "status": "retained"
+  },
+  "record.stopTime": {
+    "row": 396,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "结束时间",
+    "en": "Stop Time",
+    "original": "Stop Time",
+    "note": "",
+    "status": "retained"
+  },
+  "record.duration": {
+    "row": 397,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "时长",
+    "en": "Duration",
+    "original": "Duration",
+    "note": "",
+    "status": "retained"
+  },
+  "record.tip1": {
+    "row": 398,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "1.定时录像任务启动后，可以点击录像结束按钮来终止本次定时任务。",
+    "en": "1. Click Stop to end a scheduled recording that is in progress.",
+    "original": "1.After the scheduled recording task is started, you can click the recording end button to terminate this scheduled task.",
+    "note": "明确停止动作。",
+    "status": "changed"
+  },
+  "record.tip2": {
+    "row": 399,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "2.定时录像任务启动时，录像已经开始了，这时本次定时任务失效。",
+    "en": "2. A scheduled recording is skipped if recording is already in progress at its start time.",
+    "original": "2.When the scheduled video recording task is started, the video recording has already started. At this time, the scheduled task is invalid.",
+    "note": "明确任务被跳过的条件。",
+    "status": "changed"
+  },
+  "record.tip3": {
+    "row": 400,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "3.在设置录像相关参数期间，有定时任务启动，这时设置的参数会失效。",
+    "en": "3. If a scheduled recording starts while you are changing recording settings, those changes will not take effect.",
+    "original": "3.During the setting of recording related parameters, a scheduled task is started, and the set parameters will become invalid.",
+    "note": "明确设置失效的时机。",
+    "status": "changed"
+  },
+  "record.tip4": {
+    "row": 401,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "4.定时录像持续时间包括暂停时间。",
+    "en": "4. Scheduled recording duration includes paused time.",
+    "original": "4.Timed video recording duration includes pause time.",
+    "note": "保留暂停时间计入时长。",
+    "status": "changed"
+  },
+  "record.once": {
+    "row": 402,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "仅一次",
+    "en": "Once",
+    "original": "Once",
+    "note": "",
+    "status": "retained"
+  },
+  "record.everyday": {
+    "row": 403,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "每日",
+    "en": "Daily",
+    "original": "Evyday",
+    "note": "修正 Evyday 拼写。",
+    "status": "changed"
+  },
+  "record.monday": {
+    "row": 404,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "周一",
+    "en": "Mon",
+    "original": "Mon",
+    "note": "",
+    "status": "retained"
+  },
+  "record.tuesday": {
+    "row": 405,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "周二",
+    "en": "Tues",
+    "original": "Tues",
+    "note": "",
+    "status": "retained"
+  },
+  "record.wednesday": {
+    "row": 406,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "周三",
+    "en": "Wed",
+    "original": "Wed",
+    "note": "",
+    "status": "retained"
+  },
+  "record.thursday": {
+    "row": 407,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "周四",
+    "en": "Thur",
+    "original": "Thur",
+    "note": "",
+    "status": "retained"
+  },
+  "record.friday": {
+    "row": 408,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "周五",
+    "en": "Fri",
+    "original": "Fri",
+    "note": "",
+    "status": "retained"
+  },
+  "record.saturday": {
+    "row": 409,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "周六",
+    "en": "Sat",
+    "original": "Sat",
+    "note": "",
+    "status": "retained"
+  },
+  "record.sunday": {
+    "row": 410,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "周日",
+    "en": "Sun",
+    "original": "Sun",
+    "note": "",
+    "status": "retained"
+  },
+  "record.repeat": {
+    "row": 411,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "重复",
+    "en": "Repeat",
+    "original": "Repeat",
+    "note": "",
+    "status": "retained"
+  },
+  "record.noSegment": {
+    "row": 412,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "不分段",
+    "en": "No Segmentation",
+    "original": "No segment",
+    "note": "明确不进行文件分段。",
+    "status": "changed"
+  },
+  "record.tenMinutes": {
+    "row": 413,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "10分钟",
+    "en": "10min",
+    "original": "10min",
+    "note": "",
+    "status": "retained"
+  },
+  "record.fifteenMinutes": {
+    "row": 414,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "15分钟",
+    "en": "15min",
+    "original": "15min",
+    "note": "",
+    "status": "retained"
+  },
+  "record.twentyMinutes": {
+    "row": 415,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "20分钟",
+    "en": "20min",
+    "original": "20min",
+    "note": "",
+    "status": "retained"
+  },
+  "record.thirtyMinutes": {
+    "row": 416,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "30分钟",
+    "en": "30min",
+    "original": "30min",
+    "note": "",
+    "status": "retained"
+  },
+  "record.fortyFiveMinutes": {
+    "row": 417,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "45分钟",
+    "en": "45min",
+    "original": "45min",
+    "note": "",
+    "status": "retained"
+  },
+  "record.oneHour": {
+    "row": 418,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "1小时",
+    "en": "1 h",
+    "original": "1hour",
+    "note": "规范单位且适合短选项。",
+    "status": "changed"
+  },
+  "record.twoHours": {
+    "row": 419,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "2小时",
+    "en": "2 h",
+    "original": "2hours",
+    "note": "规范单位且适合短选项。",
+    "status": "changed"
+  },
+  "record.fourHours": {
+    "row": 420,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "4小时",
+    "en": "4 h",
+    "original": "4hours",
+    "note": "规范单位且适合短选项。",
+    "status": "changed"
+  },
+  "record.sixHours": {
+    "row": 421,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "6小时",
+    "en": "6 h",
+    "original": "6hours",
+    "note": "规范单位且适合短选项。",
+    "status": "changed"
+  },
+  "record.eightHours": {
+    "row": 422,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "8小时",
+    "en": "8 h",
+    "original": "8hours",
+    "note": "规范单位且适合短选项。",
+    "status": "changed"
+  },
+  "record.tenHours": {
+    "row": 423,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "10小时",
+    "en": "10 h",
+    "original": "10hours",
+    "note": "规范单位且适合短选项。",
+    "status": "changed"
+  },
+  "record.twelveHours": {
+    "row": 424,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "12小时",
+    "en": "12 h",
+    "original": "12hours",
+    "note": "规范单位且适合短选项。",
+    "status": "changed"
+  },
+  "record.twentyFourHours": {
+    "row": 425,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "24小时",
+    "en": "24 h",
+    "original": "24hours",
+    "note": "规范单位且适合短选项。",
+    "status": "changed"
+  },
+  "record.noLimit": {
+    "row": 426,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "不限制",
+    "en": "No Limit",
+    "original": "No Limit",
+    "note": "",
+    "status": "retained"
+  },
+  "record.minute": {
+    "row": 427,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "分钟",
+    "en": "min",
+    "original": "min",
+    "note": "",
+    "status": "retained"
+  },
+  "record.lessThanTwoHours": {
+    "row": 428,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "<= 120",
+    "en": "<= 120",
+    "original": "<= 120",
+    "note": "",
+    "status": "retained"
+  },
+  "record.classTopicInputError": {
+    "row": 429,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "定时录制输入包含以下非法字符：",
+    "en": "The scheduled recording contains the following invalid characters:",
+    "original": "The timed recording input contains the following illegal characters:",
+    "note": "统一定时录制术语，保留冒号拼接。",
+    "status": "changed"
+  },
+  "record.noLessThanTwo": {
+    "row": 430,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "定时录制任务不能少于2条",
+    "en": "The number of scheduled recording tasks cannot be less than 2.",
+    "original": "The number of scheduled recording tasks cannot be less than 2.",
+    "note": "",
+    "status": "retained"
+  },
+  "record.noMoreThanEight": {
+    "row": 431,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "定时录制任务不能多于8条",
+    "en": "No more than 8 scheduled recording tasks.",
+    "original": "No more than 8 scheduled recording tasks.",
+    "note": "",
+    "status": "retained"
+  },
+  "record.noMoreThanCount": {
+    "row": 432,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "定时录制任务不能多于21条",
+    "en": "No more than 21 scheduled recording tasks.",
+    "original": "No more than 21 scheduled recording tasks.",
+    "note": "",
+    "status": "retained"
+  },
+  "record.setAutoRecordStateFail": {
+    "row": 433,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "开机自动开启录制设置失败",
+    "en": "Failed to set recording on startup.",
+    "original": "Failed to start recording setting automatically after startup.",
+    "note": "修正失败对象，不误写为启动录制失败。",
+    "status": "changed"
+  },
+  "record.startTimeOrStopTimeNull": {
+    "row": 434,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "开始时间或结束时间为空",
+    "en": "Start time or end time is empty.",
+    "original": "Start time or end time is empty.",
+    "note": "",
+    "status": "retained"
+  },
+  "record.timeError": {
+    "row": 435,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "时间填写有误，录像时间不得小于10秒，请重新填写时间",
+    "en": "The time is incorrect. The recording time shall not be less than 10 seconds. Please fill in the time again.",
+    "original": "The time is incorrect. The recording time shall not be less than 10 seconds. Please fill in the time again.",
+    "note": "",
+    "status": "retained"
+  },
+  "record.conflict": {
+    "row": 436,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "行定时任务有冲突，请重新填写时间",
+    "en": "row timing task conflicts, please fill in the time again.",
+    "original": "row timing task conflicts, please fill in the time again.",
+    "note": "待确认：此词条前面是否拼接行号；需连同行号调整完整的任务冲突提示。",
+    "status": "pending"
+  },
+  "record.lessThanSixtySeconds": {
+    "row": 437,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "行定时任务时间间隔小于60秒，请重新填写时间",
+    "en": "row scheduled task is less than 60 seconds, please fill in the time again.",
+    "original": "row scheduled task is less than 60 seconds, please fill in the time again.",
+    "note": "待确认：需核实行号拼接方式及“间隔”对象，不能误译为任务时长小于60秒。",
+    "status": "pending"
+  },
+  "record.nameEmpty": {
+    "row": 438,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "录制名称不能为空",
+    "en": "Recording name cannot be empty.",
+    "original": " name Empty.",
+    "note": "补齐录制名称。",
+    "status": "changed"
+  },
+  "record.nameMoreThanEighteen": {
+    "row": 439,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "录制名称不能超过18个字符",
+    "en": "Recording name cannot exceed 18 characters.",
+    "original": " name cannot exceed 18 characters.",
+    "note": "补齐录制名称，保留18字符限制。",
+    "status": "changed"
+  },
+  "record.nameError": {
+    "row": 440,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "录制名称含有非法字符，请检查后重试",
+    "en": "The recording name contains illegal characters. Please check and try again.",
+    "original": "The recording name contains illegal characters. Please check and try again.",
+    "note": "",
+    "status": "retained"
+  },
+  "record.sameName": {
+    "row": 441,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "录制名称不能相同，请检查后重试",
+    "en": "Recording names must be unique. Check the names and try again.",
+    "original": "The recording name cannot be the same. Please check and try again.",
+    "note": "明确不能重名。",
+    "status": "changed"
+  },
+  "record.fileFragmentTimeMoreThanMax": {
+    "row": 442,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "录制分段时长不能大于单次录制最大时长",
+    "en": "Segment duration cannot exceed the maximum recording duration.",
+    "original": "File fragment time no more than max record duration.",
+    "note": "明确分段时长限制。",
+    "status": "changed"
+  },
+  "record.timerDurationMoreThanMax": {
+    "row": 443,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "单条定时录制时长不能大于单次录制最大时长",
+    "en": "The duration of a single scheduled recording cannot be greater than the maximum duration of a single recording.",
+    "original": "The duration of a single scheduled recording cannot be greater than the maximum duration of a single recording.",
+    "note": "",
+    "status": "retained"
+  },
+  "record.recordMixSetting": {
+    "row": 444,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "录制混音设置",
+    "en": "Recording Mix Settings",
+    "original": "Record Mix Settings",
+    "note": "使用录制功能名词。",
+    "status": "changed"
+  },
+  "record.mixChannel": {
+    "row": 445,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "混音通道",
+    "en": "Mix Channel",
+    "original": "Mix Channel",
+    "note": "",
+    "status": "retained"
+  },
+  "record.onlyFilmLive4K": {
+    "row": 446,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "4K模式下只支持开启电影直播通道，请先关闭其他直播通道",
+    "en": "In 4K mode, only PGM streaming is supported. Disable other streaming channels first.",
+    "original": "In 4K mode, only the film live streaming channel is supported. Please close other live streaming channels first.",
+    "note": "电影通道指最终节目通道。",
+    "status": "changed"
+  },
+  "record.rtspAudioSetting": {
+    "row": 447,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "RTSP音频输入设置",
+    "en": "RTSP audio input settings",
+    "original": "RTSP audio input settings",
+    "note": "",
+    "status": "retained"
+  },
+  "record.rtspAudioMixTip": {
+    "row": 448,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "提示: 若混音通道中的按钮为禁用状态表示未开启该通道的RTSP音频输入。",
+    "en": "Tip: A disabled channel button means RTSP audio input is not enabled for that channel.",
+    "original": "Tip: If the button in the mixing channel is disabled, it means that the RTSP audio input for that channel is not turned on.",
+    "note": "简化说明，保留禁用原因。",
+    "status": "changed"
+  },
+  "record.rtspOnlyAudioSetting": {
+    "row": 449,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "数字音频输入设置",
+    "en": "Digital audio input settings",
+    "original": "Digital audio input settings",
+    "note": "",
+    "status": "retained"
+  },
+  "record.rtspOnlyAudioMixTip": {
+    "row": 450,
+    "group": "13    录制设置    ·    record    ",
+    "zh": "提示: 若混音通道中的按钮为禁用状态表示未开启该通道的数字音频输入。",
+    "en": "Tip: A disabled channel button means digital audio input is not enabled for that channel.",
+    "original": "Tip: If the button in the mixing channel is disabled, it means that the digital audio input for that channel is not turned on.",
+    "note": "简化说明，保留禁用原因。",
+    "status": "changed"
+  }
+}

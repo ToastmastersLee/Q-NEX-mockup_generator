@@ -1,0 +1,188 @@
+{
+  "live.liveSetting": {
+    "status": "changed",
+    "controls": [
+      "common.sidebar.live",
+      "live.pageTitle",
+      "live.cardTitleLive"
+    ]
+  },
+  "live.channel": {
+    "status": "retained",
+    "controls": [
+      "live.colChannel"
+    ]
+  },
+  "live.format": {
+    "status": "changed",
+    "controls": [
+      "live.colMode"
+    ]
+  },
+  "live.resolution": {
+    "status": "retained",
+    "controls": [
+      "live.colResolution"
+    ]
+  },
+  "live.bitRate": {
+    "status": "retained",
+    "controls": [
+      "live.colBitrate"
+    ]
+  },
+  "live.frameRate": {
+    "status": "changed",
+    "controls": [
+      "live.colFramerate"
+    ]
+  },
+  "live.server": {
+    "status": "changed",
+    "controls": [
+      "live.colPushUrl"
+    ]
+  },
+  "live.watch": {
+    "status": "changed",
+    "controls": [
+      "live.colPlayUrl"
+    ]
+  },
+  "live.liveEnable": {
+    "status": "changed",
+    "controls": [
+      "live.colIsLive"
+    ]
+  },
+  "live.rtspEnable": {
+    "status": "changed",
+    "controls": [
+      "live.colRtspLive"
+    ]
+  },
+  "live.autoLive": {
+    "status": "changed",
+    "controls": [
+      "live.autoLiveBoot"
+    ]
+  },
+  "live.autoReconnect": {
+    "status": "changed",
+    "controls": []
+  },
+  "live.serverError": {
+    "status": "changed",
+    "controls": []
+  },
+  "live.timedLiving": {
+    "status": "changed",
+    "controls": [
+      "live.cardTitleSchedule"
+    ]
+  },
+  "live.operation": {
+    "status": "changed",
+    "controls": [
+      "live.colOp"
+    ]
+  },
+  "live.enable": {
+    "status": "changed",
+    "controls": [
+      "live.colEnable"
+    ]
+  },
+  "live.startTime": {
+    "status": "retained",
+    "controls": [
+      "live.colStartTime"
+    ]
+  },
+  "live.stopTime": {
+    "status": "retained",
+    "controls": [
+      "live.colEndTime"
+    ]
+  },
+  "live.duration": {
+    "status": "retained",
+    "controls": [
+      "live.colDuration"
+    ]
+  },
+  "live.once": {
+    "status": "retained",
+    "controls": [
+      "live.colOnce"
+    ]
+  },
+  "live.everyday": {
+    "status": "changed",
+    "controls": [
+      "live.colDaily"
+    ]
+  },
+  "live.monday": {
+    "status": "retained",
+    "controls": [
+      "live.colMon"
+    ]
+  },
+  "live.tuesday": {
+    "status": "retained",
+    "controls": [
+      "live.colTue"
+    ]
+  },
+  "live.wednesday": {
+    "status": "retained",
+    "controls": [
+      "live.colWed"
+    ]
+  },
+  "live.thursday": {
+    "status": "retained",
+    "controls": [
+      "live.colThu"
+    ]
+  },
+  "live.friday": {
+    "status": "retained",
+    "controls": [
+      "live.colFri"
+    ]
+  },
+  "live.saturday": {
+    "status": "retained",
+    "controls": [
+      "live.colSat"
+    ]
+  },
+  "live.sunday": {
+    "status": "retained",
+    "controls": [
+      "live.colSun"
+    ]
+  },
+  "live.maxChannel": {
+    "status": "pending",
+    "controls": []
+  },
+  "live.noLessThanTwo": {
+    "status": "changed",
+    "controls": []
+  },
+  "live.noMoreThanEight": {
+    "status": "changed",
+    "controls": []
+  },
+  "live.startTimeOrStopTimeNull": {
+    "status": "retained",
+    "controls": []
+  },
+  "live.timeError": {
+    "status": "changed",
+    "controls": []
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "project.upload.uploadSetting": {
+    "status": "changed",
+    "controls": [
+      "common.sidebar.upload",
+      "upload.pageTitle"
+    ]
+  },
+  "project.upload.fileUpload": {
+    "status": "retained",
+    "controls": [
+      "upload.fileUpload"
+    ]
+  },
+  "project.upload.uploadType": {
+    "status": "retained",
+    "controls": [
+      "upload.uploadMode"
+    ]
+  },
+  "project.upload.ignoreFile": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.upload.ignoreFileTip": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.upload.IP": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.upload.port": {
+    "status": "retained",
+    "controls": [
+      "upload.port"
+    ]
+  },
+  "project.upload.userName": {
+    "status": "changed",
+    "controls": [
+      "upload.username"
+    ]
+  },
+  "project.upload.password": {
+    "status": "retained",
+    "controls": [
+      "upload.password"
+    ]
+  },
+  "project.upload.uploadPath": {
+    "status": "retained",
+    "controls": [
+      "upload.uploadPath"
+    ]
+  },
+  "project.upload.uploadPathTip": {
+    "status": "retained",
+    "controls": [
+      "upload.tipUploadPath"
+    ]
+  },
+  "project.upload.uploadMode": {
+    "status": "changed",
+    "controls": [
+      "upload.uploadWay"
+    ]
+  },
+  "project.upload.tip1": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.upload.tip2": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.upload.tip3": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.upload.startTime": {
+    "status": "changed",
+    "controls": [
+      "upload.startTime"
+    ]
+  },
+  "project.upload.duration": {
+    "status": "retained",
+    "controls": [
+      "upload.duration"
+    ]
+  },
+  "project.upload.minute": {
+    "status": "retained",
+    "controls": [
+      "upload.minute"
+    ]
+  },
+  "project.upload.uploadByUserNameEnable": {
+    "status": "changed",
+    "controls": [
+      "upload.uploadByUsername"
+    ]
+  },
+  "project.upload.uploadFilmOnlyEnable": {
+    "status": "changed",
+    "controls": [
+      "upload.filmOnly"
+    ]
+  },
+  "project.upload.default": {
+    "status": "retained",
+    "controls": [
+      "upload.standardFtp"
+    ]
+  },
+  "project.upload.JK": {
+    "status": "retained",
+    "controls": [
+      "upload.centralizedControl"
+    ]
+  },
+  "project.upload.HX": {
+    "status": "retained",
+    "controls": [
+      "upload.thirdPartyCentralizedControl"
+    ]
+  },
+  "project.upload.close": {
+    "status": "changed",
+    "controls": [
+      "upload.off"
+    ]
+  },
+  "project.upload.leisure": {
+    "status": "changed",
+    "controls": [
+      "upload.leisure"
+    ]
+  },
+  "project.upload.always": {
+    "status": "changed",
+    "controls": [
+      "upload.realtime"
+    ]
+  },
+  "project.upload.at": {
+    "status": "changed",
+    "controls": [
+      "upload.timing"
+    ]
+  },
+  "project.upload.uploadPathEmpty": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.upload.uploadPathIllegal": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.upload.userNameIllegal": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.upload.passwordIllegal": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.upload.lessThanTenMinutes": {
+    "status": "changed",
+    "controls": [
+      "upload.minDuration"
+    ]
+  },
+  "project.upload.moreThanTwentyHours": {
+    "status": "changed",
+    "controls": [
+      "upload.maxDuration"
+    ]
+  },
+  "project.upload.DeweiSetFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.upload.maxTwentyHours": {
+    "status": "retained",
+    "controls": [
+      "upload.maxTwentyHours"
+    ]
+  }
+}

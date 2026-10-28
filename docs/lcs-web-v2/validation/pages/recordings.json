@@ -1,0 +1,108 @@
+[
+  {
+    "name": "recordings",
+    "width": 1920,
+    "lang": "en",
+    "selects": [
+      {
+        "value": "en",
+        "valid": true,
+        "duplicateValues": []
+      }
+    ],
+    "clippedButtons": [],
+    "chineseInEnglish": [],
+    "brokenImages": [],
+    "documentOverflow": false
+  },
+  {
+    "name": "recordings",
+    "width": 1920,
+    "lang": "zh",
+    "selects": [
+      {
+        "value": "zh",
+        "valid": true,
+        "duplicateValues": []
+      }
+    ],
+    "clippedButtons": [],
+    "chineseInEnglish": [
+      "界面预览",
+      "主页",
+      "视频管理",
+      "高级设置",
+      "重启",
+      "关机",
+      "注销",
+      "文件详情",
+      "创建时间",
+      "文件时长",
+      "文件码率",
+      "音频采样",
+      "视频编码",
+      "音频编码",
+      "视频帧率",
+      "音频声道",
+      "视频分辨率",
+      "搜索",
+      "下载",
+      "删除"
+    ],
+    "brokenImages": [],
+    "documentOverflow": false
+  },
+  {
+    "name": "recordings",
+    "width": 1366,
+    "lang": "en",
+    "selects": [
+      {
+        "value": "en",
+        "valid": true,
+        "duplicateValues": []
+      }
+    ],
+    "clippedButtons": [],
+    "chineseInEnglish": [],
+    "brokenImages": [],
+    "documentOverflow": false
+  },
+  {
+    "name": "recordings",
+    "width": 1366,
+    "lang": "zh",
+    "selects": [
+      {
+        "value": "zh",
+        "valid": true,
+        "duplicateValues": []
+      }
+    ],
+    "clippedButtons": [],
+    "chineseInEnglish": [
+      "界面预览",
+      "主页",
+      "视频管理",
+      "高级设置",
+      "重启",
+      "关机",
+      "注销",
+      "文件详情",
+      "创建时间",
+      "文件时长",
+      "文件码率",
+      "音频采样",
+      "视频编码",
+      "音频编码",
+      "视频帧率",
+      "音频声道",
+      "视频分辨率",
+      "搜索",
+      "下载",
+      "删除"
+    ],
+    "brokenImages": [],
+    "documentOverflow": false
+  }
+]

@@ -1,0 +1,100 @@
+{
+  "verifiedAt": "2026-10-28T09:49:58.908042+00:00",
+  "commit": "eccd4744cb913328ebd5f14ba8045555ac9b126e",
+  "workflow": "https://github.com/ToastmastersLee/q/actions/runs/40667012833",
+  "files": [
+    {
+      "path": "assets/ch3_teacher_close-sBSlE4eC.png",
+      "url": "https://toastmasterslee.github.io/q/lcs/assets/ch3_teacher_close-sBSlE4eC.png",
+      "status": 200,
+      "sha256": "b8aa8313da1f05c6076e613d24c013a5a64d9b00834d27233a4029856c62a2bc",
+      "matches": true
+    },
+    {
+      "path": "assets/ch4_student_close-Ce_gyu-g.png",
+      "url": "https://toastmasterslee.github.io/q/lcs/assets/ch4_student_close-Ce_gyu-g.png",
+      "status": 200,
+      "sha256": "d9d00e7fb5a381f4cb603879e9f009d9ca0395652a234697461d4a723d030ec7",
+      "matches": true
+    },
+    {
+      "path": "assets/ch4_student_panoprama-DMSUFvgj.png",
+      "url": "https://toastmasterslee.github.io/q/lcs/assets/ch4_student_panoprama-DMSUFvgj.png",
+      "status": 200,
+      "sha256": "78a310925f051bbb4a630b4f9a72274b933ae539cda36c0dc8d9d77287730103",
+      "matches": true
+    },
+    {
+      "path": "assets/favicon-HV1kWBx1.svg",
+      "url": "https://toastmasterslee.github.io/q/lcs/assets/favicon-HV1kWBx1.svg",
+      "status": 200,
+      "sha256": "61bc9a161de58248288e6905425d7180f0624c2865007b97d763fdac12043a66",
+      "matches": true
+    },
+    {
+      "path": "assets/index-B5x1u2Qn.css",
+      "url": "https://toastmasterslee.github.io/q/lcs/assets/index-B5x1u2Qn.css",
+      "status": 200,
+      "sha256": "52a74449813d12cf49411830c93ee444f54a4c11f2715e91ef03c872493d614b",
+      "matches": true
+    },
+    {
+      "path": "assets/index-C7Wgr1vD.js",
+      "url": "https://toastmasterslee.github.io/q/lcs/assets/index-C7Wgr1vD.js",
+      "status": 200,
+      "sha256": "275d1b86d4e6cab842c92ae6cfb43fefda19d1fdaf990159858a11e03c792749",
+      "matches": true
+    },
+    {
+      "path": "index.html",
+      "url": "https://toastmasterslee.github.io/q/lcs/index.html",
+      "status": 200,
+      "sha256": "e897ae6cded60499f28f3594fe0ba88a8ef7a0674afa10df8caf120a475a2ae0",
+      "matches": true
+    }
+  ],
+  "existingEntries": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "gitBlob": "69e4e9136fe818c45b40c1d1e1fa974219e90221",
+      "matches": true
+    },
+    {
+      "path": "README.md",
+      "status": 200,
+      "gitBlob": "8325189ede6748c093f91242efd8ead6f0d4f6bc",
+      "matches": true
+    },
+    {
+      "path": "planners/lcs/index.html",
+      "status": 200,
+      "gitBlob": "ba6aca95dc525a5d398a49990727e91d7aec1576",
+      "matches": true
+    },
+    {
+      "path": "planners/dante/index.html",
+      "status": 200,
+      "gitBlob": "afe954d76b4ea812f848d4e41d1e186350cb13a9",
+      "matches": true
+    },
+    {
+      "path": "demos/lcs/index.html",
+      "status": 200,
+      "gitBlob": "c0c32815cba204e1011516046b60f2f0918ec2d0",
+      "matches": true
+    },
+    {
+      "path": "demos/dante/index.html",
+      "status": 200,
+      "gitBlob": "b292f9d1e6dfcc52f5cafed7ea8c9cfb0fc0303e",
+      "matches": true
+    }
+  ],
+  "slashRedirect": {
+    "status": 200,
+    "url": "https://toastmasterslee.github.io/q/lcs/",
+    "matches": true
+  },
+  "preservedFilesInGit": 144
+}

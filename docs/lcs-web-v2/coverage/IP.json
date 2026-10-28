@@ -1,0 +1,192 @@
+{
+  "IP.networkSetting": {
+    "status": "changed",
+    "controls": [
+      "common.sidebar.ip",
+      "ip.pageTitle",
+      "ip.cardTitleNetwork",
+      "network.pageTitle",
+      "network.cardTitleNetwork"
+    ]
+  },
+  "IP.networkChoose": {
+    "status": "retained",
+    "controls": [
+      "ip.cardTitleSelect",
+      "network.cardTitleSelect"
+    ]
+  },
+  "IP.type": {
+    "status": "retained",
+    "controls": [
+      "ip.netType",
+      "network.netType"
+    ]
+  },
+  "IP.IP": {
+    "status": "retained",
+    "controls": [
+      "input.colIp",
+      "ip.ipAddress",
+      "network.ipAddress"
+    ]
+  },
+  "IP.gateway": {
+    "status": "retained",
+    "controls": [
+      "ip.gateway",
+      "network.gateway"
+    ]
+  },
+  "IP.subnetMask": {
+    "status": "retained",
+    "controls": [
+      "ip.subnetMask",
+      "network.subnetMask"
+    ]
+  },
+  "IP.DNS": {
+    "status": "retained",
+    "controls": [
+      "ip.dnsServer",
+      "network.dnsServer"
+    ]
+  },
+  "IP.website": {
+    "status": "retained",
+    "controls": [
+      "ip.url",
+      "network.url"
+    ]
+  },
+  "IP.check": {
+    "status": "retained",
+    "controls": [
+      "ip.test",
+      "network.test"
+    ]
+  },
+  "IP.clear": {
+    "status": "retained",
+    "controls": [
+      "common.actions.clear",
+      "ip.clear",
+      "network.clear"
+    ]
+  },
+  "IP.websiteEmpty": {
+    "status": "changed",
+    "controls": [
+      "network.pleaseEnterUrl"
+    ]
+  },
+  "IP.wiredNetwork": {
+    "status": "retained",
+    "controls": [
+      "ip.wiredNet",
+      "network.wiredNet"
+    ]
+  },
+  "IP.wifi": {
+    "status": "retained",
+    "controls": [
+      "network.wirelessNet"
+    ]
+  },
+  "IP.mobileNetwork": {
+    "status": "retained",
+    "controls": []
+  },
+  "IP.networkTypeFail": {
+    "status": "changed",
+    "controls": []
+  },
+  "IP.networkTypeSuccess": {
+    "status": "changed",
+    "controls": []
+  },
+  "IP.IPerror": {
+    "status": "changed",
+    "controls": []
+  },
+  "IP.gatewayError": {
+    "status": "changed",
+    "controls": []
+  },
+  "IP.subnetMaskError": {
+    "status": "changed",
+    "controls": []
+  },
+  "IP.DNSerror": {
+    "status": "changed",
+    "controls": []
+  },
+  "IP.success": {
+    "status": "changed",
+    "controls": []
+  },
+  "IP.fail": {
+    "status": "retained",
+    "controls": []
+  },
+  "IP.setFail": {
+    "status": "changed",
+    "controls": []
+  },
+  "IP.getIPfail": {
+    "status": "retained",
+    "controls": []
+  },
+  "IP.wifiList": {
+    "status": "retained",
+    "controls": []
+  },
+  "IP.refresh": {
+    "status": "retained",
+    "controls": []
+  },
+  "IP.connected": {
+    "status": "retained",
+    "controls": []
+  },
+  "IP.connecting": {
+    "status": "retained",
+    "controls": []
+  },
+  "IP.disconnect": {
+    "status": "retained",
+    "controls": []
+  },
+  "IP.inputPassword": {
+    "status": "retained",
+    "controls": []
+  },
+  "IP.password": {
+    "status": "retained",
+    "controls": []
+  },
+  "IP.joinWifiSuccess": {
+    "status": "retained",
+    "controls": []
+  },
+  "IP.joinWifiFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "IP.scanWifiLoading": {
+    "status": "retained",
+    "controls": []
+  },
+  "IP.joinWifiLoading": {
+    "status": "changed",
+    "controls": []
+  },
+  "IP.cancelWifiSuccess": {
+    "status": "retained",
+    "controls": []
+  },
+  "IP.cancelWifiFail": {
+    "status": "retained",
+    "controls": []
+  }
+}

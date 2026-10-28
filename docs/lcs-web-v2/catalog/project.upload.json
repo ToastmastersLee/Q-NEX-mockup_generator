@@ -1,0 +1,317 @@
+{
+  "project.upload.uploadSetting": {
+    "row": 1175,
+    "group": "29    工程设置 › 上传设置    ·    project.upload ",
+    "zh": "上传设置",
+    "en": "Upload Settings",
+    "original": "Upload Setting",
+    "note": "设置页使用复数。",
+    "status": "changed"
+  },
+  "project.upload.fileUpload": {
+    "row": 1176,
+    "group": "29    工程设置 › 上传设置    ·    project.upload ",
+    "zh": "文件上传",
+    "en": "File Upload",
+    "original": "File Upload",
+    "note": "",
+    "status": "retained"
+  },
+  "project.upload.uploadType": {
+    "row": 1177,
+    "group": "29    工程设置 › 上传设置    ·    project.upload ",
+    "zh": "上传模式",
+    "en": "Upload Mode",
+    "original": "Upload Mode",
+    "note": "",
+    "status": "retained"
+  },
+  "project.upload.ignoreFile": {
+    "row": 1178,
+    "group": "29    工程设置 › 上传设置    ·    project.upload ",
+    "zh": "忽略尚未上传的文件",
+    "en": "Skip Pending Files",
+    "original": "Ignore files not uploaded",
+    "note": "忽略当前未上传文件的短操作标签。",
+    "status": "changed"
+  },
+  "project.upload.ignoreFileTip": {
+    "row": 1179,
+    "group": "29    工程设置 › 上传设置    ·    project.upload ",
+    "zh": "点击生效，之前尚未上传的文件不会自动上传",
+    "en": "Takes effect immediately. Files currently pending upload will no longer upload automatically.",
+    "original": "Click to take effect, files that have not been uploaded before will not be automatically uploaded",
+    "note": "明确影响已有待传文件。",
+    "status": "changed"
+  },
+  "project.upload.IP": {
+    "row": 1180,
+    "group": "29    工程设置 › 上传设置    ·    project.upload ",
+    "zh": "IP地址",
+    "en": "IP",
+    "original": "IP",
+    "note": "",
+    "status": "retained"
+  },
+  "project.upload.port": {
+    "row": 1181,
+    "group": "29    工程设置 › 上传设置    ·    project.upload ",
+    "zh": "端口号",
+    "en": "Port",
+    "original": "Port",
+    "note": "",
+    "status": "retained"
+  },
+  "project.upload.userName": {
+    "row": 1182,
+    "group": "29    工程设置 › 上传设置    ·    project.upload ",
+    "zh": "用户名",
+    "en": "Username",
+    "original": "UserName",
+    "note": "标准写法。",
+    "status": "changed"
+  },
+  "project.upload.password": {
+    "row": 1183,
+    "group": "29    工程设置 › 上传设置    ·    project.upload ",
+    "zh": "密码",
+    "en": "Password",
+    "original": "Password",
+    "note": "",
+    "status": "retained"
+  },
+  "project.upload.uploadPath": {
+    "row": 1184,
+    "group": "29    工程设置 › 上传设置    ·    project.upload ",
+    "zh": "上传路径",
+    "en": "Upload Path",
+    "original": "Upload Path",
+    "note": "",
+    "status": "retained"
+  },
+  "project.upload.uploadPathTip": {
+    "row": 1185,
+    "group": "29    工程设置 › 上传设置    ·    project.upload ",
+    "zh": "上传路径格式为“地址/路径”，如“ftp://192.168.1.10/record”",
+    "en": "The upload path format is \"address/path\", such as\"ftp://192.168.1.10/record\"",
+    "original": "The upload path format is \"address/path\", such as\"ftp://192.168.1.10/record\"",
+    "note": "",
+    "status": "retained"
+  },
+  "project.upload.uploadMode": {
+    "row": 1186,
+    "group": "29    工程设置 › 上传设置    ·    project.upload ",
+    "zh": "上传方式",
+    "en": "Upload Schedule",
+    "original": "Upload Way",
+    "note": "此组选择闲时、持续或定时上传。",
+    "status": "changed"
+  },
+  "project.upload.tip1": {
+    "row": 1187,
+    "group": "29    工程设置 › 上传设置    ·    project.upload ",
+    "zh": "1、闲时上传，是指录播主机在无其他任务执行时，进行录像文件同步。",
+    "en": "1. Idle: Upload recordings when the device is not running other tasks.",
+    "original": "1. leisure, upload when no other tasks are executed.",
+    "note": "与 Idle 选项对应。",
+    "status": "changed"
+  },
+  "project.upload.tip2": {
+    "row": 1188,
+    "group": "29    工程设置 › 上传设置    ·    project.upload ",
+    "zh": "2、实时上传，是指只要有文件未同步完成，就会进行文件同步。",
+    "en": "2. Continuous: Upload whenever files remain unsynchronized.",
+    "original": "2. real time, upload as long as any file is not synchronized.",
+    "note": "不承诺正在录制文件的实时码流上传。",
+    "status": "changed"
+  },
+  "project.upload.tip3": {
+    "row": 1189,
+    "group": "29    工程设置 › 上传设置    ·    project.upload ",
+    "zh": "3、定时上传，是指在指定时间内进行文件同步。",
+    "en": "3. Scheduled: Upload files during the specified time window.",
+    "original": "3. timing, means that synchronize files within the specified time.",
+    "note": "与 Scheduled 选项对应。",
+    "status": "changed"
+  },
+  "project.upload.startTime": {
+    "row": 1190,
+    "group": "29    工程设置 › 上传设置    ·    project.upload ",
+    "zh": "开始时间",
+    "en": "Start Time",
+    "original": "Time-on",
+    "note": "定时上传开始时间。",
+    "status": "changed"
+  },
+  "project.upload.duration": {
+    "row": 1191,
+    "group": "29    工程设置 › 上传设置    ·    project.upload ",
+    "zh": "持续时间",
+    "en": "Duration",
+    "original": "Duration",
+    "note": "",
+    "status": "retained"
+  },
+  "project.upload.minute": {
+    "row": 1192,
+    "group": "29    工程设置 › 上传设置    ·    project.upload ",
+    "zh": "分钟",
+    "en": "min",
+    "original": "min",
+    "note": "",
+    "status": "retained"
+  },
+  "project.upload.uploadByUserNameEnable": {
+    "row": 1193,
+    "group": "29    工程设置 › 上传设置    ·    project.upload ",
+    "zh": "根据用户名上传到不同目录",
+    "en": "Separate Folders by Username",
+    "original": "uploadByUserName",
+    "note": "不用代码变量作为标签。",
+    "status": "changed"
+  },
+  "project.upload.uploadFilmOnlyEnable": {
+    "row": 1194,
+    "group": "29    工程设置 › 上传设置    ·    project.upload ",
+    "zh": "只上传电影模式的录像",
+    "en": "Upload PGM Recordings Only",
+    "original": "uploadFilmOnly",
+    "note": "电影模式指节目录像。",
+    "status": "changed"
+  },
+  "project.upload.default": {
+    "row": 1195,
+    "group": "29    工程设置 › 上传设置    ·    project.upload ",
+    "zh": "标准ftp上传",
+    "en": "Standard FTP upload",
+    "original": "Standard FTP upload",
+    "note": "",
+    "status": "retained"
+  },
+  "project.upload.JK": {
+    "row": 1196,
+    "group": "29    工程设置 › 上传设置    ·    project.upload ",
+    "zh": "上传到集控平台",
+    "en": "Upload to centralized control platform",
+    "original": "Upload to centralized control platform",
+    "note": "",
+    "status": "retained"
+  },
+  "project.upload.HX": {
+    "row": 1197,
+    "group": "29    工程设置 › 上传设置    ·    project.upload ",
+    "zh": "上传到第三方集控平台",
+    "en": "Upload to the third-party centralized control platform",
+    "original": "Upload to the third-party centralized control platform",
+    "note": "",
+    "status": "retained"
+  },
+  "project.upload.close": {
+    "row": 1198,
+    "group": "29    工程设置 › 上传设置    ·    project.upload ",
+    "zh": "关闭",
+    "en": "Off",
+    "original": "close",
+    "note": "上传开关状态，不是关闭窗口。",
+    "status": "changed"
+  },
+  "project.upload.leisure": {
+    "row": 1199,
+    "group": "29    工程设置 › 上传设置    ·    project.upload ",
+    "zh": "闲时上传",
+    "en": "Idle",
+    "original": "leisure",
+    "note": "闲时上传，不是休闲活动。",
+    "status": "changed"
+  },
+  "project.upload.always": {
+    "row": 1200,
+    "group": "29    工程设置 › 上传设置    ·    project.upload ",
+    "zh": "实时上传",
+    "en": "Continuous",
+    "original": "real time",
+    "note": "有未同步文件就继续上传。",
+    "status": "changed"
+  },
+  "project.upload.at": {
+    "row": 1201,
+    "group": "29    工程设置 › 上传设置    ·    project.upload ",
+    "zh": "定时上传",
+    "en": "Scheduled",
+    "original": "timing",
+    "note": "定时上传的常用表达。",
+    "status": "changed"
+  },
+  "project.upload.uploadPathEmpty": {
+    "row": 1202,
+    "group": "29    工程设置 › 上传设置    ·    project.upload ",
+    "zh": "上传路径不能为空",
+    "en": "Upload path cannot be empty.",
+    "original": "Upload path cannot be empty.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.upload.uploadPathIllegal": {
+    "row": 1203,
+    "group": "29    工程设置 › 上传设置    ·    project.upload ",
+    "zh": "上传路径含有非法字符，请检查后重试",
+    "en": "The upload path contains illegal characters. Please check and try again.",
+    "original": "The upload path contains illegal characters. Please check and try again.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.upload.userNameIllegal": {
+    "row": 1204,
+    "group": "29    工程设置 › 上传设置    ·    project.upload ",
+    "zh": "用户名含有非法字符，请检查后重试",
+    "en": "The user name contains illegal characters. Please check and try again.",
+    "original": "The user name contains illegal characters. Please check and try again.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.upload.passwordIllegal": {
+    "row": 1205,
+    "group": "29    工程设置 › 上传设置    ·    project.upload ",
+    "zh": "密码含有非法字符，请检查后重试",
+    "en": "The password contains illegal characters. Please check and try again.",
+    "original": "The password contains illegal characters. Please check and try again.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.upload.lessThanTenMinutes": {
+    "row": 1206,
+    "group": "29    工程设置 › 上传设置    ·    project.upload ",
+    "zh": "用时不能小于10分钟",
+    "en": "Upload duration must be at least 10 minutes.",
+    "original": "The time shall not be less than 10 minutes.",
+    "note": "明确时间限制对象。",
+    "status": "changed"
+  },
+  "project.upload.moreThanTwentyHours": {
+    "row": 1207,
+    "group": "29    工程设置 › 上传设置    ·    project.upload ",
+    "zh": "用时不能大于20小时",
+    "en": "Upload duration cannot exceed 20 hours.",
+    "original": "Time shall not exceed 20 hours.",
+    "note": "明确时间限制对象。",
+    "status": "changed"
+  },
+  "project.upload.DeweiSetFail": {
+    "row": 1208,
+    "group": "29    工程设置 › 上传设置    ·    project.upload ",
+    "zh": "德威参数设置失败",
+    "en": "Dewei parameter setting failed.",
+    "original": "Dewei parameter setting failed.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.upload.maxTwentyHours": {
+    "row": 1209,
+    "group": "29    工程设置 › 上传设置    ·    project.upload ",
+    "zh": "提示：不超过1200分钟",
+    "en": "Tip: No more than 1200 minutes",
+    "original": "Tip: No more than 1200 minutes",
+    "note": "",
+    "status": "retained"
+  }
+}

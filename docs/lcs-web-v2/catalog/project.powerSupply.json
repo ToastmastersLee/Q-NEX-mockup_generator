@@ -1,0 +1,155 @@
+{
+  "project.powerSupply.powerSupplySetting": {
+    "row": 1308,
+    "group": "33    工程设置 › 电源设置    ·    project.powerSupply",
+    "zh": "电源设置",
+    "en": "Power Settings",
+    "original": "Power Setting",
+    "note": "设置页使用复数。",
+    "status": "changed"
+  },
+  "project.powerSupply.notSupported": {
+    "row": 1309,
+    "group": "33    工程设置 › 电源设置    ·    project.powerSupply",
+    "zh": "本机型不支持电源设置",
+    "en": "This model does not support power settings.",
+    "original": "This model does not support power settings.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.powerSupply.powerMode": {
+    "row": 1310,
+    "group": "33    工程设置 › 电源设置    ·    project.powerSupply",
+    "zh": "上电模式",
+    "en": "Power Mode",
+    "original": "Power Mode",
+    "note": "",
+    "status": "retained"
+  },
+  "project.powerSupply.powerBoot1": {
+    "row": 1311,
+    "group": "33    工程设置 › 电源设置    ·    project.powerSupply",
+    "zh": "定时开关机设置一",
+    "en": "Power Schedule 1",
+    "original": "Timing switch 1",
+    "note": "定时开关机，不是定时开关器件。",
+    "status": "changed"
+  },
+  "project.powerSupply.powerBoot2": {
+    "row": 1312,
+    "group": "33    工程设置 › 电源设置    ·    project.powerSupply",
+    "zh": "定时开关机设置二",
+    "en": "Power Schedule 2",
+    "original": "Timing switch 2",
+    "note": "定时开关机，不是定时开关器件。",
+    "status": "changed"
+  },
+  "project.powerSupply.powerOn": {
+    "row": 1313,
+    "group": "33    工程设置 › 电源设置    ·    project.powerSupply",
+    "zh": "开机时间",
+    "en": "Power-On Time",
+    "original": "PowerOn",
+    "note": "时间字段，不是开机按钮。",
+    "status": "changed"
+  },
+  "project.powerSupply.powerOff": {
+    "row": 1314,
+    "group": "33    工程设置 › 电源设置    ·    project.powerSupply",
+    "zh": "关机时间",
+    "en": "Power-Off Time",
+    "original": "PowerOff",
+    "note": "时间字段，不是关机按钮。",
+    "status": "changed"
+  },
+  "project.powerSupply.normalBoot": {
+    "row": 1315,
+    "group": "33    工程设置 › 电源设置    ·    project.powerSupply",
+    "zh": "常规开机",
+    "en": "Normal Boot",
+    "original": "Normal Boot",
+    "note": "",
+    "status": "retained"
+  },
+  "project.powerSupply.powerOnSelfStart": {
+    "row": 1316,
+    "group": "33    工程设置 › 电源设置    ·    project.powerSupply",
+    "zh": "上电开机",
+    "en": "Start When Power Is Applied",
+    "original": "Power on self start",
+    "note": "准确区分上电与正常开机。",
+    "status": "changed"
+  },
+  "project.powerSupply.hdmiInputPowerOn": {
+    "row": 1317,
+    "group": "33    工程设置 › 电源设置    ·    project.powerSupply",
+    "zh": "HDMI输入信号开机",
+    "en": "Start on HDMI Signal",
+    "original": "HDMI input signal power on",
+    "note": "简短表达 HDMI 信号触发开机。",
+    "status": "changed"
+  },
+  "project.powerSupply.getPowerModeFail": {
+    "row": 1318,
+    "group": "33    工程设置 › 电源设置    ·    project.powerSupply",
+    "zh": "获取定时开关机信息失败",
+    "en": "Failed to retrieve power schedules.",
+    "original": "Failed to obtain scheduled on / off information.",
+    "note": "简化定时开关机提示。",
+    "status": "changed"
+  },
+  "project.powerSupply.setTimePowerFail": {
+    "row": 1319,
+    "group": "33    工程设置 › 电源设置    ·    project.powerSupply",
+    "zh": "定时开关机设置失败",
+    "en": "Failed to save power schedules.",
+    "original": "Timed on / off setting failed.",
+    "note": "统一定时开关机术语。",
+    "status": "changed"
+  },
+  "project.powerSupply.setPowerModeFail": {
+    "row": 1320,
+    "group": "33    工程设置 › 电源设置    ·    project.powerSupply",
+    "zh": "设置电源启动模式失败",
+    "en": "Failed to set power start mode.",
+    "original": "Failed to set power start mode.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.powerSupply.noLessThanTwoMin": {
+    "row": 1321,
+    "group": "33    工程设置 › 电源设置    ·    project.powerSupply",
+    "zh": "定时开关机时间间隔不得小于两分钟",
+    "en": "Scheduled power-on and power-off times must be at least two minutes apart.",
+    "original": "The time interval between regular startup and shutdown shall not be less than two minutes.",
+    "note": "保留最小时间间隔。",
+    "status": "changed"
+  },
+  "project.powerSupply.intersect": {
+    "row": 1322,
+    "group": "33    工程设置 › 电源设置    ·    project.powerSupply",
+    "zh": "两组定时开关机时间相交",
+    "en": "The two power schedules overlap.",
+    "original": "Two groups of timed on / off time intersect.",
+    "note": "时间段相交。",
+    "status": "changed"
+  },
+  "project.powerSupply.contain": {
+    "row": 1323,
+    "group": "33    工程设置 › 电源设置    ·    project.powerSupply",
+    "zh": "两组定时开关机时间包含",
+    "en": "One power schedule falls entirely within the other.",
+    "original": "Two sets of timed startup and shutdown time include.",
+    "note": "原译 include 不完整，明确包含关系。",
+    "status": "changed"
+  },
+  "project.powerSupply.noLessThanTwoMinTwoGroups": {
+    "row": 1324,
+    "group": "33    工程设置 › 电源设置    ·    project.powerSupply",
+    "zh": "两组定时开关机时间间隔不得小于两分钟",
+    "en": "The two power schedules must be at least two minutes apart.",
+    "original": "The time interval between two groups of timed startup and shutdown shall not be less than two minutes.",
+    "note": "保留两组之间的最小间隔。",
+    "status": "changed"
+  }
+}

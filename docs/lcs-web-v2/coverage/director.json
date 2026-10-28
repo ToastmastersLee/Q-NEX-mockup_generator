@@ -1,0 +1,448 @@
+{
+  "director.status": {
+    "status": "retained",
+    "controls": [
+      "main.status.title"
+    ]
+  },
+  "director.topic": {
+    "status": "retained",
+    "controls": [
+      "main.status.topic"
+    ]
+  },
+  "director.speak": {
+    "status": "changed",
+    "controls": [
+      "main.status.speaker"
+    ]
+  },
+  "director.recordParam": {
+    "status": "changed",
+    "controls": [
+      "main.status.recording"
+    ]
+  },
+  "director.liveParam": {
+    "status": "changed",
+    "controls": [
+      "main.status.live"
+    ]
+  },
+  "director.diskSize": {
+    "status": "changed",
+    "controls": [
+      "main.status.diskSpace"
+    ]
+  },
+  "director.networkState": {
+    "status": "changed",
+    "controls": [
+      "main.status.network"
+    ]
+  },
+  "director.wiredNetwork": {
+    "status": "retained",
+    "controls": []
+  },
+  "director.wifi": {
+    "status": "retained",
+    "controls": []
+  },
+  "director.mobileNetwork": {
+    "status": "retained",
+    "controls": []
+  },
+  "director.mobileStorage": {
+    "status": "changed",
+    "controls": [
+      "main.status.storage"
+    ]
+  },
+  "director.mobileStorageConnected": {
+    "status": "retained",
+    "controls": []
+  },
+  "director.mobileStorageNotConnected": {
+    "status": "retained",
+    "controls": [
+      "main.status.storageVal"
+    ]
+  },
+  "director.systemTime": {
+    "status": "changed",
+    "controls": [
+      "main.status.systemTime"
+    ]
+  },
+  "director.closeRecord": {
+    "status": "changed",
+    "controls": []
+  },
+  "director.noRecordChannel": {
+    "status": "changed",
+    "controls": []
+  },
+  "director.noLiveChannel": {
+    "status": "changed",
+    "controls": []
+  },
+  "director.LAN": {
+    "status": "retained",
+    "controls": []
+  },
+  "director.WAN": {
+    "status": "retained",
+    "controls": []
+  },
+  "director.noNetwork": {
+    "status": "retained",
+    "controls": []
+  },
+  "director.classTopicInputError": {
+    "status": "retained",
+    "controls": []
+  },
+  "director.start": {
+    "status": "retained",
+    "controls": [
+      "main.start"
+    ]
+  },
+  "director.record": {
+    "status": "retained",
+    "controls": [
+      "main.rec"
+    ]
+  },
+  "director.pause": {
+    "status": "retained",
+    "controls": [
+      "main.pause"
+    ]
+  },
+  "director.continue": {
+    "status": "changed",
+    "controls": []
+  },
+  "director.stop": {
+    "status": "retained",
+    "controls": [
+      "main.stop"
+    ]
+  },
+  "director.live": {
+    "status": "retained",
+    "controls": [
+      "main.liveCard"
+    ]
+  },
+  "director.share": {
+    "status": "retained",
+    "controls": [
+      "main.share"
+    ]
+  },
+  "director.liveShare": {
+    "status": "changed",
+    "controls": []
+  },
+  "director.copyLink": {
+    "status": "retained",
+    "controls": []
+  },
+  "director.scanningCode": {
+    "status": "changed",
+    "controls": []
+  },
+  "director.liveUrlEmpty": {
+    "status": "changed",
+    "controls": []
+  },
+  "director.openLive": {
+    "status": "retained",
+    "controls": []
+  },
+  "director.openChannelLiveFirst": {
+    "status": "retained",
+    "controls": []
+  },
+  "director.clickUrlToWatch": {
+    "status": "retained",
+    "controls": []
+  },
+  "director.useFirefox": {
+    "status": "retained",
+    "controls": []
+  },
+  "director.subtitle": {
+    "status": "retained",
+    "controls": [
+      "main.overlays.subtitle"
+    ]
+  },
+  "director.xfSubOpenError": {
+    "status": "changed",
+    "controls": []
+  },
+  "director.logo": {
+    "status": "retained",
+    "controls": [
+      "main.overlays.logo"
+    ]
+  },
+  "director.title": {
+    "status": "changed",
+    "controls": [
+      "main.overlays.title"
+    ]
+  },
+  "director.trailer": {
+    "status": "changed",
+    "controls": [
+      "main.overlays.trailer"
+    ]
+  },
+  "director.closing": {
+    "status": "changed",
+    "controls": [
+      "main.overlays.closing"
+    ]
+  },
+  "director.dateTime": {
+    "status": "retained",
+    "controls": []
+  },
+  "director.date": {
+    "status": "retained",
+    "controls": []
+  },
+  "director.time": {
+    "status": "retained",
+    "controls": []
+  },
+  "director.osdSetFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "director.preset1": {
+    "status": "retained",
+    "controls": []
+  },
+  "director.noTitle": {
+    "status": "changed",
+    "controls": []
+  },
+  "director.noTrailer": {
+    "status": "changed",
+    "controls": []
+  },
+  "director.directorMode": {
+    "status": "changed",
+    "controls": [
+      "main.directorMode.title"
+    ]
+  },
+  "director.auto": {
+    "status": "retained",
+    "controls": [
+      "main.directorMode.auto"
+    ]
+  },
+  "director.semiauto": {
+    "status": "retained",
+    "controls": [
+      "main.directorMode.semiAuto"
+    ]
+  },
+  "director.manual": {
+    "status": "retained",
+    "controls": [
+      "main.directorMode.manual"
+    ]
+  },
+  "director.PTZ": {
+    "status": "retained",
+    "controls": [
+      "main.ptz.title"
+    ]
+  },
+  "director.speed": {
+    "status": "retained",
+    "controls": [
+      "main.ptz.speed"
+    ]
+  },
+  "director.quick": {
+    "status": "changed",
+    "controls": [
+      "main.ptz.quick"
+    ]
+  },
+  "director.slow": {
+    "status": "retained",
+    "controls": [
+      "main.ptz.slow"
+    ]
+  },
+  "director.zoom": {
+    "status": "retained",
+    "controls": [
+      "main.ptz.zoom"
+    ]
+  },
+  "director.preset": {
+    "status": "retained",
+    "controls": [
+      "main.ptz.presets"
+    ]
+  },
+  "director.set": {
+    "status": "retained",
+    "controls": [
+      "main.ptz.set"
+    ]
+  },
+  "director.call": {
+    "status": "changed",
+    "controls": [
+      "main.ptz.apply"
+    ]
+  },
+  "director.transition": {
+    "status": "retained",
+    "controls": [
+      "main.transition.title"
+    ]
+  },
+  "director.cut": {
+    "status": "retained",
+    "controls": [
+      "main.transition.cut"
+    ]
+  },
+  "director.position": {
+    "status": "retained",
+    "controls": []
+  },
+  "director.size": {
+    "status": "retained",
+    "controls": []
+  },
+  "director.close": {
+    "status": "retained",
+    "controls": []
+  },
+  "director.layout": {
+    "status": "retained",
+    "controls": [
+      "main.layout.title"
+    ]
+  },
+  "director.diskNotFound": {
+    "status": "changed",
+    "controls": []
+  },
+  "director.notSupportedRecord": {
+    "status": "changed",
+    "controls": []
+  },
+  "director.licenseExpiredRecord": {
+    "status": "changed",
+    "controls": []
+  },
+  "director.noRecordLicense": {
+    "status": "changed",
+    "controls": []
+  },
+  "director.diskSizeWarning": {
+    "status": "retained",
+    "controls": []
+  },
+  "director.openingLive": {
+    "status": "changed",
+    "controls": []
+  },
+  "director.liveError": {
+    "status": "retained",
+    "controls": []
+  },
+  "director.connectLiveServerFailed": {
+    "status": "retained",
+    "controls": []
+  },
+  "director.notSupportedLive": {
+    "status": "changed",
+    "controls": []
+  },
+  "director.noLiveLicense": {
+    "status": "changed",
+    "controls": []
+  },
+  "director.notOpenRecordChannel": {
+    "status": "changed",
+    "controls": []
+  },
+  "director.repairingFile": {
+    "status": "retained",
+    "controls": []
+  },
+  "director.notOpenLiveChannel": {
+    "status": "changed",
+    "controls": []
+  },
+  "director.licenseExpiredLive": {
+    "status": "changed",
+    "controls": []
+  },
+  "director.livePortError": {
+    "status": "changed",
+    "controls": []
+  },
+  "director.rebootOrNot": {
+    "status": "changed",
+    "controls": [
+      "common.rebootConfirm"
+    ]
+  },
+  "director.poweroffOrNot": {
+    "status": "changed",
+    "controls": [
+      "common.shutdownConfirm"
+    ]
+  },
+  "director.logOutOrNot": {
+    "status": "changed",
+    "controls": [
+      "common.logoutConfirm"
+    ]
+  },
+  "director.stopRecordOrLive": {
+    "status": "changed",
+    "controls": []
+  },
+  "director.stopRecord": {
+    "status": "changed",
+    "controls": []
+  },
+  "director.stopLive": {
+    "status": "changed",
+    "controls": []
+  },
+  "director.stopInteractive": {
+    "status": "changed",
+    "controls": []
+  },
+  "director.diskMessage1": {
+    "status": "retained",
+    "controls": []
+  },
+  "director.diskMessage2": {
+    "status": "changed",
+    "controls": []
+  },
+  "director.diskMessage3": {
+    "status": "changed",
+    "controls": []
+  }
+}

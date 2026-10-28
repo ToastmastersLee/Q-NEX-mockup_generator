@@ -1,0 +1,52 @@
+{
+  "status.networkVal": {
+    "zh": "有线网络 · 已联网（公网）",
+    "en": "Wired Network · Connected (WAN)",
+    "reason": "组合 director.wiredNetwork 与 director.WAN。"
+  },
+  "programOutput": {
+    "zh": "主输出画面 (PGM)",
+    "en": "Program Output (PGM)",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  },
+  "noSignal": {
+    "zh": "无信号",
+    "en": "No Signal",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  },
+  "overlays.osd": {
+    "zh": "OSD",
+    "en": "OSD",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "overlays.opening": {
+    "zh": "开启",
+    "en": "On",
+    "reason": "状态值，避免套用公用动作 Open。"
+  },
+  "transition.dur05": {
+    "zh": "0.5秒",
+    "en": "0.5s",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "transition.dur10": {
+    "zh": "1.0秒",
+    "en": "1.0s",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "transition.dur15": {
+    "zh": "1.5秒",
+    "en": "1.5s",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "transition.dur20": {
+    "zh": "2.0秒",
+    "en": "2.0s",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "feeds.ptz": {
+    "zh": "PTZ",
+    "en": "PTZ",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  }
+}

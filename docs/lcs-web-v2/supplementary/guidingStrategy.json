@@ -1,0 +1,42 @@
+{
+  "cond1": {
+    "zh": "板书检测要求同时检测到教师",
+    "en": "Board: also require Teacher detection",
+    "reason": "组合条件对象与 factory 条件片段，保持完整句子。"
+  },
+  "cond2": {
+    "zh": "教师多目标切换到教师全景",
+    "en": "Teacher: multiple people → Teacher Wide",
+    "reason": "组合 factory 条件片段与通道名称，保留原条件对象。"
+  },
+  "cond3": {
+    "zh": "教师移动目标切换到教师全景",
+    "en": "Teacher: movement → Teacher Wide",
+    "reason": "组合 factory 条件片段与通道名称，保留原条件对象。"
+  },
+  "cond4": {
+    "zh": "教师单目标切换到教师全景",
+    "en": "Teacher: one person → Teacher Wide",
+    "reason": "组合 factory 条件片段与通道名称，保留原条件对象。"
+  },
+  "cond5": {
+    "zh": "学生多目标切换到学生全景",
+    "en": "Student: multiple people → Student Wide",
+    "reason": "组合 factory 条件片段与通道名称，保留原条件对象。"
+  },
+  "cond6": {
+    "zh": "学生移动目标切换到学生全景",
+    "en": "Student: movement → Student Wide",
+    "reason": "组合 factory 条件片段与通道名称，保留原条件对象。"
+  },
+  "cond7": {
+    "zh": "学生单目标切换到学生全景",
+    "en": "Student: one person → Student Wide",
+    "reason": "组合 factory 条件片段与通道名称，保留原条件对象。"
+  },
+  "notAvailable": {
+    "zh": "本机型不支持独立板书通道。",
+    "en": "An independent Board feed is not available on this model.",
+    "reason": "V3 说明：LCS810/LCS810(i) 不提供独立 Board 源。"
+  }
+}

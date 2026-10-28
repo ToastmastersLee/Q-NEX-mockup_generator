@@ -1,0 +1,401 @@
+{
+  "record.recordSetting": {
+    "status": "changed",
+    "controls": [
+      "common.sidebar.record",
+      "record.cardTitleRecord",
+      "record.pageTitle"
+    ]
+  },
+  "record.channel": {
+    "status": "retained",
+    "controls": [
+      "record.colChannel",
+      "record.colRecChannel"
+    ]
+  },
+  "record.name": {
+    "status": "retained",
+    "controls": [
+      "record.colName"
+    ]
+  },
+  "record.format": {
+    "status": "retained",
+    "controls": [
+      "record.colFormat"
+    ]
+  },
+  "record.resolution": {
+    "status": "retained",
+    "controls": [
+      "record.colResolution"
+    ]
+  },
+  "record.bitRate": {
+    "status": "retained",
+    "controls": [
+      "record.colBitrate"
+    ]
+  },
+  "record.frameRate": {
+    "status": "changed",
+    "controls": [
+      "record.colFramerate"
+    ]
+  },
+  "record.code": {
+    "status": "changed",
+    "controls": [
+      "record.colEncoding"
+    ]
+  },
+  "record.recordEnable": {
+    "status": "changed",
+    "controls": [
+      "record.colIsRecord"
+    ]
+  },
+  "record.autoRecord": {
+    "status": "changed",
+    "controls": [
+      "record.autoRecordBoot"
+    ]
+  },
+  "record.fileFragmentTime": {
+    "status": "retained",
+    "controls": [
+      "record.segmentDuration"
+    ]
+  },
+  "record.maxRecordDuration": {
+    "status": "retained",
+    "controls": [
+      "record.maxDuration"
+    ]
+  },
+  "record.recordDurationTip": {
+    "status": "retained",
+    "controls": [
+      "record.tipMaxDuration"
+    ]
+  },
+  "record.recordFormatTip": {
+    "status": "changed",
+    "controls": [
+      "record.formatTip"
+    ]
+  },
+  "record.timedRecording": {
+    "status": "changed",
+    "controls": [
+      "record.cardTitleSchedule"
+    ]
+  },
+  "record.operation": {
+    "status": "changed",
+    "controls": [
+      "record.colOp"
+    ]
+  },
+  "record.enable": {
+    "status": "changed",
+    "controls": [
+      "record.colEnable"
+    ]
+  },
+  "record.startTime": {
+    "status": "retained",
+    "controls": [
+      "record.colStartTime"
+    ]
+  },
+  "record.stopTime": {
+    "status": "retained",
+    "controls": [
+      "record.colEndTime"
+    ]
+  },
+  "record.duration": {
+    "status": "retained",
+    "controls": [
+      "record.colDuration"
+    ]
+  },
+  "record.tip1": {
+    "status": "changed",
+    "controls": [
+      "record.tip1"
+    ]
+  },
+  "record.tip2": {
+    "status": "changed",
+    "controls": [
+      "record.tip2"
+    ]
+  },
+  "record.tip3": {
+    "status": "changed",
+    "controls": [
+      "record.tip3"
+    ]
+  },
+  "record.tip4": {
+    "status": "changed",
+    "controls": [
+      "record.tip4"
+    ]
+  },
+  "record.once": {
+    "status": "retained",
+    "controls": [
+      "record.colOnce"
+    ]
+  },
+  "record.everyday": {
+    "status": "changed",
+    "controls": [
+      "record.colDaily"
+    ]
+  },
+  "record.monday": {
+    "status": "retained",
+    "controls": [
+      "record.colMon"
+    ]
+  },
+  "record.tuesday": {
+    "status": "retained",
+    "controls": [
+      "record.colTue"
+    ]
+  },
+  "record.wednesday": {
+    "status": "retained",
+    "controls": [
+      "record.colWed"
+    ]
+  },
+  "record.thursday": {
+    "status": "retained",
+    "controls": [
+      "record.colThu"
+    ]
+  },
+  "record.friday": {
+    "status": "retained",
+    "controls": [
+      "record.colFri"
+    ]
+  },
+  "record.saturday": {
+    "status": "retained",
+    "controls": [
+      "record.colSat"
+    ]
+  },
+  "record.sunday": {
+    "status": "retained",
+    "controls": [
+      "record.colSun"
+    ]
+  },
+  "record.repeat": {
+    "status": "retained",
+    "controls": []
+  },
+  "record.noSegment": {
+    "status": "changed",
+    "controls": [
+      "record.noSegment"
+    ]
+  },
+  "record.tenMinutes": {
+    "status": "retained",
+    "controls": [
+      "record.min10"
+    ]
+  },
+  "record.fifteenMinutes": {
+    "status": "retained",
+    "controls": [
+      "record.min15"
+    ]
+  },
+  "record.twentyMinutes": {
+    "status": "retained",
+    "controls": [
+      "record.min20"
+    ]
+  },
+  "record.thirtyMinutes": {
+    "status": "retained",
+    "controls": [
+      "record.min30"
+    ]
+  },
+  "record.fortyFiveMinutes": {
+    "status": "retained",
+    "controls": [
+      "record.min45"
+    ]
+  },
+  "record.oneHour": {
+    "status": "changed",
+    "controls": [
+      "record.hour1"
+    ]
+  },
+  "record.twoHours": {
+    "status": "changed",
+    "controls": [
+      "record.hour2"
+    ]
+  },
+  "record.fourHours": {
+    "status": "changed",
+    "controls": [
+      "record.hours4"
+    ]
+  },
+  "record.sixHours": {
+    "status": "changed",
+    "controls": [
+      "record.hours6"
+    ]
+  },
+  "record.eightHours": {
+    "status": "changed",
+    "controls": [
+      "record.hours8"
+    ]
+  },
+  "record.tenHours": {
+    "status": "changed",
+    "controls": [
+      "record.hours10"
+    ]
+  },
+  "record.twelveHours": {
+    "status": "changed",
+    "controls": [
+      "record.hours12"
+    ]
+  },
+  "record.twentyFourHours": {
+    "status": "changed",
+    "controls": [
+      "record.hours24"
+    ]
+  },
+  "record.noLimit": {
+    "status": "retained",
+    "controls": []
+  },
+  "record.minute": {
+    "status": "retained",
+    "controls": []
+  },
+  "record.lessThanTwoHours": {
+    "status": "retained",
+    "controls": []
+  },
+  "record.classTopicInputError": {
+    "status": "changed",
+    "controls": []
+  },
+  "record.noLessThanTwo": {
+    "status": "retained",
+    "controls": []
+  },
+  "record.noMoreThanEight": {
+    "status": "retained",
+    "controls": []
+  },
+  "record.noMoreThanCount": {
+    "status": "retained",
+    "controls": []
+  },
+  "record.setAutoRecordStateFail": {
+    "status": "changed",
+    "controls": []
+  },
+  "record.startTimeOrStopTimeNull": {
+    "status": "retained",
+    "controls": []
+  },
+  "record.timeError": {
+    "status": "retained",
+    "controls": []
+  },
+  "record.conflict": {
+    "status": "pending",
+    "controls": []
+  },
+  "record.lessThanSixtySeconds": {
+    "status": "pending",
+    "controls": []
+  },
+  "record.nameEmpty": {
+    "status": "changed",
+    "controls": []
+  },
+  "record.nameMoreThanEighteen": {
+    "status": "changed",
+    "controls": []
+  },
+  "record.nameError": {
+    "status": "retained",
+    "controls": []
+  },
+  "record.sameName": {
+    "status": "changed",
+    "controls": []
+  },
+  "record.fileFragmentTimeMoreThanMax": {
+    "status": "changed",
+    "controls": []
+  },
+  "record.timerDurationMoreThanMax": {
+    "status": "retained",
+    "controls": []
+  },
+  "record.recordMixSetting": {
+    "status": "changed",
+    "controls": []
+  },
+  "record.mixChannel": {
+    "status": "retained",
+    "controls": [
+      "record.colMixChannel"
+    ]
+  },
+  "record.onlyFilmLive4K": {
+    "status": "changed",
+    "controls": []
+  },
+  "record.rtspAudioSetting": {
+    "status": "retained",
+    "controls": [
+      "record.cardTitleRtspAudio"
+    ]
+  },
+  "record.rtspAudioMixTip": {
+    "status": "changed",
+    "controls": [
+      "record.tipRtspAudio"
+    ]
+  },
+  "record.rtspOnlyAudioSetting": {
+    "status": "retained",
+    "controls": [
+      "record.cardTitleDigitalAudio"
+    ]
+  },
+  "record.rtspOnlyAudioMixTip": {
+    "status": "changed",
+    "controls": [
+      "record.tipDigitalAudio"
+    ]
+  }
+}

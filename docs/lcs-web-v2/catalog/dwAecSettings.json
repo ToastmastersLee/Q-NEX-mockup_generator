@@ -1,0 +1,200 @@
+{
+  "dwAecSettings.dwAecSettings": {
+    "row": 957,
+    "group": "23    回声抑制（DW） · dwAecSettings  页面停用",
+    "zh": "回声抑制",
+    "en": "Echo Suppression",
+    "original": "Echo Suppression",
+    "note": "",
+    "status": "retained"
+  },
+  "dwAecSettings.ansLevel": {
+    "row": 958,
+    "group": "23    回声抑制（DW） · dwAecSettings  页面停用",
+    "zh": "降噪等级",
+    "en": "Noise Reduction Level",
+    "original": "Denoise Level",
+    "note": "降噪等级的自然表达。",
+    "status": "changed"
+  },
+  "dwAecSettings.aecLevel": {
+    "row": 959,
+    "group": "23    回声抑制（DW） · dwAecSettings  页面停用",
+    "zh": "AEC等级",
+    "en": "AEC Level",
+    "original": "AEC Level",
+    "note": "",
+    "status": "retained"
+  },
+  "dwAecSettings.aecAttenuateLevel": {
+    "row": 960,
+    "group": "23    回声抑制（DW） · dwAecSettings  页面停用",
+    "zh": "乘级等级",
+    "en": "Attenuate Level",
+    "original": "Attenuate Level",
+    "note": "待确认：“乘级等级”含义不清；若确为衰减等级，建议 Attenuation Level。",
+    "status": "pending"
+  },
+  "dwAecSettings.delayer": {
+    "row": 961,
+    "group": "23    回声抑制（DW） · dwAecSettings  页面停用",
+    "zh": "延时器",
+    "en": "Delay",
+    "original": "Delayer",
+    "note": "音频延时模块的常用短名称。",
+    "status": "changed"
+  },
+  "dwAecSettings.delayerTime": {
+    "row": 962,
+    "group": "23    回声抑制（DW） · dwAecSettings  页面停用",
+    "zh": "延时时间",
+    "en": "Delay Time",
+    "original": "Delayer Time",
+    "note": "修正 Delayer Time。",
+    "status": "changed"
+  },
+  "dwAecSettings.input": {
+    "row": 963,
+    "group": "23    回声抑制（DW） · dwAecSettings  页面停用",
+    "zh": "本地输入",
+    "en": "Local Input",
+    "original": "Local Input",
+    "note": "",
+    "status": "retained"
+  },
+  "dwAecSettings.mute": {
+    "row": 964,
+    "group": "23    回声抑制（DW） · dwAecSettings  页面停用",
+    "zh": "静音",
+    "en": "Mute",
+    "original": "Mute",
+    "note": "",
+    "status": "retained"
+  },
+  "dwAecSettings.volume": {
+    "row": 965,
+    "group": "23    回声抑制（DW） · dwAecSettings  页面停用",
+    "zh": "音量",
+    "en": "Volume",
+    "original": "Volume",
+    "note": "",
+    "status": "retained"
+  },
+  "dwAecSettings.sensitive": {
+    "row": 966,
+    "group": "23    回声抑制（DW） · dwAecSettings  页面停用",
+    "zh": "灵敏度",
+    "en": "Sensitivity",
+    "original": "Sensitive",
+    "note": "灵敏度使用名词形式。",
+    "status": "changed"
+  },
+  "dwAecSettings.inputR": {
+    "row": 967,
+    "group": "23    回声抑制（DW） · dwAecSettings  页面停用",
+    "zh": "远端输入",
+    "en": "Remote Input",
+    "original": "Remote Input",
+    "note": "",
+    "status": "retained"
+  },
+  "dwAecSettings.outputGain": {
+    "row": 968,
+    "group": "23    回声抑制（DW） · dwAecSettings  页面停用",
+    "zh": "本地输出增益",
+    "en": "Local output gain",
+    "original": "Local output gain",
+    "note": "",
+    "status": "retained"
+  },
+  "dwAecSettings.gain": {
+    "row": 969,
+    "group": "23    回声抑制（DW） · dwAecSettings  页面停用",
+    "zh": "增益",
+    "en": "Gain",
+    "original": "Gain",
+    "note": "",
+    "status": "retained"
+  },
+  "dwAecSettings.outputGainR": {
+    "row": 970,
+    "group": "23    回声抑制（DW） · dwAecSettings  页面停用",
+    "zh": "远端输出增益",
+    "en": "Remote output gain",
+    "original": "Remote output gain",
+    "note": "",
+    "status": "retained"
+  },
+  "dwAecSettings.expander": {
+    "row": 971,
+    "group": "23    回声抑制（DW） · dwAecSettings  页面停用",
+    "zh": "扩展器",
+    "en": "Expander",
+    "original": "Expander",
+    "note": "",
+    "status": "retained"
+  },
+  "dwAecSettings.threshold": {
+    "row": 972,
+    "group": "23    回声抑制（DW） · dwAecSettings  页面停用",
+    "zh": "阈值",
+    "en": "Threshold",
+    "original": "Threshold",
+    "note": "",
+    "status": "retained"
+  },
+  "dwAecSettings.ratio": {
+    "row": 973,
+    "group": "23    回声抑制（DW） · dwAecSettings  页面停用",
+    "zh": "比率",
+    "en": "Ratio",
+    "original": "Ratio",
+    "note": "",
+    "status": "retained"
+  },
+  "dwAecSettings.startTime": {
+    "row": 974,
+    "group": "23    回声抑制（DW） · dwAecSettings  页面停用",
+    "zh": "开始时间",
+    "en": "Attack Time",
+    "original": "Start Time",
+    "note": "扩展器的起作用时间。",
+    "status": "changed"
+  },
+  "dwAecSettings.recoveryTime": {
+    "row": 975,
+    "group": "23    回声抑制（DW） · dwAecSettings  页面停用",
+    "zh": "恢复时间",
+    "en": "Release Time",
+    "original": "RecoveryTime",
+    "note": "扩展器的恢复时间。",
+    "status": "changed"
+  },
+  "dwAecSettings.factoryReset": {
+    "row": 976,
+    "group": "23    回声抑制（DW） · dwAecSettings  页面停用",
+    "zh": "恢复出厂设置",
+    "en": "Factory Reset",
+    "original": "Factory Reset",
+    "note": "",
+    "status": "retained"
+  },
+  "dwAecSettings.factoryResetSuccess": {
+    "row": 977,
+    "group": "23    回声抑制（DW） · dwAecSettings  页面停用",
+    "zh": "恢复出厂设置成功",
+    "en": "Factory settings restored successfully.",
+    "original": "Factory settings restored successfully.",
+    "note": "",
+    "status": "retained"
+  },
+  "dwAecSettings.factoryResetFail": {
+    "row": 978,
+    "group": "23    回声抑制（DW） · dwAecSettings  页面停用",
+    "zh": "恢复出厂设置失败",
+    "en": "Failed to restore factory settings.",
+    "original": "Failed to restore factory settings.",
+    "note": "",
+    "status": "retained"
+  }
+}

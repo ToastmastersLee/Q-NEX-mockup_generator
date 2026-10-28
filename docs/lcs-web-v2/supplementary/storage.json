@@ -1,0 +1,12 @@
+{
+  "tipStorage": {
+    "zh": "磁盘空间不足时，“删除文件优先”会删除最早的录像；“停止录制优先”会停止录制。",
+    "en": "When storage is full, Delete Oldest removes the earliest recordings; Stop Recording stops the current recording.",
+    "reason": "合并解释两项已确认的存储策略。"
+  },
+  "tipNetworkPath": {
+    "zh": "网络路径格式为 //地址/路径，例如 //192.0.2.10/record。",
+    "en": "Use //address/path, for example //192.0.2.10/record.",
+    "reason": "保留路径语法，公开示例使用文档地址。"
+  }
+}

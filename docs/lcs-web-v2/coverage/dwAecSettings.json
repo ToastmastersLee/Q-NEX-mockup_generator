@@ -1,0 +1,90 @@
+{
+  "dwAecSettings.dwAecSettings": {
+    "status": "retained",
+    "controls": []
+  },
+  "dwAecSettings.ansLevel": {
+    "status": "changed",
+    "controls": []
+  },
+  "dwAecSettings.aecLevel": {
+    "status": "retained",
+    "controls": []
+  },
+  "dwAecSettings.aecAttenuateLevel": {
+    "status": "pending",
+    "controls": []
+  },
+  "dwAecSettings.delayer": {
+    "status": "changed",
+    "controls": []
+  },
+  "dwAecSettings.delayerTime": {
+    "status": "changed",
+    "controls": []
+  },
+  "dwAecSettings.input": {
+    "status": "retained",
+    "controls": []
+  },
+  "dwAecSettings.mute": {
+    "status": "retained",
+    "controls": []
+  },
+  "dwAecSettings.volume": {
+    "status": "retained",
+    "controls": []
+  },
+  "dwAecSettings.sensitive": {
+    "status": "changed",
+    "controls": []
+  },
+  "dwAecSettings.inputR": {
+    "status": "retained",
+    "controls": []
+  },
+  "dwAecSettings.outputGain": {
+    "status": "retained",
+    "controls": []
+  },
+  "dwAecSettings.gain": {
+    "status": "retained",
+    "controls": []
+  },
+  "dwAecSettings.outputGainR": {
+    "status": "retained",
+    "controls": []
+  },
+  "dwAecSettings.expander": {
+    "status": "retained",
+    "controls": []
+  },
+  "dwAecSettings.threshold": {
+    "status": "retained",
+    "controls": []
+  },
+  "dwAecSettings.ratio": {
+    "status": "retained",
+    "controls": []
+  },
+  "dwAecSettings.startTime": {
+    "status": "changed",
+    "controls": []
+  },
+  "dwAecSettings.recoveryTime": {
+    "status": "changed",
+    "controls": []
+  },
+  "dwAecSettings.factoryReset": {
+    "status": "retained",
+    "controls": []
+  },
+  "dwAecSettings.factoryResetSuccess": {
+    "status": "retained",
+    "controls": []
+  },
+  "dwAecSettings.factoryResetFail": {
+    "status": "retained",
+    "controls": []
+  }
+}

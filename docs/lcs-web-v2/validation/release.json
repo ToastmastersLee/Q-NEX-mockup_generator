@@ -1,0 +1,19 @@
+{
+  "bundle": "dist/lcs-web-v2",
+  "zip": "dist/lcs-web-v2-pages.zip",
+  "zipSha256": "09642de144082187fbd8873ea76232e184d7947f9cf1dfd4926fe74e7ae6f403",
+  "files": {
+    "assets/ch3_teacher_close-sBSlE4eC.png": "b8aa8313da1f05c6076e613d24c013a5a64d9b00834d27233a4029856c62a2bc",
+    "assets/ch4_student_close-Ce_gyu-g.png": "d9d00e7fb5a381f4cb603879e9f009d9ca0395652a234697461d4a723d030ec7",
+    "assets/ch4_student_panoprama-DMSUFvgj.png": "78a310925f051bbb4a630b4f9a72274b933ae539cda36c0dc8d9d77287730103",
+    "assets/favicon-HV1kWBx1.svg": "61bc9a161de58248288e6905425d7180f0624c2865007b97d763fdac12043a66",
+    "assets/index-B5x1u2Qn.css": "52a74449813d12cf49411830c93ee444f54a4c11f2715e91ef03c872493d614b",
+    "assets/index-C7Wgr1vD.js": "275d1b86d4e6cab842c92ae6cfb43fefda19d1fdaf990159858a11e03c792749",
+    "index.html": "e897ae6cded60499f28f3594fe0ba88a8ef7a0674afa10df8caf120a475a2ae0"
+  },
+  "sizeBytes": 6607861,
+  "published": true,
+  "site": "https://toastmasterslee.github.io/q/lcs/",
+  "publicCommit": "eccd4744cb913328ebd5f14ba8045555ac9b126e",
+  "workflow": "https://github.com/ToastmastersLee/q/actions/runs/40667012833"
+}

@@ -1,0 +1,243 @@
+{
+  "userManagement.addUser": {
+    "status": "retained",
+    "controls": [
+      "userManagement.addUser"
+    ]
+  },
+  "userManagement.inputDefaultUser": {
+    "status": "changed",
+    "controls": [
+      "userManagement.phDefaultUser"
+    ]
+  },
+  "userManagement.setDefaultUser": {
+    "status": "retained",
+    "controls": [
+      "userManagement.setDefaultUser"
+    ]
+  },
+  "userManagement.serialNumber": {
+    "status": "retained",
+    "controls": [
+      "userManagement.colSeq"
+    ]
+  },
+  "userManagement.userName": {
+    "status": "changed",
+    "controls": [
+      "userManagement.colUsername"
+    ]
+  },
+  "userManagement.role": {
+    "status": "retained",
+    "controls": [
+      "userManagement.colUserType"
+    ]
+  },
+  "userManagement.onlineStatus": {
+    "status": "retained",
+    "controls": [
+      "userManagement.colOnlineStatus"
+    ]
+  },
+  "userManagement.onlineDetails": {
+    "status": "retained",
+    "controls": [
+      "userManagement.colOnlineDetail"
+    ]
+  },
+  "userManagement.operation": {
+    "status": "changed",
+    "controls": [
+      "userManagement.colAction"
+    ]
+  },
+  "userManagement.online": {
+    "status": "retained",
+    "controls": [
+      "userManagement.online"
+    ]
+  },
+  "userManagement.offline": {
+    "status": "retained",
+    "controls": [
+      "userManagement.offline"
+    ]
+  },
+  "userManagement.check": {
+    "status": "changed",
+    "controls": [
+      "common.actions.check",
+      "userManagement.view"
+    ]
+  },
+  "userManagement.userOffline": {
+    "status": "changed",
+    "controls": [
+      "userManagement.userOffline"
+    ]
+  },
+  "userManagement.updatePassword": {
+    "status": "retained",
+    "controls": [
+      "userManagement.changePassword"
+    ]
+  },
+  "userManagement.deleteUser": {
+    "status": "retained",
+    "controls": [
+      "userManagement.deleteUser"
+    ]
+  },
+  "userManagement.account": {
+    "status": "retained",
+    "controls": [
+      "userManagement.account"
+    ]
+  },
+  "userManagement.password": {
+    "status": "retained",
+    "controls": [
+      "userManagement.password"
+    ]
+  },
+  "userManagement.confirmPassword": {
+    "status": "retained",
+    "controls": [
+      "userManagement.confirmPassword"
+    ]
+  },
+  "userManagement.inputUserName": {
+    "status": "changed",
+    "controls": [
+      "userManagement.inputUserName"
+    ]
+  },
+  "userManagement.inputPassword": {
+    "status": "retained",
+    "controls": [
+      "userManagement.inputPassword"
+    ]
+  },
+  "userManagement.inputPasswordAgain": {
+    "status": "retained",
+    "controls": [
+      "userManagement.inputPasswordAgain"
+    ]
+  },
+  "userManagement.system": {
+    "status": "retained",
+    "controls": [
+      "userManagement.system"
+    ]
+  },
+  "userManagement.platform": {
+    "status": "retained",
+    "controls": [
+      "userManagement.platform"
+    ]
+  },
+  "userManagement.IP": {
+    "status": "retained",
+    "controls": [
+      "userManagement.IP"
+    ]
+  },
+  "userManagement.oldPassword": {
+    "status": "retained",
+    "controls": [
+      "userManagement.oldPassword"
+    ]
+  },
+  "userManagement.newPassword": {
+    "status": "retained",
+    "controls": [
+      "userManagement.newPassword"
+    ]
+  },
+  "userManagement.inputOldPassword": {
+    "status": "retained",
+    "controls": []
+  },
+  "userManagement.inputNewPassword": {
+    "status": "retained",
+    "controls": []
+  },
+  "userManagement.confirmDeleteUser": {
+    "status": "retained",
+    "controls": [
+      "userManagement.confirmDeleteUser"
+    ]
+  },
+  "userManagement.validateLength": {
+    "status": "retained",
+    "controls": [
+      "userManagement.validateLength"
+    ]
+  },
+  "userManagement.validateUserName": {
+    "status": "changed",
+    "controls": [
+      "userManagement.validateUserName"
+    ]
+  },
+  "userManagement.validatePassword": {
+    "status": "retained",
+    "controls": [
+      "userManagement.validatePassword"
+    ]
+  },
+  "userManagement.notSamePassword": {
+    "status": "changed",
+    "controls": [
+      "userManagement.notSamePassword"
+    ]
+  },
+  "userManagement.addUserSuccess": {
+    "status": "retained",
+    "controls": [
+      "userManagement.addUserSuccess"
+    ]
+  },
+  "userManagement.userAlreadyExists": {
+    "status": "retained",
+    "controls": [
+      "userManagement.userAlreadyExists"
+    ]
+  },
+  "userManagement.addUserFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "userManagement.userOfflineSuccess": {
+    "status": "changed",
+    "controls": [
+      "userManagement.userOfflineSuccess"
+    ]
+  },
+  "userManagement.noPermission": {
+    "status": "changed",
+    "controls": []
+  },
+  "userManagement.updatePasswordSuccess": {
+    "status": "retained",
+    "controls": [
+      "userManagement.updatePasswordSuccess"
+    ]
+  },
+  "userManagement.updatePasswordFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "userManagement.deleteUserSuccess": {
+    "status": "retained",
+    "controls": [
+      "userManagement.deleteUserSuccess"
+    ]
+  },
+  "userManagement.deleteUserFail": {
+    "status": "retained",
+    "controls": []
+  }
+}

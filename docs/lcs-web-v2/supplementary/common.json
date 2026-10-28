@@ -1,0 +1,162 @@
+{
+  "topbar.main": {
+    "zh": "主页",
+    "en": "Home",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  },
+  "topbar.recordings": {
+    "zh": "视频管理",
+    "en": "Recordings",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  },
+  "sidebar.system": {
+    "zh": "系统设置",
+    "en": "System Settings",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  },
+  "sidebar.version": {
+    "zh": "系统信息",
+    "en": "System Information",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  },
+  "sidebar.project": {
+    "zh": "工程设置",
+    "en": "Project Settings",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  },
+  "sidebar.userManagement": {
+    "zh": "用户管理",
+    "en": "User Management",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  },
+  "sidebar.trackerDebug": {
+    "zh": "跟踪调试",
+    "en": "Tracking Calibration",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  },
+  "actions.close": {
+    "zh": "关闭",
+    "en": "Close",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  },
+  "actions.upload": {
+    "zh": "上传",
+    "en": "Upload",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  },
+  "actions.open": {
+    "zh": "打开",
+    "en": "Open",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  },
+  "actions.noData": {
+    "zh": "暂无数据",
+    "en": "No Data",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  },
+  "actions.on": {
+    "zh": "开",
+    "en": "On",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  },
+  "actions.off": {
+    "zh": "关",
+    "en": "Off",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  },
+  "actions.pleaseSelect": {
+    "zh": "请选择",
+    "en": "Select",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  },
+  "channels.film1": {
+    "zh": "电影 1",
+    "en": "PGM 1",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  },
+  "channels.film2": {
+    "zh": "电影 2",
+    "en": "PGM 2",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  },
+  "previewLabel": {
+    "zh": "界面预览",
+    "en": "UI Preview",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  },
+  "previewNotice": {
+    "zh": "此操作仅用于界面预览。",
+    "en": "This action is simulated for the UI preview.",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  },
+  "pageError": {
+    "zh": "页面暂时无法显示。",
+    "en": "This page could not be displayed.",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  },
+  "retry": {
+    "zh": "重试",
+    "en": "Retry",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  },
+  "languageLabel": {
+    "zh": "系统语言",
+    "en": "Language",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  },
+  "fileSelected": {
+    "zh": "已选择文件：{name}",
+    "en": "File selected: {name}",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  },
+  "saved": {
+    "zh": "设置已保存。",
+    "en": "Settings saved.",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  },
+  "refreshed": {
+    "zh": "列表已刷新。",
+    "en": "List refreshed.",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  },
+  "none": {
+    "zh": "无",
+    "en": "None",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  },
+  "preset": {
+    "zh": "预设 {n}",
+    "en": "Preset {n}",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  },
+  "sidebar.titleTrailer": {
+    "zh": "片头片尾",
+    "en": "Intro / Outro",
+    "reason": "导航同时包含片头和片尾，组合 titleTrailer.title/trailer，不能只取 Intro。"
+  },
+  "renamePreset": {
+    "zh": "重命名预设",
+    "en": "Rename Preset",
+    "reason": "预览布局控件的无歧义位置名称；Excel 未提供该词条。"
+  },
+  "topLeft": {
+    "zh": "左上",
+    "en": "Top Left",
+    "reason": "预览布局控件的无歧义位置名称；Excel 未提供该词条。"
+  },
+  "bottomLeft": {
+    "zh": "左下",
+    "en": "Bottom Left",
+    "reason": "预览布局控件的无歧义位置名称；Excel 未提供该词条。"
+  },
+  "topRight": {
+    "zh": "右上",
+    "en": "Top Right",
+    "reason": "预览布局控件的无歧义位置名称；Excel 未提供该词条。"
+  },
+  "bottomRight": {
+    "zh": "右下",
+    "en": "Bottom Right",
+    "reason": "预览布局控件的无歧义位置名称；Excel 未提供该词条。"
+  }
+}

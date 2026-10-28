@@ -1,0 +1,119 @@
+{
+  "project.PTZ.PTZsetting": {
+    "row": 1161,
+    "group": "28    工程设置 › 云台设置    ·    project.PTZ",
+    "zh": "云台设置",
+    "en": "PTZ Settings",
+    "original": "PTZ Setting",
+    "note": "设置页使用复数，保留专业缩写。",
+    "status": "changed"
+  },
+  "project.PTZ.PTZprotocol": {
+    "row": 1162,
+    "group": "28    工程设置 › 云台设置    ·    project.PTZ",
+    "zh": "通讯协议",
+    "en": "Protocol",
+    "original": "Protocol",
+    "note": "",
+    "status": "retained"
+  },
+  "project.PTZ.PTZport": {
+    "row": 1163,
+    "group": "28    工程设置 › 云台设置    ·    project.PTZ",
+    "zh": "通讯端口",
+    "en": "Port",
+    "original": "Port",
+    "note": "",
+    "status": "retained"
+  },
+  "project.PTZ.PTZtype": {
+    "row": 1164,
+    "group": "28    工程设置 › 云台设置    ·    project.PTZ",
+    "zh": "通讯方式",
+    "en": "Type",
+    "original": "Type",
+    "note": "",
+    "status": "retained"
+  },
+  "project.PTZ.PTZIP": {
+    "row": 1165,
+    "group": "28    工程设置 › 云台设置    ·    project.PTZ",
+    "zh": "通讯IP",
+    "en": "IP",
+    "original": "IP",
+    "note": "",
+    "status": "retained"
+  },
+  "project.PTZ.camAddr": {
+    "row": 1166,
+    "group": "28    工程设置 › 云台设置    ·    project.PTZ",
+    "zh": "通讯串口",
+    "en": "CamAddr",
+    "original": "CamAddr",
+    "note": "待确认：参数实际是串口号还是摄像机地址码？对应 Serial Port 或 Camera Address。",
+    "status": "pending"
+  },
+  "project.PTZ.UDP": {
+    "row": 1167,
+    "group": "28    工程设置 › 云台设置    ·    project.PTZ",
+    "zh": "UDP",
+    "en": "UDP",
+    "original": "UDP",
+    "note": "",
+    "status": "retained"
+  },
+  "project.PTZ.TCP": {
+    "row": 1168,
+    "group": "28    工程设置 › 云台设置    ·    project.PTZ",
+    "zh": "TCP",
+    "en": "TCP",
+    "original": "TCP",
+    "note": "",
+    "status": "retained"
+  },
+  "project.PTZ.COM": {
+    "row": 1169,
+    "group": "28    工程设置 › 云台设置    ·    project.PTZ",
+    "zh": "串口",
+    "en": "COM",
+    "original": "COM",
+    "note": "",
+    "status": "retained"
+  },
+  "project.PTZ.camAddrError": {
+    "row": 1170,
+    "group": "28    工程设置 › 云台设置    ·    project.PTZ",
+    "zh": "云台不同通道通讯串口不能重复，请检查",
+    "en": "The serial communication ports of different channels of PTZ cannot be repeated, please check.",
+    "original": "The serial communication ports of different channels of PTZ cannot be repeated, please check.",
+    "note": "待确认：与 camAddr 参数一起核实；重复限制作用于串口号还是摄像机地址码。",
+    "status": "pending"
+  },
+  "project.PTZ.IPError": {
+    "row": 1171,
+    "group": "28    工程设置 › 云台设置    ·    project.PTZ",
+    "zh": "当前设置的通讯IP地址格式存在错误，请检查后重试",
+    "en": "There is an error in the format of the currently set communication IP address. Please check and try again.",
+    "original": "There is an error in the format of the currently set communication IP address. Please check and try again.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.PTZ.portError": {
+    "row": 1172,
+    "group": "28    工程设置 › 云台设置    ·    project.PTZ",
+    "zh": "当前设置的通讯端口格式存在错误，请输入0-65535",
+    "en": "The format of the currently set communication port is incorrect. Please enter 0-65535.",
+    "original": "The format of the currently set communication port is incorrect. Please enter 0-65535.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.PTZ.ipcNotOpen": {
+    "row": 1173,
+    "group": "28    工程设置 › 云台设置    ·    project.PTZ",
+    "zh": "该通道尚未接入IPC视频源，无法使用Onvif",
+    "en": "ONVIF is unavailable because no IP camera source is assigned to this channel.",
+    "original": "This channel has not been connected to the IPC video source, and Onvif cannot be used.",
+    "note": "修正协议名称，明确不可用原因。",
+    "status": "changed"
+  }
+}

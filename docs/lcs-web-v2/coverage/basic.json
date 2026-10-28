@@ -1,0 +1,468 @@
+{
+  "basic.batchUploadingOfLogos": {
+    "status": "changed",
+    "controls": []
+  },
+  "basic.noImageDetected": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.fileCannotExceed100MB": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.uploadZip": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.selectZip": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.powerLogo": {
+    "status": "changed",
+    "controls": []
+  },
+  "basic.upgrading": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.note": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.powerLogoTip1": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.powerLogoTip2": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.mainLogo": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.restore": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.mainLogoNote": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.loginLogo": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.loginLogoNote": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.loginBg": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.loginBgNote": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.liveBg": {
+    "status": "changed",
+    "controls": []
+  },
+  "basic.liveBgNote": {
+    "status": "changed",
+    "controls": []
+  },
+  "basic.favicon": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.faviconNote": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.localLoginLogo": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.localLoginLogoNote": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.localMainLogo": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.localMainLogoNote1": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.localMainLogoNote2": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.layoutbg": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.layoutbgNote": {
+    "status": "changed",
+    "controls": []
+  },
+  "basic.backgroundColor": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.enterTheColor": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.functionAreaColor": {
+    "status": "changed",
+    "controls": []
+  },
+  "basic.hostLanguage": {
+    "status": "changed",
+    "controls": []
+  },
+  "basic.hostLanguageNote": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.hostModel": {
+    "status": "changed",
+    "controls": []
+  },
+  "basic.directorPageMode": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.pageWordMode": {
+    "status": "changed",
+    "controls": []
+  },
+  "basic.networkPortIsolation": {
+    "status": "changed",
+    "controls": []
+  },
+  "basic.cloudCamera": {
+    "status": "pending",
+    "controls": []
+  },
+  "basic.wakeupMode": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.ftpTransferMode": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.hdmiMode": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.hdmi4kOut": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.hdmi4kOutNote": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.liveLimit": {
+    "status": "changed",
+    "controls": []
+  },
+  "basic.recordLimit": {
+    "status": "changed",
+    "controls": []
+  },
+  "basic.recordMixEnable": {
+    "status": "changed",
+    "controls": []
+  },
+  "basic.is4KModeEnable": {
+    "status": "changed",
+    "controls": []
+  },
+  "basic.is4KModeEnableNote": {
+    "status": "changed",
+    "controls": []
+  },
+  "basic.voiceToSubtitle": {
+    "status": "changed",
+    "controls": []
+  },
+  "basic.videoCopyToUdisk": {
+    "status": "changed",
+    "controls": []
+  },
+  "basic.rtspCollectCache": {
+    "status": "changed",
+    "controls": []
+  },
+  "basic.hdmiin3PhaseCalibration": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.net2uartEnable": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.screenWakeupMode": {
+    "status": "changed",
+    "controls": []
+  },
+  "basic.pleaseMultiSelect": {
+    "status": "retained",
+    "controls": [
+      "broadcast.select"
+    ]
+  },
+  "basic.screenWakeupModeNote": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.channelNameSetting": {
+    "status": "changed",
+    "controls": []
+  },
+  "basic.restoreDefault": {
+    "status": "changed",
+    "controls": []
+  },
+  "basic.active": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.passive": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.tcpService": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.tcpCentralControl": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.localUdp": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.education": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.nonEducation": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.touchWakeup": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.mouseWakeup": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.keyboardWakeup": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.screenCalibration": {
+    "status": "changed",
+    "controls": []
+  },
+  "basic.startCalibration": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.calibrationSuccess": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.calibrationFailed": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.notFindTouchDev": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.screenCalibrationNote": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.imageNameHasChinese": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.imageNameHasIllegal": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.imageNoMoreThan2M": {
+    "status": "changed",
+    "controls": []
+  },
+  "basic.selectPng": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.onlyPowerOnLogo": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.onlyMainLogo": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.onlyLoginLogo": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.onlyLoginbg": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.onlyLivebg": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.onlyFavicon": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.onlyLocalLoginLogo": {
+    "status": "changed",
+    "controls": []
+  },
+  "basic.onlyLocalMainLogo": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.imageSizeNotMatch": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.imageUploadSuccessConfirm": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.imageUploadSuccess": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.imageUploadSuccessRestart": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.imageUploadFailed": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.selectJpg": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.setFailedErrorCode": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.restoreSuccess": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.restoreFailed": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.serverModelHasIllegal": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.aiAnalysisKey": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.inputChannelName": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.channelNameHasIllegal": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.restoreDefaultSuccess": {
+    "status": "changed",
+    "controls": []
+  },
+  "basic.restoreDefaultFailed": {
+    "status": "changed",
+    "controls": []
+  },
+  "basic.channelDisplaySetting": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.show": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.hide": {
+    "status": "changed",
+    "controls": []
+  },
+  "basic.displayAtLeastOne": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.hideTip1": {
+    "status": "changed",
+    "controls": []
+  },
+  "basic.hideTip2": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.developerTools": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.requestParams": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.runAndDebug": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.audioSetting": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.hisiPlayer": {
+    "status": "changed",
+    "controls": []
+  },
+  "basic.recorderIn": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.intacterIn": {
+    "status": "retained",
+    "controls": []
+  },
+  "basic.pageFlipping": {
+    "status": "changed",
+    "controls": []
+  },
+  "basic.pageFlippingTip": {
+    "status": "changed",
+    "controls": []
+  }
+}

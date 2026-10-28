@@ -1,0 +1,1037 @@
+{
+  "system.timeSetting": {
+    "row": 631,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "时间设置",
+    "en": "Time Settings",
+    "original": "Time Setting",
+    "note": "设置页使用复数。",
+    "status": "changed"
+  },
+  "system.timeZone": {
+    "row": 632,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "时区设置",
+    "en": "Time Zone",
+    "original": "Time Zone",
+    "note": "",
+    "status": "retained"
+  },
+  "system.dateFormat": {
+    "row": 633,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "日期格式",
+    "en": "Date Format",
+    "original": "Date Format",
+    "note": "",
+    "status": "retained"
+  },
+  "system.timeFormat": {
+    "row": 634,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "时间格式",
+    "en": "Time Format",
+    "original": "Time Format",
+    "note": "",
+    "status": "retained"
+  },
+  "system.dateFormatSetSuccess": {
+    "row": 635,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "日期格式设置成功",
+    "en": "Date format set successfully.",
+    "original": "Date format set successfully.",
+    "note": "",
+    "status": "retained"
+  },
+  "system.timeFormatSetSuccess": {
+    "row": 636,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "时间格式设置成功",
+    "en": "Time format set successfully.",
+    "original": "Time format set successfully.",
+    "note": "",
+    "status": "retained"
+  },
+  "system.ddMMyyyy": {
+    "row": 637,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "日-月-年",
+    "en": "DD-MM-YYYY",
+    "original": "DD-MM-YYYY",
+    "note": "",
+    "status": "retained"
+  },
+  "system.yyyyMMdd": {
+    "row": 638,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "年-月-日",
+    "en": "YYYY-MM-DD",
+    "original": "YYYY-MM-DD",
+    "note": "",
+    "status": "retained"
+  },
+  "system.twelveHoursFormat": {
+    "row": 639,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "12小时制",
+    "en": "12-Hour",
+    "original": "12 Hours Format",
+    "note": "时间制式的简短标签。",
+    "status": "changed"
+  },
+  "system.twentyFourHoursFormat": {
+    "row": 640,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "24小时制",
+    "en": "24-Hour",
+    "original": "24 Hours Format",
+    "note": "时间制式的简短标签。",
+    "status": "changed"
+  },
+  "system.dateTime": {
+    "row": 641,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "日期时间",
+    "en": "Date and Time",
+    "original": "Date Time",
+    "note": "自然的组合字段名。",
+    "status": "changed"
+  },
+  "system.ntpSetting": {
+    "row": 642,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "NTP设置",
+    "en": "NTP Settings",
+    "original": "NTP Setting",
+    "note": "设置页使用复数。",
+    "status": "changed"
+  },
+  "system.setSyncOnStart": {
+    "row": 643,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "开机自动同步",
+    "en": "Sync on Startup",
+    "original": "Set Sync Power On",
+    "note": "简短表达开机自动同步。",
+    "status": "changed"
+  },
+  "system.ntpAddress": {
+    "row": 644,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "NTP地址",
+    "en": "NTP Address",
+    "original": "NTP Address",
+    "note": "",
+    "status": "retained"
+  },
+  "system.setTimeAgain": {
+    "row": 645,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "请重新填写时间",
+    "en": "Please input time again.",
+    "original": "Please input time again.",
+    "note": "",
+    "status": "retained"
+  },
+  "system.noMoreThan2036": {
+    "row": 646,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "日期时间不能大于2036年",
+    "en": "The year cannot be later than 2036.",
+    "original": "Date time cannot be greater than 2036.",
+    "note": "原限制针对年份。",
+    "status": "changed"
+  },
+  "system.stopRecordOrLive": {
+    "row": 647,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "请先停止录像或直播",
+    "en": "Stop recording or streaming first.",
+    "original": "Please stop record or live.",
+    "note": "使用正确的功能名词。",
+    "status": "changed"
+  },
+  "system.setTimeSuccess": {
+    "row": 648,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "时间设置成功",
+    "en": "Time set successfully.",
+    "original": "Time set successfully.",
+    "note": "",
+    "status": "retained"
+  },
+  "system.setTimeFail": {
+    "row": 649,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "时间设置失败",
+    "en": "Time setting failed",
+    "original": "Time setting failed",
+    "note": "",
+    "status": "retained"
+  },
+  "system.inputNtpServer": {
+    "row": 650,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "请输入NTP服务器地址",
+    "en": "Please input NTP server address.",
+    "original": "Please input NTP server address.",
+    "note": "",
+    "status": "retained"
+  },
+  "system.ntpError": {
+    "row": 651,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "NTP地址含有非法字符，请检查后重试",
+    "en": "The NTP address contains illegal characters. Please check and try again.",
+    "original": "The NTP address contains illegal characters. Please check and try again.",
+    "note": "",
+    "status": "retained"
+  },
+  "system.otherSetting": {
+    "row": 652,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "其他设置",
+    "en": "Other Settings",
+    "original": "Other Setting",
+    "note": "设置分组使用复数。",
+    "status": "changed"
+  },
+  "system.saveFilmLayout": {
+    "row": 653,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "保存导播布局",
+    "en": "Save Layout",
+    "original": "Save Film Layout",
+    "note": "布局保存开关，避免 Film 误译。",
+    "status": "changed"
+  },
+  "system.setViewSaveStateFail": {
+    "row": 654,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "保存导播布局设置失败",
+    "en": "Failed to save the layout setting.",
+    "original": "Failed to save guide layout settings.",
+    "note": "导播布局不是 guide layout。",
+    "status": "changed"
+  },
+  "system.setViewSaveStateSuccess": {
+    "row": 655,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "保存导播布局设置成功",
+    "en": "Layout setting saved.",
+    "original": "Guide layout settings saved successfully.",
+    "note": "导播布局不是 guide layout。",
+    "status": "changed"
+  },
+  "system.recordLiveCountdownEnable": {
+    "row": 656,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "开始录制\\开始直播倒计时提醒",
+    "en": "Recording/Streaming Countdown",
+    "original": "Start recording\\Start live countdown reminder",
+    "note": "简化标签，避免斜杠式句子。",
+    "status": "changed"
+  },
+  "system.recordLiveCountdownEnableSetSuccess": {
+    "row": 657,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "开始录制\\开始直播倒计时提醒设置成功",
+    "en": "Recording/streaming countdown setting saved.",
+    "original": "Start recording\\Start live broadcast countdown reminder set successfully.",
+    "note": "统一倒计时功能名称。",
+    "status": "changed"
+  },
+  "system.recordLiveCountdownTip": {
+    "row": 658,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "操作提示：倒计时提醒只在本地界面显示",
+    "en": "Tip: The countdown reminder is only displayed on the local interface.",
+    "original": "Tip: The countdown reminder is only displayed on the local interface.",
+    "note": "",
+    "status": "retained"
+  },
+  "system.switchColorKey": {
+    "row": 659,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "切换抠像模式",
+    "en": "Switch Keying Mode",
+    "original": "Switch Color Key Mode",
+    "note": "抠像模式使用 Keying。",
+    "status": "changed"
+  },
+  "system.lockScreen": {
+    "row": 660,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "熄屏时间",
+    "en": "Display Timeout",
+    "original": "Lock Screen",
+    "note": "熄屏不是锁屏。",
+    "status": "changed"
+  },
+  "system.twoMinutes": {
+    "row": 661,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "2分钟",
+    "en": "2 minutes",
+    "original": "2 minutes",
+    "note": "",
+    "status": "retained"
+  },
+  "system.fiveMinutes": {
+    "row": 662,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "5分钟",
+    "en": "5 minutes",
+    "original": "5 minutes",
+    "note": "",
+    "status": "retained"
+  },
+  "system.tenMinutes": {
+    "row": 663,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "10分钟",
+    "en": "10 minutes",
+    "original": "10 minutes",
+    "note": "",
+    "status": "retained"
+  },
+  "system.fifteenMinutes": {
+    "row": 664,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "15分钟",
+    "en": "15 minutes",
+    "original": "15 minutes",
+    "note": "",
+    "status": "retained"
+  },
+  "system.forever": {
+    "row": 665,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "常亮",
+    "en": "Always On",
+    "original": "Forever",
+    "note": "屏幕常亮状态。",
+    "status": "changed"
+  },
+  "system.lockScreenTip": {
+    "row": 666,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "操作提示：熄屏时间只对带屏幕设备有效",
+    "en": "Tip: Display timeout applies only to devices with a screen.",
+    "original": "Tip: Lock screen time is only valid for devices with screens.",
+    "note": "熄屏不是锁屏。",
+    "status": "changed"
+  },
+  "system.screen2ShowFilm": {
+    "row": 667,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "第二屏显示电影画面",
+    "en": "Show PGM on Second Screen",
+    "original": "The second screen displays film",
+    "note": "电影画面指最终节目。",
+    "status": "changed"
+  },
+  "system.screen2ShowFilmTip": {
+    "row": 668,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "操作提示：开启时第二屏只会显示电影画面，未开启时第二屏按照系统自身逻辑显示画面",
+    "en": "Tip: When enabled, the second screen shows only PGM. Otherwise, it follows the normal system display behavior.",
+    "original": "Operation prompt: When turned on, the second screen will only display the film screen. When not turned on, the second screen will display the screen according to the system's own logic.",
+    "note": "准确描述开关两种状态。",
+    "status": "changed"
+  },
+  "system.autoReboot": {
+    "row": 669,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "定时自动重启",
+    "en": "Scheduled automatic restart",
+    "original": "Scheduled automatic restart",
+    "note": "",
+    "status": "retained"
+  },
+  "system.autoRebootTip": {
+    "row": 670,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "操作提示：开启后，设备将在每天凌晨02:00-03:00之间自动重启，以清理缓存保持系统流畅",
+    "en": "Operation prompt: After being turned on, the device will automatically restart between 02:00-03:00 am every day to clear the cache and keep the system running smoothly",
+    "original": "Operation prompt: After being turned on, the device will automatically restart between 02:00-03:00 am every day to clear the cache and keep the system running smoothly",
+    "note": "",
+    "status": "retained"
+  },
+  "system.languageSetting": {
+    "row": 671,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "语言设置",
+    "en": "Language Settings",
+    "original": "Language Setting",
+    "note": "设置分组使用复数。",
+    "status": "changed"
+  },
+  "system.systemLanguage": {
+    "row": 672,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "系统语言",
+    "en": "Language",
+    "original": "Language",
+    "note": "",
+    "status": "retained"
+  },
+  "system.themeSetting": {
+    "row": 673,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "主题设置",
+    "en": "Theme Settings",
+    "original": "Theme Setting",
+    "note": "设置分组使用复数。",
+    "status": "changed"
+  },
+  "system.colorTheme": {
+    "row": 674,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "颜色主题",
+    "en": "Color Theme",
+    "original": "Color Theme",
+    "note": "",
+    "status": "retained"
+  },
+  "system.light": {
+    "row": 675,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "浅色",
+    "en": "Light",
+    "original": "Light",
+    "note": "",
+    "status": "retained"
+  },
+  "system.dark": {
+    "row": 676,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "深色",
+    "en": "Dark",
+    "original": "Dark",
+    "note": "",
+    "status": "retained"
+  },
+  "system.interfaceSetting": {
+    "row": 677,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "界面设置",
+    "en": "Interface Settings",
+    "original": "Interface Setting",
+    "note": "设置分组使用复数。",
+    "status": "changed"
+  },
+  "system.interfaceStyle": {
+    "row": 678,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "界面风格",
+    "en": "Style",
+    "original": "Style",
+    "note": "",
+    "status": "retained"
+  },
+  "system.defaultStyle": {
+    "row": 679,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "默认风格",
+    "en": "Default",
+    "original": "Default",
+    "note": "",
+    "status": "retained"
+  },
+  "system.classicStyle": {
+    "row": 680,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "经典风格",
+    "en": "Classic",
+    "original": "Classic",
+    "note": "",
+    "status": "retained"
+  },
+  "system.layoutbg": {
+    "row": 681,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "布局背景",
+    "en": "Layout Background",
+    "original": "Layout Bg",
+    "note": "避免不清晰的 Bg 缩写。",
+    "status": "changed"
+  },
+  "system.layoutbgTip": {
+    "row": 682,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "注意事项：只支持24bit和32bit png格式、分辨率等于1920*1080图片。",
+    "en": "Note: Only 24-bit or 32-bit PNG images at 1920 × 1080 are supported.",
+    "original": "Attention: Only supports 24 bit and 32 bit PNG formats, with a resolution of 1920 * 1080 images.",
+    "note": "保留位深和固定分辨率要求。",
+    "status": "changed"
+  },
+  "system.imageSizeError": {
+    "row": 683,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "上传图片尺寸不符合，请重新上传",
+    "en": "The uploaded image size does not match, please upload again.",
+    "original": "The uploaded image size does not match, please upload again.",
+    "note": "",
+    "status": "retained"
+  },
+  "system.layoutbgUploadSuccess": {
+    "row": 684,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "图片上传成功，点击确认替换原图片",
+    "en": "Image uploaded successfully, click confirm to replace the original image.",
+    "original": "Image uploaded successfully, click confirm to replace the original image.",
+    "note": "",
+    "status": "retained"
+  },
+  "system.layoutbgSetSuccess": {
+    "row": 685,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "布局背景设置成功",
+    "en": "Layout background set successfully.",
+    "original": "Layout background set successfully.",
+    "note": "",
+    "status": "retained"
+  },
+  "system.accountSetting": {
+    "row": 686,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "账户设置",
+    "en": "Account Settings",
+    "original": "Account Setting",
+    "note": "设置分组使用复数。",
+    "status": "changed"
+  },
+  "system.oldPassword": {
+    "row": 687,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "原密码",
+    "en": "Old PWD",
+    "original": "Old PWD",
+    "note": "",
+    "status": "retained"
+  },
+  "system.newPassword": {
+    "row": 688,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "修改密码",
+    "en": "New PWD",
+    "original": "New PWD",
+    "note": "",
+    "status": "retained"
+  },
+  "system.confirmNewPassword": {
+    "row": 689,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "确认密码",
+    "en": "Confirm",
+    "original": "Confirm",
+    "note": "",
+    "status": "retained"
+  },
+  "system.inputOldPassword": {
+    "row": 690,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "请输入旧密码",
+    "en": "Please input old password",
+    "original": "Please input old password",
+    "note": "",
+    "status": "retained"
+  },
+  "system.inputNewPassword": {
+    "row": 691,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "请输入新密码",
+    "en": "Please input new password",
+    "original": "Please input new password",
+    "note": "",
+    "status": "retained"
+  },
+  "system.inputPasswordAgain": {
+    "row": 692,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "请再次输入密码",
+    "en": "Please input password again",
+    "original": "Please input password again",
+    "note": "",
+    "status": "retained"
+  },
+  "system.validateLength": {
+    "row": 693,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "5-11个字符组成，区分大小写",
+    "en": "5-11 characters, case sensitive",
+    "original": "5-11 characters, case sensitive",
+    "note": "",
+    "status": "retained"
+  },
+  "system.validatePassword": {
+    "row": 694,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "密码支持字母、数字、!#$%^&*\\-_+=|{}[]:;'<>?,.\"/`~()",
+    "en": "letters, numbers and !#$%^&*\\-_+=|{}[]:;'<>?,.\"/`~()",
+    "original": "letters, numbers and !#$%^&*\\-_+=|{}[]:;'<>?,.\"/`~()",
+    "note": "",
+    "status": "retained"
+  },
+  "system.passwordNoChinese": {
+    "row": 695,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "密码不能包含中文字符",
+    "en": "Password cannot contain Chinese characters",
+    "original": "Password cannot contain Chinese characters",
+    "note": "",
+    "status": "retained"
+  },
+  "system.updatePasswordSuccess": {
+    "row": 696,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "修改密码成功",
+    "en": "Password modified successfully",
+    "original": "Password modified successfully",
+    "note": "",
+    "status": "retained"
+  },
+  "system.updatePasswordFail": {
+    "row": 697,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "修改密码失败",
+    "en": "Failed to modify password",
+    "original": "Failed to modify password",
+    "note": "",
+    "status": "retained"
+  },
+  "system.notSamePassword": {
+    "row": 698,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "两次输入的密码不一致",
+    "en": "Passwords do not match.",
+    "original": "The passwords entered twice are inconsistent",
+    "note": "简短自然的密码确认提示。",
+    "status": "changed"
+  },
+  "system.systemUpgrade": {
+    "row": 699,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "系统升级",
+    "en": "System Upgrade",
+    "original": "System Up",
+    "note": "Up 不能完整表达升级。",
+    "status": "changed"
+  },
+  "system.serverUpgrade": {
+    "row": 700,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "固件升级",
+    "en": "Firmware Upgrade",
+    "original": "Server Up",
+    "note": "中文指固件，不是服务器。",
+    "status": "changed"
+  },
+  "system.softwareUpgrade": {
+    "row": 701,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "软件升级",
+    "en": "Software Upgrade",
+    "original": "SoftWare Up",
+    "note": "修正拼写和升级表达。",
+    "status": "changed"
+  },
+  "system.chooseFile": {
+    "row": 702,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "选择文件",
+    "en": "Choose File",
+    "original": "Choose File",
+    "note": "",
+    "status": "retained"
+  },
+  "system.uploadToServer": {
+    "row": 703,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "上传到服务器",
+    "en": "Upload To Server",
+    "original": "Upload To Server",
+    "note": "",
+    "status": "retained"
+  },
+  "system.upgrade": {
+    "row": 704,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "升级",
+    "en": "Upgrade",
+    "original": "Upgrade",
+    "note": "",
+    "status": "retained"
+  },
+  "system.fileSystemUpgrade": {
+    "row": 705,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "文件系统升级",
+    "en": "File System Upgrade",
+    "original": "File System Up",
+    "note": "完整表达升级对象。",
+    "status": "changed"
+  },
+  "system.aecUpgrade": {
+    "row": 706,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "AEC升级",
+    "en": "AEC Upgrade",
+    "original": "AEC Up",
+    "note": "保留专业缩写，明确升级。",
+    "status": "changed"
+  },
+  "system.licenseUpgrade": {
+    "row": 707,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "License升级",
+    "en": "License Update",
+    "original": "License Up",
+    "note": "许可证更新。",
+    "status": "changed"
+  },
+  "system.upgradeSteps": {
+    "row": 708,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "升级步骤:（1）上传升级文件 。（2） 上传完后点击“升级”按钮。（3）弹出“升级完毕”后完成升级。",
+    "en": "Upgrade steps: (1) Upload the upgrade file. (2) Click Upgrade. (3) Wait for the upgrade completion message.",
+    "original": "Upgrade Steps: (1) Upload upgrade file. (2) Click the \"upgrade\" button after uploading. (3) After \"upgrade completed\" pops up, complete the upgrade.",
+    "note": "明确操作和完成条件。",
+    "status": "changed"
+  },
+  "system.packageMismatch": {
+    "row": 709,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "安装包不匹配",
+    "en": "Installation Package Mismatch",
+    "original": "Installation Package Mismatch",
+    "note": "",
+    "status": "retained"
+  },
+  "system.spaceNotEnough": {
+    "row": 710,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "设备空间不足",
+    "en": "Insufficient device storage space.",
+    "original": "Insufficient Equipment Space",
+    "note": "设备存储不足，不是设备空间。",
+    "status": "changed"
+  },
+  "system.chooseGzPackage": {
+    "row": 711,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "请选择tar.gz包",
+    "en": "Please choose tar.gz package.",
+    "original": "Please choose tar.gz package.",
+    "note": "",
+    "status": "retained"
+  },
+  "system.chooseBinPackage": {
+    "row": 712,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "请选择.bin包",
+    "en": "Please choose .bin package.",
+    "original": "Please choose .bin package.",
+    "note": "",
+    "status": "retained"
+  },
+  "system.noAecModule": {
+    "row": 713,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "无AEC模块，升级失败",
+    "en": "No AEC module, upgrade failed.",
+    "original": "No AEC module, upgrade failed.",
+    "note": "",
+    "status": "retained"
+  },
+  "system.configVersionMismatch": {
+    "row": 714,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "配置文件版本不匹配",
+    "en": "Configuration file version mismatch.",
+    "original": "Configuration file version mismatch.",
+    "note": "",
+    "status": "retained"
+  },
+  "system.upgradeSuccess": {
+    "row": 715,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "升级成功",
+    "en": "Upgrade successful.",
+    "original": "Upgrade Success",
+    "note": "成功状态使用形容词。",
+    "status": "changed"
+  },
+  "system.uploadSuccess": {
+    "row": 716,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "上传成功",
+    "en": "Upload successful.",
+    "original": "Upload Success",
+    "note": "成功状态使用形容词。",
+    "status": "changed"
+  },
+  "system.uploadFail": {
+    "row": 717,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "上传失败",
+    "en": "Upload failed.",
+    "original": "Upload Fail",
+    "note": "失败状态使用过去分词。",
+    "status": "changed"
+  },
+  "system.closeRecordOrLive": {
+    "row": 718,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "请先关闭录像或直播",
+    "en": "Stop recording or streaming first.",
+    "original": "Please turn off the video or live broadcast first.",
+    "note": "录像不是普通 video。",
+    "status": "changed"
+  },
+  "system.closeInteractive": {
+    "row": 719,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "请先关闭互动",
+    "en": "End the interactive session first.",
+    "original": "Please close the interaction first",
+    "note": "结束互动会话。",
+    "status": "changed"
+  },
+  "system.packageError": {
+    "row": 720,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "安装包出错",
+    "en": "Invalid installation package.",
+    "original": "Error installing package",
+    "note": "原文指安装包出错，非安装过程失败。",
+    "status": "changed"
+  },
+  "system.upgradeFail": {
+    "row": 721,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "升级失败",
+    "en": "Upgrade failed.",
+    "original": "Upgrade Fail",
+    "note": "失败状态使用过去分词。",
+    "status": "changed"
+  },
+  "system.upgrading": {
+    "row": 722,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "升级中，请稍候...",
+    "en": "Upgrading, please wait...",
+    "original": "Upgrading, please wait...",
+    "note": "",
+    "status": "retained"
+  },
+  "system.choosePackage": {
+    "row": 723,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "请先选择安装包",
+    "en": "Please select the installation package first.",
+    "original": "Please select the installation package first.",
+    "note": "",
+    "status": "retained"
+  },
+  "system.errorName": {
+    "row": 724,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "请上传正确的文件名字",
+    "en": "Upload a file with the correct name.",
+    "original": "Please upload the correct file name.",
+    "note": "上传的是文件，不是文件名。",
+    "status": "changed"
+  },
+  "system.notFindUpgradePackage": {
+    "row": 725,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "没有发现安装包！",
+    "en": "No installation package found!",
+    "original": "No installation package found!",
+    "note": "",
+    "status": "retained"
+  },
+  "system.tarxFailed": {
+    "row": 726,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "安装包解压错误，请检查安装包或重新上传！",
+    "en": "Installation package decompression error, please check the installation package or upload again!",
+    "original": "Installation package decompression error, please check the installation package or upload again!",
+    "note": "",
+    "status": "retained"
+  },
+  "system.noRecordServer": {
+    "row": 727,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "安装包中缺少文件！",
+    "en": "Missing file in installation package!",
+    "original": "Missing file in installation package!",
+    "note": "",
+    "status": "retained"
+  },
+  "system.noVersionInfo": {
+    "row": 728,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "安装包中缺少版本文件！",
+    "en": "The version file is missing from the installation package!",
+    "original": "The version file is missing from the installation package!",
+    "note": "",
+    "status": "retained"
+  },
+  "system.wrongPackageName": {
+    "row": 729,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "安装包名字错误，不能修改安装包名字！",
+    "en": "The name of the installation package is wrong. The name of the installation package cannot be modified!",
+    "original": "The name of the installation package is wrong. The name of the installation package cannot be modified!",
+    "note": "",
+    "status": "retained"
+  },
+  "system.sameVersion": {
+    "row": 730,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "已经是同版本，不需要重复升级！",
+    "en": "This version is already installed. No upgrade is needed.",
+    "original": "It is already the same version, and there is no need to upgrade it repeatedly!",
+    "note": "避免重复升级的自然提示。",
+    "status": "changed"
+  },
+  "system.notSameType": {
+    "row": 731,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "不是同类型安装包！",
+    "en": "Incorrect installation package type.",
+    "original": "Not the same type of installation package!",
+    "note": "明确类型错误。",
+    "status": "changed"
+  },
+  "system.sdkVersionError": {
+    "row": 732,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "系统sdk版本不匹配！",
+    "en": "The SDK version of the system does not match!",
+    "original": "The SDK version of the system does not match!",
+    "note": "",
+    "status": "retained"
+  },
+  "system.open": {
+    "row": 733,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "打开",
+    "en": "Open",
+    "original": "Open",
+    "note": "",
+    "status": "retained"
+  },
+  "system.cpuInfo": {
+    "row": 734,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "性能检测",
+    "en": "Performance Monitoring",
+    "original": "Performance Monitoring",
+    "note": "",
+    "status": "retained"
+  },
+  "system.cpuInfoFunction": {
+    "row": 735,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "性能监测功能",
+    "en": "Performance Monitoring",
+    "original": "Performance Monitoring",
+    "note": "",
+    "status": "retained"
+  },
+  "system.cpuTotal": {
+    "row": 736,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "总CPU消耗",
+    "en": "Total CPU Usage",
+    "original": "CPU Total",
+    "note": "明确 CPU 使用量。",
+    "status": "changed"
+  },
+  "system.memoryTotal": {
+    "row": 737,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "总内存",
+    "en": "Memory Total",
+    "original": "Memory Total",
+    "note": "",
+    "status": "retained"
+  },
+  "system.cpuSystem": {
+    "row": 738,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "系统CPU消耗",
+    "en": "System CPU Usage",
+    "original": "CPU System",
+    "note": "明确系统 CPU 使用量。",
+    "status": "changed"
+  },
+  "system.memoryUsed": {
+    "row": 739,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "已用内存",
+    "en": "Memory Used",
+    "original": "Memory Used",
+    "note": "",
+    "status": "retained"
+  },
+  "system.cpuUser": {
+    "row": 740,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "用户CPU消耗",
+    "en": "User CPU Usage",
+    "original": "CPU User",
+    "note": "明确用户态 CPU 使用量。",
+    "status": "changed"
+  },
+  "system.memoryAvailable": {
+    "row": 741,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "剩余内存",
+    "en": "Memory Available",
+    "original": "Memory Available",
+    "note": "",
+    "status": "retained"
+  },
+  "system.temperature": {
+    "row": 742,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "CPU温度",
+    "en": "CPU temperature",
+    "original": "CPU temperature",
+    "note": "",
+    "status": "retained"
+  },
+  "system.logManagement": {
+    "row": 743,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "日志管理",
+    "en": "Log Management",
+    "original": "Log Management",
+    "note": "",
+    "status": "retained"
+  },
+  "system.server": {
+    "row": 744,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "服务器",
+    "en": "Server",
+    "original": "Server",
+    "note": "",
+    "status": "retained"
+  },
+  "system.continueUpgrade": {
+    "row": 745,
+    "group": "19    系统设置    ·    system    ｜    117 条",
+    "zh": "是否结束录制、直播，继续升级？",
+    "en": "Stop recording and streaming, then continue the upgrade?",
+    "original": "Do you want to end recording, live streaming, and continue upgrading?",
+    "note": "明确结束操作与继续升级关系。",
+    "status": "changed"
+  }
+}

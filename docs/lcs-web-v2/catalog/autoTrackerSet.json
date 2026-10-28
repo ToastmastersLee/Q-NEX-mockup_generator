@@ -1,0 +1,299 @@
+{
+  "autoTrackerSet.teacher": {
+    "row": 148,
+    "group": "05    导播策略   ·    autoTrackerSet",
+    "zh": "教师",
+    "en": "Teacher",
+    "original": "Teacher",
+    "note": "",
+    "status": "retained"
+  },
+  "autoTrackerSet.board": {
+    "row": 149,
+    "group": "05    导播策略   ·    autoTrackerSet",
+    "zh": "板书",
+    "en": "Board",
+    "original": "Board",
+    "note": "",
+    "status": "retained"
+  },
+  "autoTrackerSet.student": {
+    "row": 150,
+    "group": "05    导播策略   ·    autoTrackerSet",
+    "zh": "学生",
+    "en": "Student",
+    "original": "Student",
+    "note": "",
+    "status": "retained"
+  },
+  "autoTrackerSet.computer": {
+    "row": 151,
+    "group": "05    导播策略   ·    autoTrackerSet",
+    "zh": "电脑",
+    "en": "Content 1",
+    "original": "Computer",
+    "note": "统一输入短名称，保持原信号组合及顺序。",
+    "status": "changed"
+  },
+  "autoTrackerSet.studentfull": {
+    "row": 152,
+    "group": "05    导播策略   ·    autoTrackerSet",
+    "zh": "学生全景",
+    "en": "Student Wide",
+    "original": "Student_F",
+    "note": "保持原信号组合；采用短标签，_F 表示全景。",
+    "status": "changed"
+  },
+  "autoTrackerSet.teacherfull": {
+    "row": 153,
+    "group": "05    导播策略   ·    autoTrackerSet",
+    "zh": "教师全景",
+    "en": "Teacher Wide",
+    "original": "Teacher_F",
+    "note": "保持原信号组合；采用短标签，_F 表示全景。",
+    "status": "changed"
+  },
+  "autoTrackerSet.interactive": {
+    "row": 154,
+    "group": "05    导播策略   ·    autoTrackerSet",
+    "zh": "互动",
+    "en": "Interactive",
+    "original": "Interactive",
+    "note": "",
+    "status": "retained"
+  },
+  "autoTrackerSet.board2": {
+    "row": 155,
+    "group": "05    导播策略   ·    autoTrackerSet",
+    "zh": "板书2",
+    "en": "Board2",
+    "original": "Board2",
+    "note": "",
+    "status": "retained"
+  },
+  "autoTrackerSet.computer2": {
+    "row": 156,
+    "group": "05    导播策略   ·    autoTrackerSet",
+    "zh": "电脑2",
+    "en": "Content 2",
+    "original": "Computer2",
+    "note": "统一输入短名称，保持原信号组合及顺序。",
+    "status": "changed"
+  },
+  "autoTrackerSet.computerTeacher": {
+    "row": 157,
+    "group": "05    导播策略   ·    autoTrackerSet",
+    "zh": "电脑+教师",
+    "en": "Content 1 + Teacher",
+    "original": "Computer+Teacher",
+    "note": "统一输入短名称，保持原信号组合及顺序。",
+    "status": "changed"
+  },
+  "autoTrackerSet.computerTeacherfull": {
+    "row": 158,
+    "group": "05    导播策略   ·    autoTrackerSet",
+    "zh": "电脑+教师全景",
+    "en": "Content 1 + Teacher Wide",
+    "original": "Computer+Teacher_F",
+    "note": "保持原信号组合；采用短标签，_F 表示全景。",
+    "status": "changed"
+  },
+  "autoTrackerSet.computerStudent": {
+    "row": 159,
+    "group": "05    导播策略   ·    autoTrackerSet",
+    "zh": "电脑+学生",
+    "en": "Content 1 + Student",
+    "original": "Computer+Student",
+    "note": "统一输入短名称，保持原信号组合及顺序。",
+    "status": "changed"
+  },
+  "autoTrackerSet.computerStudentfull": {
+    "row": 160,
+    "group": "05    导播策略   ·    autoTrackerSet",
+    "zh": "电脑+学生全景",
+    "en": "Content 1 + Student Wide",
+    "original": "Computer+Student_F",
+    "note": "保持原信号组合；采用短标签，_F 表示全景。",
+    "status": "changed"
+  },
+  "autoTrackerSet.computerInteractive": {
+    "row": 161,
+    "group": "05    导播策略   ·    autoTrackerSet",
+    "zh": "电脑+互动",
+    "en": "Content 1 + Interactive",
+    "original": "Computer+Interactive",
+    "note": "统一输入短名称，保持原信号组合及顺序。",
+    "status": "changed"
+  },
+  "autoTrackerSet.teacherStudent": {
+    "row": 162,
+    "group": "05    导播策略   ·    autoTrackerSet",
+    "zh": "教师+学生",
+    "en": "Teacher+Student",
+    "original": "Teacher+Student",
+    "note": "",
+    "status": "retained"
+  },
+  "autoTrackerSet.teacherStudentfull": {
+    "row": 163,
+    "group": "05    导播策略   ·    autoTrackerSet",
+    "zh": "教师+学生全景",
+    "en": "Teacher + Student Wide",
+    "original": "Teacher+Student_F",
+    "note": "保持原信号组合；采用短标签，_F 表示全景。",
+    "status": "changed"
+  },
+  "autoTrackerSet.teacherInteractive": {
+    "row": 164,
+    "group": "05    导播策略   ·    autoTrackerSet",
+    "zh": "教师+互动",
+    "en": "Teacher+Interactive",
+    "original": "Teacher+Interactive",
+    "note": "",
+    "status": "retained"
+  },
+  "autoTrackerSet.teacherfullStudent": {
+    "row": 165,
+    "group": "05    导播策略   ·    autoTrackerSet",
+    "zh": "教师全景+学生",
+    "en": "Teacher Wide + Student",
+    "original": "Teacher_F+Student",
+    "note": "保持原信号组合；采用短标签，_F 表示全景。",
+    "status": "changed"
+  },
+  "autoTrackerSet.teacherfullStudentfull": {
+    "row": 166,
+    "group": "05    导播策略   ·    autoTrackerSet",
+    "zh": "教师全景+学生全景",
+    "en": "Teacher Wide + Student Wide",
+    "original": "Teacher_F+Student_F",
+    "note": "保持原信号组合；采用短标签，_F 表示全景。",
+    "status": "changed"
+  },
+  "autoTrackerSet.teacherfullInteractive": {
+    "row": 167,
+    "group": "05    导播策略   ·    autoTrackerSet",
+    "zh": "教师全景+互动",
+    "en": "Teacher Wide + Interactive",
+    "original": "Teacher_F+Interactive",
+    "note": "保持原信号组合；采用短标签，_F 表示全景。",
+    "status": "changed"
+  },
+  "autoTrackerSet.boardStudent": {
+    "row": 168,
+    "group": "05    导播策略   ·    autoTrackerSet",
+    "zh": "板书+学生",
+    "en": "Board+Student",
+    "original": "Board+Student",
+    "note": "",
+    "status": "retained"
+  },
+  "autoTrackerSet.boardStudentfull": {
+    "row": 169,
+    "group": "05    导播策略   ·    autoTrackerSet",
+    "zh": "板书+学生全景",
+    "en": "Board + Student Wide",
+    "original": "Board+Student_F",
+    "note": "保持原信号组合；采用短标签，_F 表示全景。",
+    "status": "changed"
+  },
+  "autoTrackerSet.boardInteractive": {
+    "row": 170,
+    "group": "05    导播策略   ·    autoTrackerSet",
+    "zh": "板书+互动",
+    "en": "Board+Interactive",
+    "original": "Board+Interactive",
+    "note": "",
+    "status": "retained"
+  },
+  "autoTrackerSet.studentInteractive": {
+    "row": 171,
+    "group": "05    导播策略   ·    autoTrackerSet",
+    "zh": "学生+互动",
+    "en": "Student+Interactive",
+    "original": "Student+Interactive",
+    "note": "",
+    "status": "retained"
+  },
+  "autoTrackerSet.studentfullInteractive": {
+    "row": 172,
+    "group": "05    导播策略   ·    autoTrackerSet",
+    "zh": "学生全景+互动",
+    "en": "Student Wide + Interactive",
+    "original": "Student_F+Interactive",
+    "note": "保持原信号组合；采用短标签，_F 表示全景。",
+    "status": "changed"
+  },
+  "autoTrackerSet.board2Student": {
+    "row": 173,
+    "group": "05    导播策略   ·    autoTrackerSet",
+    "zh": "板书2+学生",
+    "en": "Board2+Student",
+    "original": "Board2+Student",
+    "note": "",
+    "status": "retained"
+  },
+  "autoTrackerSet.board2Studentfull": {
+    "row": 174,
+    "group": "05    导播策略   ·    autoTrackerSet",
+    "zh": "板书2+学生全景",
+    "en": "Board2 + Student Wide",
+    "original": "Board2+Student_F",
+    "note": "保持原信号组合；采用短标签，_F 表示全景。",
+    "status": "changed"
+  },
+  "autoTrackerSet.board2Interactive": {
+    "row": 175,
+    "group": "05    导播策略   ·    autoTrackerSet",
+    "zh": "板书2+互动",
+    "en": "Board2+Interactive",
+    "original": "Board2+Interactive",
+    "note": "",
+    "status": "retained"
+  },
+  "autoTrackerSet.computer2Teacher": {
+    "row": 176,
+    "group": "05    导播策略   ·    autoTrackerSet",
+    "zh": "电脑2+教师",
+    "en": "Content 2 + Teacher",
+    "original": "Computer2+Teacher",
+    "note": "统一输入短名称，保持原信号组合及顺序。",
+    "status": "changed"
+  },
+  "autoTrackerSet.computer2Teacherfull": {
+    "row": 177,
+    "group": "05    导播策略   ·    autoTrackerSet",
+    "zh": "电脑2+教师全景",
+    "en": "Content 2 + Teacher Wide",
+    "original": "Computer2+Teacher_F",
+    "note": "保持原信号组合；采用短标签，_F 表示全景。",
+    "status": "changed"
+  },
+  "autoTrackerSet.computer2Student": {
+    "row": 178,
+    "group": "05    导播策略   ·    autoTrackerSet",
+    "zh": "电脑2+学生",
+    "en": "Content 2 + Student",
+    "original": "Computer2+Student",
+    "note": "统一输入短名称，保持原信号组合及顺序。",
+    "status": "changed"
+  },
+  "autoTrackerSet.computer2Studentfull": {
+    "row": 179,
+    "group": "05    导播策略   ·    autoTrackerSet",
+    "zh": "电脑2+学生全景",
+    "en": "Content 2 + Student Wide",
+    "original": "Computer2+Student_F",
+    "note": "保持原信号组合；采用短标签，_F 表示全景。",
+    "status": "changed"
+  },
+  "autoTrackerSet.computer2Interactive": {
+    "row": 180,
+    "group": "05    导播策略   ·    autoTrackerSet",
+    "zh": "电脑2+互动",
+    "en": "Content 2 + Interactive",
+    "original": "Computer2+Interactive",
+    "note": "统一输入短名称，保持原信号组合及顺序。",
+    "status": "changed"
+  }
+}

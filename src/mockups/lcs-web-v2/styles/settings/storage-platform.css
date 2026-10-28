@@ -1,0 +1,472 @@
+/* ==========================================================================
+   Upload Setting Page Styling
+   ========================================================================== */
+.lcs-web-upload-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.lcs-web-upload-card {
+  padding: 28px 32px 36px;
+  background: #ffffff;
+  border: 1px solid #e4eaf3;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.lcs-web-upload-card .lcs-web-ok {
+  width: auto;
+  min-width: 80px;
+  max-width: 100px;
+  align-self: flex-start;
+  margin-top: 16px;
+}
+
+.lcs-web-upload-row {
+  display: flex;
+  align-items: center;
+  min-height: 36px;
+}
+
+.lcs-web-upload-label {
+  width: 170px;
+  flex-shrink: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.lcs-web-upload-control {
+  width: 250px;
+  flex-shrink: 0;
+}
+
+.lcs-web-upload-control .lcs-web-native-select {
+  width: 100%;
+  height: 34px;
+}
+
+.lcs-web-upload-input {
+  width: 100%;
+  height: 34px;
+  border: 1px solid #cfd9e6;
+  border-radius: 4px;
+  padding: 0 10px;
+  font-size: 13px;
+  color: #1e293b;
+  background: #ffffff;
+  outline: none;
+}
+
+.lcs-web-upload-input:focus {
+  border-color: #178bff;
+}
+
+.lcs-web-password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.lcs-web-password-wrapper .lcs-web-upload-input {
+  padding-right: 32px;
+}
+
+.lcs-web-pwd-toggle-btn {
+  position: absolute;
+  right: 8px;
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lcs-web-pwd-toggle-btn:hover {
+  color: #475569;
+}
+
+.lcs-web-upload-tip {
+  font-size: 12px;
+  color: #8c9ba5;
+  line-height: 1.6;
+  margin-left: 24px;
+  flex: 1;
+}
+
+/* ==========================================================================
+   Storage Setting Page Styling
+   ========================================================================== */
+.lcs-web-storage-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.lcs-web-storage-card {
+  padding: 24px 28px 36px;
+  background: #ffffff;
+  border: 1px solid #e4eaf3;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.lcs-web-storage-card .lcs-web-ok {
+  width: auto;
+  min-width: 80px;
+  max-width: 100px;
+  align-self: flex-start;
+  margin-top: 16px;
+}
+
+.lcs-web-storage-top-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 36px;
+  padding-bottom: 8px;
+}
+
+.lcs-web-storage-radios {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-shrink: 0;
+}
+
+.lcs-web-storage-top-tip {
+  font-size: 12px;
+  color: #8c9ba5;
+  line-height: 1.6;
+}
+
+.lcs-web-storage-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #eef2f7;
+}
+
+.lcs-web-storage-category-th {
+  width: 150px;
+  background: #f8fafc;
+  border-right: 1px solid #eef2f7;
+  border-bottom: 1px solid #eef2f7;
+  padding: 20px 24px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #334155;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.lcs-web-storage-td {
+  padding: 20px 28px;
+  border-bottom: 1px solid #eef2f7;
+  vertical-align: middle;
+}
+
+.lcs-web-storage-field-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.lcs-web-storage-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+  width: 90px;
+}
+
+.lcs-web-storage-section-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.lcs-web-storage-sub-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.lcs-web-storage-status {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.lcs-web-storage-status.is-closed {
+  color: #8c9ba5;
+}
+
+.lcs-web-storage-status.is-opened {
+  color: #10b981;
+}
+
+.lcs-web-storage-inline-tip {
+  font-size: 12px;
+  color: #8c9ba5;
+}
+
+.lcs-web-storage-network-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.lcs-web-storage-local-row {
+  display: flex;
+  align-items: center;
+}
+
+.lcs-web-storage-input-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lcs-web-storage-input-label {
+  font-size: 13px;
+  color: #475569;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.lcs-web-storage-input {
+  height: 32px;
+  border: 1px solid #cfd9e6;
+  border-radius: 4px;
+  padding: 0 10px;
+  font-size: 13px;
+  color: #1e293b;
+  background: #ffffff;
+  outline: none;
+}
+
+.lcs-web-storage-input:focus {
+  border-color: #178bff;
+}
+
+.lcs-web-input-path {
+  width: 240px;
+}
+
+.lcs-web-input-user {
+  width: 180px;
+}
+
+.lcs-web-storage-pwd-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.lcs-web-input-pwd {
+  width: 180px;
+  padding-right: 32px;
+}
+
+/* Inner Table for Storage Type */
+.lcs-web-storage-inner-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.lcs-web-storage-inner-table th,
+.lcs-web-storage-inner-table td {
+  padding: 12px 18px;
+  font-size: 13px;
+  text-align: left;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.lcs-web-storage-inner-table th {
+  background: #f8fafc;
+  color: #475569;
+  font-weight: 600;
+}
+
+.lcs-web-storage-inner-table td {
+  color: #334155;
+}
+
+.lcs-web-storage-good {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.lcs-web-storage-format-btn {
+  background: #f0f7ff;
+  color: #178bff;
+  border: 1px solid #b5d5ff;
+  border-radius: 4px;
+  padding: 4px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.lcs-web-storage-format-btn:hover {
+  background: #e0edff;
+  border-color: #178bff;
+}
+
+/* ==========================================================================
+   Platform Setting Page Styling
+   ========================================================================== */
+.lcs-web-platform-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.lcs-web-platform-card {
+  padding: 0;
+  background: #ffffff;
+  border: 1px solid #e4eaf3;
+  overflow-x: auto;
+}
+
+.lcs-web-platform-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+.lcs-web-platform-category-th {
+  width: 170px;
+  background: #ffffff;
+  border-right: 1px solid #eef2f7;
+  border-bottom: 1px solid #eef2f7;
+  padding: 24px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #334155;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.lcs-web-platform-td {
+  padding: 24px 32px;
+  border-bottom: 1px solid #eef2f7;
+  vertical-align: middle;
+}
+
+.lcs-web-plat-subheading {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 16px;
+}
+
+.lcs-web-plat-sip-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+  margin-bottom: 16px;
+}
+
+.lcs-web-plat-status {
+  font-size: 13px;
+  font-weight: 600;
+  color: #10b981;
+}
+
+.lcs-web-plat-row {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.lcs-web-plat-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #475569;
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.lcs-web-plat-toggle-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 320px;
+}
+
+.lcs-web-plat-field-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 320px;
+}
+
+.lcs-web-plat-input {
+  width: 190px;
+  height: 32px;
+  border: 1px solid #cfd9e6;
+  border-radius: 4px;
+  padding: 0 10px;
+  font-size: 13px;
+  color: #1e293b;
+  background: #ffffff;
+  outline: none;
+}
+
+.lcs-web-plat-input:focus {
+  border-color: #178bff;
+}
+
+.lcs-web-plat-select-wrap {
+  width: 190px;
+}
+
+.lcs-web-plat-select-wrap .lcs-web-native-select {
+  width: 100%;
+  height: 32px;
+}
+
+.lcs-web-plat-set-btn {
+  background: #178bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 18px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+}
+
+.lcs-web-plat-set-btn:hover {
+  background: #0f76e3;
+}
+
+.lcs-web-plat-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #178bff;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.lcs-web-plat-checkbox-label input {
+  accent-color: #178bff;
+  cursor: pointer;
+}
+

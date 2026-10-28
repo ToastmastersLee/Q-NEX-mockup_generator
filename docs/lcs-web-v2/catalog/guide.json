@@ -1,0 +1,335 @@
+{
+  "guide.guide": {
+    "row": 110,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "功能引导",
+    "en": "Guide",
+    "original": "Guide",
+    "note": "",
+    "status": "retained"
+  },
+  "guide.done": {
+    "row": 111,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "完成",
+    "en": "Done",
+    "original": "Done",
+    "note": "",
+    "status": "retained"
+  },
+  "guide.close": {
+    "row": 112,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "关闭",
+    "en": "Close",
+    "original": "Close",
+    "note": "",
+    "status": "retained"
+  },
+  "guide.next": {
+    "row": 113,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "下一个",
+    "en": "Next",
+    "original": "Next",
+    "note": "",
+    "status": "retained"
+  },
+  "guide.prev": {
+    "row": 114,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "上一个",
+    "en": "Prev",
+    "original": "Prev",
+    "note": "",
+    "status": "retained"
+  },
+  "guide.topicDesc": {
+    "row": 115,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "设置当前录制视频的主题信息(点击编辑可自定义，点击其他区域可保存编辑)",
+    "en": "Set the recording topic. Click to edit, then click elsewhere to save.",
+    "original": "Set the theme information for the current recorded video (click edit to customize, click other areas to save editing)",
+    "note": "与 Topic 字段一致，保留失焦保存操作。",
+    "status": "changed"
+  },
+  "guide.speakDesc": {
+    "row": 116,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "设置当前录制视频的主讲人(点击编辑可自定义，点击其他区域可保存编辑)",
+    "en": "Set the presenter. Click to edit, then click elsewhere to save.",
+    "original": "Set the speaker for the current recorded video (click edit to customize, click other areas to save edits)",
+    "note": "与 Presenter 字段一致。",
+    "status": "changed"
+  },
+  "guide.recordParamDesc": {
+    "row": 117,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "显示当前电影通道录制视频的设置参数",
+    "en": "Shows the recording settings for the Program (PGM) channel.",
+    "original": "Display the settings parameters for recording videos on the current film channel",
+    "note": "电影通道指最终节目。",
+    "status": "changed"
+  },
+  "guide.liveParamDesc": {
+    "row": 118,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "显示当前电影通道直播功能的设置参数",
+    "en": "Shows the streaming settings for the Program (PGM) channel.",
+    "original": "Display the setting parameters of the current film channel live streaming function",
+    "note": "电影通道指最终节目。",
+    "status": "changed"
+  },
+  "guide.diskSizeDesc": {
+    "row": 119,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "显示当前硬盘可用容量/总容量",
+    "en": "Display the current available capacity/total capacity of the hard drive",
+    "original": "Display the current available capacity/total capacity of the hard drive",
+    "note": "",
+    "status": "retained"
+  },
+  "guide.networkStateDesc": {
+    "row": 120,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "显示当前主机的网络设置信息/联网状态信息",
+    "en": "Display the network settings/networking status information of the current host",
+    "original": "Display the network settings/networking status information of the current host",
+    "note": "",
+    "status": "retained"
+  },
+  "guide.mobileNetworkDesc": {
+    "row": 121,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "显示当前主机是否接入可移动硬盘",
+    "en": "Display whether the current host is connected to a removable hard drive",
+    "original": "Display whether the current host is connected to a removable hard drive",
+    "note": "",
+    "status": "retained"
+  },
+  "guide.systemTimeDesc": {
+    "row": 122,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "显示当前主机的系统时间",
+    "en": "Display the system time of the current host",
+    "original": "Display the system time of the current host",
+    "note": "",
+    "status": "retained"
+  },
+  "guide.filmScreen": {
+    "row": 123,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "电影画面",
+    "en": "Program (PGM)",
+    "original": "Film screen",
+    "note": "电影画面指最终节目画面。",
+    "status": "changed"
+  },
+  "guide.filmScreenDesc": {
+    "row": 124,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "录制/直播的合成画面，在手动模式下，可以通过双击或拖拽下面的备播画面(视频预览小窗口)进行画面的切换",
+    "en": "The composite program used for recording and streaming. In Manual mode, double-click or drag an input preview below to switch it to PGM.",
+    "original": "The composite footage of recording/live streaming can be switched manually by double clicking or dragging the backup footage (video preview window) below",
+    "note": "备播窗口不是备用录像或独立 PVW 总线。",
+    "status": "changed"
+  },
+  "guide.recordDesc": {
+    "row": 125,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "磁盘存储空间足够且开启录制通道的情况下可进行视频录制",
+    "en": "Video recording can be performed with sufficient disk storage space and a recording channel enabled",
+    "original": "Video recording can be performed with sufficient disk storage space and a recording channel enabled",
+    "note": "",
+    "status": "retained"
+  },
+  "guide.liveDesc": {
+    "row": 126,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "开启直播通道的情况下可进行本地或远程直播，直播开启后可点击分享按钮生成二维码分享指定通道的直播地址",
+    "en": "When the live streaming channel is enabled, local or remote live streaming can be conducted. After the live streaming is enabled, click the share button to generate a QR code to share the designated channel's live streaming address",
+    "original": "When the live streaming channel is enabled, local or remote live streaming can be conducted. After the live streaming is enabled, click the share button to generate a QR code to share the designated channel's live streaming address",
+    "note": "",
+    "status": "retained"
+  },
+  "guide.subtitleDesc": {
+    "row": 127,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "字幕的开启/关闭，支持5条预设字幕",
+    "en": "Turn subtitles on or off. Supports 5 presets.",
+    "original": "Subtitle on/off, supports 5 preset subtitles",
+    "note": "保留字幕统称，不否定语音字幕能力。",
+    "status": "changed"
+  },
+  "guide.logoDesc": {
+    "row": 128,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "台标的开启/关闭，支持5个预设台标",
+    "en": "Turn the logo on or off. Supports 5 presets.",
+    "original": "The opening/closing of the logo supports 5 preset logos",
+    "note": "修正开关动作表达。",
+    "status": "changed"
+  },
+  "guide.titleDesc": {
+    "row": 129,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "片头的开启/关闭，支持5个预设片头",
+    "en": "Turn the intro on or off. Supports 5 presets.",
+    "original": "The opening/closing of the opening title supports 5 preset opening titles",
+    "note": "统一片头术语。",
+    "status": "changed"
+  },
+  "guide.trailerDesc": {
+    "row": 130,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "片尾的开启/关闭，支持5个预设片尾",
+    "en": "Turn the outro on or off. Supports 5 presets.",
+    "original": "Tail opening/closing, supports 5 preset tail settings",
+    "note": "修正片尾误译。",
+    "status": "changed"
+  },
+  "guide.osdDesc": {
+    "row": 131,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "日期时间水印信息开启/关闭，支持日期+时间、只显示日期、只显示时间三种格式。",
+    "en": "Turn the date/time overlay on or off. Choose date and time, date only, or time only.",
+    "original": "Date and time watermark information on/off, supports three formats: date+time, display only date, and display only time",
+    "note": "OSD 为日期时间叠加。",
+    "status": "changed"
+  },
+  "guide.autoDesc": {
+    "row": 132,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "画面自动跟踪并且会自动向电影通道切换",
+    "en": "Automatically tracks subjects and switches PGM.",
+    "original": "The screen will automatically track and switch to the film channel",
+    "note": "区分摄像机跟踪与节目切换。",
+    "status": "changed"
+  },
+  "guide.semiautoDesc": {
+    "row": 133,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "画面自动跟踪但不会向电影通道切换",
+    "en": "Automatically tracks subjects without automatically switching PGM.",
+    "original": "The screen automatically tracks but does not switch to the film channel",
+    "note": "准确说明半自动模式。",
+    "status": "changed"
+  },
+  "guide.manualDesc": {
+    "row": 134,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "画面不会自动跟踪也不会向电影通道切换",
+    "en": "No automatic tracking or PGM switching.",
+    "original": "The screen will not automatically track or switch to the film channel",
+    "note": "准确说明手动模式。",
+    "status": "changed"
+  },
+  "guide.PTZ": {
+    "row": 135,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "云台(PTZ功能)",
+    "en": "PTZ function",
+    "original": "PTZ function",
+    "note": "",
+    "status": "retained"
+  },
+  "guide.ptzDesc": {
+    "row": 136,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "此功能仅在手动模式下可用，用于控制云台摄像机的PTZ，自动模式下无效，具体操作如下：",
+    "en": "PTZ controls are available only in Manual mode, not in Auto mode. Use either method below:",
+    "original": "This function is only available in manual mode and is used to control the PTZ of the pan tilt camera. It is invalid in automatic mode. The specific operation is as follows:",
+    "note": "保留模式限制，简化说明。",
+    "status": "changed"
+  },
+  "guide.method1": {
+    "row": 137,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "方法1",
+    "en": "Method 1 ",
+    "original": "Method 1 ",
+    "note": "",
+    "status": "retained"
+  },
+  "guide.ptzMethod1": {
+    "row": 138,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "通过双击或者拖拽，将备播画面切换到电影通道，此时PTZ也控制这个通道",
+    "en": "Double-click or drag an input preview to PGM. PTZ controls then operate that channel.",
+    "original": "By double clicking or dragging, switch the backup screen to the film channel, and PTZ also controls this channel",
+    "note": "备播窗口不是备用画面总线。",
+    "status": "changed"
+  },
+  "guide.method2": {
+    "row": 139,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "方法2",
+    "en": "Method 2 ",
+    "original": "Method 2 ",
+    "note": "",
+    "status": "retained"
+  },
+  "guide.ptzMethod2": {
+    "row": 140,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "通过点击备播画面右上角PTZ，使其呈蓝色高亮显示，此时PTZ控制这个通道",
+    "en": "Click PTZ at the top right of an input preview. When highlighted blue, PTZ controls operate that channel.",
+    "original": "By clicking on the PTZ in the upper right corner of the backup screen to highlight it in blue, the PTZ controls this channel",
+    "note": "明确选择和高亮反馈。",
+    "status": "changed"
+  },
+  "guide.ptzRemark": {
+    "row": 141,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "备注：此方法主要应用于需要先调节PTZ，再将其切换到电影通道时使用",
+    "en": "Note: Use this method to adjust the camera before switching it to PGM.",
+    "original": "Note: This method is mainly used when adjusting the PTZ first and then switching it to the film channel",
+    "note": "准确表达先调镜头再切节目。",
+    "status": "changed"
+  },
+  "guide.layoutDesc": {
+    "row": 142,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "此功能可用于设置电影画面的布局，支持单画面、画中画、双分屏等8种布局模式，并支持鼠标拖动快速设置布局中的画面",
+    "en": "Set the PGM layout. Choose from 8 layouts, including single view, picture-in-picture, and split screen. Drag input previews into the layout to assign sources.",
+    "original": "This function can be used to set the layout of movie screens, supporting 8 layout modes such as single screen, picture in picture, and dual split screen, and supporting mouse drag to quickly set the screen in the layout",
+    "note": "统一节目、布局与输入源术语。",
+    "status": "changed"
+  },
+  "guide.layoutRemark": {
+    "row": 143,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "说明：此功能仅在手动模式下可用，自动模式下无效",
+    "en": "Available only in Manual mode, not in Auto mode.",
+    "original": "Explanation: This feature is only available in manual mode and is not effective in automatic mode",
+    "note": "简化模式限制。",
+    "status": "changed"
+  },
+  "guide.transitionDesc": {
+    "row": 144,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "此功能可用于设置电影画面的切入特效，支持百叶窗、淡入淡出等11种切入特效",
+    "en": "Set the PGM transition effect. Choose from 11 effects, including blinds and fade.",
+    "original": "This feature can be used to set the cut in effect for film screen, supporting 11 types of cut in effects such as blinds and fade in/fade out",
+    "note": "转场效果不应称切入电影。",
+    "status": "changed"
+  },
+  "guide.backupScreen": {
+    "row": 145,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "备播画面",
+    "en": "Input Previews",
+    "original": "Backup screen",
+    "note": "备播为输入预览窗口。",
+    "status": "changed"
+  },
+  "guide.backupScreenDesc": {
+    "row": 146,
+    "group": "04    功能引导    ·    guide    ",
+    "zh": "有绿色框的通道表示此画面当前正在电影画面中显示，在手动模式下，各个备播画面都可以通过双击或者拖拽切换到电影画面，作为录制和直播的导播画面",
+    "en": "A green border marks a source currently shown in PGM. In Manual mode, double-click or drag an input preview to use it in the program for recording and streaming.",
+    "original": "The channel with a green box indicates that this screen is currently being displayed in the movie screen. In manual mode, each backup screen can be switched to the movie screen by double clicking or dragging, serving as a guide screen for recording and live streaming",
+    "note": "区分输入预览与最终节目。",
+    "status": "changed"
+  }
+}

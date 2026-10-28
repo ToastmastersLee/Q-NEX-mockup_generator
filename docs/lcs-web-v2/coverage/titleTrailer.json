@@ -1,0 +1,114 @@
+{
+  "titleTrailer.title": {
+    "status": "changed",
+    "controls": [
+      "titleTrailer.titleSection"
+    ]
+  },
+  "titleTrailer.titlePreset": {
+    "status": "changed",
+    "controls": [
+      "titleTrailer.titlePreset"
+    ]
+  },
+  "titleTrailer.chooseFile": {
+    "status": "retained",
+    "controls": [
+      "titleTrailer.chooseFile"
+    ]
+  },
+  "titleTrailer.duration": {
+    "status": "retained",
+    "controls": [
+      "titleTrailer.duration"
+    ]
+  },
+  "titleTrailer.tip1": {
+    "status": "changed",
+    "controls": [
+      "titleTrailer.tip1"
+    ]
+  },
+  "titleTrailer.tip2": {
+    "status": "changed",
+    "controls": [
+      "titleTrailer.tip2"
+    ]
+  },
+  "titleTrailer.tip3": {
+    "status": "changed",
+    "controls": [
+      "titleTrailer.tip3"
+    ]
+  },
+  "titleTrailer.tip4": {
+    "status": "retained",
+    "controls": [
+      "titleTrailer.tip4"
+    ]
+  },
+  "titleTrailer.trailer": {
+    "status": "changed",
+    "controls": [
+      "titleTrailer.trailerSection"
+    ]
+  },
+  "titleTrailer.trailerPreset": {
+    "status": "changed",
+    "controls": [
+      "titleTrailer.trailerPreset"
+    ]
+  },
+  "titleTrailer.uploading": {
+    "status": "changed",
+    "controls": []
+  },
+  "titleTrailer.deleting": {
+    "status": "changed",
+    "controls": []
+  },
+  "titleTrailer.noMoreThanThirtySecs": {
+    "status": "retained",
+    "controls": []
+  },
+  "titleTrailer.imageTypeError": {
+    "status": "retained",
+    "controls": []
+  },
+  "titleTrailer.imageNameHasSpace": {
+    "status": "retained",
+    "controls": []
+  },
+  "titleTrailer.closeRecord": {
+    "status": "changed",
+    "controls": []
+  },
+  "titleTrailer.imageSizeError": {
+    "status": "changed",
+    "controls": []
+  },
+  "titleTrailer.imageRatioError": {
+    "status": "retained",
+    "controls": []
+  },
+  "titleTrailer.uploadSuccess": {
+    "status": "retained",
+    "controls": []
+  },
+  "titleTrailer.uploadFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "titleTrailer.deleteSuccess": {
+    "status": "retained",
+    "controls": []
+  },
+  "titleTrailer.presetNameSame": {
+    "status": "changed",
+    "controls": []
+  },
+  "titleTrailer.presetNameNull": {
+    "status": "retained",
+    "controls": []
+  }
+}

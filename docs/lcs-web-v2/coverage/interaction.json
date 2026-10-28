@@ -1,0 +1,185 @@
+{
+  "interaction.interactionSetting": {
+    "status": "changed",
+    "controls": [
+      "common.sidebar.interaction",
+      "interaction.pageTitle"
+    ]
+  },
+  "interaction.interactionMode": {
+    "status": "retained",
+    "controls": []
+  },
+  "interaction.speakerMode": {
+    "status": "retained",
+    "controls": []
+  },
+  "interaction.teachingMode": {
+    "status": "changed",
+    "controls": []
+  },
+  "interaction.creator": {
+    "status": "changed",
+    "controls": [
+      "interaction.secCaller"
+    ]
+  },
+  "interaction.joiner": {
+    "status": "changed",
+    "controls": [
+      "interaction.secReceiver"
+    ]
+  },
+  "interaction.senderVideo1": {
+    "status": "changed",
+    "controls": [
+      "interaction.defaultSend1"
+    ]
+  },
+  "interaction.senderVideo2": {
+    "status": "changed",
+    "controls": [
+      "interaction.defaultSend2"
+    ]
+  },
+  "interaction.senderVideo": {
+    "status": "changed",
+    "controls": [
+      "interaction.defaultSend"
+    ]
+  },
+  "interaction.joinerVideo": {
+    "status": "changed",
+    "controls": [
+      "interaction.receiveSelect"
+    ]
+  },
+  "interaction.videoResolution": {
+    "status": "retained",
+    "controls": [
+      "interaction.resolution"
+    ]
+  },
+  "interaction.defaultOutput": {
+    "status": "retained",
+    "controls": [
+      "interaction.outputChannel"
+    ]
+  },
+  "interaction.UHD": {
+    "status": "retained",
+    "controls": [
+      "interaction.resUltra"
+    ]
+  },
+  "interaction.UD": {
+    "status": "pending",
+    "controls": []
+  },
+  "interaction.FHD": {
+    "status": "changed",
+    "controls": [
+      "interaction.resFull"
+    ]
+  },
+  "interaction.HD": {
+    "status": "retained",
+    "controls": [
+      "interaction.resStandard"
+    ]
+  },
+  "interaction.HDU": {
+    "status": "changed",
+    "controls": []
+  },
+  "interaction.dualDisplay": {
+    "status": "retained",
+    "controls": [
+      "interaction.dualScreen"
+    ]
+  },
+  "interaction.singleDisplay": {
+    "status": "retained",
+    "controls": [
+      "interaction.singleScreen"
+    ]
+  },
+  "interaction.otherSettings": {
+    "status": "retained",
+    "controls": [
+      "interaction.secOther"
+    ]
+  },
+  "interaction.speakerFullScreen": {
+    "status": "changed",
+    "controls": [
+      "interaction.speakerFullscreen"
+    ]
+  },
+  "interaction.showSelf": {
+    "status": "retained",
+    "controls": [
+      "interaction.showLocalVideo"
+    ]
+  },
+  "interaction.maxSplitScreens": {
+    "status": "retained",
+    "controls": [
+      "interaction.maxSplit"
+    ]
+  },
+  "interaction.openMicNum": {
+    "status": "changed",
+    "controls": [
+      "interaction.micOpenCount"
+    ]
+  },
+  "interaction.fourScreens": {
+    "status": "changed",
+    "controls": [
+      "interaction.split4"
+    ]
+  },
+  "interaction.nineScreens": {
+    "status": "changed",
+    "controls": [
+      "interaction.split9"
+    ]
+  },
+  "interaction.splitScreenFormat": {
+    "status": "changed",
+    "controls": []
+  },
+  "interaction.sipSetting": {
+    "status": "changed",
+    "controls": [
+      "interaction.cardTitleSip"
+    ]
+  },
+  "interaction.output": {
+    "status": "retained",
+    "controls": [
+      "interaction.sipOutput"
+    ]
+  },
+  "interaction.doubleStream": {
+    "status": "changed",
+    "controls": [
+      "interaction.sipDualStream"
+    ]
+  },
+  "interaction.pipView": {
+    "status": "changed",
+    "controls": [
+      "interaction.sipPip"
+    ]
+  },
+  "interaction.typeNotSupportFormat": {
+    "status": "changed",
+    "controls": []
+  },
+  "interaction.audioInputSetting": {
+    "status": "retained",
+    "controls": []
+  }
+}

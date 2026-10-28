@@ -1,0 +1,16 @@
+{
+  "titleSection": "titleTrailer.title",
+  "titlePreset": "titleTrailer.titlePreset",
+  "trailerSection": "titleTrailer.trailer",
+  "trailerPreset": "titleTrailer.trailerPreset",
+  "chooseFile": "titleTrailer.chooseFile",
+  "noFileSelected": "parameter.noFilesSelected",
+  "delete": "parameter.delete",
+  "duration": "titleTrailer.duration",
+  "tipTitle": "parameter.tip",
+  "tip1": "titleTrailer.tip1",
+  "tip2": "titleTrailer.tip2",
+  "tip3": "titleTrailer.tip3",
+  "tip4": "titleTrailer.tip4",
+  "ok": "parameter.ok"
+}

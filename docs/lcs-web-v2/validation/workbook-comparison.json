@@ -1,0 +1,12 @@
+{
+  "independentReader": "openpyxl (read-only)",
+  "comparedKeys": 1476,
+  "columns": [
+    "C",
+    "D",
+    "E",
+    "F"
+  ],
+  "sha256": "d3b1feb42e3d1adcf8df668d99744a9906147f8659c5c8c0d7beb6dce0ac47a3",
+  "result": "passed"
+}

@@ -1,0 +1,749 @@
+{
+  "parameter.film": {
+    "row": 1434,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "电影",
+    "en": "PGM",
+    "original": "Film",
+    "note": "最终节目通道的短标签；说明文档展开为 Program Output。",
+    "status": "changed"
+  },
+  "parameter.computer": {
+    "row": 1435,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "电脑",
+    "en": "Content 1",
+    "original": "Computer",
+    "note": "逻辑教学内容输入，不限定电脑。",
+    "status": "changed"
+  },
+  "parameter.computer2": {
+    "row": 1436,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "电脑2",
+    "en": "Content 2",
+    "original": "Computer2",
+    "note": "与 Content 1 成对，保留输入编号。",
+    "status": "changed"
+  },
+  "parameter.teacher": {
+    "row": 1437,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "教师",
+    "en": "Teacher",
+    "original": "Teacher",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.student": {
+    "row": 1438,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "学生",
+    "en": "Student",
+    "original": "Student",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.teacher_full": {
+    "row": 1439,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "教师全景",
+    "en": "Teacher Wide",
+    "original": "Teacher_F.",
+    "note": "全景画面的短标签，不显示内部 _F。",
+    "status": "changed"
+  },
+  "parameter.student_full": {
+    "row": 1440,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "学生全景",
+    "en": "Student Wide",
+    "original": "Student_F.",
+    "note": "全景画面的短标签，不显示内部 _F。",
+    "status": "changed"
+  },
+  "parameter.board": {
+    "row": 1441,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "板书",
+    "en": "Board",
+    "original": "Board",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.board2": {
+    "row": 1442,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "板书2",
+    "en": "Board2",
+    "original": "Board2",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.board3": {
+    "row": 1443,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "板书3",
+    "en": "Board3",
+    "original": "Board3",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.interactive": {
+    "row": 1444,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "互动",
+    "en": "Interactive",
+    "original": "Interactive",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.confirm": {
+    "row": 1445,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "确认",
+    "en": "OK",
+    "original": "OK",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.cancel": {
+    "row": 1446,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "取消",
+    "en": "Cancel",
+    "original": "Cancel",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.administrator": {
+    "row": 1447,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "管理员",
+    "en": "Administrator",
+    "original": "Administrator",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.ordinaryUser": {
+    "row": 1448,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "普通用户",
+    "en": "Standard User",
+    "original": "Standard User",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.visitor": {
+    "row": 1449,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "访客",
+    "en": "Guest",
+    "original": "Guest",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.setting": {
+    "row": 1450,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "高级设置",
+    "en": "Settings",
+    "original": "Settings",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.reboot": {
+    "row": 1451,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "重启",
+    "en": "Reboot",
+    "original": "Reboot",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.poweroff": {
+    "row": 1452,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "关机",
+    "en": "Shut Down",
+    "original": "ShutDown",
+    "note": "关机按钮使用分开的动词。",
+    "status": "changed"
+  },
+  "parameter.logout": {
+    "row": 1453,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "注销",
+    "en": "Log Out",
+    "original": "LogOut",
+    "note": "注销按钮使用分开的动词。",
+    "status": "changed"
+  },
+  "parameter.record": {
+    "row": 1454,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "录像",
+    "en": "Record",
+    "original": "Record",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.name": {
+    "row": 1455,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "名称",
+    "en": "Name",
+    "original": "Name",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.bitRate": {
+    "row": 1456,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "码率",
+    "en": "Bit Rate",
+    "original": "Bit Rate",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.format": {
+    "row": 1457,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "格式",
+    "en": "Format",
+    "original": "Format",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.frameRate": {
+    "row": 1458,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "帧率",
+    "en": "Frame Rate",
+    "original": "Frame Rate",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.code": {
+    "row": 1459,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "编码",
+    "en": "Codec",
+    "original": "Code",
+    "note": "音视频编码格式，不是代码。",
+    "status": "changed"
+  },
+  "parameter.resolution": {
+    "row": 1460,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "分辨率",
+    "en": "Resolution",
+    "original": "Resolution",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.save": {
+    "row": 1461,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "保存",
+    "en": "Save",
+    "original": "Save",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.ok": {
+    "row": 1462,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "确定",
+    "en": "OK",
+    "original": "OK",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.edit": {
+    "row": 1463,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "编辑",
+    "en": "Edit",
+    "original": "Edit",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.sync": {
+    "row": 1464,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "同步",
+    "en": "Sync",
+    "original": "Sync",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.versionDetection": {
+    "row": 1465,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "版本检测",
+    "en": "Check for Updates",
+    "original": "Version Detection",
+    "note": "检查更新的操作名称。",
+    "status": "changed"
+  },
+  "parameter.live": {
+    "row": 1466,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "直播",
+    "en": "Live",
+    "original": "Live",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.audioFrequency": {
+    "row": 1467,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "音频",
+    "en": "Audio",
+    "original": "Audio Frequency",
+    "note": "音频不等于音频频率。",
+    "status": "changed"
+  },
+  "parameter.RTSPLive": {
+    "row": 1468,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "RTSP直播",
+    "en": "RTSP Streaming",
+    "original": "RTSP Live Broadcast",
+    "note": "统一直播术语。",
+    "status": "changed"
+  },
+  "parameter.server": {
+    "row": 1469,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "服务器",
+    "en": "Server",
+    "original": "Server",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.port": {
+    "row": 1470,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "端口",
+    "en": "Port",
+    "original": "Port",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.delete": {
+    "row": 1471,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "删除",
+    "en": "Delete",
+    "original": "Delete",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.download": {
+    "row": 1472,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "下载",
+    "en": "Download",
+    "original": "Download",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.selectAll": {
+    "row": 1473,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "全选",
+    "en": "Select All",
+    "original": "Select All",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.warning": {
+    "row": 1474,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "警告",
+    "en": "Warning",
+    "original": "Warning",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.refresh": {
+    "row": 1475,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "刷新",
+    "en": "Refresh",
+    "original": "Refresh",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.ipError": {
+    "row": 1476,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "这不是有效值，请指定一个0-255之间的值",
+    "en": "This is not a valid value. Please specify a value between 0 and 255",
+    "original": "This is not a valid value. Please specify a value between 0 and 255",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.noPermission": {
+    "row": 1477,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "无操作权限",
+    "en": "Permission denied.",
+    "original": "No operation authority",
+    "note": "操作权限的自然表达。",
+    "status": "changed"
+  },
+  "parameter.licenseExpired": {
+    "row": 1478,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "授权已过期",
+    "en": "License expired.",
+    "original": "Authorization has expired",
+    "note": "授权有效期指许可证。",
+    "status": "changed"
+  },
+  "parameter.licenseResErr": {
+    "row": 1479,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "超出授权通道数量",
+    "en": "Number of authorized channels exceeded",
+    "original": "Number of authorized channels exceeded",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.dnsError": {
+    "row": 1480,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "DNS错误",
+    "en": "DNS Error",
+    "original": "DNS Error",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.netError": {
+    "row": 1481,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "网络错误",
+    "en": "Net Error",
+    "original": "Net Error",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.setSuccess": {
+    "row": 1482,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "设置成功",
+    "en": "Settings saved.",
+    "original": "Set successfully",
+    "note": "自然的成功反馈。",
+    "status": "changed"
+  },
+  "parameter.setFail": {
+    "row": 1483,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "设置失败",
+    "en": "Failed to save settings.",
+    "original": "Set Failed",
+    "note": "自然的失败反馈。",
+    "status": "changed"
+  },
+  "parameter.setSuccessRestart": {
+    "row": 1484,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "设置成功，重启后生效，是否重启？",
+    "en": "Settings saved. Restart required. Restart now?",
+    "original": "Successfully set, takes effect after restarting. Do you want to restart?",
+    "note": "保留重启生效及询问。",
+    "status": "changed"
+  },
+  "parameter.upgradeSuccessRestart": {
+    "row": 1485,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "升级成功，重启后生效，是否重启？",
+    "en": "Upgrade successful. Restart required. Restart now?",
+    "original": "Upgrade successful, will take effect after restarting. Do you want to restart?",
+    "note": "保留重启生效及询问。",
+    "status": "changed"
+  },
+  "parameter.setSuccessRestart2": {
+    "row": 1486,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "设置成功，重启后生效",
+    "en": "Settings saved. Restart the device to apply them.",
+    "original": "Successfully set, takes effect after restarting.",
+    "note": "保留重启生效条件。",
+    "status": "changed"
+  },
+  "parameter.deleteSuccess": {
+    "row": 1487,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "删除成功",
+    "en": "Deleted successfully.",
+    "original": "Delete successfully",
+    "note": "成功状态使用过去分词。",
+    "status": "changed"
+  },
+  "parameter.deleteFail": {
+    "row": 1488,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "删除失败",
+    "en": "Delete Failed",
+    "original": "Delete Failed",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.noFilesSelected": {
+    "row": 1489,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "未选择任何文件",
+    "en": "No Files Selected",
+    "original": "No Files Selected",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.switchLanguageSuccess": {
+    "row": 1490,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "语言切换成功",
+    "en": "Language changed.",
+    "original": "Switch Language Success",
+    "note": "自然的语言切换反馈。",
+    "status": "changed"
+  },
+  "parameter.timeOut": {
+    "row": 1491,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "请求超时",
+    "en": "Request timed out.",
+    "original": "Time out",
+    "note": "补齐请求超时含义。",
+    "status": "changed"
+  },
+  "parameter.preset1": {
+    "row": 1492,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "预设一",
+    "en": "Preset1",
+    "original": "Preset1",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.preset2": {
+    "row": 1493,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "预设二",
+    "en": "Preset2",
+    "original": "Preset2",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.preset3": {
+    "row": 1494,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "预设三",
+    "en": "Preset3",
+    "original": "Preset3",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.preset4": {
+    "row": 1495,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "预设四",
+    "en": "Preset4",
+    "original": "Preset4",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.preset5": {
+    "row": 1496,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "预设五",
+    "en": "Preset5",
+    "original": "Preset5",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.tips": {
+    "row": 1497,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "提示",
+    "en": "Tips",
+    "original": "Tips",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.tip": {
+    "row": 1498,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "操作提示：",
+    "en": "TIP:",
+    "original": "TIP:",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.inputPassword": {
+    "row": 1499,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "请输入管理员密码",
+    "en": "Enter the administrator password.",
+    "original": "Please input password",
+    "note": "原英文遗漏管理员限制。",
+    "status": "changed"
+  },
+  "parameter.passwordError": {
+    "row": 1500,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "密码错误",
+    "en": "Incorrect password.",
+    "original": "Password error",
+    "note": "自然的密码错误提示。",
+    "status": "changed"
+  },
+  "parameter.topic": {
+    "row": 1501,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "主题",
+    "en": "Topic",
+    "original": "Topic",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.null": {
+    "row": 1502,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "Null",
+    "en": "Null",
+    "original": "Null",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.second": {
+    "row": 1503,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "秒",
+    "en": "s",
+    "original": "S",
+    "note": "秒的单位符号应小写。",
+    "status": "changed"
+  },
+  "parameter.close": {
+    "row": 1504,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "关闭",
+    "en": "Close",
+    "original": "Close",
+    "note": "待确认：公共 Close 是否同时用于关闭窗口和关闭开关；窗口保留 Close，开关应使用 Off。",
+    "status": "pending"
+  },
+  "parameter.open": {
+    "row": 1505,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "开启",
+    "en": "Open",
+    "original": "Open",
+    "note": "待确认：公共 Open 是否同时用于打开窗口和启用功能；按调用位置区分 Open、On 或 Enable。",
+    "status": "pending"
+  },
+  "parameter.networkReconnection": {
+    "row": 1506,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "断网重连",
+    "en": "Auto Reconnect",
+    "original": "Network disconnection and reconnection",
+    "note": "简短表达断网重连功能。",
+    "status": "changed"
+  },
+  "parameter.selectOrInput": {
+    "row": 1507,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "请选择或输入",
+    "en": "Please select or enter",
+    "original": "Please select or enter",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.uploading": {
+    "row": 1508,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "上传中",
+    "en": "Uploading",
+    "original": "Uploading",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.uploadCompleted": {
+    "row": 1509,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "上传完成",
+    "en": "Upload completed",
+    "original": "Upload completed",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.copy": {
+    "row": 1510,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "复制",
+    "en": "Copy",
+    "original": "Copy",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.copySuccess": {
+    "row": 1511,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "复制成功",
+    "en": "Copy successful",
+    "original": "Copy successful",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.copyFail": {
+    "row": 1512,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "复制失败",
+    "en": "Copy failed",
+    "original": "Copy failed",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.liveUrl": {
+    "row": 1513,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "直播地址",
+    "en": "Live Url",
+    "original": "Live Url",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.noImage": {
+    "row": 1514,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "无图片",
+    "en": "No image",
+    "original": "No image",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.enterPage": {
+    "row": 1515,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "进入页面",
+    "en": "Enter page",
+    "original": "Enter page",
+    "note": "",
+    "status": "retained"
+  },
+  "parameter.space": {
+    "row": 1516,
+    "group": "41    公共词条    ·    parameter    ",
+    "zh": "空格",
+    "en": "Space",
+    "original": "Space",
+    "note": "",
+    "status": "retained"
+  }
+}

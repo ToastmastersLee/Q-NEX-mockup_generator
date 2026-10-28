@@ -1,0 +1,227 @@
+{
+  "project.guidingStrategy.guidingStrategy": {
+    "row": 1408,
+    "group": "38    工程设置 › 导播策略    ·    project.guidingStrategy ",
+    "zh": "导播策略",
+    "en": "Automatic Switching Rules",
+    "original": "Guiding Strategy",
+    "note": "按条件控制节目切换。",
+    "status": "changed"
+  },
+  "project.guidingStrategy.defaultScreen": {
+    "row": 1409,
+    "group": "38    工程设置 › 导播策略    ·    project.guidingStrategy ",
+    "zh": "默认画面设置",
+    "en": "Default Feed",
+    "original": "Default Screen",
+    "note": "默认逻辑画面，不是显示器。",
+    "status": "changed"
+  },
+  "project.guidingStrategy.channel": {
+    "row": 1410,
+    "group": "38    工程设置 › 导播策略    ·    project.guidingStrategy ",
+    "zh": "通道名称",
+    "en": "Feed",
+    "original": "Channel",
+    "note": "逻辑视频源，不一定对应独立接口。",
+    "status": "changed"
+  },
+  "project.guidingStrategy.enable": {
+    "row": 1411,
+    "group": "38    工程设置 › 导播策略    ·    project.guidingStrategy ",
+    "zh": "是否参与切换",
+    "en": "Auto Switch",
+    "original": "Enable",
+    "note": "明确是否参与自动切换。",
+    "status": "changed"
+  },
+  "project.guidingStrategy.priority": {
+    "row": 1412,
+    "group": "38    工程设置 › 导播策略    ·    project.guidingStrategy ",
+    "zh": "自动切换等级",
+    "en": "Priority",
+    "original": "Priority",
+    "note": "",
+    "status": "retained"
+  },
+  "project.guidingStrategy.minDisplayMS": {
+    "row": 1413,
+    "group": "38    工程设置 › 导播策略    ·    project.guidingStrategy ",
+    "zh": "停留时间(s)",
+    "en": "Min. Display Time (s)",
+    "original": "MinDisplayMS(s)",
+    "note": "已确认单位为秒，删除冲突的 MS。",
+    "status": "changed"
+  },
+  "project.guidingStrategy.transitionEnable": {
+    "row": 1414,
+    "group": "38    工程设置 › 导播策略    ·    project.guidingStrategy ",
+    "zh": "画面过渡",
+    "en": "Use Intermediate Feed",
+    "original": "TransitionEnable",
+    "note": "是中间画面，不是淡入淡出。",
+    "status": "changed"
+  },
+  "project.guidingStrategy.transitionChannel": {
+    "row": 1415,
+    "group": "38    工程设置 › 导播策略    ·    project.guidingStrategy ",
+    "zh": "画面选择",
+    "en": "Intermediate Feed",
+    "original": "TransitionChannel",
+    "note": "中间过渡画面。",
+    "status": "changed"
+  },
+  "project.guidingStrategy.transitionMS": {
+    "row": 1416,
+    "group": "38    工程设置 › 导播策略    ·    project.guidingStrategy ",
+    "zh": "过渡时间(s)",
+    "en": "Intermediate Time (s)",
+    "original": "TransitionMS(s)",
+    "note": "已确认单位为秒，删除冲突的 MS。",
+    "status": "changed"
+  },
+  "project.guidingStrategy.conditionInfo": {
+    "row": 1417,
+    "group": "38    工程设置 › 导播策略    ·    project.guidingStrategy ",
+    "zh": "多策略条件设置",
+    "en": "Switching Conditions",
+    "original": "ConditionInfo",
+    "note": "不显示代码式标题。",
+    "status": "changed"
+  },
+  "project.guidingStrategy.boardCheckTeacher": {
+    "row": 1418,
+    "group": "38    工程设置 › 导播策略    ·    project.guidingStrategy ",
+    "zh": "检测要求同时检测到",
+    "en": "Also require detection of",
+    "original": "Check",
+    "note": "保留后接检测对象的句式；LCS810 板书规则不适用。",
+    "status": "changed"
+  },
+  "project.guidingStrategy.studentMulDirectStudentfull": {
+    "row": 1419,
+    "group": "38    工程设置 › 导播策略    ·    project.guidingStrategy ",
+    "zh": "多目标切换到",
+    "en": "Multiple people: switch to",
+    "original": "MulDirect",
+    "note": "保留后接画面名的句式，不扩写整个控件。",
+    "status": "changed"
+  },
+  "project.guidingStrategy.teacherMulDirectTeacherfull": {
+    "row": 1420,
+    "group": "38    工程设置 › 导播策略    ·    project.guidingStrategy ",
+    "zh": "多目标切换到",
+    "en": "Multiple people: switch to",
+    "original": "MulDirect",
+    "note": "保留后接画面名的句式，不扩写整个控件。",
+    "status": "changed"
+  },
+  "project.guidingStrategy.studentMvDirectStudentfull": {
+    "row": 1421,
+    "group": "38    工程设置 › 导播策略    ·    project.guidingStrategy ",
+    "zh": "移动目标切换到",
+    "en": "Movement: switch to",
+    "original": "MvDirect",
+    "note": "保留后接画面名的句式。",
+    "status": "changed"
+  },
+  "project.guidingStrategy.teacherMvDirectTeacherfull": {
+    "row": 1422,
+    "group": "38    工程设置 › 导播策略    ·    project.guidingStrategy ",
+    "zh": "移动目标切换到",
+    "en": "Movement: switch to",
+    "original": "MvDirect",
+    "note": "保留后接画面名的句式。",
+    "status": "changed"
+  },
+  "project.guidingStrategy.studentDirectStudentfull": {
+    "row": 1423,
+    "group": "38    工程设置 › 导播策略    ·    project.guidingStrategy ",
+    "zh": "单目标切换到",
+    "en": "One person: switch to",
+    "original": "Direct",
+    "note": "保留后接画面名的句式。",
+    "status": "changed"
+  },
+  "project.guidingStrategy.teacherDirectTeacherfull": {
+    "row": 1424,
+    "group": "38    工程设置 › 导播策略    ·    project.guidingStrategy ",
+    "zh": "单目标切换到",
+    "en": "One person: switch to",
+    "original": "Direct",
+    "note": "保留后接画面名的句式。",
+    "status": "changed"
+  },
+  "project.guidingStrategy.autoDirector": {
+    "row": 1425,
+    "group": "38    工程设置 › 导播策略    ·    project.guidingStrategy ",
+    "zh": "自动导播模式",
+    "en": "Automatic Two-Source Layouts",
+    "original": "Auto director mode",
+    "note": "此区配置双画面组合。",
+    "status": "changed"
+  },
+  "project.guidingStrategy.modeChoose": {
+    "row": 1426,
+    "group": "38    工程设置 › 导播策略    ·    project.guidingStrategy ",
+    "zh": "模式选择",
+    "en": "Layout",
+    "original": "Mode Choose",
+    "note": "布局选择区内使用短标题。",
+    "status": "changed"
+  },
+  "project.guidingStrategy.doubleScreen": {
+    "row": 1427,
+    "group": "38    工程设置 › 导播策略    ·    project.guidingStrategy ",
+    "zh": "双屏配置选择",
+    "en": "Source Pair",
+    "original": "Double Screen",
+    "note": "两路画面的组合，不是双显示器。",
+    "status": "changed"
+  },
+  "project.guidingStrategy.default": {
+    "row": 1428,
+    "group": "38    工程设置 › 导播策略    ·    project.guidingStrategy ",
+    "zh": "默认",
+    "en": "Default",
+    "original": "Default",
+    "note": "",
+    "status": "retained"
+  },
+  "project.guidingStrategy.pipView": {
+    "row": 1429,
+    "group": "38    工程设置 › 导播策略    ·    project.guidingStrategy ",
+    "zh": "画中画",
+    "en": "Picture-in-Picture",
+    "original": "Picture in picture",
+    "note": "规范布局名称，不强制扩写缩略语。",
+    "status": "changed"
+  },
+  "project.guidingStrategy.lrView": {
+    "row": 1430,
+    "group": "38    工程设置 › 导播策略    ·    project.guidingStrategy ",
+    "zh": "双分屏",
+    "en": "Staggered Windows",
+    "original": "Double split screen",
+    "note": "按已有实测为对角错位双窗口，使用短名称。",
+    "status": "changed"
+  },
+  "project.guidingStrategy.tileView": {
+    "row": 1431,
+    "group": "38    工程设置 › 导播策略    ·    project.guidingStrategy ",
+    "zh": "画外画",
+    "en": "Picture-by-Picture",
+    "original": "Offscreen painting",
+    "note": "按已有实测为并列双画面，不是画外绘画。",
+    "status": "changed"
+  },
+  "project.guidingStrategy.samePriority": {
+    "row": 1432,
+    "group": "38    工程设置 › 导播策略    ·    project.guidingStrategy ",
+    "zh": "自动切换等级不能相同",
+    "en": "Switching priorities must be unique.",
+    "original": "Automatic switching level cannot be the same.",
+    "note": "明确不能重号。",
+    "status": "changed"
+  }
+}

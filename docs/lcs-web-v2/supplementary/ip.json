@@ -1,0 +1,17 @@
+{
+  "dhcp": {
+    "zh": "DHCP",
+    "en": "DHCP",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "pleaseEnterUrl": {
+    "zh": "请输入要检测的网址或IP地址",
+    "en": "Please enter URL or IP address to test",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "pingResult": {
+    "zh": "正在 Ping {url} ...\n来自 {url} 的回复: 字节=32 时间=12ms TTL=54\n来自 {url} 的回复: 字节=32 时间=11ms TTL=54\n数据包: 已发送 = 2, 已接收 = 2, 丢失 = 0 (0% 丢失)",
+    "en": "Pinging {url} ...\nReply from {url}: bytes=32 time=12ms TTL=54\nReply from {url}: bytes=32 time=11ms TTL=54\nPackets: Sent = 2, Received = 2, Lost = 0 (0% loss)",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  }
+}

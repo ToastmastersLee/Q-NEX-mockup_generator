@@ -1,0 +1,209 @@
+{
+  "titleTrailer.title": {
+    "row": 344,
+    "group": "11    片头片尾    ·    titleTrailer    ",
+    "zh": "片头",
+    "en": "Intro",
+    "original": "Title",
+    "note": "片头不是普通标题。",
+    "status": "changed"
+  },
+  "titleTrailer.titlePreset": {
+    "row": 345,
+    "group": "11    片头片尾    ·    titleTrailer    ",
+    "zh": "片头预设",
+    "en": "Intro Presets",
+    "original": "Title Preset",
+    "note": "统一片头术语。",
+    "status": "changed"
+  },
+  "titleTrailer.chooseFile": {
+    "row": 346,
+    "group": "11    片头片尾    ·    titleTrailer    ",
+    "zh": "选择文件",
+    "en": "Choose File",
+    "original": "Choose File",
+    "note": "",
+    "status": "retained"
+  },
+  "titleTrailer.duration": {
+    "row": 347,
+    "group": "11    片头片尾    ·    titleTrailer    ",
+    "zh": "持续时间",
+    "en": "Duration",
+    "original": "Duration",
+    "note": "",
+    "status": "retained"
+  },
+  "titleTrailer.tip1": {
+    "row": 348,
+    "group": "11    片头片尾    ·    titleTrailer    ",
+    "zh": "1.支持bmp/jpg/png格式的图片；",
+    "en": "1. BMP, JPG, and PNG images are supported.",
+    "original": "1.Support bmp/jpg/png format pictures;",
+    "note": "修正语法，保留文件类型。",
+    "status": "changed"
+  },
+  "titleTrailer.tip2": {
+    "row": 349,
+    "group": "11    片头片尾    ·    titleTrailer    ",
+    "zh": "2.图片分辨率不能大于1920*1080；",
+    "en": "2. Image resolution must not exceed 1920 × 1080.",
+    "original": "2.The image resolution cannot be greater than 1920*1080;",
+    "note": "规范分辨率写法。",
+    "status": "changed"
+  },
+  "titleTrailer.tip3": {
+    "row": 350,
+    "group": "11    片头片尾    ·    titleTrailer    ",
+    "zh": "3.图片宽高比必须为16:9；",
+    "en": "3. The image aspect ratio must be 16:9.",
+    "original": "3.Picture aspect ratio must be 16:9;",
+    "note": "补齐语法。",
+    "status": "changed"
+  },
+  "titleTrailer.tip4": {
+    "row": 351,
+    "group": "11    片头片尾    ·    titleTrailer    ",
+    "zh": "4.持续时间单位为秒。",
+    "en": "4.Duration is in seconds",
+    "original": "4.Duration is in seconds",
+    "note": "",
+    "status": "retained"
+  },
+  "titleTrailer.trailer": {
+    "row": 352,
+    "group": "11    片头片尾    ·    titleTrailer    ",
+    "zh": "片尾",
+    "en": "Outro",
+    "original": "Trailer",
+    "note": "片尾不是预告片。",
+    "status": "changed"
+  },
+  "titleTrailer.trailerPreset": {
+    "row": 353,
+    "group": "11    片头片尾    ·    titleTrailer    ",
+    "zh": "片尾预设",
+    "en": "Outro Presets",
+    "original": "Trailer Preset",
+    "note": "统一片尾术语。",
+    "status": "changed"
+  },
+  "titleTrailer.uploading": {
+    "row": 354,
+    "group": "11    片头片尾    ·    titleTrailer    ",
+    "zh": "图片上传中",
+    "en": "Uploading image...",
+    "original": "Picture uploading",
+    "note": "上传中的状态。",
+    "status": "changed"
+  },
+  "titleTrailer.deleting": {
+    "row": 355,
+    "group": "11    片头片尾    ·    titleTrailer    ",
+    "zh": "图片删除中",
+    "en": "Deleting image...",
+    "original": "Picture deleting",
+    "note": "删除中的状态。",
+    "status": "changed"
+  },
+  "titleTrailer.noMoreThanThirtySecs": {
+    "row": 356,
+    "group": "11    片头片尾    ·    titleTrailer    ",
+    "zh": "持续时间不能超过30秒",
+    "en": "Duration cannot exceed 30 seconds.",
+    "original": "Duration cannot exceed 30 seconds.",
+    "note": "",
+    "status": "retained"
+  },
+  "titleTrailer.imageTypeError": {
+    "row": 357,
+    "group": "11    片头片尾    ·    titleTrailer    ",
+    "zh": "只支持bmp/jpg/png格式的图片",
+    "en": "Only images in bmp/jpg/png format are supported.",
+    "original": "Only images in bmp/jpg/png format are supported.",
+    "note": "",
+    "status": "retained"
+  },
+  "titleTrailer.imageNameHasSpace": {
+    "row": 358,
+    "group": "11    片头片尾    ·    titleTrailer    ",
+    "zh": "文件名称中不能有空格",
+    "en": "No spaces in file name.",
+    "original": "No spaces in file name.",
+    "note": "",
+    "status": "retained"
+  },
+  "titleTrailer.closeRecord": {
+    "row": 359,
+    "group": "11    片头片尾    ·    titleTrailer    ",
+    "zh": "请先关闭录像",
+    "en": "Stop recording first.",
+    "original": "Please close recording first",
+    "note": "停止录制使用 Stop。",
+    "status": "changed"
+  },
+  "titleTrailer.imageSizeError": {
+    "row": 360,
+    "group": "11    片头片尾    ·    titleTrailer    ",
+    "zh": "图片分辨率不能大于1920*1080",
+    "en": "Image resolution must not exceed 1920 × 1080.",
+    "original": "Picture resolution cannot be greater than 1920*1080.",
+    "note": "规范分辨率写法。",
+    "status": "changed"
+  },
+  "titleTrailer.imageRatioError": {
+    "row": 361,
+    "group": "11    片头片尾    ·    titleTrailer    ",
+    "zh": "图片宽高比必须为16:9",
+    "en": "Picture aspect ratio must be 16:9.",
+    "original": "Picture aspect ratio must be 16:9.",
+    "note": "",
+    "status": "retained"
+  },
+  "titleTrailer.uploadSuccess": {
+    "row": 362,
+    "group": "11    片头片尾    ·    titleTrailer    ",
+    "zh": "图片上传成功",
+    "en": "Picture uploaded successfully.",
+    "original": "Picture uploaded successfully.",
+    "note": "",
+    "status": "retained"
+  },
+  "titleTrailer.uploadFail": {
+    "row": 363,
+    "group": "11    片头片尾    ·    titleTrailer    ",
+    "zh": "图片上传失败",
+    "en": "Picture upload failed.",
+    "original": "Picture upload failed.",
+    "note": "",
+    "status": "retained"
+  },
+  "titleTrailer.deleteSuccess": {
+    "row": 364,
+    "group": "11    片头片尾    ·    titleTrailer    ",
+    "zh": "删除图片成功",
+    "en": "Picture deleted successfully.",
+    "original": "Picture deleted successfully.",
+    "note": "",
+    "status": "retained"
+  },
+  "titleTrailer.presetNameSame": {
+    "row": 365,
+    "group": "11    片头片尾    ·    titleTrailer    ",
+    "zh": "预设名称不能相同",
+    "en": "Preset names must be unique.",
+    "original": "Preset name cannot be the same.",
+    "note": "明确不能重名。",
+    "status": "changed"
+  },
+  "titleTrailer.presetNameNull": {
+    "row": 366,
+    "group": "11    片头片尾    ·    titleTrailer    ",
+    "zh": "预设名称不能为空",
+    "en": "Preset name cannot be empty.",
+    "original": "Preset name cannot be empty.",
+    "note": "",
+    "status": "retained"
+  }
+}

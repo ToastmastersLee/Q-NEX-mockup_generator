@@ -1,0 +1,12 @@
+{
+  "dhcp": {
+    "zh": "DHCP",
+    "en": "DHCP",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "pingResult": {
+    "zh": "模拟检测：{url}\n本预览不会访问目标地址。",
+    "en": "Simulated check: {url}\nThis preview does not contact the target.",
+    "reason": "静态预览不产生实际连通性检测结果。"
+  }
+}

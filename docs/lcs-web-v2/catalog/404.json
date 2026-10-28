@@ -1,0 +1,29 @@
+{
+  "404.notFound": {
+    "row": 13,
+    "group": "02    404 页面    ·    404    ",
+    "zh": "404错误，无法找到该网页",
+    "en": "404 error, unable to find the page.",
+    "original": "404 error, unable to find the page.",
+    "note": "",
+    "status": "retained"
+  },
+  "404.info": {
+    "row": 14,
+    "group": "02    404 页面    ·    404    ",
+    "zh": "请检查您输入的URL是否正确，或单击下面的按钮返回主页。",
+    "en": "Please check that the URL you entered is correct, or click the button below to return to the homepage.",
+    "original": "Please check that the URL you entered is correct, or click the button below to return to the homepage.",
+    "note": "",
+    "status": "retained"
+  },
+  "404.backHome": {
+    "row": 15,
+    "group": "02    404 页面    ·    404    ",
+    "zh": "返回主页",
+    "en": "Back to Home",
+    "original": "Back to home",
+    "note": "按钮大小写。",
+    "status": "changed"
+  }
+}

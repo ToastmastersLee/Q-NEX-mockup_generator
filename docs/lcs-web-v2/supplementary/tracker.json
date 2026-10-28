@@ -1,0 +1,17 @@
+{
+  "detectZone": {
+    "zh": "检测区",
+    "en": "Detection Zone",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "clear": {
+    "zh": "清除",
+    "en": "Clear",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "shieldSensitivity": {
+    "zh": "屏蔽灵敏度 (值越小越灵敏)",
+    "en": "Mask Sensitivity (lower = more sensitive)",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  }
+}

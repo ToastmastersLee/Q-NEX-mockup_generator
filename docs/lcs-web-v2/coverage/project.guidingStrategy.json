@@ -1,0 +1,137 @@
+{
+  "project.guidingStrategy.guidingStrategy": {
+    "status": "changed",
+    "controls": [
+      "common.sidebar.guidingStrategy",
+      "guidingStrategy.pageTitle"
+    ]
+  },
+  "project.guidingStrategy.defaultScreen": {
+    "status": "changed",
+    "controls": [
+      "guidingStrategy.defaultScreenSetting"
+    ]
+  },
+  "project.guidingStrategy.channel": {
+    "status": "changed",
+    "controls": [
+      "guidingStrategy.colSourceScreen"
+    ]
+  },
+  "project.guidingStrategy.enable": {
+    "status": "changed",
+    "controls": [
+      "guidingStrategy.colParticipate"
+    ]
+  },
+  "project.guidingStrategy.priority": {
+    "status": "retained",
+    "controls": [
+      "guidingStrategy.colAutoLevel"
+    ]
+  },
+  "project.guidingStrategy.minDisplayMS": {
+    "status": "changed",
+    "controls": [
+      "guidingStrategy.colStayTime"
+    ]
+  },
+  "project.guidingStrategy.transitionEnable": {
+    "status": "changed",
+    "controls": [
+      "guidingStrategy.colTransition"
+    ]
+  },
+  "project.guidingStrategy.transitionChannel": {
+    "status": "changed",
+    "controls": [
+      "guidingStrategy.colSelectScreen"
+    ]
+  },
+  "project.guidingStrategy.transitionMS": {
+    "status": "changed",
+    "controls": [
+      "guidingStrategy.colTransTime"
+    ]
+  },
+  "project.guidingStrategy.conditionInfo": {
+    "status": "changed",
+    "controls": [
+      "guidingStrategy.cardMultiStrategy"
+    ]
+  },
+  "project.guidingStrategy.boardCheckTeacher": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.guidingStrategy.studentMulDirectStudentfull": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.guidingStrategy.teacherMulDirectTeacherfull": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.guidingStrategy.studentMvDirectStudentfull": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.guidingStrategy.teacherMvDirectTeacherfull": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.guidingStrategy.studentDirectStudentfull": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.guidingStrategy.teacherDirectTeacherfull": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.guidingStrategy.autoDirector": {
+    "status": "changed",
+    "controls": [
+      "guidingStrategy.cardAutoMode"
+    ]
+  },
+  "project.guidingStrategy.modeChoose": {
+    "status": "changed",
+    "controls": [
+      "guidingStrategy.modeSelect"
+    ]
+  },
+  "project.guidingStrategy.doubleScreen": {
+    "status": "changed",
+    "controls": [
+      "guidingStrategy.dualConfigSelect"
+    ]
+  },
+  "project.guidingStrategy.default": {
+    "status": "retained",
+    "controls": [
+      "guidingStrategy.default"
+    ]
+  },
+  "project.guidingStrategy.pipView": {
+    "status": "changed",
+    "controls": [
+      "guidingStrategy.pip"
+    ]
+  },
+  "project.guidingStrategy.lrView": {
+    "status": "changed",
+    "controls": [
+      "guidingStrategy.dualScreen"
+    ]
+  },
+  "project.guidingStrategy.tileView": {
+    "status": "changed",
+    "controls": [
+      "guidingStrategy.pop"
+    ]
+  },
+  "project.guidingStrategy.samePriority": {
+    "status": "changed",
+    "controls": []
+  }
+}

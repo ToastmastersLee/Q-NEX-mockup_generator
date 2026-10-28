@@ -1,0 +1,75 @@
+{
+  "logo.logo": {
+    "status": "retained",
+    "controls": [
+      "common.sidebar.logo",
+      "logo.pageTitle"
+    ]
+  },
+  "logo.logoPreset": {
+    "status": "retained",
+    "controls": [
+      "logo.logoPreset"
+    ]
+  },
+  "logo.chooseFile": {
+    "status": "retained",
+    "controls": [
+      "logo.chooseFile"
+    ]
+  },
+  "logo.logoPosition": {
+    "status": "retained",
+    "controls": [
+      "logo.logoPosition"
+    ]
+  },
+  "logo.tip1": {
+    "status": "changed",
+    "controls": [
+      "logo.tip1"
+    ]
+  },
+  "logo.tip2": {
+    "status": "changed",
+    "controls": [
+      "logo.tip2"
+    ]
+  },
+  "logo.tip3": {
+    "status": "changed",
+    "controls": [
+      "logo.tip3"
+    ]
+  },
+  "logo.tip4": {
+    "status": "changed",
+    "controls": [
+      "logo.tip4"
+    ]
+  },
+  "logo.choosePng": {
+    "status": "retained",
+    "controls": []
+  },
+  "logo.imageSizeError": {
+    "status": "changed",
+    "controls": []
+  },
+  "logo.uploadSuccess": {
+    "status": "retained",
+    "controls": []
+  },
+  "logo.uploadFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "logo.presetNameSame": {
+    "status": "changed",
+    "controls": []
+  },
+  "logo.presetNameNull": {
+    "status": "retained",
+    "controls": []
+  }
+}

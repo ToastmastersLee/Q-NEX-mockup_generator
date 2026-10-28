@@ -1,0 +1,155 @@
+{
+  "project.factory.factorySetting": {
+    "row": 1326,
+    "group": "34    工程设置 › 出厂设置    ·    project.factory",
+    "zh": "出厂设置",
+    "en": "Factory Settings",
+    "original": "Factory Setting",
+    "note": "设置页使用复数，不扩展产品行为。",
+    "status": "changed"
+  },
+  "project.factory.restoreDefaultParam": {
+    "row": 1327,
+    "group": "34    工程设置 › 出厂设置    ·    project.factory",
+    "zh": "恢复默认参数",
+    "en": "Restore Default Settings",
+    "original": "Restore Default Settings",
+    "note": "",
+    "status": "retained"
+  },
+  "project.factory.oneKeyRecovery": {
+    "row": 1328,
+    "group": "34    工程设置 › 出厂设置    ·    project.factory",
+    "zh": "一键恢复",
+    "en": "One-Click Recovery",
+    "original": "One-Click Recovery",
+    "note": "",
+    "status": "retained"
+  },
+  "project.factory.restoreDefaultParamTip": {
+    "row": 1329,
+    "group": "34    工程设置 › 出厂设置    ·    project.factory",
+    "zh": "操作提示：恢复成功之后设备会自动重启。",
+    "en": "Note: The device will automatically reboot after successful restoration.",
+    "original": "Note: The device will automatically reboot after successful restoration.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.factory.recovering": {
+    "row": 1330,
+    "group": "34    工程设置 › 出厂设置    ·    project.factory",
+    "zh": "恢复中",
+    "en": "Restoring",
+    "original": "Restoring",
+    "note": "",
+    "status": "retained"
+  },
+  "project.factory.recoverSuccessFul": {
+    "row": 1331,
+    "group": "34    工程设置 › 出厂设置    ·    project.factory",
+    "zh": "恢复成功",
+    "en": "Restore Successful",
+    "original": "Restore Successful",
+    "note": "",
+    "status": "retained"
+  },
+  "project.factory.recoverFailed": {
+    "row": 1332,
+    "group": "34    工程设置 › 出厂设置    ·    project.factory",
+    "zh": "恢复失败",
+    "en": "Restore Failed",
+    "original": "Restore Failed",
+    "note": "",
+    "status": "retained"
+  },
+  "project.factory.configFile": {
+    "row": 1333,
+    "group": "34    工程设置 › 出厂设置    ·    project.factory",
+    "zh": "配置文件",
+    "en": "Config File",
+    "original": "Config File",
+    "note": "",
+    "status": "retained"
+  },
+  "project.factory.import": {
+    "row": 1334,
+    "group": "34    工程设置 › 出厂设置    ·    project.factory",
+    "zh": "导入",
+    "en": "Import",
+    "original": "Import",
+    "note": "",
+    "status": "retained"
+  },
+  "project.factory.export": {
+    "row": 1335,
+    "group": "34    工程设置 › 出厂设置    ·    project.factory",
+    "zh": "导出",
+    "en": "Export",
+    "original": "Export",
+    "note": "",
+    "status": "retained"
+  },
+  "project.factory.tip1": {
+    "row": 1336,
+    "group": "34    工程设置 › 出厂设置    ·    project.factory",
+    "zh": "1.上传文件名字必须为conf.tar.gz；",
+    "en": "1. The name of the uploaded file must be conf.tar.gz;",
+    "original": "1. The name of the uploaded file must be conf.tar.gz;",
+    "note": "",
+    "status": "retained"
+  },
+  "project.factory.tip2": {
+    "row": 1337,
+    "group": "34    工程设置 › 出厂设置    ·    project.factory",
+    "zh": "2.导入成功后需要重启。",
+    "en": "2. Restart after successful import.",
+    "original": "2. Restart after successful import.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.factory.tip": {
+    "row": 1338,
+    "group": "34    工程设置 › 出厂设置    ·    project.factory",
+    "zh": "提示",
+    "en": "Tip",
+    "original": "Tip",
+    "note": "",
+    "status": "retained"
+  },
+  "project.factory.sureToImport": {
+    "row": 1339,
+    "group": "34    工程设置 › 出厂设置    ·    project.factory",
+    "zh": "确认导入配置文件吗？",
+    "en": "Import this configuration file?",
+    "original": "Are you sure to import the configuration file?",
+    "note": "自然的确认问句。",
+    "status": "changed"
+  },
+  "project.factory.importSuccess": {
+    "row": 1340,
+    "group": "34    工程设置 › 出厂设置    ·    project.factory",
+    "zh": "配置文件导入成功",
+    "en": "Configuration file imported successfully.",
+    "original": "Configuration file imported successfully.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.factory.importFail": {
+    "row": 1341,
+    "group": "34    工程设置 › 出厂设置    ·    project.factory",
+    "zh": "配置文件导入失败",
+    "en": "Failed to import the configuration file.",
+    "original": "Profile import failed.",
+    "note": "与配置文件术语统一。",
+    "status": "changed"
+  },
+  "project.factory.exporting": {
+    "row": 1342,
+    "group": "34    工程设置 › 出厂设置    ·    project.factory",
+    "zh": "正在导出配置文件，请稍候...",
+    "en": "Exporting config file, please wait...",
+    "original": "Exporting config file, please wait...",
+    "note": "",
+    "status": "retained"
+  }
+}

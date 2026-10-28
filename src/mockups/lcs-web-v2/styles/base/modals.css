@@ -1,0 +1,153 @@
+
+.lcs-web-modal-tabs {
+  height: 38px;
+  display: flex;
+  border-bottom: 1px solid #d4dde9;
+  background: #f7f9fc;
+}
+
+.lcs-web-modal-tabs button {
+  min-width: 112px;
+  border: 0;
+  border-right: 1px solid #d4dde9;
+  color: #7d8999;
+  background: transparent;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.lcs-web-modal-tabs button.is-active {
+  color: #178bff;
+  background: #ffffff;
+  font-weight: 800;
+}
+
+.lcs-web-profile-options {
+  display: flex;
+  gap: 28px;
+  padding: 24px 12px 18px;
+}
+
+.lcs-web-display-matrix {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 0 12px 15px;
+  color: #4d5a6c;
+  font-size: 13px;
+}
+
+.lcs-web-display-matrix label {
+  width: 74px;
+}
+
+.lcs-web-matrix-select {
+  width: 198px;
+}
+
+.lcs-web-display-levels {
+  padding: 0 12px 16px;
+}
+
+.lcs-web-display-levels label {
+  min-height: 48px;
+  display: grid;
+  grid-template-columns: 98px 1fr 48px;
+  align-items: center;
+  gap: 14px;
+  color: #4d5a6c;
+  font-size: 13px;
+}
+
+.lcs-web-display-levels input[type="range"] {
+  width: 100%;
+  height: 4px;
+  appearance: none;
+  background: #cbd5e1;
+  border-radius: 999px;
+  outline: none;
+  cursor: pointer;
+}
+
+.lcs-web-display-levels input[type="range"]::-webkit-slider-thumb {
+  width: 12px;
+  height: 12px;
+  appearance: none;
+  border: 1px solid #178bff;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.lcs-web-display-levels input[type="range"]::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border: 1px solid #178bff;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.lcs-web-display-levels input:not([type="range"]) {
+  width: 45px;
+  height: 32px;
+  border: 1px solid #cfd9e6;
+  border-radius: 4px;
+  padding: 0 8px;
+  color: #53627a;
+  background: #ffffff;
+  text-align: center;
+}
+
+.lcs-web-audio-modal-body {
+  padding: 22px 12px 18px;
+}
+
+.lcs-web-audio-output,
+.lcs-web-external-audio {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-height: 48px;
+  color: #4d5a6c;
+  font-size: 13px;
+}
+
+.lcs-web-audio-output > span,
+.lcs-web-external-audio > span {
+  width: 80px;
+}
+
+.lcs-web-audio-output svg {
+  color: #4e5b69;
+}
+
+.lcs-web-audio-source-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-height: 48px;
+  color: #aab4c3;
+  font-size: 13px;
+}
+
+.lcs-web-audio-source-row > label:first-child {
+  width: 78px;
+  color: #4d5a6c;
+}
+
+.lcs-web-audio-source-row label:not(:first-child) {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.lcs-web-audio-source-row .is-enabled {
+  color: #178bff;
+}
+
+.lcs-web-audio-source-row input[type="checkbox"] {
+  width: 13px;
+  height: 13px;
+  accent-color: #178bff;
+}

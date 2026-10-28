@@ -1,0 +1,389 @@
+{
+  "document.videoEdit": {
+    "row": 182,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "视频编辑",
+    "en": "Edit Video",
+    "original": "Video Edit",
+    "note": "编辑按钮使用动词。",
+    "status": "changed"
+  },
+  "document.documentDetails": {
+    "row": 183,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "文件详情",
+    "en": "Details",
+    "original": "Details",
+    "note": "",
+    "status": "retained"
+  },
+  "document.createTime": {
+    "row": 184,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "创建时间：",
+    "en": "Created: ",
+    "original": "CreationTime: ",
+    "note": "去除代码式拼写，保留拼接空格。",
+    "status": "changed"
+  },
+  "document.documentDuration": {
+    "row": 185,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "文件时长：",
+    "en": "Duration: ",
+    "original": "Duration: ",
+    "note": "",
+    "status": "retained"
+  },
+  "document.audioSampling": {
+    "row": 186,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "音频采样：",
+    "en": "Sample Rate: ",
+    "original": "AudioSampling: ",
+    "note": "音频采样字段用采样率。",
+    "status": "changed"
+  },
+  "document.audioCode": {
+    "row": 187,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "音频编码：",
+    "en": "Audio Codec: ",
+    "original": "AudioCode: ",
+    "note": "编码格式使用 Codec。",
+    "status": "changed"
+  },
+  "document.audioChannel": {
+    "row": 188,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "音频声道：",
+    "en": "Audio Channels: ",
+    "original": "AudioChannel: ",
+    "note": "声道与信号源通道区分。",
+    "status": "changed"
+  },
+  "document.bitRate": {
+    "row": 189,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "文件码率：",
+    "en": "Bitrate: ",
+    "original": "Bitrate: ",
+    "note": "",
+    "status": "retained"
+  },
+  "document.code": {
+    "row": 190,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "视频编码：",
+    "en": "Video Codec: ",
+    "original": "VideoCode: ",
+    "note": "编码格式使用 Codec。",
+    "status": "changed"
+  },
+  "document.frameRate": {
+    "row": 191,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "视频帧率：",
+    "en": "Frame Rate: ",
+    "original": "FrameRate: ",
+    "note": "修正连写。",
+    "status": "changed"
+  },
+  "document.resolution": {
+    "row": 192,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "视频分辨率：",
+    "en": "Resolution: ",
+    "original": "Resolution: ",
+    "note": "",
+    "status": "retained"
+  },
+  "document.enterKeywordSearch": {
+    "row": 193,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "输入关键字搜索",
+    "en": "Enter a keyword to search",
+    "original": "Enter keyword search",
+    "note": "修正搜索提示语法。",
+    "status": "changed"
+  },
+  "document.startDate": {
+    "row": 194,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "开始日期",
+    "en": "Start Date",
+    "original": "Start Date",
+    "note": "",
+    "status": "retained"
+  },
+  "document.endDate": {
+    "row": 195,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "结束日期",
+    "en": "End Date",
+    "original": "End Date",
+    "note": "",
+    "status": "retained"
+  },
+  "document.search": {
+    "row": 196,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "搜索",
+    "en": "Search",
+    "original": "Search",
+    "note": "",
+    "status": "retained"
+  },
+  "document.download": {
+    "row": 197,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "下载",
+    "en": "Download",
+    "original": "Download",
+    "note": "",
+    "status": "retained"
+  },
+  "document.encryptDownload": {
+    "row": 198,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "加密下载",
+    "en": "Encrypted Download",
+    "original": "Encrypt Download",
+    "note": "表达加密下载功能。",
+    "status": "changed"
+  },
+  "document.encryptPassword": {
+    "row": 199,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "加密密码",
+    "en": "Encryption Password",
+    "original": "Encrypt Password",
+    "note": "加密密码的名词形式。",
+    "status": "changed"
+  },
+  "document.delete": {
+    "row": 200,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "删除",
+    "en": "Delete",
+    "original": "Delete",
+    "note": "",
+    "status": "retained"
+  },
+  "document.repair": {
+    "row": 201,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "修复",
+    "en": "Repair",
+    "original": "Repair",
+    "note": "",
+    "status": "retained"
+  },
+  "document.play": {
+    "row": 202,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "播放",
+    "en": "Play",
+    "original": "Play",
+    "note": "",
+    "status": "retained"
+  },
+  "document.preview": {
+    "row": 203,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "预览",
+    "en": "Preview",
+    "original": "Preview",
+    "note": "",
+    "status": "retained"
+  },
+  "document.damaged": {
+    "row": 204,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "文件损坏",
+    "en": "Damaged",
+    "original": "Damaged",
+    "note": "",
+    "status": "retained"
+  },
+  "document.speaker": {
+    "row": 205,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "主讲人",
+    "en": "Presenter",
+    "original": "Speaker",
+    "note": "与主页主讲人字段统一。",
+    "status": "changed"
+  },
+  "document.topic": {
+    "row": 206,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "主题",
+    "en": "Topic",
+    "original": "Topic",
+    "note": "",
+    "status": "retained"
+  },
+  "document.name": {
+    "row": 207,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "文件名称",
+    "en": "Name",
+    "original": "Name",
+    "note": "",
+    "status": "retained"
+  },
+  "document.size": {
+    "row": 208,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "文件大小",
+    "en": "Size",
+    "original": "Size",
+    "note": "",
+    "status": "retained"
+  },
+  "document.startTime": {
+    "row": 209,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "开始时间",
+    "en": "Start Time",
+    "original": "StartTime",
+    "note": "修正连写。",
+    "status": "changed"
+  },
+  "document.duration": {
+    "row": 210,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "录像时长",
+    "en": "Duration",
+    "original": "Duration",
+    "note": "",
+    "status": "retained"
+  },
+  "document.operation": {
+    "row": 211,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "操作",
+    "en": "Actions",
+    "original": "Operation",
+    "note": "操作列常用短标题。",
+    "status": "changed"
+  },
+  "document.selectAll": {
+    "row": 212,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "全选",
+    "en": "Select All",
+    "original": "Select All",
+    "note": "",
+    "status": "retained"
+  },
+  "document.deleteFile": {
+    "row": 213,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "删除文件",
+    "en": "Delete File",
+    "original": "Delete File",
+    "note": "",
+    "status": "retained"
+  },
+  "document.confirmDeleteFile": {
+    "row": 214,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "你确定删除此文件？",
+    "en": "Are you sure you want to delete this file?",
+    "original": "Are you sure you want to delete this file?",
+    "note": "",
+    "status": "retained"
+  },
+  "document.cannotBePlayed": {
+    "row": 215,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "视频无法播放",
+    "en": "Video cannot be played.",
+    "original": "Video cannot be played.",
+    "note": "",
+    "status": "retained"
+  },
+  "document.deleting": {
+    "row": 216,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "正在删除文件，请稍候...",
+    "en": "Deleting file, please wait...",
+    "original": "Deleting file, please wait...",
+    "note": "",
+    "status": "retained"
+  },
+  "document.deleteFileSuccess": {
+    "row": 217,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "删除文件成功",
+    "en": "File deleted successfully.",
+    "original": "File deleted successfully.",
+    "note": "",
+    "status": "retained"
+  },
+  "document.repairing": {
+    "row": 218,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "正在修复文件，请稍候...",
+    "en": "Repairing file, please wait...",
+    "original": "Repairing file, please wait...",
+    "note": "",
+    "status": "retained"
+  },
+  "document.repairFileSuccess": {
+    "row": 219,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "修复文件成功",
+    "en": "File repair successful.",
+    "original": "File repair successful.",
+    "note": "",
+    "status": "retained"
+  },
+  "document.ziping": {
+    "row": 220,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "正在压缩文件，请稍候...",
+    "en": "Compressing file, please wait...",
+    "original": "Compressing file, please wait...",
+    "note": "",
+    "status": "retained"
+  },
+  "document.zipFileSuccess": {
+    "row": 221,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "压缩文件成功",
+    "en": "Compressed file successfully",
+    "original": "Compressed file successfully",
+    "note": "",
+    "status": "retained"
+  },
+  "document.zipSameDir": {
+    "row": 222,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "只能压缩并下载同一个文件夹下的文件",
+    "en": "Can only compress and download files in the same folder",
+    "original": "Can only compress and download files in the same folder",
+    "note": "",
+    "status": "retained"
+  },
+  "document.tsNotSupported": {
+    "row": 223,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "暂不支持ts文件播放",
+    "en": "TS playback is not currently supported.",
+    "original": "TS file playback is not supported temporarily.",
+    "note": "不承诺未来支持时间。",
+    "status": "changed"
+  },
+  "document.flvNotSupported": {
+    "row": 224,
+    "group": "06    视频管理    ·    document    ",
+    "zh": "暂不支持flv文件播放",
+    "en": "FLV playback is not currently supported.",
+    "original": "FLV file playback is not supported temporarily.",
+    "note": "不承诺未来支持时间。",
+    "status": "changed"
+  }
+}

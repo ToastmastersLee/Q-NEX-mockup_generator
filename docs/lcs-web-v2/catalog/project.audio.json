@@ -1,0 +1,1001 @@
+{
+  "project.audio.audioSetting": {
+    "row": 1038,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "音频设置",
+    "en": "Audio Settings",
+    "original": "Audio Setting",
+    "note": "设置页使用复数。",
+    "status": "changed"
+  },
+  "project.audio.usbMicEnable": {
+    "row": 1039,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "启用麦克风USB接口",
+    "en": "Enable USB Mic",
+    "original": "Enable microphone USB interface",
+    "note": "麦克风接口开关的短标签。",
+    "status": "changed"
+  },
+  "project.audio.audioMicTip": {
+    "row": 1040,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "提示: 1.开启后HDMI IN2和LINE IN2会无声音; 2.重启后生效。",
+    "en": "Tip: 1. Enabling USB Mic disables audio from HDMI IN2 and LINE IN2; 2. Restart the device to apply changes.",
+    "original": "Tip: 1. HDMI IN2 and LINE IN2 will have no sound when turned on; 2. It will take effect after restarting.",
+    "note": "明确被启用和被禁用的对象。",
+    "status": "changed"
+  },
+  "project.audio.audioMode": {
+    "row": 1041,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "音频模式",
+    "en": "Audio Mode",
+    "original": "Audio Mode",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.aoHisiInToOutMixEnable": {
+    "row": 1042,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "监听混入互动声音",
+    "en": "Mix Interaction Audio into Monitor",
+    "original": "Monitor mixed interactive sound",
+    "note": "明确互动音频混入监听输出。",
+    "status": "changed"
+  },
+  "project.audio.aoHisiHDMIMixEnable": {
+    "row": 1043,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "HDMI1(第二屏)混入互动声音",
+    "en": "Mix Interaction Audio into HDMI1 (Second Screen)",
+    "original": "Hdmi1 mixed with interactive sound",
+    "note": "补齐第二屏，保留接口编号。",
+    "status": "changed"
+  },
+  "project.audio.sdMixEnable": {
+    "row": 1044,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "录像直播混入互动声音",
+    "en": "Mix Interaction Audio into Recording/Streaming",
+    "original": "Live video mixing with interactive sound",
+    "note": "原译遗漏录制功能。",
+    "status": "changed"
+  },
+  "project.audio.selectHdmiInOrLineInEnable": {
+    "row": 1045,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "切换到HDMI_IN输入(电脑源)",
+    "en": "Use HDMI IN Audio (PC)",
+    "original": "Switch to hdmiin input (Computer source)",
+    "note": "明确切换音频来源，保留电脑接口语境。",
+    "status": "changed"
+  },
+  "project.audio.anrMicEnable": {
+    "row": 1046,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "开启降噪(无线麦)",
+    "en": "Wireless Mic Noise Reduction",
+    "original": "Turn on noise reduction (wireless microphone)",
+    "note": "简短开关标签。",
+    "status": "changed"
+  },
+  "project.audio.aoHisiInToOutMixHdmiInEnable": {
+    "row": 1047,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "监听混入HDMI_IN声音",
+    "en": "Mix HDMI IN Audio into Monitor",
+    "original": "Monitor mixed hdmiin sound",
+    "note": "明确混入监听的来源。",
+    "status": "changed"
+  },
+  "project.audio.aoHisiHDMIMixHdmiInEnable": {
+    "row": 1048,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "HDMI1(第二屏)混入HDMI_IN声音",
+    "en": "Mix HDMI IN Audio into HDMI1 (Second Screen)",
+    "original": "Hdmi1 mixed with hdmiin sound",
+    "note": "明确输入和输出，保留第二屏。",
+    "status": "changed"
+  },
+  "project.audio.sdMixHdmiInEnable": {
+    "row": 1049,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "录像直播混入HDMI_IN声音",
+    "en": "Mix HDMI IN Audio into Recording/Streaming",
+    "original": "Hdmiin sound mixed with live video",
+    "note": "原译遗漏录制功能。",
+    "status": "changed"
+  },
+  "project.audio.micVol": {
+    "row": 1050,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "MIC音量",
+    "en": "Mic volume",
+    "original": "Mic volume",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.microphone": {
+    "row": 1051,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "全向麦",
+    "en": "Omni Mic",
+    "original": "microphone",
+    "note": "补齐全向含义，使用短标签。",
+    "status": "changed"
+  },
+  "project.audio.micVolume": {
+    "row": 1052,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "MIC音量(全向麦)",
+    "en": "Omni Mic Volume",
+    "original": "Mic volume (omnidirectional microphone)",
+    "note": "简短且不丢失全向含义。",
+    "status": "changed"
+  },
+  "project.audio.micLVolume": {
+    "row": 1053,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "MIC音量(L全向麦)",
+    "en": "Omni Mic L Volume",
+    "original": "Mic volume (L omnidirectional microphone)",
+    "note": "保留左声道标识。",
+    "status": "changed"
+  },
+  "project.audio.micRVolume": {
+    "row": 1054,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "MIC音量(R全向麦)",
+    "en": "Omni Mic R Volume",
+    "original": "Mic volume (R omnidirectional microphone)",
+    "note": "保留右声道标识。",
+    "status": "changed"
+  },
+  "project.audio.swExtOrIntMic": {
+    "row": 1055,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "切换内置MIC",
+    "en": "Use Built-in Mic",
+    "original": "Switch built-in mic",
+    "note": "明确选择内置麦克风。",
+    "status": "changed"
+  },
+  "project.audio.swExtOrIntMicSetSuccess": {
+    "row": 1056,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "切换内置MIC设置成功",
+    "en": "Built-in mic setting saved.",
+    "original": "Successfully switch built-in mic settings.",
+    "note": "表示设置保存成功。",
+    "status": "changed"
+  },
+  "project.audio.swExtOrIntMicSetFail": {
+    "row": 1057,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "切换内置MIC设置失败",
+    "en": "Failed to save the built-in mic setting.",
+    "original": "Failed to switch built-in mic settings.",
+    "note": "表示设置保存失败。",
+    "status": "changed"
+  },
+  "project.audio.D_SUB": {
+    "row": 1058,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "模拟接口",
+    "en": "D-SUB",
+    "original": "D-SUB",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.USB_Port": {
+    "row": 1059,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "USB接口",
+    "en": "USB Port",
+    "original": "USB Port",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.mixedMode": {
+    "row": 1060,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "混合模式",
+    "en": "Mixed Mode",
+    "original": "Mixed Mode",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.enableMicExtVol": {
+    "row": 1061,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "Mic音量设置",
+    "en": "Mic volume",
+    "original": "Mic volume",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.inputVol": {
+    "row": 1062,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "输入音量设置",
+    "en": "Input volume",
+    "original": "Input volume",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.outputVol": {
+    "row": 1063,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "输出音量设置",
+    "en": "Output volume",
+    "original": "Output volume",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.omniMute": {
+    "row": 1064,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "全向麦静音",
+    "en": "Mute Omni Mic",
+    "original": "Omnidirectional microphone mute",
+    "note": "自然的静音开关标签。",
+    "status": "changed"
+  },
+  "project.audio.omniMuteTip": {
+    "row": 1065,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "提示：只支持便携录播",
+    "en": "Tip: Supported only on portable recording systems.",
+    "original": "Tip: Only portable recording is supported.",
+    "note": "限制适用机型，不是只允许便携录制行为。",
+    "status": "changed"
+  },
+  "project.audio.builtInSpeakerMute": {
+    "row": 1066,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "内置喇叭静音",
+    "en": "Mute Built-in Speaker",
+    "original": "The built-in speaker mute",
+    "note": "自然的静音开关标签。",
+    "status": "changed"
+  },
+  "project.audio.audioMixMode": {
+    "row": 1067,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "混音模式",
+    "en": "Mix mode",
+    "original": "Mix mode",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.channelMixFilm": {
+    "row": 1068,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "通道混音:电影",
+    "en": "PGM Channel Mix",
+    "original": "ChannelMix:Film",
+    "note": "电影指最终节目，不是电影文件。",
+    "status": "changed"
+  },
+  "project.audio.interaction": {
+    "row": 1069,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "互动",
+    "en": "Interaction",
+    "original": "Interaction",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.echoSuppressionSetting": {
+    "row": 1070,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "回声抑制设置",
+    "en": "Echo Suppression Settings",
+    "original": "EchoSuppression",
+    "note": "补齐设置含义，修正连写。",
+    "status": "changed"
+  },
+  "project.audio.echoSuppressionEnable": {
+    "row": 1071,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "回声抑制",
+    "en": "Echo Suppression",
+    "original": "EchoSuppression",
+    "note": "修正连写。",
+    "status": "changed"
+  },
+  "project.audio.ANRsetting": {
+    "row": 1072,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "音频降噪设置",
+    "en": "Audio denoising",
+    "original": "Audio denoising",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.ANRenable": {
+    "row": 1073,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "音频降噪",
+    "en": "Audio denoising",
+    "original": "Audio denoising",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.audioBitrateSetting": {
+    "row": 1074,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "音频码率设置",
+    "en": "Audio bitrate",
+    "original": "Audio bitrate",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.audioIn": {
+    "row": 1075,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "内置音频模式",
+    "en": "Internal Audio",
+    "original": "Audio mode in",
+    "note": "内置模式，不是音频输入方向。",
+    "status": "changed"
+  },
+  "project.audio.audioOut": {
+    "row": 1076,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "外置音频模式",
+    "en": "External Audio",
+    "original": "Audio mode out",
+    "note": "外置模式，不是音频输出方向。",
+    "status": "changed"
+  },
+  "project.audio.noAudio": {
+    "row": 1077,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "无音频模式",
+    "en": "No Audio",
+    "original": "No audio mode",
+    "note": "简短模式名称。",
+    "status": "changed"
+  },
+  "project.audio.JINGPING": {
+    "row": 1078,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "精品模式",
+    "en": "JINGPING",
+    "original": "JINGPING",
+    "note": "待确认：“精品模式”的路由或处理区别是什么？不把 JINGPING 直接译为 High Quality。",
+    "status": "pending"
+  },
+  "project.audio.singleChannel": {
+    "row": 1079,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "单通道模式",
+    "en": "Single Channel",
+    "original": "SingleChannel",
+    "note": "修正连写，保持短标签。",
+    "status": "changed"
+  },
+  "project.audio.multiChannel": {
+    "row": 1080,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "多通道模式",
+    "en": "Multi-Channel",
+    "original": "MultiChannel",
+    "note": "修正连写，保持短标签。",
+    "status": "changed"
+  },
+  "project.audio.audioModeSetSuccess": {
+    "row": 1081,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "音频模式设置成功",
+    "en": "Audio mode set successfully.",
+    "original": "Audio mode set successfully.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.audioModeSetFail": {
+    "row": 1082,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "音频模式设置失败",
+    "en": "Audio mode setting failed.",
+    "original": "Audio mode setting failed.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.hdmiInOrLineSetSuccess": {
+    "row": 1083,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "切换到HDMI_IN输入(电脑源)设置成功",
+    "en": "HDMI IN audio source setting saved.",
+    "original": "Switch to hdmiin input (Computer source) setting succeeded.",
+    "note": "统一来源切换提示。",
+    "status": "changed"
+  },
+  "project.audio.hdmiInOrLineSetFail": {
+    "row": 1084,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "切换到HDMI_IN输入(电脑源)设置失败",
+    "en": "Failed to save the HDMI IN audio source setting.",
+    "original": "Failed to switch to hdmiin input (Computer source) setting.",
+    "note": "统一来源切换提示。",
+    "status": "changed"
+  },
+  "project.audio.anrMicSetSuccess": {
+    "row": 1085,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "开启降噪(无线麦)设置成功",
+    "en": "Wireless mic noise reduction setting saved.",
+    "original": "Enable noise reduction (wireless microphone) setting successfully.",
+    "note": "修正语法。",
+    "status": "changed"
+  },
+  "project.audio.anrMicSetFail": {
+    "row": 1086,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "开启降噪(无线麦)设置失败",
+    "en": "Failed to save the wireless mic noise reduction setting.",
+    "original": "Failed to enable noise reduction (wireless microphone) setting.",
+    "note": "修正语法。",
+    "status": "changed"
+  },
+  "project.audio.micExtVolSetSuccess": {
+    "row": 1087,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "MIC音量设置成功",
+    "en": "Mic volume setting succeeded.",
+    "original": "Mic volume setting succeeded.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.micExtVolSetFail": {
+    "row": 1088,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "MIC音量设置失败",
+    "en": "Mic volume setting failed.",
+    "original": "Mic volume setting failed.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.inputVolSetSuccess": {
+    "row": 1089,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "输入音量设置成功",
+    "en": "Input volume setting succeeded.",
+    "original": "Input volume setting succeeded.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.inputVolSetFail": {
+    "row": 1090,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "输入音量设置失败",
+    "en": "Input volume setting failed.",
+    "original": "Input volume setting failed.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.audioMixModeSetSuccess": {
+    "row": 1091,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "混音模式设置成功",
+    "en": "Mixing mode set successfully.",
+    "original": "Mixing mode set successfully.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.audioMixModeSetFail": {
+    "row": 1092,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "混音模式设置失败",
+    "en": "Mixing mode setting failed.",
+    "original": "Mixing mode setting failed.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.audioMixTypeSetSuccess": {
+    "row": 1093,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "通道模式:电影设置成功",
+    "en": "PGM channel mix setting saved.",
+    "original": "Channel mode: film set successfully.",
+    "note": "与节目混音标签统一。",
+    "status": "changed"
+  },
+  "project.audio.audioMixTypeSetFail": {
+    "row": 1094,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "通道模式:电影设置失败",
+    "en": "Failed to save the PGM channel mix setting.",
+    "original": "Channel mode: film setup failed",
+    "note": "与节目混音标签统一。",
+    "status": "changed"
+  },
+  "project.audio.echoSuppressionSetSuccess": {
+    "row": 1095,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "回声抑制设置成功",
+    "en": "Echo suppression set successfully.",
+    "original": "Echo suppression set successfully.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.closeInteractive": {
+    "row": 1096,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "请先关闭互动",
+    "en": "End the interactive session first.",
+    "original": "Please close the interaction first.",
+    "note": "结束互动会话。",
+    "status": "changed"
+  },
+  "project.audio.setAnrEnableSuccess": {
+    "row": 1097,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "音频降噪设置成功，重启后生效",
+    "en": "Audio noise reduction is set successfully. It will take effect after restarting.",
+    "original": "Audio noise reduction is set successfully. It will take effect after restarting.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.setAudioBitrateSuccess": {
+    "row": 1098,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "音频码率设置成功，重启后生效",
+    "en": "The audio bit rate is set successfully. It will take effect after restarting.",
+    "original": "The audio bit rate is set successfully. It will take effect after restarting.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.setAudioBitrateFail": {
+    "row": 1099,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "音频码率设置失败",
+    "en": "Audio bit rate setting failed.",
+    "original": "Audio bit rate setting failed.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.advancedSetting": {
+    "row": 1100,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "高级",
+    "en": "Advanced",
+    "original": "Advanced",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.allBypass": {
+    "row": 1101,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "音频处理",
+    "en": "AllByPass",
+    "original": "AllByPass",
+    "note": "待确认：开关打开是启用音频处理还是旁路全部处理？中文与 AllByPass 含义相反。",
+    "status": "pending"
+  },
+  "project.audio.localeAmplify": {
+    "row": 1102,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "扩声",
+    "en": "Sound Reinforcement",
+    "original": "LocalAmplify",
+    "note": "扩声的专业用语。",
+    "status": "changed"
+  },
+  "project.audio.feedbackSuppression": {
+    "row": 1103,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "反馈抑制",
+    "en": "Feedback Suppression",
+    "original": "FeedbackSuppression",
+    "note": "修正连写，保留专业术语。",
+    "status": "changed"
+  },
+  "project.audio.ansLevel": {
+    "row": 1104,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "噪声抑制等级",
+    "en": "Noise Suppression Level",
+    "original": "AnsLevel",
+    "note": "不向用户显示代码 AnsLevel。",
+    "status": "changed"
+  },
+  "project.audio.micGain": {
+    "row": 1105,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "MIC增益设置",
+    "en": "Mic Gain",
+    "original": "MicGain",
+    "note": "修正连写。",
+    "status": "changed"
+  },
+  "project.audio.localeAmplifyTip": {
+    "row": 1106,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "提示:开启后无线话筒、HDMI输入、line in输入的音源可通过line out/机身喇叭实时输出声音",
+    "en": "Tip: When enabled, audio from the wireless mic, HDMI input, and LINE IN is played through LINE OUT or the built-in speaker in real time.",
+    "original": "Tip: After turning on, the wireless microphone, HDMI input, and line in input sound sources can output sound in real-time through the line out/body speaker.",
+    "note": "按本条中文保留来源清单，不与其他机型提示合并。",
+    "status": "changed"
+  },
+  "project.audio.localeAmplifyTip2": {
+    "row": 1107,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "提示:开启后line in输入的音源可通过line out/机身喇叭实时输出声音",
+    "en": "Tip: When enabled, LINE IN audio is played through LINE OUT or the built-in speaker in real time.",
+    "original": "Tip: After turning on, line in input sound sources can output sound in real-time through the line out/body speaker.",
+    "note": "保留本条路由范围。",
+    "status": "changed"
+  },
+  "project.audio.localeAmplifyTip3": {
+    "row": 1108,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "提示:开启后line in输入的音源可通过line out实时输出声音",
+    "en": "Tip: When enabled, LINE IN audio is played through LINE OUT in real time.",
+    "original": "Tip: After turning on, line in input sound sources can output sound in real-time through the line out.",
+    "note": "保留本条路由范围。",
+    "status": "changed"
+  },
+  "project.audio.feedbackSuppressionTip": {
+    "row": 1109,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "提示:扩声开启时才允许设置",
+    "en": "Tip: Available only when Sound Reinforcement is enabled.",
+    "original": "Tip: Setting is only allowed when LocalAmplify is turned on.",
+    "note": "与扩声开关术语一致。",
+    "status": "changed"
+  },
+  "project.audio.closeNet2uart": {
+    "row": 1110,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "请先关闭AEC串口通讯",
+    "en": "Please turn off AEC serial communication first.",
+    "original": "Please turn off AEC serial communication first.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.builtInMic": {
+    "row": 1111,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "内置麦克风",
+    "en": "Built-in Mic",
+    "original": "Built-in Mic",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.externalMic": {
+    "row": 1112,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "外置麦克风",
+    "en": "External Mic",
+    "original": "External Mic",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.recordedBroadcast": {
+    "row": 1113,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "录播",
+    "en": "Recording/Streaming",
+    "original": "Recorded Broadcast",
+    "note": "录播不是播放已录节目。",
+    "status": "changed"
+  },
+  "project.audio.monitoring": {
+    "row": 1114,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "监听",
+    "en": "Monitoring",
+    "original": "Monitoring",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.powerAmplifier": {
+    "row": 1115,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "功放喇叭",
+    "en": "Amplifier/Speaker",
+    "original": "Power Amplifier",
+    "note": "保留功放及喇叭含义。",
+    "status": "changed"
+  },
+  "project.audio.micGain2": {
+    "row": 1116,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "MIC增益",
+    "en": "MIC Gain",
+    "original": "MIC Gain",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.micMode": {
+    "row": 1117,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "麦克风模式",
+    "en": "Microphone Mode",
+    "original": "Microphone Mode",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.mic48V": {
+    "row": 1118,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "48V MIC",
+    "en": "48V MIC",
+    "original": "48V MIC",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.wmicSoundReinforcement": {
+    "row": 1119,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "MIC-W扩声",
+    "en": "MIC-W Sound Reinforcement",
+    "original": "MIC-W Sound Reinforcement",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.inputGain": {
+    "row": 1120,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "输入增益",
+    "en": "Input Gain",
+    "original": "Input Gain",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.arrayMic1": {
+    "row": 1121,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "阵列麦1",
+    "en": "Array Mic1",
+    "original": "Array Mic1",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.arrayMic2": {
+    "row": 1122,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "阵列麦2",
+    "en": "Array Mic2",
+    "original": "Array Mic2",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.arrayMic3": {
+    "row": 1123,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "阵列麦3",
+    "en": "Array Mic3",
+    "original": "Array Mic3",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.arrayMic4": {
+    "row": 1124,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "阵列麦4",
+    "en": "Array Mic4",
+    "original": "Array Mic4",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.mic48V1": {
+    "row": 1125,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "48V MIC1",
+    "en": "48V MIC1",
+    "original": "48V MIC1",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.mic48V2": {
+    "row": 1126,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "48V MIC2",
+    "en": "48V MIC2",
+    "original": "48V MIC2",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.wmic": {
+    "row": 1127,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "MIC-W",
+    "en": "MIC-W",
+    "original": "MIC-W",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.media": {
+    "row": 1128,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "媒体",
+    "en": "Media",
+    "original": "Media",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.mediaL": {
+    "row": 1129,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "媒体L",
+    "en": "MediaL",
+    "original": "MediaL",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.mediaR": {
+    "row": 1130,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "媒体R",
+    "en": "MediaR",
+    "original": "MediaR",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.lineIn2": {
+    "row": 1131,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "LINE IN2",
+    "en": "LINE IN2",
+    "original": "LINE IN2",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.lineIn2L": {
+    "row": 1132,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "LINE IN2 L",
+    "en": "LINE IN2 L",
+    "original": "LINE IN2 L",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.lineIn2R": {
+    "row": 1133,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "LINE IN2 R",
+    "en": "LINE IN2 R",
+    "original": "LINE IN2 R",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.interactiveL": {
+    "row": 1134,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "互动L",
+    "en": "Interaction L",
+    "original": "InteractiveL",
+    "note": "补空格，保留左声道。",
+    "status": "changed"
+  },
+  "project.audio.interactiveR": {
+    "row": 1135,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "互动R",
+    "en": "Interaction R",
+    "original": "InteractiveR",
+    "note": "补空格，保留右声道。",
+    "status": "changed"
+  },
+  "project.audio.localInput": {
+    "row": 1136,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "本地输入",
+    "en": "Local Input",
+    "original": "Local Input",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.outputGain": {
+    "row": 1137,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "输出增益",
+    "en": "Output Gain",
+    "original": "Output Gain",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.playback": {
+    "row": 1138,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "功放",
+    "en": "Amplifier",
+    "original": "Playback",
+    "note": "中文是功放，不是回放。",
+    "status": "changed"
+  },
+  "project.audio.recovery6": {
+    "row": 1139,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "回采6",
+    "en": "Recovery6",
+    "original": "Recovery6",
+    "note": "待确认：回采6对应的回环音频来源；确认后用 Loopback 6，不能理解为恢复功能。",
+    "status": "pending"
+  },
+  "project.audio.recovery7": {
+    "row": 1140,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "回采7",
+    "en": "Recovery7",
+    "original": "Recovery7",
+    "note": "待确认：回采7对应的回环音频来源；确认后用 Loopback 7，不能理解为恢复功能。",
+    "status": "pending"
+  },
+  "project.audio.recovery19": {
+    "row": 1141,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "回采19",
+    "en": "Recovery19",
+    "original": "Recovery19",
+    "note": "待确认：回采19对应的回环音频来源；确认后用 Loopback 19，不能理解为恢复功能。",
+    "status": "pending"
+  },
+  "project.audio.noiseReduction": {
+    "row": 1142,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "降噪/反馈抑制",
+    "en": "Noise Reduction/Feedback Suppression",
+    "original": "Noise Reduction/Feedback Suppression",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.matrixMix": {
+    "row": 1143,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "矩阵混音",
+    "en": "Matrix Mixing",
+    "original": "Matrix Mixing",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.noiseReductionLevel": {
+    "row": 1144,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "AEC降噪等级",
+    "en": "AEC Noise Reduction Level",
+    "original": "AEC Noise Reduction Level",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.highpassFilter": {
+    "row": 1145,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "高通滤波器",
+    "en": "Highpass Filter",
+    "original": "Highpass Filter",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.remoteInput": {
+    "row": 1146,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "远端输入",
+    "en": "Remote Input",
+    "original": "Remote Input",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.remoteInputTip": {
+    "row": 1147,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "提示：最多设置2路远端输入",
+    "en": "Note: Max 2 remote inputs",
+    "original": "Note: Max 2 remote inputs",
+    "note": "",
+    "status": "retained"
+  },
+  "project.audio.rec": {
+    "row": 1148,
+    "group": "26    工程设置 › 音频设置    ·    project.audio  ",
+    "zh": "REC",
+    "en": "REC",
+    "original": "REC",
+    "note": "待确认：音频矩阵中 REC 的确切路由；录制总线可保留 REC，不扩写成未经确认的混音源。",
+    "status": "pending"
+  }
+}

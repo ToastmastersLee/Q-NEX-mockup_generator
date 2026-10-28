@@ -1,0 +1,166 @@
+{
+  "keying.sceneSetting": {
+    "status": "retained",
+    "controls": [
+      "videoMatting.cardTitleScene"
+    ]
+  },
+  "keying.addScene": {
+    "status": "retained",
+    "controls": [
+      "videoMatting.addScene"
+    ]
+  },
+  "keying.keyingSetting": {
+    "status": "changed",
+    "controls": [
+      "common.sidebar.videoMatting",
+      "videoMatting.pageTitle"
+    ]
+  },
+  "keying.preview": {
+    "status": "retained",
+    "controls": [
+      "videoMatting.preview"
+    ]
+  },
+  "keying.screenColor": {
+    "status": "retained",
+    "controls": [
+      "videoMatting.screenColor"
+    ]
+  },
+  "keying.green": {
+    "status": "retained",
+    "controls": [
+      "videoMatting.green"
+    ]
+  },
+  "keying.blue": {
+    "status": "retained",
+    "controls": [
+      "videoMatting.blue"
+    ]
+  },
+  "keying.changeColorTip": {
+    "status": "changed",
+    "controls": [
+      "videoMatting.changeColorTip"
+    ]
+  },
+  "keying.paramAdjust": {
+    "status": "retained",
+    "controls": [
+      "videoMatting.paramAdjust"
+    ]
+  },
+  "keying.keyingSwitch": {
+    "status": "changed",
+    "controls": [
+      "videoMatting.matting",
+      "videoMatting.keyingSwitch"
+    ]
+  },
+  "keying.sceneName": {
+    "status": "retained",
+    "controls": [
+      "videoMatting.sceneName"
+    ]
+  },
+  "keying.backgroundImage": {
+    "status": "retained",
+    "controls": [
+      "videoMatting.backgroundImage"
+    ]
+  },
+  "keying.uploadImage": {
+    "status": "retained",
+    "controls": [
+      "videoMatting.uploadImage"
+    ]
+  },
+  "keying.mediaVideo": {
+    "status": "retained",
+    "controls": [
+      "videoMatting.mediaVideo"
+    ]
+  },
+  "keying.mediaVideoPos": {
+    "status": "changed",
+    "controls": [
+      "videoMatting.mediaVideoPos"
+    ]
+  },
+  "keying.foregroundVideo": {
+    "status": "retained",
+    "controls": [
+      "videoMatting.foregroundVideo"
+    ]
+  },
+  "keying.foregroundVideoPos": {
+    "status": "changed",
+    "controls": [
+      "videoMatting.foregroundVideoPos"
+    ]
+  },
+  "keying.thresholdRange": {
+    "status": "retained",
+    "controls": [
+      "videoMatting.thresholdRange"
+    ]
+  },
+  "keying.autoAjust": {
+    "status": "changed",
+    "controls": [
+      "videoMatting.autoAdjust"
+    ]
+  },
+  "keying.linkageMode": {
+    "status": "pending",
+    "controls": [
+      "videoMatting.linkageMode"
+    ]
+  },
+  "keying.deleteTip": {
+    "status": "retained",
+    "controls": [
+      "videoMatting.deleteTip"
+    ]
+  },
+  "keying.deleteImageTip": {
+    "status": "retained",
+    "controls": []
+  },
+  "keying.imageFormatTip": {
+    "status": "changed",
+    "controls": [
+      "videoMatting.imageFormatTip"
+    ]
+  },
+  "keying.imageResolutionTip": {
+    "status": "changed",
+    "controls": [
+      "videoMatting.imageResolutionTip"
+    ]
+  },
+  "keying.sceneNameEmpty": {
+    "status": "retained",
+    "controls": [
+      "videoMatting.sceneNameEmpty"
+    ]
+  },
+  "keying.pleaseChooseImage": {
+    "status": "retained",
+    "controls": []
+  },
+  "keying.sceneNameExist": {
+    "status": "retained",
+    "controls": [
+      "videoMatting.sceneNameExist"
+    ]
+  },
+  "keying.sceneNumLimit": {
+    "status": "retained",
+    "controls": []
+  }
+}

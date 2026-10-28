@@ -1,0 +1,92 @@
+{
+  "project.mic.micSetting": {
+    "row": 1150,
+    "group": "27    工程设置 › Mic设置    ·    project.mic   ",
+    "zh": "Mic设置",
+    "en": "Mic Settings",
+    "original": "Mic Setting",
+    "note": "设置页使用复数，保留短缩写。",
+    "status": "changed"
+  },
+  "project.mic.micNotExist": {
+    "row": 1151,
+    "group": "27    工程设置 › Mic设置    ·    project.mic   ",
+    "zh": "Mic模块不存在",
+    "en": "Mic module not detected.",
+    "original": "Mic module does not exist",
+    "note": "模块未检测到的自然提示。",
+    "status": "changed"
+  },
+  "project.mic.refreshMicInfo": {
+    "row": 1152,
+    "group": "27    工程设置 › Mic设置    ·    project.mic   ",
+    "zh": "刷新Mic信息",
+    "en": "Refresh Mic Info",
+    "original": "Refresh Mic infomation",
+    "note": "修正拼写，按钮保持简短。",
+    "status": "changed"
+  },
+  "project.mic.channelA": {
+    "row": 1153,
+    "group": "27    工程设置 › Mic设置    ·    project.mic   ",
+    "zh": "A通道",
+    "en": "Channel A",
+    "original": "Channel A",
+    "note": "",
+    "status": "retained"
+  },
+  "project.mic.notConnected": {
+    "row": 1154,
+    "group": "27    工程设置 › Mic设置    ·    project.mic   ",
+    "zh": "未连接",
+    "en": "Not Connected",
+    "original": "Not Connected",
+    "note": "",
+    "status": "retained"
+  },
+  "project.mic.connected": {
+    "row": 1155,
+    "group": "27    工程设置 › Mic设置    ·    project.mic   ",
+    "zh": "已连接",
+    "en": "Connected",
+    "original": "Connected",
+    "note": "",
+    "status": "retained"
+  },
+  "project.mic.batteryLevel": {
+    "row": 1156,
+    "group": "27    工程设置 › Mic设置    ·    project.mic   ",
+    "zh": "电池电量",
+    "en": "Battery Level",
+    "original": "Battery Level",
+    "note": "",
+    "status": "retained"
+  },
+  "project.mic.signalStrength": {
+    "row": 1157,
+    "group": "27    工程设置 › Mic设置    ·    project.mic   ",
+    "zh": "信号强度",
+    "en": "Signal Strength",
+    "original": "Signal Strength",
+    "note": "",
+    "status": "retained"
+  },
+  "project.mic.channelNumber": {
+    "row": 1158,
+    "group": "27    工程设置 › Mic设置    ·    project.mic   ",
+    "zh": "频道号",
+    "en": "Channel Number",
+    "original": "Channel Number",
+    "note": "",
+    "status": "retained"
+  },
+  "project.mic.channelB": {
+    "row": 1159,
+    "group": "27    工程设置 › Mic设置    ·    project.mic   ",
+    "zh": "B通道",
+    "en": "Channel B",
+    "original": "Channel B",
+    "note": "",
+    "status": "retained"
+  }
+}

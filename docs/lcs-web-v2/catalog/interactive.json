@@ -1,0 +1,380 @@
+{
+  "interactive.startClass": {
+    "row": 226,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "启动课堂",
+    "en": "Start Class",
+    "original": "Start Class",
+    "note": "",
+    "status": "retained"
+  },
+  "interactive.joinClass": {
+    "row": 227,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "加入课堂",
+    "en": "Join Class",
+    "original": "Join Class",
+    "note": "",
+    "status": "retained"
+  },
+  "interactive.loop": {
+    "row": 228,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "回环测试",
+    "en": "Loopback Test",
+    "original": "Loop",
+    "note": "回环测试的准确名称。",
+    "status": "changed"
+  },
+  "interactive.contacts": {
+    "row": 229,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "通讯录",
+    "en": "Contacts",
+    "original": "Contacts",
+    "note": "",
+    "status": "retained"
+  },
+  "interactive.noData": {
+    "row": 230,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "暂无数据",
+    "en": "No Data",
+    "original": "No Data",
+    "note": "",
+    "status": "retained"
+  },
+  "interactive.havingClass": {
+    "row": 231,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "正在上课",
+    "en": "Class in Progress",
+    "original": "Having Class",
+    "note": "课堂进行中的状态。",
+    "status": "changed"
+  },
+  "interactive.looping": {
+    "row": 232,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "回环测试",
+    "en": "Loopback Test",
+    "original": "Looping",
+    "note": "回环测试的准确名称。",
+    "status": "changed"
+  },
+  "interactive.sendVideo": {
+    "row": 233,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "发送视频",
+    "en": "Video to Send",
+    "original": "Channel",
+    "note": "原译丢失发送视频含义。",
+    "status": "changed"
+  },
+  "interactive.record": {
+    "row": 234,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "录像",
+    "en": "Record",
+    "original": "Record",
+    "note": "",
+    "status": "retained"
+  },
+  "interactive.live": {
+    "row": 235,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "直播",
+    "en": "Live",
+    "original": "Live",
+    "note": "",
+    "status": "retained"
+  },
+  "interactive.invite": {
+    "row": 236,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "邀请",
+    "en": "Invite",
+    "original": "Invite",
+    "note": "",
+    "status": "retained"
+  },
+  "interactive.quit": {
+    "row": 237,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "退出",
+    "en": "Leave",
+    "original": "Quit",
+    "note": "离开课堂的短按钮。",
+    "status": "changed"
+  },
+  "interactive.fold": {
+    "row": 238,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "折叠",
+    "en": "Collapse",
+    "original": "Fold",
+    "note": "折叠界面的常用动词。",
+    "status": "changed"
+  },
+  "interactive.unfold": {
+    "row": 239,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "展开",
+    "en": "Expand",
+    "original": "Unfold",
+    "note": "展开界面的常用动词。",
+    "status": "changed"
+  },
+  "interactive.userList": {
+    "row": 240,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "用户列表",
+    "en": "User List",
+    "original": "User List",
+    "note": "",
+    "status": "retained"
+  },
+  "interactive.teacher": {
+    "row": 241,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "老师",
+    "en": "Teacher",
+    "original": "Teacher",
+    "note": "",
+    "status": "retained"
+  },
+  "interactive.forbiddenWheat": {
+    "row": 242,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "点击禁麦",
+    "en": "Mute Mic",
+    "original": "Click to forbidden wheat",
+    "note": "禁麦误译为 wheat。",
+    "status": "changed"
+  },
+  "interactive.openWheat": {
+    "row": 243,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "点击开麦",
+    "en": "Unmute Mic",
+    "original": "Click to open wheat",
+    "note": "开麦误译为 wheat。",
+    "status": "changed"
+  },
+  "interactive.me": {
+    "row": 244,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "我",
+    "en": "Me",
+    "original": "Me",
+    "note": "",
+    "status": "retained"
+  },
+  "interactive.mute": {
+    "row": 245,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "点击禁言",
+    "en": "Click to mute",
+    "original": "Click to mute",
+    "note": "",
+    "status": "retained"
+  },
+  "interactive.speak": {
+    "row": 246,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "点击发言",
+    "en": "Click to speak",
+    "original": "Click to speak",
+    "note": "",
+    "status": "retained"
+  },
+  "interactive.classInfo": {
+    "row": 247,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "课堂信息",
+    "en": "Class Info",
+    "original": "Class Info",
+    "note": "",
+    "status": "retained"
+  },
+  "interactive.classId": {
+    "row": 248,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "课堂ID",
+    "en": "Class ID",
+    "original": "Class ID",
+    "note": "",
+    "status": "retained"
+  },
+  "interactive.classPassword": {
+    "row": 249,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "课堂密码",
+    "en": "Password",
+    "original": "Password",
+    "note": "",
+    "status": "retained"
+  },
+  "interactive.copy": {
+    "row": 250,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "复制",
+    "en": "Copy",
+    "original": "Copy",
+    "note": "",
+    "status": "retained"
+  },
+  "interactive.quitClass": {
+    "row": 251,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "确认退出房间",
+    "en": "Leave Class",
+    "original": "Quit Class",
+    "note": "统一退出课堂用语。",
+    "status": "changed"
+  },
+  "interactive.sureToQuit": {
+    "row": 252,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "课堂正在继续，确定退出课堂？",
+    "en": "The class is still in progress. Leave the class?",
+    "original": "The class is continuing. Are you sure to quit the class?",
+    "note": "自然的退出确认。",
+    "status": "changed"
+  },
+  "interactive.sendVideoSuccess": {
+    "row": 253,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "更改发送视频通道成功",
+    "en": "Outgoing video channel changed.",
+    "original": "Successfully changed the sending video channel.",
+    "note": "简化并明确发送通道。",
+    "status": "changed"
+  },
+  "interactive.sendVideoFail": {
+    "row": 254,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "更改发送视频通道失败",
+    "en": "Failed to change the outgoing video channel.",
+    "original": "Failed to change sending video channel.",
+    "note": "统一发送通道用语。",
+    "status": "changed"
+  },
+  "interactive.muteFail_speaking": {
+    "row": 255,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "正在发言，不能禁麦",
+    "en": "Cannot mute the microphone while speaking. Stop speaking first.",
+    "original": "Wheat ban failed, please close your speech first.",
+    "note": "修正 wheat 误译。",
+    "status": "changed"
+  },
+  "interactive.muteFail_mute": {
+    "row": 256,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "正在发言，不能开麦",
+    "en": "Cannot unmute the microphone while speaking.",
+    "original": "Someone is speaking and cannot open the microphone",
+    "note": "不擅自增加“其他人发言”的条件。",
+    "status": "changed"
+  },
+  "interactive.speakFail": {
+    "row": 257,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "发言失败",
+    "en": "Unable to start speaking.",
+    "original": "Speak failed",
+    "note": "修正失败提示语法。",
+    "status": "changed"
+  },
+  "interactive.pageTurningFail": {
+    "row": 258,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "正在发言，不能翻页",
+    "en": "Cannot turn pages while speaking.",
+    "original": "Page turning failed",
+    "note": "补齐中文的限制条件。",
+    "status": "changed"
+  },
+  "interactive.startingClass": {
+    "row": 259,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "正在启动课堂，请稍候...",
+    "en": "Starting class, please wait...",
+    "original": "Starting class, please wait...",
+    "note": "",
+    "status": "retained"
+  },
+  "interactive.startClassFail": {
+    "row": 260,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "启动课堂失败",
+    "en": "Failed to start class.",
+    "original": "Failed to start class.",
+    "note": "",
+    "status": "retained"
+  },
+  "interactive.joiningClass": {
+    "row": 261,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "正在加入课堂，请稍候...",
+    "en": "Joining the class, please wait...",
+    "original": "Joining the class, please wait...",
+    "note": "",
+    "status": "retained"
+  },
+  "interactive.joinClassFail": {
+    "row": 262,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "加入课堂失败",
+    "en": "Failed to join the class.",
+    "original": "Failed to join the class.",
+    "note": "",
+    "status": "retained"
+  },
+  "interactive.copy1": {
+    "row": 263,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "通过课堂ID和课堂密码加入房间\n\n课堂ID：",
+    "en": "Join class by Class ID and Class Password\n\nClass ID: ",
+    "original": "Join class by Class ID and Class Password\n\nClass ID: ",
+    "note": "",
+    "status": "retained"
+  },
+  "interactive.copy2": {
+    "row": 264,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "\n课堂密码：",
+    "en": "\nClass Password: ",
+    "original": "\nClass Password: ",
+    "note": "",
+    "status": "retained"
+  },
+  "interactive.copySuccess": {
+    "row": 265,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "复制成功",
+    "en": "Copy successful",
+    "original": "Copy successful",
+    "note": "",
+    "status": "retained"
+  },
+  "interactive.copyFail": {
+    "row": 266,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "复制失败",
+    "en": "Copy failed",
+    "original": "Copy failed",
+    "note": "",
+    "status": "retained"
+  },
+  "interactive.quitFail": {
+    "row": 267,
+    "group": "07    互动课堂    ·    interactive         页面已停用",
+    "zh": "退出失败",
+    "en": "Failed to leave the class.",
+    "original": "Exit failed",
+    "note": "明确退出对象。",
+    "status": "changed"
+  }
+}

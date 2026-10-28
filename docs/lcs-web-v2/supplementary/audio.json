@@ -1,0 +1,12 @@
+{
+  "mute": {
+    "zh": "静音",
+    "en": "Mute",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  },
+  "silence": {
+    "zh": "消音",
+    "en": "Mute All",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  }
+}

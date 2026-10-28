@@ -1,0 +1,559 @@
+{
+  "system.timeSetting": {
+    "status": "changed",
+    "controls": [
+      "system.cardTitleTime"
+    ]
+  },
+  "system.timeZone": {
+    "status": "retained",
+    "controls": [
+      "system.timeZone"
+    ]
+  },
+  "system.dateFormat": {
+    "status": "retained",
+    "controls": [
+      "system.dateFormat"
+    ]
+  },
+  "system.timeFormat": {
+    "status": "retained",
+    "controls": [
+      "system.timeFormat"
+    ]
+  },
+  "system.dateFormatSetSuccess": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.timeFormatSetSuccess": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.ddMMyyyy": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.yyyyMMdd": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.twelveHoursFormat": {
+    "status": "changed",
+    "controls": [
+      "system.format12h"
+    ]
+  },
+  "system.twentyFourHoursFormat": {
+    "status": "changed",
+    "controls": [
+      "system.format24h"
+    ]
+  },
+  "system.dateTime": {
+    "status": "changed",
+    "controls": [
+      "system.dateTime"
+    ]
+  },
+  "system.ntpSetting": {
+    "status": "changed",
+    "controls": [
+      "system.cardTitleNtp"
+    ]
+  },
+  "system.setSyncOnStart": {
+    "status": "changed",
+    "controls": [
+      "system.ntpAuto"
+    ]
+  },
+  "system.ntpAddress": {
+    "status": "retained",
+    "controls": [
+      "system.ntpAddress"
+    ]
+  },
+  "system.setTimeAgain": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.noMoreThan2036": {
+    "status": "changed",
+    "controls": []
+  },
+  "system.stopRecordOrLive": {
+    "status": "changed",
+    "controls": []
+  },
+  "system.setTimeSuccess": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.setTimeFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.inputNtpServer": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.ntpError": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.otherSetting": {
+    "status": "changed",
+    "controls": [
+      "system.cardTitleOther"
+    ]
+  },
+  "system.saveFilmLayout": {
+    "status": "changed",
+    "controls": [
+      "system.saveDirectorLayout"
+    ]
+  },
+  "system.setViewSaveStateFail": {
+    "status": "changed",
+    "controls": []
+  },
+  "system.setViewSaveStateSuccess": {
+    "status": "changed",
+    "controls": []
+  },
+  "system.recordLiveCountdownEnable": {
+    "status": "changed",
+    "controls": [
+      "system.countdownAlert"
+    ]
+  },
+  "system.recordLiveCountdownEnableSetSuccess": {
+    "status": "changed",
+    "controls": []
+  },
+  "system.recordLiveCountdownTip": {
+    "status": "retained",
+    "controls": [
+      "system.tipCountdown"
+    ]
+  },
+  "system.switchColorKey": {
+    "status": "changed",
+    "controls": []
+  },
+  "system.lockScreen": {
+    "status": "changed",
+    "controls": [
+      "system.screenOffTime"
+    ]
+  },
+  "system.twoMinutes": {
+    "status": "retained",
+    "controls": [
+      "system.time2m"
+    ]
+  },
+  "system.fiveMinutes": {
+    "status": "retained",
+    "controls": [
+      "system.time5m"
+    ]
+  },
+  "system.tenMinutes": {
+    "status": "retained",
+    "controls": [
+      "system.time10m"
+    ]
+  },
+  "system.fifteenMinutes": {
+    "status": "retained",
+    "controls": [
+      "system.time15m"
+    ]
+  },
+  "system.forever": {
+    "status": "changed",
+    "controls": [
+      "system.alwaysOn"
+    ]
+  },
+  "system.lockScreenTip": {
+    "status": "changed",
+    "controls": [
+      "system.tipScreenOff"
+    ]
+  },
+  "system.screen2ShowFilm": {
+    "status": "changed",
+    "controls": [
+      "system.secondScreenFilm"
+    ]
+  },
+  "system.screen2ShowFilmTip": {
+    "status": "changed",
+    "controls": [
+      "system.tipSecondScreen"
+    ]
+  },
+  "system.autoReboot": {
+    "status": "retained",
+    "controls": [
+      "system.autoReboot"
+    ]
+  },
+  "system.autoRebootTip": {
+    "status": "retained",
+    "controls": [
+      "system.tipAutoReboot"
+    ]
+  },
+  "system.languageSetting": {
+    "status": "changed",
+    "controls": [
+      "system.cardTitleLang"
+    ]
+  },
+  "system.systemLanguage": {
+    "status": "retained",
+    "controls": [
+      "system.systemLang"
+    ]
+  },
+  "system.themeSetting": {
+    "status": "changed",
+    "controls": []
+  },
+  "system.colorTheme": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.light": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.dark": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.interfaceSetting": {
+    "status": "changed",
+    "controls": []
+  },
+  "system.interfaceStyle": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.defaultStyle": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.classicStyle": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.layoutbg": {
+    "status": "changed",
+    "controls": [
+      "system.layoutBg"
+    ]
+  },
+  "system.layoutbgTip": {
+    "status": "changed",
+    "controls": [
+      "system.tipBgNote"
+    ]
+  },
+  "system.imageSizeError": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.layoutbgUploadSuccess": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.layoutbgSetSuccess": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.accountSetting": {
+    "status": "changed",
+    "controls": [
+      "system.cardTitleAccount"
+    ]
+  },
+  "system.oldPassword": {
+    "status": "retained",
+    "controls": [
+      "system.oldPassword"
+    ]
+  },
+  "system.newPassword": {
+    "status": "retained",
+    "controls": [
+      "system.修改密码",
+      "system.newPassword"
+    ]
+  },
+  "system.confirmNewPassword": {
+    "status": "retained",
+    "controls": [
+      "system.confirmPassword"
+    ]
+  },
+  "system.inputOldPassword": {
+    "status": "retained",
+    "controls": [
+      "system.phOldPassword"
+    ]
+  },
+  "system.inputNewPassword": {
+    "status": "retained",
+    "controls": [
+      "system.phNewPassword"
+    ]
+  },
+  "system.inputPasswordAgain": {
+    "status": "retained",
+    "controls": [
+      "system.phConfirmPassword"
+    ]
+  },
+  "system.validateLength": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.validatePassword": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.passwordNoChinese": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.updatePasswordSuccess": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.updatePasswordFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.notSamePassword": {
+    "status": "changed",
+    "controls": []
+  },
+  "system.systemUpgrade": {
+    "status": "changed",
+    "controls": [
+      "system.cardTitleUpgrade",
+      "system.systemUpgrade"
+    ]
+  },
+  "system.serverUpgrade": {
+    "status": "changed",
+    "controls": [
+      "system.firmwareUpgrade"
+    ]
+  },
+  "system.softwareUpgrade": {
+    "status": "changed",
+    "controls": []
+  },
+  "system.chooseFile": {
+    "status": "retained",
+    "controls": [
+      "common.actions.chooseFile",
+      "system.chooseFile"
+    ]
+  },
+  "system.uploadToServer": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.upgrade": {
+    "status": "retained",
+    "controls": [
+      "system.upgrade"
+    ]
+  },
+  "system.fileSystemUpgrade": {
+    "status": "changed",
+    "controls": []
+  },
+  "system.aecUpgrade": {
+    "status": "changed",
+    "controls": [
+      "system.aecUpgrade"
+    ]
+  },
+  "system.licenseUpgrade": {
+    "status": "changed",
+    "controls": [
+      "system.licenseUpgrade"
+    ]
+  },
+  "system.upgradeSteps": {
+    "status": "changed",
+    "controls": [
+      "system.tipUpgradeSteps"
+    ]
+  },
+  "system.packageMismatch": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.spaceNotEnough": {
+    "status": "changed",
+    "controls": []
+  },
+  "system.chooseGzPackage": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.chooseBinPackage": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.noAecModule": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.configVersionMismatch": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.upgradeSuccess": {
+    "status": "changed",
+    "controls": []
+  },
+  "system.uploadSuccess": {
+    "status": "changed",
+    "controls": []
+  },
+  "system.uploadFail": {
+    "status": "changed",
+    "controls": []
+  },
+  "system.closeRecordOrLive": {
+    "status": "changed",
+    "controls": []
+  },
+  "system.closeInteractive": {
+    "status": "changed",
+    "controls": []
+  },
+  "system.packageError": {
+    "status": "changed",
+    "controls": []
+  },
+  "system.upgradeFail": {
+    "status": "changed",
+    "controls": []
+  },
+  "system.upgrading": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.choosePackage": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.errorName": {
+    "status": "changed",
+    "controls": []
+  },
+  "system.notFindUpgradePackage": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.tarxFailed": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.noRecordServer": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.noVersionInfo": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.wrongPackageName": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.sameVersion": {
+    "status": "changed",
+    "controls": []
+  },
+  "system.notSameType": {
+    "status": "changed",
+    "controls": []
+  },
+  "system.sdkVersionError": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.open": {
+    "status": "retained",
+    "controls": [
+      "system.open"
+    ]
+  },
+  "system.cpuInfo": {
+    "status": "retained",
+    "controls": [
+      "system.cardTitlePerf"
+    ]
+  },
+  "system.cpuInfoFunction": {
+    "status": "retained",
+    "controls": [
+      "system.perfFeature"
+    ]
+  },
+  "system.cpuTotal": {
+    "status": "changed",
+    "controls": []
+  },
+  "system.memoryTotal": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.cpuSystem": {
+    "status": "changed",
+    "controls": []
+  },
+  "system.memoryUsed": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.cpuUser": {
+    "status": "changed",
+    "controls": []
+  },
+  "system.memoryAvailable": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.temperature": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.logManagement": {
+    "status": "retained",
+    "controls": [
+      "system.cardTitleLog"
+    ]
+  },
+  "system.server": {
+    "status": "retained",
+    "controls": []
+  },
+  "system.continueUpgrade": {
+    "status": "changed",
+    "controls": []
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "pageTitle": "version.version",
+  "model": "version.serverModel",
+  "aecVersion": "version.aecVersion",
+  "sysVersion": "version.serverMcuVersion",
+  "firmwareVersion": "version.serverVersion",
+  "ipAddress": "version.serverIp",
+  "ipv6Address": "version.ipv6Address",
+  "uuid": "version.uuid",
+  "macAddress": "version.serverMac",
+  "checkVersion": "parameter.versionDetection"
+}

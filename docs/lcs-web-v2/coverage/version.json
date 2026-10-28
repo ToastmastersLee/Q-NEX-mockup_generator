@@ -1,0 +1,188 @@
+{
+  "version.version": {
+    "status": "changed",
+    "controls": [
+      "version.pageTitle"
+    ]
+  },
+  "version.serverModel": {
+    "status": "retained",
+    "controls": [
+      "version.model"
+    ]
+  },
+  "version.serverMcuVersion": {
+    "status": "retained",
+    "controls": [
+      "version.sysVersion"
+    ]
+  },
+  "version.serverVersion": {
+    "status": "changed",
+    "controls": [
+      "version.firmwareVersion"
+    ]
+  },
+  "version.mfd": {
+    "status": "changed",
+    "controls": []
+  },
+  "version.aecVersion": {
+    "status": "retained",
+    "controls": [
+      "version.aecVersion"
+    ]
+  },
+  "version.swname": {
+    "status": "retained",
+    "controls": []
+  },
+  "version.swmodel": {
+    "status": "retained",
+    "controls": []
+  },
+  "version.swversion": {
+    "status": "retained",
+    "controls": []
+  },
+  "version.trackerVersion": {
+    "status": "retained",
+    "controls": []
+  },
+  "version.webPVersion": {
+    "status": "changed",
+    "controls": []
+  },
+  "version.serverIp": {
+    "status": "retained",
+    "controls": [
+      "version.ipAddress"
+    ]
+  },
+  "version.ipv6Address": {
+    "status": "retained",
+    "controls": [
+      "version.ipv6Address"
+    ]
+  },
+  "version.serverMac": {
+    "status": "retained",
+    "controls": [
+      "version.macAddress"
+    ]
+  },
+  "version.uuid": {
+    "status": "retained",
+    "controls": [
+      "version.uuid"
+    ]
+  },
+  "version.license": {
+    "status": "retained",
+    "controls": []
+  },
+  "version.expired": {
+    "status": "changed",
+    "controls": []
+  },
+  "version.alreadyUpdate": {
+    "status": "retained",
+    "controls": []
+  },
+  "version.upgrade": {
+    "status": "retained",
+    "controls": []
+  },
+  "version.note": {
+    "status": "retained",
+    "controls": []
+  },
+  "version.upgradeSuccess": {
+    "status": "changed",
+    "controls": []
+  },
+  "version.downloading": {
+    "status": "retained",
+    "controls": []
+  },
+  "version.upgrading": {
+    "status": "retained",
+    "controls": []
+  },
+  "version.downloadFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "version.upgradeFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "version.pathNotExit": {
+    "status": "retained",
+    "controls": []
+  },
+  "version.insufficientSpace": {
+    "status": "retained",
+    "controls": []
+  },
+  "version.urlError": {
+    "status": "changed",
+    "controls": []
+  },
+  "version.fileMismatch": {
+    "status": "retained",
+    "controls": []
+  },
+  "version.networkDownloadFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "version.validateFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "version.unzipFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "version.working": {
+    "status": "changed",
+    "controls": []
+  },
+  "version.unknownError": {
+    "status": "retained",
+    "controls": []
+  },
+  "version.versionValidateFail": {
+    "status": "changed",
+    "controls": []
+  },
+  "version.recordAuthority": {
+    "status": "changed",
+    "controls": []
+  },
+  "version.liveAuthority": {
+    "status": "changed",
+    "controls": []
+  },
+  "version.meetAuthority": {
+    "status": "retained",
+    "controls": []
+  },
+  "version.trackAuthority": {
+    "status": "changed",
+    "controls": []
+  },
+  "version.resAuthority": {
+    "status": "retained",
+    "controls": []
+  },
+  "version.on": {
+    "status": "retained",
+    "controls": []
+  },
+  "version.off": {
+    "status": "retained",
+    "controls": []
+  }
+}

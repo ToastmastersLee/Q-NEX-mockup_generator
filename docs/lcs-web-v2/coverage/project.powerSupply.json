@@ -1,0 +1,90 @@
+{
+  "project.powerSupply.powerSupplySetting": {
+    "status": "changed",
+    "controls": [
+      "common.sidebar.powerSupply",
+      "power.pageTitle",
+      "powerSupply.pageTitle"
+    ]
+  },
+  "project.powerSupply.notSupported": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.powerSupply.powerMode": {
+    "status": "retained",
+    "controls": [
+      "power.powerOnMode"
+    ]
+  },
+  "project.powerSupply.powerBoot1": {
+    "status": "changed",
+    "controls": [
+      "power.timer1"
+    ]
+  },
+  "project.powerSupply.powerBoot2": {
+    "status": "changed",
+    "controls": [
+      "power.timer2"
+    ]
+  },
+  "project.powerSupply.powerOn": {
+    "status": "changed",
+    "controls": [
+      "power.bootTime"
+    ]
+  },
+  "project.powerSupply.powerOff": {
+    "status": "changed",
+    "controls": [
+      "power.shutdownTime"
+    ]
+  },
+  "project.powerSupply.normalBoot": {
+    "status": "retained",
+    "controls": [
+      "power.normalBoot"
+    ]
+  },
+  "project.powerSupply.powerOnSelfStart": {
+    "status": "changed",
+    "controls": [
+      "power.autoBoot"
+    ]
+  },
+  "project.powerSupply.hdmiInputPowerOn": {
+    "status": "changed",
+    "controls": [
+      "power.hdmiPowerOn"
+    ]
+  },
+  "project.powerSupply.getPowerModeFail": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.powerSupply.setTimePowerFail": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.powerSupply.setPowerModeFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.powerSupply.noLessThanTwoMin": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.powerSupply.intersect": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.powerSupply.contain": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.powerSupply.noLessThanTwoMinTwoGroups": {
+    "status": "changed",
+    "controls": []
+  }
+}

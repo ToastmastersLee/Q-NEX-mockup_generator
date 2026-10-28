@@ -1,0 +1,137 @@
+{
+  "project.peripheral.peripheralSetting": {
+    "row": 1292,
+    "group": "32    工程设置 › 外设设置    ·    project.peripheral",
+    "zh": "外设设置",
+    "en": "Peripheral Settings",
+    "original": "Peripheral Setting",
+    "note": "设置页使用复数。",
+    "status": "changed"
+  },
+  "project.peripheral.keyboard": {
+    "row": 1293,
+    "group": "32    工程设置 › 外设设置    ·    project.peripheral",
+    "zh": "键盘",
+    "en": "Keyboard",
+    "original": "Keyboard",
+    "note": "",
+    "status": "retained"
+  },
+  "project.peripheral.keyboardType": {
+    "row": 1294,
+    "group": "32    工程设置 › 外设设置    ·    project.peripheral",
+    "zh": "键盘型号",
+    "en": "Keyboard Model",
+    "original": "Keyboard Type",
+    "note": "中文明确为型号。",
+    "status": "changed"
+  },
+  "project.peripheral.panelType": {
+    "row": 1295,
+    "group": "32    工程设置 › 外设设置    ·    project.peripheral",
+    "zh": "面板型号",
+    "en": "Panel Model",
+    "original": "Panel Type",
+    "note": "中文明确为型号。",
+    "status": "changed"
+  },
+  "project.peripheral.clock": {
+    "row": 1296,
+    "group": "32    工程设置 › 外设设置    ·    project.peripheral",
+    "zh": "时钟",
+    "en": "Clock",
+    "original": "Clock",
+    "note": "",
+    "status": "retained"
+  },
+  "project.peripheral.clockType": {
+    "row": 1297,
+    "group": "32    工程设置 › 外设设置    ·    project.peripheral",
+    "zh": "时钟型号",
+    "en": "Clock Model",
+    "original": "Clock Type",
+    "note": "中文明确为型号。",
+    "status": "changed"
+  },
+  "project.peripheral.powerSupply": {
+    "row": 1298,
+    "group": "32    工程设置 › 外设设置    ·    project.peripheral",
+    "zh": "时序电源",
+    "en": "Power Sequencer",
+    "original": "Power Supply",
+    "note": "时序电源不是普通电源。",
+    "status": "changed"
+  },
+  "project.peripheral.powerSupplyType": {
+    "row": 1299,
+    "group": "32    工程设置 › 外设设置    ·    project.peripheral",
+    "zh": "电源型号",
+    "en": "Model",
+    "original": "Type",
+    "note": "同一时序电源区内使用短标签。",
+    "status": "changed"
+  },
+  "project.peripheral.port": {
+    "row": 1300,
+    "group": "32    工程设置 › 外设设置    ·    project.peripheral",
+    "zh": "连接端口",
+    "en": "Port",
+    "original": "Port",
+    "note": "",
+    "status": "retained"
+  },
+  "project.peripheral.avaliable": {
+    "row": 1301,
+    "group": "32    工程设置 › 外设设置    ·    project.peripheral",
+    "zh": "(可用)",
+    "en": "(Available)",
+    "original": "(Avaliable)",
+    "note": "修正 Avaliable 拼写。",
+    "status": "changed"
+  },
+  "project.peripheral.invalid": {
+    "row": 1302,
+    "group": "32    工程设置 › 外设设置    ·    project.peripheral",
+    "zh": "(占用)",
+    "en": "(Occupied)",
+    "original": "(Occupied)",
+    "note": "",
+    "status": "retained"
+  },
+  "project.peripheral.baudRate": {
+    "row": 1303,
+    "group": "32    工程设置 › 外设设置    ·    project.peripheral",
+    "zh": "波特率",
+    "en": "Baud Rate",
+    "original": "BaudRate",
+    "note": "修复连写。",
+    "status": "changed"
+  },
+  "project.peripheral.panel": {
+    "row": 1304,
+    "group": "32    工程设置 › 外设设置    ·    project.peripheral",
+    "zh": "面板",
+    "en": "Panel",
+    "original": "Panel",
+    "note": "",
+    "status": "retained"
+  },
+  "project.peripheral.deviceOccupied": {
+    "row": 1305,
+    "group": "32    工程设置 › 外设设置    ·    project.peripheral",
+    "zh": "com设备已经被占用",
+    "en": "Serial port is already in use.",
+    "original": "Com device has been occupied.",
+    "note": "明确串口占用状态。",
+    "status": "changed"
+  },
+  "project.peripheral.portConflict": {
+    "row": 1306,
+    "group": "32    工程设置 › 外设设置    ·    project.peripheral",
+    "zh": "连接端口冲突，请修改",
+    "en": "Port conflict. Select a different port.",
+    "original": "Connection ports conflict, please modify.",
+    "note": "明确解决动作。",
+    "status": "changed"
+  }
+}

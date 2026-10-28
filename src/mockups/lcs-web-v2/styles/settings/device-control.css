@@ -1,0 +1,573 @@
+/* ==========================================================================
+   PTZ Setting Page Styling
+   ========================================================================== */
+.lcs-web-ptz-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.lcs-web-ptz-card {
+  padding: 0;
+  background: #ffffff;
+  border: 1px solid #e4eaf3;
+  overflow-x: auto;
+}
+
+.lcs-web-ptz-card .lcs-web-ok {
+  width: auto;
+  min-width: 80px;
+  max-width: 100px;
+  align-self: flex-start;
+  margin: 20px 24px 28px;
+}
+
+.lcs-web-ptz-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+.lcs-web-ptz-channel-col {
+  width: 180px;
+  background: #ffffff;
+  border-right: 1px solid #eef2f7;
+  border-bottom: 1px solid #eef2f7;
+  padding: 20px 24px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.lcs-web-ptz-channel-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 8px;
+}
+
+.lcs-web-ptz-channel-col .lcs-web-toggle {
+  margin: 0 auto;
+}
+
+.lcs-web-ptz-config-col {
+  padding: 16px 32px;
+  border-bottom: 1px solid #eef2f7;
+  vertical-align: middle;
+}
+
+.lcs-web-ptz-line {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.lcs-web-ptz-line + .lcs-web-ptz-line {
+  margin-top: 14px;
+}
+
+.lcs-web-ptz-field {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 13px;
+  color: #475569;
+}
+
+.lcs-web-ptz-field span {
+  width: 60px;
+  flex-shrink: 0;
+  font-weight: 500;
+}
+
+.lcs-web-ptz-field .lcs-web-native-select {
+  width: 150px;
+  height: 32px;
+}
+
+.lcs-web-ptz-input {
+  width: 150px;
+  height: 32px;
+  border: 1px solid #cfd9e6;
+  border-radius: 4px;
+  padding: 0 10px;
+  font-size: 13px;
+  color: #1e293b;
+  background: #ffffff;
+  outline: none;
+}
+
+.lcs-web-ptz-input:focus {
+  border-color: #178bff;
+}
+
+/* ==========================================================================
+   Peripheral Setting Page Styling
+   ========================================================================== */
+.lcs-web-peripheral-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.lcs-web-peripheral-card {
+  padding: 0;
+  background: #ffffff;
+  border: 1px solid #e4eaf3;
+  overflow-x: auto;
+}
+
+.lcs-web-peripheral-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+.lcs-web-periph-name-col {
+  width: 170px;
+  background: #ffffff;
+  border-right: 1px solid #eef2f7;
+  border-bottom: 1px solid #eef2f7;
+  padding: 24px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #334155;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.lcs-web-periph-config-col {
+  padding: 24px 32px;
+  border-bottom: 1px solid #eef2f7;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.lcs-web-periph-field {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.lcs-web-periph-field-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #475569;
+  width: 90px;
+  flex-shrink: 0;
+}
+
+.lcs-web-periph-port-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #475569;
+  width: 36px;
+  flex-shrink: 0;
+}
+
+.lcs-web-periph-baud-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #475569;
+  width: 60px;
+  flex-shrink: 0;
+}
+
+.lcs-web-periph-select-wrap {
+  width: 140px;
+}
+
+.lcs-web-periph-select-wrap .lcs-web-native-select {
+  width: 100%;
+  height: 32px;
+}
+
+.lcs-web-periph-avail-tag {
+  font-size: 12px;
+  color: #10b981;
+  font-weight: 500;
+  margin-left: -4px;
+  white-space: nowrap;
+}
+
+.lcs-web-periph-baud-input {
+  width: 120px;
+  height: 32px;
+  border: 1px solid #cfd9e6;
+  border-radius: 4px;
+  padding: 0 10px;
+  font-size: 13px;
+  color: #1e293b;
+  background: #ffffff;
+  outline: none;
+}
+
+.lcs-web-periph-baud-input:focus {
+  border-color: #178bff;
+}
+
+.lcs-web-periph-ok-btn {
+  background: #178bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 22px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+  margin-left: auto;
+}
+
+.lcs-web-periph-ok-btn:hover {
+  background: #0f76e3;
+}
+
+/* ==========================================================================
+   Power Setting Page Styling
+   ========================================================================== */
+.lcs-web-power-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.lcs-web-power-card {
+  padding: 24px 28px 36px;
+  background: #ffffff;
+  border: 1px solid #e4eaf3;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.lcs-web-power-card .lcs-web-ok {
+  width: auto;
+  min-width: 80px;
+  max-width: 100px;
+  align-self: flex-start;
+  margin-top: 16px;
+}
+
+.lcs-web-power-mode-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.lcs-web-power-mode-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  width: 120px;
+}
+
+.lcs-web-power-mode-select {
+  width: 160px;
+}
+
+.lcs-web-power-mode-select .lcs-web-native-select {
+  width: 100%;
+  height: 32px;
+}
+
+.lcs-web-power-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #eef2f7;
+}
+
+.lcs-web-power-switch-name-col {
+  width: 170px;
+  background: #ffffff;
+  border-right: 1px solid #eef2f7;
+  border-bottom: 1px solid #eef2f7;
+  padding: 24px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #334155;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.lcs-web-power-switch-config-col {
+  padding: 24px 32px;
+  border-bottom: 1px solid #eef2f7;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.lcs-web-power-time-field {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.lcs-web-power-time-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #475569;
+  width: 60px;
+  flex-shrink: 0;
+}
+
+.lcs-web-power-time-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.lcs-web-power-clock-icon {
+  position: absolute;
+  left: 10px;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.lcs-web-power-time-input {
+  width: 150px;
+  height: 32px;
+  border: 1px solid #cfd9e6;
+  border-radius: 4px;
+  padding: 0 10px 0 30px;
+  font-size: 13px;
+  color: #1e293b;
+  background: #ffffff;
+  outline: none;
+}
+
+.lcs-web-power-time-input:focus {
+  border-color: #178bff;
+}
+
+/* ==========================================================================
+   Tracker Setting Page Styling
+   ========================================================================== */
+.lcs-web-tracker-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.lcs-web-tracker-card {
+  padding: 24px 28px 36px;
+  background: #ffffff;
+  border: 1px solid #e4eaf3;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.lcs-web-tracker-card .lcs-web-ok {
+  width: auto;
+  min-width: 80px;
+  max-width: 100px;
+  align-self: flex-start;
+  margin-top: 16px;
+}
+
+.lcs-web-tracker-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #eef2f7;
+}
+
+.lcs-web-tracker-th {
+  width: 170px;
+  background: #ffffff;
+  border-right: 1px solid #eef2f7;
+  border-bottom: 1px solid #eef2f7;
+  padding: 20px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 13px;
+  font-weight: 700;
+  color: #334155;
+}
+
+.lcs-web-tracker-th-name {
+  margin-bottom: 12px;
+}
+
+.lcs-web-tracker-td {
+  padding: 20px 28px;
+  border-bottom: 1px solid #eef2f7;
+  vertical-align: middle;
+}
+
+/* Detection Row */
+.lcs-web-tracker-detect-row {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.lcs-web-tracker-video-box {
+  width: 180px;
+  height: 105px;
+  background: #64748b;
+  border: 2px solid #22c55e;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.lcs-web-tracker-video-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lcs-web-tracker-area-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lcs-web-tracker-area-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.lcs-web-tracker-num-btns {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lcs-web-tracker-num-btn {
+  width: 28px;
+  height: 28px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.lcs-web-tracker-num-btn:hover {
+  background: #f8fafc;
+  transform: translateY(-1px);
+}
+
+.lcs-web-tracker-num-btn.is-active {
+  box-shadow: 0 0 0 1px currentColor;
+  background: #f8fafc;
+}
+
+.lcs-web-tracker-clear-btn {
+  height: 28px;
+  padding: 0 12px;
+  background: #fff;
+  border: 1px solid #ffccc7;
+  border-radius: 14px;
+  color: #ff4d4f;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-left: 4px;
+  transition: all 0.15s ease;
+}
+
+.lcs-web-tracker-clear-btn:hover {
+  background: #fff1f0;
+  border-color: #ff4d4f;
+}
+
+.lcs-web-tracker-slider-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: auto;
+  min-width: 260px;
+}
+
+.lcs-web-tracker-slider-tip {
+  font-size: 12px;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+.lcs-web-tracker-slider-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.lcs-web-tracker-range {
+  flex: 1;
+  height: 4px;
+  accent-color: #178bff;
+  cursor: pointer;
+}
+
+.lcs-web-tracker-slider-val {
+  font-size: 13px;
+  font-weight: 500;
+  color: #334155;
+  width: 32px;
+}
+
+/* Tracker line fields */
+.lcs-web-tracker-line {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.lcs-web-tracker-field {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.lcs-web-tracker-field-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #475569;
+  width: 65px;
+  flex-shrink: 0;
+}
+
+.lcs-web-tracker-select-wrap {
+  width: 170px;
+}
+
+.lcs-web-tracker-select-wrap .lcs-web-native-select {
+  width: 100%;
+  height: 32px;
+}
+
+.lcs-web-tracker-input {
+  width: 170px;
+  height: 32px;
+  border: 1px solid #cfd9e6;
+  border-radius: 4px;
+  padding: 0 10px;
+  font-size: 13px;
+  color: #1e293b;
+  background: #ffffff;
+  outline: none;
+}
+
+.lcs-web-tracker-input:focus {
+  border-color: #178bff;
+}
+

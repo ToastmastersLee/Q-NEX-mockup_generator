@@ -1,0 +1,335 @@
+{
+  "IP.networkSetting": {
+    "row": 593,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "网络设置",
+    "en": "Network Settings",
+    "original": "Network Setting",
+    "note": "设置页使用复数。",
+    "status": "changed"
+  },
+  "IP.networkChoose": {
+    "row": 594,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "网络选择",
+    "en": "Network selection",
+    "original": "Network selection",
+    "note": "",
+    "status": "retained"
+  },
+  "IP.type": {
+    "row": 595,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "类型",
+    "en": "Type",
+    "original": "Type",
+    "note": "",
+    "status": "retained"
+  },
+  "IP.IP": {
+    "row": 596,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "IP地址",
+    "en": "IP",
+    "original": "IP",
+    "note": "",
+    "status": "retained"
+  },
+  "IP.gateway": {
+    "row": 597,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "默认网关",
+    "en": "Gateway",
+    "original": "Gateway",
+    "note": "",
+    "status": "retained"
+  },
+  "IP.subnetMask": {
+    "row": 598,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "子网掩码",
+    "en": "Subnet Mask",
+    "original": "Subnet Mask",
+    "note": "",
+    "status": "retained"
+  },
+  "IP.DNS": {
+    "row": 599,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "DNS服务器",
+    "en": "DNS",
+    "original": "DNS",
+    "note": "",
+    "status": "retained"
+  },
+  "IP.website": {
+    "row": 600,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "网址",
+    "en": "Website",
+    "original": "Website",
+    "note": "",
+    "status": "retained"
+  },
+  "IP.check": {
+    "row": 601,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "检测",
+    "en": "Check",
+    "original": "Check",
+    "note": "",
+    "status": "retained"
+  },
+  "IP.clear": {
+    "row": 602,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "清空",
+    "en": "Clear",
+    "original": "Clear",
+    "note": "",
+    "status": "retained"
+  },
+  "IP.websiteEmpty": {
+    "row": 603,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "网址不能为空",
+    "en": "Enter a website address.",
+    "original": "Website cannot be empty.",
+    "note": "网址字段不能为空。",
+    "status": "changed"
+  },
+  "IP.wiredNetwork": {
+    "row": 604,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "有线网络",
+    "en": "Wired Network",
+    "original": "Wired Network",
+    "note": "",
+    "status": "retained"
+  },
+  "IP.wifi": {
+    "row": 605,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "Wi-Fi",
+    "en": "Wi-Fi",
+    "original": "Wi-Fi",
+    "note": "",
+    "status": "retained"
+  },
+  "IP.mobileNetwork": {
+    "row": 606,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "移动网络",
+    "en": "Mobile Network",
+    "original": "Mobile Network",
+    "note": "",
+    "status": "retained"
+  },
+  "IP.networkTypeFail": {
+    "row": 607,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "网络类型设置失败",
+    "en": "Failed to set the network type.",
+    "original": "Network type set failed.",
+    "note": "修正语法。",
+    "status": "changed"
+  },
+  "IP.networkTypeSuccess": {
+    "row": 608,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "网络类型设置成功",
+    "en": "Network type set successfully.",
+    "original": "Network type set success.",
+    "note": "修正语法。",
+    "status": "changed"
+  },
+  "IP.IPerror": {
+    "row": 609,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "IP地址格式错误",
+    "en": "Invalid IP address format.",
+    "original": "IP address format error",
+    "note": "自然的格式错误提示。",
+    "status": "changed"
+  },
+  "IP.gatewayError": {
+    "row": 610,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "网关格式错误",
+    "en": "Invalid gateway address format.",
+    "original": "Gateway format error",
+    "note": "明确网关地址。",
+    "status": "changed"
+  },
+  "IP.subnetMaskError": {
+    "row": 611,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "子网掩码格式错误",
+    "en": "Invalid subnet mask format.",
+    "original": "Subnet mask format error",
+    "note": "自然的格式错误提示。",
+    "status": "changed"
+  },
+  "IP.DNSerror": {
+    "row": 612,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "DNS格式错误",
+    "en": "Invalid DNS server address format.",
+    "original": "DNS format error",
+    "note": "明确 DNS 服务器地址。",
+    "status": "changed"
+  },
+  "IP.success": {
+    "row": 613,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "网络设置成功，重启后生效",
+    "en": "Network settings saved. Restart the device to apply them.",
+    "original": "The Network is set successfully. It will take effect after restarting",
+    "note": "保留必须重启生效的条件。",
+    "status": "changed"
+  },
+  "IP.fail": {
+    "row": 614,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "IP地址与网关不在同一网段，是否保存此配置？",
+    "en": "The IP address and gateway are not in the same network segment. Do you want to save this configuration?",
+    "original": "The IP address and gateway are not in the same network segment. Do you want to save this configuration?",
+    "note": "",
+    "status": "retained"
+  },
+  "IP.setFail": {
+    "row": 615,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "网络设置失败",
+    "en": "Failed to save network settings.",
+    "original": "Network setting failed",
+    "note": "明确设置保存失败。",
+    "status": "changed"
+  },
+  "IP.getIPfail": {
+    "row": 616,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "获取IP信息失败",
+    "en": "Failed to get IP information",
+    "original": "Failed to get IP information",
+    "note": "",
+    "status": "retained"
+  },
+  "IP.wifiList": {
+    "row": 617,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "Wi-Fi列表",
+    "en": "Wi-Fi List",
+    "original": "Wi-Fi List",
+    "note": "",
+    "status": "retained"
+  },
+  "IP.refresh": {
+    "row": 618,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "刷新",
+    "en": "Refresh",
+    "original": "Refresh",
+    "note": "",
+    "status": "retained"
+  },
+  "IP.connected": {
+    "row": 619,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "已连接",
+    "en": "Connected",
+    "original": "Connected",
+    "note": "",
+    "status": "retained"
+  },
+  "IP.connecting": {
+    "row": 620,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "连接中...",
+    "en": "Connecting...",
+    "original": "Connecting...",
+    "note": "",
+    "status": "retained"
+  },
+  "IP.disconnect": {
+    "row": 621,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "断开",
+    "en": "Disconnect",
+    "original": "Disconnect",
+    "note": "",
+    "status": "retained"
+  },
+  "IP.inputPassword": {
+    "row": 622,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "输入密码",
+    "en": "Input Password",
+    "original": "Input Password",
+    "note": "",
+    "status": "retained"
+  },
+  "IP.password": {
+    "row": 623,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "密码",
+    "en": "Password",
+    "original": "Password",
+    "note": "",
+    "status": "retained"
+  },
+  "IP.joinWifiSuccess": {
+    "row": 624,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "Wi-Fi连接成功",
+    "en": "Wi-Fi connection successful",
+    "original": "Wi-Fi connection successful",
+    "note": "",
+    "status": "retained"
+  },
+  "IP.joinWifiFail": {
+    "row": 625,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "Wi-Fi连接失败",
+    "en": "Wi-Fi connection failed",
+    "original": "Wi-Fi connection failed",
+    "note": "",
+    "status": "retained"
+  },
+  "IP.scanWifiLoading": {
+    "row": 626,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "正在更新Wi-Fi列表，请稍候...",
+    "en": "Updating Wi-Fi list, please wait...",
+    "original": "Updating Wi-Fi list, please wait...",
+    "note": "",
+    "status": "retained"
+  },
+  "IP.joinWifiLoading": {
+    "row": 627,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "正在连接Wi-Fi，请稍候...",
+    "en": "Connecting to Wi-Fi, please wait...",
+    "original": "Connecting Wi-Fi, please wait...",
+    "note": "补齐介词。",
+    "status": "changed"
+  },
+  "IP.cancelWifiSuccess": {
+    "row": 628,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "断开Wi-Fi成功",
+    "en": "Wi-Fi disconnected successfully.",
+    "original": "Wi-Fi disconnected successfully.",
+    "note": "",
+    "status": "retained"
+  },
+  "IP.cancelWifiFail": {
+    "row": 629,
+    "group": "18    网络设置    ·    IP    ｜    51 条",
+    "zh": "断开Wi-Fi失败",
+    "en": "Failed to disconnect Wi-Fi.",
+    "original": "Failed to disconnect Wi-Fi.",
+    "note": "",
+    "status": "retained"
+  }
+}

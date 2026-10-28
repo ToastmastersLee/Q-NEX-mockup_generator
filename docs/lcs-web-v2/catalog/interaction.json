@@ -1,0 +1,299 @@
+{
+  "interaction.interactionSetting": {
+    "row": 515,
+    "group": "16    互动设置    ·    interaction    ｜    33 条",
+    "zh": "互动设置",
+    "en": "Interaction Settings",
+    "original": "Interaction Setting",
+    "note": "设置页使用复数。",
+    "status": "changed"
+  },
+  "interaction.interactionMode": {
+    "row": 516,
+    "group": "16    互动设置    ·    interaction    ｜    33 条",
+    "zh": "互动模式",
+    "en": "Interaction Mode",
+    "original": "Interaction Mode",
+    "note": "",
+    "status": "retained"
+  },
+  "interaction.speakerMode": {
+    "row": 517,
+    "group": "16    互动设置    ·    interaction    ｜    33 条",
+    "zh": "主讲模式",
+    "en": "Speaker Mode",
+    "original": "Speaker Mode",
+    "note": "",
+    "status": "retained"
+  },
+  "interaction.teachingMode": {
+    "row": 518,
+    "group": "16    互动设置    ·    interaction    ｜    33 条",
+    "zh": "教研模式",
+    "en": "Teaching Research Mode",
+    "original": "Teaching Mode",
+    "note": "教研不等于普通教学。",
+    "status": "changed"
+  },
+  "interaction.creator": {
+    "row": 519,
+    "group": "16    互动设置    ·    interaction    ｜    33 条",
+    "zh": "视频发起方",
+    "en": "Initiator",
+    "original": "Video Creator",
+    "note": "表示会话发起方，不是视频创作者。",
+    "status": "changed"
+  },
+  "interaction.joiner": {
+    "row": 520,
+    "group": "16    互动设置    ·    interaction    ｜    33 条",
+    "zh": "视频接收方",
+    "en": "Receiver",
+    "original": "Video Joiner",
+    "note": "对应接收方，避免 Joiner 生硬用语。",
+    "status": "changed"
+  },
+  "interaction.senderVideo1": {
+    "row": 521,
+    "group": "16    互动设置    ·    interaction    ｜    33 条",
+    "zh": "默认发送画面一",
+    "en": "Default Video 1 to Send",
+    "original": "Sending Screen 1",
+    "note": "补齐默认发送含义。",
+    "status": "changed"
+  },
+  "interaction.senderVideo2": {
+    "row": 522,
+    "group": "16    互动设置    ·    interaction    ｜    33 条",
+    "zh": "默认发送画面二",
+    "en": "Default Video 2 to Send",
+    "original": "Sending Screen 2",
+    "note": "补齐默认发送含义。",
+    "status": "changed"
+  },
+  "interaction.senderVideo": {
+    "row": 523,
+    "group": "16    互动设置    ·    interaction    ｜    33 条",
+    "zh": "默认发送画面",
+    "en": "Default Video to Send",
+    "original": "Sending Screen",
+    "note": "补齐默认发送含义。",
+    "status": "changed"
+  },
+  "interaction.joinerVideo": {
+    "row": 524,
+    "group": "16    互动设置    ·    interaction    ｜    33 条",
+    "zh": "接收画面选择",
+    "en": "Received Video",
+    "original": "Receiving Screen",
+    "note": "表示接收画面。",
+    "status": "changed"
+  },
+  "interaction.videoResolution": {
+    "row": 525,
+    "group": "16    互动设置    ·    interaction    ｜    33 条",
+    "zh": "视频分辨率",
+    "en": "Resolution",
+    "original": "Resolution",
+    "note": "",
+    "status": "retained"
+  },
+  "interaction.defaultOutput": {
+    "row": 526,
+    "group": "16    互动设置    ·    interaction    ｜    33 条",
+    "zh": "输出通道",
+    "en": "Output",
+    "original": "Output",
+    "note": "",
+    "status": "retained"
+  },
+  "interaction.UHD": {
+    "row": 527,
+    "group": "16    互动设置    ·    interaction    ｜    33 条",
+    "zh": "超高清",
+    "en": "UHD",
+    "original": "UHD",
+    "note": "",
+    "status": "retained"
+  },
+  "interaction.UD": {
+    "row": 528,
+    "group": "16    互动设置    ·    interaction    ｜    33 条",
+    "zh": "超清",
+    "en": "UD",
+    "original": "UD",
+    "note": "待确认：UD 对应的实际分辨率是什么？不能与 UHD/FHD 擅自合并。",
+    "status": "pending"
+  },
+  "interaction.FHD": {
+    "row": 529,
+    "group": "16    互动设置    ·    interaction    ｜    33 条",
+    "zh": "全高清",
+    "en": "FHD",
+    "original": "FUD",
+    "note": "修正 FUD 拼写。",
+    "status": "changed"
+  },
+  "interaction.HD": {
+    "row": 530,
+    "group": "16    互动设置    ·    interaction    ｜    33 条",
+    "zh": "高清",
+    "en": "HD",
+    "original": "HD",
+    "note": "",
+    "status": "retained"
+  },
+  "interaction.HDU": {
+    "row": 531,
+    "group": "16    互动设置    ·    interaction    ｜    33 条",
+    "zh": "标清",
+    "en": "SD",
+    "original": "HD-",
+    "note": "标清的标准缩写。",
+    "status": "changed"
+  },
+  "interaction.dualDisplay": {
+    "row": 532,
+    "group": "16    互动设置    ·    interaction    ｜    33 条",
+    "zh": "双屏显示",
+    "en": "Dual Display",
+    "original": "Dual Display",
+    "note": "",
+    "status": "retained"
+  },
+  "interaction.singleDisplay": {
+    "row": 533,
+    "group": "16    互动设置    ·    interaction    ｜    33 条",
+    "zh": "单屏显示",
+    "en": "Single Display",
+    "original": "Single Display",
+    "note": "",
+    "status": "retained"
+  },
+  "interaction.otherSettings": {
+    "row": 534,
+    "group": "16    互动设置    ·    interaction    ｜    33 条",
+    "zh": "其他设置",
+    "en": "Other Settings",
+    "original": "Other Settings",
+    "note": "",
+    "status": "retained"
+  },
+  "interaction.speakerFullScreen": {
+    "row": 535,
+    "group": "16    互动设置    ·    interaction    ｜    33 条",
+    "zh": "发言方全屏",
+    "en": "Full-Screen Speaker",
+    "original": "SpeakerFullScreen",
+    "note": "修正代码式连写。",
+    "status": "changed"
+  },
+  "interaction.showSelf": {
+    "row": 536,
+    "group": "16    互动设置    ·    interaction    ｜    33 条",
+    "zh": "显示本地视频",
+    "en": "Show Self",
+    "original": "Show Self",
+    "note": "",
+    "status": "retained"
+  },
+  "interaction.maxSplitScreens": {
+    "row": 537,
+    "group": "16    互动设置    ·    interaction    ｜    33 条",
+    "zh": "最大分屏数量",
+    "en": "Max Split Screens",
+    "original": "Max Split Screens",
+    "note": "",
+    "status": "retained"
+  },
+  "interaction.openMicNum": {
+    "row": 538,
+    "group": "16    互动设置    ·    interaction    ｜    33 条",
+    "zh": "听讲麦克风开启数量",
+    "en": "Listener Mics Enabled",
+    "original": "Open Mic Num",
+    "note": "表示听讲端允许开启的麦克风数量。",
+    "status": "changed"
+  },
+  "interaction.fourScreens": {
+    "row": 539,
+    "group": "16    互动设置    ·    interaction    ｜    33 条",
+    "zh": "四分屏",
+    "en": "4-Way Split",
+    "original": "Four Screens",
+    "note": "表示同屏分区，不是四台屏幕。",
+    "status": "changed"
+  },
+  "interaction.nineScreens": {
+    "row": 540,
+    "group": "16    互动设置    ·    interaction    ｜    33 条",
+    "zh": "九分屏",
+    "en": "9-Way Split",
+    "original": "Nine Screens",
+    "note": "表示同屏分区，不是九台屏幕。",
+    "status": "changed"
+  },
+  "interaction.splitScreenFormat": {
+    "row": 541,
+    "group": "16    互动设置    ·    interaction    ｜    33 条",
+    "zh": "分屏格式",
+    "en": "Split-Screen Layout",
+    "original": "SplitScreenFormat",
+    "note": "画面布局的自然表达。",
+    "status": "changed"
+  },
+  "interaction.sipSetting": {
+    "row": 542,
+    "group": "16    互动设置    ·    interaction    ｜    33 条",
+    "zh": "SIP设置",
+    "en": "SIP Settings",
+    "original": "SIP Setting",
+    "note": "设置页使用复数。",
+    "status": "changed"
+  },
+  "interaction.output": {
+    "row": 543,
+    "group": "16    互动设置    ·    interaction    ｜    33 条",
+    "zh": "输出",
+    "en": "Output",
+    "original": "Output",
+    "note": "",
+    "status": "retained"
+  },
+  "interaction.doubleStream": {
+    "row": 544,
+    "group": "16    互动设置    ·    interaction    ｜    33 条",
+    "zh": "双流",
+    "en": "Dual Stream",
+    "original": "Double Stream",
+    "note": "双流的常用表达。",
+    "status": "changed"
+  },
+  "interaction.pipView": {
+    "row": 545,
+    "group": "16    互动设置    ·    interaction    ｜    33 条",
+    "zh": "画中画",
+    "en": "PiP",
+    "original": "Pip",
+    "note": "画中画的常用短标签。",
+    "status": "changed"
+  },
+  "interaction.typeNotSupportFormat": {
+    "row": 546,
+    "group": "16    互动设置    ·    interaction    ｜    33 条",
+    "zh": "此分屏格式不支持九分屏",
+    "en": "This layout does not support a 9-way split.",
+    "original": "This split screen format does not support nine split screens.",
+    "note": "表示画面分区限制。",
+    "status": "changed"
+  },
+  "interaction.audioInputSetting": {
+    "row": 547,
+    "group": "16    互动设置    ·    interaction    ｜    33 条",
+    "zh": "音频输入设置",
+    "en": "Audio input settings",
+    "original": "Audio input settings",
+    "note": "",
+    "status": "retained"
+  }
+}

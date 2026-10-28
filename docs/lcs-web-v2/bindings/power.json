@@ -1,0 +1,12 @@
+{
+  "pageTitle": "project.powerSupply.powerSupplySetting",
+  "powerOnMode": "project.powerSupply.powerMode",
+  "normalBoot": "project.powerSupply.normalBoot",
+  "timer1": "project.powerSupply.powerBoot1",
+  "timer2": "project.powerSupply.powerBoot2",
+  "bootTime": "project.powerSupply.powerOn",
+  "shutdownTime": "project.powerSupply.powerOff",
+  "ok": "parameter.ok",
+  "autoBoot": "project.powerSupply.powerOnSelfStart",
+  "hdmiPowerOn": "project.powerSupply.hdmiInputPowerOn"
+}

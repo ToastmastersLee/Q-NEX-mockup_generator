@@ -1,0 +1,152 @@
+{
+  "guide.guide": {
+    "status": "retained",
+    "controls": [
+      "common.topbar.guide"
+    ]
+  },
+  "guide.done": {
+    "status": "retained",
+    "controls": []
+  },
+  "guide.close": {
+    "status": "retained",
+    "controls": []
+  },
+  "guide.next": {
+    "status": "retained",
+    "controls": []
+  },
+  "guide.prev": {
+    "status": "retained",
+    "controls": []
+  },
+  "guide.topicDesc": {
+    "status": "changed",
+    "controls": []
+  },
+  "guide.speakDesc": {
+    "status": "changed",
+    "controls": []
+  },
+  "guide.recordParamDesc": {
+    "status": "changed",
+    "controls": []
+  },
+  "guide.liveParamDesc": {
+    "status": "changed",
+    "controls": []
+  },
+  "guide.diskSizeDesc": {
+    "status": "retained",
+    "controls": []
+  },
+  "guide.networkStateDesc": {
+    "status": "retained",
+    "controls": []
+  },
+  "guide.mobileNetworkDesc": {
+    "status": "retained",
+    "controls": []
+  },
+  "guide.systemTimeDesc": {
+    "status": "retained",
+    "controls": []
+  },
+  "guide.filmScreen": {
+    "status": "changed",
+    "controls": []
+  },
+  "guide.filmScreenDesc": {
+    "status": "changed",
+    "controls": []
+  },
+  "guide.recordDesc": {
+    "status": "retained",
+    "controls": []
+  },
+  "guide.liveDesc": {
+    "status": "retained",
+    "controls": []
+  },
+  "guide.subtitleDesc": {
+    "status": "changed",
+    "controls": []
+  },
+  "guide.logoDesc": {
+    "status": "changed",
+    "controls": []
+  },
+  "guide.titleDesc": {
+    "status": "changed",
+    "controls": []
+  },
+  "guide.trailerDesc": {
+    "status": "changed",
+    "controls": []
+  },
+  "guide.osdDesc": {
+    "status": "changed",
+    "controls": []
+  },
+  "guide.autoDesc": {
+    "status": "changed",
+    "controls": []
+  },
+  "guide.semiautoDesc": {
+    "status": "changed",
+    "controls": []
+  },
+  "guide.manualDesc": {
+    "status": "changed",
+    "controls": []
+  },
+  "guide.PTZ": {
+    "status": "retained",
+    "controls": []
+  },
+  "guide.ptzDesc": {
+    "status": "changed",
+    "controls": []
+  },
+  "guide.method1": {
+    "status": "retained",
+    "controls": []
+  },
+  "guide.ptzMethod1": {
+    "status": "changed",
+    "controls": []
+  },
+  "guide.method2": {
+    "status": "retained",
+    "controls": []
+  },
+  "guide.ptzMethod2": {
+    "status": "changed",
+    "controls": []
+  },
+  "guide.ptzRemark": {
+    "status": "changed",
+    "controls": []
+  },
+  "guide.layoutDesc": {
+    "status": "changed",
+    "controls": []
+  },
+  "guide.layoutRemark": {
+    "status": "changed",
+    "controls": []
+  },
+  "guide.transitionDesc": {
+    "status": "changed",
+    "controls": []
+  },
+  "guide.backupScreen": {
+    "status": "changed",
+    "controls": []
+  },
+  "guide.backupScreenDesc": {
+    "status": "changed",
+    "controls": []
+  }
+}

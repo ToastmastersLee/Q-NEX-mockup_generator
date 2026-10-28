@@ -1,0 +1,245 @@
+{
+  "subtitle.subtitle": {
+    "row": 301,
+    "group": "09    字幕设置    ·    subtitle    ",
+    "zh": "字幕",
+    "en": "Text Overlays",
+    "original": "Subtitle",
+    "note": "此页配置手动文字叠加，与实时语音字幕区分。",
+    "status": "changed"
+  },
+  "subtitle.subtitlePreset": {
+    "row": 302,
+    "group": "09    字幕设置    ·    subtitle    ",
+    "zh": "字幕预设",
+    "en": "Text Presets",
+    "original": "Subtitle Preset",
+    "note": "手动文字预设，保持标签简短。",
+    "status": "changed"
+  },
+  "subtitle.font": {
+    "row": 303,
+    "group": "09    字幕设置    ·    subtitle    ",
+    "zh": "字体",
+    "en": "Font",
+    "original": "Font",
+    "note": "",
+    "status": "retained"
+  },
+  "subtitle.size": {
+    "row": 304,
+    "group": "09    字幕设置    ·    subtitle    ",
+    "zh": "大小",
+    "en": "Size",
+    "original": "Size",
+    "note": "",
+    "status": "retained"
+  },
+  "subtitle.color": {
+    "row": 305,
+    "group": "09    字幕设置    ·    subtitle    ",
+    "zh": "颜色",
+    "en": "Color",
+    "original": "Color",
+    "note": "",
+    "status": "retained"
+  },
+  "subtitle.mode": {
+    "row": 306,
+    "group": "09    字幕设置    ·    subtitle    ",
+    "zh": "字幕模式",
+    "en": "Mode",
+    "original": "Mode",
+    "note": "",
+    "status": "retained"
+  },
+  "subtitle.Simsun": {
+    "row": 307,
+    "group": "09    字幕设置    ·    subtitle    ",
+    "zh": "宋体",
+    "en": "Simsun",
+    "original": "Simsun",
+    "note": "",
+    "status": "retained"
+  },
+  "subtitle.Simkai": {
+    "row": 308,
+    "group": "09    字幕设置    ·    subtitle    ",
+    "zh": "楷体",
+    "en": "Simkai",
+    "original": "Simkai",
+    "note": "",
+    "status": "retained"
+  },
+  "subtitle.Simhei": {
+    "row": 309,
+    "group": "09    字幕设置    ·    subtitle    ",
+    "zh": "黑体",
+    "en": "Simhei",
+    "original": "Simhei",
+    "note": "",
+    "status": "retained"
+  },
+  "subtitle.Arial": {
+    "row": 310,
+    "group": "09    字幕设置    ·    subtitle    ",
+    "zh": "Arial",
+    "en": "Arial",
+    "original": "Arial",
+    "note": "",
+    "status": "retained"
+  },
+  "subtitle.SourceHanSansKR": {
+    "row": 311,
+    "group": "09    字幕设置    ·    subtitle    ",
+    "zh": "SourceHanSansKR",
+    "en": "SourceHanSansKR",
+    "original": "SourceHanSansKR",
+    "note": "",
+    "status": "retained"
+  },
+  "subtitle.Kanit_Regular": {
+    "row": 312,
+    "group": "09    字幕设置    ·    subtitle    ",
+    "zh": "Kanit-Regular",
+    "en": "Kanit-Regular",
+    "original": "Kanit-Regular",
+    "note": "",
+    "status": "retained"
+  },
+  "subtitle.Black": {
+    "row": 313,
+    "group": "09    字幕设置    ·    subtitle    ",
+    "zh": "黑色",
+    "en": "Black",
+    "original": "Black",
+    "note": "",
+    "status": "retained"
+  },
+  "subtitle.White": {
+    "row": 314,
+    "group": "09    字幕设置    ·    subtitle    ",
+    "zh": "白色",
+    "en": "White",
+    "original": "White",
+    "note": "",
+    "status": "retained"
+  },
+  "subtitle.Red": {
+    "row": 315,
+    "group": "09    字幕设置    ·    subtitle    ",
+    "zh": "红色",
+    "en": "Red",
+    "original": "Red",
+    "note": "",
+    "status": "retained"
+  },
+  "subtitle.Green": {
+    "row": 316,
+    "group": "09    字幕设置    ·    subtitle    ",
+    "zh": "绿色",
+    "en": "Green",
+    "original": "Green",
+    "note": "",
+    "status": "retained"
+  },
+  "subtitle.Blue": {
+    "row": 317,
+    "group": "09    字幕设置    ·    subtitle    ",
+    "zh": "蓝色",
+    "en": "Blue",
+    "original": "Blue",
+    "note": "",
+    "status": "retained"
+  },
+  "subtitle.fixedMode": {
+    "row": 318,
+    "group": "09    字幕设置    ·    subtitle    ",
+    "zh": "固定模式",
+    "en": "Static",
+    "original": "Fixed Mode",
+    "note": "固定文字，短选项。",
+    "status": "changed"
+  },
+  "subtitle.leftScrollMode": {
+    "row": 319,
+    "group": "09    字幕设置    ·    subtitle    ",
+    "zh": "左滚动模式",
+    "en": "Scroll Left",
+    "original": "Left Scroll Mode",
+    "note": "向左滚动，短选项。",
+    "status": "changed"
+  },
+  "subtitle.rightScrollMode": {
+    "row": 320,
+    "group": "09    字幕设置    ·    subtitle    ",
+    "zh": "右滚动模式",
+    "en": "Scroll Right",
+    "original": "Right Scroll Mode",
+    "note": "向右滚动，短选项。",
+    "status": "changed"
+  },
+  "subtitle.editSubtitle": {
+    "row": 321,
+    "group": "09    字幕设置    ·    subtitle    ",
+    "zh": "单击输入框编辑修改文字",
+    "en": "Click the text box to edit the text.",
+    "original": "Click the input box to edit the modified text",
+    "note": "修正 edit the modified text。",
+    "status": "changed"
+  },
+  "subtitle.tip1": {
+    "row": 322,
+    "group": "09    字幕设置    ·    subtitle    ",
+    "zh": "1.单击选中上方预设按钮可查看对应设置的字幕；",
+    "en": "1. Select a preset above to view its text.",
+    "original": "1.Click and select the preset button above to view the corresponding subtitles;",
+    "note": "简化预设操作说明。",
+    "status": "changed"
+  },
+  "subtitle.tip2": {
+    "row": 323,
+    "group": "09    字幕设置    ·    subtitle    ",
+    "zh": "2.单击输入框可编辑修改文字并保存；",
+    "en": "2. Edit the text in the text box, then save your changes.",
+    "original": "2.Click the input box to edit and save the modified text;",
+    "note": "不把点击输入框误写为自动保存。",
+    "status": "changed"
+  },
+  "subtitle.tip3": {
+    "row": 324,
+    "group": "09    字幕设置    ·    subtitle    ",
+    "zh": "3.移动预览区内的选框可改变字幕的位置。",
+    "en": "3. Move the selection box in the preview to reposition the text.",
+    "original": "3.Move the selection box in the preview area to change the position of the caption.",
+    "note": "与手动文字叠加术语一致。",
+    "status": "changed"
+  },
+  "subtitle.itIsSubtitle": {
+    "row": 325,
+    "group": "09    字幕设置    ·    subtitle    ",
+    "zh": "这是字幕",
+    "en": "Subtitle",
+    "original": "Subtitle",
+    "note": "",
+    "status": "retained"
+  },
+  "subtitle.presetNameSame": {
+    "row": 326,
+    "group": "09    字幕设置    ·    subtitle    ",
+    "zh": "预设名称不能相同",
+    "en": "Preset names must be unique.",
+    "original": "Preset name cannot be the same.",
+    "note": "明确不能重名。",
+    "status": "changed"
+  },
+  "subtitle.presetNameNull": {
+    "row": 327,
+    "group": "09    字幕设置    ·    subtitle    ",
+    "zh": "预设名称不能为空",
+    "en": "Preset name cannot be empty.",
+    "original": "Preset name cannot be empty.",
+    "note": "",
+    "status": "retained"
+  }
+}

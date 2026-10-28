@@ -1,0 +1,208 @@
+[
+  {
+    "name": "main",
+    "width": 1920,
+    "lang": "en",
+    "selects": [
+      {
+        "value": "en",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "preset1",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "preset1",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "preset1",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "preset1",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "off",
+        "valid": true,
+        "duplicateValues": []
+      }
+    ],
+    "clippedButtons": [],
+    "chineseInEnglish": [],
+    "brokenImages": [],
+    "documentOverflow": false
+  },
+  {
+    "name": "main",
+    "width": 1920,
+    "lang": "zh",
+    "selects": [
+      {
+        "value": "zh",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "preset1",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "preset1",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "preset1",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "preset1",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "off",
+        "valid": true,
+        "duplicateValues": []
+      }
+    ],
+    "clippedButtons": [],
+    "chineseInEnglish": [
+      "界面预览",
+      "主页",
+      "视频管理",
+      "高级设置",
+      "重启",
+      "关机",
+      "注销",
+      "状态信息",
+      "主题",
+      "主讲人",
+      "录像参数",
+      "直播参数",
+      "磁盘容量",
+      "网络状态",
+      "有线网络",
+      "已联网",
+      "公网",
+      "移动存储",
+      "未接入外接存储",
+      "系统时间"
+    ],
+    "brokenImages": [],
+    "documentOverflow": false
+  },
+  {
+    "name": "main",
+    "width": 1366,
+    "lang": "en",
+    "selects": [
+      {
+        "value": "en",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "preset1",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "preset1",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "preset1",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "preset1",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "off",
+        "valid": true,
+        "duplicateValues": []
+      }
+    ],
+    "clippedButtons": [],
+    "chineseInEnglish": [],
+    "brokenImages": [],
+    "documentOverflow": false
+  },
+  {
+    "name": "main",
+    "width": 1366,
+    "lang": "zh",
+    "selects": [
+      {
+        "value": "zh",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "preset1",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "preset1",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "preset1",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "preset1",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "off",
+        "valid": true,
+        "duplicateValues": []
+      }
+    ],
+    "clippedButtons": [],
+    "chineseInEnglish": [
+      "界面预览",
+      "主页",
+      "视频管理",
+      "高级设置",
+      "重启",
+      "关机",
+      "注销",
+      "状态信息",
+      "主题",
+      "主讲人",
+      "录像参数",
+      "直播参数",
+      "磁盘容量",
+      "网络状态",
+      "有线网络",
+      "已联网",
+      "公网",
+      "移动存储",
+      "未接入外接存储",
+      "系统时间"
+    ],
+    "brokenImages": [],
+    "documentOverflow": false
+  }
+]

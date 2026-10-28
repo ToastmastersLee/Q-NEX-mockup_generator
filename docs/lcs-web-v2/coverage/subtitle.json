@@ -1,0 +1,159 @@
+{
+  "subtitle.subtitle": {
+    "status": "changed",
+    "controls": [
+      "common.sidebar.subtitle",
+      "subtitle.pageTitle"
+    ]
+  },
+  "subtitle.subtitlePreset": {
+    "status": "changed",
+    "controls": [
+      "subtitle.subtitlePreset"
+    ]
+  },
+  "subtitle.font": {
+    "status": "retained",
+    "controls": [
+      "subtitle.font"
+    ]
+  },
+  "subtitle.size": {
+    "status": "retained",
+    "controls": [
+      "subtitle.size"
+    ]
+  },
+  "subtitle.color": {
+    "status": "retained",
+    "controls": [
+      "subtitle.color"
+    ]
+  },
+  "subtitle.mode": {
+    "status": "retained",
+    "controls": [
+      "subtitle.mode"
+    ]
+  },
+  "subtitle.Simsun": {
+    "status": "retained",
+    "controls": [
+      "subtitle.simsun"
+    ]
+  },
+  "subtitle.Simkai": {
+    "status": "retained",
+    "controls": [
+      "subtitle.simkai"
+    ]
+  },
+  "subtitle.Simhei": {
+    "status": "retained",
+    "controls": [
+      "subtitle.simhei"
+    ]
+  },
+  "subtitle.Arial": {
+    "status": "retained",
+    "controls": [
+      "subtitle.arial"
+    ]
+  },
+  "subtitle.SourceHanSansKR": {
+    "status": "retained",
+    "controls": [
+      "subtitle.sourceHan"
+    ]
+  },
+  "subtitle.Kanit_Regular": {
+    "status": "retained",
+    "controls": [
+      "subtitle.kanit"
+    ]
+  },
+  "subtitle.Black": {
+    "status": "retained",
+    "controls": [
+      "osd.colorBlack",
+      "subtitle.black"
+    ]
+  },
+  "subtitle.White": {
+    "status": "retained",
+    "controls": [
+      "osd.colorWhite",
+      "subtitle.white"
+    ]
+  },
+  "subtitle.Red": {
+    "status": "retained",
+    "controls": [
+      "subtitle.red"
+    ]
+  },
+  "subtitle.Green": {
+    "status": "retained",
+    "controls": [
+      "subtitle.green"
+    ]
+  },
+  "subtitle.Blue": {
+    "status": "retained",
+    "controls": [
+      "subtitle.blue"
+    ]
+  },
+  "subtitle.fixedMode": {
+    "status": "changed",
+    "controls": [
+      "subtitle.fixedMode"
+    ]
+  },
+  "subtitle.leftScrollMode": {
+    "status": "changed",
+    "controls": [
+      "subtitle.scrollLeft"
+    ]
+  },
+  "subtitle.rightScrollMode": {
+    "status": "changed",
+    "controls": [
+      "subtitle.scrollRight"
+    ]
+  },
+  "subtitle.editSubtitle": {
+    "status": "changed",
+    "controls": []
+  },
+  "subtitle.tip1": {
+    "status": "changed",
+    "controls": [
+      "subtitle.tip1"
+    ]
+  },
+  "subtitle.tip2": {
+    "status": "changed",
+    "controls": [
+      "subtitle.tip2"
+    ]
+  },
+  "subtitle.tip3": {
+    "status": "changed",
+    "controls": [
+      "subtitle.tip3"
+    ]
+  },
+  "subtitle.itIsSubtitle": {
+    "status": "retained",
+    "controls": []
+  },
+  "subtitle.presetNameSame": {
+    "status": "changed",
+    "controls": []
+  },
+  "subtitle.presetNameNull": {
+    "status": "retained",
+    "controls": []
+  }
+}

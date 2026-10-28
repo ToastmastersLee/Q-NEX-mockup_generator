@@ -1,0 +1,362 @@
+{
+  "project.storage.storageSetting": {
+    "row": 1211,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "存储设置",
+    "en": "Storage Settings",
+    "original": "Storage Setting",
+    "note": "设置页使用复数。",
+    "status": "changed"
+  },
+  "project.storage.tip1": {
+    "row": 1212,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "1、选择“删除文件优先”当磁盘空间不足时，会删除录像时间最早的录像文件。",
+    "en": "1. Delete Oldest: When disk space is insufficient, the oldest recordings are deleted.",
+    "original": "1. Select \"Delete Priority\" when the disk space is insufficient, the video file with the earliest recording time will be deleted.",
+    "note": "与策略选项一致，明确删除顺序。",
+    "status": "changed"
+  },
+  "project.storage.tip2": {
+    "row": 1213,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "2、选择“停止录制优先”当磁盘空间不足时，会停止当前录制。",
+    "en": "2. Stop Recording: When disk space is insufficient, the current recording stops.",
+    "original": "2. Select \"Stop Priority\" to stop the current recording when there is not enough disk space.",
+    "note": "与策略选项一致，保留触发条件。",
+    "status": "changed"
+  },
+  "project.storage.storagePath": {
+    "row": 1214,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "存储路径",
+    "en": "Storage Path",
+    "original": "Storage Path",
+    "note": "",
+    "status": "retained"
+  },
+  "project.storage.choosePath": {
+    "row": 1215,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "路径选择",
+    "en": "Choose Path",
+    "original": "Choose Path",
+    "note": "",
+    "status": "retained"
+  },
+  "project.storage.network": {
+    "row": 1216,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "网络",
+    "en": "Network",
+    "original": "Network",
+    "note": "",
+    "status": "retained"
+  },
+  "project.storage.networkPathTip": {
+    "row": 1217,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "操作提示: 网络路径格式为“//地址/路径”，如//192.168.1.10/record",
+    "en": "Tip: the format of network path is \"//address/path\", such as //192.168.1.10/record",
+    "original": "Tip: the format of network path is \"//address/path\", such as //192.168.1.10/record",
+    "note": "",
+    "status": "retained"
+  },
+  "project.storage.notOpen": {
+    "row": 1218,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "未开启",
+    "en": "Disabled",
+    "original": "Not Open",
+    "note": "网络存储未启用状态。",
+    "status": "changed"
+  },
+  "project.storage.opening": {
+    "row": 1219,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "开启中...",
+    "en": "Enabling...",
+    "original": "Opening...",
+    "note": "网络存储启用中状态。",
+    "status": "changed"
+  },
+  "project.storage.openFailed": {
+    "row": 1220,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "开启失败",
+    "en": "Failed to Enable",
+    "original": "Open Failed",
+    "note": "网络存储启用失败状态。",
+    "status": "changed"
+  },
+  "project.storage.opened": {
+    "row": 1221,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "已开启",
+    "en": "Enabled",
+    "original": "Opened",
+    "note": "网络存储已启用状态。",
+    "status": "changed"
+  },
+  "project.storage.networkStorage": {
+    "row": 1222,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "网络存储",
+    "en": "Network Storage",
+    "original": "Network Storage",
+    "note": "",
+    "status": "retained"
+  },
+  "project.storage.localStorage": {
+    "row": 1223,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "本机存储",
+    "en": "Local Storage",
+    "original": "Local Storage",
+    "note": "",
+    "status": "retained"
+  },
+  "project.storage.networkPath": {
+    "row": 1224,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "网络路径",
+    "en": "Network Path",
+    "original": "Network Path",
+    "note": "",
+    "status": "retained"
+  },
+  "project.storage.userName": {
+    "row": 1225,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "用户名",
+    "en": "Username",
+    "original": "UserName",
+    "note": "标准写法。",
+    "status": "changed"
+  },
+  "project.storage.password": {
+    "row": 1226,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "密码",
+    "en": "Password",
+    "original": "Password",
+    "note": "",
+    "status": "retained"
+  },
+  "project.storage.local": {
+    "row": 1227,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "本机",
+    "en": "Local",
+    "original": "Local",
+    "note": "",
+    "status": "retained"
+  },
+  "project.storage.storageType": {
+    "row": 1228,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "存储类型",
+    "en": "Storage Type",
+    "original": "Storage Type",
+    "note": "",
+    "status": "retained"
+  },
+  "project.storage.storageName": {
+    "row": 1229,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "存储名称",
+    "en": "Storage Name",
+    "original": "Storage Name",
+    "note": "",
+    "status": "retained"
+  },
+  "project.storage.capacity": {
+    "row": 1230,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "总容量",
+    "en": "Capacity",
+    "original": "Capacity",
+    "note": "",
+    "status": "retained"
+  },
+  "project.storage.used": {
+    "row": 1231,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "已用容量",
+    "en": "Used",
+    "original": "Used",
+    "note": "",
+    "status": "retained"
+  },
+  "project.storage.free": {
+    "row": 1232,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "可用容量",
+    "en": "Free",
+    "original": "Free",
+    "note": "",
+    "status": "retained"
+  },
+  "project.storage.state": {
+    "row": 1233,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "状态",
+    "en": "State",
+    "original": "State",
+    "note": "",
+    "status": "retained"
+  },
+  "project.storage.good": {
+    "row": 1234,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "读取正常",
+    "en": "Readable",
+    "original": "Good",
+    "note": "表示读取正常，不泛称 Good。",
+    "status": "changed"
+  },
+  "project.storage.bad": {
+    "row": 1235,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "读取异常",
+    "en": "Read Error",
+    "original": "Bad",
+    "note": "表示读取异常。",
+    "status": "changed"
+  },
+  "project.storage.operation": {
+    "row": 1236,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "操作",
+    "en": "Actions",
+    "original": "Operation",
+    "note": "操作列常用短标题。",
+    "status": "changed"
+  },
+  "project.storage.partAndFormat": {
+    "row": 1237,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "格式化",
+    "en": "Format",
+    "original": "Format",
+    "note": "",
+    "status": "retained"
+  },
+  "project.storage.operationParted": {
+    "row": 1238,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "重启后会进行磁盘分区和格式化，会导致磁盘所有内容（包括录像文件）丢失",
+    "en": "After restart, the disk will be partitioned and formatted, resulting in the loss of all contents of the disk (including video files).",
+    "original": "After restart, the disk will be partitioned and formatted, resulting in the loss of all contents of the disk (including video files).",
+    "note": "",
+    "status": "retained"
+  },
+  "project.storage.rebootOrNot": {
+    "row": 1239,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "是否重启并且进行分区&格式化？",
+    "en": "Restart and partition & format?",
+    "original": "Restart and partition & format?",
+    "note": "",
+    "status": "retained"
+  },
+  "project.storage.localPath": {
+    "row": 1240,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "本机路径",
+    "en": "Local Path",
+    "original": "Local Path",
+    "note": "",
+    "status": "retained"
+  },
+  "project.storage.deletePriority": {
+    "row": 1241,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "删除文件优先",
+    "en": "Delete Oldest",
+    "original": "Delete Priority",
+    "note": "磁盘满策略，短选项但保留最旧顺序。",
+    "status": "changed"
+  },
+  "project.storage.stopPriority": {
+    "row": 1242,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "停止录制优先",
+    "en": "Stop Recording",
+    "original": "Stop Priority",
+    "note": "明确停止对象。",
+    "status": "changed"
+  },
+  "project.storage.setRecordStrategySuccess": {
+    "row": 1243,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "录像回卷设置成功",
+    "en": "Disk-full policy saved.",
+    "original": "Video rewind setting succeeded.",
+    "note": "回卷指磁盘满处理，不是视频倒放。",
+    "status": "changed"
+  },
+  "project.storage.remotePathEmpty": {
+    "row": 1244,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "网络路径、用户名和密码不能为空",
+    "en": "Network path, user name and password cannot be empty.",
+    "original": "Network path, user name and password cannot be empty.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.storage.remotePathError": {
+    "row": 1245,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "路径格式错误，正确格式：//192.168.1.116/cifs",
+    "en": "Path format error, correct format: //192.168.1.116/cifs.",
+    "original": "Path format error, correct format: //192.168.1.116/cifs.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.storage.remotePathIllegal": {
+    "row": 1246,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "网络路径含有非法字符，请检查后重试",
+    "en": "The network path contains illegal characters. Please check and try again.",
+    "original": "The network path contains illegal characters. Please check and try again.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.storage.userNameIllegal": {
+    "row": 1247,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "用户名含有非法字符，请检查后重试",
+    "en": "The user name contains illegal characters. Please check and try again.",
+    "original": "The user name contains illegal characters. Please check and try again.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.storage.passwordIllegal": {
+    "row": 1248,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "密码含有非法字符，请检查后重试",
+    "en": "The password contains illegal characters. Please check and try again.",
+    "original": "The password contains illegal characters. Please check and try again.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.storage.closeRecordLiveInteractive": {
+    "row": 1249,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "请先关闭录像、直播和互动",
+    "en": "Stop recording and streaming, and end the interactive session first.",
+    "original": "Please close recording, live broadcast and interaction first.",
+    "note": "保留需结束全部三项的条件。",
+    "status": "changed"
+  },
+  "project.storage.cancelPartAndFormat": {
+    "row": 1250,
+    "group": "30    工程设置 › 存储设置    ·    project.storage ",
+    "zh": "已取消，重启后不再进行分区&格式化操作",
+    "en": "Cancelled. Partition & format operation will not be performed after restart.",
+    "original": "Cancelled. Partition & format operation will not be performed after restart.",
+    "note": "",
+    "status": "retained"
+  }
+}

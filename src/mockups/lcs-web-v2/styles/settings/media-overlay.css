@@ -1,0 +1,709 @@
+/* ==========================================================================
+   Subtitle Setting Page Styling
+   ========================================================================== */
+.lcs-web-subtitle-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.lcs-web-subtitle-page .lcs-web-ok {
+  width: auto;
+  min-width: 80px;
+  max-width: 100px;
+  align-self: flex-start;
+  margin-top: 24px;
+}
+
+.lcs-web-subtitle-card {
+  padding: 24px 28px 36px;
+  background: #ffffff;
+  border: 1px solid #e4eaf3;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.lcs-web-subtitle-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lcs-web-subtitle-label {
+  font-size: 13px;
+  color: #475569;
+  font-weight: 600;
+}
+
+.lcs-web-presets-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.lcs-web-preset-btn {
+  height: 36px;
+  min-width: 132px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px 0 14px;
+  border: 1px solid #cfd9e6;
+  border-radius: 4px;
+  background: #f0f4f9;
+  color: #475569;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.lcs-web-preset-btn:hover {
+  background: #e6eef8;
+  border-color: #b5c7dc;
+}
+
+.lcs-web-preset-btn.is-active {
+  background: #ffffff;
+  border-color: #178bff;
+  box-shadow: 0 0 0 1px #178bff;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.lcs-web-preset-icon-btn {
+  border: 0;
+  background: transparent;
+  color: #178bff;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px;
+  border-radius: 3px;
+  transition: opacity 0.15s ease;
+}
+
+.lcs-web-preset-icon-btn:hover {
+  opacity: 0.8;
+}
+
+.lcs-web-preset-edit-input {
+  width: 80px;
+  height: 24px;
+  border: 1px solid #178bff;
+  border-radius: 2px;
+  padding: 0 6px;
+  font-size: 13px;
+  outline: none;
+  background: #ffffff;
+  color: #1e293b;
+}
+
+.lcs-web-subtitle-controls-row {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.lcs-web-control-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  color: #475569;
+}
+
+.lcs-web-control-item .lcs-web-native-select {
+  width: 135px;
+  height: 34px;
+  font-size: 13px;
+}
+
+.lcs-web-subtitle-input-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 650px;
+}
+
+.lcs-web-subtitle-text-input {
+  width: 100%;
+  height: 38px;
+  border: 1px solid #cfd9e6;
+  border-radius: 4px;
+  padding: 0 58px 0 12px;
+  font-size: 13px;
+  color: #1e293b;
+  background: #ffffff;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.lcs-web-subtitle-text-input:focus {
+  border-color: #178bff;
+}
+
+.lcs-web-subtitle-char-count {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.lcs-web-subtitle-preview-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  margin-top: 6px;
+}
+
+.lcs-web-subtitle-preview-box {
+  width: 500px;
+  height: 280px;
+  background: #bebebe;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+}
+
+.lcs-web-subtitle-drag-box {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 42px;
+  border: 1.5px dashed #222222;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  cursor: grab;
+  transition: box-shadow 0.15s ease;
+}
+
+.lcs-web-subtitle-drag-box:active {
+  cursor: grabbing;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.35);
+}
+
+.lcs-web-subtitle-text-render {
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 95%;
+  line-height: 1.2;
+}
+
+.lcs-web-subtitle-tips {
+  flex: 1;
+  max-width: 480px;
+  padding-top: 140px;
+  color: #7e8d9f;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.lcs-web-subtitle-tips strong {
+  display: block;
+  font-size: 12px;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.lcs-web-subtitle-tips p {
+  margin: 2px 0;
+}
+
+.lcs-web-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1e293b;
+  color: #ffffff;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-size: 13px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  z-index: 999;
+}
+
+/* ==========================================================================
+   Logo Setting Page Styling
+   ========================================================================== */
+.lcs-web-logo-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.lcs-web-logo-page .lcs-web-ok {
+  width: auto;
+  min-width: 80px;
+  max-width: 100px;
+  align-self: flex-start;
+  margin-top: 24px;
+}
+
+.lcs-web-logo-card {
+  padding: 24px 28px 36px;
+  background: #ffffff;
+  border: 1px solid #e4eaf3;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.lcs-web-logo-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lcs-web-logo-label,
+.lcs-web-position-label {
+  font-size: 13px;
+  color: #475569;
+  font-weight: 600;
+}
+
+.lcs-web-logo-main-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  margin-top: 6px;
+}
+
+.lcs-web-logo-preview-box {
+  width: 500px;
+  height: 280px;
+  background: #bebebe;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+}
+
+.lcs-web-logo-drag-box {
+  position: absolute;
+  min-width: 50px;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  cursor: grab;
+  border: 1.5px dashed #222222;
+  background: rgba(255, 255, 255, 0.1);
+  transition: box-shadow 0.15s ease;
+  user-select: none;
+}
+
+.lcs-web-logo-drag-box:active {
+  cursor: grabbing;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.35);
+}
+
+.lcs-web-default-logo span {
+  color: #e60012;
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  line-height: 1;
+  display: block;
+}
+
+.lcs-web-logo-img {
+  max-width: 120px;
+  max-height: 60px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.lcs-web-logo-controls-panel {
+  flex: 1;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.lcs-web-choose-file-btn {
+  background: #f0f7ff;
+  color: #178bff;
+  border: 1px solid #b5d5ff;
+  border-radius: 4px;
+  padding: 6px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.lcs-web-choose-file-btn:hover {
+  background: #e1efff;
+  border-color: #178bff;
+}
+
+.lcs-web-position-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lcs-web-position-grid {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.lcs-web-pos-btn {
+  width: 48px;
+  height: 48px;
+  background: #f0f4f9;
+  border: 1px solid #cfd9e6;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.lcs-web-pos-btn:hover {
+  background: #e6eef8;
+  border-color: #b5c7dc;
+}
+
+.lcs-web-pos-btn.is-active {
+  background: #ffffff;
+  border-color: #178bff;
+  box-shadow: 0 0 0 1px #178bff;
+}
+
+.pos-indicator {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #94a3b8;
+  border-radius: 1px;
+}
+
+.lcs-web-pos-btn.is-active .pos-indicator {
+  background: #178bff;
+}
+
+.pos-tl {
+  top: 7px;
+  left: 7px;
+}
+
+.pos-bl {
+  bottom: 7px;
+  left: 7px;
+}
+
+.pos-tr {
+  top: 7px;
+  right: 7px;
+}
+
+.pos-br {
+  bottom: 7px;
+  right: 7px;
+}
+
+.lcs-web-logo-tips {
+  color: #7e8d9f;
+  font-size: 12px;
+  line-height: 1.8;
+  margin-top: 10px;
+}
+
+.lcs-web-logo-tips strong {
+  display: block;
+  font-size: 12px;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.lcs-web-logo-tips p {
+  margin: 2px 0;
+}
+
+/* ==========================================================================
+   Title & Trailer Setting Page Styling
+   ========================================================================== */
+.lcs-web-titletrailer-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.lcs-web-title-trailer-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.lcs-web-title-trailer-card {
+  padding: 24px 28px 36px;
+  background: #ffffff;
+  border: 1px solid #e4eaf3;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.lcs-web-title-trailer-card .lcs-web-ok {
+  width: auto;
+  min-width: 80px;
+  max-width: 100px;
+  align-self: flex-start;
+  margin-top: 24px;
+}
+
+.lcs-web-tt-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lcs-web-tt-label {
+  font-size: 13px;
+  color: #475569;
+  font-weight: 600;
+}
+
+.lcs-web-tt-main-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  margin-top: 6px;
+}
+
+.lcs-web-tt-preview-box {
+  width: 500px;
+  height: 280px;
+  background: #bebebe;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+}
+
+.lcs-web-tt-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.lcs-web-tt-empty-preview {
+  width: 100%;
+  height: 100%;
+  background: #bebebe;
+}
+
+.lcs-web-tt-controls-panel {
+  flex: 1;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.lcs-web-tt-file-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.lcs-web-tt-filename {
+  font-size: 13px;
+  color: #475569;
+  font-weight: 500;
+}
+
+.lcs-web-tt-delete-btn {
+  background: #fff1f2;
+  color: #ef4444;
+  border: 1px solid #fecdd3;
+  border-radius: 4px;
+  padding: 6px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.lcs-web-tt-delete-btn:hover {
+  background: #fee2e2;
+  border-color: #fca5a5;
+}
+
+.lcs-web-tt-duration-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.lcs-web-tt-duration-label {
+  font-size: 13px;
+  color: #475569;
+  font-weight: 600;
+}
+
+.lcs-web-tt-duration-input {
+  width: 64px;
+  height: 34px;
+  border: 1px solid #cfd9e6;
+  border-radius: 4px;
+  padding: 0 8px;
+  text-align: center;
+  font-size: 13px;
+  color: #1e293b;
+  background: #ffffff;
+  outline: none;
+}
+
+.lcs-web-tt-duration-input:focus {
+  border-color: #178bff;
+}
+
+.lcs-web-tt-duration-unit {
+  font-size: 13px;
+  color: #475569;
+  font-weight: 600;
+}
+
+.lcs-web-tt-tips {
+  color: #7e8d9f;
+  font-size: 12px;
+  line-height: 1.8;
+  margin-top: 6px;
+}
+
+.lcs-web-tt-tips strong {
+  display: block;
+  font-size: 12px;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.lcs-web-tt-tips p {
+  margin: 2px 0;
+}
+
+/* ==========================================================================
+   OSD Setting Page Styling
+   ========================================================================== */
+.lcs-web-osd-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.lcs-web-osd-page .lcs-web-ok {
+  width: auto;
+  min-width: 80px;
+  max-width: 100px;
+  align-self: flex-start;
+  margin-top: 24px;
+}
+
+.lcs-web-osd-card {
+  padding: 24px 28px 36px;
+  background: #ffffff;
+  border: 1px solid #e4eaf3;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.lcs-web-osd-controls-row {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.lcs-web-osd-main-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  margin-top: 6px;
+}
+
+.lcs-web-osd-preview-box {
+  width: 500px;
+  height: 280px;
+  background: #bebebe;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+}
+
+.lcs-web-osd-drag-box {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 8px;
+  cursor: grab;
+  border: 1.5px dashed #222222;
+  background: rgba(255, 255, 255, 0.12);
+  transition: box-shadow 0.15s ease;
+  user-select: none;
+}
+
+.lcs-web-osd-drag-box:active {
+  cursor: grabbing;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.35);
+}
+
+.lcs-web-osd-text-render {
+  font-family: "Consolas", "Courier New", monospace;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.lcs-web-osd-controls-panel {
+  flex: 1;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.lcs-web-osd-tips {
+  color: #7e8d9f;
+  font-size: 12px;
+  line-height: 1.8;
+  margin-top: 6px;
+}
+
+.lcs-web-osd-tips strong {
+  display: block;
+  font-size: 12px;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.lcs-web-osd-tips p {
+  margin: 2px 0;
+}
+

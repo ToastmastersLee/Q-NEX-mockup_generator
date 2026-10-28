@@ -1,0 +1,182 @@
+{
+  "project.tracker.trackerSetting": {
+    "row": 1387,
+    "group": "37    工程设置 › 跟踪设置    ·    project.tracker",
+    "zh": "跟踪设置",
+    "en": "Tracking Settings",
+    "original": "Tracker Setting",
+    "note": "跟踪功能，不是跟踪器型号。",
+    "status": "changed"
+  },
+  "project.tracker.computerTest": {
+    "row": 1388,
+    "group": "37    工程设置 › 跟踪设置    ·    project.tracker",
+    "zh": "电脑画面检测",
+    "en": "Content 1 Change Detection",
+    "original": "Computer Detection",
+    "note": "检测内容画面变化，不是探测电脑设备。",
+    "status": "changed"
+  },
+  "project.tracker.computer2Test": {
+    "row": 1389,
+    "group": "37    工程设置 › 跟踪设置    ·    project.tracker",
+    "zh": "电脑2画面检测",
+    "en": "Content 2 Change Detection",
+    "original": "Computer2 Detection",
+    "note": "与内容输入短名称统一。",
+    "status": "changed"
+  },
+  "project.tracker.teacherTracker": {
+    "row": 1390,
+    "group": "37    工程设置 › 跟踪设置    ·    project.tracker",
+    "zh": "教师跟踪",
+    "en": "Teacher Tracking",
+    "original": "Teacher Tracker",
+    "note": "跟踪功能使用 Tracking。",
+    "status": "changed"
+  },
+  "project.tracker.studentTracker": {
+    "row": 1391,
+    "group": "37    工程设置 › 跟踪设置    ·    project.tracker",
+    "zh": "学生跟踪",
+    "en": "Student Tracking",
+    "original": "Student Tracker",
+    "note": "跟踪功能使用 Tracking。",
+    "status": "changed"
+  },
+  "project.tracker.boardTracker": {
+    "row": 1392,
+    "group": "37    工程设置 › 跟踪设置    ·    project.tracker",
+    "zh": "板书跟踪",
+    "en": "Board Tracking",
+    "original": "Board Tracker",
+    "note": "共享功能词条；不据此认定 LCS810 有板书输入。",
+    "status": "changed"
+  },
+  "project.tracker.protocol": {
+    "row": 1393,
+    "group": "37    工程设置 › 跟踪设置    ·    project.tracker",
+    "zh": "协议类型",
+    "en": "Protocol",
+    "original": "Protocol",
+    "note": "",
+    "status": "retained"
+  },
+  "project.tracker.sendIp": {
+    "row": 1394,
+    "group": "37    工程设置 › 跟踪设置    ·    project.tracker",
+    "zh": "发送地址",
+    "en": "Destination IP",
+    "original": "Send IP",
+    "note": "发送目标地址。",
+    "status": "changed"
+  },
+  "project.tracker.type": {
+    "row": 1395,
+    "group": "37    工程设置 › 跟踪设置    ·    project.tracker",
+    "zh": "网络方式",
+    "en": "Type",
+    "original": "Type",
+    "note": "",
+    "status": "retained"
+  },
+  "project.tracker.camAddrCode": {
+    "row": 1396,
+    "group": "37    工程设置 › 跟踪设置    ·    project.tracker",
+    "zh": "地址码",
+    "en": "Address Code",
+    "original": "AddrCode",
+    "note": "展开代码式标签。",
+    "status": "changed"
+  },
+  "project.tracker.recPort": {
+    "row": 1397,
+    "group": "37    工程设置 › 跟踪设置    ·    project.tracker",
+    "zh": "接收端口",
+    "en": "Receive Port",
+    "original": "RecPort",
+    "note": "Rec 容易被误解为录制。",
+    "status": "changed"
+  },
+  "project.tracker.sendPort": {
+    "row": 1398,
+    "group": "37    工程设置 › 跟踪设置    ·    project.tracker",
+    "zh": "发送端口",
+    "en": "Send Port",
+    "original": "SendPort",
+    "note": "修正连写。",
+    "status": "changed"
+  },
+  "project.tracker.portError": {
+    "row": 1399,
+    "group": "37    工程设置 › 跟踪设置    ·    project.tracker",
+    "zh": "端口格式错误",
+    "en": "Port format error.",
+    "original": "Port format error.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.tracker.IPerror": {
+    "row": 1400,
+    "group": "37    工程设置 › 跟踪设置    ·    project.tracker",
+    "zh": "IP地址格式错误",
+    "en": "IP address format error.",
+    "original": "IP address format error.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.tracker.defaultProtocol": {
+    "row": 1401,
+    "group": "37    工程设置 › 跟踪设置    ·    project.tracker",
+    "zh": "默认协议",
+    "en": "Default Protocol",
+    "original": "Default Protocol",
+    "note": "",
+    "status": "retained"
+  },
+  "project.tracker.protocol1": {
+    "row": 1402,
+    "group": "37    工程设置 › 跟踪设置    ·    project.tracker",
+    "zh": "协议一",
+    "en": "Protocol 1",
+    "original": "Protocol 1",
+    "note": "",
+    "status": "retained"
+  },
+  "project.tracker.protocol2": {
+    "row": 1403,
+    "group": "37    工程设置 › 跟踪设置    ·    project.tracker",
+    "zh": "协议二",
+    "en": "Protocol 2",
+    "original": "Protocol 2",
+    "note": "",
+    "status": "retained"
+  },
+  "project.tracker.protocol3": {
+    "row": 1404,
+    "group": "37    工程设置 › 跟踪设置    ·    project.tracker",
+    "zh": "协议三",
+    "en": "Protocol 3",
+    "original": "Protocol 3",
+    "note": "",
+    "status": "retained"
+  },
+  "project.tracker.protocol4": {
+    "row": 1405,
+    "group": "37    工程设置 › 跟踪设置    ·    project.tracker",
+    "zh": "协议四",
+    "en": "Protocol 4",
+    "original": "Protocol 4",
+    "note": "",
+    "status": "retained"
+  },
+  "project.tracker.paramsError": {
+    "row": 1406,
+    "group": "37    工程设置 › 跟踪设置    ·    project.tracker",
+    "zh": "参数有误，请检查",
+    "en": "Parameter error, please check.",
+    "original": "Parameter error, please check.",
+    "note": "",
+    "status": "retained"
+  }
+}

@@ -1,0 +1,8 @@
+/* LCS-Web Base & Shell Aggregator */
+@import './base/shell.css';
+@import './base/components.css';
+@import './base/modals.css';
+@import './base/strategy.css';
+@import './base/system-status.css';
+@import './base/time-picker.css';
+

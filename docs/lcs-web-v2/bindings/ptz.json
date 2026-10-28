@@ -1,0 +1,8 @@
+{
+  "pageTitle": "project.PTZ.PTZsetting",
+  "protocol": "project.PTZ.PTZprotocol",
+  "commMode": "project.PTZ.PTZtype",
+  "commIp": "project.PTZ.PTZIP",
+  "commPort": "project.PTZ.PTZport",
+  "ok": "parameter.ok"
+}

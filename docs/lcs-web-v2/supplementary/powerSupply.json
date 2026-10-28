@@ -1,0 +1,27 @@
+{
+  "powerSupplyMode": {
+    "zh": "供电模式",
+    "en": "Power Mode",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  },
+  "timingSwitch": {
+    "zh": "定时开关",
+    "en": "Power Schedule",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  },
+  "startTime": {
+    "zh": "开启时间",
+    "en": "Start time",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "stopTime": {
+    "zh": "关闭时间",
+    "en": "Stop time",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "note": {
+    "zh": "注意：设备关机后，定时开关功能仍将根据设定的时间计划继续生效。",
+    "en": "Note: When the device is turned off, the timing switch function will still take effect according to the configured schedule.",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  }
+}

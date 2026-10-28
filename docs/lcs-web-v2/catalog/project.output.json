@@ -1,0 +1,290 @@
+{
+  "project.output.outputSetting": {
+    "row": 1005,
+    "group": "25    工程设置 › 输出设置    ·    project.output ",
+    "zh": "输出设置",
+    "en": "Output Settings",
+    "original": "Output Setting",
+    "note": "设置页使用复数。",
+    "status": "changed"
+  },
+  "project.output.HDMIout1": {
+    "row": 1006,
+    "group": "25    工程设置 › 输出设置    ·    project.output ",
+    "zh": "HDMI OUT1输出",
+    "en": "HDMI OUT1",
+    "original": "HDMI OUT1 Output",
+    "note": "OUT 已表示输出，去除重复。",
+    "status": "changed"
+  },
+  "project.output.HDMIout2": {
+    "row": 1007,
+    "group": "25    工程设置 › 输出设置    ·    project.output ",
+    "zh": "HDMI OUT2输出",
+    "en": "HDMI OUT2",
+    "original": "HDMI OUT2 Output",
+    "note": "OUT 已表示输出，去除重复。",
+    "status": "changed"
+  },
+  "project.output.uvcOutput": {
+    "row": 1008,
+    "group": "25    工程设置 › 输出设置    ·    project.output ",
+    "zh": "UVC输出",
+    "en": "UVC Output",
+    "original": "UVC Output",
+    "note": "",
+    "status": "retained"
+  },
+  "project.output.selfAdaption": {
+    "row": 1009,
+    "group": "25    工程设置 › 输出设置    ·    project.output ",
+    "zh": "自适应",
+    "en": "Auto",
+    "original": "Self-adaption",
+    "note": "自适应选项使用常见短标签。",
+    "status": "changed"
+  },
+  "project.output.outputResolution": {
+    "row": 1010,
+    "group": "25    工程设置 › 输出设置    ·    project.output ",
+    "zh": "输出分辨率",
+    "en": "Resolution",
+    "original": "Resolution",
+    "note": "",
+    "status": "retained"
+  },
+  "project.output.outputContent": {
+    "row": 1011,
+    "group": "25    工程设置 › 输出设置    ·    project.output ",
+    "zh": "输出内容",
+    "en": "Content",
+    "original": "Content",
+    "note": "",
+    "status": "retained"
+  },
+  "project.output.audioOutput": {
+    "row": 1012,
+    "group": "25    工程设置 › 输出设置    ·    project.output ",
+    "zh": "音频输出",
+    "en": "Audio Output",
+    "original": "Audio Output",
+    "note": "",
+    "status": "retained"
+  },
+  "project.output.rtspAudio": {
+    "row": 1013,
+    "group": "25    工程设置 › 输出设置    ·    project.output ",
+    "zh": "RTSP音频",
+    "en": "RTSP audio",
+    "original": "RTSP audio",
+    "note": "",
+    "status": "retained"
+  },
+  "project.output.rtspOnlyAudio": {
+    "row": 1014,
+    "group": "25    工程设置 › 输出设置    ·    project.output ",
+    "zh": "数字音频",
+    "en": "Digital audio",
+    "original": "Digital audio",
+    "note": "",
+    "status": "retained"
+  },
+  "project.output.externalAudio": {
+    "row": 1015,
+    "group": "25    工程设置 › 输出设置    ·    project.output ",
+    "zh": "外部音频",
+    "en": "External audio",
+    "original": "External audio",
+    "note": "",
+    "status": "retained"
+  },
+  "project.output.rtspAudioMixTip": {
+    "row": 1016,
+    "group": "25    工程设置 › 输出设置    ·    project.output ",
+    "zh": "提示: 若通道按钮为禁用状态表示未开启该通道的RTSP音频输入或数字音频输入。",
+    "en": "Tip: If the channel button is disabled, it means that the RTSP audio input or digital audio input for that channel is not enabled.",
+    "original": "Tip: If the channel button is disabled, it means that the RTSP audio input or digital audio input for that channel is not enabled.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.output.compositing": {
+    "row": 1017,
+    "group": "25    工程设置 › 输出设置    ·    project.output ",
+    "zh": "合成画面",
+    "en": "Compositing",
+    "original": "Compositing",
+    "note": "待确认：与“电影/PGM”选项的路由区别；仅当确为最终节目输出时改为 Program Output。",
+    "status": "pending"
+  },
+  "project.output.localDirector": {
+    "row": 1018,
+    "group": "25    工程设置 › 输出设置    ·    project.output ",
+    "zh": "本地导播",
+    "en": "Director Interface",
+    "original": "Local Director",
+    "note": "输出本机导播操作界面，不是导播人员。",
+    "status": "changed"
+  },
+  "project.output.switched": {
+    "row": 1019,
+    "group": "25    工程设置 › 输出设置    ·    project.output ",
+    "zh": "已交换",
+    "en": "Swapped",
+    "original": "Already exchanged",
+    "note": "交换完成的简短状态。",
+    "status": "changed"
+  },
+  "project.output.audioSetSuccess": {
+    "row": 1020,
+    "group": "25    工程设置 › 输出设置    ·    project.output ",
+    "zh": "音频输出设置成功",
+    "en": "Audio output set successfully.",
+    "original": "Audio output set successfully.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.output.audioSetFail": {
+    "row": 1021,
+    "group": "25    工程设置 › 输出设置    ·    project.output ",
+    "zh": "音频输出设置失败",
+    "en": "Audio output setting failed.",
+    "original": "Audio output setting failed.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.output.uvcSetSuccess": {
+    "row": 1022,
+    "group": "25    工程设置 › 输出设置    ·    project.output ",
+    "zh": "UVC输出设置成功",
+    "en": "UVC output set successfully.",
+    "original": "UVC output set successfully.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.output.uvcSetFail": {
+    "row": 1023,
+    "group": "25    工程设置 › 输出设置    ·    project.output ",
+    "zh": "UVC输出设置失败",
+    "en": "UVC output setting failed.",
+    "original": "UVC output setting failed.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.output.displaySettings": {
+    "row": 1024,
+    "group": "25    工程设置 › 输出设置    ·    project.output ",
+    "zh": "显示设置",
+    "en": "Display Settings",
+    "original": "Display Settings",
+    "note": "",
+    "status": "retained"
+  },
+  "project.output.brightness": {
+    "row": 1025,
+    "group": "25    工程设置 › 输出设置    ·    project.output ",
+    "zh": "亮度",
+    "en": "Brightness",
+    "original": "Brightness",
+    "note": "",
+    "status": "retained"
+  },
+  "project.output.contrastRatio": {
+    "row": 1026,
+    "group": "25    工程设置 › 输出设置    ·    project.output ",
+    "zh": "对比度",
+    "en": "Contrast",
+    "original": "ContrastRatio",
+    "note": "图像调节参数，不是显示器对比度比值。",
+    "status": "changed"
+  },
+  "project.output.hue": {
+    "row": 1027,
+    "group": "25    工程设置 › 输出设置    ·    project.output ",
+    "zh": "色调",
+    "en": "Hue",
+    "original": "Hue",
+    "note": "",
+    "status": "retained"
+  },
+  "project.output.saturation": {
+    "row": 1028,
+    "group": "25    工程设置 › 输出设置    ·    project.output ",
+    "zh": "饱和度",
+    "en": "Saturation",
+    "original": "Saturation",
+    "note": "",
+    "status": "retained"
+  },
+  "project.output.layer0": {
+    "row": 1029,
+    "group": "25    工程设置 › 输出设置    ·    project.output ",
+    "zh": "电影视频",
+    "en": "Film Video",
+    "original": "Film Video",
+    "note": "待确认：此标签是否仅调节 PGM 图层；若是建议 PGM Video，不全局替换 Film Video。",
+    "status": "pending"
+  },
+  "project.output.layer1": {
+    "row": 1030,
+    "group": "25    工程设置 › 输出设置    ·    project.output ",
+    "zh": "本地视频",
+    "en": "Local Video",
+    "original": "Local Video",
+    "note": "",
+    "status": "retained"
+  },
+  "project.output.layer2": {
+    "row": 1031,
+    "group": "25    工程设置 › 输出设置    ·    project.output ",
+    "zh": "本地界面",
+    "en": "Local UI",
+    "original": "Local UI",
+    "note": "",
+    "status": "retained"
+  },
+  "project.output.vgaCsc": {
+    "row": 1032,
+    "group": "25    工程设置 › 输出设置    ·    project.output ",
+    "zh": "VGA输出",
+    "en": "VGA Output",
+    "original": "VGA Output",
+    "note": "",
+    "status": "retained"
+  },
+  "project.output.hdmiCsc": {
+    "row": 1033,
+    "group": "25    工程设置 › 输出设置    ·    project.output ",
+    "zh": "HDMI输出",
+    "en": "HDMI Output",
+    "original": "HDMI Output",
+    "note": "",
+    "status": "retained"
+  },
+  "project.output.matrix": {
+    "row": 1034,
+    "group": "25    工程设置 › 输出设置    ·    project.output ",
+    "zh": "色彩矩阵",
+    "en": "Color Matrix",
+    "original": "Color Matrix",
+    "note": "",
+    "status": "retained"
+  },
+  "project.output.defaultBrightness": {
+    "row": 1035,
+    "group": "25    工程设置 › 输出设置    ·    project.output ",
+    "zh": "默认亮度",
+    "en": "Default BRT",
+    "original": "Default BRT",
+    "note": "待确认：默认亮度配置的处理含义；仅展开缩写可用 Default Brightness，不推断为 HDR 配置。",
+    "status": "pending"
+  },
+  "project.output.extendedBrightness": {
+    "row": 1036,
+    "group": "25    工程设置 › 输出设置    ·    project.output ",
+    "zh": "扩展亮度",
+    "en": "Extended BRT",
+    "original": "Extended BRT",
+    "note": "待确认：扩展亮度配置的处理含义；仅展开缩写可用 Extended Brightness，不推断为 HDR 配置。",
+    "status": "pending"
+  }
+}

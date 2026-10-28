@@ -1,0 +1,115 @@
+{
+  "project.tracker.trackerSetting": {
+    "status": "changed",
+    "controls": [
+      "common.sidebar.tracker",
+      "tracker.pageTitle"
+    ]
+  },
+  "project.tracker.computerTest": {
+    "status": "changed",
+    "controls": [
+      "tracker.pcScreenDetect"
+    ]
+  },
+  "project.tracker.computer2Test": {
+    "status": "changed",
+    "controls": [
+      "tracker.pc2ScreenDetect"
+    ]
+  },
+  "project.tracker.teacherTracker": {
+    "status": "changed",
+    "controls": [
+      "tracker.teacherTrack"
+    ]
+  },
+  "project.tracker.studentTracker": {
+    "status": "changed",
+    "controls": [
+      "tracker.studentTrack"
+    ]
+  },
+  "project.tracker.boardTracker": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.tracker.protocol": {
+    "status": "retained",
+    "controls": [
+      "tracker.protocolType"
+    ]
+  },
+  "project.tracker.sendIp": {
+    "status": "changed",
+    "controls": [
+      "tracker.sendAddr"
+    ]
+  },
+  "project.tracker.type": {
+    "status": "retained",
+    "controls": [
+      "tracker.netMode"
+    ]
+  },
+  "project.tracker.camAddrCode": {
+    "status": "changed",
+    "controls": [
+      "tracker.addrCode"
+    ]
+  },
+  "project.tracker.recPort": {
+    "status": "changed",
+    "controls": [
+      "tracker.recvPort"
+    ]
+  },
+  "project.tracker.sendPort": {
+    "status": "changed",
+    "controls": [
+      "tracker.sendPort"
+    ]
+  },
+  "project.tracker.portError": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.tracker.IPerror": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.tracker.defaultProtocol": {
+    "status": "retained",
+    "controls": [
+      "tracker.defaultProtocol"
+    ]
+  },
+  "project.tracker.protocol1": {
+    "status": "retained",
+    "controls": [
+      "tracker.protocol1"
+    ]
+  },
+  "project.tracker.protocol2": {
+    "status": "retained",
+    "controls": [
+      "tracker.protocol2"
+    ]
+  },
+  "project.tracker.protocol3": {
+    "status": "retained",
+    "controls": [
+      "tracker.protocol3"
+    ]
+  },
+  "project.tracker.protocol4": {
+    "status": "retained",
+    "controls": [
+      "tracker.protocol4"
+    ]
+  },
+  "project.tracker.paramsError": {
+    "status": "retained",
+    "controls": []
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "pageTitle": "project.input.inputSetting",
+  "colChannelName": "project.input.channel",
+  "colSignalSource": "project.input.signalSource",
+  "colResolution": "project.input.signalResolution",
+  "colRtspAudio": "project.input.rtspAudioMix",
+  "colDigitalAudioInput": "project.input.rtspOnlyAudioMix",
+  "ipcSearch": "project.input.IPCsetting",
+  "colSeq": "project.input.serialNumber",
+  "colName": "project.input.userName",
+  "colPassword": "project.input.password",
+  "colAuth": "project.input.identify",
+  "colStatus": "project.input.status",
+  "refresh": "parameter.refresh",
+  "selectOrInput": "parameter.selectOrInput",
+  "usbCam": "project.input.usbCamera",
+  "ok": "parameter.ok",
+  "colDigitalAudio": "project.output.rtspOnlyAudio",
+  "colIp": "IP.IP"
+}

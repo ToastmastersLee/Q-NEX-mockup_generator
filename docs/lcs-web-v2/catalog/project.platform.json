@@ -1,0 +1,353 @@
+{
+  "project.platform.platformSetting": {
+    "row": 1252,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "平台设置",
+    "en": "Platform Settings",
+    "original": "Platform Setting",
+    "note": "设置页使用复数。",
+    "status": "changed"
+  },
+  "project.platform.interactivePlatformSetting": {
+    "row": 1253,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "互动平台设置",
+    "en": "Interactive Platform",
+    "original": "Interactive Platform",
+    "note": "",
+    "status": "retained"
+  },
+  "project.platform.interaction": {
+    "row": 1254,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "互动",
+    "en": "Interaction",
+    "original": "Interaction",
+    "note": "",
+    "status": "retained"
+  },
+  "project.platform.serverAddress": {
+    "row": 1255,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "互动服务器",
+    "en": "Server Address",
+    "original": "Server Address",
+    "note": "",
+    "status": "retained"
+  },
+  "project.platform.notRegister": {
+    "row": 1256,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "未注册",
+    "en": "Not Registered",
+    "original": "Not Register",
+    "note": "注册状态使用过去分词。",
+    "status": "changed"
+  },
+  "project.platform.registerSuccess": {
+    "row": 1257,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "注册成功",
+    "en": "Registered",
+    "original": "Register Successful",
+    "note": "简短注册成功状态。",
+    "status": "changed"
+  },
+  "project.platform.registerFail": {
+    "row": 1258,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "注册失败",
+    "en": "Registration Failed",
+    "original": "Register Failed",
+    "note": "注册失败的名词形式。",
+    "status": "changed"
+  },
+  "project.platform.SIPenable": {
+    "row": 1259,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "启用SIP呼叫",
+    "en": "Enable SIP Calls",
+    "original": "Enable SIP Calls",
+    "note": "",
+    "status": "retained"
+  },
+  "project.platform.userName": {
+    "row": 1260,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "用户名",
+    "en": "Username",
+    "original": "UserName",
+    "note": "标准写法。",
+    "status": "changed"
+  },
+  "project.platform.SIPdomain": {
+    "row": 1261,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "SIP域",
+    "en": "SIP Domain",
+    "original": "SIP Domain",
+    "note": "",
+    "status": "retained"
+  },
+  "project.platform.NATroute": {
+    "row": 1262,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "NAT路由",
+    "en": "NAT Route",
+    "original": "NAT Route",
+    "note": "",
+    "status": "retained"
+  },
+  "project.platform.transmission": {
+    "row": 1263,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "传输方式",
+    "en": "Transport",
+    "original": "Transmission",
+    "note": "SIP 中选择传输方式。",
+    "status": "changed"
+  },
+  "project.platform.SIPregisterEnable": {
+    "row": 1264,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "允许注册",
+    "en": "Enable Registration",
+    "original": "Allow Registration",
+    "note": "启用本设备注册，不是允许其他设备来注册。",
+    "status": "changed"
+  },
+  "project.platform.password": {
+    "row": 1265,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "密码",
+    "en": "Password",
+    "original": "Password",
+    "note": "",
+    "status": "retained"
+  },
+  "project.platform.SIPproxyServer": {
+    "row": 1266,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "SIP服务器地址",
+    "en": "SIP Server",
+    "original": "SIP Server",
+    "note": "",
+    "status": "retained"
+  },
+  "project.platform.port": {
+    "row": 1267,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "SIP服务器端口",
+    "en": "SIP Port",
+    "original": "SIP Port",
+    "note": "",
+    "status": "retained"
+  },
+  "project.platform.enableH323": {
+    "row": 1268,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "启用H323",
+    "en": "Enable H.323",
+    "original": "Enable H323",
+    "note": "协议名称标准写法。",
+    "status": "changed"
+  },
+  "project.platform.localName": {
+    "row": 1269,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "本机名称",
+    "en": "Local Name",
+    "original": "Local Name",
+    "note": "",
+    "status": "retained"
+  },
+  "project.platform.e164Number": {
+    "row": 1270,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "E.164号码",
+    "en": "E.164 Number",
+    "original": "E.164 Number",
+    "note": "",
+    "status": "retained"
+  },
+  "project.platform.enableGatekeeper": {
+    "row": 1271,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "使用网闸",
+    "en": "Use Gatekeeper",
+    "original": "Use Gatekeeper",
+    "note": "",
+    "status": "retained"
+  },
+  "project.platform.identityAuthentication": {
+    "row": 1272,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "身份认证",
+    "en": "Authentication",
+    "original": "Authentication",
+    "note": "",
+    "status": "retained"
+  },
+  "project.platform.mainGatewayIp": {
+    "row": 1273,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "主网闸IP地址",
+    "en": "Main Gatekeeper IP Address",
+    "original": "Main Gatekeeper IP Address",
+    "note": "",
+    "status": "retained"
+  },
+  "project.platform.yes": {
+    "row": 1274,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "是",
+    "en": "Yes",
+    "original": "Yes",
+    "note": "",
+    "status": "retained"
+  },
+  "project.platform.no": {
+    "row": 1275,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "否",
+    "en": "No",
+    "original": "No",
+    "note": "",
+    "status": "retained"
+  },
+  "project.platform.managePlatformSetting": {
+    "row": 1276,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "管理平台设置",
+    "en": "Management Platform",
+    "original": "Manage Platform",
+    "note": "管理平台使用名词修饰。",
+    "status": "changed"
+  },
+  "project.platform.platformAddress": {
+    "row": 1277,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "平台地址",
+    "en": "Platform Address",
+    "original": "Platform Address",
+    "note": "",
+    "status": "retained"
+  },
+  "project.platform.set": {
+    "row": 1278,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "设置",
+    "en": "Set",
+    "original": "Set",
+    "note": "",
+    "status": "retained"
+  },
+  "project.platform.deviceName": {
+    "row": 1279,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "设备名称",
+    "en": "Device Name",
+    "original": "Device Name",
+    "note": "",
+    "status": "retained"
+  },
+  "project.platform.authCode": {
+    "row": 1280,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "授权码",
+    "en": "Authorization Code",
+    "original": "AuthCode",
+    "note": "不显示代码式 AuthCode。",
+    "status": "changed"
+  },
+  "project.platform.createLocation": {
+    "row": 1281,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "创建地点",
+    "en": "Create Location",
+    "original": "CreateLocation",
+    "note": "只修复连写，不推断地点对象。",
+    "status": "changed"
+  },
+  "project.platform.organizationId": {
+    "row": 1282,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "组织ID",
+    "en": "Organization ID",
+    "original": "OrganizationId",
+    "note": "修复连写。",
+    "status": "changed"
+  },
+  "project.platform.join": {
+    "row": 1283,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "加入",
+    "en": "Join",
+    "original": "Join",
+    "note": "",
+    "status": "retained"
+  },
+  "project.platform.open": {
+    "row": 1284,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "开",
+    "en": "On",
+    "original": "Open",
+    "note": "开关状态。",
+    "status": "changed"
+  },
+  "project.platform.close": {
+    "row": 1285,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "关",
+    "en": "Off",
+    "original": "Close",
+    "note": "开关状态。",
+    "status": "changed"
+  },
+  "project.platform.setInteractiveServerFail": {
+    "row": 1286,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "交互服务器地址设置失败",
+    "en": "Interactive server address setting failed.",
+    "original": "Interactive server address setting failed.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.platform.setPlatformServerFail": {
+    "row": 1287,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "平台地址设置失败",
+    "en": "Platform address setting failed.",
+    "original": "Platform address setting failed.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.platform.joinOrganizationSuccess": {
+    "row": 1288,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "加入组织成功",
+    "en": "Successfully joined the organization.",
+    "original": "Successfully joined the organization.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.platform.joinOrganizationFail": {
+    "row": 1289,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "加入组织失败",
+    "en": "Failed to join the organization.",
+    "original": "Failed to join the organization.",
+    "note": "",
+    "status": "retained"
+  },
+  "project.platform.SIPsetFail": {
+    "row": 1290,
+    "group": "31    工程设置 › 平台设置    ·    project.platform",
+    "zh": "SIP设置失败",
+    "en": "SIP setup failed.",
+    "original": "SIP setup failed.",
+    "note": "",
+    "status": "retained"
+  }
+}

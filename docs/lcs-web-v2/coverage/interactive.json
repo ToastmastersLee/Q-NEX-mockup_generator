@@ -1,0 +1,170 @@
+{
+  "interactive.startClass": {
+    "status": "retained",
+    "controls": []
+  },
+  "interactive.joinClass": {
+    "status": "retained",
+    "controls": []
+  },
+  "interactive.loop": {
+    "status": "changed",
+    "controls": []
+  },
+  "interactive.contacts": {
+    "status": "retained",
+    "controls": []
+  },
+  "interactive.noData": {
+    "status": "retained",
+    "controls": []
+  },
+  "interactive.havingClass": {
+    "status": "changed",
+    "controls": []
+  },
+  "interactive.looping": {
+    "status": "changed",
+    "controls": []
+  },
+  "interactive.sendVideo": {
+    "status": "changed",
+    "controls": []
+  },
+  "interactive.record": {
+    "status": "retained",
+    "controls": []
+  },
+  "interactive.live": {
+    "status": "retained",
+    "controls": []
+  },
+  "interactive.invite": {
+    "status": "retained",
+    "controls": []
+  },
+  "interactive.quit": {
+    "status": "changed",
+    "controls": []
+  },
+  "interactive.fold": {
+    "status": "changed",
+    "controls": []
+  },
+  "interactive.unfold": {
+    "status": "changed",
+    "controls": []
+  },
+  "interactive.userList": {
+    "status": "retained",
+    "controls": []
+  },
+  "interactive.teacher": {
+    "status": "retained",
+    "controls": []
+  },
+  "interactive.forbiddenWheat": {
+    "status": "changed",
+    "controls": []
+  },
+  "interactive.openWheat": {
+    "status": "changed",
+    "controls": []
+  },
+  "interactive.me": {
+    "status": "retained",
+    "controls": []
+  },
+  "interactive.mute": {
+    "status": "retained",
+    "controls": []
+  },
+  "interactive.speak": {
+    "status": "retained",
+    "controls": []
+  },
+  "interactive.classInfo": {
+    "status": "retained",
+    "controls": []
+  },
+  "interactive.classId": {
+    "status": "retained",
+    "controls": []
+  },
+  "interactive.classPassword": {
+    "status": "retained",
+    "controls": []
+  },
+  "interactive.copy": {
+    "status": "retained",
+    "controls": []
+  },
+  "interactive.quitClass": {
+    "status": "changed",
+    "controls": []
+  },
+  "interactive.sureToQuit": {
+    "status": "changed",
+    "controls": []
+  },
+  "interactive.sendVideoSuccess": {
+    "status": "changed",
+    "controls": []
+  },
+  "interactive.sendVideoFail": {
+    "status": "changed",
+    "controls": []
+  },
+  "interactive.muteFail_speaking": {
+    "status": "changed",
+    "controls": []
+  },
+  "interactive.muteFail_mute": {
+    "status": "changed",
+    "controls": []
+  },
+  "interactive.speakFail": {
+    "status": "changed",
+    "controls": []
+  },
+  "interactive.pageTurningFail": {
+    "status": "changed",
+    "controls": []
+  },
+  "interactive.startingClass": {
+    "status": "retained",
+    "controls": []
+  },
+  "interactive.startClassFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "interactive.joiningClass": {
+    "status": "retained",
+    "controls": []
+  },
+  "interactive.joinClassFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "interactive.copy1": {
+    "status": "retained",
+    "controls": []
+  },
+  "interactive.copy2": {
+    "status": "retained",
+    "controls": []
+  },
+  "interactive.copySuccess": {
+    "status": "retained",
+    "controls": []
+  },
+  "interactive.copyFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "interactive.quitFail": {
+    "status": "changed",
+    "controls": []
+  }
+}

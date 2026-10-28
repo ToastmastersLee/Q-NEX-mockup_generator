@@ -2,6 +2,10 @@
 
 This repository contains React/Vite mockups for CPL20 control-panel screens.
 
+## LCS-Web V2 customer preview
+
+The Excel-reviewed LCS-Web version is isolated under `src/mockups/lcs-web-v2`; the original `lcs-web` is preserved. Run `npm run dev:lcs-web-v2` (port 5180), `npm run check:lcs-web-v2`, and `npm run build:lcs-web-v2`. Publish the contents of `dist/lcs-web-v2/` to GitHub Pages. See [the V2 handover](docs/lcs-web-v2/README.md) for translation updates, coverage, verification, and release instructions.
+
 ## Mockups
 
 - `NMP211 CPL20 landscape`: the original horizontal mockup, loaded by default.

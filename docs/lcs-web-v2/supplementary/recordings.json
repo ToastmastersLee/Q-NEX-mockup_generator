@@ -1,0 +1,27 @@
+{
+  "pageTitle": {
+    "zh": "视频管理",
+    "en": "Video Recordings",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "playing": {
+    "zh": "正在播放",
+    "en": "Playing",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  },
+  "total": {
+    "zh": "共 99 条",
+    "en": "Total 99",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "goTo": {
+    "zh": "前往",
+    "en": "Go to",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "pageUnit": {
+    "zh": "页",
+    "en": "Page",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  }
+}

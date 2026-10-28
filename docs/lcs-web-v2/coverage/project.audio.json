@@ -1,0 +1,487 @@
+{
+  "project.audio.audioSetting": {
+    "status": "changed",
+    "controls": [
+      "audio.pageTitle",
+      "audio.modalAudioTitle",
+      "common.sidebar.audio",
+      "output.audioSetting"
+    ]
+  },
+  "project.audio.usbMicEnable": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.audio.audioMicTip": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.audio.audioMode": {
+    "status": "retained",
+    "controls": [
+      "audio.audioMode"
+    ]
+  },
+  "project.audio.aoHisiInToOutMixEnable": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.audio.aoHisiHDMIMixEnable": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.audio.sdMixEnable": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.audio.selectHdmiInOrLineInEnable": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.audio.anrMicEnable": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.audio.aoHisiInToOutMixHdmiInEnable": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.audio.aoHisiHDMIMixHdmiInEnable": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.audio.sdMixHdmiInEnable": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.audio.micVol": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.microphone": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.audio.micVolume": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.audio.micLVolume": {
+    "status": "changed",
+    "controls": [
+      "audio.micLeftVolume"
+    ]
+  },
+  "project.audio.micRVolume": {
+    "status": "changed",
+    "controls": [
+      "audio.micRightVolume"
+    ]
+  },
+  "project.audio.swExtOrIntMic": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.audio.swExtOrIntMicSetSuccess": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.audio.swExtOrIntMicSetFail": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.audio.D_SUB": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.USB_Port": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.mixedMode": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.enableMicExtVol": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.inputVol": {
+    "status": "retained",
+    "controls": [
+      "audio.inputVolumeSetting"
+    ]
+  },
+  "project.audio.outputVol": {
+    "status": "retained",
+    "controls": [
+      "audio.outputVolume"
+    ]
+  },
+  "project.audio.omniMute": {
+    "status": "changed",
+    "controls": [
+      "audio.omniMicMute"
+    ]
+  },
+  "project.audio.omniMuteTip": {
+    "status": "changed",
+    "controls": [
+      "audio.tipOmniMute"
+    ]
+  },
+  "project.audio.builtInSpeakerMute": {
+    "status": "changed",
+    "controls": [
+      "audio.speakerMute"
+    ]
+  },
+  "project.audio.audioMixMode": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.channelMixFilm": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.audio.interaction": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.echoSuppressionSetting": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.audio.echoSuppressionEnable": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.audio.ANRsetting": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.ANRenable": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.audioBitrateSetting": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.audioIn": {
+    "status": "changed",
+    "controls": [
+      "audio.builtinAudioMode"
+    ]
+  },
+  "project.audio.audioOut": {
+    "status": "changed",
+    "controls": [
+      "audio.externalAudioMode"
+    ]
+  },
+  "project.audio.noAudio": {
+    "status": "changed",
+    "controls": [
+      "audio.noAudio"
+    ]
+  },
+  "project.audio.JINGPING": {
+    "status": "pending",
+    "controls": []
+  },
+  "project.audio.singleChannel": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.audio.multiChannel": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.audio.audioModeSetSuccess": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.audioModeSetFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.hdmiInOrLineSetSuccess": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.audio.hdmiInOrLineSetFail": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.audio.anrMicSetSuccess": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.audio.anrMicSetFail": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.audio.micExtVolSetSuccess": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.micExtVolSetFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.inputVolSetSuccess": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.inputVolSetFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.audioMixModeSetSuccess": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.audioMixModeSetFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.audioMixTypeSetSuccess": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.audio.audioMixTypeSetFail": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.audio.echoSuppressionSetSuccess": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.closeInteractive": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.audio.setAnrEnableSuccess": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.setAudioBitrateSuccess": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.setAudioBitrateFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.advancedSetting": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.allBypass": {
+    "status": "pending",
+    "controls": [
+      "audio.audioProcessing"
+    ]
+  },
+  "project.audio.localeAmplify": {
+    "status": "changed",
+    "controls": [
+      "audio.amplification"
+    ]
+  },
+  "project.audio.feedbackSuppression": {
+    "status": "changed",
+    "controls": [
+      "audio.feedbackSuppression"
+    ]
+  },
+  "project.audio.ansLevel": {
+    "status": "changed",
+    "controls": [
+      "audio.noiseSuppressionLevel"
+    ]
+  },
+  "project.audio.micGain": {
+    "status": "changed",
+    "controls": [
+      "audio.micGainSetting"
+    ]
+  },
+  "project.audio.localeAmplifyTip": {
+    "status": "changed",
+    "controls": [
+      "audio.tipAmplification"
+    ]
+  },
+  "project.audio.localeAmplifyTip2": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.audio.localeAmplifyTip3": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.audio.feedbackSuppressionTip": {
+    "status": "changed",
+    "controls": [
+      "audio.tipFeedback"
+    ]
+  },
+  "project.audio.closeNet2uart": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.builtInMic": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.externalMic": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.recordedBroadcast": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.audio.monitoring": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.powerAmplifier": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.audio.micGain2": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.micMode": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.mic48V": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.wmicSoundReinforcement": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.inputGain": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.arrayMic1": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.arrayMic2": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.arrayMic3": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.arrayMic4": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.mic48V1": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.mic48V2": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.wmic": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.media": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.mediaL": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.mediaR": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.lineIn2": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.lineIn2L": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.lineIn2R": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.interactiveL": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.audio.interactiveR": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.audio.localInput": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.outputGain": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.playback": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.audio.recovery6": {
+    "status": "pending",
+    "controls": []
+  },
+  "project.audio.recovery7": {
+    "status": "pending",
+    "controls": []
+  },
+  "project.audio.recovery19": {
+    "status": "pending",
+    "controls": []
+  },
+  "project.audio.noiseReduction": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.matrixMix": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.noiseReductionLevel": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.highpassFilter": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.remoteInput": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.remoteInputTip": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.audio.rec": {
+    "status": "pending",
+    "controls": []
+  }
+}

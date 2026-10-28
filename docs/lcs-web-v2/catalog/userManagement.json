@@ -1,0 +1,380 @@
+{
+  "userManagement.addUser": {
+    "row": 1344,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "添加用户",
+    "en": "Add User",
+    "original": "Add User",
+    "note": "",
+    "status": "retained"
+  },
+  "userManagement.inputDefaultUser": {
+    "row": 1345,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "输入默认用户",
+    "en": "Enter Default Username",
+    "original": "Input Default User",
+    "note": "输入的是默认用户名。",
+    "status": "changed"
+  },
+  "userManagement.setDefaultUser": {
+    "row": 1346,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "设置默认用户",
+    "en": "Set Default User",
+    "original": "Set Default User",
+    "note": "",
+    "status": "retained"
+  },
+  "userManagement.serialNumber": {
+    "row": 1347,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "序号",
+    "en": "Number",
+    "original": "Number",
+    "note": "",
+    "status": "retained"
+  },
+  "userManagement.userName": {
+    "row": 1348,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "用户名",
+    "en": "Username",
+    "original": "UserName",
+    "note": "标准写法。",
+    "status": "changed"
+  },
+  "userManagement.role": {
+    "row": 1349,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "用户类型",
+    "en": "Role",
+    "original": "Role",
+    "note": "",
+    "status": "retained"
+  },
+  "userManagement.onlineStatus": {
+    "row": 1350,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "在线状态",
+    "en": "Online Status",
+    "original": "Online Status",
+    "note": "",
+    "status": "retained"
+  },
+  "userManagement.onlineDetails": {
+    "row": 1351,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "在线详情",
+    "en": "Online Details",
+    "original": "Online Details",
+    "note": "",
+    "status": "retained"
+  },
+  "userManagement.operation": {
+    "row": 1352,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "操作",
+    "en": "Actions",
+    "original": "Opration",
+    "note": "修正 Opration 拼写并使用常见列名。",
+    "status": "changed"
+  },
+  "userManagement.online": {
+    "row": 1353,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "在线",
+    "en": "Online",
+    "original": "Online",
+    "note": "",
+    "status": "retained"
+  },
+  "userManagement.offline": {
+    "row": 1354,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "离线",
+    "en": "Offline",
+    "original": "Offline",
+    "note": "",
+    "status": "retained"
+  },
+  "userManagement.check": {
+    "row": 1355,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "查看",
+    "en": "View",
+    "original": "Check",
+    "note": "查看详情，不是执行检查。",
+    "status": "changed"
+  },
+  "userManagement.userOffline": {
+    "row": 1356,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "用户下线",
+    "en": "Disconnect",
+    "original": "Offline",
+    "note": "用户下线操作，不是 Offline 状态。",
+    "status": "changed"
+  },
+  "userManagement.updatePassword": {
+    "row": 1357,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "修改密码",
+    "en": "Update Password",
+    "original": "Update Password",
+    "note": "",
+    "status": "retained"
+  },
+  "userManagement.deleteUser": {
+    "row": 1358,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "删除用户",
+    "en": "Delete",
+    "original": "Delete",
+    "note": "",
+    "status": "retained"
+  },
+  "userManagement.account": {
+    "row": 1359,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "用户账号",
+    "en": "Account",
+    "original": "Account",
+    "note": "",
+    "status": "retained"
+  },
+  "userManagement.password": {
+    "row": 1360,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "用户密码",
+    "en": "Password",
+    "original": "Password",
+    "note": "",
+    "status": "retained"
+  },
+  "userManagement.confirmPassword": {
+    "row": 1361,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "确认密码",
+    "en": "Confirm Password",
+    "original": "Confirm Password",
+    "note": "",
+    "status": "retained"
+  },
+  "userManagement.inputUserName": {
+    "row": 1362,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "请输入用户名",
+    "en": "Enter a username.",
+    "original": "Please input userName",
+    "note": "修正代码式 userName。",
+    "status": "changed"
+  },
+  "userManagement.inputPassword": {
+    "row": 1363,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "请输入密码",
+    "en": "Please input password",
+    "original": "Please input password",
+    "note": "",
+    "status": "retained"
+  },
+  "userManagement.inputPasswordAgain": {
+    "row": 1364,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "请再次输入密码",
+    "en": "Please input password again",
+    "original": "Please input password again",
+    "note": "",
+    "status": "retained"
+  },
+  "userManagement.system": {
+    "row": 1365,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "客户端系统",
+    "en": "Client System",
+    "original": "Client System",
+    "note": "",
+    "status": "retained"
+  },
+  "userManagement.platform": {
+    "row": 1366,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "客户端平台",
+    "en": "Client Platform",
+    "original": "Client Platform",
+    "note": "",
+    "status": "retained"
+  },
+  "userManagement.IP": {
+    "row": 1367,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "客户端IP",
+    "en": "Client IP",
+    "original": "Client IP",
+    "note": "",
+    "status": "retained"
+  },
+  "userManagement.oldPassword": {
+    "row": 1368,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "旧密码",
+    "en": "Old Password",
+    "original": "Old Password",
+    "note": "",
+    "status": "retained"
+  },
+  "userManagement.newPassword": {
+    "row": 1369,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "新密码",
+    "en": "New Password",
+    "original": "New Password",
+    "note": "",
+    "status": "retained"
+  },
+  "userManagement.inputOldPassword": {
+    "row": 1370,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "请输入旧密码",
+    "en": "Please input old password",
+    "original": "Please input old password",
+    "note": "",
+    "status": "retained"
+  },
+  "userManagement.inputNewPassword": {
+    "row": 1371,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "请输入新密码",
+    "en": "Please input new password",
+    "original": "Please input new password",
+    "note": "",
+    "status": "retained"
+  },
+  "userManagement.confirmDeleteUser": {
+    "row": 1372,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "你确定删除此用户？",
+    "en": "Are you sure you want to delete this user?",
+    "original": "Are you sure you want to delete this user?",
+    "note": "",
+    "status": "retained"
+  },
+  "userManagement.validateLength": {
+    "row": 1373,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "5-11个字符组成，区分大小写",
+    "en": "5-11 characters, case sensitive",
+    "original": "5-11 characters, case sensitive",
+    "note": "",
+    "status": "retained"
+  },
+  "userManagement.validateUserName": {
+    "row": 1374,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "数字或字母，字母开头，区分大小写",
+    "en": "Letters and numbers only; start with a letter. Case-sensitive.",
+    "original": "Numbers or letters, beginning with letters, case sensitive",
+    "note": "保留字符、首字母及大小写限制。",
+    "status": "changed"
+  },
+  "userManagement.validatePassword": {
+    "row": 1375,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "密码不能包含@和&",
+    "en": "Password cannot contain @ and &",
+    "original": "Password cannot contain @ and &",
+    "note": "",
+    "status": "retained"
+  },
+  "userManagement.notSamePassword": {
+    "row": 1376,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "两次输入的密码不一致",
+    "en": "Passwords do not match.",
+    "original": "The passwords entered twice are inconsistent",
+    "note": "与账户设置提示统一。",
+    "status": "changed"
+  },
+  "userManagement.addUserSuccess": {
+    "row": 1377,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "用户添加成功",
+    "en": "User added successfully",
+    "original": "User added successfully",
+    "note": "",
+    "status": "retained"
+  },
+  "userManagement.userAlreadyExists": {
+    "row": 1378,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "用户已存在",
+    "en": "The user already exists",
+    "original": "The user already exists",
+    "note": "",
+    "status": "retained"
+  },
+  "userManagement.addUserFail": {
+    "row": 1379,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "用户添加失败",
+    "en": "User addition failed",
+    "original": "User addition failed",
+    "note": "",
+    "status": "retained"
+  },
+  "userManagement.userOfflineSuccess": {
+    "row": 1380,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "用户下线成功",
+    "en": "User disconnected.",
+    "original": "User offline successfully",
+    "note": "用户下线操作反馈。",
+    "status": "changed"
+  },
+  "userManagement.noPermission": {
+    "row": 1381,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "无操作权限",
+    "en": "Permission denied.",
+    "original": "No operation authority",
+    "note": "操作权限的自然表达。",
+    "status": "changed"
+  },
+  "userManagement.updatePasswordSuccess": {
+    "row": 1382,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "修改密码成功",
+    "en": "Password modified successfully",
+    "original": "Password modified successfully",
+    "note": "",
+    "status": "retained"
+  },
+  "userManagement.updatePasswordFail": {
+    "row": 1383,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "修改密码失败",
+    "en": "Failed to modify password",
+    "original": "Failed to modify password",
+    "note": "",
+    "status": "retained"
+  },
+  "userManagement.deleteUserSuccess": {
+    "row": 1384,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "删除用户成功",
+    "en": "User deleted successfully",
+    "original": "User deleted successfully",
+    "note": "",
+    "status": "retained"
+  },
+  "userManagement.deleteUserFail": {
+    "row": 1385,
+    "group": "36    工程设置 › 用户管理    ·    userManagement ",
+    "zh": "删除用户失败",
+    "en": "Failed to delete user",
+    "original": "Failed to delete user",
+    "note": "",
+    "status": "retained"
+  }
+}

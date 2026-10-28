@@ -1,0 +1,90 @@
+{
+  "project.factory.factorySetting": {
+    "status": "changed",
+    "controls": [
+      "common.sidebar.factory",
+      "factory.pageTitle"
+    ]
+  },
+  "project.factory.restoreDefaultParam": {
+    "status": "retained",
+    "controls": [
+      "audio.restoreFactory",
+      "factory.restoreDefaults"
+    ]
+  },
+  "project.factory.oneKeyRecovery": {
+    "status": "retained",
+    "controls": [
+      "factory.oneClickRestore"
+    ]
+  },
+  "project.factory.restoreDefaultParamTip": {
+    "status": "retained",
+    "controls": [
+      "factory.tipRestore"
+    ]
+  },
+  "project.factory.recovering": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.factory.recoverSuccessFul": {
+    "status": "retained",
+    "controls": [
+      "audio.restored"
+    ]
+  },
+  "project.factory.recoverFailed": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.factory.configFile": {
+    "status": "retained",
+    "controls": [
+      "factory.configFile"
+    ]
+  },
+  "project.factory.import": {
+    "status": "retained",
+    "controls": [
+      "factory.import"
+    ]
+  },
+  "project.factory.export": {
+    "status": "retained",
+    "controls": [
+      "factory.export"
+    ]
+  },
+  "project.factory.tip1": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.factory.tip2": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.factory.tip": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.factory.sureToImport": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.factory.importSuccess": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.factory.importFail": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.factory.exporting": {
+    "status": "retained",
+    "controls": [
+      "factory.exporting"
+    ]
+  }
+}

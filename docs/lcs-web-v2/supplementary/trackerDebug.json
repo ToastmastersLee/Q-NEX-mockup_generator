@@ -1,0 +1,227 @@
+{
+  "pageTitle": {
+    "zh": "跟踪调试",
+    "en": "Tracker Debug",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "detectZone": {
+    "zh": "检测区",
+    "en": "Detection Zone",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "shieldZone": {
+    "zh": "屏蔽区",
+    "en": "Masking Zone",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "clear": {
+    "zh": "清除",
+    "en": "Clear",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "commCheck": {
+    "zh": "通讯检测",
+    "en": "Communication Check",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "setCloseupPos": {
+    "zh": "设置特写位",
+    "en": "Set Close-up Position",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "setFullPos": {
+    "zh": "设置全复位",
+    "en": "Set Panorama Position",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "set": {
+    "zh": "设置",
+    "en": "Set",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "videoStreamAddr": {
+    "zh": "视频画面地址",
+    "en": "Video Stream Address",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "pleaseSelect": {
+    "zh": "请选择",
+    "en": "Please select",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "custom": {
+    "zh": "自定义",
+    "en": "Custom",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "default": {
+    "zh": "默认",
+    "en": "Default",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "cameraModel": {
+    "zh": "拍摄摄像机型号",
+    "en": "Capture Camera Model",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "fullCameraModel": {
+    "zh": "全景摄像机型号",
+    "en": "Panorama Camera Model",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "cameraPort": {
+    "zh": "摄像机控制端口",
+    "en": "Camera Control Port",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "viscaAddr": {
+    "zh": "VISCA地址",
+    "en": "VISCA Address",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "baudRate": {
+    "zh": "波特率",
+    "en": "Baud Rate",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "tchVerticalDist": {
+    "zh": "全景摄像机到定位区竖直距离",
+    "en": "Vertical Distance from Panorama Camera to Location Area",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "tchCamHeight": {
+    "zh": "拍摄摄像机的高度",
+    "en": "Height of Capture Camera",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "tchHorizDist": {
+    "zh": "拍摄摄像机和黑板间的水平距离",
+    "en": "Horizontal Distance between Capture Camera and Blackboard",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "sensitivity": {
+    "zh": "灵敏度",
+    "en": "Sensitivity",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "fullCamFov": {
+    "zh": "全景摄像机视场角",
+    "en": "Panorama Camera Field of View",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "fullCamCorrectParam": {
+    "zh": "全景摄像机修正参数",
+    "en": "Panorama Camera Correction Parameter",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "boardDelayTime": {
+    "zh": "板书延迟时间",
+    "en": "Blackboard Delay Time",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "boardHoldTime": {
+    "zh": "板书保留时间",
+    "en": "Blackboard Hold Time",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "stuCamX": {
+    "zh": "全景摄像机X坐标",
+    "en": "Panorama Camera X Coordinate",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "stuCamY": {
+    "zh": "全景摄像机Y坐标",
+    "en": "Panorama Camera Y Coordinate",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "stuCamHeight": {
+    "zh": "全景摄像机的高度",
+    "en": "Height of Panorama Camera",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "stuCenterPointX": {
+    "zh": "全景摄像机画面中心点X坐标",
+    "en": "Panorama Camera Screen Center Point X Coordinate",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "stuCenterPointY": {
+    "zh": "全景摄像机画面中心点Y坐标",
+    "en": "Panorama Camera Screen Center Point Y Coordinate",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "stuCenterPointHeight": {
+    "zh": "全景摄像机画面中心点高度",
+    "en": "Panorama Camera Screen Center Point Height",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "ptzUp": {
+    "zh": "云台向上",
+    "en": "PTZ Up",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "ptzLeft": {
+    "zh": "云台向左",
+    "en": "PTZ Left",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "ptzRight": {
+    "zh": "云台向右",
+    "en": "PTZ Right",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "ptzDown": {
+    "zh": "云台向下",
+    "en": "PTZ Down",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "zoomIn": {
+    "zh": "镜头放大",
+    "en": "Zoom In",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "zoomOut": {
+    "zh": "镜头缩小",
+    "en": "Zoom Out",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "commChecking": {
+    "zh": "通讯检测中...",
+    "en": "Checking communication...",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "presetSaved": {
+    "zh": "特写位已保存",
+    "en": "Close-up position saved",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "fullSet": {
+    "zh": "全景位已设置",
+    "en": "Panorama position set",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "tchShieldCleared": {
+    "zh": "教师屏蔽区已清除",
+    "en": "Teacher masking zone cleared",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "tchDetectCleared": {
+    "zh": "教师检测区已清除",
+    "en": "Teacher detection zone cleared",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "stuShieldClosed": {
+    "zh": "学生屏蔽区已关闭",
+    "en": "Student masking zone closed",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "boardDetectCleared": {
+    "zh": "板书检测区已清除",
+    "en": "Blackboard detection zone cleared",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "boardCloseupSelected": {
+    "zh": "板书特写位 {p} 已选择",
+    "en": "Blackboard close-up position {p} selected",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  }
+}

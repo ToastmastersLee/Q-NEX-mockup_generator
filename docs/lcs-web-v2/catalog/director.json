@@ -1,0 +1,830 @@
+{
+  "director.status": {
+    "row": 17,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "状态信息",
+    "en": "Status",
+    "original": "Status",
+    "note": "",
+    "status": "retained"
+  },
+  "director.topic": {
+    "row": 18,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "主题",
+    "en": "Topic",
+    "original": "Topic",
+    "note": "",
+    "status": "retained"
+  },
+  "director.speak": {
+    "row": 19,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "主讲人",
+    "en": "Presenter",
+    "original": "Speak",
+    "note": "主讲人是人员，不是动作。",
+    "status": "changed"
+  },
+  "director.recordParam": {
+    "row": 20,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "录像参数",
+    "en": "Recording Settings",
+    "original": "RecParam",
+    "note": "去除难懂的拼接缩写。",
+    "status": "changed"
+  },
+  "director.liveParam": {
+    "row": 21,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "直播参数",
+    "en": "Streaming Settings",
+    "original": "LiveParam",
+    "note": "去除难懂的拼接缩写。",
+    "status": "changed"
+  },
+  "director.diskSize": {
+    "row": 22,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "磁盘容量",
+    "en": "Disk Capacity",
+    "original": "DiskSize",
+    "note": "表达容量，避免代码式拼写。",
+    "status": "changed"
+  },
+  "director.networkState": {
+    "row": 23,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "网络状态",
+    "en": "Network Status",
+    "original": "NetState",
+    "note": "去除难懂的拼接缩写。",
+    "status": "changed"
+  },
+  "director.wiredNetwork": {
+    "row": 24,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "有线网络",
+    "en": "Wired Network",
+    "original": "Wired Network",
+    "note": "",
+    "status": "retained"
+  },
+  "director.wifi": {
+    "row": 25,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "Wi-Fi",
+    "en": "Wi-Fi",
+    "original": "Wi-Fi",
+    "note": "",
+    "status": "retained"
+  },
+  "director.mobileNetwork": {
+    "row": 26,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "移动网络",
+    "en": "Mobile Network",
+    "original": "Mobile Network",
+    "note": "",
+    "status": "retained"
+  },
+  "director.mobileStorage": {
+    "row": 27,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "移动存储",
+    "en": "External Storage",
+    "original": "STORAGE",
+    "note": "明确外接存储。",
+    "status": "changed"
+  },
+  "director.mobileStorageConnected": {
+    "row": 28,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "已接入外接存储",
+    "en": "Connected",
+    "original": "Connected",
+    "note": "",
+    "status": "retained"
+  },
+  "director.mobileStorageNotConnected": {
+    "row": 29,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "未接入外接存储",
+    "en": "Not Connected",
+    "original": "Not Connected",
+    "note": "",
+    "status": "retained"
+  },
+  "director.systemTime": {
+    "row": 30,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "系统时间",
+    "en": "System Time",
+    "original": "SysTime",
+    "note": "去除难懂的拼接缩写。",
+    "status": "changed"
+  },
+  "director.closeRecord": {
+    "row": 31,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "请先关闭录像",
+    "en": "Stop recording first.",
+    "original": "Please close recording first",
+    "note": "停止录制使用 Stop。",
+    "status": "changed"
+  },
+  "director.noRecordChannel": {
+    "row": 32,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "电影通道未开启录像",
+    "en": "PGM recording is not enabled.",
+    "original": "Film channel not recording",
+    "note": "电影通道指最终节目通道。",
+    "status": "changed"
+  },
+  "director.noLiveChannel": {
+    "row": 33,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "电影通道未开启直播",
+    "en": "PGM streaming is not enabled.",
+    "original": "Film channel not living",
+    "note": "修正 living 误译，明确节目通道。",
+    "status": "changed"
+  },
+  "director.LAN": {
+    "row": 34,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "已联网(局域网)",
+    "en": "Connected(LAN)",
+    "original": "Connected(LAN)",
+    "note": "",
+    "status": "retained"
+  },
+  "director.WAN": {
+    "row": 35,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "已联网(公网)",
+    "en": "Connected(WAN)",
+    "original": "Connected(WAN)",
+    "note": "",
+    "status": "retained"
+  },
+  "director.noNetwork": {
+    "row": 36,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "无网络",
+    "en": "No Network",
+    "original": "No Network",
+    "note": "",
+    "status": "retained"
+  },
+  "director.classTopicInputError": {
+    "row": 37,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "输入包含以下非法字符：",
+    "en": "The input contains the following illegal characters: ",
+    "original": "The input contains the following illegal characters: ",
+    "note": "",
+    "status": "retained"
+  },
+  "director.start": {
+    "row": 38,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "开始",
+    "en": "Start",
+    "original": "Start",
+    "note": "",
+    "status": "retained"
+  },
+  "director.record": {
+    "row": 39,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "录制",
+    "en": "REC",
+    "original": "REC",
+    "note": "",
+    "status": "retained"
+  },
+  "director.pause": {
+    "row": 40,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "暂停",
+    "en": "Pause",
+    "original": "Pause",
+    "note": "",
+    "status": "retained"
+  },
+  "director.continue": {
+    "row": 41,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "继续",
+    "en": "Resume",
+    "original": "Continue",
+    "note": "恢复暂停的录制。",
+    "status": "changed"
+  },
+  "director.stop": {
+    "row": 42,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "结束",
+    "en": "Stop",
+    "original": "Stop",
+    "note": "",
+    "status": "retained"
+  },
+  "director.live": {
+    "row": 43,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "直播",
+    "en": "LIVE",
+    "original": "LIVE",
+    "note": "",
+    "status": "retained"
+  },
+  "director.share": {
+    "row": 44,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "分享",
+    "en": "Share",
+    "original": "Share",
+    "note": "",
+    "status": "retained"
+  },
+  "director.liveShare": {
+    "row": 45,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "直播分享",
+    "en": "Share Stream",
+    "original": "Live sharing",
+    "note": "直播分享按钮使用简短动词。",
+    "status": "changed"
+  },
+  "director.copyLink": {
+    "row": 46,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "复制下方链接观看直播",
+    "en": "Copy the link below to watch the live broadcast.",
+    "original": "Copy the link below to watch the live broadcast.",
+    "note": "",
+    "status": "retained"
+  },
+  "director.scanningCode": {
+    "row": 47,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "扫码观看直播",
+    "en": "Scan the QR code to watch the live stream.",
+    "original": "Scan code to watch live broadcast.",
+    "note": "补齐二维码含义。",
+    "status": "changed"
+  },
+  "director.liveUrlEmpty": {
+    "row": 48,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "当前通道未设置直播观看地址，请设置观看地址后重试",
+    "en": "Set a playback URL for this channel, then try again.",
+    "original": "The live broadcast viewing address is empty, please fill in the viewing address first.",
+    "note": "观看地址与推流地址区分。",
+    "status": "changed"
+  },
+  "director.openLive": {
+    "row": 49,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "请开启直播",
+    "en": "Please turn on live streaming.",
+    "original": "Please turn on live streaming.",
+    "note": "",
+    "status": "retained"
+  },
+  "director.openChannelLiveFirst": {
+    "row": 50,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "请先开启该通道的直播",
+    "en": "Please enable the live broadcast of this channel first.",
+    "original": "Please enable the live broadcast of this channel first.",
+    "note": "",
+    "status": "retained"
+  },
+  "director.clickUrlToWatch": {
+    "row": 51,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "点击下方链接观看直播",
+    "en": "Click the link below to watch the live stream.",
+    "original": "Click the link below to watch the live stream.",
+    "note": "",
+    "status": "retained"
+  },
+  "director.useFirefox": {
+    "row": 52,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "如果无视频显示，请使用Firefox或Chrome浏览器打开",
+    "en": "If no video is displayed, open it using Firefox or Chrome.",
+    "original": "If no video is displayed, open it using Firefox or Chrome.",
+    "note": "",
+    "status": "retained"
+  },
+  "director.subtitle": {
+    "row": 53,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "字幕",
+    "en": "Subtitle",
+    "original": "Subtitle",
+    "note": "",
+    "status": "retained"
+  },
+  "director.xfSubOpenError": {
+    "row": 54,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "开启实时语音转字幕后无法修改字幕状态",
+    "en": "The subtitle state cannot be changed while live captions are enabled.",
+    "original": "The subtitle status cannot be modified after real-time voice subtitle conversion is enabled.",
+    "note": "与实时语音字幕开关名称统一。",
+    "status": "changed"
+  },
+  "director.logo": {
+    "row": 55,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "台标",
+    "en": "Logo",
+    "original": "Logo",
+    "note": "",
+    "status": "retained"
+  },
+  "director.title": {
+    "row": 56,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "片头",
+    "en": "Intro",
+    "original": "Title",
+    "note": "片头不是普通标题。",
+    "status": "changed"
+  },
+  "director.trailer": {
+    "row": 57,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "片尾",
+    "en": "Outro",
+    "original": "Trailer",
+    "note": "片尾不是预告片。",
+    "status": "changed"
+  },
+  "director.closing": {
+    "row": 58,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "关闭",
+    "en": "Off",
+    "original": "Closing",
+    "note": "开关状态，非正在关闭。",
+    "status": "changed"
+  },
+  "director.dateTime": {
+    "row": 59,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "日期+时间",
+    "en": "Date+Time",
+    "original": "Date+Time",
+    "note": "",
+    "status": "retained"
+  },
+  "director.date": {
+    "row": 60,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "日期",
+    "en": "Date",
+    "original": "Date",
+    "note": "",
+    "status": "retained"
+  },
+  "director.time": {
+    "row": 61,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "时间",
+    "en": "Time",
+    "original": "Time",
+    "note": "",
+    "status": "retained"
+  },
+  "director.osdSetFail": {
+    "row": 62,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "OSD设置失败",
+    "en": "OSD setting failed",
+    "original": "OSD setting failed",
+    "note": "",
+    "status": "retained"
+  },
+  "director.preset1": {
+    "row": 63,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "预设",
+    "en": "Preset",
+    "original": "Preset",
+    "note": "",
+    "status": "retained"
+  },
+  "director.noTitle": {
+    "row": 64,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "当前片头未设置预设内容，请在设置后开启",
+    "en": "Set up an intro preset before enabling it.",
+    "original": "The preset content is not set for the current title, please open it after setting.",
+    "note": "修正片头术语与启用动作。",
+    "status": "changed"
+  },
+  "director.noTrailer": {
+    "row": 65,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "当前片尾未设置预设内容，请在设置后开启",
+    "en": "Set up an outro preset before enabling it.",
+    "original": "The preset content is not set for the current trailer, please open it after setting.",
+    "note": "修正片尾术语与启用动作。",
+    "status": "changed"
+  },
+  "director.directorMode": {
+    "row": 66,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "导播模式",
+    "en": "Switching Mode",
+    "original": "Director Mode",
+    "note": "描述自动／手动画面切换。",
+    "status": "changed"
+  },
+  "director.auto": {
+    "row": 67,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "自动",
+    "en": "Auto",
+    "original": "Auto",
+    "note": "",
+    "status": "retained"
+  },
+  "director.semiauto": {
+    "row": 68,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "半自动",
+    "en": "Semi-auto",
+    "original": "Semi-auto",
+    "note": "",
+    "status": "retained"
+  },
+  "director.manual": {
+    "row": 69,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "手动",
+    "en": "Manual",
+    "original": "Manual",
+    "note": "",
+    "status": "retained"
+  },
+  "director.PTZ": {
+    "row": 70,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "云台",
+    "en": "PTZ",
+    "original": "PTZ",
+    "note": "",
+    "status": "retained"
+  },
+  "director.speed": {
+    "row": 71,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "移动速度",
+    "en": "Speed",
+    "original": "Speed",
+    "note": "",
+    "status": "retained"
+  },
+  "director.quick": {
+    "row": 72,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "快",
+    "en": "Fast",
+    "original": "Quick",
+    "note": "速度选项与 Slow 对应。",
+    "status": "changed"
+  },
+  "director.slow": {
+    "row": 73,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "慢",
+    "en": "Slow",
+    "original": "Slow",
+    "note": "",
+    "status": "retained"
+  },
+  "director.zoom": {
+    "row": 74,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "变焦",
+    "en": "Zoom",
+    "original": "Zoom",
+    "note": "",
+    "status": "retained"
+  },
+  "director.preset": {
+    "row": 75,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "预置位",
+    "en": "Preset",
+    "original": "Preset",
+    "note": "",
+    "status": "retained"
+  },
+  "director.set": {
+    "row": 76,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "设置",
+    "en": "Set",
+    "original": "Set",
+    "note": "",
+    "status": "retained"
+  },
+  "director.call": {
+    "row": 77,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "调用",
+    "en": "Recall",
+    "original": "Call",
+    "note": "预置位调用的常用短标签。",
+    "status": "changed"
+  },
+  "director.transition": {
+    "row": 78,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "转场",
+    "en": "Transition",
+    "original": "Transition",
+    "note": "",
+    "status": "retained"
+  },
+  "director.cut": {
+    "row": 79,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "直切",
+    "en": "Cut",
+    "original": "Cut",
+    "note": "",
+    "status": "retained"
+  },
+  "director.position": {
+    "row": 80,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "位置",
+    "en": "Position",
+    "original": "Position",
+    "note": "",
+    "status": "retained"
+  },
+  "director.size": {
+    "row": 81,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "大小",
+    "en": "Size",
+    "original": "Size",
+    "note": "",
+    "status": "retained"
+  },
+  "director.close": {
+    "row": 82,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "关闭",
+    "en": "Close",
+    "original": "Close",
+    "note": "",
+    "status": "retained"
+  },
+  "director.layout": {
+    "row": 83,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "布局",
+    "en": "Layout",
+    "original": "Layout",
+    "note": "",
+    "status": "retained"
+  },
+  "director.diskNotFound": {
+    "row": 84,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "开启录制失败，未检测到磁盘，请检查后重试",
+    "en": "Cannot start recording. No disk detected. Check the disk and try again.",
+    "original": "Failed to open recording. No disk was detected. Please check and try again.",
+    "note": "录制使用 Start，明确排查对象。",
+    "status": "changed"
+  },
+  "director.notSupportedRecord": {
+    "row": 85,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "不支持录像功能",
+    "en": "Recording Not Supported",
+    "original": "Record Not Supported",
+    "note": "使用录制功能名词。",
+    "status": "changed"
+  },
+  "director.licenseExpiredRecord": {
+    "row": 86,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "开启录制失败，主机授权已过期",
+    "en": "Cannot start recording. The device license has expired.",
+    "original": "Failed to start recording, the host authorization has expired.",
+    "note": "授权到期指许可证。",
+    "status": "changed"
+  },
+  "director.noRecordLicense": {
+    "row": 87,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "开启录制失败，录制功能无权限",
+    "en": "Cannot start recording. Recording is not licensed.",
+    "original": "Failed to start recording. No permission for recording function.",
+    "note": "与用户操作权限区分。",
+    "status": "changed"
+  },
+  "director.diskSizeWarning": {
+    "row": 88,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "开启录制失败，主机磁盘空间不足，请检查后重试",
+    "en": "Failed to start recording, the host disk space is insufficient, please check and try again.",
+    "original": "Failed to start recording, the host disk space is insufficient, please check and try again.",
+    "note": "",
+    "status": "retained"
+  },
+  "director.openingLive": {
+    "row": 89,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "正在开启直播...",
+    "en": "Starting live stream...",
+    "original": "Opening Live Broadcast...",
+    "note": "启动推流，不用 Opening。",
+    "status": "changed"
+  },
+  "director.liveError": {
+    "row": 90,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "开启直播失败，请检查网络或服务器配置后重试",
+    "en": "Failed to start live broadcast. Please check the network or server configuration and try again.",
+    "original": "Failed to start live broadcast. Please check the network or server configuration and try again.",
+    "note": "",
+    "status": "retained"
+  },
+  "director.connectLiveServerFailed": {
+    "row": 91,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "启动直播失败，请检查服务器配置",
+    "en": "Failed to start live broadcast. Please check the server configuration.",
+    "original": "Failed to start live broadcast. Please check the server configuration.",
+    "note": "",
+    "status": "retained"
+  },
+  "director.notSupportedLive": {
+    "row": 92,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "不支持直播功能",
+    "en": "Streaming Not Supported",
+    "original": "Live Not Supported",
+    "note": "明确直播功能。",
+    "status": "changed"
+  },
+  "director.noLiveLicense": {
+    "row": 93,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "开启直播失败，直播功能无权限",
+    "en": "Cannot start streaming. Streaming is not licensed.",
+    "original": "Failed to enable live broadcast. No permission for live broadcast function.",
+    "note": "与用户操作权限区分。",
+    "status": "changed"
+  },
+  "director.notOpenRecordChannel": {
+    "row": 94,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "开启录制失败，未开启录制通道，请检查后重试",
+    "en": "Enable a recording channel, then try again.",
+    "original": "Record channel is not opened.",
+    "note": "原文遗漏操作指引。",
+    "status": "changed"
+  },
+  "director.repairingFile": {
+    "row": 95,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "开启录制失败，正在修复文件",
+    "en": "Failed to start recording, repairing file.",
+    "original": "Failed to start recording, repairing file.",
+    "note": "",
+    "status": "retained"
+  },
+  "director.notOpenLiveChannel": {
+    "row": 96,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "开启直播失败，未开启直播通道，请检查后重试",
+    "en": "Enable a streaming channel, then try again.",
+    "original": "Failed to open the live broadcast channel. Please check and try again.",
+    "note": "原文误写为开启失败。",
+    "status": "changed"
+  },
+  "director.licenseExpiredLive": {
+    "row": 97,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "开启直播失败，主机授权已过期",
+    "en": "Cannot start streaming. The device license has expired.",
+    "original": "Failed to start live broadcast. The host authorization has expired.",
+    "note": "授权到期指许可证。",
+    "status": "changed"
+  },
+  "director.livePortError": {
+    "row": 98,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "直播端口错误",
+    "en": "Invalid streaming port.",
+    "original": "Live port error",
+    "note": "明确直播端口错误。",
+    "status": "changed"
+  },
+  "director.rebootOrNot": {
+    "row": 99,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "是否重启设备",
+    "en": "Restart the device?",
+    "original": "Restart or not",
+    "note": "自然的确认问句。",
+    "status": "changed"
+  },
+  "director.poweroffOrNot": {
+    "row": 100,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "是否关闭设备",
+    "en": "Shut down the device?",
+    "original": "Shutdown or not",
+    "note": "自然的确认问句。",
+    "status": "changed"
+  },
+  "director.logOutOrNot": {
+    "row": 101,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "是否注销",
+    "en": "Log out?",
+    "original": "Log out or not",
+    "note": "简短确认问句。",
+    "status": "changed"
+  },
+  "director.stopRecordOrLive": {
+    "row": 102,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "请先关闭录像或直播",
+    "en": "Stop recording or streaming first.",
+    "original": "Please turn off record or live broadcast first.",
+    "note": "停止录制／推流使用 Stop。",
+    "status": "changed"
+  },
+  "director.stopRecord": {
+    "row": 103,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "录制已开启，请关闭录制后重试",
+    "en": "Stop recording, then try again.",
+    "original": "Please turn off record first.",
+    "note": "恢复中文中的重试指引。",
+    "status": "changed"
+  },
+  "director.stopLive": {
+    "row": 104,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "直播已开启，请关闭直播后重试",
+    "en": "Stop streaming, then try again.",
+    "original": "Please turn off live first.",
+    "note": "恢复中文中的重试指引。",
+    "status": "changed"
+  },
+  "director.stopInteractive": {
+    "row": 105,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "请先关闭互动",
+    "en": "End the interactive session first.",
+    "original": "Please turn off interaction first.",
+    "note": "结束互动会话。",
+    "status": "changed"
+  },
+  "director.diskMessage1": {
+    "row": 106,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "重启后会进行磁盘检查",
+    "en": "Disk check will be performed after restart.",
+    "original": "Disk check will be performed after restart.",
+    "note": "",
+    "status": "retained"
+  },
+  "director.diskMessage2": {
+    "row": 107,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "重启后会进行磁盘分区和格式化，会导致磁盘所有内容（包括录像文件）丢失",
+    "en": "After restart, the disk will be partitioned and formatted. All data, including recordings, will be lost.",
+    "original": "Partition&format after reboot, NOTE:all files will be lost.",
+    "note": "保留分区和录像丢失警告。",
+    "status": "changed"
+  },
+  "director.diskMessage3": {
+    "row": 108,
+    "group": "03    主页（导播）    ·    director    ",
+    "zh": "重启后会进行磁盘格式化，会导致磁盘所有内容（包括录像文件）丢失",
+    "en": "After restart, the disk will be formatted. All data, including recordings, will be lost.",
+    "original": "Format after reboot, NOTE:all files will be lost.",
+    "note": "保留录像丢失警告。",
+    "status": "changed"
+  }
+}

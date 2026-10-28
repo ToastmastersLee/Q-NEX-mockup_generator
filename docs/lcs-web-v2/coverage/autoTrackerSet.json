@@ -1,0 +1,140 @@
+{
+  "autoTrackerSet.teacher": {
+    "status": "retained",
+    "controls": [
+      "trackerDebug.teacher"
+    ]
+  },
+  "autoTrackerSet.board": {
+    "status": "retained",
+    "controls": [
+      "trackerDebug.blackboard"
+    ]
+  },
+  "autoTrackerSet.student": {
+    "status": "retained",
+    "controls": [
+      "trackerDebug.student"
+    ]
+  },
+  "autoTrackerSet.computer": {
+    "status": "changed",
+    "controls": []
+  },
+  "autoTrackerSet.studentfull": {
+    "status": "changed",
+    "controls": []
+  },
+  "autoTrackerSet.teacherfull": {
+    "status": "changed",
+    "controls": []
+  },
+  "autoTrackerSet.interactive": {
+    "status": "retained",
+    "controls": []
+  },
+  "autoTrackerSet.board2": {
+    "status": "retained",
+    "controls": []
+  },
+  "autoTrackerSet.computer2": {
+    "status": "changed",
+    "controls": []
+  },
+  "autoTrackerSet.computerTeacher": {
+    "status": "changed",
+    "controls": []
+  },
+  "autoTrackerSet.computerTeacherfull": {
+    "status": "changed",
+    "controls": []
+  },
+  "autoTrackerSet.computerStudent": {
+    "status": "changed",
+    "controls": []
+  },
+  "autoTrackerSet.computerStudentfull": {
+    "status": "changed",
+    "controls": []
+  },
+  "autoTrackerSet.computerInteractive": {
+    "status": "changed",
+    "controls": []
+  },
+  "autoTrackerSet.teacherStudent": {
+    "status": "retained",
+    "controls": []
+  },
+  "autoTrackerSet.teacherStudentfull": {
+    "status": "changed",
+    "controls": []
+  },
+  "autoTrackerSet.teacherInteractive": {
+    "status": "retained",
+    "controls": []
+  },
+  "autoTrackerSet.teacherfullStudent": {
+    "status": "changed",
+    "controls": []
+  },
+  "autoTrackerSet.teacherfullStudentfull": {
+    "status": "changed",
+    "controls": []
+  },
+  "autoTrackerSet.teacherfullInteractive": {
+    "status": "changed",
+    "controls": []
+  },
+  "autoTrackerSet.boardStudent": {
+    "status": "retained",
+    "controls": []
+  },
+  "autoTrackerSet.boardStudentfull": {
+    "status": "changed",
+    "controls": []
+  },
+  "autoTrackerSet.boardInteractive": {
+    "status": "retained",
+    "controls": []
+  },
+  "autoTrackerSet.studentInteractive": {
+    "status": "retained",
+    "controls": []
+  },
+  "autoTrackerSet.studentfullInteractive": {
+    "status": "changed",
+    "controls": []
+  },
+  "autoTrackerSet.board2Student": {
+    "status": "retained",
+    "controls": []
+  },
+  "autoTrackerSet.board2Studentfull": {
+    "status": "changed",
+    "controls": []
+  },
+  "autoTrackerSet.board2Interactive": {
+    "status": "retained",
+    "controls": []
+  },
+  "autoTrackerSet.computer2Teacher": {
+    "status": "changed",
+    "controls": []
+  },
+  "autoTrackerSet.computer2Teacherfull": {
+    "status": "changed",
+    "controls": []
+  },
+  "autoTrackerSet.computer2Student": {
+    "status": "changed",
+    "controls": []
+  },
+  "autoTrackerSet.computer2Studentfull": {
+    "status": "changed",
+    "controls": []
+  },
+  "autoTrackerSet.computer2Interactive": {
+    "status": "changed",
+    "controls": []
+  }
+}

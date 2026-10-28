@@ -1,0 +1,380 @@
+{
+  "version.version": {
+    "row": 747,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "系统信息",
+    "en": "System Information",
+    "original": "Version",
+    "note": "页面包含型号、地址及许可证等。",
+    "status": "changed"
+  },
+  "version.serverModel": {
+    "row": 748,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "型号",
+    "en": "Device Model",
+    "original": "Device Model",
+    "note": "",
+    "status": "retained"
+  },
+  "version.serverMcuVersion": {
+    "row": 749,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "系统版本",
+    "en": "System Version",
+    "original": "System Version",
+    "note": "",
+    "status": "retained"
+  },
+  "version.serverVersion": {
+    "row": 750,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "固件版本",
+    "en": "Firmware Version",
+    "original": "Service Version",
+    "note": "中文指固件版本。",
+    "status": "changed"
+  },
+  "version.mfd": {
+    "row": 751,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "出厂日期",
+    "en": "Manufacture Date",
+    "original": "Mfd",
+    "note": "展开不直观的 Mfd。",
+    "status": "changed"
+  },
+  "version.aecVersion": {
+    "row": 752,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "AEC版本",
+    "en": "AEC Version",
+    "original": "AEC Version",
+    "note": "",
+    "status": "retained"
+  },
+  "version.swname": {
+    "row": 753,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "软件名称",
+    "en": "Software Name",
+    "original": "Software Name",
+    "note": "",
+    "status": "retained"
+  },
+  "version.swmodel": {
+    "row": 754,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "软件型号",
+    "en": "Software Model",
+    "original": "Software Model",
+    "note": "",
+    "status": "retained"
+  },
+  "version.swversion": {
+    "row": 755,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "软件版本",
+    "en": "Software Version",
+    "original": "Software Version",
+    "note": "",
+    "status": "retained"
+  },
+  "version.trackerVersion": {
+    "row": 756,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "跟踪机版本",
+    "en": "Tracker Version",
+    "original": "Tracker Version",
+    "note": "",
+    "status": "retained"
+  },
+  "version.webPVersion": {
+    "row": 757,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "播放插件版本",
+    "en": "Playback Plug-in Version",
+    "original": "Play Plug-in",
+    "note": "补齐版本含义。",
+    "status": "changed"
+  },
+  "version.serverIp": {
+    "row": 758,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "IP地址",
+    "en": "IP",
+    "original": "IP",
+    "note": "",
+    "status": "retained"
+  },
+  "version.ipv6Address": {
+    "row": 759,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "IPv6地址",
+    "en": "IPv6",
+    "original": "IPv6",
+    "note": "",
+    "status": "retained"
+  },
+  "version.serverMac": {
+    "row": 760,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "MAC地址",
+    "en": "MAC",
+    "original": "MAC",
+    "note": "",
+    "status": "retained"
+  },
+  "version.uuid": {
+    "row": 761,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "UUID",
+    "en": "UUID",
+    "original": "UUID",
+    "note": "",
+    "status": "retained"
+  },
+  "version.license": {
+    "row": 762,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "License",
+    "en": "License",
+    "original": "License",
+    "note": "",
+    "status": "retained"
+  },
+  "version.expired": {
+    "row": 763,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "授权有效期",
+    "en": "License Expiry",
+    "original": "Lic Expired",
+    "note": "有效期字段，不是已过期状态。",
+    "status": "changed"
+  },
+  "version.alreadyUpdate": {
+    "row": 764,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "已经是最新版本了",
+    "en": "It's already the latest version",
+    "original": "It's already the latest version",
+    "note": "",
+    "status": "retained"
+  },
+  "version.upgrade": {
+    "row": 765,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "检测到可升级版本，是否进行升级？",
+    "en": "An upgradeable version is detected. Do you want to upgrade?",
+    "original": "An upgradeable version is detected. Do you want to upgrade?",
+    "note": "",
+    "status": "retained"
+  },
+  "version.note": {
+    "row": 766,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "注意：系统升级中，升级过程需要几分钟，请不要关闭电源，升级完成后系统会自动重启。",
+    "en": "Note: during the system upgrade, the upgrade process takes several minutes. Please do not turn off the power. After the upgrade, the system will restart automatically.",
+    "original": "Note: during the system upgrade, the upgrade process takes several minutes. Please do not turn off the power. After the upgrade, the system will restart automatically.",
+    "note": "",
+    "status": "retained"
+  },
+  "version.upgradeSuccess": {
+    "row": 767,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "升级成功",
+    "en": "Upgrade successful.",
+    "original": "Upgrade success",
+    "note": "成功状态使用形容词。",
+    "status": "changed"
+  },
+  "version.downloading": {
+    "row": 768,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "正在下载安装包",
+    "en": "Downloading installation package",
+    "original": "Downloading installation package",
+    "note": "",
+    "status": "retained"
+  },
+  "version.upgrading": {
+    "row": 769,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "正在升级",
+    "en": "Upgrading",
+    "original": "Upgrading",
+    "note": "",
+    "status": "retained"
+  },
+  "version.downloadFail": {
+    "row": 770,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "下载失败",
+    "en": "Download failed",
+    "original": "Download failed",
+    "note": "",
+    "status": "retained"
+  },
+  "version.upgradeFail": {
+    "row": 771,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "升级失败",
+    "en": "Upgrade failed",
+    "original": "Upgrade failed",
+    "note": "",
+    "status": "retained"
+  },
+  "version.pathNotExit": {
+    "row": 772,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "设备存储路径不存在",
+    "en": "The device storage path does not exist",
+    "original": "The device storage path does not exist",
+    "note": "",
+    "status": "retained"
+  },
+  "version.insufficientSpace": {
+    "row": 773,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "设备存储空间不足",
+    "en": "Insufficient device storage space",
+    "original": "Insufficient device storage space",
+    "note": "",
+    "status": "retained"
+  },
+  "version.urlError": {
+    "row": 774,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "下载url格式错误",
+    "en": "Invalid download URL format.",
+    "original": "Download URL format error",
+    "note": "自然的格式错误提示。",
+    "status": "changed"
+  },
+  "version.fileMismatch": {
+    "row": 775,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "tar.gz和md5文件不匹配",
+    "en": "tar.gz and md5 files do not match",
+    "original": "tar.gz and md5 files do not match",
+    "note": "",
+    "status": "retained"
+  },
+  "version.networkDownloadFail": {
+    "row": 776,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "网络下载失败",
+    "en": "Network download failed",
+    "original": "Network download failed",
+    "note": "",
+    "status": "retained"
+  },
+  "version.validateFail": {
+    "row": 777,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "md5校验失败",
+    "en": "MD5 verification failed",
+    "original": "MD5 verification failed",
+    "note": "",
+    "status": "retained"
+  },
+  "version.unzipFail": {
+    "row": 778,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "解压失败",
+    "en": "Unzip failed",
+    "original": "Unzip failed",
+    "note": "",
+    "status": "retained"
+  },
+  "version.working": {
+    "row": 779,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "正在录播，直播或者互动中",
+    "en": "Recording, streaming, or an interactive session is in progress.",
+    "original": "It is being recorded, broadcast or interactive",
+    "note": "修正状态句，保留三种占用情况。",
+    "status": "changed"
+  },
+  "version.unknownError": {
+    "row": 780,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "未知错误",
+    "en": "Unknown error",
+    "original": "Unknown error",
+    "note": "",
+    "status": "retained"
+  },
+  "version.versionValidateFail": {
+    "row": 781,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "版本校验不对",
+    "en": "Version verification failed.",
+    "original": "Incorrect version Verification",
+    "note": "校验失败的自然提示。",
+    "status": "changed"
+  },
+  "version.recordAuthority": {
+    "row": 782,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "录制权限：",
+    "en": "Recording: ",
+    "original": "record: ",
+    "note": "统一许可证功能名称，保留拼接空格。",
+    "status": "changed"
+  },
+  "version.liveAuthority": {
+    "row": 783,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "直播权限：",
+    "en": "Streaming: ",
+    "original": "live: ",
+    "note": "统一许可证功能名称，保留拼接空格。",
+    "status": "changed"
+  },
+  "version.meetAuthority": {
+    "row": 784,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "互动权限：",
+    "en": "interaction: ",
+    "original": "interaction: ",
+    "note": "",
+    "status": "retained"
+  },
+  "version.trackAuthority": {
+    "row": 785,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "跟踪权限：",
+    "en": "Tracking: ",
+    "original": "track: ",
+    "note": "跟踪功能使用名词形式。",
+    "status": "changed"
+  },
+  "version.resAuthority": {
+    "row": 786,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "通道权限：",
+    "en": "channels: ",
+    "original": "channels: ",
+    "note": "",
+    "status": "retained"
+  },
+  "version.on": {
+    "row": 787,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "开启",
+    "en": "on",
+    "original": "on",
+    "note": "",
+    "status": "retained"
+  },
+  "version.off": {
+    "row": 788,
+    "group": "20    系统信息    ·    version    ",
+    "zh": "关闭",
+    "en": "off",
+    "original": "off",
+    "note": "",
+    "status": "retained"
+  }
+}

@@ -1,0 +1,225 @@
+{
+  "document.videoEdit": {
+    "status": "changed",
+    "controls": []
+  },
+  "document.documentDetails": {
+    "status": "retained",
+    "controls": [
+      "recordings.detailsTitle"
+    ]
+  },
+  "document.createTime": {
+    "status": "changed",
+    "controls": [
+      "recordings.creationTime"
+    ]
+  },
+  "document.documentDuration": {
+    "status": "retained",
+    "controls": [
+      "recordings.fileDuration"
+    ]
+  },
+  "document.audioSampling": {
+    "status": "changed",
+    "controls": [
+      "recordings.audioSampling"
+    ]
+  },
+  "document.audioCode": {
+    "status": "changed",
+    "controls": [
+      "recordings.audioEncoding"
+    ]
+  },
+  "document.audioChannel": {
+    "status": "changed",
+    "controls": [
+      "recordings.audioChannel"
+    ]
+  },
+  "document.bitRate": {
+    "status": "retained",
+    "controls": [
+      "recordings.fileBitrate"
+    ]
+  },
+  "document.code": {
+    "status": "changed",
+    "controls": [
+      "recordings.videoEncoding"
+    ]
+  },
+  "document.frameRate": {
+    "status": "changed",
+    "controls": [
+      "recordings.videoFramerate"
+    ]
+  },
+  "document.resolution": {
+    "status": "retained",
+    "controls": [
+      "recordings.videoResolution"
+    ]
+  },
+  "document.enterKeywordSearch": {
+    "status": "changed",
+    "controls": [
+      "recordings.searchPlaceholder"
+    ]
+  },
+  "document.startDate": {
+    "status": "retained",
+    "controls": [
+      "recordings.startDate"
+    ]
+  },
+  "document.endDate": {
+    "status": "retained",
+    "controls": [
+      "recordings.endDate"
+    ]
+  },
+  "document.search": {
+    "status": "retained",
+    "controls": [
+      "common.actions.search",
+      "recordings.search"
+    ]
+  },
+  "document.download": {
+    "status": "retained",
+    "controls": [
+      "recordings.download"
+    ]
+  },
+  "document.encryptDownload": {
+    "status": "changed",
+    "controls": []
+  },
+  "document.encryptPassword": {
+    "status": "changed",
+    "controls": []
+  },
+  "document.delete": {
+    "status": "retained",
+    "controls": [
+      "recordings.delete"
+    ]
+  },
+  "document.repair": {
+    "status": "retained",
+    "controls": []
+  },
+  "document.play": {
+    "status": "retained",
+    "controls": [
+      "recordings.play"
+    ]
+  },
+  "document.preview": {
+    "status": "retained",
+    "controls": []
+  },
+  "document.damaged": {
+    "status": "retained",
+    "controls": []
+  },
+  "document.speaker": {
+    "status": "changed",
+    "controls": [
+      "recordings.speaker"
+    ]
+  },
+  "document.topic": {
+    "status": "retained",
+    "controls": [
+      "recordings.topic"
+    ]
+  },
+  "document.name": {
+    "status": "retained",
+    "controls": [
+      "recordings.fileName"
+    ]
+  },
+  "document.size": {
+    "status": "retained",
+    "controls": [
+      "recordings.fileSize"
+    ]
+  },
+  "document.startTime": {
+    "status": "changed",
+    "controls": [
+      "recordings.startTime"
+    ]
+  },
+  "document.duration": {
+    "status": "retained",
+    "controls": [
+      "recordings.recDuration"
+    ]
+  },
+  "document.operation": {
+    "status": "changed",
+    "controls": [
+      "recordings.operation"
+    ]
+  },
+  "document.selectAll": {
+    "status": "retained",
+    "controls": [
+      "recordings.selectAll"
+    ]
+  },
+  "document.deleteFile": {
+    "status": "retained",
+    "controls": []
+  },
+  "document.confirmDeleteFile": {
+    "status": "retained",
+    "controls": []
+  },
+  "document.cannotBePlayed": {
+    "status": "retained",
+    "controls": []
+  },
+  "document.deleting": {
+    "status": "retained",
+    "controls": []
+  },
+  "document.deleteFileSuccess": {
+    "status": "retained",
+    "controls": []
+  },
+  "document.repairing": {
+    "status": "retained",
+    "controls": []
+  },
+  "document.repairFileSuccess": {
+    "status": "retained",
+    "controls": []
+  },
+  "document.ziping": {
+    "status": "retained",
+    "controls": []
+  },
+  "document.zipFileSuccess": {
+    "status": "retained",
+    "controls": []
+  },
+  "document.zipSameDir": {
+    "status": "retained",
+    "controls": []
+  },
+  "document.tsNotSupported": {
+    "status": "changed",
+    "controls": []
+  },
+  "document.flvNotSupported": {
+    "status": "changed",
+    "controls": []
+  }
+}

@@ -1,0 +1,205 @@
+{
+  "project.platform.platformSetting": {
+    "status": "changed",
+    "controls": [
+      "common.sidebar.platform",
+      "platform.pageTitle"
+    ]
+  },
+  "project.platform.interactivePlatformSetting": {
+    "status": "retained",
+    "controls": [
+      "platform.cardInteractive"
+    ]
+  },
+  "project.platform.interaction": {
+    "status": "retained",
+    "controls": [
+      "platform.interactive"
+    ]
+  },
+  "project.platform.serverAddress": {
+    "status": "retained",
+    "controls": [
+      "platform.interactiveServer"
+    ]
+  },
+  "project.platform.notRegister": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.platform.registerSuccess": {
+    "status": "changed",
+    "controls": [
+      "platform.regSuccess"
+    ]
+  },
+  "project.platform.registerFail": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.platform.SIPenable": {
+    "status": "retained",
+    "controls": [
+      "platform.enableSip"
+    ]
+  },
+  "project.platform.userName": {
+    "status": "changed",
+    "controls": [
+      "platform.username"
+    ]
+  },
+  "project.platform.SIPdomain": {
+    "status": "retained",
+    "controls": [
+      "platform.sipDomain"
+    ]
+  },
+  "project.platform.NATroute": {
+    "status": "retained",
+    "controls": [
+      "platform.natRoute"
+    ]
+  },
+  "project.platform.transmission": {
+    "status": "changed",
+    "controls": [
+      "platform.transportMode"
+    ]
+  },
+  "project.platform.SIPregisterEnable": {
+    "status": "changed",
+    "controls": [
+      "platform.allowReg"
+    ]
+  },
+  "project.platform.password": {
+    "status": "retained",
+    "controls": [
+      "platform.password"
+    ]
+  },
+  "project.platform.SIPproxyServer": {
+    "status": "retained",
+    "controls": [
+      "platform.sipServerAddr"
+    ]
+  },
+  "project.platform.port": {
+    "status": "retained",
+    "controls": [
+      "platform.sipServerPort"
+    ]
+  },
+  "project.platform.enableH323": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.platform.localName": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.platform.e164Number": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.platform.enableGatekeeper": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.platform.identityAuthentication": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.platform.mainGatewayIp": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.platform.yes": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.platform.no": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.platform.managePlatformSetting": {
+    "status": "changed",
+    "controls": [
+      "platform.cardManage"
+    ]
+  },
+  "project.platform.platformAddress": {
+    "status": "retained",
+    "controls": [
+      "platform.platformAddr"
+    ]
+  },
+  "project.platform.set": {
+    "status": "retained",
+    "controls": [
+      "platform.setting"
+    ]
+  },
+  "project.platform.deviceName": {
+    "status": "retained",
+    "controls": [
+      "platform.deviceName"
+    ]
+  },
+  "project.platform.authCode": {
+    "status": "changed",
+    "controls": [
+      "platform.authCode"
+    ]
+  },
+  "project.platform.createLocation": {
+    "status": "changed",
+    "controls": [
+      "platform.createLocation"
+    ]
+  },
+  "project.platform.organizationId": {
+    "status": "changed",
+    "controls": [
+      "platform.orgId"
+    ]
+  },
+  "project.platform.join": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.platform.open": {
+    "status": "changed",
+    "controls": [
+      "platform.on"
+    ]
+  },
+  "project.platform.close": {
+    "status": "changed",
+    "controls": [
+      "platform.off"
+    ]
+  },
+  "project.platform.setInteractiveServerFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.platform.setPlatformServerFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.platform.joinOrganizationSuccess": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.platform.joinOrganizationFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.platform.SIPsetFail": {
+    "status": "retained",
+    "controls": []
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "yellow": {
+    "zh": "黄色",
+    "en": "Yellow",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "scrollMode": {
+    "zh": "滚动模式",
+    "en": "Scroll Mode",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "defaultText": {
+    "zh": "默认文字 {n}",
+    "en": "Default text {n}",
+    "reason": "现有控件辅助文案，Excel 未覆盖完整提示。"
+  }
+}

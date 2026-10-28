@@ -1,0 +1,181 @@
+{
+  "project.output.outputSetting": {
+    "status": "changed",
+    "controls": [
+      "common.sidebar.output",
+      "output.pageTitle"
+    ]
+  },
+  "project.output.HDMIout1": {
+    "status": "changed",
+    "controls": [
+      "output.hdmiOut1"
+    ]
+  },
+  "project.output.HDMIout2": {
+    "status": "changed",
+    "controls": [
+      "output.hdmiOut2"
+    ]
+  },
+  "project.output.uvcOutput": {
+    "status": "retained",
+    "controls": [
+      "output.uvcOut"
+    ]
+  },
+  "project.output.selfAdaption": {
+    "status": "changed",
+    "controls": [
+      "output.adaptive"
+    ]
+  },
+  "project.output.outputResolution": {
+    "status": "retained",
+    "controls": [
+      "output.outResolution"
+    ]
+  },
+  "project.output.outputContent": {
+    "status": "retained",
+    "controls": [
+      "output.outContent"
+    ]
+  },
+  "project.output.audioOutput": {
+    "status": "retained",
+    "controls": [
+      "audio.audioOutput"
+    ]
+  },
+  "project.output.rtspAudio": {
+    "status": "retained",
+    "controls": [
+      "audio.rtspAudio"
+    ]
+  },
+  "project.output.rtspOnlyAudio": {
+    "status": "retained",
+    "controls": [
+      "audio.digitalAudio",
+      "input.colDigitalAudio"
+    ]
+  },
+  "project.output.externalAudio": {
+    "status": "retained",
+    "controls": [
+      "audio.externalAudio"
+    ]
+  },
+  "project.output.rtspAudioMixTip": {
+    "status": "retained",
+    "controls": [
+      "audio.tipAudioModal"
+    ]
+  },
+  "project.output.compositing": {
+    "status": "pending",
+    "controls": [
+      "output.compositeView"
+    ]
+  },
+  "project.output.localDirector": {
+    "status": "changed",
+    "controls": [
+      "output.localDirector"
+    ]
+  },
+  "project.output.switched": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.output.audioSetSuccess": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.output.audioSetFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.output.uvcSetSuccess": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.output.uvcSetFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.output.displaySettings": {
+    "status": "retained",
+    "controls": [
+      "output.displaySetting",
+      "output.modalDisplayTitle"
+    ]
+  },
+  "project.output.brightness": {
+    "status": "retained",
+    "controls": [
+      "output.brightness"
+    ]
+  },
+  "project.output.contrastRatio": {
+    "status": "changed",
+    "controls": [
+      "output.contrast"
+    ]
+  },
+  "project.output.hue": {
+    "status": "retained",
+    "controls": [
+      "output.hue"
+    ]
+  },
+  "project.output.saturation": {
+    "status": "retained",
+    "controls": [
+      "output.saturation"
+    ]
+  },
+  "project.output.layer0": {
+    "status": "pending",
+    "controls": [
+      "output.modalTabFilm"
+    ]
+  },
+  "project.output.layer1": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.output.layer2": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.output.vgaCsc": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.output.hdmiCsc": {
+    "status": "retained",
+    "controls": [
+      "output.modalTabHdmi"
+    ]
+  },
+  "project.output.matrix": {
+    "status": "retained",
+    "controls": [
+      "output.colorMatrix"
+    ]
+  },
+  "project.output.defaultBrightness": {
+    "status": "pending",
+    "controls": [
+      "output.defaultBrightness"
+    ]
+  },
+  "project.output.extendedBrightness": {
+    "status": "pending",
+    "controls": [
+      "output.extendedBrightness"
+    ]
+  }
+}

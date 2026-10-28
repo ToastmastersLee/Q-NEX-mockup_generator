@@ -1,0 +1,85 @@
+{
+  "project.peripheral.peripheralSetting": {
+    "status": "changed",
+    "controls": [
+      "common.sidebar.peripheral",
+      "peripheral.pageTitle"
+    ]
+  },
+  "project.peripheral.keyboard": {
+    "status": "retained",
+    "controls": [
+      "peripheral.keyboard"
+    ]
+  },
+  "project.peripheral.keyboardType": {
+    "status": "changed",
+    "controls": [
+      "peripheral.kbModel"
+    ]
+  },
+  "project.peripheral.panelType": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.peripheral.clock": {
+    "status": "retained",
+    "controls": [
+      "peripheral.clock"
+    ]
+  },
+  "project.peripheral.clockType": {
+    "status": "changed",
+    "controls": [
+      "peripheral.clockModel"
+    ]
+  },
+  "project.peripheral.powerSupply": {
+    "status": "changed",
+    "controls": [
+      "peripheral.powerSequencer"
+    ]
+  },
+  "project.peripheral.powerSupplyType": {
+    "status": "changed",
+    "controls": [
+      "peripheral.powerModel"
+    ]
+  },
+  "project.peripheral.port": {
+    "status": "retained",
+    "controls": [
+      "peripheral.connPort"
+    ]
+  },
+  "project.peripheral.avaliable": {
+    "status": "changed",
+    "controls": [
+      "peripheral.available"
+    ]
+  },
+  "project.peripheral.invalid": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.peripheral.baudRate": {
+    "status": "changed",
+    "controls": [
+      "peripheral.baudRate"
+    ]
+  },
+  "project.peripheral.panel": {
+    "status": "retained",
+    "controls": [
+      "peripheral.panel"
+    ]
+  },
+  "project.peripheral.deviceOccupied": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.peripheral.portConflict": {
+    "status": "changed",
+    "controls": []
+  }
+}

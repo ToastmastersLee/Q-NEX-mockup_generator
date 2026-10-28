@@ -1,0 +1,65 @@
+{
+  "project.PTZ.PTZsetting": {
+    "status": "changed",
+    "controls": [
+      "common.sidebar.ptz",
+      "ptz.pageTitle"
+    ]
+  },
+  "project.PTZ.PTZprotocol": {
+    "status": "retained",
+    "controls": [
+      "ptz.protocol"
+    ]
+  },
+  "project.PTZ.PTZport": {
+    "status": "retained",
+    "controls": [
+      "ptz.commPort"
+    ]
+  },
+  "project.PTZ.PTZtype": {
+    "status": "retained",
+    "controls": [
+      "ptz.commMode"
+    ]
+  },
+  "project.PTZ.PTZIP": {
+    "status": "retained",
+    "controls": [
+      "ptz.commIp"
+    ]
+  },
+  "project.PTZ.camAddr": {
+    "status": "pending",
+    "controls": []
+  },
+  "project.PTZ.UDP": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.PTZ.TCP": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.PTZ.COM": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.PTZ.camAddrError": {
+    "status": "pending",
+    "controls": []
+  },
+  "project.PTZ.IPError": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.PTZ.portError": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.PTZ.ipcNotOpen": {
+    "status": "changed",
+    "controls": []
+  }
+}

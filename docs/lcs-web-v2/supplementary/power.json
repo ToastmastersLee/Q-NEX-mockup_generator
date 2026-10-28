@@ -1,0 +1,7 @@
+{
+  "keepOff": {
+    "zh": "来电保持断电",
+    "en": "Stay Off After Power Recovery",
+    "reason": "现有 mockup 辅助文案；Excel 无同义完整词条，单独维护。"
+  }
+}

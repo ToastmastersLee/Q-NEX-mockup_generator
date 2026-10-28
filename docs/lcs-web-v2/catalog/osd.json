@@ -1,0 +1,83 @@
+{
+  "osd.osdSetting": {
+    "row": 368,
+    "group": "12    OSD 设置    ·    osd    ",
+    "zh": "OSD设置",
+    "en": "OSD Settings",
+    "original": "OSD Setting",
+    "note": "设置页使用复数；保留常见缩写。",
+    "status": "changed"
+  },
+  "osd.color": {
+    "row": 369,
+    "group": "12    OSD 设置    ·    osd    ",
+    "zh": "颜色",
+    "en": "Color",
+    "original": "Color",
+    "note": "",
+    "status": "retained"
+  },
+  "osd.type": {
+    "row": 370,
+    "group": "12    OSD 设置    ·    osd    ",
+    "zh": "显示内容",
+    "en": "Type",
+    "original": "Type",
+    "note": "",
+    "status": "retained"
+  },
+  "osd.osdPosition": {
+    "row": 371,
+    "group": "12    OSD 设置    ·    osd    ",
+    "zh": "显示位置",
+    "en": "OSD Position",
+    "original": "OSD Position",
+    "note": "",
+    "status": "retained"
+  },
+  "osd.tip1": {
+    "row": 372,
+    "group": "12    OSD 设置    ·    osd    ",
+    "zh": "1.单击显示位置下方按钮可改变OSD的位置。",
+    "en": "1. Use the position buttons to reposition the OSD.",
+    "original": "1.Click the button below the display position to change the position of OSD.",
+    "note": "简化按钮操作指引。",
+    "status": "changed"
+  },
+  "osd.tip2": {
+    "row": 373,
+    "group": "12    OSD 设置    ·    osd    ",
+    "zh": "2.移动预览区内的选框可改变OSD的位置。",
+    "en": "2. Move the selection box in the preview to reposition the OSD.",
+    "original": "2.Move the box in the preview area to change the position of the OSD.",
+    "note": "统一预览选框用语。",
+    "status": "changed"
+  },
+  "osd.dateTime": {
+    "row": 374,
+    "group": "12    OSD 设置    ·    osd    ",
+    "zh": "日期+时间",
+    "en": "Date+Time",
+    "original": "Date+Time",
+    "note": "",
+    "status": "retained"
+  },
+  "osd.date": {
+    "row": 375,
+    "group": "12    OSD 设置    ·    osd    ",
+    "zh": "日期",
+    "en": "Date",
+    "original": "Date",
+    "note": "",
+    "status": "retained"
+  },
+  "osd.time": {
+    "row": 376,
+    "group": "12    OSD 设置    ·    osd    ",
+    "zh": "时间",
+    "en": "Time",
+    "original": "Time",
+    "note": "",
+    "status": "retained"
+  }
+}

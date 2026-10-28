@@ -1,0 +1,12 @@
+{
+  "tipUploadWay": {
+    "zh": "1. 闲时上传：无其他任务时上传。\n2. 连续上传：有未同步文件时上传。\n3. 定时上传：在指定时段上传。",
+    "en": "1. Idle: Upload when no other tasks are running.\n2. Continuous: Upload while unsynchronized files remain.\n3. Scheduled: Upload during the specified time window.",
+    "reason": "组合 project.upload.tip1–tip3；不承诺边录边传。"
+  },
+  "dw": {
+    "zh": "DW",
+    "en": "DW",
+    "reason": "原 mockup 平台标识，Excel 未提供可替换的显示名。"
+  }
+}

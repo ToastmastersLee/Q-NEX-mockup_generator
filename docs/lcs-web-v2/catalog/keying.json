@@ -1,0 +1,254 @@
+{
+  "keying.sceneSetting": {
+    "row": 486,
+    "group": "15    抠像设置    ·    keying    ",
+    "zh": "场景设置",
+    "en": "Scene Settings",
+    "original": "Scene Settings",
+    "note": "",
+    "status": "retained"
+  },
+  "keying.addScene": {
+    "row": 487,
+    "group": "15    抠像设置    ·    keying    ",
+    "zh": "添加场景",
+    "en": "Add Scene",
+    "original": "Add Scene",
+    "note": "",
+    "status": "retained"
+  },
+  "keying.keyingSetting": {
+    "row": 488,
+    "group": "15    抠像设置    ·    keying    ",
+    "zh": "抠像设置",
+    "en": "Chroma Key Settings",
+    "original": "Video Matting Settings",
+    "note": "本页明确提供绿幕／蓝幕选项。",
+    "status": "changed"
+  },
+  "keying.preview": {
+    "row": 489,
+    "group": "15    抠像设置    ·    keying    ",
+    "zh": "画面预览",
+    "en": "Video Preview",
+    "original": "Video Preview",
+    "note": "",
+    "status": "retained"
+  },
+  "keying.screenColor": {
+    "row": 490,
+    "group": "15    抠像设置    ·    keying    ",
+    "zh": "抠像幕布颜色",
+    "en": "Screen Color",
+    "original": "Screen Color",
+    "note": "",
+    "status": "retained"
+  },
+  "keying.green": {
+    "row": 491,
+    "group": "15    抠像设置    ·    keying    ",
+    "zh": "绿色",
+    "en": "Green",
+    "original": "Green",
+    "note": "",
+    "status": "retained"
+  },
+  "keying.blue": {
+    "row": 492,
+    "group": "15    抠像设置    ·    keying    ",
+    "zh": "蓝色",
+    "en": "Blue",
+    "original": "Blue",
+    "note": "",
+    "status": "retained"
+  },
+  "keying.changeColorTip": {
+    "row": 493,
+    "group": "15    抠像设置    ·    keying    ",
+    "zh": "提示：关闭抠像开关才能调整抠像幕布颜色",
+    "en": "Tip: Turn off chroma keying before changing the screen color.",
+    "original": "Tip: Turn off the video matting switch to adjust the color of the video matting screen.",
+    "note": "明确先关闭抠像再选幕布颜色。",
+    "status": "changed"
+  },
+  "keying.paramAdjust": {
+    "row": 494,
+    "group": "15    抠像设置    ·    keying    ",
+    "zh": "抠像参数调节",
+    "en": "Parameter Adjustment",
+    "original": "Parameter Adjustment",
+    "note": "",
+    "status": "retained"
+  },
+  "keying.keyingSwitch": {
+    "row": 495,
+    "group": "15    抠像设置    ·    keying    ",
+    "zh": "抠像开关",
+    "en": "Chroma Key",
+    "original": "Video Matting Switch",
+    "note": "开关标签简短，语义明确。",
+    "status": "changed"
+  },
+  "keying.sceneName": {
+    "row": 496,
+    "group": "15    抠像设置    ·    keying    ",
+    "zh": "场景名称",
+    "en": "Scene Name",
+    "original": "Scene Name",
+    "note": "",
+    "status": "retained"
+  },
+  "keying.backgroundImage": {
+    "row": 497,
+    "group": "15    抠像设置    ·    keying    ",
+    "zh": "背景图片",
+    "en": "Background Image",
+    "original": "Background Image",
+    "note": "",
+    "status": "retained"
+  },
+  "keying.uploadImage": {
+    "row": 498,
+    "group": "15    抠像设置    ·    keying    ",
+    "zh": "上传图片",
+    "en": "Upload",
+    "original": "Upload",
+    "note": "",
+    "status": "retained"
+  },
+  "keying.mediaVideo": {
+    "row": 499,
+    "group": "15    抠像设置    ·    keying    ",
+    "zh": "媒体视频",
+    "en": "Media Video",
+    "original": "Media Video",
+    "note": "",
+    "status": "retained"
+  },
+  "keying.mediaVideoPos": {
+    "row": 500,
+    "group": "15    抠像设置    ·    keying    ",
+    "zh": "媒体视频位置",
+    "en": "Media Video Position",
+    "original": "Media Video Pos",
+    "note": "展开不清晰的 Pos。",
+    "status": "changed"
+  },
+  "keying.foregroundVideo": {
+    "row": 501,
+    "group": "15    抠像设置    ·    keying    ",
+    "zh": "前景视频",
+    "en": "Foreground Video",
+    "original": "Foreground Video",
+    "note": "",
+    "status": "retained"
+  },
+  "keying.foregroundVideoPos": {
+    "row": 502,
+    "group": "15    抠像设置    ·    keying    ",
+    "zh": "前景视频位置",
+    "en": "Foreground Position",
+    "original": "Foreground Video Pos",
+    "note": "上下文已明确视频，控制长度。",
+    "status": "changed"
+  },
+  "keying.thresholdRange": {
+    "row": 503,
+    "group": "15    抠像设置    ·    keying    ",
+    "zh": "效果阈值范围",
+    "en": "Threshold Range",
+    "original": "Threshold Range",
+    "note": "",
+    "status": "retained"
+  },
+  "keying.autoAjust": {
+    "row": 504,
+    "group": "15    抠像设置    ·    keying    ",
+    "zh": "自动调节参数",
+    "en": "Auto Adjust",
+    "original": "Auto Ajust",
+    "note": "修正 Ajust 拼写。",
+    "status": "changed"
+  },
+  "keying.linkageMode": {
+    "row": 505,
+    "group": "15    抠像设置    ·    keying    ",
+    "zh": "联动模式",
+    "en": "Linkage Mode",
+    "original": "Linkage Mode",
+    "note": "待确认：联动对象和触发方式未说明，暂不改成同步或自动切换。",
+    "status": "pending"
+  },
+  "keying.deleteTip": {
+    "row": 506,
+    "group": "15    抠像设置    ·    keying    ",
+    "zh": "此操作将永久删除该场景，是否继续？",
+    "en": "This operation will permanently delete the scene. Do you want to continue?",
+    "original": "This operation will permanently delete the scene. Do you want to continue?",
+    "note": "",
+    "status": "retained"
+  },
+  "keying.deleteImageTip": {
+    "row": 507,
+    "group": "15    抠像设置    ·    keying    ",
+    "zh": "此操作将永久删除该图片，是否继续？",
+    "en": "This operation will permanently delete the image. Do you want to continue?",
+    "original": "This operation will permanently delete the image. Do you want to continue?",
+    "note": "",
+    "status": "retained"
+  },
+  "keying.imageFormatTip": {
+    "row": 508,
+    "group": "15    抠像设置    ·    keying    ",
+    "zh": "只支持jpg/png格式的图片",
+    "en": "Only JPG and PNG images are supported.",
+    "original": "Only supports images in jpg/png format.",
+    "note": "修正语法。",
+    "status": "changed"
+  },
+  "keying.imageResolutionTip": {
+    "row": 509,
+    "group": "15    抠像设置    ·    keying    ",
+    "zh": "只支持1920*1080分辨率的图片",
+    "en": "Images must be exactly 1920 × 1080.",
+    "original": "Only supports images with a resolution of 1920*1080.",
+    "note": "保留固定分辨率要求。",
+    "status": "changed"
+  },
+  "keying.sceneNameEmpty": {
+    "row": 510,
+    "group": "15    抠像设置    ·    keying    ",
+    "zh": "场景名称不能为空",
+    "en": "Scene name cannot be empty.",
+    "original": "Scene name cannot be empty.",
+    "note": "",
+    "status": "retained"
+  },
+  "keying.pleaseChooseImage": {
+    "row": 511,
+    "group": "15    抠像设置    ·    keying    ",
+    "zh": "请先选择背景图片",
+    "en": "Please select a background image first.",
+    "original": "Please select a background image first.",
+    "note": "",
+    "status": "retained"
+  },
+  "keying.sceneNameExist": {
+    "row": 512,
+    "group": "15    抠像设置    ·    keying    ",
+    "zh": "场景名称已存在",
+    "en": "Scene name already exists.",
+    "original": "Scene name already exists.",
+    "note": "",
+    "status": "retained"
+  },
+  "keying.sceneNumLimit": {
+    "row": 513,
+    "group": "15    抠像设置    ·    keying    ",
+    "zh": "场景数量达到上限",
+    "en": "The number of scenes has reached the maximum limit.",
+    "original": "The number of scenes has reached the maximum limit.",
+    "note": "",
+    "status": "retained"
+  }
+}

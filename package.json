@@ -20,7 +20,11 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "dev:sl100": "vite --mode sl100 --host 0.0.0.0 --port 5179",
-    "build:sl100": "vite build --mode sl100"
+    "build:sl100": "vite build --mode sl100",
+    "dev:lcs-web-v2": "vite --config vite.lcs-web-v2.config.js",
+    "build:lcs-web-v2": "vite build --config vite.lcs-web-v2.config.js",
+    "preview:lcs-web-v2": "vite preview --config vite.lcs-web-v2.config.js",
+    "check:lcs-web-v2": "node scripts/lcs-web-v2/verify.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.11.0",

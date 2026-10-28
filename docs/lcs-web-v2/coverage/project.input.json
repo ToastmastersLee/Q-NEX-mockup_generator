@@ -1,0 +1,125 @@
+{
+  "project.input.inputSetting": {
+    "status": "changed",
+    "controls": [
+      "common.sidebar.input",
+      "input.pageTitle"
+    ]
+  },
+  "project.input.channel": {
+    "status": "retained",
+    "controls": [
+      "input.colChannelName"
+    ]
+  },
+  "project.input.signalSource": {
+    "status": "changed",
+    "controls": [
+      "input.colSignalSource"
+    ]
+  },
+  "project.input.signalState": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.input.signalResolution": {
+    "status": "changed",
+    "controls": [
+      "input.colResolution"
+    ]
+  },
+  "project.input.signalType": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.input.usbCamera": {
+    "status": "retained",
+    "controls": [
+      "input.usbCam"
+    ]
+  },
+  "project.input.rtspAudioMix": {
+    "status": "retained",
+    "controls": [
+      "input.colRtspAudio"
+    ]
+  },
+  "project.input.rtspOnlyAudioMix": {
+    "status": "retained",
+    "controls": [
+      "input.colDigitalAudioInput"
+    ]
+  },
+  "project.input.IPCsetting": {
+    "status": "changed",
+    "controls": [
+      "input.ipcSearch"
+    ]
+  },
+  "project.input.serialNumber": {
+    "status": "retained",
+    "controls": [
+      "input.colSeq"
+    ]
+  },
+  "project.input.userName": {
+    "status": "pending",
+    "controls": [
+      "input.colName"
+    ]
+  },
+  "project.input.password": {
+    "status": "retained",
+    "controls": [
+      "input.colPassword"
+    ]
+  },
+  "project.input.identify": {
+    "status": "changed",
+    "controls": [
+      "input.colAuth"
+    ]
+  },
+  "project.input.status": {
+    "status": "retained",
+    "controls": [
+      "input.colStatus"
+    ]
+  },
+  "project.input.certified": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.input.notCertified": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.input.dollarSymbol": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.input.authFail": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.input.authSuccess": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.input.rtspAddressError": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.input.rtspOnlyAddressError": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.input.rtspAddressIllegal": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.input.hdmiin3Error": {
+    "status": "changed",
+    "controls": []
+  }
+}

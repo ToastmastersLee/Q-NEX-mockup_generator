@@ -1,0 +1,14 @@
+{
+  "404.notFound": {
+    "status": "retained",
+    "controls": []
+  },
+  "404.info": {
+    "status": "retained",
+    "controls": []
+  },
+  "404.backHome": {
+    "status": "changed",
+    "controls": []
+  }
+}

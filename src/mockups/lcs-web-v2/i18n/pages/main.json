@@ -1,0 +1,142 @@
+{
+  "en": {
+    "status": {
+      "title": "Status",
+      "topic": "Topic",
+      "speaker": "Presenter",
+      "notSet": "Null",
+      "recording": "Recording Settings",
+      "live": "Streaming Settings",
+      "diskSpace": "Disk Capacity",
+      "network": "Network Status",
+      "storage": "External Storage",
+      "storageVal": "Not Connected",
+      "systemTime": "System Time",
+      "networkVal": "Wired Network · Connected (WAN)"
+    },
+    "rec": "REC",
+    "liveCard": "LIVE",
+    "start": "Start",
+    "pause": "Pause",
+    "stop": "Stop",
+    "share": "Share",
+    "overlays": {
+      "subtitle": "Subtitle",
+      "logo": "Logo",
+      "title": "Intro",
+      "trailer": "Outro",
+      "closing": "Off",
+      "osd": "OSD",
+      "opening": "On"
+    },
+    "directorMode": {
+      "title": "Switching Mode",
+      "semiAuto": "Semi-auto",
+      "auto": "Auto",
+      "manual": "Manual"
+    },
+    "ptz": {
+      "title": "PTZ",
+      "speed": "Speed",
+      "slow": "Slow",
+      "quick": "Fast",
+      "zoom": "Zoom",
+      "presets": "Preset",
+      "set": "Set",
+      "apply": "Recall"
+    },
+    "layout": {
+      "title": "Layout"
+    },
+    "transition": {
+      "title": "Transition",
+      "cut": "Cut",
+      "dur05": "0.5s",
+      "dur10": "1.0s",
+      "dur15": "1.5s",
+      "dur20": "2.0s"
+    },
+    "feeds": {
+      "content1": "Content 1",
+      "content2": "Content 2",
+      "teacherClose": "Teacher",
+      "studentClose": "Student",
+      "teacherWide": "Teacher Wide",
+      "studentWide": "Student Wide",
+      "interactive": "Interactive",
+      "ptz": "PTZ"
+    },
+    "programOutput": "Program Output (PGM)",
+    "noSignal": "No Signal"
+  },
+  "zh": {
+    "status": {
+      "title": "状态信息",
+      "topic": "主题",
+      "speaker": "主讲人",
+      "notSet": "Null",
+      "recording": "录像参数",
+      "live": "直播参数",
+      "diskSpace": "磁盘容量",
+      "network": "网络状态",
+      "storage": "移动存储",
+      "storageVal": "未接入外接存储",
+      "systemTime": "系统时间",
+      "networkVal": "有线网络 · 已联网（公网）"
+    },
+    "rec": "录制",
+    "liveCard": "直播",
+    "start": "开始",
+    "pause": "暂停",
+    "stop": "结束",
+    "share": "分享",
+    "overlays": {
+      "subtitle": "字幕",
+      "logo": "台标",
+      "title": "片头",
+      "trailer": "片尾",
+      "closing": "关闭",
+      "osd": "OSD",
+      "opening": "开启"
+    },
+    "directorMode": {
+      "title": "导播模式",
+      "semiAuto": "半自动",
+      "auto": "自动",
+      "manual": "手动"
+    },
+    "ptz": {
+      "title": "云台",
+      "speed": "移动速度",
+      "slow": "慢",
+      "quick": "快",
+      "zoom": "变焦",
+      "presets": "预置位",
+      "set": "设置",
+      "apply": "调用"
+    },
+    "layout": {
+      "title": "布局"
+    },
+    "transition": {
+      "title": "转场",
+      "cut": "直切",
+      "dur05": "0.5秒",
+      "dur10": "1.0秒",
+      "dur15": "1.5秒",
+      "dur20": "2.0秒"
+    },
+    "feeds": {
+      "content1": "电脑",
+      "content2": "电脑2",
+      "teacherClose": "教师",
+      "studentClose": "学生",
+      "teacherWide": "教师全景",
+      "studentWide": "学生全景",
+      "interactive": "互动",
+      "ptz": "PTZ"
+    },
+    "programOutput": "主输出画面 (PGM)",
+    "noSignal": "无信号"
+  }
+}

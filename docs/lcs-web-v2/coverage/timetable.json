@@ -1,0 +1,126 @@
+{
+  "timetable.timetable": {
+    "status": "retained",
+    "controls": []
+  },
+  "timetable.showButton": {
+    "status": "retained",
+    "controls": []
+  },
+  "timetable.importExcel": {
+    "status": "retained",
+    "controls": []
+  },
+  "timetable.exportExcel": {
+    "status": "retained",
+    "controls": []
+  },
+  "timetable.serialNumber": {
+    "status": "retained",
+    "controls": []
+  },
+  "timetable.time": {
+    "status": "retained",
+    "controls": []
+  },
+  "timetable.clearCell": {
+    "status": "retained",
+    "controls": []
+  },
+  "timetable.subject": {
+    "status": "retained",
+    "controls": []
+  },
+  "timetable.teacher": {
+    "status": "retained",
+    "controls": []
+  },
+  "timetable.operation": {
+    "status": "retained",
+    "controls": []
+  },
+  "timetable.insertAbove": {
+    "status": "retained",
+    "controls": []
+  },
+  "timetable.insertBelow": {
+    "status": "retained",
+    "controls": []
+  },
+  "timetable.insert": {
+    "status": "retained",
+    "controls": []
+  },
+  "timetable.sureToDel": {
+    "status": "changed",
+    "controls": []
+  },
+  "timetable.filename": {
+    "status": "retained",
+    "controls": []
+  },
+  "timetable.fileType": {
+    "status": "retained",
+    "controls": []
+  },
+  "timetable.monday": {
+    "status": "retained",
+    "controls": []
+  },
+  "timetable.tuesday": {
+    "status": "retained",
+    "controls": []
+  },
+  "timetable.wednesday": {
+    "status": "retained",
+    "controls": []
+  },
+  "timetable.thursday": {
+    "status": "retained",
+    "controls": []
+  },
+  "timetable.friday": {
+    "status": "retained",
+    "controls": []
+  },
+  "timetable.saturday": {
+    "status": "retained",
+    "controls": []
+  },
+  "timetable.sunday": {
+    "status": "retained",
+    "controls": []
+  },
+  "timetable.headerError": {
+    "status": "retained",
+    "controls": []
+  },
+  "timetable.rowTimeError": {
+    "status": "changed",
+    "controls": []
+  },
+  "timetable.timeOverlap": {
+    "status": "retained",
+    "controls": []
+  },
+  "timetable.storageLimit": {
+    "status": "retained",
+    "controls": []
+  },
+  "timetable.storageLowerLimit": {
+    "status": "retained",
+    "controls": []
+  },
+  "timetable.excelLimit": {
+    "status": "retained",
+    "controls": []
+  },
+  "timetable.checkColumns": {
+    "status": "retained",
+    "controls": []
+  },
+  "timetable.rowTimeFormatError": {
+    "status": "changed",
+    "controls": []
+  }
+}

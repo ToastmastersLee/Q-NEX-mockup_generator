@@ -1,0 +1,7 @@
+/* LCS-Web Settings Aggregator */
+@import './settings/media-overlay.css';
+@import './settings/recording-live.css';
+@import './settings/interaction-broadcast.css';
+@import './settings/storage-platform.css';
+@import './settings/device-control.css';
+@import './settings/admin-system.css';

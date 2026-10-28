@@ -1,0 +1,6 @@
+{
+  "result": "passed",
+  "case": "Architecture publisher preserves independent lcs/ and public README while syncing its existing manifest",
+  "preservedLcsFiles": 7,
+  "networkAndPush": "mocked; no external mutation"
+}

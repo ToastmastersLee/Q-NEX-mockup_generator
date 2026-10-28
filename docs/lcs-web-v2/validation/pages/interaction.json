@@ -1,0 +1,308 @@
+[
+  {
+    "name": "interaction",
+    "width": 1920,
+    "lang": "en",
+    "selects": [
+      {
+        "value": "en",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "ultra",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "film",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "ultra",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "tch",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "ultra",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "stu",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "9",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "0",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "full",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "film",
+        "valid": true,
+        "duplicateValues": []
+      }
+    ],
+    "clippedButtons": [],
+    "chineseInEnglish": [],
+    "brokenImages": [],
+    "documentOverflow": false
+  },
+  {
+    "name": "interaction",
+    "width": 1920,
+    "lang": "zh",
+    "selects": [
+      {
+        "value": "zh",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "ultra",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "film",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "ultra",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "tch",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "ultra",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "stu",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "9",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "0",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "full",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "film",
+        "valid": true,
+        "duplicateValues": []
+      }
+    ],
+    "clippedButtons": [],
+    "chineseInEnglish": [
+      "字幕",
+      "台标",
+      "片头片尾",
+      "设置",
+      "录制设置",
+      "直播设置",
+      "抠像设置",
+      "互动设置",
+      "广播设置",
+      "网络设置",
+      "系统设置",
+      "系统信息",
+      "工程设置",
+      "输入设置",
+      "输出设置",
+      "音频设置",
+      "云台设置",
+      "上传设置",
+      "存储设置",
+      "平台设置"
+    ],
+    "brokenImages": [],
+    "documentOverflow": false
+  },
+  {
+    "name": "interaction",
+    "width": 1366,
+    "lang": "en",
+    "selects": [
+      {
+        "value": "en",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "ultra",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "film",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "ultra",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "tch",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "ultra",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "stu",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "9",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "0",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "full",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "film",
+        "valid": true,
+        "duplicateValues": []
+      }
+    ],
+    "clippedButtons": [],
+    "chineseInEnglish": [],
+    "brokenImages": [],
+    "documentOverflow": false
+  },
+  {
+    "name": "interaction",
+    "width": 1366,
+    "lang": "zh",
+    "selects": [
+      {
+        "value": "zh",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "ultra",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "film",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "ultra",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "tch",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "ultra",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "stu",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "9",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "0",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "full",
+        "valid": true,
+        "duplicateValues": []
+      },
+      {
+        "value": "film",
+        "valid": true,
+        "duplicateValues": []
+      }
+    ],
+    "clippedButtons": [],
+    "chineseInEnglish": [
+      "字幕",
+      "台标",
+      "片头片尾",
+      "设置",
+      "录制设置",
+      "直播设置",
+      "抠像设置",
+      "互动设置",
+      "广播设置",
+      "网络设置",
+      "系统设置",
+      "系统信息",
+      "工程设置",
+      "输入设置",
+      "输出设置",
+      "音频设置",
+      "云台设置",
+      "上传设置",
+      "存储设置",
+      "平台设置"
+    ],
+    "brokenImages": [],
+    "documentOverflow": false
+  }
+]

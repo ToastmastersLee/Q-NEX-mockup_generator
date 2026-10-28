@@ -1,0 +1,42 @@
+{
+  "addMember": {
+    "zh": "添加组成员",
+    "en": "Add Member",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "pluginTip": {
+    "zh": "广播接收插件: setup_broadcast.exe",
+    "en": "Broadcast client plugin: setup_broadcast.exe",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "defaultGroup": {
+    "zh": "默认分组",
+    "en": "Default Group",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "groupAdded": {
+    "zh": "已添加分组",
+    "en": "Group added",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "groupDeleted": {
+    "zh": "已删除分组",
+    "en": "Group deleted",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "memberAdded": {
+    "zh": "已添加组成员",
+    "en": "Member added",
+    "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "broadcastStarted": {
+    "zh": "广播已开始（预览）。",
+    "en": "Broadcast started (preview).",
+    "reason": "现有控件辅助文案，Excel 未覆盖完整提示。"
+  },
+  "broadcastStopped": {
+    "zh": "广播已停止（预览）。",
+    "en": "Broadcast stopped (preview).",
+    "reason": "现有控件辅助文案，Excel 未覆盖完整提示。"
+  }
+}

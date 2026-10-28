@@ -1,0 +1,336 @@
+/* ==========================================================================
+   LCS Web - Recordings Table & Toolbar Styling
+   ========================================================================== */
+.lcs-web-recordings-right {
+  background: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  border: 1px solid #e1e8ed;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.lcs-web-recordings-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-bottom: 1px solid #e2e8f0;
+  background: #ffffff;
+  flex-wrap: wrap;
+}
+
+.lcs-web-search-box-wrap {
+  display: flex;
+  align-items: center;
+  border: 1px solid #cbd5e1;
+  border-radius: 3px;
+  padding: 0 8px;
+  height: 28px;
+  background: #ffffff;
+  width: 140px;
+}
+
+.lcs-web-search-input {
+  border: 0;
+  outline: none;
+  font-size: 11px;
+  width: 100%;
+  color: #334155;
+}
+
+.lcs-web-search-counter {
+  font-size: 10px;
+  color: #94a3b8;
+}
+
+.lcs-web-date-range-box {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid #cbd5e1;
+  border-radius: 3px;
+  padding: 0 8px;
+  height: 28px;
+  background: #ffffff;
+  color: #64748b;
+}
+
+.lcs-web-calendar-icon {
+  color: #94a3b8;
+}
+
+.lcs-web-date-input {
+  border: 0;
+  outline: none;
+  font-size: 11px;
+  width: 60px;
+  color: #334155;
+  text-align: center;
+}
+
+.lcs-web-date-sep {
+  color: #94a3b8;
+}
+
+.lcs-web-btn-search {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 28px;
+  padding: 0 10px;
+  border-radius: 3px;
+  border: 1px solid #90caf9;
+  background: #eaf4ff;
+  color: #1e88e5;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lcs-web-btn-search:hover {
+  background: #dbeafe;
+}
+
+.lcs-web-btn-download {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 28px;
+  padding: 0 10px;
+  border-radius: 3px;
+  border: 1px solid #90caf9;
+  background: #eaf4ff;
+  color: #1e88e5;
+  font-size: 11px;
+  cursor: pointer;
+  margin-left: auto;
+  transition: all 0.2s ease;
+}
+
+.lcs-web-btn-download:hover {
+  background: #dbeafe;
+}
+
+.lcs-web-btn-delete {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 28px;
+  padding: 0 10px;
+  border-radius: 3px;
+  border: 1px solid #fecdd3;
+  background: #fff1f2;
+  color: #e11d48;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lcs-web-btn-delete:hover {
+  background: #fee2e2;
+}
+
+/* Table */
+.lcs-web-table-card {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.lcs-web-recordings-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+
+.lcs-web-recordings-table thead tr {
+  border-bottom: 1px solid #e2e8f0;
+  background: #fafbfc;
+}
+
+.lcs-web-recordings-table th {
+  padding: 8px 6px;
+  text-align: left;
+  color: #334155;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.lcs-web-recordings-table th.th-checkbox,
+.lcs-web-recordings-table td.td-checkbox {
+  width: 30px;
+  text-align: center;
+}
+
+.lcs-web-recordings-table tbody tr {
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.lcs-web-recordings-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.lcs-web-recordings-table tbody tr.row-selected {
+  background: #edf5ff !important;
+}
+
+.lcs-web-recordings-table td {
+  padding: 7px 6px;
+  color: #475569;
+  white-space: nowrap;
+}
+
+.lcs-web-recordings-table td.td-name span {
+  max-width: 90px;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+
+.lcs-web-recordings-table .action-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lcs-web-recordings-table .btn-play-link {
+  background: transparent;
+  border: 0;
+  color: #1e88e5;
+  font-size: 11px;
+  cursor: pointer;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.lcs-web-recordings-table .btn-play-link:hover {
+  text-decoration: underline;
+}
+
+.lcs-web-recordings-table tr.row-selected .btn-play-link.is-playing {
+  color: #22c55e;
+  font-weight: 600;
+}
+
+.lcs-web-play-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #10b981;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.6);
+  animation: pulse-dot 1.5s infinite;
+}
+
+@keyframes pulse-dot {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.8; }
+}
+
+.lcs-web-recordings-table .btn-expand-arrow {
+  background: transparent;
+  border: 0;
+  color: #64748b;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Footer & Pagination */
+.lcs-web-table-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-top: 1px solid #e2e8f0;
+  background: #ffffff;
+  font-size: 11px;
+  color: #475569;
+}
+
+.lcs-web-footer-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.lcs-web-select-all-label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.lcs-web-total-count {
+  color: #64748b;
+}
+
+.lcs-web-pagination {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.lcs-web-page-nav {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  color: #64748b;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+.lcs-web-page-nav:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.lcs-web-page-num {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  color: #475569;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.lcs-web-page-num.is-active {
+  background: #1e88e5;
+  border-color: #1e88e5;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.lcs-web-goto-wrap {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #64748b;
+}
+
+.lcs-web-goto-input {
+  width: 32px;
+  height: 22px;
+  border: 1px solid #cbd5e1;
+  border-radius: 3px;
+  text-align: center;
+  font-size: 11px;
+  color: #334155;
+  outline: none;
+}

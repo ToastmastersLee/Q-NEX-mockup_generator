@@ -1,0 +1,34 @@
+{
+  "login.title": {
+    "status": "changed",
+    "controls": []
+  },
+  "login.logIn": {
+    "status": "changed",
+    "controls": []
+  },
+  "login.username": {
+    "status": "retained",
+    "controls": []
+  },
+  "login.password": {
+    "status": "retained",
+    "controls": []
+  },
+  "login.usernameError": {
+    "status": "changed",
+    "controls": []
+  },
+  "login.passwordError": {
+    "status": "changed",
+    "controls": []
+  },
+  "login.authorizationFailed": {
+    "status": "changed",
+    "controls": []
+  },
+  "login.illegalOperation": {
+    "status": "retained",
+    "controls": []
+  }
+}

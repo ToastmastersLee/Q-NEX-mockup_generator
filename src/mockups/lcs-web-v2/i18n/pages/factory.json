@@ -1,0 +1,34 @@
+{
+  "en": {
+    "pageTitle": "Factory Settings",
+    "restoreDefaults": "Restore Default Settings",
+    "oneClickRestore": "One-Click Recovery",
+    "tipRestore": "Note: The device will automatically reboot after successful restoration.",
+    "configFile": "Config File",
+    "import": "Import",
+    "export": "Export",
+    "noFileSelected": "No Files Selected",
+    "exporting": "Exporting config file, please wait...",
+    "tipConfigFile": "1. The file name must be conf.tar.gz.\n2. Restart after importing.",
+    "cardTitleUi": "Interface Settings",
+    "uiStyle": "Interface Style",
+    "styleDefault": "Default Style",
+    "styleClassic": "Classic Style"
+  },
+  "zh": {
+    "pageTitle": "出厂设置",
+    "restoreDefaults": "恢复默认参数",
+    "oneClickRestore": "一键恢复",
+    "tipRestore": "操作提示：恢复成功之后设备会自动重启。",
+    "configFile": "配置文件",
+    "import": "导入",
+    "export": "导出",
+    "noFileSelected": "未选择任何文件",
+    "exporting": "正在导出配置文件，请稍候...",
+    "tipConfigFile": "1. 上传文件名必须为 conf.tar.gz。\n2. 导入后需要重启。",
+    "cardTitleUi": "界面设置",
+    "uiStyle": "界面风格",
+    "styleDefault": "默认风格",
+    "styleClassic": "经典风格"
+  }
+}

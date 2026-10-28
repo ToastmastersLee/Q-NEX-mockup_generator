@@ -1,0 +1,1046 @@
+{
+  "basic.batchUploadingOfLogos": {
+    "row": 790,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "logo批量上传",
+    "en": "Batch Logo Upload",
+    "original": "Batch uploading of logos",
+    "note": "简短功能标题。",
+    "status": "changed"
+  },
+  "basic.noImageDetected": {
+    "row": 791,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "未检测到图片",
+    "en": "No image detected",
+    "original": "No image detected",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.fileCannotExceed100MB": {
+    "row": 792,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "压缩包不能大于100MB",
+    "en": "The compressed file cannot exceed 100MB",
+    "original": "The compressed file cannot exceed 100MB",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.uploadZip": {
+    "row": 793,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "上传ZIP",
+    "en": "Upload ZIP",
+    "original": "Upload ZIP",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.selectZip": {
+    "row": 794,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "请选择zip文件",
+    "en": "Please select a zip file",
+    "original": "Please select a zip file",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.powerLogo": {
+    "row": 795,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "开机logo",
+    "en": "Boot Logo",
+    "original": "Power Logo",
+    "note": "开机画面的 Logo。",
+    "status": "changed"
+  },
+  "basic.upgrading": {
+    "row": 796,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "升级中",
+    "en": "Upgrading",
+    "original": "Upgrading",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.note": {
+    "row": 797,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "注意事项：",
+    "en": "Note: ",
+    "original": "Note: ",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.powerLogoTip1": {
+    "row": 798,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "1）开机logo文件名只能是powerOnLogo.jpg； 2）图片分辨率必须是1280x720/1920x1080； 3）图片大小不大于2MB；",
+    "en": "1) The boot logo file name can only be powerOnLogo.jpg; 2) The image resolution must be 1280x720/1920x1080; 3) The image size should not exceed 2MB;",
+    "original": "1) The boot logo file name can only be powerOnLogo.jpg; 2) The image resolution must be 1280x720/1920x1080; 3) The image size should not exceed 2MB;",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.powerLogoTip2": {
+    "row": 799,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "4）设置成功后重启后生效。",
+    "en": "4) After successful setup, it will take effect after restarting.",
+    "original": "4) After successful setup, it will take effect after restarting.",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.mainLogo": {
+    "row": 800,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "主页logo",
+    "en": "Main Logo",
+    "original": "Main Logo",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.restore": {
+    "row": 801,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "还原",
+    "en": "Restore",
+    "original": "Restore",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.mainLogoNote": {
+    "row": 802,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "注意事项：1）图片大小不大于2MB； 2）图片宽180，高度不能大于50； 3）主页logo文件名只能是mainLogo。",
+    "en": "Note: 1) The image size should not exceed 2MB; 2) The image width is 180 and the height cannot exceed 50; 3) The file name for the homepage logo can only be mainLogo.",
+    "original": "Note: 1) The image size should not exceed 2MB; 2) The image width is 180 and the height cannot exceed 50; 3) The file name for the homepage logo can only be mainLogo.",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.loginLogo": {
+    "row": 803,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "登录页logo",
+    "en": "Login Logo",
+    "original": "Login Logo",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.loginLogoNote": {
+    "row": 804,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "注意事项：1）图片大小不大于2MB；2）图片宽300，高度不能大于150； 3）登录页logo文件名只能是loginLogo。",
+    "en": "Note: 1) The image size should not exceed 2MB; 2) The image width is 300 and the height cannot exceed 150; 3) The login page logo file name can only be loginLogo.",
+    "original": "Note: 1) The image size should not exceed 2MB; 2) The image width is 300 and the height cannot exceed 150; 3) The login page logo file name can only be loginLogo.",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.loginBg": {
+    "row": 805,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "登录页背景图片",
+    "en": "Login Background Image",
+    "original": "Login Background Image",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.loginBgNote": {
+    "row": 806,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "注意事项：1）图片大小不大于2MB； 2）登录页背景图片文件名只能是loginbg。",
+    "en": "Note: 1) The image size should not exceed 2MB; 2) The file name for the background image of the login page can only be loginbg.",
+    "original": "Note: 1) The image size should not exceed 2MB; 2) The file name for the background image of the login page can only be loginbg.",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.liveBg": {
+    "row": 807,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "直播页背景图片",
+    "en": "Streaming Page Background",
+    "original": "Background image of live streaming page",
+    "note": "简短字段标题。",
+    "status": "changed"
+  },
+  "basic.liveBgNote": {
+    "row": 808,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "注意事项：1）图片大小不大于2MB； 2）登录页背景图片文件名只能是livebg.png。",
+    "en": "Note: 1) The image must not exceed 2MB; 2) Its file name must be livebg.png.",
+    "original": "Note: 1) The image size should not exceed 2MB; 2) The file name for the background image on the login page can only be livebg. png.",
+    "note": "修复文件名多余空格；避免中文误写“登录页”。",
+    "status": "changed"
+  },
+  "basic.favicon": {
+    "row": 809,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "网站图标",
+    "en": "Favicon",
+    "original": "Favicon",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.faviconNote": {
+    "row": 810,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "注意事项：1）图片大小不大于2MB； 2）网站图标文件名只能是favicon.png。",
+    "en": "Note: 1) The image size should not exceed 2MB; 2) The website icon file name can only be favicon.png.",
+    "original": "Note: 1) The image size should not exceed 2MB; 2) The website icon file name can only be favicon.png.",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.localLoginLogo": {
+    "row": 811,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "本地登录页logo",
+    "en": "Local login logo",
+    "original": "Local login logo",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.localLoginLogoNote": {
+    "row": 812,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "注意事项：1）图片大小不大于2MB；2）图片分辨率必须是40x28； 3）本地登录页logo文件名只能是localLoginLogo.png。4）重启后生效。",
+    "en": "Note: 1) The image size should not exceed 2MB; 2) The image resolution must be 40x28; 3) The file name for the local login page logo can only be localLoginLogo.png. 4) It will take effect after restarting.",
+    "original": "Note: 1) The image size should not exceed 2MB; 2) The image resolution must be 40x28; 3) The file name for the local login page logo can only be localLoginLogo.png. 4) It will take effect after restarting.",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.localMainLogo": {
+    "row": 813,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "本地主页logo",
+    "en": "Local main logo",
+    "original": "Local main logo",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.localMainLogoNote1": {
+    "row": 814,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "注意事项：1）图片大小不大于2MB；2）图片分辨率必须是40x28； 3）本地主页logo文件名只能是localMainLogo.png。4）重启后生效。",
+    "en": "Note: 1) The image size should not exceed 2MB; 2) The image resolution must be 40x28; 3) The file name for the local homepage logo can only be localMainLogo.png. 4) It will take effect after restarting.",
+    "original": "Note: 1) The image size should not exceed 2MB; 2) The image resolution must be 40x28; 3) The file name for the local homepage logo can only be localMainLogo.png. 4) It will take effect after restarting.",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.localMainLogoNote2": {
+    "row": 815,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "注意事项：1）图片大小不大于2MB；2）本地主页logo文件名只能是localMainLogo.png。3）重启后生效。",
+    "en": "Note: 1) The image size should not exceed 2MB; 2) The file name for the local homepage logo can only be localMainLogo.png. 3) It will take effect after restarting.",
+    "original": "Note: 1) The image size should not exceed 2MB; 2) The file name for the local homepage logo can only be localMainLogo.png. 3) It will take effect after restarting.",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.layoutbg": {
+    "row": 816,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "布局背景",
+    "en": "Layout background",
+    "original": "Layout background",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.layoutbgNote": {
+    "row": 817,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "注意事项：只支持24bit和32bit png格式、分辨率等于1920*1080图片。",
+    "en": "Note: Only 24-bit or 32-bit PNG images at 1920 × 1080 are supported.",
+    "original": "Note: Only supports 24 bit and 32-bit PNG formats, with a resolution equal to 1920 * 1080 images.",
+    "note": "保留位深和固定分辨率要求。",
+    "status": "changed"
+  },
+  "basic.backgroundColor": {
+    "row": 818,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "背景颜色",
+    "en": "Background Color",
+    "original": "Background Color",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.enterTheColor": {
+    "row": 819,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "输入色号",
+    "en": "Enter color code",
+    "original": "Enter color code",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.functionAreaColor": {
+    "row": 820,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "功能区颜色",
+    "en": "Function Area Color",
+    "original": "Color of functional area",
+    "note": "简化字段，不限定为工具栏。",
+    "status": "changed"
+  },
+  "basic.hostLanguage": {
+    "row": 821,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "主机语言",
+    "en": "Device Language",
+    "original": "Host Language",
+    "note": "主机指设备，不是网络主机。",
+    "status": "changed"
+  },
+  "basic.hostLanguageNote": {
+    "row": 822,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "操作提示：此操作会按照设置的语言将所有配置项初始化，请按照本地页面支持的语言设置",
+    "en": "Note: This operation will initialize all configuration items according to the set language. Please set them according to the language supported by the local page.",
+    "original": "Note: This operation will initialize all configuration items according to the set language. Please set them according to the language supported by the local page.",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.hostModel": {
+    "row": 823,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "主机型号",
+    "en": "Device Model",
+    "original": "Host Model",
+    "note": "与系统信息页统一。",
+    "status": "changed"
+  },
+  "basic.directorPageMode": {
+    "row": 824,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "导播页面模式",
+    "en": "Director page mode",
+    "original": "Director page mode",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.pageWordMode": {
+    "row": 825,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "页面字眼模式",
+    "en": "UI Terminology",
+    "original": "Page Word Mode",
+    "note": "教育／非教育界面词汇方案。",
+    "status": "changed"
+  },
+  "basic.networkPortIsolation": {
+    "row": 826,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "摄像机网口隔离",
+    "en": "Camera Port Isolation",
+    "original": "Network port isolation",
+    "note": "补齐摄像机端口语境。",
+    "status": "changed"
+  },
+  "basic.cloudCamera": {
+    "row": 827,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "4K云镜摄像机",
+    "en": "4K Cloud Camera",
+    "original": "4K Cloud Camera",
+    "note": "待确认：“云镜”是电子云台 ePTZ 还是机械 PTZ？不应直接译为云服务摄像机。",
+    "status": "pending"
+  },
+  "basic.wakeupMode": {
+    "row": 828,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "唤醒模式",
+    "en": "Wake up mode",
+    "original": "Wake up mode",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.ftpTransferMode": {
+    "row": 829,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "FTP传输模式",
+    "en": "FTP transfer mode",
+    "original": "FTP transfer mode",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.hdmiMode": {
+    "row": 830,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "HDMI Out展频",
+    "en": "HDMI Out Spread Spectrum",
+    "original": "HDMI Out Spread Spectrum",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.hdmi4kOut": {
+    "row": 831,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "HDMI 4K输出",
+    "en": "HDMI 4K output",
+    "original": "HDMI 4K output",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.hdmi4kOutNote": {
+    "row": 832,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "注意事项：开启此功能会影响设备部分功能使用，非必要情况请关闭",
+    "en": "Note: Enabling this feature will affect the use of some device functions. Please turn it off unless necessary.",
+    "original": "Note: Enabling this feature will affect the use of some device functions. Please turn it off unless necessary.",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.liveLimit": {
+    "row": 833,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "直播通道数量限制",
+    "en": "Streaming Channel Limit",
+    "original": "Limit on the number of live streaming channels",
+    "note": "压缩冗长标签。",
+    "status": "changed"
+  },
+  "basic.recordLimit": {
+    "row": 834,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "录像通道数量限制",
+    "en": "Recording Channel Limit",
+    "original": "Limit on the number of recording channels",
+    "note": "压缩冗长标签。",
+    "status": "changed"
+  },
+  "basic.recordMixEnable": {
+    "row": 835,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "录制混音开关",
+    "en": "Recording Mix",
+    "original": "Recording mixing switch",
+    "note": "开关标签无需 Switch。",
+    "status": "changed"
+  },
+  "basic.is4KModeEnable": {
+    "row": 836,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "4K录制模式开关",
+    "en": "4K Recording Mode",
+    "original": "4K recording mode switch",
+    "note": "开关标签无需 Switch。",
+    "status": "changed"
+  },
+  "basic.is4KModeEnableNote": {
+    "row": 837,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "注意事项：1）开启4K模式，会影响精品设备性能，录制、直播同时支持开启的通道数量会减少；2）重启后生效。",
+    "en": "Note: 1) Enabling 4K mode affects device performance and reduces the number of simultaneous recording and streaming channels; 2) Restart the device to apply changes.",
+    "original": "Note: 1) Enabling 4K mode will affect the performance of high-quality devices, and the number of channels supported for both recording and live streaming will be reduced; 2) It will take effect after restarting.",
+    "note": "不把产品类别“精品”误译为画质承诺。",
+    "status": "changed"
+  },
+  "basic.voiceToSubtitle": {
+    "row": 838,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "实时语音转字幕",
+    "en": "Live Captions",
+    "original": "Voice to subtitle conversion",
+    "note": "实时语音转字幕的简短功能名。",
+    "status": "changed"
+  },
+  "basic.videoCopyToUdisk": {
+    "row": 839,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "录像拷贝到U盘",
+    "en": "Copy Recordings to USB Drive",
+    "original": "Copy the video to a Udisk",
+    "note": "Udisk 不是自然英文。",
+    "status": "changed"
+  },
+  "basic.rtspCollectCache": {
+    "row": 840,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "RTSP采集缓存",
+    "en": "RTSP Input Buffer",
+    "original": "RTSP collection cache",
+    "note": "采集缓存使用 Input Buffer。",
+    "status": "changed"
+  },
+  "basic.hdmiin3PhaseCalibration": {
+    "row": 841,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "HDMIIN3相位校准",
+    "en": "HDMIIN3 phase calibration",
+    "original": "HDMIIN3 phase calibration",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.net2uartEnable": {
+    "row": 842,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "AEC串口通讯",
+    "en": "AEC serial communication",
+    "original": "AEC serial communication",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.screenWakeupMode": {
+    "row": 843,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "熄屏唤醒方式",
+    "en": "Screen Wake Method",
+    "original": "Screen off wake-up",
+    "note": "明确熄屏后的唤醒方式。",
+    "status": "changed"
+  },
+  "basic.pleaseMultiSelect": {
+    "row": 844,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "请选择（支持多选）",
+    "en": "Please select (supports multiple selections)",
+    "original": "Please select (supports multiple selections)",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.screenWakeupModeNote": {
+    "row": 845,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "操作提示：熄屏唤醒只对带屏幕设备有效（支持多选）",
+    "en": "Note: Screen off wake-up is only valid for devices with screens (supports multiple selections)",
+    "original": "Note: Screen off wake-up is only valid for devices with screens (supports multiple selections)",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.channelNameSetting": {
+    "row": 846,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "通道名称设置",
+    "en": "Channel Names",
+    "original": "Channel name setting",
+    "note": "简短设置标题。",
+    "status": "changed"
+  },
+  "basic.restoreDefault": {
+    "row": 847,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "恢复默认",
+    "en": "Restore Defaults",
+    "original": "Restore",
+    "note": "明确恢复默认配置。",
+    "status": "changed"
+  },
+  "basic.active": {
+    "row": 848,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "主动",
+    "en": "Active",
+    "original": "Active",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.passive": {
+    "row": 849,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "被动",
+    "en": "Passive",
+    "original": "Passive",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.tcpService": {
+    "row": 850,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "TCP服务",
+    "en": "TCP Service",
+    "original": "TCP Service",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.tcpCentralControl": {
+    "row": 851,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "TCP集控",
+    "en": "TCP Central Control",
+    "original": "TCP Central Control",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.localUdp": {
+    "row": 852,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "本地UDP",
+    "en": "Local UDP",
+    "original": "Local UDP",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.education": {
+    "row": 853,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "教育",
+    "en": "Education",
+    "original": "Education",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.nonEducation": {
+    "row": 854,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "非教育",
+    "en": "Non Education",
+    "original": "Non Education",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.touchWakeup": {
+    "row": 855,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "触摸唤醒",
+    "en": "Touch Wakeup",
+    "original": "Touch Wakeup",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.mouseWakeup": {
+    "row": 856,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "鼠标唤醒",
+    "en": "Mouse Wakeup",
+    "original": "Mouse Wakeup",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.keyboardWakeup": {
+    "row": 857,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "键盘唤醒",
+    "en": "Keyboard Wakeup",
+    "original": "Keyboard Wakeup",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.screenCalibration": {
+    "row": 858,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "屏幕触摸校准",
+    "en": "Touchscreen Calibration",
+    "original": "Screen Calibration",
+    "note": "校准触摸屏，不是普通显示屏。",
+    "status": "changed"
+  },
+  "basic.startCalibration": {
+    "row": 859,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "开始校准",
+    "en": "Start Calibration",
+    "original": "Start Calibration",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.calibrationSuccess": {
+    "row": 860,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "校准成功",
+    "en": "Calibration successful",
+    "original": "Calibration successful",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.calibrationFailed": {
+    "row": 861,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "校准失败",
+    "en": "Calibration failed",
+    "original": "Calibration failed",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.notFindTouchDev": {
+    "row": 862,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "未找到触摸设备",
+    "en": "Touch device not found",
+    "original": "Touch device not found",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.screenCalibrationNote": {
+    "row": 863,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "操作提示：1）屏幕触摸校准只对带屏幕设备有效；2）熄屏状态下无法校准；3）点击开始校准按钮后，在触摸屏上按提示顺序依次点击5次校准图标进行校准，校准完成设备自动重启。",
+    "en": "Operation tip: 1) Screen touch calibration is only valid for devices with screens; 2) Unable to calibrate when the screen is turned off; 3) After clicking the start calibration button, click the calibration icon 5 times in the order prompted on the touch screen to calibrate. The device will automatically restart after calibration is completed.",
+    "original": "Operation tip: 1) Screen touch calibration is only valid for devices with screens; 2) Unable to calibrate when the screen is turned off; 3) After clicking the start calibration button, click the calibration icon 5 times in the order prompted on the touch screen to calibrate. The device will automatically restart after calibration is completed.",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.imageNameHasChinese": {
+    "row": 864,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "图片名称不能含有中文字符",
+    "en": "The image name cannot contain Chinese characters.",
+    "original": "The image name cannot contain Chinese characters.",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.imageNameHasIllegal": {
+    "row": 865,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "图片名称含有非法字符",
+    "en": "The image name contains illegal characters.",
+    "original": "The image name contains illegal characters.",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.imageNoMoreThan2M": {
+    "row": 866,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "上传图片大于2MB，请重新上传",
+    "en": "Image exceeds 2MB. Upload a smaller image.",
+    "original": "Upload image larger than 2MB, please upload again.",
+    "note": "原文语法错误，明确大小限制。",
+    "status": "changed"
+  },
+  "basic.selectPng": {
+    "row": 867,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "请选择png图片",
+    "en": "Please select PNG image.",
+    "original": "Please select PNG image.",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.onlyPowerOnLogo": {
+    "row": 868,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "开机logo文件名只能是powerOnLogo.jpg",
+    "en": "The boot logo file name can only be powerOnLogo.jpg",
+    "original": "The boot logo file name can only be powerOnLogo.jpg",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.onlyMainLogo": {
+    "row": 869,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "主页logo文件名只能是mainLogo",
+    "en": "The file name for the homepage logo can only be mainLogo.",
+    "original": "The file name for the homepage logo can only be mainLogo.",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.onlyLoginLogo": {
+    "row": 870,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "登录页logo文件名只能是loginLogo",
+    "en": "The login page logo file name can only be loginLogo.",
+    "original": "The login page logo file name can only be loginLogo.",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.onlyLoginbg": {
+    "row": 871,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "登录页背景图片文件名只能是loginbg",
+    "en": "Login page background image file name can only be loginbg.",
+    "original": "Login page background image file name can only be loginbg.",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.onlyLivebg": {
+    "row": 872,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "直播页背景图片文件名只能是livebg.png",
+    "en": "The file name of the background image on the live streaming page can only be livebg.png",
+    "original": "The file name of the background image on the live streaming page can only be livebg.png",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.onlyFavicon": {
+    "row": 873,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "网站图标文件名只能是favicon.png",
+    "en": "The favicon file name can only be favicon.png.",
+    "original": "The favicon file name can only be favicon.png.",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.onlyLocalLoginLogo": {
+    "row": 874,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "本地登录页logo文件名只能是localLoginLogo.png",
+    "en": "The local login logo file name must be localLoginLogo.png.",
+    "original": "The file name for the local login page logo can only be localLogin Logo.png.",
+    "note": "修复文件名中的错误空格。",
+    "status": "changed"
+  },
+  "basic.onlyLocalMainLogo": {
+    "row": 875,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "本地主页logo文件名只能是localMainLogo.png",
+    "en": "The file name for the local homepage logo can only be localMainLogo.png.",
+    "original": "The file name for the local homepage logo can only be localMainLogo.png.",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.imageSizeNotMatch": {
+    "row": 876,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "上传图片尺寸不符合，请重新上传",
+    "en": "The uploaded image size does not match, please upload again.",
+    "original": "The uploaded image size does not match, please upload again.",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.imageUploadSuccessConfirm": {
+    "row": 877,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "图片上传成功，点击确认替换原图片",
+    "en": "Image uploaded successfully, click confirm to replace the original image.",
+    "original": "Image uploaded successfully, click confirm to replace the original image.",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.imageUploadSuccess": {
+    "row": 878,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "图片上传成功",
+    "en": "Image uploaded successfully.",
+    "original": "Image uploaded successfully.",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.imageUploadSuccessRestart": {
+    "row": 879,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "图片上传成功，重启后生效",
+    "en": "Image uploaded successfully, takes effect after restart.",
+    "original": "Image uploaded successfully, takes effect after restart.",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.imageUploadFailed": {
+    "row": 880,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "图片上传失败",
+    "en": "Image upload failed.",
+    "original": "Image upload failed.",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.selectJpg": {
+    "row": 881,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "请选择jpg图片",
+    "en": "Please select JPG image.",
+    "original": "Please select JPG image.",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.setFailedErrorCode": {
+    "row": 882,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "设置失败，错误码：",
+    "en": "Setting failed, error code: ",
+    "original": "Setting failed, error code: ",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.restoreSuccess": {
+    "row": 883,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "还原成功",
+    "en": "Restore successful.",
+    "original": "Restore successful.",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.restoreFailed": {
+    "row": 884,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "还原失败",
+    "en": "Restore failed.",
+    "original": "Restore failed.",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.serverModelHasIllegal": {
+    "row": 885,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "主机型号含有非法字符，请检查后重试",
+    "en": "The host model contains illegal characters, please check and try again.",
+    "original": "The host model contains illegal characters, please check and try again.",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.aiAnalysisKey": {
+    "row": 886,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "AI分析密钥",
+    "en": "AI analysis key",
+    "original": "AI analysis key",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.inputChannelName": {
+    "row": 887,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "请输入至少一个通道名称",
+    "en": "Please enter at least one channel name.",
+    "original": "Please enter at least one channel name.",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.channelNameHasIllegal": {
+    "row": 888,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "当前设置的通道名称含有非法字符，请检查后重试",
+    "en": "The channel name currently set contains illegal characters. Please check and try again.",
+    "original": "The channel name currently set contains illegal characters. Please check and try again.",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.restoreDefaultSuccess": {
+    "row": 889,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "恢复默认成功，重启后生效",
+    "en": "Defaults restored. Restart the device to apply them.",
+    "original": "Restore to default successful, takes effect after restart.",
+    "note": "保留重启生效条件。",
+    "status": "changed"
+  },
+  "basic.restoreDefaultFailed": {
+    "row": 890,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "恢复默认失败",
+    "en": "Failed to restore defaults.",
+    "original": "Restore default failed.",
+    "note": "修正语法。",
+    "status": "changed"
+  },
+  "basic.channelDisplaySetting": {
+    "row": 891,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "通道显示设置",
+    "en": "Channel display settings",
+    "original": "Channel display settings",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.show": {
+    "row": 892,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "显示",
+    "en": "show",
+    "original": "show",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.hide": {
+    "row": 893,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "隐藏",
+    "en": "Hide",
+    "original": "hidden",
+    "note": "与显示操作对应的动词。",
+    "status": "changed"
+  },
+  "basic.displayAtLeastOne": {
+    "row": 894,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "至少显示一个通道",
+    "en": "Display at least one channel",
+    "original": "Display at least one channel",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.hideTip1": {
+    "row": 895,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "隐藏的通道已在互动设置中使用，请先关闭互动",
+    "en": "This channel is used by the interactive session. End the session before hiding it.",
+    "original": "The hidden channel has been used in the interactive settings. Please close the interaction first",
+    "note": "明确隐藏前的限制条件。",
+    "status": "changed"
+  },
+  "basic.hideTip2": {
+    "row": 896,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "互动设置输出通道已被修改为默认值，是否跳转至互动设置页面？",
+    "en": "The output channel for interactive settings has been changed to its default value. Do you want to redirect to the interactive settings page?",
+    "original": "The output channel for interactive settings has been changed to its default value. Do you want to redirect to the interactive settings page?",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.developerTools": {
+    "row": 897,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "开发人员工具",
+    "en": "Developer Tools",
+    "original": "Developer Tools",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.requestParams": {
+    "row": 898,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "请求参数",
+    "en": "Request Parameters",
+    "original": "Request Parameters",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.runAndDebug": {
+    "row": 899,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "运行调试",
+    "en": "Run and Debug",
+    "original": "Run and Debug",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.audioSetting": {
+    "row": 900,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "音频设置",
+    "en": "Audio Settings",
+    "original": "Audio Settings",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.hisiPlayer": {
+    "row": 901,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "海思播放设备",
+    "en": "HiSilicon Playback Device",
+    "original": "Hisi Playback Device",
+    "note": "海思品牌英文名称。",
+    "status": "changed"
+  },
+  "basic.recorderIn": {
+    "row": 902,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "录制声音输入设置",
+    "en": "Recording Audio Input Settings",
+    "original": "Recording Audio Input Settings",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.intacterIn": {
+    "row": 903,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "互动声音输入设置",
+    "en": "Interactive Audio Input Settings",
+    "original": "Interactive Audio Input Settings",
+    "note": "",
+    "status": "retained"
+  },
+  "basic.pageFlipping": {
+    "row": 904,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "硬件接口交换",
+    "en": "Swap Hardware Inputs",
+    "original": "Hardware interface exchange",
+    "note": "交换输入映射的短标签。",
+    "status": "changed"
+  },
+  "basic.pageFlippingTip": {
+    "row": 905,
+    "group": "21    工程设置>出厂设置>工厂设置    ·    basic    ｜    130 条",
+    "zh": "操作提示：1)鼠标拖动一个画面到另一个画面上完成对应通道硬件接口交换；2)设置成功后重启生效。",
+    "en": "Tip: 1) Drag one video tile onto another to swap their hardware input assignments; 2) Restart the device to apply changes.",
+    "original": "Operation prompt: 1) Drag the mouse from one screen to another to complete the corresponding channel hardware interface exchange; 2) After successful setup, restart to take effect.",
+    "note": "明确交换的是接口映射，保留重启要求。",
+    "status": "changed"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "base": "http://127.0.0.1:4180/customer-preview/",
+  "errors": [],
+  "missing": [],
+  "externalRequests": [],
+  "scenarios": [
+    "HDMI 1/2 display tabs, four sliders, audio dialogs; locale selection stability",
+    "Six font options; Static/Scroll Left/Scroll Right; custom text survives locale switch",
+    "Both tracking protocols include Protocol 4 and preserve selection",
+    "Scheduled upload fields and minimum duration; long upload option; locale preserves input",
+    "Add User validation and local insertion; Online Details and Update Password dialogs",
+    "Chroma Key scene editor; Blue/Green choices; disable color change while keying is on",
+    "Menu URL synchronization, reload and browser Back"
+  ],
+  "views": 112,
+  "issueViews": []
+}

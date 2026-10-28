@@ -1,0 +1,210 @@
+{
+  "project.storage.storageSetting": {
+    "status": "changed",
+    "controls": [
+      "common.sidebar.storage",
+      "storage.pageTitle"
+    ]
+  },
+  "project.storage.tip1": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.storage.tip2": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.storage.storagePath": {
+    "status": "retained",
+    "controls": [
+      "storage.subcardPath",
+      "storage.storagePath"
+    ]
+  },
+  "project.storage.choosePath": {
+    "status": "retained",
+    "controls": [
+      "storage.pathSelect"
+    ]
+  },
+  "project.storage.network": {
+    "status": "retained",
+    "controls": [
+      "storage.network"
+    ]
+  },
+  "project.storage.networkPathTip": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.storage.notOpen": {
+    "status": "changed",
+    "controls": [
+      "storage.unopened"
+    ]
+  },
+  "project.storage.opening": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.storage.openFailed": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.storage.opened": {
+    "status": "changed",
+    "controls": [
+      "storage.opened"
+    ]
+  },
+  "project.storage.networkStorage": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.storage.localStorage": {
+    "status": "retained",
+    "controls": [
+      "storage.localStorage"
+    ]
+  },
+  "project.storage.networkPath": {
+    "status": "retained",
+    "controls": [
+      "storage.networkPath"
+    ]
+  },
+  "project.storage.userName": {
+    "status": "changed",
+    "controls": [
+      "storage.username"
+    ]
+  },
+  "project.storage.password": {
+    "status": "retained",
+    "controls": [
+      "storage.password"
+    ]
+  },
+  "project.storage.local": {
+    "status": "retained",
+    "controls": [
+      "storage.local"
+    ]
+  },
+  "project.storage.storageType": {
+    "status": "retained",
+    "controls": [
+      "storage.subcardType"
+    ]
+  },
+  "project.storage.storageName": {
+    "status": "retained",
+    "controls": [
+      "storage.colStorageName"
+    ]
+  },
+  "project.storage.capacity": {
+    "status": "retained",
+    "controls": [
+      "storage.colTotalCap"
+    ]
+  },
+  "project.storage.used": {
+    "status": "retained",
+    "controls": [
+      "storage.colUsedCap"
+    ]
+  },
+  "project.storage.free": {
+    "status": "retained",
+    "controls": [
+      "storage.colAvailCap"
+    ]
+  },
+  "project.storage.state": {
+    "status": "retained",
+    "controls": [
+      "storage.colStatus"
+    ]
+  },
+  "project.storage.good": {
+    "status": "changed",
+    "controls": [
+      "storage.normal"
+    ]
+  },
+  "project.storage.bad": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.storage.operation": {
+    "status": "changed",
+    "controls": [
+      "storage.colAction"
+    ]
+  },
+  "project.storage.partAndFormat": {
+    "status": "retained",
+    "controls": [
+      "storage.format"
+    ]
+  },
+  "project.storage.operationParted": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.storage.rebootOrNot": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.storage.localPath": {
+    "status": "retained",
+    "controls": [
+      "storage.localPath"
+    ]
+  },
+  "project.storage.deletePriority": {
+    "status": "changed",
+    "controls": [
+      "storage.deleteFirst"
+    ]
+  },
+  "project.storage.stopPriority": {
+    "status": "changed",
+    "controls": [
+      "storage.stopFirst"
+    ]
+  },
+  "project.storage.setRecordStrategySuccess": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.storage.remotePathEmpty": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.storage.remotePathError": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.storage.remotePathIllegal": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.storage.userNameIllegal": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.storage.passwordIllegal": {
+    "status": "retained",
+    "controls": []
+  },
+  "project.storage.closeRecordLiveInteractive": {
+    "status": "changed",
+    "controls": []
+  },
+  "project.storage.cancelPartAndFormat": {
+    "status": "retained",
+    "controls": []
+  }
+}

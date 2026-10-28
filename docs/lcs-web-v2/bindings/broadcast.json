@@ -1,0 +1,21 @@
+{
+  "pageTitle": "broadcast.broadcastSetting",
+  "cardTitleGroup": "broadcast.groupManagement",
+  "addGroup": "broadcast.addGroup",
+  "groupName": "broadcast.groupName",
+  "deleteGroup": "broadcast.delGroup",
+  "selectGroup": "broadcast.pleaseSelectGroup",
+  "memberName": "broadcast.name",
+  "ipAddress": "broadcast.IP",
+  "listHeader": "broadcast.list",
+  "selectAll": "parameter.selectAll",
+  "selectedHeader": "broadcast.selected",
+  "startBroadcast": "broadcast.startBroadcast",
+  "start": "broadcast.start",
+  "stop": "broadcast.stop",
+  "add": "broadcast.add",
+  "delete": "parameter.delete",
+  "download": "parameter.download",
+  "groupLabel": "broadcast.group",
+  "select": "basic.pleaseMultiSelect"
+}

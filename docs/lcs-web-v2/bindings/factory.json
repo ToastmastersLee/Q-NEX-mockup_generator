@@ -1,0 +1,11 @@
+{
+  "pageTitle": "project.factory.factorySetting",
+  "restoreDefaults": "project.factory.restoreDefaultParam",
+  "oneClickRestore": "project.factory.oneKeyRecovery",
+  "tipRestore": "project.factory.restoreDefaultParamTip",
+  "configFile": "project.factory.configFile",
+  "import": "project.factory.import",
+  "export": "project.factory.export",
+  "noFileSelected": "parameter.noFilesSelected",
+  "exporting": "project.factory.exporting"
+}

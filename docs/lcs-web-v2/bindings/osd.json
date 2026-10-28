@@ -1,0 +1,15 @@
+{
+  "pageTitle": "osd.osdSetting",
+  "color": "osd.color",
+  "displayContent": "osd.type",
+  "contentDateTime": "osd.dateTime",
+  "contentDate": "osd.date",
+  "contentTime": "osd.time",
+  "displayPosition": "osd.osdPosition",
+  "tipTitle": "parameter.tip",
+  "tip1": "osd.tip1",
+  "ok": "parameter.ok",
+  "colorBlack": "subtitle.Black",
+  "colorWhite": "subtitle.White",
+  "osdSaved": "parameter.setSuccess"
+}
