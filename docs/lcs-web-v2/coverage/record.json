@@ -207,90 +207,106 @@
   "record.noSegment": {
     "status": "changed",
     "controls": [
-      "record.noSegment"
+      "record.noSegment",
+      "record.device.Nosegment"
     ]
   },
   "record.tenMinutes": {
     "status": "retained",
     "controls": [
-      "record.min10"
+      "record.min10",
+      "record.device.10min"
     ]
   },
   "record.fifteenMinutes": {
     "status": "retained",
     "controls": [
-      "record.min15"
+      "record.min15",
+      "record.device.15min"
     ]
   },
   "record.twentyMinutes": {
     "status": "retained",
     "controls": [
-      "record.min20"
+      "record.min20",
+      "record.device.20min"
     ]
   },
   "record.thirtyMinutes": {
     "status": "retained",
     "controls": [
-      "record.min30"
+      "record.min30",
+      "record.device.30min"
     ]
   },
   "record.fortyFiveMinutes": {
     "status": "retained",
     "controls": [
-      "record.min45"
+      "record.min45",
+      "record.device.45min"
     ]
   },
   "record.oneHour": {
     "status": "changed",
     "controls": [
-      "record.hour1"
+      "record.hour1",
+      "record.device.1hour"
     ]
   },
   "record.twoHours": {
     "status": "changed",
     "controls": [
-      "record.hour2"
+      "record.hour2",
+      "record.device.2hours"
     ]
   },
   "record.fourHours": {
     "status": "changed",
     "controls": [
-      "record.hours4"
+      "record.hours4",
+      "record.device.4hours"
     ]
   },
   "record.sixHours": {
     "status": "changed",
     "controls": [
-      "record.hours6"
+      "record.hours6",
+      "record.device.6hours"
     ]
   },
   "record.eightHours": {
     "status": "changed",
     "controls": [
-      "record.hours8"
+      "record.hours8",
+      "record.device.8hours"
     ]
   },
   "record.tenHours": {
     "status": "changed",
     "controls": [
-      "record.hours10"
+      "record.hours10",
+      "record.device.10hours"
     ]
   },
   "record.twelveHours": {
     "status": "changed",
     "controls": [
-      "record.hours12"
+      "record.hours12",
+      "record.device.12hours"
     ]
   },
   "record.twentyFourHours": {
     "status": "changed",
     "controls": [
-      "record.hours24"
+      "record.hours24",
+      "record.device.24hours"
     ]
   },
   "record.noLimit": {
     "status": "retained",
-    "controls": []
+    "controls": [
+      "record.device.NoLimit"
+    ]
   },
   "record.minute": {
     "status": "retained",

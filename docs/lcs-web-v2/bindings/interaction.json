@@ -26,5 +26,19 @@
   "resStandard": "interaction.HD",
   "ok": "parameter.ok",
   "interSaved": "parameter.setSuccess",
-  "sipSaved": "parameter.setSuccess"
+  "sipSaved": "parameter.setSuccess",
+  "device.UHD": "interaction.UHD",
+  "device.UD": "interaction.UD",
+  "device.FUD": "interaction.FHD",
+  "device.HD": "interaction.HD",
+  "device.Film": "parameter.film",
+  "device.Computer": "parameter.computer",
+  "device.Computer2": "parameter.computer2",
+  "device.Teacher": "parameter.teacher",
+  "device.Student": "parameter.student",
+  "device.TeacherF": "parameter.teacher_full",
+  "device.StudentF": "parameter.student_full",
+  "device.FourScreens": "interaction.fourScreens",
+  "device.NineScreens": "interaction.nineScreens",
+  "device.HDminus": "interaction.HDU"
 }

@@ -12,7 +12,17 @@
     "ok": "OK",
     "colorBlack": "Black",
     "colorWhite": "White",
-    "osdSaved": "Settings saved."
+    "osdSaved": "Settings saved.",
+    "device": {
+      "Black": "Black",
+      "White": "White",
+      "Red": "Red",
+      "Green": "Green",
+      "Blue": "Blue",
+      "DateTime": "Date+Time",
+      "Date": "Date",
+      "Time": "Time"
+    }
   },
   "zh": {
     "pageTitle": "OSD设置",
@@ -27,6 +37,16 @@
     "ok": "确定",
     "colorBlack": "黑色",
     "colorWhite": "白色",
-    "osdSaved": "设置成功"
+    "osdSaved": "设置成功",
+    "device": {
+      "Black": "黑色",
+      "White": "白色",
+      "Red": "红色",
+      "Green": "绿色",
+      "Blue": "蓝色",
+      "DateTime": "日期+时间",
+      "Date": "日期",
+      "Time": "时间"
+    }
   }
 }

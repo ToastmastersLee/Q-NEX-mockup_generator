@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "checks": 694,
+  "v2Files": 317,
+  "renderedPagesAndDialogs": 29,
+  "failures": [],
+  "limits": "Initial English native selects only; no device, conditional UI, custom dropdown or visual equivalence assertion."
+}

@@ -223,5 +223,30 @@
     "zh": "板书特写位 {p} 已选择",
     "en": "Blackboard close-up position {p} selected",
     "reason": "原 mockup 文案；Excel 未覆盖该完整字段，保留预览并登记差异。"
+  },
+  "levels.Sensitive2": {
+    "en": "Sensitive 2",
+    "zh": "灵敏 2",
+    "reason": "English from original device evidence; Chinese editorial translation, not independently device-verified."
+  },
+  "levels.Sensitive1": {
+    "en": "Sensitive 1",
+    "zh": "灵敏 1",
+    "reason": "English from original device evidence; Chinese editorial translation, not independently device-verified."
+  },
+  "levels.Standard": {
+    "en": "Standard",
+    "zh": "标准",
+    "reason": "English from original device evidence; Chinese editorial translation, not independently device-verified."
+  },
+  "levels.Stable1": {
+    "en": "Stable 1",
+    "zh": "稳定 1",
+    "reason": "English from original device evidence; Chinese editorial translation, not independently device-verified."
+  },
+  "levels.Stable2": {
+    "en": "Stable 2",
+    "zh": "稳定 2",
+    "reason": "English from original device evidence; Chinese editorial translation, not independently device-verified."
   }
 }

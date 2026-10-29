@@ -14,16 +14,9 @@ export function OsdSettingPage() {
   const [toastMessage, setToastMessage] = useState('');
   void setToastMessage;
 
-  const colorOptions = [
-    { value: 'black', label: t('colorBlack', '黑色') },
-    { value: 'white', label: t('colorWhite', '白色') },
-  ];
+  const colorOptions = [{"value": "black", "label": "Black"}, {"value": "white", "label": "White"}, {"value": "red", "label": "Red"}, {"value": "green", "label": "Green"}, {"value": "blue", "label": "Blue"}];
 
-  const typeOptions = [
-    { value: 'datetime', label: t('contentDateTime', '日期+时间') },
-    { value: 'date', label: t('contentDate', '日期') },
-    { value: 'time', label: t('contentTime', '时间') },
-  ];
+  const typeOptions = [{"value": "datetime", "label": "Date+Time"}, {"value": "date", "label": "Date"}, {"value": "time", "label": "Time"}];
 
   const previewRef = useRef(null);
   const isDragging = useRef(false);

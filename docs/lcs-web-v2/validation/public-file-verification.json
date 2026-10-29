@@ -1,7 +1,7 @@
 {
-  "verifiedAt": "2026-10-28T09:49:58.908042+00:00",
-  "commit": "eccd4744cb913328ebd5f14ba8045555ac9b126e",
-  "workflow": "https://github.com/ToastmastersLee/q/actions/runs/40667012833",
+  "verifiedAt": "2026-10-29T16:53:20.168569+00:00",
+  "commit": "f32ce40c089083d22265db9768c1cd64c14b1991",
+  "workflow": "https://github.com/ToastmastersLee/q/actions/runs/40870854726",
   "files": [
     {
       "path": "assets/ch3_teacher_close-sBSlE4eC.png",
@@ -32,24 +32,24 @@
       "matches": true
     },
     {
-      "path": "assets/index-B5x1u2Qn.css",
-      "url": "https://toastmasterslee.github.io/q/lcs/assets/index-B5x1u2Qn.css",
+      "path": "assets/index-BbDBZq5o.js",
+      "url": "https://toastmasterslee.github.io/q/lcs/assets/index-BbDBZq5o.js",
       "status": 200,
-      "sha256": "52a74449813d12cf49411830c93ee444f54a4c11f2715e91ef03c872493d614b",
+      "sha256": "75814c8a480ffd7744caeaa5d342ad5c44a2634cfddc151d177348d8db8e8dc2",
       "matches": true
     },
     {
-      "path": "assets/index-C7Wgr1vD.js",
-      "url": "https://toastmasterslee.github.io/q/lcs/assets/index-C7Wgr1vD.js",
+      "path": "assets/index-CgmqBfMK.css",
+      "url": "https://toastmasterslee.github.io/q/lcs/assets/index-CgmqBfMK.css",
       "status": 200,
-      "sha256": "275d1b86d4e6cab842c92ae6cfb43fefda19d1fdaf990159858a11e03c792749",
+      "sha256": "a7bfe53d50242952fd95776d9329f655365cffc14c62ae7d902038f874e78760",
       "matches": true
     },
     {
       "path": "index.html",
       "url": "https://toastmasterslee.github.io/q/lcs/index.html",
       "status": 200,
-      "sha256": "e897ae6cded60499f28f3594fe0ba88a8ef7a0674afa10df8caf120a475a2ae0",
+      "sha256": "054c0c1df67712572a9c1b7b851570e385821814e0fd909c115e8e43da29f0eb",
       "matches": true
     }
   ],

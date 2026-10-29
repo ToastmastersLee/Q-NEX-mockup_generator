@@ -85,14 +85,7 @@ export function SubtitleSettingPage() {
     '绿色': '#10b981',
   };
 
-  const colorOptions = [
-    { value: 'black', label: t('black', '黑色') },
-    { value: 'white', label: t('white', '白色') },
-    { value: 'red', label: t('red', '红色') },
-    { value: 'yellow', label: t('yellow', '黄色') },
-    { value: 'blue', label: t('blue', '蓝色') },
-    { value: 'green', label: t('green', '绿色') },
-  ];
+  const colorOptions = ['black', 'white', 'red', 'green', 'blue'].map(value => ({value, label: t(`color${value[0].toUpperCase()}${value.slice(1)}`)}));
 
   const modeOptions = [
     { value: 'fixed', label: t('fixedMode', '固定模式') },
@@ -183,7 +176,7 @@ export function SubtitleSettingPage() {
             <span>{t('size', '大小')}</span>
             <NativeSelect
               value={activePreset.size}
-              options={['10', '12', '14', '16', '18', '20', '24', '28', '32', '36', '48']}
+              options={['9','10','11','12','13','14']}
               onChange={size => updateActivePreset({ size })}
             />
           </div>

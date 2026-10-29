@@ -8,7 +8,7 @@ export function PlatformSettingPage() {
   const [enableSip, setEnableSip] = useState(true);
   const [allowReg, setAllowReg] = useState(false);
   const [sipUser, setSipUser] = useState('user1');
-  const [sipPass, setSipPass] = useState('123456');
+  const [sipPass, setSipPass] = useState('');
   const [sipDomain, setSipDomain] = useState('192.168.3.50');
   const [sipServerAddr, setSipServerAddr] = useState('192.168.3.50');
   const [natRoute, setNatRoute] = useState('off');
@@ -18,14 +18,14 @@ export function PlatformSettingPage() {
   const [platformAddr, setPlatformAddr] = useState('192.168.3.50:8081');
   const [devName, setDevName] = useState(isZh ? '三楼' : 'Floor 3');
   const [createLocation, setCreateLocation] = useState(true);
-  const [authCode, setAuthCode] = useState('123456');
+  const [authCode, setAuthCode] = useState('');
   const [orgId, setOrgId] = useState('10000000');
 
   const [toastMessage, setToastMessage] = useState('');
 
   const natOptions = [
-    { value: 'off', label: t('off', '关') },
-    { value: 'on', label: t('on', '开') },
+    { value: 'on', label: 'Open' },
+    { value: 'off', label: 'Close' },
   ];
 
   const showToast = (msg) => {
@@ -108,7 +108,7 @@ export function PlatformSettingPage() {
             <div className="flex items-center gap-4">
               <span className="w-24 text-xs text-slate-600">{t('transportMode', '传输方式')}</span>
               <div className="flex-1">
-                <NativeSelect value={transport} options={['TCP', 'UDP', 'TLS']} onChange={setTransport} />
+                <NativeSelect value={transport} options={["TCP", "UDP"]} onChange={setTransport} />
               </div>
             </div>
 

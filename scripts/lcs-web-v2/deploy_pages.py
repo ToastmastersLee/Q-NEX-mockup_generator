@@ -111,7 +111,7 @@ def main():
     remote = git(checkout, 'ls-remote', 'origin', 'refs/heads/main').split()[0]
     if remote != record['previousCommit']:
         raise ValueError('Remote main moved; prepare a fresh checkout without force-pushing')
-    git(checkout, 'commit', '-m', 'Add Excel-reviewed LCS Web UI preview under lcs')
+    git(checkout, 'commit', '-m', 'Update LCS Web V2 options from device evidence and reviewed terminology')
     commit = git(checkout, 'rev-parse', 'HEAD')
     after = git(checkout, 'ls-tree', '-r', 'HEAD').splitlines()
     preserved = {line.split('\t', 1)[1]: line.split()[2] for line in after

@@ -18,6 +18,7 @@ export function NetworkSettingPage() {
   const netTypeOptions = [
     { value: 'wired', label: t('wiredNet', '有线网络') },
     { value: 'wireless', label: t('wirelessNet', '无线网络') },
+    { value: 'mobile', label: t('mobileNetwork') },
   ];
 
   const showToast = (msg) => {

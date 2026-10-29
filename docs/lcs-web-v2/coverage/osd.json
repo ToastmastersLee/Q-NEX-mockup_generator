@@ -37,19 +37,22 @@
   "osd.dateTime": {
     "status": "retained",
     "controls": [
-      "osd.contentDateTime"
+      "osd.contentDateTime",
+      "osd.device.DateTime"
     ]
   },
   "osd.date": {
     "status": "retained",
     "controls": [
-      "osd.contentDate"
+      "osd.contentDate",
+      "osd.device.Date"
     ]
   },
   "osd.time": {
     "status": "retained",
     "controls": [
-      "osd.contentTime"
+      "osd.contentTime",
+      "osd.device.Time"
     ]
   }
 }

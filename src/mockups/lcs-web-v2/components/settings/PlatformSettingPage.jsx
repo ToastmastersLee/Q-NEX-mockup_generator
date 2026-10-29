@@ -23,10 +23,7 @@ export function PlatformSettingPage() {
 
   const [toastMessage, setToastMessage] = useState('');
 
-  const natOptions = [
-    { value: 'off', label: t('off', '关') },
-    { value: 'on', label: t('on', '开') },
-  ];
+  const natOptions = ['on', 'off'].map(value => ({value, label: t(value)}));
 
   const showToast = (msg) => {
     setToastMessage(msg);
@@ -108,7 +105,7 @@ export function PlatformSettingPage() {
             <div className="flex items-center gap-4">
               <span className="w-24 text-xs text-slate-600">{t('transportMode', '传输方式')}</span>
               <div className="flex-1">
-                <NativeSelect value={transport} options={['TCP', 'UDP', 'TLS']} onChange={setTransport} />
+                <NativeSelect value={transport} options={["TCP", "UDP"]} onChange={setTransport} />
               </div>
             </div>
 

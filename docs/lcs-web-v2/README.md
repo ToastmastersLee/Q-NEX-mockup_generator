@@ -1,5 +1,13 @@
 # LCS-Web V2 客户预览交接
 
+## 2026-10-30 上线验收完成
+
+[客户预览](https://toastmasterslee.github.io/q/lcs/?page=output&lang=en)已更新，公开提交 `f32ce40c089083d22265db9768c1cd64c14b1991`；[Pages 工作流](https://github.com/ToastmastersLee/q/actions/runs/40870854726)成功。7 个站点文件公网哈希匹配，6 个原有入口内容检查通过，144 个其他公开文件保持不变。线上 UVC、矩阵、中文互动分辨率及中英文切换抽查通过；Console 未见错误。详见 validation 内本次记录。
+
+## 2026-10-29 下拉单与实机数据补齐
+
+本轮已根据原版实机核对记录补齐 V2 选项和说明，客户文案仍采用指定 Excel。详见 [逐页清单、验证及待确认项](DEVICE-ALIGNMENT.md)。原版 108 文件用新快照保护，未改写下方 2026-10-28 的历史基线。最新发布状态见 `validation/deployment.json`；下方旧提交仅为历史记录。
+
 ## 2026-10-28 已发布至 q/lcs
 
 正式客户预览：**[https://toastmasterslee.github.io/q/lcs/](https://toastmasterslee.github.io/q/lcs/)**。公开提交 `eccd4744cb913328ebd5f14ba8045555ac9b126e`；[Pages 工作流](https://github.com/ToastmastersLee/q/actions/runs/40667012833)成功。7 个站点文件的公网 SHA-256 全部匹配；既有 144 个公开文件 Git 对象保持不变，6 个既有入口／README 的公网字节检查通过。匿名 Chrome 已验证中英文、两个 HDMI 弹窗、导航刷新、字体、Protocol 4 和主页；原架构图主页正常。

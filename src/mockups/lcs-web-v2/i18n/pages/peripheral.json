@@ -11,7 +11,8 @@
     "connPort": "Port",
     "baudRate": "Baud Rate",
     "available": "(Available)",
-    "ok": "OK"
+    "ok": "OK",
+    "none": "None"
   },
   "zh": {
     "pageTitle": "外设设置",
@@ -25,6 +26,7 @@
     "connPort": "连接端口",
     "baudRate": "波特率",
     "available": "(可用)",
-    "ok": "确定"
+    "ok": "确定",
+    "none": "无"
   }
 }

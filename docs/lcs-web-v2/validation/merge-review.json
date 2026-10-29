@@ -1,0 +1,392 @@
+[
+  {
+    "file": "AudioSettingPage.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "AudioSettingPage.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "AudioSettingPage.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "AutomaticSwitchingRulesPage.jsx",
+    "initialMerge": "review",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "AutomaticSwitchingRulesPage.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "AutomaticSwitchingRulesPage.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "InputSettingPage.jsx",
+    "initialMerge": "review",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "InputSettingPage.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "InputSettingPage.jsx",
+    "initialMerge": "review",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "InputSettingPage.jsx",
+    "initialMerge": "review",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "InputSettingPage.jsx",
+    "initialMerge": "review",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "InputSettingPage.jsx",
+    "initialMerge": "review",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "InteractionSettingPage.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "InteractionSettingPage.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "InteractionSettingPage.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "InteractionSettingPage.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "LiveSettingPage.jsx",
+    "initialMerge": "review",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "LiveSettingPage.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "LiveSettingPage.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "OsdSettingPage.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "OutputSettingPage.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "OutputSettingPage.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "OutputSettingPage.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "OutputSettingPage.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "PeripheralSettingPage.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "PeripheralSettingPage.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "PeripheralSettingPage.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "PeripheralSettingPage.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "PlatformSettingPage.jsx",
+    "initialMerge": "review",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "PlatformSettingPage.jsx",
+    "initialMerge": "review",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "PlatformSettingPage.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "PowerSupplySettingPage.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "PowerSupplySettingPage.jsx",
+    "initialMerge": "review",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "PowerSupplySettingPage.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "PtzSettingPage.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "PtzSettingPage.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "StorageSettingPage.jsx",
+    "initialMerge": "review",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "SubtitleSettingPage.jsx",
+    "initialMerge": "review",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "SubtitleSettingPage.jsx",
+    "initialMerge": "review",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "SubtitleSettingPage.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "SystemSettingPage.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "SystemSettingPage.jsx",
+    "initialMerge": "review",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "SystemSettingPage.jsx",
+    "initialMerge": "review",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "SystemSettingPage.jsx",
+    "initialMerge": "review",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "SystemSettingPage.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "SystemSettingPage.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "TrackerSettingPage.jsx",
+    "initialMerge": "review",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "TrackerSettingPage.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "TrackerSettingPage.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "TrackerSettingPage.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "TrackerSettingPage.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "UploadSettingPage.jsx",
+    "initialMerge": "review",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "UploadSettingPage.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "AudioSettingsModal.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "AudioSettingsModal.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "AudioSettingsModal.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "AudioSettingsModal.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "DisplaySettingsModal.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "DisplaySettingsModal.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "RecordChannelTable.jsx",
+    "initialMerge": "already present",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "RecordChannelTable.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "RecordScheduleTable.jsx",
+    "initialMerge": "already present",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "RecordScheduleTable.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "StudentDebugCard.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "StudentDebugCard.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "StudentDebugCard.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "StudentDebugCard.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "StudentDebugCard.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "StudentDebugCard.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "StudentDebugCard.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "TeacherDebugCard.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "TeacherDebugCard.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "TeacherDebugCard.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "TeacherDebugCard.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "TeacherDebugCard.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "TeacherDebugCard.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "TeacherDebugCard.jsx",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  },
+  {
+    "file": "admin-system.css",
+    "initialMerge": "merged",
+    "resolution": "Reviewed against V2 customer differences; see DEVICE-ALIGNMENT.md"
+  }
+]

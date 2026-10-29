@@ -52,5 +52,7 @@
   "tipBgNote": "system.layoutbgTip",
   "tipUpgradeSteps": "system.upgradeSteps",
   "time2m": "system.twoMinutes",
-  "time15m": "system.fifteenMinutes"
+  "time15m": "system.fifteenMinutes",
+  "dates.dayFirst": "system.ddMMyyyy",
+  "dates.yearFirst": "system.yyyyMMdd"
 }

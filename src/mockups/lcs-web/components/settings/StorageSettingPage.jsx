@@ -9,9 +9,9 @@ export function StorageSettingPage() {
   const { t } = useTranslation('storage');
   const [priority, setPriority] = useState('deleteFirst');
   const [pathSelect, setPathSelect] = useState('localPath');
-  const [netPath, setNetPath] = useState('//192.168.3.212/LCS_record_test');
-  const [netUser, setNetUser] = useState('Administrator');
-  const [netPass, setNetPass] = useState('password123');
+  const [netPath, setNetPath] = useState('');
+  const [netUser, setNetUser] = useState('');
+  const [netPass, setNetPass] = useState('');
   const [localPath, setLocalPath] = useState('/disk/desk0_1/kt2000_data/record');
   const [toastMessage, setToastMessage] = useState('');
 

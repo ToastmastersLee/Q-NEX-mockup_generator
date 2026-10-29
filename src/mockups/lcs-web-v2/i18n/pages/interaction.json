@@ -28,6 +28,22 @@
     "ok": "OK",
     "interSaved": "Settings saved.",
     "sipSaved": "Settings saved.",
+    "device": {
+      "UHD": "UHD",
+      "UD": "UD",
+      "FUD": "FHD",
+      "HD": "HD",
+      "Film": "PGM",
+      "Computer": "Content 1",
+      "Computer2": "Content 2",
+      "Teacher": "Teacher",
+      "Student": "Student",
+      "TeacherF": "Teacher Wide",
+      "StudentF": "Student Wide",
+      "FourScreens": "4-Way Split",
+      "NineScreens": "9-Way Split",
+      "HDminus": "SD"
+    },
     "split1": "1-Split"
   },
   "zh": {
@@ -59,6 +75,22 @@
     "ok": "确定",
     "interSaved": "设置成功",
     "sipSaved": "设置成功",
+    "device": {
+      "UHD": "超高清",
+      "UD": "超清",
+      "FUD": "全高清",
+      "HD": "高清",
+      "Film": "电影",
+      "Computer": "电脑",
+      "Computer2": "电脑2",
+      "Teacher": "教师",
+      "Student": "学生",
+      "TeacherF": "教师全景",
+      "StudentF": "学生全景",
+      "FourScreens": "四分屏",
+      "NineScreens": "九分屏",
+      "HDminus": "标清"
+    },
     "split1": "单分屏"
   }
 }

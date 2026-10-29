@@ -752,3 +752,14 @@
 .lcs-web-modal.is-display {
   width: min(580px, 100%);
 }
+
+/* Full firmware names must remain readable in the original UI. */
+.lcs-web-modal.is-display .lcs-web-native-select,
+.lcs-web-system-page .lcs-web-native-select {
+  width: 100%;
+}
+
+/* Full option names remain readable in customer previews. */
+.lcs-web-modal.is-display .lcs-web-native-select,
+.lcs-web-system-page .lcs-web-native-select { width: 100%; }
+.lcs-web-option-help { font-size: 12px; line-height: 1.6; color: #53647c; margin: 10px 16px; overflow-wrap: anywhere; }

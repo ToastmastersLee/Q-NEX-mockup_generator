@@ -13,5 +13,6 @@
   "wiredNet": "IP.wiredNetwork",
   "ok": "parameter.ok",
   "wirelessNet": "IP.wifi",
-  "pleaseEnterUrl": "IP.websiteEmpty"
+  "pleaseEnterUrl": "IP.websiteEmpty",
+  "mobileNetwork": "IP.mobileNetwork"
 }

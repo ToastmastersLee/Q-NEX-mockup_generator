@@ -95,7 +95,9 @@
   },
   "IP.mobileNetwork": {
     "status": "retained",
-    "controls": []
+    "controls": [
+      "network.mobileNetwork"
+    ]
   },
   "IP.networkTypeFail": {
     "status": "changed",

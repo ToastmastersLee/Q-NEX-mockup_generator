@@ -752,3 +752,9 @@
 .lcs-web-modal.is-display {
   width: min(580px, 100%);
 }
+
+/* Full firmware names must remain readable in the original UI. */
+.lcs-web-modal.is-display .lcs-web-native-select,
+.lcs-web-system-page .lcs-web-native-select {
+  width: 100%;
+}

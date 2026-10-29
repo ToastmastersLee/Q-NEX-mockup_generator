@@ -25,6 +25,11 @@
     "kanit": "Kanit-Regular",
     "scrollLeft": "Scroll Left",
     "scrollRight": "Scroll Right",
+    "colorBlack": "Black",
+    "colorWhite": "White",
+    "colorRed": "Red",
+    "colorGreen": "Green",
+    "colorBlue": "Blue",
     "yellow": "Yellow",
     "scrollMode": "Scroll Mode",
     "defaultText": "Default text {n}"
@@ -55,6 +60,11 @@
     "kanit": "Kanit-Regular",
     "scrollLeft": "左滚动模式",
     "scrollRight": "右滚动模式",
+    "colorBlack": "黑色",
+    "colorWhite": "白色",
+    "colorRed": "红色",
+    "colorGreen": "绿色",
+    "colorBlue": "蓝色",
     "yellow": "黄色",
     "scrollMode": "滚动模式",
     "defaultText": "默认文字 {n}"

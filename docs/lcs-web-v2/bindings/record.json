@@ -57,5 +57,20 @@
   "hours10": "record.tenHours",
   "hours24": "record.twentyFourHours",
   "formatTip": "record.recordFormatTip",
-  "tipTitle": "parameter.tip"
+  "tipTitle": "parameter.tip",
+  "device.2hours": "record.twoHours",
+  "device.1hour": "record.oneHour",
+  "device.45min": "record.fortyFiveMinutes",
+  "device.30min": "record.thirtyMinutes",
+  "device.15min": "record.fifteenMinutes",
+  "device.10min": "record.tenMinutes",
+  "device.Nosegment": "record.noSegment",
+  "device.24hours": "record.twentyFourHours",
+  "device.12hours": "record.twelveHours",
+  "device.10hours": "record.tenHours",
+  "device.8hours": "record.eightHours",
+  "device.6hours": "record.sixHours",
+  "device.4hours": "record.fourHours",
+  "device.20min": "record.twentyMinutes",
+  "device.NoLimit": "record.noLimit"
 }

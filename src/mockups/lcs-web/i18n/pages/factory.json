@@ -11,8 +11,8 @@
     "tipConfigFile": "Operation Tip:\n1. Upload file name must be conf.tar.gz;\n2. Reboot is required after successful import.",
     "cardTitleUi": "Interface Setting",
     "uiStyle": "Interface Style",
-    "styleDefault": "Default Style",
-    "styleClassic": "Classic Style"
+    "styleDefault": "Default",
+    "styleClassic": "Classic"
   },
   "zh": {
     "pageTitle": "出厂设置",

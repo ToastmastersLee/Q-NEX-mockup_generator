@@ -1,12 +1,8 @@
 {
-  "commit": "eccd4744cb913328ebd5f14ba8045555ac9b126e",
-  "runs": [
-    {
-      "id": 40667012833,
-      "name": "pages build and deployment",
-      "status": "completed",
-      "conclusion": "success",
-      "url": "https://github.com/ToastmastersLee/q/actions/runs/40667012833"
-    }
-  ]
+  "id": 40870854726,
+  "name": "pages build and deployment",
+  "head_sha": "f32ce40c089083d22265db9768c1cd64c14b1991",
+  "status": "completed",
+  "conclusion": "success",
+  "html_url": "https://github.com/ToastmastersLee/q/actions/runs/40870854726"
 }

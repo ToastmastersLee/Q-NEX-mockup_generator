@@ -23,7 +23,6 @@ export function PowerSupplySettingPage() {
   const powerModeOptions = [
     { value: 'normalBoot', label: t('normalBoot', '常规开机') },
     { value: 'autoBoot', label: t('autoBoot', '通电开机') },
-    { value: 'keepOff', label: t('keepOff', '来电保持断电') },
     { value: 'hdmiPowerOn', label: t('hdmiPowerOn') },
   ];
 
@@ -39,7 +38,7 @@ export function PowerSupplySettingPage() {
       <div className="lcs-web-card">
         {/* Row 1: 上电模式 */}
         <div className="flex items-center gap-8 py-3 border-b border-slate-100 flex-wrap">
-          <span className="w-36 text-xs text-slate-700 font-semibold">{t('powerOnMode', '上电模式')}</span>
+          <span className="w-36 text-xs text-slate-700 font-semibold">{t('powerOnMode', 'Power Mode')}</span>
           <div className="w-36">
             <NativeSelect
               value={powerMode}

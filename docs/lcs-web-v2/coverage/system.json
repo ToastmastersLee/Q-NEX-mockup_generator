@@ -33,11 +33,15 @@
   },
   "system.ddMMyyyy": {
     "status": "retained",
-    "controls": []
+    "controls": [
+      "system.dates.dayFirst"
+    ]
   },
   "system.yyyyMMdd": {
     "status": "retained",
-    "controls": []
+    "controls": [
+      "system.dates.yearFirst"
+    ]
   },
   "system.twelveHoursFormat": {
     "status": "changed",

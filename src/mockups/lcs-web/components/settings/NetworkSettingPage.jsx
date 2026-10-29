@@ -3,7 +3,7 @@ import { NativeSelect } from '../common';
 import { useTranslation } from '../../i18n';
 
 export function NetworkSettingPage() {
-  const { t } = useTranslation('network');
+  const { t } = useTranslation('ip');
   const [dhcp, setDhcp] = useState(false);
   const [ip, setIp] = useState('192.168.3.50');
   const [mask, setMask] = useState('255.255.255.0');
@@ -17,7 +17,8 @@ export function NetworkSettingPage() {
 
   const netTypeOptions = [
     { value: 'wired', label: t('wiredNet', '有线网络') },
-    { value: 'wireless', label: t('wirelessNet', '无线网络') },
+    { value: 'wireless', label: t('wifi', 'Wi-Fi') },
+    { value: 'mobile', label: t('mobileNetwork', 'Mobile Network') },
   ];
 
   const showToast = (msg) => {

@@ -3,7 +3,9 @@
     "status": "changed",
     "controls": [
       "common.channels.film",
-      "output.filmVideo"
+      "interaction.device.Film",
+      "output.filmVideo",
+      "output.sources.film"
     ]
   },
   "parameter.computer": {
@@ -11,7 +13,9 @@
     "controls": [
       "common.channels.pc1",
       "guidingStrategy.computer",
-      "main.feeds.content1"
+      "interaction.device.Computer",
+      "main.feeds.content1",
+      "output.sources.computer"
     ]
   },
   "parameter.computer2": {
@@ -19,7 +23,9 @@
     "controls": [
       "common.channels.pc2",
       "guidingStrategy.computer2",
-      "main.feeds.content2"
+      "interaction.device.Computer2",
+      "main.feeds.content2",
+      "output.sources.computer2"
     ]
   },
   "parameter.teacher": {
@@ -27,7 +33,9 @@
     "controls": [
       "common.channels.tch",
       "guidingStrategy.teacher",
-      "main.feeds.teacherClose"
+      "interaction.device.Teacher",
+      "main.feeds.teacherClose",
+      "output.sources.teacher"
     ]
   },
   "parameter.student": {
@@ -35,7 +43,9 @@
     "controls": [
       "common.channels.stu",
       "guidingStrategy.student",
-      "main.feeds.studentClose"
+      "interaction.device.Student",
+      "main.feeds.studentClose",
+      "output.sources.student"
     ]
   },
   "parameter.teacher_full": {
@@ -43,7 +53,9 @@
     "controls": [
       "common.channels.tch_p",
       "guidingStrategy.teacherWide",
-      "main.feeds.teacherWide"
+      "interaction.device.TeacherF",
+      "main.feeds.teacherWide",
+      "output.sources.teacher_full"
     ]
   },
   "parameter.student_full": {
@@ -51,7 +63,9 @@
     "controls": [
       "common.channels.stu_p",
       "guidingStrategy.studentWide",
-      "main.feeds.studentWide"
+      "interaction.device.StudentF",
+      "main.feeds.studentWide",
+      "output.sources.student_full"
     ]
   },
   "parameter.board": {

@@ -9,7 +9,7 @@ const read = name => JSON.parse(fs.readFileSync(name, 'utf8'));
 const get = (obj, key) => key.split('.').reduce((value, part) => value?.[part], obj);
 const hash = file => crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
 const files = root => fs.readdirSync(root, { recursive: true }).filter(name => fs.statSync(path.join(root, name)).isFile()).map(name => name.replaceAll('\\', '/'));
-const baseline = read(`${docs}/legacy-baseline.json`);
+const baseline = read(`${docs}/validation/original-alignment-baseline.json`);
 const oldRoot = 'src/mockups/lcs-web';
 assert.deepEqual(files(oldRoot).sort(), Object.keys(baseline).sort(), 'Legacy file list changed');
 for (const [file, expected] of Object.entries(baseline)) assert.equal(hash(`${oldRoot}/${file}`), expected, `Legacy changed: ${file}`);

@@ -76,32 +76,42 @@
     "status": "retained",
     "controls": [
       "osd.colorBlack",
-      "subtitle.black"
+      "osd.device.Black",
+      "subtitle.black",
+      "subtitle.colorBlack"
     ]
   },
   "subtitle.White": {
     "status": "retained",
     "controls": [
       "osd.colorWhite",
-      "subtitle.white"
+      "osd.device.White",
+      "subtitle.white",
+      "subtitle.colorWhite"
     ]
   },
   "subtitle.Red": {
     "status": "retained",
     "controls": [
-      "subtitle.red"
+      "osd.device.Red",
+      "subtitle.red",
+      "subtitle.colorRed"
     ]
   },
   "subtitle.Green": {
     "status": "retained",
     "controls": [
-      "subtitle.green"
+      "osd.device.Green",
+      "subtitle.green",
+      "subtitle.colorGreen"
     ]
   },
   "subtitle.Blue": {
     "status": "retained",
     "controls": [
-      "subtitle.blue"
+      "osd.device.Blue",
+      "subtitle.blue",
+      "subtitle.colorBlue"
     ]
   },
   "subtitle.fixedMode": {

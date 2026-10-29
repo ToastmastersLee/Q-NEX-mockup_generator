@@ -11,5 +11,13 @@
   "ok": "parameter.ok",
   "colorBlack": "subtitle.Black",
   "colorWhite": "subtitle.White",
-  "osdSaved": "parameter.setSuccess"
+  "osdSaved": "parameter.setSuccess",
+  "device.Black": "subtitle.Black",
+  "device.White": "subtitle.White",
+  "device.Red": "subtitle.Red",
+  "device.Green": "subtitle.Green",
+  "device.Blue": "subtitle.Blue",
+  "device.DateTime": "osd.dateTime",
+  "device.Date": "osd.date",
+  "device.Time": "osd.time"
 }

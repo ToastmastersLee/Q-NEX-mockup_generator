@@ -20,5 +20,12 @@
   "contrast": "project.output.contrastRatio",
   "hue": "project.output.hue",
   "saturation": "project.output.saturation",
-  "audioSetting": "project.audio.audioSetting"
+  "audioSetting": "project.audio.audioSetting",
+  "sources.film": "parameter.film",
+  "sources.computer": "parameter.computer",
+  "sources.computer2": "parameter.computer2",
+  "sources.teacher": "parameter.teacher",
+  "sources.student": "parameter.student",
+  "sources.teacher_full": "parameter.teacher_full",
+  "sources.student_full": "parameter.student_full"
 }

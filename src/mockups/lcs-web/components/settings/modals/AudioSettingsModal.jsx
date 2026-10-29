@@ -32,11 +32,11 @@ export function AudioSettingsModal({ output, onClose }) {
           <span className="w-20 text-slate-600 font-semibold flex-shrink-0">{t('rtspAudio', 'RTSP音频')}</span>
           <div className="flex items-center gap-5 flex-nowrap whitespace-nowrap">
             <label className="inline-flex items-center gap-1.5 cursor-pointer text-slate-400 whitespace-nowrap flex-shrink-0">
-              <input type="checkbox" checked={rtspMix.pc1} onChange={e => setRtspMix(c => ({ ...c, pc1: e.target.checked }))} />
+              <input type="checkbox" checked={rtspMix.pc1} disabled onChange={e => setRtspMix(c => ({ ...c, pc1: e.target.checked }))} />
               <span>{tCommon('channels.pc1', '电脑')}</span>
             </label>
             <label className="inline-flex items-center gap-1.5 cursor-pointer text-slate-400 whitespace-nowrap flex-shrink-0">
-              <input type="checkbox" checked={rtspMix.pc2} onChange={e => setRtspMix(c => ({ ...c, pc2: e.target.checked }))} />
+              <input type="checkbox" checked={rtspMix.pc2} disabled onChange={e => setRtspMix(c => ({ ...c, pc2: e.target.checked }))} />
               <span>{tCommon('channels.pc2', '电脑2')}</span>
             </label>
             <label className="inline-flex items-center gap-1.5 cursor-pointer text-blue-600 font-semibold whitespace-nowrap flex-shrink-0">
@@ -44,15 +44,15 @@ export function AudioSettingsModal({ output, onClose }) {
               <span>{tCommon('channels.tch', '教师')}</span>
             </label>
             <label className="inline-flex items-center gap-1.5 cursor-pointer text-slate-400 whitespace-nowrap flex-shrink-0">
-              <input type="checkbox" checked={rtspMix.stu} onChange={e => setRtspMix(c => ({ ...c, stu: e.target.checked }))} />
+              <input type="checkbox" checked={rtspMix.stu} disabled onChange={e => setRtspMix(c => ({ ...c, stu: e.target.checked }))} />
               <span>{tCommon('channels.stu', '学生')}</span>
             </label>
             <label className="inline-flex items-center gap-1.5 cursor-pointer text-slate-400 whitespace-nowrap flex-shrink-0">
-              <input type="checkbox" checked={rtspMix.tch_p} onChange={e => setRtspMix(c => ({ ...c, tch_p: e.target.checked }))} />
+              <input type="checkbox" checked={rtspMix.tch_p} disabled onChange={e => setRtspMix(c => ({ ...c, tch_p: e.target.checked }))} />
               <span>{tCommon('channels.tch_p', '教师全景')}</span>
             </label>
             <label className="inline-flex items-center gap-1.5 cursor-pointer text-slate-400 whitespace-nowrap flex-shrink-0">
-              <input type="checkbox" checked={rtspMix.stu_p} onChange={e => setRtspMix(c => ({ ...c, stu_p: e.target.checked }))} />
+              <input type="checkbox" checked={rtspMix.stu_p} disabled onChange={e => setRtspMix(c => ({ ...c, stu_p: e.target.checked }))} />
               <span>{tCommon('channels.stu_p', '学生全景')}</span>
             </label>
           </div>
@@ -63,11 +63,11 @@ export function AudioSettingsModal({ output, onClose }) {
           <span className="w-20 text-slate-600 font-semibold flex-shrink-0">{t('digitalAudio', '数字音频')}</span>
           <div className="flex items-center gap-5 flex-nowrap whitespace-nowrap">
             <label className="inline-flex items-center gap-1.5 cursor-pointer text-slate-400 whitespace-nowrap flex-shrink-0">
-              <input type="checkbox" checked={digitalMix.pc1} onChange={e => setDigitalMix(c => ({ ...c, pc1: e.target.checked }))} />
+              <input type="checkbox" checked={digitalMix.pc1} disabled onChange={e => setDigitalMix(c => ({ ...c, pc1: e.target.checked }))} />
               <span>{tCommon('channels.pc1', '电脑')}</span>
             </label>
             <label className="inline-flex items-center gap-1.5 cursor-pointer text-slate-400 whitespace-nowrap flex-shrink-0">
-              <input type="checkbox" checked={digitalMix.pc2} onChange={e => setDigitalMix(c => ({ ...c, pc2: e.target.checked }))} />
+              <input type="checkbox" checked={digitalMix.pc2} disabled onChange={e => setDigitalMix(c => ({ ...c, pc2: e.target.checked }))} />
               <span>{tCommon('channels.pc2', '电脑2')}</span>
             </label>
             <label className="inline-flex items-center gap-1.5 cursor-pointer text-blue-600 font-semibold whitespace-nowrap flex-shrink-0">
@@ -75,15 +75,15 @@ export function AudioSettingsModal({ output, onClose }) {
               <span>{tCommon('channels.tch', '教师')}</span>
             </label>
             <label className="inline-flex items-center gap-1.5 cursor-pointer text-slate-400 whitespace-nowrap flex-shrink-0">
-              <input type="checkbox" checked={digitalMix.stu} onChange={e => setDigitalMix(c => ({ ...c, stu: e.target.checked }))} />
+              <input type="checkbox" checked={digitalMix.stu} disabled onChange={e => setDigitalMix(c => ({ ...c, stu: e.target.checked }))} />
               <span>{tCommon('channels.stu', '学生')}</span>
             </label>
             <label className="inline-flex items-center gap-1.5 cursor-pointer text-slate-400 whitespace-nowrap flex-shrink-0">
-              <input type="checkbox" checked={digitalMix.tch_p} onChange={e => setDigitalMix(c => ({ ...c, tch_p: e.target.checked }))} />
+              <input type="checkbox" checked={digitalMix.tch_p} disabled onChange={e => setDigitalMix(c => ({ ...c, tch_p: e.target.checked }))} />
               <span>{tCommon('channels.tch_p', '教师全景')}</span>
             </label>
             <label className="inline-flex items-center gap-1.5 cursor-pointer text-slate-400 whitespace-nowrap flex-shrink-0">
-              <input type="checkbox" checked={digitalMix.stu_p} onChange={e => setDigitalMix(c => ({ ...c, stu_p: e.target.checked }))} />
+              <input type="checkbox" checked={digitalMix.stu_p} disabled onChange={e => setDigitalMix(c => ({ ...c, stu_p: e.target.checked }))} />
               <span>{tCommon('channels.stu_p', '学生全景')}</span>
             </label>
           </div>

@@ -1,1 +1,17 @@
-{}
+{
+  "sourceHelp": {
+    "en": "UVC source: choose PGM, Content 1/2, Teacher/Student, or Teacher Wide/Student Wide.",
+    "zh": "UVC 输出源可选择电影画面、电脑 1/2、教师/学生或教师全景/学生全景。",
+    "reason": "Explanatory UI copy based on the verified original; not a firmware translation."
+  },
+  "readOnlyHelp": {
+    "en": "HDMI content and UVC resolution are read-only in this preview, matching the captured device configuration.",
+    "zh": "此预览中的 HDMI 输出内容和 UVC 分辨率为只读，与采集时的实机配置一致。",
+    "reason": "Explanatory UI copy based on the verified original; not a firmware translation."
+  },
+  "matrixHelp": {
+    "en": "Color matrix names specify the source and destination color space and range; all 16 combinations are available.",
+    "zh": "色彩矩阵名称表示转换前后的色彩空间和范围，可选项共 16 种。",
+    "reason": "Explanatory UI copy based on the verified original; not a firmware translation."
+  }
+}

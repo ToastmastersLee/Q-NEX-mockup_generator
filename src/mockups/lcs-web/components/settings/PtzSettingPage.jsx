@@ -49,7 +49,7 @@ export function PtzSettingPage() {
                 <div className="w-28">
                   <NativeSelect
                     value={row.protocol}
-                    options={['Visca', 'Pelco-D', 'Pelco-P']}
+                    options={["Visca", "Onvif", "Visca over IP"]}
                     onChange={val => setPtzRows(curr => curr.map((r, i) => i === idx ? { ...r, protocol: val } : r))}
                   />
                 </div>
@@ -59,8 +59,8 @@ export function PtzSettingPage() {
                 <span className="text-xs text-slate-600">{t('commMode', '通讯方式')}</span>
                 <div className="w-28">
                   <NativeSelect
-                    value={row.mode}
-                    options={['UDP', 'TCP', 'Serial']}
+                    value={row.mode} disabled={row.protocol === 'Onvif'}
+                    options={["UDP", "TCP", "COM"]}
                     onChange={val => setPtzRows(curr => curr.map((r, i) => i === idx ? { ...r, mode: val } : r))}
                   />
                 </div>

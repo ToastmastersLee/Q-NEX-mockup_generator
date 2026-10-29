@@ -15,6 +15,7 @@
     "ok": "OK",
     "wirelessNet": "Wi-Fi",
     "pleaseEnterUrl": "Enter a website address.",
+    "mobileNetwork": "Mobile Network",
     "dhcp": "DHCP",
     "pingResult": "Simulated check: {url}\nThis preview does not contact the target."
   },
@@ -34,6 +35,7 @@
     "ok": "确定",
     "wirelessNet": "Wi-Fi",
     "pleaseEnterUrl": "网址不能为空",
+    "mobileNetwork": "移动网络",
     "dhcp": "DHCP",
     "pingResult": "模拟检测：{url}\n本预览不会访问目标地址。"
   }

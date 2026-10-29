@@ -18,18 +18,16 @@ export function OutputSettingPage() {
   const [contentOut2, setContentOut2] = useState('localDirector');
 
   const [resUvc, setResUvc] = useState('adaptive');
-  const [contentUvc, setContentUvc] = useState('filmVideo');
+  const [contentUvc, setContentUvc] = useState('Film');
 
   const contentOptions = [
     { value: 'compositeView', label: t('compositeView', '合成画面') },
-    { value: 'filmVideo', label: t('filmVideo', '电影') },
     { value: 'localDirector', label: t('localDirector', '本地导播') },
   ];
 
+  const uvcContentOptions = ['Film', 'Computer', 'Computer2', 'Teacher', 'Student', 'Teacher_F.', 'Student_F.'].map((value, index) => ({ value, label: t(`sources.${['film', 'computer', 'computer2', 'teacher', 'student', 'teacher_full', 'student_full'][index]}`) }));
   const uvcResOptions = [
     { value: 'adaptive', label: t('adaptive', '自适应') },
-    { value: '1080P30', label: '1080P30' },
-    { value: '720P30', label: '720P30' },
   ];
 
   return (
@@ -42,11 +40,11 @@ export function OutputSettingPage() {
           <span className="w-32 text-xs text-slate-700 font-semibold">{t('hdmiOut1', 'HDMI OUT1')}</span>
           <div className="flex items-center gap-2">
             <span className="text-xs text-slate-600">{t('outResolution', '输出分辨率')}</span>
-            <NativeSelect value={resOut1} options={['4K@30', '1080P60', '1080P30']} onChange={setResOut1} />
+            <NativeSelect value={resOut1} options={["4K@30", "1080P60"]} onChange={setResOut1} />
           </div>
           <div className="flex items-center gap-2">
             <span className="text-xs text-slate-600">{t('outContent', '输出内容')}</span>
-            <NativeSelect value={contentOut1} options={contentOptions} onChange={setContentOut1} />
+            <NativeSelect value={contentOut1} options={contentOptions} disabled onChange={setContentOut1} />
           </div>
           <button
             type="button"
@@ -69,11 +67,11 @@ export function OutputSettingPage() {
           <span className="w-32 text-xs text-slate-700 font-semibold">{t('hdmiOut2', 'HDMI OUT2')}</span>
           <div className="flex items-center gap-2">
             <span className="text-xs text-slate-600">{t('outResolution', '输出分辨率')}</span>
-            <NativeSelect value={resOut2} options={['1080P60', '4K@30', '1080P30']} onChange={setResOut2} />
+            <NativeSelect value={resOut2} options={["1080P60"]} onChange={setResOut2} />
           </div>
           <div className="flex items-center gap-2">
             <span className="text-xs text-slate-600">{t('outContent', '输出内容')}</span>
-            <NativeSelect value={contentOut2} options={contentOptions} onChange={setContentOut2} />
+            <NativeSelect value={contentOut2} options={contentOptions} disabled onChange={setContentOut2} />
           </div>
           <button
             type="button"
@@ -96,14 +94,17 @@ export function OutputSettingPage() {
           <span className="w-32 text-xs text-slate-700 font-semibold">{t('uvcOut', 'UVC')}</span>
           <div className="flex items-center gap-2">
             <span className="text-xs text-slate-600">{t('outResolution', '输出分辨率')}</span>
-            <NativeSelect value={resUvc} options={uvcResOptions} onChange={setResUvc} />
+            <NativeSelect value={resUvc} options={uvcResOptions} disabled onChange={setResUvc} />
           </div>
           <div className="flex items-center gap-2">
             <span className="text-xs text-slate-600">{t('outContent', '输出内容')}</span>
-            <NativeSelect value={contentUvc} options={contentOptions} onChange={setContentUvc} />
+            <NativeSelect value={contentUvc} options={uvcContentOptions} onChange={setContentUvc} />
           </div>
         </div>
       </div>
+
+      <p className="lcs-web-option-help">{t('sourceHelp')}</p>
+      <p className="lcs-web-option-help">{t('readOnlyHelp')}</p>
 
       {modalType === 'display' && (
         <DisplaySettingsModal output={modalOutput} onClose={() => setModalType(null)} />

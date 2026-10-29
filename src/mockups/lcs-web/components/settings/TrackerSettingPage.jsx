@@ -33,7 +33,8 @@ export function TrackerSettingPage() {
     { value: 'protocol1', label: t('protocol1', '协议一') },
     { value: 'protocol2', label: t('protocol2', '协议二') },
     { value: 'protocol3', label: t('protocol3', '协议三') },
-  ];
+    { value: 'protocol4', label: 'Protocol 4' },
+];
 
   const showToast = (msg) => {
     setToastMessage(msg);
@@ -132,7 +133,7 @@ export function TrackerSettingPage() {
             </div>
             <div className="flex items-center gap-2">
               <span className="text-xs text-slate-600 w-16">{t('netMode', '网络方式')}</span>
-              <div className="flex-1"><NativeSelect value={tchNet} options={['UDP', 'TCP']} onChange={setTchNet} /></div>
+              <div className="flex-1"><NativeSelect value={tchNet} options={["TCP", "UDP"]} onChange={setTchNet} /></div>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-xs text-slate-600 w-16">{t('recvPort', '接收端口')}</span>
@@ -145,7 +146,7 @@ export function TrackerSettingPage() {
             </div>
             <div className="flex items-center gap-2">
               <span className="text-xs text-slate-600 w-16">{t('addrCode', '地址码')}</span>
-              <div className="flex-1"><NativeSelect value={tchAddrCode} options={['1', '2', '3']} onChange={setTchAddrCode} /></div>
+              <div className="flex-1"><NativeSelect value={tchAddrCode} options={["1", "2", "3", "4", "5", "6", "7"]} onChange={setTchAddrCode} /></div>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-xs text-slate-600 w-16">{t('sendPort', '发送端口')}</span>
@@ -171,7 +172,7 @@ export function TrackerSettingPage() {
             </div>
             <div className="flex items-center gap-2">
               <span className="text-xs text-slate-600 w-16">{t('netMode', '网络方式')}</span>
-              <div className="flex-1"><NativeSelect value={stuNet} options={['UDP', 'TCP']} onChange={setStuNet} /></div>
+              <div className="flex-1"><NativeSelect value={stuNet} options={["TCP", "UDP"]} onChange={setStuNet} /></div>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-xs text-slate-600 w-16">{t('recvPort', '接收端口')}</span>
@@ -184,7 +185,7 @@ export function TrackerSettingPage() {
             </div>
             <div className="flex items-center gap-2">
               <span className="text-xs text-slate-600 w-16">{t('addrCode', '地址码')}</span>
-              <div className="flex-1"><NativeSelect value={stuAddrCode} options={['1', '2', '3']} onChange={setStuAddrCode} /></div>
+              <div className="flex-1"><NativeSelect value={stuAddrCode} options={["1", "2", "3", "4", "5", "6", "7"]} onChange={setStuAddrCode} /></div>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-xs text-slate-600 w-16">{t('sendPort', '发送端口')}</span>

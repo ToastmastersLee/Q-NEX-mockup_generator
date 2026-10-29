@@ -40,7 +40,7 @@ export function LiveSettingPage() {
   }, [activeTooltipChannel]);
 
   const [liveRows, setLiveRows] = useState([
-    { id: 'film1', channel: '电影 1', mode: 'RTMP', res: '1920*1080', bitrate: '2048Kbps', fps: '25fps', pushUrl: '192.168.3.50', playUrl: 'rtmp://192.168.3.50:1935/live/film', isLive: true, rtspLive: true, rtspUrl: 'rtsp://192.168.3.50/live_film' },
+    { id: 'film1', channel: '电影 1', mode: 'RTMP Push', res: '1920*1080', bitrate: '2048Kbps', fps: '25fps', pushUrl: '192.168.3.50', playUrl: 'rtmp://192.168.3.50:1935/live/film', isLive: true, rtspLive: true, rtspUrl: 'rtsp://192.168.3.50/live_film' },
     { id: 'film2', channel: '电影 2', mode: 'RTMP', res: '640*360', bitrate: '512Kbps', fps: '25fps', pushUrl: '192.168.3.50', playUrl: 'rtmp://192.168.3.50:1935/live/film2', isLive: false, rtspLive: false, rtspUrl: 'rtsp://192.168.3.50/live_film2' },
     { id: 'pc1', channel: '电脑', mode: 'RTMP', res: '640*360', bitrate: '512Kbps', fps: '25fps', pushUrl: '192.168.3.50', playUrl: 'rtmp://192.168.3.50:1935/live/courseware', isLive: true, rtspLive: true, rtspUrl: 'rtsp://192.168.3.50/live_courseware' },
     { id: 'pc2', channel: '电脑2', mode: 'RTMP', res: '640*360', bitrate: '512Kbps', fps: '25fps', pushUrl: '192.168.3.50', playUrl: 'rtmp://192.168.3.50:1935/live/courseware2', isLive: false, rtspLive: false, rtspUrl: 'rtsp://192.168.3.50/live_courseware2' },
@@ -101,7 +101,7 @@ export function LiveSettingPage() {
                   <td>
                     <NativeSelect
                       value={row.mode}
-                      options={['RTMP', 'RTSP', 'HTTP-FLV', 'HLS']}
+                      options={["RTMP", "HLS", "RTMP Push", "RTMPS Push"]}
                       onChange={val => setLiveRows(curr => curr.map((r, i) => i === idx ? { ...r, mode: val } : r))}
                     />
                   </td>
@@ -115,14 +115,14 @@ export function LiveSettingPage() {
                   <td>
                     <NativeSelect
                       value={row.bitrate}
-                      options={['2048Kbps', '1024Kbps', '512Kbps', '256Kbps']}
+                      options={["4096Kbps", "2048Kbps", "1024Kbps", "512Kbps"]}
                       onChange={val => setLiveRows(curr => curr.map((r, i) => i === idx ? { ...r, bitrate: val } : r))}
                     />
                   </td>
                   <td>
                     <NativeSelect
                       value={row.fps}
-                      options={['25fps', '30fps', '60fps']}
+                      options={["30fps", "25fps"]}
                       onChange={val => setLiveRows(curr => curr.map((r, i) => i === idx ? { ...r, fps: val } : r))}
                     />
                   </td>

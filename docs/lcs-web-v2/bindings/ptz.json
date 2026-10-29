@@ -4,5 +4,6 @@
   "commMode": "project.PTZ.PTZtype",
   "commIp": "project.PTZ.PTZIP",
   "commPort": "project.PTZ.PTZport",
-  "ok": "parameter.ok"
+  "ok": "parameter.ok",
+  "device.COM": "project.PTZ.COM"
 }

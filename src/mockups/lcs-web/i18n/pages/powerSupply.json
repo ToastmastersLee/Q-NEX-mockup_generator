@@ -1,6 +1,11 @@
 {
   "en": {
     "pageTitle": "Power Setting",
+    "powerOnMode": "Power Mode",
+    "timer1": "Timing switch 1",
+    "timer2": "Timing switch 2",
+    "bootTime": "PowerOn",
+    "shutdownTime": "PowerOff",
     "powerSupplyMode": "PowerSupplyMode",
     "timingSwitch": "Timing switch",
     "startTime": "Start time",

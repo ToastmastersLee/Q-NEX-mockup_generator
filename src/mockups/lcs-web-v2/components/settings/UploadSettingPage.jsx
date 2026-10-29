@@ -27,13 +27,13 @@ export function UploadSettingPage() {
 
 
   const uploadWayOptions = [
+    { value: 'close', label: t('off') },
     { value: 'leisure', label: t('leisure', 'leisure') },
     { value: 'realtime', label: t('realtime', 'real time') },
     { value: 'timing', label: t('timing', 'timing') },
   ];
 
   const uploadModeOptions = [
-    { value: 'off', label: t('off') },
     { value: 'standardFtp', label: t('standardFtp', 'Standard FTP upload') },
     { value: 'centralizedControl', label: t('centralizedControl', 'Upload to centralized control platform') },
     { value: 'thirdPartyCentralizedControl', label: t('thirdPartyCentralizedControl', 'Upload to the third-party centralized control platform') },

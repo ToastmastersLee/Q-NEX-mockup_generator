@@ -5,7 +5,10 @@
     "commMode": "Type",
     "commIp": "IP",
     "commPort": "Port",
-    "ok": "OK"
+    "ok": "OK",
+    "device": {
+      "COM": "COM"
+    }
   },
   "zh": {
     "pageTitle": "云台设置",
@@ -13,6 +16,9 @@
     "commMode": "通讯方式",
     "commIp": "通讯IP",
     "commPort": "通讯端口",
-    "ok": "确定"
+    "ok": "确定",
+    "device": {
+      "COM": "串口"
+    }
   }
 }

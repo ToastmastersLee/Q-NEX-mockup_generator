@@ -1,0 +1,507 @@
+{
+  "source": "Read-only browser DOM, 192.168.3.50, 2026-10-29",
+  "device": {
+    "model": "LCS810(i)",
+    "serviceVersion": "5.0.1",
+    "language": "English"
+  },
+  "scope": "Observed current configuration, not factory defaults or all conditional branches",
+  "pages": {
+    "output": {
+      "hdmi1Resolution": [
+        "4K@30",
+        "1080P60"
+      ],
+      "hdmi2Resolution": [
+        "1080P60"
+      ],
+      "hdmiContent": [
+        "Compositing",
+        "Local Director"
+      ],
+      "hdmiContentDisabled": true,
+      "uvcResolution": {
+        "current": "Self-adaption",
+        "options": [],
+        "disabled": true
+      },
+      "uvcContent": [
+        "Film",
+        "Computer",
+        "Computer2",
+        "Teacher",
+        "Student",
+        "Teacher_F.",
+        "Student_F."
+      ],
+      "colorMatrix": [
+        "BT601LIMIT_TO_BT601LIMIT",
+        "BT601FULL_TO_BT601LIMIT",
+        "BT709LIMIT_TO_BT601LIMIT",
+        "BT709FULL_TO_BT601LIMIT",
+        "BT601LIMIT_TO_BT709LIMIT",
+        "BT601FULL_TO_BT709LIMIT",
+        "BT709LIMIT_TO_BT709LIMIT",
+        "BT709FULL_TO_BT709LIMIT",
+        "BT601LIMIT_TO_BT601FULL",
+        "BT601FULL_TO_BT601FULL",
+        "BT709LIMIT_TO_BT601FULL",
+        "BT709FULL_TO_BT601FULL",
+        "BT601LIMIT_TO_BT709FULL",
+        "BT601FULL_TO_BT709FULL",
+        "BT709LIMIT_TO_BT709FULL",
+        "BT709FULL_TO_BT709FULL"
+      ]
+    },
+    "subtitle": {
+      "font": [
+        "Simsun",
+        "Simkai",
+        "Simhei",
+        "Arial",
+        "SourceHanSansKR"
+      ],
+      "size": [
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "color": [
+        "Black",
+        "White",
+        "Red",
+        "Green",
+        "Blue"
+      ],
+      "mode": [
+        "Fixed Mode",
+        "Left Scroll Mode",
+        "Right Scroll Mode"
+      ]
+    },
+    "osd": {
+      "color": [
+        "Black",
+        "White",
+        "Red",
+        "Green",
+        "Blue"
+      ],
+      "type": [
+        "Date+Time",
+        "Date",
+        "Time"
+      ]
+    },
+    "record": {
+      "format": [
+        "MP4",
+        "TS",
+        "MOV"
+      ],
+      "filmResolution": [
+        "3840*2160",
+        "1920*1080",
+        "1280*720",
+        "640*360"
+      ],
+      "otherResolution": [
+        "1920*1080",
+        "1280*720",
+        "640*360"
+      ],
+      "bitrate": [
+        "20480Kbps",
+        "15360Kbps",
+        "8192Kbps",
+        "4096Kbps",
+        "2048Kbps",
+        "1024Kbps",
+        "512Kbps"
+      ],
+      "filmFps": [
+        "30fps",
+        "25fps"
+      ],
+      "otherFps": [
+        "60fps",
+        "50fps",
+        "30fps",
+        "25fps"
+      ],
+      "codec": [
+        "H264",
+        "H265"
+      ],
+      "segment": [
+        "2hours",
+        "1hour",
+        "45min",
+        "30min",
+        "15min",
+        "10min",
+        "No segment"
+      ],
+      "maximum": [
+        "24hours",
+        "12hours",
+        "10hours",
+        "8hours",
+        "6hours",
+        "4hours",
+        "2hours",
+        "20min",
+        "No Limit"
+      ],
+      "cameraEncodingParametersDisabled": true
+    },
+    "live": {
+      "protocol": [
+        "RTMP",
+        "HLS",
+        "RTMP Push",
+        "RTMPS Push"
+      ],
+      "resolution": [
+        "1920*1080",
+        "1280*720",
+        "640*360"
+      ],
+      "bitrate": [
+        "4096Kbps",
+        "2048Kbps",
+        "1024Kbps",
+        "512Kbps"
+      ],
+      "fps": [
+        "30fps",
+        "25fps"
+      ]
+    },
+    "interaction": {
+      "resolution": [
+        "UHD",
+        "UD",
+        "FUD",
+        "HD",
+        "HD-"
+      ],
+      "sipResolution": [
+        "FUD",
+        "HD",
+        "HD-"
+      ],
+      "sources": [
+        "Film",
+        "Computer",
+        "Computer2",
+        "Teacher",
+        "Student",
+        "Teacher_F.",
+        "Student_F."
+      ],
+      "callerSecondSources": [
+        "Computer",
+        "Computer2",
+        "Teacher",
+        "Student",
+        "Teacher_F.",
+        "Student_F."
+      ],
+      "split": [
+        "Four Screens",
+        "Nine Screens"
+      ],
+      "micCount": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    "ip": {
+      "type": [
+        "Wired Network",
+        "Wi-Fi",
+        "Mobile Network"
+      ]
+    },
+    "system": {
+      "date": [
+        "DD-MM-YYYY",
+        "YYYY-MM-DD"
+      ],
+      "time": [
+        "12 Hours Format",
+        "24 Hours Format"
+      ],
+      "lock": [
+        "2 minutes",
+        "5 minutes",
+        "10 minutes",
+        "15 minutes",
+        "Forever"
+      ],
+      "languages": [
+        "中文(简体)",
+        "English",
+        "中文(繁體)",
+        "Русский язык",
+        "Français",
+        "한국어"
+      ],
+      "timezoneCount": 94
+    },
+    "ptz": {
+      "protocol": [
+        "Visca",
+        "Onvif",
+        "Visca over IP"
+      ],
+      "transport": [
+        "UDP",
+        "TCP",
+        "COM"
+      ],
+      "conditionalDisabled": "Onvif row transport disabled in an earlier observation; no live protocol changes performed"
+    },
+    "upload": {
+      "way": [
+        "close",
+        "leisure",
+        "real time",
+        "timing"
+      ],
+      "mode": [
+        "Standard FTP upload",
+        "Upload to centralized control platform",
+        "Upload to the third-party centralized control platform",
+        "DW"
+      ]
+    },
+    "storage": {
+      "path": [
+        "Local Path",
+        "Network Path"
+      ]
+    },
+    "platform": {
+      "nat": [
+        "Open",
+        "Close"
+      ],
+      "transport": [
+        "TCP",
+        "UDP"
+      ]
+    },
+    "peripheral": {
+      "keyboard": [
+        "None",
+        "EKB",
+        "DW",
+        "HV",
+        "P2500",
+        "P2510"
+      ],
+      "panel": [
+        "P2000",
+        "P2100"
+      ],
+      "clock": [
+        "None",
+        "P3000",
+        "P1000"
+      ],
+      "power": [
+        "None",
+        "P610"
+      ],
+      "port": [
+        "none",
+        "RS232"
+      ]
+    },
+    "power": {
+      "mode": [
+        "Normal Boot",
+        "Power on self start",
+        "Follow Screen"
+      ]
+    },
+    "factory": {
+      "style": [
+        "Default",
+        "Classic"
+      ]
+    },
+    "tracker": {
+      "protocol": [
+        "Default Protocol",
+        "Protocol 1",
+        "Protocol 2",
+        "Protocol 3",
+        "Protocol 4"
+      ],
+      "transport": [
+        "TCP",
+        "UDP"
+      ],
+      "address": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    "guidingstrategy": {
+      "source": [
+        "Teacher",
+        "Board",
+        "Student",
+        "Computer",
+        "Student_F.",
+        "Teacher_F.",
+        "Board2",
+        "Computer2"
+      ],
+      "intermediateExtra": "Default",
+      "priority": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "observation": "Disabled wide-camera priority fields retain current values 7 and 8, although these are absent from their option lists"
+    },
+    "trackerdebug": {
+      "teacherModel": [
+        "Custom",
+        "C500T",
+        "C2000T",
+        "C4001N",
+        "C1200",
+        "C3000-12",
+        "C3000-20",
+        "C3001-12",
+        "C3001-20",
+        "C3002-12",
+        "C3002-20",
+        "C3003-12",
+        "C3003-20"
+      ],
+      "studentModel": [
+        "Custom",
+        "C500S",
+        "C2000S",
+        "C4002N",
+        "C1200",
+        "C3000-12",
+        "C3000-20",
+        "C3001-12",
+        "C3001-20",
+        "C3002-12",
+        "C3002-20",
+        "C3003-12",
+        "C3003-20"
+      ],
+      "port": [
+        "RS232"
+      ],
+      "transport": [
+        "AMA",
+        "TCP"
+      ],
+      "address": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "baud": [
+        "9600",
+        "115200"
+      ],
+      "sensitivity": [
+        "Sensitive 2",
+        "Sensitive 1",
+        "Standard",
+        "Stable 1",
+        "Stable 2"
+      ],
+      "cameraType": [
+        ""
+      ]
+    },
+    "audio": {
+      "labels": [
+        "Audio mode in",
+        "Audio mode out",
+        "AllByPass",
+        "LocalAmplify",
+        "FeedbackSuppression",
+        "AnsLevel"
+      ],
+      "noiseRange": [
+        0,
+        5
+      ],
+      "feedbackDisabledWhenAmplificationOff": true
+    },
+    "logo": {
+      "selectCount": 0
+    },
+    "titletrailer": {
+      "selectCount": 0
+    },
+    "videomatting": {
+      "selectCount": 0
+    },
+    "version": {
+      "selectCount": 0
+    },
+    "usermanagement": {
+      "selectCount": 0
+    },
+    "broadcast": {
+      "groupOptions": [],
+      "dynamic": true
+    },
+    "input": {
+      "dynamic": true,
+      "credentialsAndStreamUrls": "omitted"
+    },
+    "main": {
+      "presets": [
+        "Preset1",
+        "Preset2",
+        "Preset3",
+        "Preset4",
+        "Preset5"
+      ]
+    }
+  },
+  "pending": [
+    "All conditional branches requiring live writes",
+    "Chinese original wording",
+    "Other language translations",
+    "Nested user, matting, calibration and HDMI2 dialogs not fully audited",
+    "Recordings filters and actions",
+    "Full label-by-label comparison outside corrected fields",
+    "Dynamic discovered devices and private configuration values"
+  ],
+  "evidenceType": "Manually transcribed read-only DOM observations, not a raw browser export"
+}

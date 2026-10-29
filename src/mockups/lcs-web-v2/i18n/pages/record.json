@@ -58,7 +58,24 @@
     "hours10": "10 h",
     "hours24": "24 h",
     "formatTip": "Tip: FLV and MKV recordings require H.264 encoding.",
-    "tipTitle": "TIP:"
+    "tipTitle": "TIP:",
+    "device": {
+      "2hours": "2 h",
+      "1hour": "1 h",
+      "45min": "45min",
+      "30min": "30min",
+      "15min": "15min",
+      "10min": "10min",
+      "Nosegment": "No Segmentation",
+      "24hours": "24 h",
+      "12hours": "12 h",
+      "10hours": "10 h",
+      "8hours": "8 h",
+      "6hours": "6 h",
+      "4hours": "4 h",
+      "20min": "20min",
+      "NoLimit": "No Limit"
+    }
   },
   "zh": {
     "cardTitleRecord": "录制设置",
@@ -119,6 +136,23 @@
     "hours10": "10小时",
     "hours24": "24小时",
     "formatTip": "操作提示: 选择FLV或MKV格式时，强制使用H264编码",
-    "tipTitle": "操作提示："
+    "tipTitle": "操作提示：",
+    "device": {
+      "2hours": "2小时",
+      "1hour": "1小时",
+      "45min": "45分钟",
+      "30min": "30分钟",
+      "15min": "15分钟",
+      "10min": "10分钟",
+      "Nosegment": "不分段",
+      "24hours": "24小时",
+      "12hours": "12小时",
+      "10hours": "10小时",
+      "8hours": "8小时",
+      "6hours": "6小时",
+      "4hours": "4小时",
+      "20min": "20分钟",
+      "NoLimit": "不限制"
+    }
   }
 }

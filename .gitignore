@@ -51,3 +51,7 @@ tmp/
 output/
 videos/
 lcs-web-input.png
+
+# Python runtime caches
+__pycache__/
+*.py[cod]

@@ -69,28 +69,35 @@
   "interaction.UHD": {
     "status": "retained",
     "controls": [
-      "interaction.resUltra"
+      "interaction.resUltra",
+      "interaction.device.UHD"
     ]
   },
   "interaction.UD": {
     "status": "pending",
-    "controls": []
+    "controls": [
+      "interaction.device.UD"
+    ]
   },
   "interaction.FHD": {
     "status": "changed",
     "controls": [
-      "interaction.resFull"
+      "interaction.resFull",
+      "interaction.device.FUD"
     ]
   },
   "interaction.HD": {
     "status": "retained",
     "controls": [
-      "interaction.resStandard"
+      "interaction.resStandard",
+      "interaction.device.HD"
     ]
   },
   "interaction.HDU": {
     "status": "changed",
-    "controls": []
+    "controls": [
+      "interaction.device.HDminus"
+    ]
   },
   "interaction.dualDisplay": {
     "status": "retained",
@@ -137,13 +144,15 @@
   "interaction.fourScreens": {
     "status": "changed",
     "controls": [
-      "interaction.split4"
+      "interaction.split4",
+      "interaction.device.FourScreens"
     ]
   },
   "interaction.nineScreens": {
     "status": "changed",
     "controls": [
-      "interaction.split9"
+      "interaction.split9",
+      "interaction.device.NineScreens"
     ]
   },
   "interaction.splitScreenFormat": {

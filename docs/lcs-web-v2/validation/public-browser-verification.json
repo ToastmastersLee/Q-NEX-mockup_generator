@@ -1,15 +1,23 @@
 {
+  "verifiedAt": "2026-10-29T16:55:01.896063+00:00",
   "site": "https://toastmasterslee.github.io/q/lcs/",
-  "commit": "eccd4744cb913328ebd5f14ba8045555ac9b126e",
-  "viewport": "1366x768",
-  "browser": "Chrome, anonymous independent profile",
-  "cases": [
-    "Public output page, locale stability, both HDMI display/audio dialogs",
-    "Public navigation, refresh, six fonts and Scroll Right",
-    "Public tracking Protocol 4 and Home preview images",
-    "Existing architecture root still renders"
-  ],
-  "errors": [],
-  "requestFailures": [],
-  "result": "passed"
+  "commit": "f32ce40c089083d22265db9768c1cd64c14b1991",
+  "method": "Chrome extension CUA on published HTTPS page",
+  "passed": true,
+  "checks": {
+    "outputEnglishLoads": true,
+    "uvcSevenSources": true,
+    "uvcStudentWideSelection": true,
+    "matrix16Options": true,
+    "matrixSelectionAndFullTitle": true,
+    "chineseSwitchPreservesSource": true,
+    "chineseInteractionFiveResolutionChoices": true,
+    "callerSecondExcludesPGM": true,
+    "outputEnglishFinalScreenshotObserved": true,
+    "consoleErrors": []
+  },
+  "limits": [
+    "Sampled public pages and interactions; not an exhaustive test of all conditional firmware behavior.",
+    "Full responsive screenshot acceptance remains limited to the recorded local layout checks."
+  ]
 }

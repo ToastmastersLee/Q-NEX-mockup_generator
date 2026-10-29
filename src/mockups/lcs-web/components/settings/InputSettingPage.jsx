@@ -14,10 +14,10 @@ export function InputSettingPage() {
   const [inputChannels, setInputChannels] = useState([
     { id: 'pc1', mode: 'HDMI', customMode: '', rtspUrl: '', ipc: '', usb: '', res: '0*0@0', rtspAudio: false, digitalAudioTxt: '', digitalAudioIn: false },
     { id: 'pc2', mode: 'HDMI', customMode: '', rtspUrl: '', ipc: '', usb: '', res: '0*0@0', rtspAudio: false, digitalAudioTxt: '', digitalAudioIn: false },
-    { id: 'tch', mode: 'RTSP', customMode: '', rtspUrl: 'rtsp://admin:2021042', ipc: '', usb: '', res: '1920*1080@25', rtspAudio: true, digitalAudioTxt: '', digitalAudioIn: true },
-    { id: 'stu', mode: 'RTSP', customMode: '', rtspUrl: 'rtsp://admin:2021042', ipc: '', usb: '', res: '1920*1080@25', rtspAudio: false, digitalAudioTxt: '', digitalAudioIn: false },
-    { id: 'tch_p', mode: 'RTSP', customMode: '', rtspUrl: 'rtsp://admin:2021042', ipc: '', usb: '', res: '1920*1080@25', rtspAudio: false, digitalAudioTxt: '', digitalAudioIn: false },
-    { id: 'stu_p', mode: 'RTSP', customMode: '', rtspUrl: 'rtsp://admin:2021042', ipc: '', usb: '', res: '1920*1080@25', rtspAudio: false, digitalAudioTxt: '', digitalAudioIn: false },
+    { id: 'tch', mode: 'RTSP', customMode: '', rtspUrl: '', ipc: '', usb: '', res: '1920*1080@25', rtspAudio: true, digitalAudioTxt: '', digitalAudioIn: true },
+    { id: 'stu', mode: 'RTSP', customMode: '', rtspUrl: '', ipc: '', usb: '', res: '1920*1080@25', rtspAudio: false, digitalAudioTxt: '', digitalAudioIn: false },
+    { id: 'tch_p', mode: 'RTSP', customMode: '', rtspUrl: '', ipc: '', usb: '', res: '1920*1080@25', rtspAudio: false, digitalAudioTxt: '', digitalAudioIn: false },
+    { id: 'stu_p', mode: 'RTSP', customMode: '', rtspUrl: '', ipc: '', usb: '', res: '1920*1080@25', rtspAudio: false, digitalAudioTxt: '', digitalAudioIn: false },
   ]);
 
   const showToast = (msg) => {
@@ -124,11 +124,12 @@ export function InputSettingPage() {
                         />
                         <span className="text-slate-700 font-medium">RTSP</span>
                       </label>
-                      {row.rtspUrl ? (
+                      {row.mode === 'RTSP' ? (
                         <div className="inline-flex items-center gap-1">
                           <input
                             type="text"
                             className="lcs-web-input-compact-box w-36 font-mono text-[11px]"
+                            placeholder={t('selectOrInput', '请选择或输入')}
                             value={row.rtspUrl}
                             onChange={e => {
                               const val = e.target.value;
@@ -140,6 +141,7 @@ export function InputSettingPage() {
                       ) : (
                         <select
                           className="lcs-web-input-compact-select w-28 text-xs"
+                          disabled
                           value={row.customMode || t('selectOrInput', '请选择或输入')}
                           onChange={e => {
                             const val = e.target.value;
@@ -147,7 +149,6 @@ export function InputSettingPage() {
                           }}
                         >
                           <option value={t('selectOrInput', '请选择或输入')}>{t('selectOrInput', '请选择或输入')}</option>
-                          <option value="rtsp://192.168.3.50/stream1">rtsp://192.168.3.50/stream1</option>
                         </select>
                       )}
                     </div>
@@ -165,6 +166,7 @@ export function InputSettingPage() {
                       </label>
                       <select
                         className="lcs-web-input-compact-select w-20 text-xs"
+                        disabled={row.mode !== 'IPC'}
                         value={row.ipc || t('select', '请选择')}
                         onChange={e => {
                           const val = e.target.value;
@@ -188,6 +190,7 @@ export function InputSettingPage() {
                       </label>
                       <select
                         className="lcs-web-input-compact-select w-20 text-xs"
+                        disabled={row.mode !== 'USB'}
                         value={row.usb || t('select', '请选择')}
                         onChange={e => {
                           const val = e.target.value;

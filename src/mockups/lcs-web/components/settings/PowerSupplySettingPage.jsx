@@ -6,7 +6,7 @@ import { NativeSelect } from '../common';
 import { useTranslation } from '../../i18n';
 
 export function PowerSupplySettingPage() {
-  const { t } = useTranslation('power');
+  const { t } = useTranslation('powerSupply');
   const [powerMode, setPowerMode] = useState('normalBoot');
   const [bootTime1, setBootTime1] = useState('07:00:00');
   const [bootSw1, setBootSw1] = useState(false);
@@ -20,11 +20,7 @@ export function PowerSupplySettingPage() {
 
   const [toastMessage, setToastMessage] = useState('');
 
-  const powerModeOptions = [
-    { value: 'normalBoot', label: t('normalBoot', '常规开机') },
-    { value: 'autoBoot', label: t('autoBoot', '通电开机') },
-    { value: 'keepOff', label: t('keepOff', '来电保持断电') },
-  ];
+  const powerModeOptions = [{"value": "normalBoot", "label": "Normal Boot"}, {"value": "autoBoot", "label": "Power on self start"}, {"value": "followScreen", "label": "Follow Screen"}];
 
   const showToast = (msg) => {
     setToastMessage(msg);
@@ -38,7 +34,7 @@ export function PowerSupplySettingPage() {
       <div className="lcs-web-card">
         {/* Row 1: 上电模式 */}
         <div className="flex items-center gap-8 py-3 border-b border-slate-100 flex-wrap">
-          <span className="w-36 text-xs text-slate-700 font-semibold">{t('powerOnMode', '上电模式')}</span>
+          <span className="w-36 text-xs text-slate-700 font-semibold">{t('powerOnMode', 'Power Mode')}</span>
           <div className="w-36">
             <NativeSelect
               value={powerMode}

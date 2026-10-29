@@ -15,7 +15,9 @@
     "wiredNet": "Wired Network",
     "pleaseEnterUrl": "Please enter URL or IP address to test",
     "pingResult": "Pinging {url} ...\nReply from {url}: bytes=32 time=12ms TTL=54\nReply from {url}: bytes=32 time=11ms TTL=54\nPackets: Sent = 2, Received = 2, Lost = 0 (0% loss)",
-    "ok": "OK"
+    "ok": "OK",
+    "wifi": "Wi-Fi",
+    "mobileNetwork": "Mobile Network"
   },
   "zh": {
     "pageTitle": "网络设置",

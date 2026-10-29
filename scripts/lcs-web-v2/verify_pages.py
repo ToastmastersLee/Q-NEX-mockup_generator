@@ -1,6 +1,7 @@
 """Verify this commit's Pages workflow, anonymous site bytes and unchanged entries."""
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -17,14 +18,27 @@ def get(url):
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--github-proof', type=Path,
+                        help='Fresh head/workflow JSON fetched through the connected GitHub tool when anonymous API is rate-limited')
+    args = parser.parse_args()
     record = json.loads((OUT / 'deployment.json').read_text(encoding='utf-8'))
-    api = 'https://api.github.com/repos/ToastmastersLee/q'
-    _, body, _ = get(api + '/actions/runs?head_sha=' + record['commit'] + '&per_page=10')
-    runs = [run for run in json.loads(body)['workflow_runs'] if 'pages' in run['name'].lower()]
+    if args.github_proof:
+        proof = json.loads(args.github_proof.read_text(encoding='utf-8'))
+        age = (datetime.now(timezone.utc) - datetime.fromisoformat(proof['fetchedAt'].replace('Z', '+00:00'))).total_seconds()
+        if not -60 <= age <= 1800:
+            raise RuntimeError('GitHub proof is stale; fetch current head and workflow again')
+        runs = [proof['workflow']]
+        head = proof['headSha']
+    else:
+        api = 'https://api.github.com/repos/ToastmastersLee/q'
+        _, body, _ = get(api + '/actions/runs?head_sha=' + record['commit'] + '&per_page=10')
+        runs = [run for run in json.loads(body)['workflow_runs'] if 'pages' in run['name'].lower()]
+        _, body, _ = get(api + '/commits/main')
+        head = json.loads(body)['sha']
     if not runs or runs[0]['status'] != 'completed' or runs[0]['conclusion'] != 'success':
         raise RuntimeError('This commit has not completed a successful Pages deployment')
-    _, body, _ = get(api + '/commits/main')
-    if json.loads(body)['sha'] != record['commit']:
+    if runs[0]['head_sha'] != record['commit'] or head != record['commit']:
         raise RuntimeError('Public main moved after this deployment')
 
     def check(item):

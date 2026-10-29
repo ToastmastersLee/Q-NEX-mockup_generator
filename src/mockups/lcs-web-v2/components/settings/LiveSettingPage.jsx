@@ -101,7 +101,7 @@ export function LiveSettingPage() {
                   <td>
                     <NativeSelect
                       value={row.mode}
-                      options={['RTMP', 'RTSP', 'HTTP-FLV', 'HLS']}
+                      options={["RTMP", "HLS", "RTMP Push", "RTMPS Push"]}
                       onChange={val => setLiveRows(curr => curr.map((r, i) => i === idx ? { ...r, mode: val } : r))}
                     />
                   </td>
@@ -115,14 +115,14 @@ export function LiveSettingPage() {
                   <td>
                     <NativeSelect
                       value={row.bitrate}
-                      options={['2048Kbps', '1024Kbps', '512Kbps', '256Kbps']}
+                      options={["4096Kbps", "2048Kbps", "1024Kbps", "512Kbps"]}
                       onChange={val => setLiveRows(curr => curr.map((r, i) => i === idx ? { ...r, bitrate: val } : r))}
                     />
                   </td>
                   <td>
                     <NativeSelect
                       value={row.fps}
-                      options={['25fps', '30fps', '60fps']}
+                      options={["30fps", "25fps"]}
                       onChange={val => setLiveRows(curr => curr.map((r, i) => i === idx ? { ...r, fps: val } : r))}
                     />
                   </td>

@@ -10,7 +10,6 @@ export function TeacherDebugCard({ onToast }) {
 
   const optSelect = { value: '', label: t('pleaseSelect', '请选择') };
   const optCustom = { value: 'custom', label: t('custom', '自定义') };
-  const optDefault = { value: 'default', label: t('default', '默认') };
 
   const [teacherDetectArea, setTeacherDetectArea] = useState(1);
   const [teacherShieldArea, setTeacherShieldArea] = useState(1);
@@ -129,7 +128,7 @@ export function TeacherDebugCard({ onToast }) {
               <div className="lcs-web-debug-input-wrap">
                 <NativeSelect
                   value={teacherForm.cameraType}
-                  options={[optSelect, 'Sony VISCA', 'Pelco-D', 'Pelco-P']}
+                  options={[optSelect]}
                   onChange={v => setTeacherForm({ ...teacherForm, cameraType: v })}
                 />
               </div>
@@ -140,7 +139,7 @@ export function TeacherDebugCard({ onToast }) {
               <div className="lcs-web-debug-input-wrap">
                 <NativeSelect
                   value={teacherForm.fullCameraType}
-                  options={['C3000-20', optCustom, optDefault]}
+                  options={[optCustom, ...["C500T", "C2000T", "C4001N", "C1200", "C3000-12", "C3000-20", "C3001-12", "C3001-20", "C3002-12", "C3002-20", "C3003-12", "C3003-20"]]}
                   onChange={v => setTeacherForm({ ...teacherForm, fullCameraType: v })}
                 />
               </div>
@@ -151,12 +150,12 @@ export function TeacherDebugCard({ onToast }) {
               <div className="lcs-web-debug-split-wrap">
                 <NativeSelect
                   value={teacherForm.cameraPort1}
-                  options={['/dev/ttyAMA3', '/dev/ttyAMA1', '/dev/ttyAMA2']}
+                  options={[{value:'/dev/ttyAMA3',label:'RS232'}]}
                   onChange={v => setTeacherForm({ ...teacherForm, cameraPort1: v })}
                 />
                 <NativeSelect
                   value={teacherForm.cameraPort2}
-                  options={['AMA', 'USB', 'COM']}
+                  options={['AMA','TCP']}
                   onChange={v => setTeacherForm({ ...teacherForm, cameraPort2: v })}
                 />
               </div>
@@ -167,7 +166,7 @@ export function TeacherDebugCard({ onToast }) {
               <div className="lcs-web-debug-input-wrap">
                 <NativeSelect
                   value={teacherForm.viscaAddress}
-                  options={[optSelect, '1', '2', '3', '4', '5']}
+                  options={[optSelect, '1','2','3','4','5','6','7','8']}
                   onChange={v => setTeacherForm({ ...teacherForm, viscaAddress: v })}
                 />
               </div>
@@ -178,7 +177,7 @@ export function TeacherDebugCard({ onToast }) {
               <div className="lcs-web-debug-input-wrap">
                 <NativeSelect
                   value={teacherForm.cameraBaud}
-                  options={[optSelect, '9600', '19200', '38400', '115200']}
+                  options={[optSelect, '9600', '115200']}
                   onChange={v => setTeacherForm({ ...teacherForm, cameraBaud: v })}
                 />
               </div>
@@ -225,7 +224,7 @@ export function TeacherDebugCard({ onToast }) {
               <div className="lcs-web-debug-input-wrap">
                 <NativeSelect
                   value={teacherForm.sensitivity}
-                  options={[optSelect, '1', '2', '3', '4', '5']}
+                  options={[optSelect, 'Sensitive 2','Sensitive 1','Standard','Stable 1','Stable 2']}
                   onChange={v => setTeacherForm({ ...teacherForm, sensitivity: v })}
                 />
               </div>

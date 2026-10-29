@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import deviceTimezones from '../../device-timezones.json';
 import {
   Clock,
 } from 'lucide-react';
@@ -7,7 +8,7 @@ import { useTranslation } from '../../i18n';
 
 export function SystemSettingPage() {
   const { t, language, changeLanguage } = useTranslation('system');
-  const [timeZone, setTimeZone] = useState('(GMT+08:00) Beijing, Hong Kong');
+  const [timeZone, setTimeZone] = useState('(GMT+08:00) Beijing, Chongqing, Hong Kong, Urumqi');
   const [dateFormat, setDateFormat] = useState('DD-MM-YYYY');
   const [timeFormat, setTimeFormat] = useState('format24h');
   const [dateTime, setDateTime] = useState('26 08 2026 11:39:08');
@@ -29,18 +30,9 @@ export function SystemSettingPage() {
   const [toastMessage, setToastMessage] = useState('');
   void setToastMessage;
 
-  const timeFormatOptions = [
-    { value: 'format24h', label: t('format24h', '24小时制') },
-    { value: 'format12h', label: t('format12h', '12小时制') },
-  ];
+  const timeFormatOptions = ['format12h', 'format24h'].map(value => ({value, label: t(value)}));
 
-  const screenOffOptions = [
-    { value: 'alwaysOn', label: t('alwaysOn', '常亮') },
-    { value: 'time5m', label: t('time5m', '5分钟') },
-    { value: 'time10m', label: t('time10m', '10分钟') },
-    { value: 'time2m', label: t('time2m') },
-    { value: 'time15m', label: t('time15m') },
-  ];
+  const screenOffOptions = ['time2m', 'time5m', 'time10m', 'time15m', 'alwaysOn'].map(value => ({value, label: t(value)}));
 
   const showToast = (msg) => {
     setToastMessage(msg);
@@ -55,10 +47,10 @@ export function SystemSettingPage() {
 
         <div className="flex items-center gap-6 py-2">
           <span className="w-24 text-xs text-slate-600">{t('timeZone', '时区设置')}</span>
-          <div className="w-64">
+          <div className="w-[32rem] max-w-full">
             <NativeSelect
               value={timeZone}
-              options={['(GMT+08:00) Beijing, Hong Kong', '(GMT+00:00) UTC', '(GMT-05:00) Eastern Time']}
+              options={deviceTimezones}
               onChange={setTimeZone}
             />
           </div>
@@ -69,7 +61,7 @@ export function SystemSettingPage() {
           <div className="w-64">
             <NativeSelect
               value={dateFormat}
-              options={['DD-MM-YYYY', 'YYYY-MM-DD', 'MM-DD-YYYY']}
+              options={[{value:'DD-MM-YYYY',label:t('dates.dayFirst')},{value:'YYYY-MM-DD',label:t('dates.yearFirst')}]}
               onChange={setDateFormat}
             />
           </div>
@@ -215,7 +207,7 @@ export function SystemSettingPage() {
           <div className="w-48">
             <NativeSelect
               value={language === 'en' ? 'English' : '中文(简体)'}
-              options={['中文(简体)', 'English']}
+              options={['中文(简体)', 'English', ...['中文(繁體)','Русский язык','Français','한국어'].map(label => ({value:label,label,disabled:true}))]}
               onChange={val => changeLanguage(val === 'English' ? 'en' : 'zh')}
             />
           </div>

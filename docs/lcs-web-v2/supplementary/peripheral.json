@@ -1,1 +1,7 @@
-{}
+{
+  "none": {
+    "en": "None",
+    "zh": "无",
+    "reason": "Empty peripheral/port choice observed in the original."
+  }
+}

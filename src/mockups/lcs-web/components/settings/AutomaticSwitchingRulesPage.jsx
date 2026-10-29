@@ -24,21 +24,9 @@ export function AutomaticSwitchingRulesPage() {
     }
   };
 
-  const defaultScreenOptions = [
-    { value: 'tch', label: t('teacher', '教师') },
-    { value: 'pc', label: t('computer', '电脑') },
-    { value: 'stu', label: t('student', '学生') },
-    { value: 'tch_p', label: t('teacherWide', '教师全景') },
-    { value: 'stu_p', label: t('studentWide', '学生全景') },
-  ];
+  const defaultScreenOptions = ["tch", "board", "stu", "pc", "stu_p", "tch_p", "board2", "pc2"].map(value => ({value, label: getScreenLabel(value)}));
 
-  const screenOptions = [
-    { value: 'default', label: t('default', '默认') },
-    { value: 'stu_p', label: t('studentWide', '学生全景') },
-    { value: 'tch_p', label: t('teacherWide', '教师全景') },
-    { value: 'pc', label: t('computer', '电脑') },
-    { value: 'tch', label: t('teacher', '教师') },
-  ];
+  const screenOptions = ['default', ...defaultScreenOptions.map(o => o.value)].map(value => ({value, label: getScreenLabel(value)}));
 
   const [strategyRows, setStrategyRows] = useState([
     { id: 'tch', enabled: true, level: '6', stayTime: '10', trans: false, screen: 'default', transTime: '2' },
@@ -130,7 +118,7 @@ export function AutomaticSwitchingRulesPage() {
                     <div className="w-20 mx-auto">
                       <NativeSelect
                         value={r.level}
-                        options={['1', '2', '3', '4', '5', '6', '7', '8']}
+                        options={['1', '2', '3', '4', '5', '6']} disabled={['stu_p','tch_p'].includes(r.id)}
                         onChange={val => setStrategyRows(curr => curr.map((item, i) => i === idx ? { ...item, level: val } : item))}
                       />
                     </div>
@@ -163,7 +151,7 @@ export function AutomaticSwitchingRulesPage() {
                     <div className="w-28 mx-auto">
                       <NativeSelect
                         value={r.screen}
-                        options={screenOptions}
+                        options={screenOptions} disabled={!r.trans}
                         onChange={val => setStrategyRows(curr => curr.map((item, i) => i === idx ? { ...item, screen: val } : item))}
                       />
                     </div>

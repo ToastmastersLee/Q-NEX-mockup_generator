@@ -82,19 +82,9 @@ export function SubtitleSettingPage() {
     '绿色': '#10b981',
   };
 
-  const colorOptions = [
-    { value: 'black', label: t('black', '黑色') },
-    { value: 'white', label: t('white', '白色') },
-    { value: 'red', label: t('red', '红色') },
-    { value: 'yellow', label: t('yellow', '黄色') },
-    { value: 'blue', label: t('blue', '蓝色') },
-    { value: 'green', label: t('green', '绿色') },
-  ];
+  const colorOptions = [{"value": "black", "label": "Black"}, {"value": "white", "label": "White"}, {"value": "red", "label": "Red"}, {"value": "green", "label": "Green"}, {"value": "blue", "label": "Blue"}];
 
-  const modeOptions = [
-    { value: 'fixed', label: t('fixedMode', '固定模式') },
-    { value: 'scroll', label: t('scrollMode', '滚动模式') },
-  ];
+  const modeOptions = [{"value": "fixed", "label": "Fixed Mode"}, {"value": "scroll", "label": "Left Scroll Mode"}, {"value": "scrollRight", "label": "Right Scroll Mode"}];
 
   return (
     <section className="lcs-web-page lcs-web-subtitle-page">
@@ -171,7 +161,7 @@ export function SubtitleSettingPage() {
             <span>{t('font', '字体')}</span>
             <NativeSelect
               value={activePreset.font}
-              options={['Arial', 'Times New Roman', 'Microsoft YaHei', 'SimSun', 'Verdana', 'Tahoma']}
+              options={["Simsun", "Simkai", "Simhei", "Arial", "SourceHanSansKR"]}
               onChange={font => updateActivePreset({ font })}
             />
           </div>
@@ -179,7 +169,7 @@ export function SubtitleSettingPage() {
             <span>{t('size', '大小')}</span>
             <NativeSelect
               value={activePreset.size}
-              options={['10', '12', '14', '16', '18', '20', '24', '28', '32', '36', '48']}
+              options={['9','10','11','12','13','14']}
               onChange={size => updateActivePreset({ size })}
             />
           </div>

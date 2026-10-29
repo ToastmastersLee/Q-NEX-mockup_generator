@@ -6,7 +6,7 @@ export function DisplaySettingsModal({ output, onClose }) {
   const { t } = useTranslation('output');
   const [modalTab, setModalTab] = useState('film');
   const [profile, setProfile] = useState('Extended BRT');
-  const [matrix, setMatrix] = useState('BT601FULL_T');
+  const [matrix, setMatrix] = useState('BT601FULL_TO_BT601FULL');
   const [levels, setLevels] = useState({
     Brightness: modalTab === 'film' ? 45 : 50,
     ContrastRatio: modalTab === 'film' ? 55 : 50,
@@ -55,11 +55,12 @@ export function DisplaySettingsModal({ output, onClose }) {
 
         <div className="lcs-web-display-matrix flex items-center gap-6 my-3">
           <span className="w-20 text-xs text-slate-600">{t('colorMatrix', '色彩矩阵')}</span>
-          <div className="w-48">
-            <NativeSelect value={matrix} options={['BT601FULL_T', 'BT709FULL_T', 'BT601LIMIT_T', 'BT709LIMIT_T']} onChange={setMatrix} />
+          <div className="w-72 max-w-full">
+            <NativeSelect aria-label={t('colorMatrix')} value={matrix} options={["BT601LIMIT_TO_BT601LIMIT", "BT601FULL_TO_BT601LIMIT", "BT709LIMIT_TO_BT601LIMIT", "BT709FULL_TO_BT601LIMIT", "BT601LIMIT_TO_BT709LIMIT", "BT601FULL_TO_BT709LIMIT", "BT709LIMIT_TO_BT709LIMIT", "BT709FULL_TO_BT709LIMIT", "BT601LIMIT_TO_BT601FULL", "BT601FULL_TO_BT601FULL", "BT709LIMIT_TO_BT601FULL", "BT709FULL_TO_BT601FULL", "BT601LIMIT_TO_BT709FULL", "BT601FULL_TO_BT709FULL", "BT709LIMIT_TO_BT709FULL", "BT709FULL_TO_BT709FULL"]} onChange={setMatrix} />
           </div>
         </div>
 
+        <p className="lcs-web-option-help">{t('matrixHelp')}</p>
         <div className="lcs-web-display-levels flex flex-col gap-3 mt-4">
           {[
             { key: 'Brightness', label: t('brightness', '亮度') },

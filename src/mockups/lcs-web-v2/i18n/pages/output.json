@@ -21,7 +21,19 @@
     "contrast": "Contrast",
     "hue": "Hue",
     "saturation": "Saturation",
-    "audioSetting": "Audio Settings"
+    "audioSetting": "Audio Settings",
+    "sources": {
+      "film": "PGM",
+      "computer": "Content 1",
+      "computer2": "Content 2",
+      "teacher": "Teacher",
+      "student": "Student",
+      "teacher_full": "Teacher Wide",
+      "student_full": "Student Wide"
+    },
+    "sourceHelp": "UVC source: choose PGM, Content 1/2, Teacher/Student, or Teacher Wide/Student Wide.",
+    "readOnlyHelp": "HDMI content and UVC resolution are read-only in this preview, matching the captured device configuration.",
+    "matrixHelp": "Color matrix names specify the source and destination color space and range; all 16 combinations are available."
   },
   "zh": {
     "pageTitle": "输出设置",
@@ -45,6 +57,18 @@
     "contrast": "对比度",
     "hue": "色调",
     "saturation": "饱和度",
-    "audioSetting": "音频设置"
+    "audioSetting": "音频设置",
+    "sources": {
+      "film": "电影",
+      "computer": "电脑",
+      "computer2": "电脑2",
+      "teacher": "教师",
+      "student": "学生",
+      "teacher_full": "教师全景",
+      "student_full": "学生全景"
+    },
+    "sourceHelp": "UVC 输出源可选择电影画面、电脑 1/2、教师/学生或教师全景/学生全景。",
+    "readOnlyHelp": "此预览中的 HDMI 输出内容和 UVC 分辨率为只读，与采集时的实机配置一致。",
+    "matrixHelp": "色彩矩阵名称表示转换前后的色彩空间和范围，可选项共 16 种。"
   }
 }

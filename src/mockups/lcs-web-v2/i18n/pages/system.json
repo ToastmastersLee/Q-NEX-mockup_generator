@@ -54,6 +54,10 @@
     "tipUpgradeSteps": "Upgrade steps: (1) Upload the upgrade file. (2) Click Upgrade. (3) Wait for the upgrade completion message.",
     "time2m": "2 minutes",
     "time15m": "15 minutes",
+    "dates": {
+      "dayFirst": "DD-MM-YYYY",
+      "yearFirst": "YYYY-MM-DD"
+    },
     "pageTitle": "System Settings",
     "time30m": "30 Minutes",
     "langZh": "中文(简体)",
@@ -114,6 +118,10 @@
     "tipUpgradeSteps": "升级步骤:（1）上传升级文件 。（2） 上传完后点击“升级”按钮。（3）弹出“升级完毕”后完成升级。",
     "time2m": "2分钟",
     "time15m": "15分钟",
+    "dates": {
+      "dayFirst": "日-月-年",
+      "yearFirst": "年-月-日"
+    },
     "pageTitle": "系统设置",
     "time30m": "30分钟",
     "langZh": "中文(简体)",

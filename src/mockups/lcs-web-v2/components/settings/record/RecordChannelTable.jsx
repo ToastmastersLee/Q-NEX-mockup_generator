@@ -40,35 +40,35 @@ export function RecordChannelTable({ channelRows, setChannelRows }) {
                 <td>
                   <NativeSelect
                     value={row.format}
-                    options={['MP4', 'TS']}
+                    options={["MP4", "TS", "MOV"]}
                     onChange={val => setChannelRows(curr => curr.map((r, i) => i === idx ? { ...r, format: val } : r))}
                   />
                 </td>
                 <td>
                   <NativeSelect
                     value={row.res}
-                    options={['3840*2160', '1920*1080', '1280*720']}
+                    options={row.id === 'film' ? ['3840*2160', '1920*1080', '1280*720', '640*360'] : ['1920*1080', '1280*720', '640*360']} disabled={['tch','stu','tch_p','stu_p'].includes(row.id)}
                     onChange={val => setChannelRows(curr => curr.map((r, i) => i === idx ? { ...r, res: val } : r))}
                   />
                 </td>
                 <td>
                   <NativeSelect
-                    value={row.bitrate}
-                    options={['4096Kbps', '2048Kbps', '1024Kbps', '512Kbps']}
+                    value={row.bitrate} disabled={['tch','stu','tch_p','stu_p'].includes(row.id)}
+                    options={["20480Kbps", "15360Kbps", "8192Kbps", "4096Kbps", "2048Kbps", "1024Kbps", "512Kbps"]}
                     onChange={val => setChannelRows(curr => curr.map((r, i) => i === idx ? { ...r, bitrate: val } : r))}
                   />
                 </td>
                 <td>
                   <NativeSelect
                     value={row.fps}
-                    options={['30fps', '25fps', '60fps']}
+                    options={row.id === 'film' ? ['30fps','25fps'] : ['60fps','50fps','30fps','25fps']} disabled={['tch','stu','tch_p','stu_p'].includes(row.id)}
                     onChange={val => setChannelRows(curr => curr.map((r, i) => i === idx ? { ...r, fps: val } : r))}
                   />
                 </td>
                 <td>
                   <NativeSelect
                     value={row.codec}
-                    options={['H265', 'H264']}
+                    options={["H264", "H265"]}
                     onChange={val => setChannelRows(curr => curr.map((r, i) => i === idx ? { ...r, codec: val } : r))}
                   />
                 </td>

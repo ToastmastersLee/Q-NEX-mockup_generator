@@ -23,5 +23,10 @@
   "sourceHan": "subtitle.SourceHanSansKR",
   "kanit": "subtitle.Kanit_Regular",
   "scrollLeft": "subtitle.leftScrollMode",
-  "scrollRight": "subtitle.rightScrollMode"
+  "scrollRight": "subtitle.rightScrollMode",
+  "colorBlack": "subtitle.Black",
+  "colorWhite": "subtitle.White",
+  "colorRed": "subtitle.Red",
+  "colorGreen": "subtitle.Green",
+  "colorBlue": "subtitle.Blue"
 }

@@ -9,10 +9,10 @@ import { useTranslation } from '../../i18n';
 export function UploadSettingPage() {
   const { t } = useTranslation('upload');
   const [fileUpload, setFileUpload] = useState(true);
-  const [uploadPath, setUploadPath] = useState('ftp://192.168.10.168:2021/IQ-FTP/');
+  const [uploadPath, setUploadPath] = useState('');
   const [uploadWay, setUploadWay] = useState('realtime');
-  const [username, setUsername] = useState('10813');
-  const [password, setPassword] = useState('Iqboard2022');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [uploadMode, setUploadMode] = useState('standardFtp');
   const [platformIp, setPlatformIp] = useState('');
@@ -25,6 +25,7 @@ export function UploadSettingPage() {
 
 
   const uploadWayOptions = [
+    { value: 'close', label: 'close' },
     { value: 'leisure', label: t('leisure', 'leisure') },
     { value: 'realtime', label: t('realtime', 'real time') },
     { value: 'timing', label: t('timing', 'timing') },

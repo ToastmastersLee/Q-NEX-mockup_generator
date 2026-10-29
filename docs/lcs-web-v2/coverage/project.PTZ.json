@@ -44,7 +44,9 @@
   },
   "project.PTZ.COM": {
     "status": "retained",
-    "controls": []
+    "controls": [
+      "ptz.device.COM"
+    ]
   },
   "project.PTZ.camAddrError": {
     "status": "pending",

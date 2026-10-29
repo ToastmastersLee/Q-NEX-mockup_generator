@@ -109,7 +109,7 @@ export function BoardDebugCard({ onToast }) {
               <div className="lcs-web-debug-input-wrap">
                 <NativeSelect
                   value={boardForm.cameraType}
-                  options={[optSelect, 'Sony VISCA', 'Pelco-D', 'Pelco-P']}
+                  options={[optSelect]}
                   onChange={v => setBoardForm({ ...boardForm, cameraType: v })}
                 />
               </div>
@@ -120,12 +120,12 @@ export function BoardDebugCard({ onToast }) {
               <div className="lcs-web-debug-split-wrap">
                 <NativeSelect
                   value={boardForm.cameraPort1}
-                  options={['/dev/ttyAMA3', '/dev/ttyAMA1', '/dev/ttyAMA2']}
+                  options={[{value:'/dev/ttyAMA3',label:'RS232'}]}
                   onChange={v => setBoardForm({ ...boardForm, cameraPort1: v })}
                 />
                 <NativeSelect
                   value={boardForm.cameraPort2}
-                  options={['AMA', 'USB', 'COM']}
+                  options={['AMA','TCP']}
                   onChange={v => setBoardForm({ ...boardForm, cameraPort2: v })}
                 />
               </div>
@@ -136,7 +136,7 @@ export function BoardDebugCard({ onToast }) {
               <div className="lcs-web-debug-input-wrap">
                 <NativeSelect
                   value={boardForm.viscaAddress}
-                  options={[optSelect, '1', '2', '3', '4', '5']}
+                  options={[optSelect, '1','2','3','4','5','6','7','8']}
                   onChange={v => setBoardForm({ ...boardForm, viscaAddress: v })}
                 />
               </div>
@@ -147,7 +147,7 @@ export function BoardDebugCard({ onToast }) {
               <div className="lcs-web-debug-input-wrap">
                 <NativeSelect
                   value={boardForm.cameraBaud}
-                  options={[optSelect, '9600', '19200', '38400', '115200']}
+                  options={[optSelect, '9600', '115200']}
                   onChange={v => setBoardForm({ ...boardForm, cameraBaud: v })}
                 />
               </div>

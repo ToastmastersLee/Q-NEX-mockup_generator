@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "checks": 960,
+  "languages": [
+    "en",
+    "zh"
+  ],
+  "renderedPagesPerLanguage": 29,
+  "failures": [],
+  "limits": "Initial rendered options and disabled state; no device writes or claim that all firmware branches are covered."
+}

@@ -4,13 +4,12 @@ import { useTranslation } from '../../i18n';
 
 export function InteractionSettingPage() {
   const { t } = useTranslation('interaction');
-  const { t: tCommon } = useTranslation('common');
-  const [callerRes1, setCallerRes1] = useState('ultra');
-  const [callerOut1, setCallerOut1] = useState('film');
-  const [callerRes2, setCallerRes2] = useState('ultra');
+  const [callerRes1, setCallerRes1] = useState('full');
+  const [callerOut1, setCallerOut1] = useState('pc1');
+  const [callerRes2, setCallerRes2] = useState('full');
   const [callerOut2, setCallerOut2] = useState('tch');
 
-  const [receiverRes, setReceiverRes] = useState('ultra');
+  const [receiverRes, setReceiverRes] = useState('full');
   const [receiverOut, setReceiverOut] = useState('stu');
   const [screenMode, setScreenMode] = useState('single');
   const [viewLayout, setViewLayout] = useState('v1');
@@ -28,38 +27,15 @@ export function InteractionSettingPage() {
   const [toastMessage, setToastMessage] = useState('');
   void setToastMessage;
 
-  const resOptions = [
-    { value: 'ultra', label: t('resUltra', '超高清') },
-    { value: 'full', label: t('resFull', '全高清') },
-    { value: 'standard', label: t('resStandard', '高清') },
-  ];
+  const resOptions = [{"value": "ultra", "label": "UHD"}, {"value": "ud", "label": "UD"}, {"value": "full", "label": "FUD"}, {"value": "standard", "label": "HD"}, {"value": "hdminus", "label": "HD-"}];
 
-  const callerOut1Options = [
-    { value: 'film', label: tCommon('channels.film', '电影') },
-    { value: 'tch', label: tCommon('channels.tch', '教师') },
-    { value: 'stu', label: tCommon('channels.stu', '学生') },
-    { value: 'pc1', label: tCommon('channels.pc1', '电脑') },
-  ];
+  const callerOut1Options = [{"value": "film", "label": "Film"}, {"value": "pc1", "label": "Computer"}, {"value": "pc2", "label": "Computer2"}, {"value": "tch", "label": "Teacher"}, {"value": "stu", "label": "Student"}, {"value": "tch_p", "label": "Teacher_F."}, {"value": "stu_p", "label": "Student_F."}];
 
-  const callerOut2Options = [
-    { value: 'tch', label: tCommon('channels.tch', '教师') },
-    { value: 'film', label: tCommon('channels.film', '电影') },
-    { value: 'stu', label: tCommon('channels.stu', '学生') },
-    { value: 'pc1', label: tCommon('channels.pc1', '电脑') },
-  ];
+  const callerOut2Options = [{"value": "pc1", "label": "Computer"}, {"value": "pc2", "label": "Computer2"}, {"value": "tch", "label": "Teacher"}, {"value": "stu", "label": "Student"}, {"value": "tch_p", "label": "Teacher_F."}, {"value": "stu_p", "label": "Student_F."}];
 
-  const receiverOutOptions = [
-    { value: 'stu', label: tCommon('channels.stu', '学生') },
-    { value: 'film', label: tCommon('channels.film', '电影') },
-    { value: 'tch', label: tCommon('channels.tch', '教师') },
-    { value: 'pc1', label: tCommon('channels.pc1', '电脑') },
-  ];
+  const receiverOutOptions = [{"value": "film", "label": "Film"}, {"value": "pc1", "label": "Computer"}, {"value": "pc2", "label": "Computer2"}, {"value": "tch", "label": "Teacher"}, {"value": "stu", "label": "Student"}, {"value": "tch_p", "label": "Teacher_F."}, {"value": "stu_p", "label": "Student_F."}];
 
-  const splitOptions = [
-    { value: '9', label: t('split9', '九分屏') },
-    { value: '4', label: t('split4', '四分屏') },
-    { value: '1', label: t('split1', '单分屏') },
-  ];
+  const splitOptions = [{"value": "4", "label": "Four Screens"}, {"value": "9", "label": "Nine Screens"}];
 
   const showToast = (msg) => {
     setToastMessage(msg);
@@ -195,7 +171,7 @@ export function InteractionSettingPage() {
 
               <div className="flex items-center gap-2">
                 <span className="text-xs text-slate-600">{t('micOpenCount', '听讲麦克风开启数量')}</span>
-                <NativeSelect value={micCount} options={['0', '1', '2', '4', '8']} onChange={setMicCount} />
+                <NativeSelect value={micCount} options={['0','1','2','3','4']} onChange={setMicCount} />
               </div>
             </div>
           </div>
@@ -216,7 +192,7 @@ export function InteractionSettingPage() {
             <span className="w-16 text-xs text-slate-700 font-semibold">{t('sipOutput', '输出')}</span>
             <div className="flex items-center gap-2">
               <span className="text-xs text-slate-600">{t('resolution', '视频分辨率')}</span>
-              <NativeSelect value={sipRes} options={resOptions} onChange={setSipRes} />
+              <NativeSelect value={sipRes} options={resOptions.slice(2)} onChange={setSipRes} />
             </div>
             <div className="flex items-center gap-2">
               <span className="text-xs text-slate-600">{t('outputChannel', '输出通道')}</span>

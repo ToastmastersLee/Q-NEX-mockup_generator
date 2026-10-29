@@ -2,7 +2,8 @@ export function NativeSelect({ value, options, onChange, className = '', ...prop
   const selected = options.find(option => (typeof option === 'object' ? option.value : option) === value);
   const title = typeof selected === 'object' ? selected.label : selected;
   return (
-    <select {...props} title={title} className={`lcs-web-native-select ${className}`} value={value} onChange={event => onChange(event.target.value)}>
+    <select {...props} title={title ?? value} className={`lcs-web-native-select ${className}`} value={value} onChange={event => onChange(event.target.value)}>
+      {props.disabled && !selected && <option value={value} hidden>{value}</option>}
       {options.map(option => {
         const val = typeof option === 'object' && option !== null ? option.value : option;
         const label = typeof option === 'object' && option !== null ? option.label : option;

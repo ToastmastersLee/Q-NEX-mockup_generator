@@ -28,11 +28,11 @@ export function PeripheralSettingPage() {
           <span className="w-20 text-xs text-slate-700 font-semibold">{t('keyboard', '键盘')}</span>
           <div className="flex items-center gap-2">
             <span className="text-xs text-slate-600">{t('kbModel', '键盘型号')}</span>
-            <div className="w-32"><NativeSelect value={peripherals.keyboard.model} options={['None', 'KB100', 'KB200']} onChange={val => setPeripherals(c => ({ ...c, keyboard: { ...c.keyboard, model: val } }))} /></div>
+            <div className="w-32"><NativeSelect value={peripherals.keyboard.model} options={[{value: 'None', label: t('none')}, "EKB", "DW", "HV", "P2500", "P2510"]} onChange={val => setPeripherals(c => ({ ...c, keyboard: { ...c.keyboard, model: val } }))} /></div>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-xs text-slate-600">{t('connPort', '连接端口')}</span>
-            <div className="w-32"><NativeSelect value={peripherals.keyboard.port} options={['none', 'RS232', 'RS485']} onChange={val => setPeripherals(c => ({ ...c, keyboard: { ...c.keyboard, port: val } }))} /></div>
+            <div className="w-32"><NativeSelect value={peripherals.keyboard.port} options={[{value: 'none', label: t('none')}, "RS232"]} onChange={val => setPeripherals(c => ({ ...c, keyboard: { ...c.keyboard, port: val } }))} /></div>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-xs text-slate-600">{t('baudRate', '波特率')}</span>
@@ -46,11 +46,11 @@ export function PeripheralSettingPage() {
           <span className="w-20 text-xs text-slate-700 font-semibold">{t('panel', '面板')}</span>
           <div className="flex items-center gap-2">
             <span className="text-xs text-slate-600">{t('kbModel', '键盘型号')}</span>
-            <div className="w-32"><NativeSelect value={peripherals.panel.model} options={['P2000', 'P1000', 'None']} onChange={val => setPeripherals(c => ({ ...c, panel: { ...c.panel, model: val } }))} /></div>
+            <div className="w-32"><NativeSelect value={peripherals.panel.model} options={["P2000", "P2100"]} onChange={val => setPeripherals(c => ({ ...c, panel: { ...c.panel, model: val } }))} /></div>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-xs text-slate-600">{t('connPort', '连接端口')}</span>
-            <div className="w-32"><NativeSelect value={peripherals.panel.port} options={['RS232', 'RS485', 'none']} onChange={val => setPeripherals(c => ({ ...c, panel: { ...c.panel, port: val } }))} /></div>
+            <div className="w-32"><NativeSelect value={peripherals.panel.port} options={[{value: 'none', label: t('none')}, "RS232"]} onChange={val => setPeripherals(c => ({ ...c, panel: { ...c.panel, port: val } }))} /></div>
             <span className="text-[11px] text-emerald-600 font-semibold">{t('available', '(可用)')}</span>
           </div>
           <div className="flex items-center gap-2">
@@ -65,11 +65,11 @@ export function PeripheralSettingPage() {
           <span className="w-20 text-xs text-slate-700 font-semibold">{t('clock', '时钟')}</span>
           <div className="flex items-center gap-2">
             <span className="text-xs text-slate-600">{t('clockModel', '时钟型号')}</span>
-            <div className="w-32"><NativeSelect value={peripherals.clock.model} options={['None', 'CLK100', 'CLK200']} onChange={val => setPeripherals(c => ({ ...c, clock: { ...c.clock, model: val } }))} /></div>
+            <div className="w-32"><NativeSelect value={peripherals.clock.model} options={[{value: 'None', label: t('none')}, "P3000", "P1000"]} onChange={val => setPeripherals(c => ({ ...c, clock: { ...c.clock, model: val } }))} /></div>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-xs text-slate-600">{t('connPort', '连接端口')}</span>
-            <div className="w-32"><NativeSelect value={peripherals.clock.port} options={['none', 'RS232', 'RS485']} onChange={val => setPeripherals(c => ({ ...c, clock: { ...c.clock, port: val } }))} /></div>
+            <div className="w-32"><NativeSelect value={peripherals.clock.port} options={[{value: 'none', label: t('none')}, "RS232"]} onChange={val => setPeripherals(c => ({ ...c, clock: { ...c.clock, port: val } }))} /></div>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-xs text-slate-600">{t('baudRate', '波特率')}</span>
@@ -83,11 +83,11 @@ export function PeripheralSettingPage() {
           <span className="w-20 text-xs text-slate-700 font-semibold">{t('powerSequencer', '时序电源')}</span>
           <div className="flex items-center gap-2">
             <span className="text-xs text-slate-600">{t('powerModel', '电源型号')}</span>
-            <div className="w-32"><NativeSelect value={peripherals.power.model} options={['None', 'PWR100', 'PWR200']} onChange={val => setPeripherals(c => ({ ...c, power: { ...c.power, model: val } }))} /></div>
+            <div className="w-32"><NativeSelect value={peripherals.power.model} options={[{value: 'None', label: t('none')}, "P610"]} onChange={val => setPeripherals(c => ({ ...c, power: { ...c.power, model: val } }))} /></div>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-xs text-slate-600">{t('connPort', '连接端口')}</span>
-            <div className="w-32"><NativeSelect value={peripherals.power.port} options={['none', 'RS232', 'RS485']} onChange={val => setPeripherals(c => ({ ...c, power: { ...c.power, port: val } }))} /></div>
+            <div className="w-32"><NativeSelect value={peripherals.power.port} options={[{value: 'none', label: t('none')}, "RS232"]} onChange={val => setPeripherals(c => ({ ...c, power: { ...c.power, port: val } }))} /></div>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-xs text-slate-600">{t('baudRate', '波特率')}</span>

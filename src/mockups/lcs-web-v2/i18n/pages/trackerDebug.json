@@ -53,7 +53,14 @@
     "tchDetectCleared": "Teacher detection zone cleared",
     "stuShieldClosed": "Student masking zone closed",
     "boardDetectCleared": "Blackboard detection zone cleared",
-    "boardCloseupSelected": "Blackboard close-up position {p} selected"
+    "boardCloseupSelected": "Blackboard close-up position {p} selected",
+    "levels": {
+      "Sensitive2": "Sensitive 2",
+      "Sensitive1": "Sensitive 1",
+      "Standard": "Standard",
+      "Stable1": "Stable 1",
+      "Stable2": "Stable 2"
+    }
   },
   "zh": {
     "teacher": "教师",
@@ -109,6 +116,13 @@
     "tchDetectCleared": "教师检测区已清除",
     "stuShieldClosed": "学生屏蔽区已关闭",
     "boardDetectCleared": "板书检测区已清除",
-    "boardCloseupSelected": "板书特写位 {p} 已选择"
+    "boardCloseupSelected": "板书特写位 {p} 已选择",
+    "levels": {
+      "Sensitive2": "灵敏 2",
+      "Sensitive1": "灵敏 1",
+      "Standard": "标准",
+      "Stable1": "稳定 1",
+      "Stable2": "稳定 2"
+    }
   }
 }

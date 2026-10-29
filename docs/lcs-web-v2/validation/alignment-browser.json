@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-29",
+  "method": "Chrome extension CUA, DOM and layout measurements",
+  "checks": {
+    "uvcStudentWideSelection": true,
+    "matrix16OptionsAndSelection": true,
+    "languageSwitchPreservesSelectedSource": true,
+    "onvifDisablesTransport": true,
+    "uploadOffInWayMenu": true,
+    "scheduledUploadShowsStartAndDuration": true,
+    "timezones94": true,
+    "consoleErrors": []
+  },
+  "layouts": [
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "overflow": false,
+      "matrixWidth": 288
+    },
+    {
+      "viewport": [
+        1365,
+        768
+      ],
+      "overflow": false,
+      "matrixWidth": 288,
+      "timezoneWidth": 512
+    }
+  ],
+  "limitations": [
+    "Screenshot API timed out; no screenshot acceptance claimed.",
+    "Chrome zoom prevented exact 1366 width; actual tested width is recorded."
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "files": [
+    "src/mockups/lcs-web-v2/components/common/NativeSelect.jsx",
+    "src/mockups/lcs-web-v2/components/settings/AudioSettingPage.jsx",
+    "src/mockups/lcs-web-v2/components/settings/AutomaticSwitchingRulesPage.jsx",
+    "src/mockups/lcs-web-v2/components/settings/InputSettingPage.jsx",
+    "src/mockups/lcs-web-v2/components/settings/InteractionSettingPage.jsx",
+    "src/mockups/lcs-web-v2/components/settings/LiveSettingPage.jsx",
+    "src/mockups/lcs-web-v2/components/settings/NetworkSettingPage.jsx",
+    "src/mockups/lcs-web-v2/components/settings/OsdSettingPage.jsx",
+    "src/mockups/lcs-web-v2/components/settings/OutputSettingPage.jsx",
+    "src/mockups/lcs-web-v2/components/settings/PeripheralSettingPage.jsx",
+    "src/mockups/lcs-web-v2/components/settings/PlatformSettingPage.jsx",
+    "src/mockups/lcs-web-v2/components/settings/PowerSupplySettingPage.jsx",
+    "src/mockups/lcs-web-v2/components/settings/PtzSettingPage.jsx",
+    "src/mockups/lcs-web-v2/components/settings/SubtitleSettingPage.jsx",
+    "src/mockups/lcs-web-v2/components/settings/SystemSettingPage.jsx",
+    "src/mockups/lcs-web-v2/components/settings/TrackerSettingPage.jsx",
+    "src/mockups/lcs-web-v2/components/settings/UploadSettingPage.jsx",
+    "src/mockups/lcs-web-v2/components/settings/modals/AudioSettingsModal.jsx",
+    "src/mockups/lcs-web-v2/components/settings/modals/DisplaySettingsModal.jsx",
+    "src/mockups/lcs-web-v2/components/settings/record/RecordChannelTable.jsx",
+    "src/mockups/lcs-web-v2/components/settings/record/RecordScheduleTable.jsx",
+    "src/mockups/lcs-web-v2/components/settings/tracker-debug/StudentDebugCard.jsx",
+    "src/mockups/lcs-web-v2/components/settings/tracker-debug/TeacherDebugCard.jsx"
+  ],
+  "exitCode": 0,
+  "output": ""
+}

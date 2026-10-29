@@ -124,11 +124,12 @@ export function InputSettingPage() {
                         />
                         <span className="text-slate-700 font-medium">RTSP</span>
                       </label>
-                      {row.rtspUrl ? (
+                      {row.mode === 'RTSP' ? (
                         <div className="inline-flex items-center gap-1">
                           <input
                             type="text"
                             className="lcs-web-input-compact-box w-36 font-mono text-[11px]"
+                            placeholder={t('selectOrInput', '请选择或输入')}
                             value={row.rtspUrl}
                             onChange={e => {
                               const val = e.target.value;
@@ -140,14 +141,13 @@ export function InputSettingPage() {
                       ) : (
                         <select
                           className="lcs-web-input-compact-select w-28 text-xs"
-                          value={row.customMode}
+                          disabled value={row.customMode}
                           onChange={e => {
                             const val = e.target.value;
                             setInputChannels(curr => curr.map((r, i) => i === idx ? { ...r, customMode: val } : r));
                           }}
                         >
                           <option value="">{t('selectOrInput', '请选择或输入')}</option>
-                          <option value="rtsp://camera.example/stream">rtsp://camera.example/stream</option>
                         </select>
                       )}
                     </div>
@@ -165,7 +165,7 @@ export function InputSettingPage() {
                       </label>
                       <select
                         className="lcs-web-input-compact-select w-20 text-xs"
-                        value={row.ipc}
+                        disabled={row.mode !== 'IPC'} value={row.ipc}
                         onChange={e => {
                           const val = e.target.value;
                           setInputChannels(curr => curr.map((r, i) => i === idx ? { ...r, ipc: val } : r));
@@ -188,7 +188,7 @@ export function InputSettingPage() {
                       </label>
                       <select
                         className="lcs-web-input-compact-select w-20 text-xs"
-                        value={row.usb}
+                        disabled={row.mode !== 'USB'} value={row.usb}
                         onChange={e => {
                           const val = e.target.value;
                           setInputChannels(curr => curr.map((r, i) => i === idx ? { ...r, usb: val } : r));

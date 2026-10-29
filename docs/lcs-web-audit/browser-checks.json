@@ -1,0 +1,126 @@
+{
+  "date": "2026-10-29",
+  "method": "Chrome extension / CUA, local original preview only",
+  "localUrl": "http://127.0.0.1:5191/?page=output&lang=en",
+  "language": "en",
+  "pages": [
+    "main",
+    "recordings",
+    "subtitle",
+    "logo",
+    "titletrailer",
+    "osd",
+    "record",
+    "live",
+    "videomatting",
+    "interaction",
+    "broadcast",
+    "ip",
+    "system",
+    "version",
+    "input",
+    "output",
+    "audio",
+    "ptz",
+    "upload",
+    "storage",
+    "platform",
+    "peripheral",
+    "powersupply",
+    "factory",
+    "usermanagement",
+    "tracker",
+    "guidingstrategy",
+    "trackerdebug"
+  ],
+  "pageSweep": [
+    {
+      "actualCssWidth": 1920,
+      "actualCssHeight": 1080,
+      "pages": 28,
+      "renderErrors": 0,
+      "brokenImages": 0,
+      "documentHorizontalOverflow": 0
+    },
+    {
+      "actualCssWidth": 1365,
+      "actualCssHeight": 768,
+      "pages": 28,
+      "renderErrors": 0,
+      "brokenImages": 0,
+      "documentHorizontalOverflow": 0
+    }
+  ],
+  "interactions": {
+    "uvcSelection": {
+      "selected": "Student_F.",
+      "hdmiSelectionsUnchanged": true
+    },
+    "displayModal": {
+      "colorMatrixCount": 16,
+      "selected": "BT601FULL_TO_BT601FULL",
+      "controlCssWidth": 288,
+      "actualViewport": [
+        1365,
+        768
+      ]
+    },
+    "system": {
+      "timezoneCount": 94,
+      "controlCssWidth": 511.9921875,
+      "actualViewport": [
+        1365,
+        768
+      ]
+    },
+    "audio": {
+      "localAmplifyOnEnablesFeedback": true,
+      "offDisablesFeedback": true,
+      "initialOffRestored": true
+    },
+    "ptz": {
+      "localOnvifDisablesTransport": true,
+      "localViscaEnablesTransport": true,
+      "initialViscaRestored": true
+    },
+    "uploadWay": [
+      "close",
+      "leisure",
+      "real time",
+      "timing"
+    ],
+    "uploadMode": [
+      "Standard FTP upload",
+      "Upload to centralized control platform",
+      "Upload to the third-party centralized control platform",
+      "DW"
+    ],
+    "uploadLongOptions": {
+      "insideViewport": true,
+      "itemClientWidth": 312,
+      "itemScrollWidth": 312,
+      "actualViewport": [
+        1365,
+        768
+      ]
+    }
+  },
+  "limitations": [
+    "Earlier 56 runs used requested viewport sizes without checking innerWidth; they are superseded by the sweeps above.",
+    "Chrome zoom yielded devicePixelRatio 0.6666666865348816; integer viewport sizing gives 1365 or 1367 CSS pixels. Used the narrower 1365 width; exact 1366 visual acceptance remains pending.",
+    "Screenshots repeatedly timed out. DOM geometry and behavior were checked, but final rendered visual screenshot acceptance is not claimed.",
+    "No complete label-by-label, Chinese, conditional hardware behavior, or all-dialog coverage claim."
+  ],
+  "temporaryViewportReset": true,
+  "previewTabKept": true,
+  "build": {
+    "command": "npm run build:lcs-web -- --outDir dist/lcs-web-audit",
+    "exitCode": 0,
+    "chunkSizeWarning": true
+  },
+  "changedJsxLint": {
+    "passed": true,
+    "scope": "modified original JSX files only"
+  },
+  "v2AfterFinalBuildUnchanged": true
+}

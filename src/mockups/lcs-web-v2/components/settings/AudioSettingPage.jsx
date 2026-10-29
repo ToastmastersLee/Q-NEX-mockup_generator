@@ -5,7 +5,7 @@ export function AudioSettingPage() {
   const { t } = useTranslation('audio');
   const [audioMode, setAudioMode] = useState('builtin');
   const [audioProcessing, setAudioProcessing] = useState(true);
-  const [amplification, setAmplification] = useState(true);
+  const [amplification, setAmplification] = useState(false);
   const [feedback, setFeedback] = useState(true);
   const [noiseLevel, setNoiseLevel] = useState(5);
   const [outputVol, setOutputVol] = useState(130);
@@ -62,7 +62,7 @@ export function AudioSettingPage() {
         <div className="flex items-center gap-8 py-2.5 border-b border-slate-100 flex-wrap">
           <span className="w-28 text-xs text-slate-700 font-semibold">{t('feedbackSuppression', '反馈抑制')}</span>
           <label className="lcs-web-switch">
-            <input type="checkbox" checked={feedback} onChange={e => setFeedback(e.target.checked)} />
+            <input type="checkbox" checked={feedback} disabled={!amplification} onChange={e => setFeedback(e.target.checked)} />
             <span className="slider" />
           </label>
           <span className="text-xs text-slate-400">{t('tipFeedback', '提示: 扩声开启时才允许设置')}</span>
@@ -75,7 +75,7 @@ export function AudioSettingPage() {
             <input
               type="range"
               min="0"
-              max="10"
+              max="5"
               className="flex-1"
               value={noiseLevel}
               onChange={e => setNoiseLevel(Number(e.target.value))}

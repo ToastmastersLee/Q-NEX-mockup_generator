@@ -1,4 +1,3 @@
-import React from 'react';
 import { CircleMinus } from 'lucide-react';
 import { NativeSelect, TimePicker } from '../../common';
 import { useTranslation } from '../../../i18n';
@@ -29,19 +28,9 @@ export function RecordScheduleTable({
 }) {
   const { t } = useTranslation('record');
 
-  const segmentOptions = [
-    { value: 'none', label: t('noSegment', '不分段') },
-    { value: '30m', label: t('min30', '30分钟') },
-    { value: '1h', label: t('hour1', '1小时') },
-    { value: '2h', label: t('hour2', '2小时') },
-  ];
+  const segmentOptions = [{"value": "2h", "label": "2hours"}, {"value": "1h", "label": "1hour"}, {"value": "45m", "label": "45min"}, {"value": "30m", "label": "30min"}, {"value": "15m", "label": "15min"}, {"value": "10m", "label": "10min"}, {"value": "none", "label": "No segment"}];
 
-  const maxDurationOptions = [
-    { value: '4h', label: t('hours4', '4小时') },
-    { value: '6h', label: t('hours6', '6小时') },
-    { value: '8h', label: t('hours8', '8小时') },
-    { value: '12h', label: t('hours12', '12小时') },
-  ];
+  const maxDurationOptions = [{"value": "24h", "label": "24hours"}, {"value": "12h", "label": "12hours"}, {"value": "10h", "label": "10hours"}, {"value": "8h", "label": "8hours"}, {"value": "6h", "label": "6hours"}, {"value": "4h", "label": "4hours"}, {"value": "2h", "label": "2hours"}, {"value": "20m", "label": "20min"}, {"value": "none", "label": "No Limit"}];
 
   return (
     <div className="lcs-web-card mb-4">
