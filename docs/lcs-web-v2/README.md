@@ -1,5 +1,7 @@
 # LCS-Web V2 客户预览交接
 
+跨项目发布及新 AI 会话请先读：[GitHub Pages 发布指南（含完整命令和新项目迁移步骤）](GITHUB-PAGES-PUBLISHING-GUIDE.md)。
+
 ## 2026-10-30 上线验收完成
 
 [客户预览](https://toastmasterslee.github.io/q/lcs/?page=output&lang=en)已更新，公开提交 `f32ce40c089083d22265db9768c1cd64c14b1991`；[Pages 工作流](https://github.com/ToastmastersLee/q/actions/runs/40870854726)成功。7 个站点文件公网哈希匹配，6 个原有入口内容检查通过，144 个其他公开文件保持不变。线上 UVC、矩阵、中文互动分辨率及中英文切换抽查通过；Console 未见错误。详见 validation 内本次记录。
@@ -107,7 +109,7 @@ npm run build:lcs-web-v2
 
 可粘贴到新聊天：
 
-> 继续 Q-NEX-mockup_generator 的 LCS-Web V2 客户预览。先读 docs/lcs-web-v2/README.md、MENU-COVERAGE.md、source.json 和当前页面的 bindings/supplementary。旧目录 src/mockups/lcs-web 必须保持 107 文件哈希不变；新版在 src/mockups/lcs-web-v2。英文采用最新 Excel E 非空则 E、否则 D，中文 C，保留短按钮及 pending 原文。运行 npm run dev:lcs-web-v2（5180）；构建 npm run build:lcs-web-v2，产物 dist/lcs-web-v2，仅包含新版。当前站点已发布至 https://toastmasterslee.github.io/q/lcs/，待用户/客户 review，未提交原厂。逐页按反馈修改，不重做无关整页，不将缺少的硬件能力凭空补入。
+> 继续 Q-NEX-mockup_generator 的 LCS-Web V2 客户预览。先读 docs/lcs-web-v2/README.md、MENU-COVERAGE.md、source.json 和当前页面的 bindings/supplementary。原版 src/mockups/lcs-web 按 validation/original-alignment-baseline.json 的当前 108 文件快照保护；legacy-baseline.json 的 107 文件记录是历史快照，不要重写。新版在 src/mockups/lcs-web-v2。英文采用最新 Excel E 非空则 E、否则 D，中文 C，保留短按钮及 pending 原文。运行 npm run dev:lcs-web-v2（5180）；构建 npm run build:lcs-web-v2，产物 dist/lcs-web-v2，仅包含新版。当前站点已发布至 https://toastmasterslee.github.io/q/lcs/，待用户/客户 review，未提交原厂。逐页按反馈修改，不重做无关整页，不将缺少的硬件能力凭空补入。
 
 ## 后续定向部署 lcs/ 子站
 
@@ -115,4 +117,4 @@ npm run build:lcs-web-v2
 
 SSH 使用当前机器本来就有的 GitHub 身份。此机器使用 Windows OpenSSH 和 github-work，进程内 GIT_SSH_COMMAND 的成功配置见架构项目 Emulators/PUBLISH_HANDOFF.md；其他机器应使用其已授权身份，不复制密钥、不改全局配置。部署脚本只发布 lcs/，远端 main 若发生变化就停止，不强推。
 
-架构项目 `SystemArchitecture/tools/publish_pages.py` 已增加 lcs/ 保留规则，并在克隆时设置 core.autocrlf=false，避免后续架构更新改动独立子站。维护源码改动仍在两个本地仓库内，未推送私有源码；换机器时应同步这些源码与保留规则。公开站点的提交已经推送。
+架构项目 `SystemArchitecture/tools/publish_pages.py` 已增加 lcs/ 保留规则，并在克隆时设置 core.autocrlf=false，避免后续架构更新改动独立子站。本仓库的 LCS 原版、V2、核验工具和发布记录已推送至源码仓库 main，提交 9bad74568405bb05ef5ced986b4986f0afb12259。架构仓库的保留规则需另查其当前 Git 状态，不能由本仓库推送结果推断；换机器时同时核对这两处。公开站点发布记录见 validation/deployment.json。
