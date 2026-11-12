@@ -53,7 +53,9 @@ export const NmpContentRouter = () => {
         setIsDisconnected,
         setIsAndroidEthernetOpen,
         panelIpAddress,
-        setPanelIpAddress
+        setPanelIpAddress,
+        cloudServerAddress,
+        setCloudServerAddress
     } = useNmpContext();
 
     if (activeTab === 'home') {
@@ -185,6 +187,8 @@ export const NmpContentRouter = () => {
                 onPanelIpClick={() => setIsAndroidEthernetOpen(true)}
                 panelIpAddress={panelIpAddress}
                 setPanelIpAddress={setPanelIpAddress}
+                cloudServerAddress={cloudServerAddress}
+                onCloudServerAddressChange={setCloudServerAddress}
                 onCustomizeClick={() => setSettingsSubPage('customize')}
                 onDivisibleRoomClick={() => setSettingsSubPage('divisible-room')}
             />

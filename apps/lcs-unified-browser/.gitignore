@@ -1,0 +1,3 @@
+.venv/
+config.local.json
+!static/sample-*.mp4

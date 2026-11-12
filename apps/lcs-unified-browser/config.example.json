@@ -1,0 +1,8 @@
+{
+  "host": "0.0.0.0",
+  "port": 8088,
+  "devices": [
+    {"id": "a", "room": "三楼", "ip": "", "tcp_port": 6558, "http_port": 9090},
+    {"id": "b", "room": "一楼", "ip": "", "tcp_port": 6558, "http_port": 9090}
+  ]
+}

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>双录播机统一录像浏览</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/main.js" defer></script>
+</head>
+<body>
+  <main class="workspace">
+    <header class="top">
+      <div>
+        <h1>双录播机统一录像浏览</h1>
+        <p>统一检索 · 录像存于来源设备</p>
+      </div>
+      <div class="actions">
+        <div class="modes" role="group" aria-label="数据模式">
+          <button type="button" data-mode="demo" aria-pressed="true">演示数据</button>
+          <button type="button" data-mode="live" aria-pressed="false">真机</button>
+        </div>
+        <button id="refresh" type="button">刷新</button>
+      </div>
+    </header>
+    <p class="notice" id="mode-notice" role="status">演示数据 · 当前使用模拟设备和本地示例视频</p>
+    <section class="devices" aria-label="设备状态" id="devices"></section>
+    <div class="recordings-layout">
+      <section class="panel library" aria-labelledby="library-title">
+        <div class="panel-head">
+          <h2 id="library-title">录像列表</h2>
+          <span id="count" aria-live="polite"></span>
+        </div>
+        <form id="filters">
+          <label>房间<select id="room" name="room">
+            <option value="">全部房间</option><option value="a">三楼</option><option value="b">一楼</option>
+          </select></label>
+          <label>开始日期<input id="start" type="date" name="start"></label>
+          <label>结束日期<input id="end" type="date" name="end"></label>
+          <label class="keyword">关键词<input id="keyword" name="q" type="search" placeholder="课程、教师或文件名" maxlength="150"></label>
+          <div class="filter-actions">
+            <button class="primary" type="submit">搜索</button>
+            <button type="reset">清空</button>
+          </div>
+        </form>
+        <p id="list-status" class="list-status" role="status"></p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th scope="col">课程 / 文件名</th><th scope="col">教师</th><th scope="col">录制时间</th><th scope="col">大小</th><th scope="col">来源</th><th scope="col">播放</th></tr></thead>
+            <tbody id="rows"></tbody>
+          </table>
+        </div>
+        <nav class="pagination" id="pagination" aria-label="录像分页" hidden>
+          <button id="previous" type="button">上一页</button>
+          <span id="page"></span>
+          <button id="next" type="button">下一页</button>
+        </nav>
+      </section>
+      <section class="panel player" aria-labelledby="player-title">
+        <div class="panel-head"><h2 id="player-title">录像预览</h2></div>
+        <div class="video-frame">
+          <p id="placeholder">从录像列表选择一条录像</p>
+          <video id="video" controls playsinline preload="metadata" disablepictureinpicture hidden></video>
+        </div>
+        <div class="video-info" aria-live="polite">
+          <strong id="video-title"></strong>
+          <span id="video-source"></span>
+          <span id="video-filename"></span>
+          <span id="video-detail"></span>
+          <p id="video-message" role="status"></p>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

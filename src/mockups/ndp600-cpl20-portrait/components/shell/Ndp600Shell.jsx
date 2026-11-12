@@ -107,6 +107,17 @@ export const Ndp600Shell = () => {
                   />
                 </div>
               )}
+              {isCloudServerModalOpen && (
+                <CloudServerModal 
+                  isDark={!isLight}
+                  initialValue={cloudServerAddress}
+                  onCancel={() => setIsCloudServerModalOpen(false)}
+                  onSave={(val) => {
+                    setCloudServerAddress(val);
+                    setIsCloudServerModalOpen(false);
+                  }}
+                />
+              )}
               {isDisconnected ? (
                 isDisconnectedSettingsOpen ? (
                   <DisconnectedSettingsView
@@ -193,17 +204,6 @@ export const Ndp600Shell = () => {
                       onExecute={() => {
                         setIsDisconnectConfirmOpen(false);
                         setIsDisconnected(true);
-                      }}
-                    />
-                  )}
-                  {isCloudServerModalOpen && (
-                    <CloudServerModal 
-                      isDark={theme === 'dark'}
-                      initialValue={cloudServerAddress}
-                      onCancel={() => setIsCloudServerModalOpen(false)}
-                      onSave={(val) => {
-                        setCloudServerAddress(val);
-                        setIsCloudServerModalOpen(false);
                       }}
                     />
                   )}

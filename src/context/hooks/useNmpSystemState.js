@@ -5,6 +5,7 @@ export function useNmpSystemState() {
     const [isDisconnected, setIsDisconnected] = useState(false);
     const [isAndroidEthernetOpen, setIsAndroidEthernetOpen] = useState(false);
     const [panelIpAddress, setPanelIpAddress] = useState('192.168.101.108');
+    const [cloudServerAddress, setCloudServerAddress] = useState('https://mg.qnextech.com');
     const [isScheduledPowerOffEnabled, setIsScheduledPowerOffEnabled] = useState(false);
     const [scheduledPowerOffTime, setScheduledPowerOffTime] = useState(null);
 
@@ -20,6 +21,8 @@ export function useNmpSystemState() {
         setIsAndroidEthernetOpen,
         panelIpAddress,
         setPanelIpAddress,
+        cloudServerAddress,
+        setCloudServerAddress,
         isScheduledPowerOffEnabled,
         setIsScheduledPowerOffEnabled,
         scheduledPowerOffTime,

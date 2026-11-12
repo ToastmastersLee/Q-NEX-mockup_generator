@@ -10,7 +10,7 @@ export function useNdpSettingsState() {
     const [homepageWidgets, setHomepageWidgets] = useState(['air', 'projector']);
     const [deviceName, setDeviceName] = useState('3F NDP600');
     const [panelIpAddress, setPanelIpAddress] = useState('192.168.110.125');
-    const [cloudServerAddress, setCloudServerAddress] = useState('https://test.qnextech.com');
+    const [cloudServerAddress, setCloudServerAddress] = useState('https://mg.qnextech.com');
     const [isCloudServerModalOpen, setIsCloudServerModalOpen] = useState(false);
     const [isAndroidEthernetOpen, setIsAndroidEthernetOpen] = useState(false);
     const [isDisconnectConfirmOpen, setIsDisconnectConfirmOpen] = useState(false);

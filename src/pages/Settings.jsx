@@ -34,7 +34,16 @@ const EditableText = ({ text, className }) => {
     );
 };
 
-export const Settings = ({ isDark, onDisconnectionClick, onPanelIpClick, panelIpAddress, onCustomizeClick, onDivisibleRoomClick }) => {
+export const Settings = ({
+    isDark,
+    onDisconnectionClick,
+    onPanelIpClick,
+    panelIpAddress,
+    cloudServerAddress,
+    onCloudServerAddressChange,
+    onCustomizeClick,
+    onDivisibleRoomClick
+}) => {
     const clickCountRef = useRef(0);
     const clickTimerRef = useRef(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -47,7 +56,18 @@ export const Settings = ({ isDark, onDisconnectionClick, onPanelIpClick, panelIp
     const [deviceName, setDeviceName] = useState('NMP311-Product');
     const [tempDeviceName, setTempDeviceName] = useState('');
 
-    const clickableLabels = ['Software Version', 'Disconnection', 'Device Name', 'Panel IP', 'Customize', 'Divisible Room Mode'];
+    const [isCloudServerModalOpen, setIsCloudServerModalOpen] = useState(false);
+    const [tempCloudServerAddress, setTempCloudServerAddress] = useState(cloudServerAddress);
+
+    const clickableLabels = [
+        'Software Version',
+        'Disconnection',
+        'Device Name',
+        'Panel IP',
+        'Customize',
+        'Divisible Room Mode',
+        'Q-NEX Cloud Server Address'
+    ];
 
     const settingsItems = [
         { label: 'Device Name', value: deviceName, type: 'text' },
@@ -93,6 +113,9 @@ export const Settings = ({ isDark, onDisconnectionClick, onPanelIpClick, panelIp
             onCustomizeClick?.();
         } else if (label === 'Divisible Room Mode') {
             onDivisibleRoomClick?.();
+        } else if (label === 'Q-NEX Cloud Server Address') {
+            setTempCloudServerAddress(cloudServerAddress);
+            setIsCloudServerModalOpen(true);
         }
     };
 
@@ -146,6 +169,32 @@ export const Settings = ({ isDark, onDisconnectionClick, onPanelIpClick, panelIp
             <Modal isOpen={isDeviceNameModalOpen} isDark={isDark} onClose={() => setIsDeviceNameModalOpen(false)} onConfirm={() => { setDeviceName(tempDeviceName); setIsDeviceNameModalOpen(false); }}>
                 <div className={inputBox(isDark)}>
                     <input type="text" value={tempDeviceName} onChange={(e) => setTempDeviceName(e.target.value)} className={inputText(isDark)} autoFocus />
+                </div>
+            </Modal>
+
+            {/* Q-NEX Cloud Server Address Modal */}
+            <Modal
+                isOpen={isCloudServerModalOpen}
+                isDark={isDark}
+                onClose={() => setIsCloudServerModalOpen(false)}
+                onConfirm={() => {
+                    onCloudServerAddressChange?.(tempCloudServerAddress);
+                    setIsCloudServerModalOpen(false);
+                }}
+                confirmText="Update now"
+                cancelText="Cancel"
+            >
+                <h3 className={`text-lg font-bold tracking-wide ${textTitle(isDark)}`}>
+                    Q-NEX Cloud Server Address
+                </h3>
+                <div className={inputBox(isDark)}>
+                    <input
+                        type="text"
+                        value={tempCloudServerAddress}
+                        onChange={(e) => setTempCloudServerAddress(e.target.value)}
+                        className={inputText(isDark)}
+                        autoFocus
+                    />
                 </div>
             </Modal>
         </div>
