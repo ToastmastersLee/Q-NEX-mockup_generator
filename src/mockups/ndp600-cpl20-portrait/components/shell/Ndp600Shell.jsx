@@ -1,4 +1,4 @@
-import { ChevronLeft } from 'lucide-react';
+import { ChevronLeft, Sun, Moon } from 'lucide-react';
 import { LockCountdownModal } from '../../../../components/LockCountdownModal';
 import { AndroidEthernet } from '../../../../pages/AndroidEthernet';
 import { Disconnection } from '../../../../pages/Disconnection';
@@ -38,6 +38,7 @@ export const Ndp600Shell = () => {
     muted,
     setMuted,
     theme,
+    setTheme,
     isLight,
     isDisconnected,
     setIsDisconnected,
@@ -254,6 +255,18 @@ export const Ndp600Shell = () => {
               )}
             </div>
           </div>
+        </div>
+
+        {/* Right Side Theme Toggle */}
+        <div className="ndp-right-controls">
+          <button 
+            className="ndp-theme-button" 
+            type="button" 
+            onClick={() => setTheme(isLight ? 'dark' : 'light')}
+          >
+            {isLight ? <Moon size={22} /> : <Sun size={22} />}
+            <span>{isLight ? 'Dark Theme' : 'Light Theme'}</span>
+          </button>
         </div>
       </div>
     </main>
