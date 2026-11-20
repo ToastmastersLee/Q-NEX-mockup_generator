@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>双录播机统一录像浏览</title>
   <link rel="stylesheet" href="/static/style.css">
-  <script src="/static/main.js" defer></script>
+  <script type="module" src="/static/main.js?v=2"></script>
 </head>
 <body>
   <main class="workspace">
@@ -16,13 +16,13 @@
       </div>
       <div class="actions">
         <div class="modes" role="group" aria-label="数据模式">
-          <button type="button" data-mode="demo" aria-pressed="true">演示数据</button>
-          <button type="button" data-mode="live" aria-pressed="false">真机</button>
+          <button type="button" data-mode="live" aria-pressed="true">真机</button>
+          <button type="button" data-mode="demo" aria-pressed="false">演示数据</button>
         </div>
         <button id="refresh" type="button">刷新</button>
       </div>
     </header>
-    <p class="notice" id="mode-notice" role="status">演示数据 · 当前使用模拟设备和本地示例视频</p>
+    <p class="notice live" id="mode-notice" role="status">真机模式 · 读取配置中的两台录播机</p>
     <section class="devices" aria-label="设备状态" id="devices"></section>
     <div class="recordings-layout">
       <section class="panel library" aria-labelledby="library-title">

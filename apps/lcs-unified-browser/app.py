@@ -57,6 +57,8 @@ def create_app(devices):
         )
         if request.url.path.startswith("/api/"):
             response.headers["Cache-Control"] = "no-store"
+        elif request.url.path in ("/", "/library") or request.url.path.endswith((".js", ".html")):
+            response.headers["Cache-Control"] = "no-cache"
         return response
 
     @app.get("/")

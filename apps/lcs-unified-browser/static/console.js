@@ -1,4 +1,5 @@
 import {translator,languages} from './console-i18n.js';
+import {initialMode, clearDemoLink} from './mode.js';
 import {mountMonitor} from './monitor.js';
 import {initLibrary} from './library.js';
 
@@ -14,7 +15,7 @@ const params=new URLSearchParams(location.search);
 let lang=languages.includes(params.get('lang'))?params.get('lang'):saved('language','zh');
 if(!languages.includes(lang))lang='zh';
 let t=translator(lang);
-let mode=params.get('mode')==='demo'?'demo':'live';
+let mode=initialMode();
 let tab=['control','settings','library'].includes(location.hash.slice(1))?location.hash.slice(1):'control';
 let snapshot=null, host='a', initialHost=true, busy=false, epoch=0, requestSerial=0, request=null, polling=false;
 let cleanupLibrary=null, libraryVariant='', message=null;
@@ -302,6 +303,7 @@ async function refresh(){
 }
 function switchMode(value){
   if(!['live','demo'].includes(value)||value===mode||busy)return;
+  clearDemoLink(value);
   request?.abort();request=null;polling=false;epoch++;initialHost=true;host='a';snapshot=null;
   journal=[];message=null;mode=value;clearMonitors();rebuild();refresh();
 }

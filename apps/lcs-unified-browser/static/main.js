@@ -1,3 +1,5 @@
+import {initialMode, clearDemoLink} from './mode.js';
+
 const get = id => document.getElementById(id);
 const form = get('filters');
 const video = get('video');
@@ -6,7 +8,7 @@ const pageSize = 12;
 const connections = new Map();
 const deviceNames = new Map();
 const catalogResults = new Map();
-let mode = 'demo';
+let mode = initialMode();
 let statusRequest;
 let listRequest;
 let playbackRequest;
@@ -229,6 +231,7 @@ video.addEventListener('error', async () => {
 function changeMode(next) {
   if (mode === next) return;
   mode = next;
+  clearDemoLink(next);
   stopPlayback();
   form.reset();
   rows = [];
@@ -237,13 +240,17 @@ function changeMode(next) {
   deviceNames.clear();
   catalogResults.clear();
   get('devices').replaceChildren();
+  showMode();
+  renderRows();
+  loadDevices();
+}
+
+function showMode() {
   get('mode-notice').textContent = mode === 'demo'
     ? '演示数据 · 当前使用模拟设备和本地示例视频' : '真机模式 · 读取配置中的两台录播机';
   get('mode-notice').classList.toggle('live', mode === 'live');
   document.querySelectorAll('[data-mode]').forEach(button =>
     button.setAttribute('aria-pressed', button.dataset.mode === mode));
-  renderRows();
-  loadDevices();
 }
 
 document.querySelectorAll('[data-mode]').forEach(button =>
@@ -253,6 +260,7 @@ form.addEventListener('submit', event => { event.preventDefault(); search(); });
 form.addEventListener('reset', () => { setTimeout(() => search(), 0); });
 get('previous').addEventListener('click', () => { page--; renderRows(); });
 get('next').addEventListener('click', () => { page++; renderRows(); });
+showMode();
 loadDevices();
 search();
 setInterval(() => loadDevices(), 10_000);
