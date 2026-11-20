@@ -166,3 +166,11 @@ class Recorder:
     async def recording(self, value):
         await self.tcp(0x3101, {"record": value})
 
+    async def power_on(self):
+        if not self.device.ip:
+            raise ClassroomError("unconfigured", self.id)
+        try:
+            await self.tcp(0x3105, {"power": 2})
+        except (OSError, TimeoutError) as exc:
+            raise ClassroomError("powerUnconfirmed", self.id) from exc
+

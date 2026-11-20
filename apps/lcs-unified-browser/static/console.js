@@ -14,7 +14,7 @@ const params=new URLSearchParams(location.search);
 let lang=languages.includes(params.get('lang'))?params.get('lang'):saved('language','zh');
 if(!languages.includes(lang))lang='zh';
 let t=translator(lang);
-let mode=params.get('mode')==='live'?'live':'demo';
+let mode=params.get('mode')==='demo'?'demo':'live';
 let tab=['control','settings','library'].includes(location.hash.slice(1))?location.hash.slice(1):'control';
 let snapshot=null, host='a', initialHost=true, busy=false, epoch=0, requestSerial=0, request=null, polling=false;
 let cleanupLibrary=null, libraryVariant='', message=null;
@@ -58,7 +58,7 @@ function baseHTML(){
   document.title='IQVideo · '+t('product'); document.documentElement.lang=lang==='zh'?'zh-CN':lang;
   $('#language').value=lang;
   $('#modes').setAttribute('aria-label',t('mode'));
-  $('#modes').innerHTML=['demo','live'].map(m=>button('mode',t(m),busy,'data-value="'+m+'"'+press(m===mode))).join('');
+  $('#modes').innerHTML=['live','demo'].map(m=>button('mode',t(m),busy,'data-value="'+m+'"'+press(m===mode))).join('');
   $('#tabs').innerHTML=['control','settings','library'].map(k=>button('tab',t(k),false,'data-value="'+k+'" '+(k===tab?'aria-current="page"':''))).join('');
   $('#cancel').textContent=t('cancel');$('#commit').textContent=t('continue');
 }
@@ -122,6 +122,7 @@ function roomActions(id){
   const classMic=locked||!snapshot?.sameClass, tutor=r.role==='host', active=r.record===1||r.record===3, paused=r.record===2;
   return `<article class="desk-room" data-key="actions-${id}">
    <div class="room-title"><div><h3>${t(id)}</h3><span class="room-sub">${esc(r.name || r.model || t('unknown'))}</span></div>${statePill(t(r.online?'online':'offline'),r.online?'green':'neutral')}</div>
+   ${mode==='live'&&!r.online?`<div class="control-line"><small>${t('powerHint')}</small>${button('powerOn',t('powerOn'),busy||!localControl()||!snapshot||r.error==='unconfigured','data-room="'+id+'"')}</div>`:''}
    <div class="control-line"><div><b>${t('audio')}</b><small>${micKnown?t(r.mute?'muted':'unmuted'):t('unknown')}</small></div>${button('mute',t(r.mute?'unmute':'mute'),classMic||!micKnown||r.speak===1,'data-room="'+id+'" data-value="'+(r.mute?0:1)+'"')}</div>
    <div class="control-line"><div><b>${t('speaker')}</b><small>${floorKnown?t(r.speak?'speaking':'notSpeaking'):t('unknown')}</small></div>${button('speak',t(r.speak?'unspeak':'speak'),classMic||!floorKnown||tutor,'data-room="'+id+'" data-value="'+(r.speak?0:1)+'"')}</div>
    <div class="control-line"><div><b>${t('recorder')}</b><small>${t(recordState(r))}</small></div><div class="row-buttons">${active||paused?
@@ -323,6 +324,8 @@ function impact(){
   return [list.length?t('recImpact',{rooms:list.map(tRoom=>t(tRoom)).join(' / ')}):!unknown?t('noRecImpact'):'',unknown?t('unknownRecImpact'):''].filter(Boolean).join(' ');
 }
 const translatedErrors={
+ powerUnconfirmed:['未收到开机回执，请核对待机供电和控制端口。','No power-on acknowledgement. Check standby power and connectivity.','Aucun accusé de réception. Vérifiez la veille et la connexion.'],
+ alreadyOnline:['设备已在线。','Device already online.','Appareil déjà en ligne.'],
  playbackBusy:['请在对应录播退出文件回放或释放占用，然后点「听课端重新加入」。','Exit file playback or release the occupied device, then select Rejoin listener.','Quittez la lecture locale ou libérez l’appareil, puis reconnectez la classe distante.'],
  anotherClass:['设备正在另一堂课中，请先核对课堂。','A device is in another class. Check the current session.','Un appareil participe à une autre classe. Vérifiez la session.'],
  noClass:['请先建立双机互动课堂。','Start a class with both rooms first.','Démarrez d’abord une classe avec les deux salles.'],
@@ -388,7 +391,7 @@ async function execute(data){
     journal=payload.steps||[];
     if(data.action==='apply')drafts[mode]={a:{},b:{}};
     if(data.action==='start'||data.action==='apply')initialHost=false;
-    setNote({key:'done',tone:'success'});
+    setNote({key:data.action==='powerOn'?'powerAccepted':'done',tone:'success'});
   }catch(err){
     setNote(err.name==='AbortError'?{key:'timeout',tone:'error'}:{text:err.message,tone:'error'});
   }finally{
@@ -417,6 +420,7 @@ document.addEventListener('click',event=>{
     case 'discard':drafts[mode]={a:{},b:{}};render();return;
     case 'apply':void execute({action:'apply',host,changes:structuredClone(drafts[mode])});return;
     case 'start':void execute({action:'start',host});return;
+    case 'powerOn':void execute({action:'powerOn',host,room:d.room});return;
     case 'rejoin':case 'end':void execute({action:d.action,host:actualHost()||host});return;
     case 'speak':case 'mute':case 'record':void execute({action:d.action,host:actualHost()||host,room:d.room,value:Number(d.value)});return;
   }

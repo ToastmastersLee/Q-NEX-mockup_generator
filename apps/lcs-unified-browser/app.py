@@ -222,6 +222,32 @@ def create_app(devices):
     return app
 
 
+def run_console(devices, host, port):
+    server = uvicorn.Server(uvicorn.Config(create_app(devices), host=host, port=port,
+                                            access_log=False, timeout_graceful_shutdown=8))
+    if os.name == "nt":
+        import ctypes
+        from ctypes import wintypes
+        from threading import Thread
+
+        kernel = ctypes.WinDLL("kernel32", use_last_error=True)
+        kernel.CreateEventW.argtypes = [wintypes.LPVOID, wintypes.BOOL, wintypes.BOOL, wintypes.LPCWSTR]
+        kernel.CreateEventW.restype = wintypes.HANDLE
+        kernel.WaitForSingleObject.argtypes = [wintypes.HANDLE, wintypes.DWORD]
+        kernel.WaitForSingleObject.restype = wintypes.DWORD
+        handle = kernel.CreateEventW(None, True, False, f"Local\\IQVideo.Console.Stop.{os.getpid()}")
+        if not handle:
+            raise ctypes.WinError(ctypes.get_last_error())
+
+        def wait_for_stop():
+            if kernel.WaitForSingleObject(handle, 0xFFFFFFFF) == 0:
+                server.should_exit = True
+
+        # This event belongs to the service process and is released by Windows on exit.
+        Thread(target=wait_for_stop, daemon=True).start()
+    server.run()
+
+
 if __name__ == "__main__":
     config_path = Path(os.environ.get("LCS_DEMO_CONFIG", str(BASE / "config.local.json")))
     try:
@@ -229,4 +255,4 @@ if __name__ == "__main__":
     except (OSError, KeyError, TypeError, ValueError) as exc:
         raise SystemExit(f"无法读取配置，请核对 {config_path} 的设备、IP、端口和 JSON 格式。") from exc
     print(f"LCS810 Classroom Console  http://localhost:{port}", flush=True)
-    uvicorn.run(create_app(configured_devices), host=host, port=port, access_log=False)
+    run_console(configured_devices, host, port)

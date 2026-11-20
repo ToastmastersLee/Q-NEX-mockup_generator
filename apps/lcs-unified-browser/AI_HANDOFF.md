@@ -35,6 +35,10 @@ $env:LCS_DEMO_PYTHON = (Get-Command python -CommandType Application).Source
 
 ## 3. 代码从哪里读，改动怎么验
 
+普通首页默认进入真机模式。在家练习请使用上面的离线演示链接。Windows 上用 `start.cmd` 启动本机网页服务，双击 `end.cmd` 关闭服务。结束设备上的课程使用网页中的「结束课堂」。
+
+用户要远程开录播时，在已配置的离线教室点「请求开机」。本地 TCP 6558 的电源命令为 `0x3105`，开机参数为 `power=2`。截至本次交接，已覆盖请求和回执处理，现场软关机后的网络可达性仍待验证。验收时分别记录待机是否持续供电、是否收到命令回执、设备何时恢复在线。协议来源见 [README](./README.md)。
+
 | 要处理的问题 | 入口 | 验证要点 |
 |---|---|---|
 | 开课、重开、角色、切源、开麦、录制 | [classroom.py](./classroom.py) 的 `Desk` 编排流程，`DemoRecorder` 提供模拟设备；[recorder.py](./recorder.py) 调真机，[protocol.py](./protocol.py) 处理 TCP 包 | 一端加入失败后可只重试该端；设置更新保留其余原值。见 [课堂测试](./tests/test_classroom.py)。 |

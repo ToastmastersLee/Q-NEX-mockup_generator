@@ -85,7 +85,9 @@ class Connection:
         return await self.request(command, params)
 
     async def request(self, command, params=None):
-        if command not in (STATUS, RECORDINGS, DETAIL, 0x3101, 0x4403, 0x4409,
+        if command == 0x3105 and params != {"power": 2}:
+            raise ValueError("Only power-on is supported")
+        if command not in (STATUS, RECORDINGS, DETAIL, 0x3101, 0x3105, 0x4403, 0x4409,
                            0x440A, 0x440B, 0x440C, 0x4411, 0x4412, 0x4414, 0x4418):
             raise ValueError("Unsupported classroom command")
         self.next_id += 1

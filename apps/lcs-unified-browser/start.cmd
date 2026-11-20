@@ -6,7 +6,7 @@ if /i "%~1"=="--setup" goto setup
 if not exist "%LCS_VENV_PY%" goto missing
 "%LCS_VENV_PY%" -c "import fastapi, uvicorn, httpx" >nul 2>&1
 if errorlevel 1 goto missing
-"%LCS_VENV_PY%" app.py
+"%LCS_VENV_PY%" "%~dp0app.py"
 exit /b %errorlevel%
 
 :setup

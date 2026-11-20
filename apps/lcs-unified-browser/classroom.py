@@ -21,7 +21,7 @@ TRANSIENT = (ClassroomError, DeviceError, OSError, TimeoutError, httpx.HTTPError
 
 class Command(BaseModel):
     model_config = ConfigDict(extra="forbid", strict=True)
-    action: Literal["start", "end", "rejoin", "route", "mute", "speak", "record", "apply"]
+    action: Literal["start", "end", "rejoin", "route", "mute", "speak", "record", "apply", "powerOn"]
     host: Room
     room: Room | None = None
     port: Literal[1, 2] | None = None
@@ -225,6 +225,13 @@ class Desk:
 
     async def perform(self, cmd):
         rooms = await self.inspect()
+        if cmd.action == "powerOn":
+            if cmd.room not in ROOMS or cmd.value is not None or cmd.changes:
+                raise ClassroomError("invalidTarget", cmd.room)
+            if rooms[cmd.room]["online"]:
+                raise ClassroomError("alreadyOnline", cmd.room)
+            await self.step("powerOn", cmd.room, self.devices[cmd.room].power_on)
+            return self.public(await self.inspect())
         self.validate(cmd,rooms)
         action,host,id,value = cmd.action,cmd.host,cmd.room,cmd.value
         if action in ("start","apply","rejoin","end"):

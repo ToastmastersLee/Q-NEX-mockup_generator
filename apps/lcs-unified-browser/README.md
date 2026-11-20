@@ -14,14 +14,16 @@ Set-Location -LiteralPath 'D:\Github\IQ\mockup_generator\apps\lcs-unified-browse
 .\start.cmd
 ```
 
-`--setup` 使用 `%USERPROFILE%\MiniConda3\python.exe` 创建项目内的虚拟环境。如果 Miniconda 装在其他目录，可以先将 `LCS_DEMO_PYTHON` 环境变量设为可用的 Python 3.11 或更高版本的绝对路径。启动后保持命令窗口打开，按 Ctrl+C 停止。
+`--setup` 使用 `%USERPROFILE%\MiniConda3\python.exe` 创建项目内的虚拟环境。如果 Miniconda 装在其他目录，可以先将 `LCS_DEMO_PYTHON` 环境变量设为可用的 Python 3.11 或更高版本的绝对路径。启动后保持命令窗口打开。双击 `end.cmd` 或在另一个终端执行 `.\end.cmd` 可关闭本机网页服务，也可在启动窗口按 Ctrl+C。要结束设备上的互动，请在关闭服务前点击网页的「结束课堂」。
 
 - 本机打开[互动控制台](http://127.0.0.1:8088/)，也可直达[中文真机](http://127.0.0.1:8088/?mode=live&lang=zh)、[法文真机](http://127.0.0.1:8088/?mode=live&lang=fr)或[双路录像库](http://127.0.0.1:8088/?mode=live&lang=zh#library)。
-- 默认使用演示数据。模拟设备、媒体和课堂状态都在本机；切到「真机」后才读取实验室设备。
+- 首页默认选中排在首位的「真机」。打开页面只读取状态，点击开课才发起互动。在家可直接打开[离线演示](http://127.0.0.1:8088/?mode=demo)。
 - 真机课堂控制使用本机地址。原有只读录像页仍可从同一内网的 `http://实验室电脑IP:8088/library` 访问。
 - 本地导播和互动预览使用厂家播放器。录播的 HTTPS 管理端口、9898 预览端口、TCP 6558、录像 HTTP 9090 及设备返回的 RTSP 端口需从实验室电脑可达。OUT 接收预览调用 PATH 中的 FFmpeg；本机已配置。
 
 ## 互动课堂
+
+真机离线时，教室控制区提供「请求开机」。厂家协议规定 `0x3105` 的 `power=2` 为开机，本控制台走录播本地 TCP 6558。收到回执后继续查看设备是否上线。待机时该端口是否可达仍需在本批设备上实测。集控 TCP 8863 另有设备注册和关机心跳流程。本地对接资料中未找到标准 Wake-on-LAN 魔术包的定义。设备完全断电时需先恢复供电。[厂家协议 · 电源管理](https://github.com/ToastmastersLee/QNEX/blob/main/Q-NEX_PRD/Q-NEX_API/LCS-API/LCS810-API-%282%29%E5%BD%95%E6%92%AD%E6%8E%A5%E5%8F%A3%281-15%29.md)
 
 1. 在「课堂」选择主讲楼层并开课。已有课堂可读取并接续；若只有听课端离开，可单独重新加入。机身在文件回放页时固件可能返回 `uvc occupied`，先在该机退出回放，再重试加入。
 2. 在听课端的 OUT1、OUT2 卡上独立选源。三楼当前有效课件输入为「电脑2」。每张卡上的通道是设备回读值，预览时间随真实视频帧更新。一楼 OUT1 接左屏，OUT2 接右屏。反向课堂读取三楼接收布局；三楼两个实体插口的接线位置待现场核对。

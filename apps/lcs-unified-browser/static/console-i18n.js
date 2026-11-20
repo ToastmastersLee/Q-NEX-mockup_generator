@@ -1,5 +1,8 @@
 // The key is also the fallback when a future firmware introduces a new status.
 const rows = {
+ powerOn:['请求开机','Request power on','Demander le démarrage'],
+ powerHint:['设备需供电且待机控制端口可达','Requires standby power and a reachable control port','Alimentation de veille et port de commande accessible requis'],
+ powerAccepted:['设备已确认开机请求，请查看在线状态。','Power-on request acknowledged. Check device status.','Demande de démarrage acceptée. Vérifiez l’état de l’appareil.'],
  product:['互动控制台','Classroom control','Régie de classe'],
  control:['互动现场','Live classroom','Classe en direct'],
  settings:['会前设置','Class settings','Paramètres de classe'],

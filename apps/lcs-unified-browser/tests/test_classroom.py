@@ -6,7 +6,8 @@ import httpx
 from app import create_app
 from catalog import Device
 from classroom import Command, DemoRecorder, Desk
-from recorder import ClassroomError, merge_settings, read_settings
+from recorder import ClassroomError, Recorder, merge_settings, read_settings
+from protocol import Connection
 
 
 class ClassroomTests(unittest.IsolatedAsyncioTestCase):
@@ -18,6 +19,23 @@ class ClassroomTests(unittest.IsolatedAsyncioTestCase):
 
     async def action(self, name, host="a", **args):
         return await self.desk.operate(Command(action=name, host=host, **args))
+
+    async def test_power_on_targets_one_offline_room(self):
+        target = Recorder(Device("b", "1F", "127.0.0.1"))
+        target.inspect = AsyncMock(side_effect=TimeoutError)
+        target.tcp = AsyncMock(return_value={})
+        self.devices["b"] = target
+        result = await self.action("powerOn", room="b")
+        target.tcp.assert_awaited_once_with(0x3105, {"power": 2})
+        self.assertFalse(result["rooms"][1]["online"])
+        with self.assertRaisesRegex(ClassroomError, "alreadyOnline"):
+            await self.action("powerOn", room="a")
+        target.tcp.side_effect = TimeoutError
+        with self.assertRaisesRegex(ClassroomError, "powerUnconfirmed"):
+            await self.action("powerOn", room="b")
+        for power in (0, 1):
+            with self.assertRaises(ValueError):
+                await Connection("127.0.0.1", 6558).request(0x3105, {"power": power})
 
     async def test_join_retry_and_independent_routing(self):
         guest = self.devices["b"]
