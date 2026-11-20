@@ -23,7 +23,7 @@ class DemoTests(unittest.IsolatedAsyncioTestCase):
     async def test_filters_and_mode_separation(self):
         app = create_app([Device("a", "三楼"), Device("b", "一楼")])
         async with httpx.AsyncClient(transport=httpx.ASGITransport(app=app), base_url="http://app") as client:
-            demo = (await client.get("/api/recordings", params={"mode": "demo", "q": "LECTURE"})).json()
+            demo = (await client.get("/api/recordings", params={"mode": "demo", "q": "LECTURE.MP4"})).json()
             self.assertEqual(len(demo["recordings"]), 2)
             first, second = demo["recordings"]
             self.assertNotEqual(first["id"], second["id"])

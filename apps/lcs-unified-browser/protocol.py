@@ -1,4 +1,4 @@
-"""Read-only client for the LCS810 local TCP protocol."""
+"""Framed local control protocol for the LCS810."""
 
 import asyncio
 import json
@@ -67,9 +67,9 @@ class Connection:
             code = str(result.get("code", "")) if isinstance(result, dict) else ""
             suffix = f"（{code}）" if code.isascii() and code.isdecimal() and len(code) <= 6 else ""
             raise DeviceError(f"0x{command:04X} 设备拒绝请求{suffix}")
-        if not isinstance(result.get("msg"), dict):
+        if command in (STATUS, RECORDINGS, DETAIL) and not isinstance(result.get("msg"), dict):
             raise DeviceError(f"0x{command:04X} 缺少结果")
-        return result["msg"]
+        return result.get("msg", {})
 
     async def receive(self, command, identity=None):
         while True:
@@ -82,6 +82,12 @@ class Connection:
     async def read(self, command, params=None):
         if command not in (STATUS, RECORDINGS, DETAIL):
             raise ValueError("Unsupported read command")
+        return await self.request(command, params)
+
+    async def request(self, command, params=None):
+        if command not in (STATUS, RECORDINGS, DETAIL, 0x3101, 0x4403, 0x4409,
+                           0x440A, 0x440B, 0x440C, 0x4411, 0x4412, 0x4414, 0x4418):
+            raise ValueError("Unsupported classroom command")
         self.next_id += 1
         body = (
             json.dumps({"param": params}, ensure_ascii=False).encode("utf-8")

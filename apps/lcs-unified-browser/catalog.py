@@ -246,4 +246,13 @@ def demo_rows():
                 "Files": [{"Name": filename, "Size": (BASE / "static" / f"sample-{device.id}.mp4").stat().st_size}],
             })
             rows[row["id"]] = row
+        pair = records_from_dir(device, {
+            "Dir": "demo_dual", "MetaInfo": {"Title": "Dual-channel lesson", "Teacher": "IQVideo"},
+            "StartTime": f"{today} 10:00:00",
+            "Files": [{"Name": name, "Size": (BASE / "static" / f"sample-{sample}.mp4").stat().st_size}
+                      for name, sample in (("Lecture2.mp4","a"),("Teacher_C.mp4","b"))],
+        })
+        for row in pair:
+            row["sample"] = "a" if row["filename"] == "Lecture2.mp4" else "b"
+            rows[row["id"]] = row
     return rows

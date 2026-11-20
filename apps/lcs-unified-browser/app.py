@@ -4,18 +4,21 @@ import asyncio
 from datetime import date
 import os
 from pathlib import Path
+from ipaddress import ip_address
 from typing import Literal
-from urllib.parse import quote
+from urllib.parse import quote, urlsplit
 
 import httpx
 import uvicorn
 from fastapi import FastAPI, HTTPException, Query, Request
-from fastapi.responses import FileResponse, StreamingResponse
+from fastapi.responses import FileResponse, JSONResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from starlette.background import BackgroundTask
 
 from catalog import BASE, DEMO_DEVICES, MIME, Source, demo_rows, now, read_config
 from protocol import Connection, DETAIL, DeviceError
+from classroom import install_classroom
+from classroom_media import install_media
 
 Mode = Literal["demo", "live"]
 
@@ -26,13 +29,30 @@ def create_app(devices):
     samples = demo_rows()
     static = BASE / "static"
     app.mount("/static", StaticFiles(directory=static), name="static")
+    install_classroom(app, devices)
+    install_media(app, devices)
+    preview_hosts = " ".join(f"ws://{device.ip}:9898" for device in devices if device.ip)
 
     @app.middleware("http")
     async def response_headers(request, call_next):
+        if request.url.path.startswith(("/api/classroom", "/api/preview/")):
+            # Device control is local to the operator PC; the existing LAN library stays accessible.
+            needs_local = request.query_params.get("mode") != "demo" or request.method == "POST" or request.url.path.startswith("/api/preview/")
+            origin = request.headers.get("origin")
+            try:
+                local_peer = request.client and ip_address(request.client.host).is_loopback
+                local_host = request.url.hostname in ("127.0.0.1", "localhost", "::1")
+                same_origin = not origin or (urlsplit(origin).netloc == request.url.netloc and
+                                              urlsplit(origin).scheme == request.url.scheme)
+            except ValueError:
+                local_peer = local_host = same_origin = False
+            if needs_local and not (local_peer and local_host and same_origin):
+                return JSONResponse({"detail": {"key": "localOnly"}}, status_code=403)
         response = await call_next(request)
         response.headers["X-Content-Type-Options"] = "nosniff"
         response.headers["Content-Security-Policy"] = (
             "default-src 'self'; style-src 'self' 'unsafe-inline'; "
+            f"connect-src 'self' {preview_hosts}; media-src 'self' blob:; img-src 'self' blob: data:; "
             "object-src 'none'; base-uri 'none'; frame-ancestors 'none'"
         )
         if request.url.path.startswith("/api/"):
@@ -41,6 +61,10 @@ def create_app(devices):
 
     @app.get("/")
     async def index():
+        return FileResponse(static / "console.html")
+
+    @app.get("/library")
+    async def original_library():
         return FileResponse(static / "index.html")
 
     @app.get("/api/devices")
@@ -79,7 +103,7 @@ def create_app(devices):
             summaries = [
                 {
                     "device_id": source.device.id, "complete": True, "error": None,
-                    "stale": False, "updated_at": now(), "directories": 3, "expected_directories": 3,
+                    "stale": False, "updated_at": now(), "directories": 4, "expected_directories": 4,
                 }
                 for source in selected
             ]
@@ -135,7 +159,8 @@ def create_app(devices):
     async def media(request: Request, recording_id: str, mode: Mode):
         row, device = await lookup(recording_id, mode)
         if device is None:
-            return FileResponse(static / f"sample-{row['device_id']}.mp4", media_type="video/mp4")
+            sample = row.get("sample", row["device_id"])
+            return FileResponse(static / f"sample-{sample}.mp4", media_type="video/mp4")
         directory, filename = (quote(row[key], safe="") for key in ("directory", "filename"))
         url = f"http://{device.ip}:{device.http_port}/record/{directory}/{filename}"
         headers = {
@@ -203,5 +228,5 @@ if __name__ == "__main__":
         host, port, configured_devices = read_config(config_path)
     except (OSError, KeyError, TypeError, ValueError) as exc:
         raise SystemExit(f"无法读取配置，请核对 {config_path} 的设备、IP、端口和 JSON 格式。") from exc
-    print(f"双录播机统一录像浏览  http://localhost:{port}", flush=True)
+    print(f"LCS810 Classroom Console  http://localhost:{port}", flush=True)
     uvicorn.run(create_app(configured_devices), host=host, port=port, access_log=False)
