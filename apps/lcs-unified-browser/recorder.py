@@ -6,7 +6,7 @@ import time
 
 import httpx
 
-from protocol import Connection, DeviceError, STATUS
+from protocol import Connection, DeviceError, DeviceRejected, STATUS
 
 
 CHANNELS = ["film", "computer", "computer2", "teacher", "student", "teacher_full", "student_full", "interactive"]
@@ -170,7 +170,15 @@ class Recorder:
         if not self.device.ip:
             raise ClassroomError("unconfigured", self.id)
         try:
-            await self.tcp(0x3105, {"power": 2})
+            async with Connection(self.device.ip, self.device.tcp_port) as conn:
+                try:
+                    await conn.request(0x3105, {"power": 2})
+                except (OSError, TimeoutError) as exc:
+                    raise ClassroomError("powerUnconfirmed", self.id) from exc
+                except DeviceRejected:
+                    raise
+                except DeviceError as exc:
+                    raise ClassroomError("powerUnconfirmed", self.id) from exc
         except (OSError, TimeoutError) as exc:
-            raise ClassroomError("powerUnconfirmed", self.id) from exc
+            raise ClassroomError("powerUnsent", self.id) from exc
 

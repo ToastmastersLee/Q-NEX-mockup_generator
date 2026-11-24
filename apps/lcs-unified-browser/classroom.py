@@ -15,6 +15,7 @@ from recorder import CHANNELS, ENCODERS, FLAGS, LAYOUTS, QUALITIES, ClassroomErr
 
 Room = Literal["a", "b"]
 ROOMS = ("a", "b")
+POWER_CHECK_SECONDS = 10
 PORT_STREAM = {1: 1, 2: 0}
 TRANSIENT = (ClassroomError, DeviceError, OSError, TimeoutError, httpx.HTTPError, ValueError, KeyError, IndexError, TypeError)
 
@@ -97,9 +98,13 @@ class Desk:
         self.last_rooms = None
         self.read_time = 0
         self.steps = []
+        self.power_states = {}
+        self.power_tasks = {}
 
     async def inspect(self, cached=False):
         async def inspect_one(id):
+            if id in self.power_states:
+                return dict(id=id, online=False)
             try:
                 return await self.devices[id].inspect()
             except TRANSIENT as exc:
@@ -120,11 +125,12 @@ class Desk:
                 guest["meeting"].get("creatorAccount") == rooms[host]["account"])
 
     def public(self, rooms):
+        rooms = {id: dict(id=id, online=False) if id in self.power_states else r for id, r in rooms.items()}
         hosts = [i for i in ROOMS if rooms[i].get("role") == "host"]
         result = []
         for id, r in rooms.items():
             if not r["online"]:
-                result.append(r)
+                result.append(dict(r, powerState=self.power_states.get(id)))
                 continue
             entry = {k: r[k] for k in ("id","online","ip","model","name","role","record","mute","speak","settings","channels")}
             entry.update(inMeeting=bool(r["meeting"]), outputs=[])
@@ -212,7 +218,59 @@ class Desk:
             rooms = await self.wait(lambda rs: self.pair(rs,host),"joinTimeout",guest)
         return rooms
 
+    def power_snapshot(self):
+        rooms = self.last_rooms or {id: dict(id=id, online=False) for id in ROOMS}
+        return self.public(rooms)
+
+    async def watch_power(self, id):
+        try:
+            while True:
+                await asyncio.sleep(POWER_CHECK_SECONDS)
+                try:
+                    room = await self.devices[id].inspect()
+                except TRANSIENT:
+                    room = None
+                if room and room.get("online"):
+                    break
+                if self.power_states[id] == "powerUnsent":
+                    break
+        finally:
+            self.power_states.pop(id, None)
+            self.power_tasks.pop(id, None)
+            self.read_time = 0
+
+    async def power_on(self, cmd):
+        id = cmd.room
+        if id not in ROOMS or cmd.value is not None or cmd.changes or not hasattr(self.devices[id], "power_on"):
+            raise ClassroomError("invalidTarget", id)
+        if id in self.power_states:
+            return self.power_snapshot()
+        self.power_states[id] = "powerSending"
+        try:
+            try:
+                room = await self.devices[id].inspect()
+            except TRANSIENT:
+                room = None
+            if room and room.get("online"):
+                raise ClassroomError("alreadyOnline", id)
+            try:
+                await self.devices[id].power_on()
+                self.power_states[id] = "powerWaiting"
+            except ClassroomError as exc:
+                if exc.key not in ("powerUnconfirmed", "powerUnsent"):
+                    raise
+                self.power_states[id] = exc.key
+            except (DeviceError, OSError, TimeoutError) as exc:
+                raise ClassroomError("deviceRejected", id) from exc
+            self.power_tasks[id] = asyncio.create_task(self.watch_power(id))
+            return self.power_snapshot()
+        finally:
+            if id not in self.power_tasks:
+                self.power_states.pop(id, None)
+
     async def operate(self, cmd):
+        if cmd.action == "powerOn":
+            return await self.power_on(cmd)
         if self.lock.locked():
             raise ClassroomError("busy")
         async with self.lock:
@@ -225,13 +283,6 @@ class Desk:
 
     async def perform(self, cmd):
         rooms = await self.inspect()
-        if cmd.action == "powerOn":
-            if cmd.room not in ROOMS or cmd.value is not None or cmd.changes:
-                raise ClassroomError("invalidTarget", cmd.room)
-            if rooms[cmd.room]["online"]:
-                raise ClassroomError("alreadyOnline", cmd.room)
-            await self.step("powerOn", cmd.room, self.devices[cmd.room].power_on)
-            return self.public(await self.inspect())
         self.validate(cmd,rooms)
         action,host,id,value = cmd.action,cmd.host,cmd.room,cmd.value
         if action in ("start","apply","rejoin","end"):

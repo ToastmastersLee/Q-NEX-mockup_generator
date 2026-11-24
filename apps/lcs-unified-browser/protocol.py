@@ -20,6 +20,10 @@ class DeviceError(Exception):
     pass
 
 
+class DeviceRejected(DeviceError):
+    pass
+
+
 class Connection:
     def __init__(self, ip, port):
         self.ip = ip
@@ -66,7 +70,7 @@ class Connection:
         if not isinstance(result, dict) or str(result.get("code")) != "200":
             code = str(result.get("code", "")) if isinstance(result, dict) else ""
             suffix = f"（{code}）" if code.isascii() and code.isdecimal() and len(code) <= 6 else ""
-            raise DeviceError(f"0x{command:04X} 设备拒绝请求{suffix}")
+            raise DeviceRejected(f"0x{command:04X} 设备拒绝请求{suffix}")
         if command in (STATUS, RECORDINGS, DETAIL) and not isinstance(result.get("msg"), dict):
             raise DeviceError(f"0x{command:04X} 缺少结果")
         return result.get("msg", {})

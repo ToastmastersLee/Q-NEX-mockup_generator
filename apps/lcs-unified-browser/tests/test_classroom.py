@@ -1,5 +1,6 @@
+import asyncio
 import unittest
-from unittest.mock import AsyncMock
+from unittest.mock import AsyncMock, patch
 
 import httpx
 
@@ -21,18 +22,54 @@ class ClassroomTests(unittest.IsolatedAsyncioTestCase):
         return await self.desk.operate(Command(action=name, host=host, **args))
 
     async def test_power_on_targets_one_offline_room(self):
-        target = Recorder(Device("b", "1F", "127.0.0.1"))
-        target.inspect = AsyncMock(side_effect=TimeoutError)
-        target.tcp = AsyncMock(return_value={})
-        self.devices["b"] = target
-        result = await self.action("powerOn", room="b")
-        target.tcp.assert_awaited_once_with(0x3105, {"power": 2})
-        self.assertFalse(result["rooms"][1]["online"])
-        with self.assertRaisesRegex(ClassroomError, "alreadyOnline"):
-            await self.action("powerOn", room="a")
-        target.tcp.side_effect = TimeoutError
-        with self.assertRaisesRegex(ClassroomError, "powerUnconfirmed"):
+        gate = asyncio.Event()
+        async def send():
+            await gate.wait()
+        for id in ("a", "b"):
+            self.devices[id].inspect = AsyncMock(side_effect=TimeoutError)
+            self.devices[id].power_on = AsyncMock(side_effect=send)
+        with patch("classroom.POWER_CHECK_SECONDS", .01):
+            first = asyncio.create_task(self.action("powerOn", room="b"))
+            await asyncio.sleep(0)
             await self.action("powerOn", room="b")
+            self.devices["a"].inspect.assert_not_awaited()
+            self.devices["a"].power_on.assert_not_awaited()
+            second = asyncio.create_task(self.action("powerOn", room="a"))
+            await asyncio.sleep(0)
+            gate.set()
+            await asyncio.gather(first, second)
+            state = self.desk.public(await self.desk.inspect())
+            self.assertEqual([r["powerState"] for r in state["rooms"]], ["powerWaiting"] * 2)
+            await self.action("powerOn", room="b")
+            self.devices["b"].inspect.side_effect = None
+            self.devices["b"].inspect.return_value = self.devices["b"].values
+            await asyncio.wait_for(self.desk.power_tasks["b"], 1)
+            self.assertEqual(set(self.desk.power_states), {"a"})
+            with self.assertRaisesRegex(ClassroomError, "alreadyOnline"):
+                await self.action("powerOn", room="b")
+            for dev in self.devices.values():
+                dev.power_on.assert_awaited_once()
+
+    async def test_power_no_ack_and_connection_failure(self):
+        dev = self.devices["a"]
+        dev.inspect = AsyncMock(side_effect=TimeoutError)
+        dev.power_on = AsyncMock(side_effect=ClassroomError("powerUnsent", "a"))
+        with patch("classroom.POWER_CHECK_SECONDS", .01):
+            await self.action("powerOn", room="a")
+            await self.action("powerOn", room="a")
+            dev.power_on.assert_awaited_once()
+            await asyncio.wait_for(self.desk.power_tasks["a"], 1)
+            dev.power_on.side_effect = ClassroomError("powerUnconfirmed", "a")
+            await self.action("powerOn", room="a")
+            await asyncio.sleep(.05)
+            self.assertEqual(self.desk.power_states["a"], "powerUnconfirmed")
+            self.assertEqual(dev.power_on.await_count, 2)
+
+    async def test_power_command_is_on_only(self):
+        with patch("recorder.Connection") as connection:
+            recorder = Recorder(Device("b", "1F", "127.0.0.1"))
+            await recorder.power_on()
+            connection.return_value.__aenter__.return_value.request.assert_awaited_once_with(0x3105, {"power": 2})
         for power in (0, 1):
             with self.assertRaises(ValueError):
                 await Connection("127.0.0.1", 6558).request(0x3105, {"power": power})

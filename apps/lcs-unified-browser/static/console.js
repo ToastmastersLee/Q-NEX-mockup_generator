@@ -21,6 +21,7 @@ let snapshot=null, host='a', initialHost=true, busy=false, epoch=0, requestSeria
 let cleanupLibrary=null, libraryVariant='', message=null;
 const monitors=new Map(), observations=new Map(), drafts={demo:{a:{},b:{}},live:{a:{},b:{}}};
 const view={a:'pgm',b:'pgm'};
+const powerRequests=new Set();
 let journal=[], testExpanded=false, logExpanded=false;
 const disabled=condition=>condition?' disabled':'';
 const press=flag=>' aria-pressed="'+Boolean(flag)+'"';
@@ -120,10 +121,11 @@ function recordState(r){
 }
 function roomActions(id){
   const r=room(id),locked=!localControl()||busy||!r.online, micKnown=[0,1].includes(r.mute),floorKnown=[0,1].includes(r.speak);
+  const powerState=powerRequests.has(id)?'powerSending':r.powerState;
   const classMic=locked||!snapshot?.sameClass, tutor=r.role==='host', active=r.record===1||r.record===3, paused=r.record===2;
   return `<article class="desk-room" data-key="actions-${id}">
    <div class="room-title"><div><h3>${t(id)}</h3><span class="room-sub">${esc(r.name || r.model || t('unknown'))}</span></div>${statePill(t(r.online?'online':'offline'),r.online?'green':'neutral')}</div>
-   ${mode==='live'&&!r.online?`<div class="control-line"><small>${t('powerHint')}</small>${button('powerOn',t('powerOn'),busy||!localControl()||!snapshot||r.error==='unconfigured','data-room="'+id+'"')}</div>`:''}
+   ${mode==='live'&&!r.online?`<div class="control-line"><small role="status">${t(powerState||'powerHint')}</small>${button('powerOn',t(id)+' · '+t(powerState?'powerPending':'powerOn'),!!powerState||!localControl()||!snapshot||r.error==='unconfigured','data-room="'+id+'"')}</div>`:''}
    <div class="control-line"><div><b>${t('audio')}</b><small>${micKnown?t(r.mute?'muted':'unmuted'):t('unknown')}</small></div>${button('mute',t(r.mute?'unmute':'mute'),classMic||!micKnown||r.speak===1,'data-room="'+id+'" data-value="'+(r.mute?0:1)+'"')}</div>
    <div class="control-line"><div><b>${t('speaker')}</b><small>${floorKnown?t(r.speak?'speaking':'notSpeaking'):t('unknown')}</small></div>${button('speak',t(r.speak?'unspeak':'speak'),classMic||!floorKnown||tutor,'data-room="'+id+'" data-value="'+(r.speak?0:1)+'"')}</div>
    <div class="control-line"><div><b>${t('recorder')}</b><small>${t(recordState(r))}</small></div><div class="row-buttons">${active||paused?
@@ -362,6 +364,29 @@ function failure(detail){
   const arr=translatedErrors[key];const i=languages.indexOf(lang);
   return [t('failed'),(arr?arr[i]:key.replaceAll('_',' ')),detail?.room?t(detail.room):''].filter(Boolean).join(' · ');
 }
+async function requestPower(id){
+  if(mode!=='live'||!localControl()||powerRequests.has(id)||room(id).powerState)return;
+  powerRequests.add(id);
+  render();
+  try{
+    const res=await fetch('/api/classroom/action?mode=live',{method:'POST',
+      headers:{'Content-Type':'application/json','X-Requested-With':'IQVideo'},
+      body:JSON.stringify({action:'powerOn',host:id,room:id}),signal:AbortSignal.timeout(30000)});
+    const payload=await res.json();
+    if(!res.ok)throw Error(failure(payload.detail));
+    const target=payload.rooms.find(r=>r.id===id);
+    if(mode==='live'&&snapshot&&target){
+      requestSerial++;
+      snapshot.rooms=snapshot.rooms.map(r=>r.id===id?target:r);
+    }
+  }catch(err){
+    if(mode==='live')setNote({text:err.message,tone:'error'});
+  }finally{
+    powerRequests.delete(id);
+    render();
+    if(mode==='live')void refresh();
+  }
+}
 async function execute(data){
   if(busy||!localControl())return;
   let why='';
@@ -393,7 +418,7 @@ async function execute(data){
     journal=payload.steps||[];
     if(data.action==='apply')drafts[mode]={a:{},b:{}};
     if(data.action==='start'||data.action==='apply')initialHost=false;
-    setNote({key:data.action==='powerOn'?'powerAccepted':'done',tone:'success'});
+    setNote({key:'done',tone:'success'});
   }catch(err){
     setNote(err.name==='AbortError'?{key:'timeout',tone:'error'}:{text:err.message,tone:'error'});
   }finally{
@@ -422,7 +447,7 @@ document.addEventListener('click',event=>{
     case 'discard':drafts[mode]={a:{},b:{}};render();return;
     case 'apply':void execute({action:'apply',host,changes:structuredClone(drafts[mode])});return;
     case 'start':void execute({action:'start',host});return;
-    case 'powerOn':void execute({action:'powerOn',host,room:d.room});return;
+    case 'powerOn':void requestPower(d.room);return;
     case 'rejoin':case 'end':void execute({action:d.action,host:actualHost()||host});return;
     case 'speak':case 'mute':case 'record':void execute({action:d.action,host:actualHost()||host,room:d.room,value:Number(d.value)});return;
   }

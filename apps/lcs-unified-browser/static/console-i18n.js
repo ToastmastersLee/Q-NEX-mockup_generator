@@ -2,7 +2,11 @@
 const rows = {
  powerOn:['请求开机','Request power on','Demander le démarrage'],
  powerHint:['设备需供电且待机控制端口可达','Requires standby power and a reachable control port','Alimentation de veille et port de commande accessible requis'],
- powerAccepted:['设备已确认开机请求，请查看在线状态。','Power-on request acknowledged. Check device status.','Demande de démarrage acceptée. Vérifiez l’état de l’appareil.'],
+ powerSending:['正在向本楼录播发送开机请求','Sending the request to this recorder','Envoi à cet enregistreur en cours'],
+ powerPending:['等待上线','Waiting for device','En attente de connexion'],
+ powerWaiting:['设备已确认开机，每 10 秒检测一次','Request accepted. Checking every 10 seconds','Demande acceptée. Vérification toutes les 10 secondes'],
+ powerUnconfirmed:['未收到回执，每 10 秒检测一次','No acknowledgement. Checking every 10 seconds','Aucun accusé de réception. Vérification toutes les 10 secondes'],
+ powerUnsent:['控制端口无法连接，开机命令未发出。10 秒后复查，可再试','Could not connect or send. Checking again in 10 seconds before retry','Connexion impossible. Demande non envoyée. Vérification dans 10 secondes avant un nouvel essai'],
  product:['互动控制台','Classroom control','Régie de classe'],
  control:['互动现场','Live classroom','Classe en direct'],
  settings:['会前设置','Class settings','Paramètres de classe'],
