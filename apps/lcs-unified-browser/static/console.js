@@ -1,6 +1,7 @@
 import {translator,languages} from './console-i18n.js';
 import {initialMode, clearDemoLink} from './mode.js';
 import {mountMonitor} from './monitor.js';
+import {mountStreaming} from './streaming.js';
 import {initLibrary} from './library.js';
 
 const $ = selector => document.querySelector(selector);
@@ -16,7 +17,7 @@ let lang=languages.includes(params.get('lang'))?params.get('lang'):saved('langua
 if(!languages.includes(lang))lang='zh';
 let t=translator(lang);
 let mode=initialMode();
-let tab=['control','settings','library'].includes(location.hash.slice(1))?location.hash.slice(1):'control';
+let tab=['control','streaming','settings','library'].includes(location.hash.slice(1))?location.hash.slice(1):'control';
 let snapshot=null, host='a', initialHost=true, busy=false, epoch=0, requestSerial=0, request=null, polling=false;
 let cleanupLibrary=null, libraryVariant='', message=null;
 const monitors=new Map(), observations=new Map(), drafts={demo:{a:{},b:{}},live:{a:{},b:{}}};
@@ -61,7 +62,7 @@ function baseHTML(){
   $('#language').value=lang;
   $('#modes').setAttribute('aria-label',t('mode'));
   $('#modes').innerHTML=['live','demo'].map(m=>button('mode',t(m),busy,'data-value="'+m+'"'+press(m===mode))).join('');
-  $('#tabs').innerHTML=['control','settings','library'].map(k=>button('tab',t(k),false,'data-value="'+k+'" '+(k===tab?'aria-current="page"':''))).join('');
+  $('#tabs').innerHTML=['control','streaming','settings','library'].map(k=>button('tab',t(k),false,'data-value="'+k+'" '+(k===tab?'aria-current="page"':''))).join('');
   $('#cancel').textContent=t('cancel');$('#commit').textContent=t('continue');
 }
 function localControl(){
@@ -259,12 +260,12 @@ function render(){
   const stamp=snapshot?.updated;
   $('#last-update').textContent=t(mode==='demo'?'demoMode':'liveMode')+(stamp?' · '+t('updated')+' '+clock(stamp):'');
   showNote();
-  if(tab==='library'){
+  if(tab==='library'||tab==='streaming'){
     clearMonitors();
-    if(libraryVariant!==mode+lang || !cleanupLibrary){
+    if(libraryVariant!==tab+mode+lang || !cleanupLibrary){
       cleanupLibrary?.();$('#page').replaceChildren();
-      cleanupLibrary=initLibrary($('#page'),{mode,lang,t})||(()=>{});
-      libraryVariant=mode+lang;
+      cleanupLibrary=(tab==='streaming'?mountStreaming:initLibrary)($('#page'),{mode,lang,t,local:localControl()})||(()=>{});
+      libraryVariant=tab+mode+lang;
     }
     return;
   }
@@ -310,7 +311,7 @@ function switchMode(value){
   journal=[];message=null;mode=value;clearMonitors();rebuild();refresh();
 }
 function setTab(value,updateHash=true){
-  if(!['control','settings','library'].includes(value)||value===tab)return;
+  if(!['control','streaming','settings','library'].includes(value)||value===tab)return;
   if(updateHash)history.replaceState(null,'','#'+value);
   clearMonitors();tab=value;rebuild();
 }

@@ -91,7 +91,11 @@ class Connection:
     async def request(self, command, params=None):
         if command == 0x3105 and params != {"power": 2}:
             raise ValueError("Only power-on is supported")
-        if command not in (STATUS, RECORDINGS, DETAIL, 0x3101, 0x3105, 0x4403, 0x4409,
+        if command == 0x3103 and not (isinstance(params, dict) and len(params) == 1
+                and next(iter(params)) in ("filmChn1", "resChn3")
+                and next(iter(params.values())) in ({"play": 0}, {"play": 1})):
+            raise ValueError("Expected a single recorder stream play switch")
+        if command not in (STATUS, RECORDINGS, DETAIL, 0x3101, 0x3103, 0x3104, 0x3105, 0x4403, 0x4409,
                            0x440A, 0x440B, 0x440C, 0x4411, 0x4412, 0x4414, 0x4418):
             raise ValueError("Unsupported classroom command")
         self.next_id += 1

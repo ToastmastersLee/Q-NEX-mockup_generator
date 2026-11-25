@@ -19,6 +19,7 @@ from catalog import BASE, DEMO_DEVICES, MIME, Source, demo_rows, now, read_confi
 from protocol import Connection, DETAIL, DeviceError
 from classroom import install_classroom
 from classroom_media import install_media
+from qnex_stream import install_streaming
 
 Mode = Literal["demo", "live"]
 
@@ -31,6 +32,7 @@ def create_app(devices):
     app.mount("/static", StaticFiles(directory=static), name="static")
     install_classroom(app, devices)
     install_media(app, devices)
+    install_streaming(app, devices)
     preview_hosts = " ".join(f"ws://{device.ip}:9898" for device in devices if device.ip)
 
     @app.middleware("http")

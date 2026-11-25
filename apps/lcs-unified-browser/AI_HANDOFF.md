@@ -2,6 +2,10 @@
 
 **接手入口**　仓库 `ToastmastersLee/Q-NEX-mockup_generator`，分支 `main`，应用目录 `apps/lcs-unified-browser`。这份手册按 2026-11-20 的交接整理，已验证的实现基线为 [8a10a4e](https://github.com/ToastmastersLee/Q-NEX-mockup_generator/commit/8a10a4e920fec6eb121f8741169d5a49e2ed9828)。家里的电脑只需这个仓库和 Python 就能运行模拟课堂、开发页面和执行测试。
 
+### 录播推流（live streaming）· AAC 解码与混音
+
+2026-11-24，Wollo University 售后事件 `AF-2026-0157`：同一台录播推流到 YouTube 有声，Q-NEX Media Server 预览声音偏小。知识文档记录了三楼实验室如何用 VLC、ffprobe 确认 AAC-LC，用 FFmpeg 测量实际电平，以及如何核对共享混音、分通道混音和每路直播的音频开关。客户现场仍待采集同一段讲话，对比录播输出与服务器入口。[LCS810 直播音频排查知识文档](https://github.com/ToastmastersLee/Q-NEX_PreSale/blob/main/张静/埃塞尔比亚/IRACK-IT-SOLUTION/Wollo%20University,%20Kombolcha%20Campus%20录播%2BNMPx10/售后/知识文档-LCS810直播音频编码与音量排查.md)
+
 ## 1. 项目是什么，为什么做
 
 客户要在远程教室的两块交互平板（IFP）上同时显示主讲教师特写和课件，并询问学生能否直接开麦、录后能否双屏回看。售前需要能当场演示，也需要能说清每一项结论是怎么验证的。

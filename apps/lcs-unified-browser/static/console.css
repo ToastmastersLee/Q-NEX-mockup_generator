@@ -151,3 +151,12 @@ dialog#confirmation{border:1px solid #c1d1d3;border-radius:10px;box-shadow:0 16p
 }
 @media(max-width:400px){.brand-separator,#product{display:none}.field-grid{grid-template-columns:1fr}.desk-main{padding-left:10px;padding-right:10px}.desk .session-actions button{padding:6px 9px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+.stream-panel{padding:clamp(18px,3vw,34px);max-width:920px}
+.stream-panel h1{margin:0 0 1em}
+.stream-fields,.stream-actions{display:flex;gap:16px;flex-wrap:wrap}
+.stream-fields label{display:grid;gap:6px;font-weight:600}
+.stream-fields select,.stream-fields input{padding:8px;border:1px solid var(--line);border-radius:6px;background:white}
+.stream-fields input[type=number]{width:6em}
+.stream-panel form{margin-top:20px}
+.stream-actions{margin-top:24px;gap:8px}
+.stream-panel p:empty{display:none}

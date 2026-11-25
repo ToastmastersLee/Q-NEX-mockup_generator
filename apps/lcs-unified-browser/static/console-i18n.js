@@ -1,5 +1,6 @@
 // The key is also the fallback when a future firmware introduces a new status.
 const rows = {
+ streaming:['直播分发','Stream to rooms','Diffusion en direct'],
  powerOn:['请求开机','Request power on','Demander le démarrage'],
  powerHint:['设备需供电且待机控制端口可达','Requires standby power and a reachable control port','Alimentation de veille et port de commande accessible requis'],
  powerSending:['正在向本楼录播发送开机请求','Sending the request to this recorder','Envoi à cet enregistreur en cours'],
